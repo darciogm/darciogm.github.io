@@ -1,0 +1,205 @@
+{
+ "auditoria": {
+  "aprovado": false,
+  "parecer": "Simulado de alto nível, calibrado com firmeza no piso N&S 12e com tetos Jehle-Reny pontuais (Robinson-Crusoe com planejador, screening FB/SB com decomposição de renda informacional, weakest-link público com Nash e subsídio cirúrgico). Os 16 gabaritos objetivos batem exatamente com a chave esperada — B1(C,A/F,V), B2(D,B/V,F), B3(E,C/V,F), B4(B,D/F,V) — e refiz toda a álgebra das cinco abertas: todas fecham (CV=80/EV=40/DWL=10 em B1; p*=2 com planejador z=4 e tripla igualdade 1/2 em B2; g*=9 vs Nash 6 vs s*=1/3 custo 3 em B3; FB Π=34, SB Π=26, custo 8 = 4 renda + 4 eficiência em B4). A pontuação fecha 4×25=100 com abertas 5+5+5. Os ganchos factuais são todos reais e verificados (ByteDance/Casa dos Ventos no Pecém; Azul/Gol em RJ 2025; isenção tarifária do arroz 2024; SPA/bets 2025; tarifaço EUA; enchentes RS 2024) — nenhum fato inventado, nenhuma referência fabricada. A qualidade das soluções 5-passos e das intuições econômicas é excelente e a dificuldade gradua bem dentro de cada bloco. PORÉM há problemas de repetição que impedem a aprovação direta: (i) BYD-Camaçari aparece como âncora em DOIS blocos (B2 e B4); (ii) o data center ByteDance/Casa dos Ventos aparece em DOIS blocos (B2 e B4); (iii) seguro paramétrico/risco de base é usado como V/F em DOIS blocos (B2 e B4), repetindo a mesma ferramenta conceitual; (iv) o tarifaço EUA ancora B1 e B2; e (v) o V/F Giffen⇒inferior de B1 repete quase verbatim o V/F do Simulado 1. Nada disso é fatal, mas as repetições entre blocos são classificadas como graves pelo checklist e precisam de troca de âncora/ferramenta antes do uso. Tempo factível em 180 min, porém com folga de revisão apertada (B2 e B4 abertas são pesadas). Prontidão: aprovar após corrigir as repetições — o miolo técnico está sólido.",
+  "issues": [
+   {
+    "bloco": 0,
+    "gravidade": "grave",
+    "onde": "Âncora factual 'BYD em Camaçari (BA)' usada em B2 (aberta, economia de produção de VEs) e novamente em B4 (ME1, garantia de bateria). BYD-Dolphin também em B1 V/F1.",
+    "problema": "A montadora BYD/fábrica de Camaçari aparece como contexto-âncora em dois blocos distintos (B2 e B4), além de BYD-Dolphin em B1. Repetição de âncora ENTRE blocos é classificada como grave pelo checklist (item 2). Mesmo sendo o mesmo grupo empresarial em recortes diferentes, a recorrência empobrece a variedade e cria sensação de reuso.",
+    "correcao_sugerida": "Manter BYD em apenas UM bloco. Sugiro preservar B4-ME1 (garantia de bateria casa perfeitamente com sinalização) e re-ancorar a aberta de B2 noutro caso de economia de produção real (ex.: refino/etanol de 2ª geração, fábrica de painéis solares, ou a própria expansão de fabricação de aço verde) — desde que fora da lista banida. Em B1 V/F1 trocar 'BYD Dolphin' por outro elétrico (GWM Ora, ou só 'carro elétrico popular') para eliminar a terceira ocorrência."
+   },
+   {
+    "bloco": 0,
+    "gravidade": "grave",
+    "onde": "Âncora 'data center ByteDance + Casa dos Ventos (Pecém/CE)' usada em B2 (ME2, precificação Arrow de contrato de energia eólica) e em B4 (aberta, tiers de disponibilidade/SLA).",
+    "problema": "O mesmo acontecimento-âncora (projeto ByteDance/Casa dos Ventos) sustenta um item em B2 e a questão aberta inteira de B4. Repetição de âncora entre blocos = grave (checklist item 2). O leitor reconhece o reuso e a economia de novidade factual cai.",
+    "correcao_sugerida": "Escolher um bloco só para esse projeto. Recomendo manter B4 (a aberta de screening de SLA é mais substantiva e específica ao caso). Re-ancorar B2-ME2 noutro contexto de ativos contingentes/estados da natureza fora da lista banida (ex.: contrato climático/PCH com hidrologia seca vs cheia, ou hedge cambial de exportadora de proteína) preservando exatamente os números (q1=0,50, q2=0,40, P_Z=17)."
+   },
+   {
+    "bloco": 0,
+    "gravidade": "grave",
+    "onde": "V/F de B2 (seguro paramétrico de chuva, rizicultores RS, risco de base → mercado incompleto) e V/F de B4 (seguro agrícola paramétrico El Niño/La Niña → não elimina seleção adversa).",
+    "problema": "A MESMA ferramenta conceitual — seguro paramétrico e risco de base/risco residual em seguro agrícola climático — é usada como questão V/F em dois blocos diferentes (B2 e B4), ambas ancoradas em seguro agrícola por gatilho climático objetivo. Há sobreposição substantiva de conteúdo (parametric insurance + basis risk) e repetição de molde de questão entre blocos. Pelo checklist (itens 2 e 6, sobreposição interna), isso é grave.",
+    "correcao_sugerida": "Diferenciar nitidamente os dois ou eliminar um. O V/F de B2 deveria focar puramente em incompletude de mercado/span de ativos (já há o V/F Embraer com 1 ativo livre de risco cobrindo isso) — considerar remover o V/F paramétrico de B2 e substituí-lo por outro tema de EG sob incerteza (ex.: equivalência preço de Arrow × probabilidades risco-neutras, ou completude com nº de ativos = nº de estados). Manter o seguro paramétrico apenas em B4 (onde o ponto é seleção adversa residual, mais alinhado ao bloco de assimetria)."
+   },
+   {
+    "bloco": 1,
+    "gravidade": "grave",
+    "onde": "B1, V/F2 (Giffen ⇒ inferior; recíproca falha), gabarito V.",
+    "problema": "Esta proposição é essencialmente a mesma do V/F do Simulado 1, Bloco 1 (Bolsa Família / arroz: 'bem de Giffen ⇒ necessariamente inferior', gabarito V, mesma demonstração via Slutsky de própria-preço). É a mesma ferramenta-núcleo na mesma forma de questão, repetida entre simulados — classificada como grave pelo checklist (item 4). A adição da cláusula 'recíproca falha' não descaracteriza o núcleo idêntico.",
+    "correcao_sugerida": "Trocar a proposição central do V/F. Opções dentro do mesmo bloco e calibre: (a) afirmação sobre simetria de Slutsky compensada (∂h_i/∂p_j = ∂h_j/∂p_i) e o que ela implica/não implica para as marshallianas; (b) afirmação sobre negatividade semidefinida da matriz de Slutsky / não-positividade do efeito-substituição próprio; (c) Engel-aggregation (luxo ⇒ existe necessidade), tomando cuidado para não colidir com o V/F de carne bovina do Simulado 2. Manter o tema arroz-Giffen apenas como pano de fundo factual, não como a proposição a julgar."
+   },
+   {
+    "bloco": 0,
+    "gravidade": "menor",
+    "onde": "Âncora 'tarifaço dos EUA sobre exportações brasileiras (2025)' usada em B1 (aberta, suco de laranja) e B2 (V/F Embraer).",
+    "problema": "O mesmo macro-evento (tarifaço EUA) ancora um item em B1 e um em B2. Como são recortes setoriais distintos (suco de laranja vs Embraer/caixa contingente) e o gancho macro é genuíno, classifico como menor — mas vale registrar para não saturar o mesmo evento.",
+    "correcao_sugerida": "Se a aberta de B1 (suco de laranja) for mantida, considerar re-ancorar o V/F Embraer de B2 noutro choque setorial real de incompleteza de mercado (ex.: exportadora de proteína sob embargo sanitário, ou siderúrgica sob cota), preservando a estrutura (1 ativo livre de risco, span unidimensional). Alternativamente manter ambos, já que os recortes não se confundem."
+   },
+   {
+    "bloco": 0,
+    "gravidade": "menor",
+    "onde": "Âncora 'enchentes do Rio Grande do Sul (2024)' em B2 (rizicultores/seguro) e B3 (Defesa Civil/alerta).",
+    "problema": "O mesmo desastre (enchentes RS 2024) é usado como âncora em dois blocos, ainda que em molduras econômicas diferentes (seguro vs bem público weakest-link). Não compromete conteúdo, mas repete o pano de fundo factual.",
+    "correcao_sugerida": "Aceitável manter, dada a diferença total de ferramenta; se quiser variedade máxima, trocar a âncora do V/F de B2 (que de toda forma é candidato a remoção pelo issue do seguro paramétrico) e deixar as enchentes RS apenas em B3."
+   },
+   {
+    "bloco": 4,
+    "gravidade": "menor",
+    "onde": "B4, notação monetária — solução da ME1 e abertas usam ora 'R\\$~6' ora '\\text{R\\$}~6'.",
+    "problema": "Mistura das duas formas de cifrão ('R\\$~' literal e '\\text{R\\$}~' dentro de \\text). Ambas compilam em pdflatex, mas a inconsistência tipográfica destoa do padrão canônico R\\$~ usado nos demais blocos.",
+    "correcao_sugerida": "Uniformizar para a forma canônica 'R\\$~N' (sem \\text{}) em todo o B4, alinhando aos blocos 1-3."
+   },
+   {
+    "bloco": 3,
+    "gravidade": "menor",
+    "onde": "B3, ME2 (Starlink/órbita baixa), enunciado: 'sat\\'elites em \\'orbita baixa' e 'constela\\c{c}\\~oes'.",
+    "problema": "O enunciado usa escapes de acento à moda antiga (\\'o, \\c{c}, \\~o) onde o restante do simulado usa caracteres UTF-8 acentuados literais ('órbita', 'constelações'). Sob inputenc/UTF-8 ou LuaLaTeX a mistura é inofensiva, mas é inconsistência de codificação dentro do mesmo documento e pode quebrar se o preâmbulo não casar com a escolha.",
+    "correcao_sugerida": "Substituir os escapes por caracteres UTF-8 literais ('satélites em órbita baixa', 'constelações'), uniformizando com o resto do simulado e eliminando risco de compilação dependente de preâmbulo."
+   },
+   {
+    "bloco": 2,
+    "gravidade": "menor",
+    "onde": "B2 e B4, peso temporal das abertas vs. folga de revisão.",
+    "problema": "As abertas de B2 (Robinson-Crusoe completo: lucro da firma, demandas com lucro distribuído, clearing, problema do planejador, tripla igualdade TMS=TMT=preço, e discussão de retornos constantes) e de B4 (FB + SB com IR/IC + decomposição tripla do custo + argumento da taxa de adesão) são as mais longas do simulado. Em 180 min para 4 blocos (45 min/bloco), um aluno bem preparado consome quase todo o tempo, deixando folga de revisão apertada — não estoura, mas o checklist pede 'folga de revisão'.",
+    "correcao_sugerida": "Aliviar marginalmente um sub-item dos mais pesados: na aberta de B4 (iii), aceitar como completo o argumento de que a taxa lump-sum mexe na IR e não na IC sem exigir a reverificação numérica de Π^SB; ou na aberta de B2 (iii) pedir apenas a conclusão qualitativa sobre lucro zero com retornos constantes, sem a tipologia pc<1/pc=1/pc>1. Alternativamente, declarar tempo-alvo realista de ~45-50 min para B2 e B4 e ~35-40 min para B1 e B3, sinalizando ao aluno onde investir."
+   }
+  ]
+ },
+ "blocos_refeitos_pos_auditoria": [
+  1
+ ],
+ "issues_por_bloco": {
+  "1": {
+   "issues_rodada1": [
+    {
+     "gravidade": "grave",
+     "onde": "Objetiva 1 (GLP-1 / elasticidade cruzada) — enunciado e definição de p₂",
+     "problema": "Colisão de notação que quebra a coerência interna (Pass 1). O enunciado define o mundo com DOIS bens: ultraprocessados (x₁) e 'um bem composto (x₂, numerário)'. Por definição de numerário, o preço de x₂ é 1. No entanto, a demanda x₁ᴹ=40−5p₁+2p₂ usa 'p₂' como o 'preço mensal de acesso ao tratamento com GLP-1' e o avalia em p₂=R$10. Ou seja, p₂ aparece simultaneamente como (a) preço do bem composto x₂ (=1, por ser numerário) e (b) preço do tratamento GLP-1 (=10). São coisas incompatíveis. Pior: o GLP-1, cujo preço entra na demanda, não é uma das variáveis de escolha do consumidor (que reparte renda só entre x₁ e x₂), então a 'elasticidade-preço cruzada ε₁₂' é, na verdade, com relação ao preço de um TERCEIRO bem fora da cesta modelada — e o índice '2' de ε₁₂ não corresponde ao x₂ do enunciado. Um aluno cuidadoso (exatamente o que se quer premiar) trava aqui. A matemática (ε=0,5; substitutos brutos) está correta, mas o setup é internamente contraditório.",
+     "correcao_sugerida": "Reescrever o cenário como TRÊS bens, sem chamar o composto de 'numerário' ou sem reusar o índice 2 para GLP-1. Opção A: 'consumidor que reparte a renda entre ultraprocessados (x₁), tratamento com GLP-1 (x₂) e um bem composto (x₃, numerário, p₃=1)', e então p₂ é legitimamente o preço do GLP-1 e ε₁₂ é a elasticidade cruzada x₁ vs. preço do GLP-1 — consistente. Opção B (mais enxuta): manter dois bens mas trocar a história — fazer p₂ ser o preço do próprio bem composto (que aí NÃO é numerário) e ancorar a substituição/complementaridade nesse bem, ajustando os números para preservar ε₁₂=0,5. Em qualquer caso, eliminar a contradição 'x₂ é numerário (p₂=1)' vs. 'p₂=10'."
+    },
+    {
+     "gravidade": "menor",
+     "onde": "Objetiva 1 (GLP-1) — extensão do enunciado",
+     "problema": "O enunciado de múltipla escolha tem ~110–120 palavras antes das alternativas, no limite ou ligeiramente acima do teto de ~110 palavras do checklist (item 6). A primeira frase (difusão/portfólios/hipótese de apetite) é narrativa e poderia ser comprimida sem perda de ancoragem factual.",
+     "correcao_sugerida": "Enxugar a moldura: 'A difusão de análogos de GLP-1 (Ozempic, Mounjaro) reduz o apetite e o consumo de ultraprocessados, levando fabricantes de alimentos a revisar portfólios.' — corta ~15 palavras e mantém o gancho factual (verificado: Nestlé/Danone/Coca-Cola reformulando linhas em 2024–2025)."
+    },
+    {
+     "gravidade": "menor",
+     "onde": "Bloco — sobreposição temática entre VF 2 (bets) e Aberta, subitem 3 (suco de laranja)",
+     "problema": "VF 2 testa, qualitativamente, a proposição 'lump-sum equivalente em receita ≥ imposto específico, estritamente melhor com substituição'. A Aberta subitem 3 reexecuta exatamente essa lógica numericamente (viabilidade da cesta x^t sob lump-sum, reotimização, peso-morto = L*−R_arr). O aluno encontra o MESMO núcleo conceitual (dominância do lump-sum / excess burden) duas vezes no mesmo bloco. Não é erro — ambos estão corretos e bem-feitos — mas reduz a variedade de conteúdo avaliado num bloco de Teoria do Consumidor que já cobre pouco de preferências/axiomas/Engel.",
+     "correcao_sugerida": "Considerar trocar VF 2 por um item de outro subtópico da ementa ainda não exercitado no bloco (ex.: agregação de Engel/curva de Engel, classificação Giffen↔inferior via Slutsky, ou homotético vs. quase-linear), reservando a tese lump-sum vs. específico exclusivamente para a Aberta — onde ela rende mais por ser computada de ponta a ponta."
+    },
+    {
+     "gravidade": "menor",
+     "onde": "Bloco — tempo-alvo",
+     "problema": "Para aluno bem preparado: 4 objetivas (~4–6 min cada, ~20 min) + aberta com 3 subitens de 5 pts cada (UMP+demandas+cestas+receita; v, e, Shephard, CV; L*, EV, peso-morto, argumento de dualidade) somando ~20–25 min → bloco realista ~40–45 min, acima do alvo de ~35 min do checklist (item 8). A aberta é rica e justifica o calibre, mas o tempo declarado fica otimista.",
+     "correcao_sugerida": "Recalibrar o tempo-alvo do bloco para ~40–45 min, OU reduzir levemente a carga da aberta (ex.: no subitem 3, fornecer EV já calculada e pedir apenas a identificação do peso-morto e o argumento de dualidade), preservando o subitem como 'acima do piso' sem inflar o relógio."
+    }
+   ],
+   "pendencias": [
+    {
+     "gravidade": "menor",
+     "onde": "Aberta, subitem (ii): enunciado_latex (\"a função dispêndo\") e solucao_latex Passo 2 (\"função dispêndo (uma inversão)\"); também VF1 Passo 3 menciona conceito correlato",
+     "problema": "Grafia incorreta de 'dispêndio': aparece como 'dispêndo' tanto no enunciado quanto na solução do subitem (ii) da questão aberta. Erro ortográfico, não afeta a matemática nem o gabarito.",
+     "correcao_sugerida": "Substituir todas as ocorrências de 'dispêndo' por 'dispêndio' (i.e., 'a função dispêndio' e 'função dispêndio (uma inversão)'). Nenhuma outra correção necessária — todas as contas, gabaritos, letras e somas de pontos conferem por caminhos independentes."
+    }
+   ]
+  },
+  "2": {
+   "issues_rodada1": [
+    {
+     "gravidade": "grave",
+     "onde": "Aberta, sub-item (i), rubrica_latex",
+     "problema": "Os critérios de pontuação positiva da rubrica somam apenas 4,5 pts, não os 5 pts do sub-item: 'Monta o lucro' (1) + 'Escreve e resolve a CPO' (1,5) + 'Forma fechada z*, q2*, pi*' (1,5) + 'Interpreta a CPO' (0,5) = 4,5. As duas linhas restantes são penalidades (−0,5), que não acrescentam pontos. Falta 0,5 pt para fechar 5.",
+     "correcao_sugerida": "Rebalancear para somar 5, por exemplo elevando a interpretação da CPO de 0,5 para 1 pt: 'Interpreta a CPO como valor do produto marginal igual ao custo marginal do insumo: 1 pt.' Assim 1 + 1,5 + 1,5 + 1 = 5. (Como referência, as rubricas (ii) e (iii) corretamente somam 5 nos critérios positivos.)"
+    },
+    {
+     "gravidade": "menor",
+     "onde": "Objetiva 2 (ByteDance/Arrow) — enunciado",
+     "problema": "O enunciado da ME excede levemente o teto de ~110 palavras do checklist: a montagem (contexto ByteDance/Casa dos Ventos + descrição de X com payoff e preço + descrição de Y com payoff e preço + descrição de Z) chega a ~115-120 palavras antes das alternativas. O conteúdo é todo necessário, mas a redação é prolixa em alguns pontos (ex.: o parêntese 'a parceria entre a ByteDance e a Casa dos Ventos para suprimento de energia eólica é um caso real recente' poderia ser enxugado).",
+     "correcao_sugerida": "Enxugar o parêntese de ancoragem para algo como '(caso real: a Casa dos Ventos fornecerá energia eólica a um data center da ByteDance no Pecém-CE)' e condensar a apresentação dos títulos: 'Negociam-se: o título X — paga R$3 em s1, R$1 em s2, custa R$1,90 — e o título Y — paga R$1 em s1, R$2 em s2, custa R$1,30.' Mantém toda a informação dentro de ~110 palavras."
+    },
+    {
+     "gravidade": "menor",
+     "onde": "V/F Embraer — Passo 4 da solução (armadilha)",
+     "problema": "A solução afirma que o título livre de risco 'permite mover riqueza no tempo ou aumentar/reduzir o nível uniforme de consumo'. O modelo é de dois estados da natureza num único período (sem dimensão temporal explícita); o ativo escala o nível uniforme de payoff entre estados, mas não há 'tempo' no setup. A menção a 'mover riqueza no tempo' é uma imprecisão conceitual leve — embora a frase também ofereça a leitura correta ('nível uniforme'), ela pode confundir o aluno sobre o que o ativo de fato faz neste modelo estático de incerteza.",
+     "correcao_sugerida": "Remover 'mover riqueza no tempo ou' e deixar apenas: 'O título livre de risco permite aumentar/reduzir o nível uniforme de consumo (o mesmo em ambos os estados), o que pode dar a falsa impressão de hedge.' Assim a armadilha fica fiel ao modelo de dois estados num só período."
+    },
+    {
+     "gravidade": "menor",
+     "onde": "Objetiva 1 (Itaipu) — explicação dos distratores B e E",
+     "problema": "A solução despacha as alternativas (B) (1/2, 2) e (E) (1/4, 3/4) com a frase genérica 'combinam números de capacidade máxima sem passar pelos custos de oportunidade', sem mapear um erro de raciocínio concreto para cada uma — em contraste com o tratamento detalhado e excelente dado a (A) e (C). Diferente das objetivas dos simulados anteriores, em que cada distrator recebe um diagnóstico específico de misconception. Como o checklist exige que distratores mapeiem erros típicos, vale tornar o diagnóstico de B/E mais concreto (ou substituir um deles por um distrator com erro identificável).",
+     "correcao_sugerida": "Dar conteúdo ao diagnóstico: para (E) (1/4, 3/4), explicitar que vem de usar razões erradas — p.ex. 20/40·... ou misturar capacidades cruzadas; para (B) (1/2, 2), apontar que mistura um custo plausível (1/2) com o recíproco do outro país (2). Alternativamente, recalibrar (B)/(E) para que cada uma corresponda a um erro nomeável (ex.: inverter só um dos dois custos), elevando o poder discriminante do item."
+    }
+   ],
+   "pendencias": []
+  },
+  "3": {
+   "issues_rodada1": [
+    {
+     "gravidade": "grave",
+     "onde": "Questão aberta inteira (bem público 'capacidade de alerta', u^i=a_i ln(G)+x_i, subitens i-Samuelson e ii-provisão voluntária/free-rider) vs. Simulado 1, Bloco 3, aberta (condomínio de segurança, u^i=x^i+θ_i ln G, subitens Samuelson e provisão voluntária/free-rider)",
+     "problema": "Repetição de ferramenta-núcleo. A aberta deste bloco reproduz quase integralmente o template da aberta do Simulado 1: (a) MESMA forma funcional — bem público quase-linear com utilidade marginal log do bem público e TMT=1 (S1: u=x+θ ln G; S3: u=a_i ln G + x_i, idênticos a menos de rótulo); (b) MESMO subitem de Samuelson somando TMS=θ_i/G → G*=Σθ_i (S1: 3+6→G*=9; S3: 12+6→G*=18); (c) MESMO subitem de provisão voluntária / free-rider em que cada agente deseja G=θ_i, o tipo de maior valoração provê sozinho até seu ótimo individual e o de menor pega carona, dando G^N=max{θ_i} (S1: g_B=6,g_A=0,G^N=6; S3: g_1=12,g_2=0,G^N=12). Dois dos três subitens são estruturalmente o mesmo exercício de S1, só com a_1=12 no lugar de θ_B=6 e papéis renomeados. Agrava o problema o fato de a própria auditoria do Simulado 2 (issues_rodada1) ter sinalizado essa sobreposição e, por isso, MIGRADO a aberta de S2 para externalidade negativa de produção (Votorantim: q_priv vs q*, Pigou, DWL) — justamente para fugir do template Samuelson+free-rider. O Simulado 3 reincide no template abandonado. Só o subitem (iii) matching grant é genuinamente novo. Mathematicamente a aberta está impecável (verifiquei: G*=18, m*=1/2, custo União=6, ente 2 fora pois a_2/G=1/3<p_ef=2/3); o defeito é exclusivamente de não-repetição entre as três provas.",
+     "correcao_sugerida": "Trocar a espinha dorsal da aberta para evitar a tripla cobertura Samuelson+free-rider já gasta em S1 (e deliberadamente evitada em S2). Duas rotas que preservam o contexto (Defesa Civil/alerta RS) e o calibre: (A) Reformular como bem público com tecnologia de agregação NÃO-soma — p.ex. weakest-link/best-shot do sistema de alerta — pedindo o nível eficiente sob G=min{g_i} (ou max), contrastando explicitamente com a regra de Samuelson; isso aproveita o gancho 'cadeia de elos' já presente na VF1, mas então a VF1 teria de mudar para não duplicar internamente. (B) Manter Samuelson no subitem (i), mas substituir os subitens (ii)-(iii) por um circuito DIFERENTE de S1/S2: subitem (ii) = mecanismo de Clarke-Groves/imposto de Pigou do lado da provisão com cálculo de excedente, ou cálculo direto da perda de bem-estar da subprovisão (área entre ΣTMS e TMT entre G^N e G*), sem reencenar o equilíbrio de melhor-resposta carona já feito em S1. Se o matching grant (iii) for mantido, ancorá-lo a um G* obtido por caminho distinto do free-rider de S1. Objetivo: que nenhum aluno que estudou S1 reconheça a aberta de S3 como 'a mesma conta com outros números'."
+    },
+    {
+     "gravidade": "menor",
+     "onde": "ME1 (bets/imposto seletivo) e ME2 (Starlink/comuns) — extensão dos enunciados",
+     "problema": "Ambos os enunciados de múltipla escolha excedem o teto de ~110 palavras antes das alternativas (item 6 do checklist). ME1 tem ~130 palavras (dois parágrafos de contexto institucional + descrição de três curvas) e ME2 ~130 (modelagem do recurso comum + B(N), médio/marginal, custo). O excesso é de densidade de setup, não de ambiguidade — a redação é clara —, mas alonga o bloco e contraria o limite declarado.",
+     "correcao_sugerida": "Enxugar o verniz institucional preservando o gancho factual. Em ME1, comprimir o segundo período ('O argumento econômico é que...SUS') para uma oração ('apostas geram externalidades — endividamento, ludopatia, custos ao SUS — não internalizadas pelo apostador') e ir direto aos dados. Em ME2, mover a explicação de 'benefício médio vs marginal' para a solução (o aluno deve saber que o operador captura o médio), deixando no enunciado apenas B(N), o custo e a pergunta. Meta: ≤110 palavras em cada."
+    },
+    {
+     "gravidade": "menor",
+     "onde": "ME1 (imposto seletivo pigouviano/bets) vs. ME1 de Simulado 1 (pedágio Pigou/SP) e ME1 de Simulado 2 (subsídio Pigou/Limeira)",
+     "problema": "O item-líder de múltipla escolha dos três simulados é, nos três casos, a correção pigouviana padrão (igualar benefício marginal a custo social marginal, achar Q*, tax/subsídio = externalidade marginal no ótimo). A mecânica é idêntica; mudam o sinal (tax negativa, subsídio positiva, tax sobre consumo) e o contexto. Isoladamente é mitigado — o item de Pigou é quase canônico e obrigatório no bloco — mas vale registrar para que a recorrência não se cristalize como rotina previsível ao aluno que treina os três simulados.",
+     "correcao_sugerida": "Aceitável manter, dado que sinal (consumo vs produção) e contexto diferem dos anteriores. Se quiser diferenciar mais, considerar trocar ME1 por um item de cálculo DIRETO de subprovisão/excedente de bem público ou de cota de recurso comum com preço, deixando a correção pigouviana padrão de fora de pelo menos um dos blocos da série."
+    },
+    {
+     "gravidade": "menor",
+     "onde": "VF1 (weakest-link / elo mais fraco) — calibre vs. piso Nicholson 12e",
+     "problema": "A tecnologia de agregação weakest-link (G=min{g_i}) está acima do tratamento padrão de bens públicos em N&S 12e — é território Hirshleifer / Cornes-Sandler. O checklist (item 1) pede objetivas no nível Nicholson, reservando 'acima' para o subitem 3 da aberta. A afirmação está correta e é pedagogicamente rica (mostra que Samuelson é específico da agregação por soma), mas como item objetivo de uma série calibrada no piso N&S, é um ponto fora da curva de dificuldade.",
+     "correcao_sugerida": "Opções: (i) manter, reconhecendo que V/F conceitual admite um item de raciocínio mais alto e que a afirmação é limpa — neste caso, garantir que a aberta NÃO seja também weakest-link (ver issue grave, rota A) para não concentrar a novidade; ou (ii) rebaixar para um V/F estritamente N&S, p.ex. afirmação sobre não-rivalidade vs não-exclusão na definição de bem público puro, ou sobre por que a soma vertical (não horizontal) das demandas dá a demanda agregada por bem público."
+    },
+    {
+     "gravidade": "menor",
+     "onde": "Bloco inteiro — tempo-alvo vs. carga",
+     "problema": "O alvo do checklist é ~35 min para aluno bem preparado. A aberta com três subitens substanciais (Samuelson; equilíbrio de melhor-resposta da provisão voluntária com verificação de canto; calibração do matching grant + custo da União + verificação do carona) consome ~22-28 min sozinha; somadas as 4 objetivas (2 ME com álgebra de otimização + 2 VF conceituais densas), o bloco realista fica em ~35-44 min, no limite superior ou acima do alvo. O subitem (iii) é desafio por design, então não é defeito de calibre, mas o tempo declarado é otimista.",
+     "correcao_sugerida": "Recalibrar o tempo-alvo do bloco para ~40-45 min, OU, se a aberta for reformulada (issue grave), aproveitar para enxugar um subitem (p.ex. pedir apenas a calibração de m* e o custo da União, sem o terceiro requisito de verificar o carona, que pode virar 'comente em uma frase')."
+    }
+   ],
+   "pendencias": []
+  },
+  "4": {
+   "issues_rodada1": [
+    {
+     "gravidade": "grave",
+     "onde": "Aberta inteira (data center ByteDance/Casa dos Ventos — risco moral principal-agente com u(w)=√w, first-best vs second-best, equivalente-certeza, custo de agência) vs. Simulado 1 (af) Bloco 4 aberta (ANS/copagamento — risco moral com u(w)=√w, first-best vs second-best, equivalente-certeza, custo de incentivo como prêmio de risco)",
+     "problema": "Repetição de ferramenta-núcleo vs. Simulado 1. As duas abertas compartilham o mesmo esqueleto analítico: risco moral com esforço escondido e∈{0,1}, agente AVESSO A RISCO com utilidade √w, comparação first-best (segurar pleno / salário fixo, sem problema de incentivo) × second-best (pagamento sensível ao estado), cálculo do equivalente-certeza e identificação do custo da assimetria como PRÊMIO DE RISCO imposto ao agente avesso. O Simulado 1 já cobriu exatamente esse arcabouço (√w, π_H/π_L, FB inviável sob ação escondida, CE = 81 vs 100, ganho de sinistralidade vs prêmio de risco, quando abrir mão do esforço). Um aluno que resolveu a aberta do S1 reaplica todo o roteiro conceitual aqui; a única diferença mecânica é o instrumento (sistema 2×2 em w_H,w_L via a=√w_H, b=√w_L versus isolar √(100−k) de um copagamento). O checklist (item 4) trata repetição de ferramenta-núcleo como grave, e a rotação de abertas do Bloco 4 (S1=risco moral, S2=sinalização) pede que o S3 use screening ou seleção adversa, não um terceiro risco-moral-√w.",
+     "correcao_sugerida": "Reorientar a aberta do Bloco 4 para uma ferramenta-núcleo NÃO usada nas abertas anteriores, mantendo o contexto do data center. Opções: (a) screening de monopólio/menu de 2º grau com dois tipos e 'no distortion at the top' + renda informacional (distinto do menu de seguro R-S e da aberta de risco moral do S1); (b) seleção adversa à la Akerlof/crédito com derivação de equilíbrio e quantificação do unraveling; (c) se for imperativo manter risco moral, mudar substancialmente a estrutura — agente NEUTRO a risco com restrição de responsabilidade limitada (limited liability rent), que produz álgebra e intuição (renda de LL, não prêmio de risco) genuinamente distintas da aberta √w do S1. Em qualquer caso, eliminar a tríade FB/SB + CE + prêmio de risco que coincide com o S1."
+    },
+    {
+     "gravidade": "menor",
+     "onde": "Objetiva 2 (fundos CVM / risco moral), enunciado — atitude de risco do agente não especificada",
+     "problema": "A solução usa a restrição de incentivo LINEAR s·E[R|e=1] − C ≥ s·E[R|e=0] ⇒ s ≥ C/ΔR, que pressupõe o gestor neutro ao risco (utilidade linear no pagamento). O enunciado declara apenas o PRINCIPAL neutro ao risco e nada diz sobre o agente. Sob agente avesso ao risco a IC seria E[u(base+sR)|e=1] − C ≥ E[u(base+sR)|e=0], e s* mudaria. A leitura natural é de neutralidade (custo C e pagamentos dados em reais, sem função utilidade côncava), então o intended s*=20% é robusto sob essa leitura — por isso menor, não grave —, mas o rigor do curso (e a própria aberta, que especifica √w explicitamente) pede que a hipótese seja declarada para garantir resposta única sem que o aluno cuidadoso hesite.",
+     "correcao_sugerida": "Acrescentar 'gestor (agente) NEUTRO AO RISCO' (ou 'que maximiza o pagamento esperado líquido do custo de esforço') ao enunciado, tornando explícita a linearidade que sustenta a IC s·ΔR ≥ C e o gabarito s*=20%."
+    },
+    {
+     "gravidade": "menor",
+     "onde": "V/F 4 (aceitação diferida Gale–Shapley, strategy-proofness) vs. Simulado 1 (af) Bloco 4 V/F 2 (otimalidade-do-proponente ENARE/NRMP)",
+     "problema": "Matching por aceitação diferida aparece agora nos três Blocos 4 consecutivos (S1: teorema da otimalidade do proponente; S2: definição de estabilidade via par bloqueante; S3: assimetria de strategy-proofness proponente×receptor). O sub-conceito do S3 (à-prova-de-estratégia para quem propõe, manipulável para quem recebe) é tecnicamente distinto do teorema de otimalidade do S1, mas é o mais PRÓXIMO dos três — ambos enfatizam a vantagem assimétrica do lado proponente, e a 'intuição econômica' do S3 ('quem propõe controla a dinâmica') ecoa a do S1. Pela precedência do projeto (a sobreposição S2×S1 em matching foi classificada menor), mantenho menor, mas registro que o poço de V/F de aceitação diferida está esgotando.",
+     "correcao_sugerida": "Aceitável manter, dada a distinção real de sub-conceito (strategy-proofness ≠ otimalidade-do-proponente). Para reforçar a diferenciação, ancorar explicitamente o item no resultado de manipulação do lado receptor (Dubins–Freedman / Roth) com um micro-exemplo numérico de manipulação bem-sucedida, deixando claro que o foco NÃO é 'qual lado fica melhor', já testado no S1. Em simulados futuros, evitar um quarto V/F de aceitação diferida no Bloco 4."
+    },
+    {
+     "gravidade": "menor",
+     "onde": "Objetivas 1 (BYD) e 2 (fundos CVM), enunciados — extensão",
+     "problema": "Ambos os enunciados de múltipla escolha excedem o teto de ~110 palavras antes das alternativas. A ME1 (contexto BYD + dois tipos + p_H/p_L + prêmio Δ + estrutura da garantia + custo esperado p_i·B) chega a ~120 palavras; a ME2 (contexto CVM/2-20 + probabilidades dos dois níveis de esforço + custo + estrutura base+s·R) fica em ~110–120. A densidade aumenta o tempo de leitura e o risco de erro por sobrecarga, não por compreensão econômica — o mesmo padrão já apontado em auditorias anteriores.",
+     "correcao_sugerida": "Enxugar ambos. ME1: tabular os dois tipos (robusta: p_H=0,1; frágil: p_L=0,5) e remover a frase de abertura redundante ('como parte da estratégia comercial'). ME2: tabular as probabilidades (e=1: 0,6/0,4; e=0: 0,2/0,8) e mover 'esquema 2 com 20' para nota curta. Alvo ≤110 palavras antes das alternativas."
+    }
+   ],
+   "pendencias": []
+  }
+ }
+}

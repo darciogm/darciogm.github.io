@@ -1,0 +1,709 @@
+% ============================================================
+% Corpo das questões — GERADO por gerar-corpo.py a partir de
+% conteudo-blocos.json (SSOT). Não editar à mão: editar o JSON
+% e regenerar. Sincronia prova/solução garantida via \ifsolucao
+% ============================================================
+
+\ifsolucao\else
+\begin{center}
+\renewcommand{\arraystretch}{1.3}
+\begin{tabular}{|l|l|c|c|}
+\hline
+\textbf{Bloco} & \textbf{Conteúdo} & \textbf{Aulas} & \textbf{Pontos} \\ \hline
+1 & Teoria do Consumidor & 1--3 & 25 \\ \hline
+2 & Equilíbrio Geral & 4--6 & 25 \\ \hline
+3 & Externalidades e Bens Públicos & 7 & 25 \\ \hline
+4 & Assimetria Informacional e Sinalização & 8--9 & 25 \\ \hline
+\multicolumn{3}{|r|}{\textbf{Total}} & \textbf{100} \\ \hline
+\end{tabular}
+\end{center}
+\vspace{0.5em}
+\fi
+
+
+\section*{Bloco 1 --- Teoria do Consumidor \hfill \normalsize (25 pontos)}
+
+\textbf{Questão 1.} (10 pontos) \textbf{Itens objetivos.} Nos itens \textbf{a)} e \textbf{b)}, assinale a \emph{única} alternativa correta (3 pontos cada; não há penalização por erro). Nos itens \textbf{c)} e \textbf{d)}, responda \textbf{Verdadeiro ou Falso} (2 pontos cada; vale a regra de anulação descrita na capa). Registre suas respostas no quadro-resposta ao final do bloco.
+
+\textbf{a)} (3 pontos) A Petrobras, sob a política de preços homologada pela ANP, reajusta o preço da gasolina nas refinarias. Considere um consumidor cujas preferências por gasolina ($x_1$, em litros) e por um bem composto ($x_2$, com preço $p_2=1$) são representadas por $u(x_1,x_2)=x_1^{1/2}\,x_2^{1/2}$. Ele dispõe de renda $m=R\$~120$ e enfrenta o preço da gasolina $p_1=R\$~2$ por litro. Derivando a demanda marshalliana por gasolina a partir do problema de maximização da utilidade e aplicando a equação de Slutsky $\dfrac{\partial h_1}{\partial p_1}=\dfrac{\partial x_1^{M}}{\partial p_1}+x_1^{M}\dfrac{\partial x_1^{M}}{\partial m}$, qual é o \emph{efeito-substituição} $\dfrac{\partial h_1}{\partial p_1}$ avaliado nesse ponto?
+
+\begin{enumerate}[label=\Alph*., leftmargin=3.2em, itemsep=0.15em, topsep=0.2em]
+  \item $-15$
+  \item $-7{,}5$
+  \item $+7{,}5$
+  \item $-22{,}5$
+  \item $-3{,}75$
+\end{enumerate}
+\gabaritoitem{B}
+\begin{solucao}
+\textbf{Passo 1 — o que se pede.} Primeiro deriva-se a demanda marshalliana via UMP; depois a equação de Slutsky decompõe a variação marshalliana total no efeito-substituição (Hicksiano) mais o efeito-renda. Pede-se isolar o efeito-substituição $\partial h_1/\partial p_1$.
+
+\textbf{Passo 2 — demanda marshalliana e derivadas.} A UMP $\max x_1^{1/2}x_2^{1/2}$ s.a. $p_1 x_1+p_2 x_2=m$ tem, pela igualdade da $\text{TMS}$ à razão de preços ($x_2/x_1=p_1/p_2$) e pelo orçamento, a solução Cobb-Douglas com participação $1/2$ em cada bem: $x_1^{M}=\dfrac{m}{2p_1}$. No ponto $(p_1,m)=(2,120)$:
+\[
+x_1^{M}=\frac{120}{2\cdot 2}=30,\qquad \frac{\partial x_1^{M}}{\partial p_1}=-\frac{m}{2p_1^{2}}=-\frac{120}{2\cdot 4}=-15,\qquad \frac{\partial x_1^{M}}{\partial m}=\frac{1}{2p_1}=\frac{1}{4}.
+\]
+O efeito total é $-15$ litros por unidade de preço.
+
+\textbf{Passo 3 — montar Slutsky.} O termo-renda é $x_1^{M}\dfrac{\partial x_1^{M}}{\partial m}=30\cdot\dfrac14=7{,}5$. Logo
+\[
+\frac{\partial h_1}{\partial p_1}=\frac{\partial x_1^{M}}{\partial p_1}+x_1^{M}\frac{\partial x_1^{M}}{\partial m}=-15+7{,}5=-7{,}5.
+\]
+Equivalentemente, total $(-15)$ = substituição $(-7{,}5)$ + renda $(-7{,}5)$, pois o efeito-renda sobre a demanda é $-x_1^{M}\,\partial x_1^{M}/\partial m=-7{,}5$.
+
+\textbf{Passo 4 — distratores tentadores.} A alternativa $-15$ é o erro de quem confunde o efeito total marshalliano com o efeito-substituição: esquece de \emph{somar} o termo-renda e reporta a derivada bruta. A alternativa $+7{,}5$ é o valor (correto em módulo) do termo-renda $x_1^{M}\,\partial x_1^{M}/\partial m=30\cdot\tfrac14=7{,}5$, reportado isoladamente: é o erro de quem identifica o termo de Slutsky mas troca o sinal do efeito-substituição, ignorando que ele deve ser $\le 0$ pela lei da demanda compensada. Já a alternativa $-22{,}5$ resulta de \emph{subtrair} o termo-renda em vez de somá-lo: $-15-7{,}5=-22{,}5$.
+
+\textbf{Intuição econômica:} encarecida a gasolina, o consumidor compra menos por duas razões. Primeiro, ela ficou relativamente mais cara que o bem composto, e ele a substitui mantendo o mesmo nível de bem-estar — é o efeito-substituição, sempre negativo. Segundo, o reajuste corrói seu poder de compra real, como se ficasse mais pobre — é o efeito-renda. Para um bem normal como aqui, ambos puxam a quantidade para baixo, e cada um responde por metade da queda de $15$ litros.
+\end{solucao}
+
+\textbf{b)} (3 pontos) Um assinante distribui seu orçamento entre horas de streaming musical no Spotify ($x_1$) e um bem composto ($x_2$), com preferências $u(x_1,x_2)=x_1^{1/2}\,x_2^{1/2}$. Ele quer atingir exatamente o nível de utilidade $\bar u=10$ e enfrenta os preços $p_1=1$ e $p_2=4$. Resolvendo o problema de minimização de dispêndio (EMP), qual é o \emph{menor} dispêndio capaz de garantir $\bar u=10$, ou seja, o valor de $e(p,\bar u)$?
+
+\begin{enumerate}[label=\Alph*., leftmargin=3.2em, itemsep=0.15em, topsep=0.2em]
+  \item $20$
+  \item $25$
+  \item $40$
+  \item $50$
+  \item $80$
+\end{enumerate}
+\gabaritoitem{C}
+\begin{solucao}
+\textbf{Passo 1 — o que se pede.} O problema é a minimização de dispêndio (EMP): $\min_{x_1,x_2} p_1 x_1+p_2 x_2$ s.a. $x_1^{1/2}x_2^{1/2}\ge\bar u$. As quantidades ótimas são as demandas hicksianas; o valor mínimo é $e(p,\bar u)$.
+
+\textbf{Passo 2 — CPO e hicksianas.} A condição de tangência iguala a $\text{TMS}$ à razão de preços: $\dfrac{x_2}{x_1}=\dfrac{p_1}{p_2}\Rightarrow x_2=\dfrac{p_1}{p_2}x_1$. Levando à restrição (ativa) $\sqrt{x_1 x_2}=\bar u$:
+\[
+x_1\cdot\frac{p_1}{p_2}x_1=\bar u^2\;\Rightarrow\; h_1=\bar u\sqrt{\tfrac{p_2}{p_1}},\qquad h_2=\bar u\sqrt{\tfrac{p_1}{p_2}}.
+\]
+Com $(p_1,p_2)=(1,4)$ e $\bar u=10$: $h_1=10\sqrt{4}=20$ e $h_2=10\sqrt{\tfrac14}=5$. Verificação do alvo: $u=\sqrt{h_1 h_2}=\sqrt{20\cdot 5}=\sqrt{100}=10=\bar u.$
+
+\textbf{Passo 3 — função dispêndio.} Avaliando o custo dessas quantidades aos preços vigentes,
+\[
+e(p,\bar u)=p_1 h_1+p_2 h_2=1\cdot 20+4\cdot 5=40.
+\]
+Confere com a forma fechada Cobb-Douglas simétrica $e(p,\bar u)=2\bar u\sqrt{p_1 p_2}=2\cdot 10\cdot\sqrt{4}=40.$
+
+\textbf{Passo 4 — distratores tentadores.} A alternativa $20$ é o erro de quem usa $e=\bar u\sqrt{p_1 p_2}$ e esquece o fator $2$ da forma fechada da Cobb-Douglas (cada bem responde por metade do dispêndio, então o total é o dobro). A alternativa $25$ vem de somar as quantidades hicksianas \emph{sem} ponderar pelos preços ($h_1+h_2=20+5=25$), confundindo soma de quantidades com dispêndio; só seria custo se todos os preços fossem $1$.
+
+\textbf{Intuição econômica:} a função dispêndio responde a uma pergunta dual à da utilidade: dado um padrão de vida fixado em $\bar u$, quanto custa sustentá-lo aos preços de hoje? O consumidor não compra à toa — ele escolhe a cesta mais barata sobre a curva de indiferença $\bar u$, igualando a $\text{TMS}$ à razão de preços. Por isso o dispêndio mínimo é $40$, e não o custo de qualquer outra cesta que também alcance $\bar u$, que seria estritamente maior.
+\end{solucao}
+
+\textbf{c)} (2 pontos, V ou F) Para famílias beneficiárias do Bolsa Família, suponha que o arroz — item central da cesta básica — seja um \emph{bem de Giffen} na faixa de renda observada, isto é, sua demanda aumenta quando o preço sobe. Sob as convenções padrão do curso (preferências contínuas, monotônicas e localmente não saciadas; solução interior), pode-se afirmar que, necessariamente, o arroz é um \emph{bem inferior} para essas famílias.
+
+\gabaritoitem{V}
+\begin{solucao}
+\textbf{Passo 1 — o critério.} Pela equação de Slutsky para o próprio preço,
+\[
+\underbrace{\frac{\partial x_i^{M}}{\partial p_i}}_{\text{efeito total}}=\underbrace{\frac{\partial h_i}{\partial p_i}}_{\text{substituição }(\le 0)}-\;x_i^{M}\underbrace{\frac{\partial x_i^{M}}{\partial m}}_{\text{efeito-renda}}.
+\]
+
+\textbf{Passo 2 — o argumento.} O efeito-substituição é sempre não-positivo (curva de demanda compensada não cresce no próprio preço). Para que o efeito total seja \emph{positivo} — o que define Giffen —, o termo $-x_i^{M}\,\partial x_i^{M}/\partial m$ precisa ser positivo e grande o bastante para dominar a substituição. Como $x_i^{M}>0$, isso exige $\partial x_i^{M}/\partial m<0$, ou seja, demanda \emph{decrescente} na renda: o bem é inferior.
+
+\textbf{Passo 3 — a recíproca falha.} A implicação só vale num sentido: todo Giffen é inferior, mas nem todo inferior é Giffen. Um bem inferior cujo efeito-renda seja pequeno em relação à substituição ainda terá demanda decrescente no preço. Por isso a afirmação, que vai de Giffen para inferior, está correta.
+
+\textbf{Intuição econômica:} o paradoxo de Giffen é a inferioridade levada ao extremo. Para uma família pobre que gasta boa parte do orçamento em arroz, encarecer o arroz é um empobrecimento real tão severo que ela corta itens mais caros (carne, por exemplo) e passa a depender ainda mais do arroz para se alimentar. O efeito-renda perverso de um bem fortemente inferior, com peso orçamentário alto, sobrepuja a substituição. Sem inferioridade, esse mecanismo não existe — daí Giffen exigir, logicamente, inferioridade.
+\end{solucao}
+
+\textbf{d)} (2 pontos, V ou F) Um investidor da B3 ordena carteiras descritas por pares $(r,\ell)$, em que $r$ é o retorno esperado e $\ell$ o grau de liquidez. Ele as compara \emph{lexicograficamente}: prefere estritamente a carteira de maior $r$ e, \emph{somente} em caso de empate em $r$, usa $\ell$ como desempate (maior $\ell$ preferida). Formalmente, $(r,\ell)\succeq(r',\ell')$ se $r>r'$, ou se $r=r'$ e $\ell\ge\ell'$. Como essa relação de preferências é completa e transitiva, pode-se afirmar que ela é \emph{necessariamente} representável por uma função utilidade contínua $U:\mathbb{R}^2\to\mathbb{R}$.
+
+\gabaritoitem{F}
+\begin{solucao}
+\textbf{Passo 1 — o que se afirma.} A sentença pretende que completude $+$ transitividade bastem para garantir representação por utilidade contínua. Vamos exibir um contraexemplo: a própria preferência lexicográfica do investidor é completa e transitiva, mas \emph{não admite representação por utilidade alguma} — muito menos contínua.
+
+\textbf{Passo 2 — completa e transitiva, sim.} Dadas duas carteiras quaisquer, ou seus retornos diferem (decide $r$), ou empatam (decide $\ell$): toda dupla é comparável, logo a relação é completa. A transitividade segue de encadear as comparações na ordem $r$-primeiro, $\ell$-depois. Portanto as hipóteses do enunciado valem.
+
+\textbf{Passo 3 — não há utilidade que a represente.} Suponha, por absurdo, que exista $U$ com $(r,\ell)\succeq(r',\ell')\iff U(r,\ell)\ge U(r',\ell')$. Fixe $r$ e compare $(r,1)\succ(r,0)$: então $U(r,1)>U(r,0)$. Para cada $r$ escolha um racional $q(r)\in\big(U(r,0),\,U(r,1)\big)$. Se $r'>r$, toda carteira com retorno $r'$ é estritamente preferida a toda carteira com retorno $r$, logo $U(r',0)>U(r,1)$, o que força $q(r')>q(r)$. Assim $r\mapsto q(r)$ é uma injeção \emph{estritamente crescente} de $\mathbb{R}$ nos racionais $\mathbb{Q}$ — impossível, pois $\mathbb{R}$ é não-enumerável e $\mathbb{Q}$ é enumerável. Contradição: nenhuma $U$ existe. (É o argumento clássico de Debreu para a não-representabilidade da ordem lexicográfica.)
+
+\textbf{Passo 4 — o que realmente faltou.} A representabilidade por utilidade \emph{contínua} exige, além de completude e transitividade, a \emph{continuidade} das preferências (conjuntos $\succeq$ e $\preceq$ fechados). A lexicográfica viola exatamente essa continuidade: o conjunto das carteiras preferidas a um ponto não é fechado. Logo a afirmação é \textbf{falsa}.
+
+\textbf{Intuição econômica:} um investidor que coloca o retorno em primeiro lugar de forma \emph{absoluta} — nenhuma dose de liquidez compensa um centavo a menos de retorno — não admite ``taxa de troca'' entre retorno e liquidez. Mas uma função utilidade é justamente o que codifica trocas marginais: ela atribui um número que permite compensar um atributo pelo outro. Quando a prioridade é lexicográfica, não existe número que respeite essa ordem rígida sobre um contínuo de retornos. Completude e transitividade garantem uma \emph{ordenação} coerente, não que ela caiba dentro da reta real de forma contínua.
+\end{solucao}
+
+\quadroresposta{1}
+
+\textbf{Questão 2.} (15 pontos) O MetrôRio, concessionária do sistema metroviário da cidade do Rio de Janeiro, avalia periodicamente o reajuste da tarifa do metrô. Considere uma trabalhadora que aloca seu orçamento mensal entre viagens de metrô ($x_1$) e um bem composto ($x_2$, tomado como numerário, com preço $p_2=1$), com preferências representadas por $u(x_1,x_2)=8\sqrt{x_1}+x_2$. Suponha que sua renda mensal disponível para essas duas categorias seja $m=R\$~40$ e que a tarifa parta de $p_1=R\$~2$ por viagem. Suponha ainda que o MetrôRio aplique um reajuste \emph{hipotético} que eleve a tarifa para $p_1'=R\$~4$. Em todas as situações abaixo, considere que a solução é interior (a consumidora compra quantidade estritamente positiva do bem composto).
+
+\textbf{a)} (5 pontos) Monte o problema de maximização da utilidade (UMP) da consumidora e derive sua demanda marshalliana por viagens de metrô, $x_1^{M}(p_1)$, em forma fechada. Em seguida, calcule a quantidade demandada de viagens nos dois cenários de tarifa, $p_1=2$ e $p_1'=4$, e verifique que a solução permanece interior em ambos.
+\resolucaobox{7.6cm}
+\begin{solucao}
+\textbf{Passo 1 — UMP.} A consumidora resolve
+\[
+\max_{x_1,x_2\ge 0}\; 8\sqrt{x_1}+x_2 \quad\text{s.a.}\quad p_1 x_1+x_2=m.
+\]
+O Lagrangiano é $\mathcal{L}=8\sqrt{x_1}+x_2+\lambda(m-p_1 x_1-x_2)$.
+
+\textbf{Passo 2 — CPOs.} As condições de primeira ordem são
+\[
+\frac{\partial\mathcal{L}}{\partial x_1}=\frac{4}{\sqrt{x_1}}-\lambda p_1=0,\qquad \frac{\partial\mathcal{L}}{\partial x_2}=1-\lambda=0\;\Rightarrow\;\lambda=1.
+\]
+Substituindo $\lambda=1$ na primeira: $\dfrac{4}{\sqrt{x_1}}=p_1$. A $\text{TMS}$ vale $\dfrac{\partial u/\partial x_1}{\partial u/\partial x_2}=\dfrac{4}{\sqrt{x_1}}$, igualada à razão de preços $p_1/p_2=p_1$.
+
+\textbf{Passo 3 — demanda marshalliana.} Isolando,
+\[
+\sqrt{x_1}=\frac{4}{p_1}\;\Rightarrow\; x_1^{M}(p_1)=\frac{16}{p_1^{2}}.
+\]
+Note que $x_1^{M}$ não depende de $m$ — característica das preferências quase-lineares: toda variação de renda recai sobre o bem composto.
+
+\textbf{Passo 4 — avaliação e interioridade.} Em $p_1=2$: $x_1^{M}=\dfrac{16}{4}=4$ viagens, com gasto em metrô $p_1 x_1=8$ e $x_2=m-8=32>0$. Em $p_1'=4$: $x_1^{M}=\dfrac{16}{16}=1$ viagem, gasto $p_1' x_1=4$ e $x_2=40-4=36>0$. Em ambos $x_2>0$: solução interior confirmada.
+
+\textbf{Intuição econômica:} com utilidade quase-linear, a demanda pelo bem não-numerário só responde ao seu preço relativo, nunca à renda. A consumidora escolhe viagens até que o benefício marginal $4/\sqrt{x_1}$ iguale o custo $p_1$; o resto do orçamento vira bem composto. Dobrar a tarifa de $R\$~2$ para $R\$~4$ derruba as viagens de $4$ para $1$ — a demanda é elástica porque $x_1\propto p_1^{-2}$.
+\rubricalabel
+\begin{itemize}
+\item Monta a UMP corretamente (objetivo $+$ restrição orçamentária): 1 pt.
+\item Escreve as CPOs / iguala $\text{TMS}=p_1/p_2$ corretamente: 1{,}5 pt.
+\item Obtém a forma fechada $x_1^{M}=16/p_1^{2}$: 1 pt.
+\item Calcula $x_1=4$ (em $p_1=2$) e $x_1=1$ (em $p_1'=4$): 1 pt (0{,}5 cada).
+\item Verifica interioridade ($x_2>0$ nos dois cenários): 0{,}5 pt.
+\item Erro aritmético isolado com método integralmente correto: penalidade leve de $-0{,}5$ pt (não zera o item).
+\end{itemize}
+\end{solucao}
+
+\textbf{b)} (5 pontos) Decomponha, pela equação de Slutsky, o efeito do reajuste de tarifa sobre a demanda por viagens. Calcule $\dfrac{\partial x_1^{M}}{\partial p_1}$ no ponto $p_1=2$ e mostre, usando a estrutura das preferências, que o efeito-renda sobre $x_1$ é nulo. Conclua qual é o sinal e o valor do efeito-substituição $\partial h_1/\partial p_1$ nesse ponto.
+\resolucaobox{7.6cm}
+\begin{solucao}
+\textbf{Passo 1 — equação de Slutsky.} Para o próprio preço,
+\[
+\frac{\partial h_1}{\partial p_1}=\frac{\partial x_1^{M}}{\partial p_1}+x_1^{M}\frac{\partial x_1^{M}}{\partial m}.
+\]
+
+\textbf{Passo 2 — efeito total.} De $x_1^{M}=16\,p_1^{-2}$, $\dfrac{\partial x_1^{M}}{\partial p_1}=-32\,p_1^{-3}$. Em $p_1=2$: $\dfrac{\partial x_1^{M}}{\partial p_1}=-\dfrac{32}{8}=-4.$
+
+\textbf{Passo 3 — efeito-renda nulo.} Como $x_1^{M}=16/p_1^{2}$ \emph{não depende de} $m$, temos $\dfrac{\partial x_1^{M}}{\partial m}=0$. Logo o termo-renda $x_1^{M}\,\partial x_1^{M}/\partial m=0$: encarecer a tarifa não desloca a demanda por viagens via efeito-renda, porque a perda de poder de compra é inteiramente absorvida pelo bem composto.
+
+\textbf{Passo 4 — efeito-substituição.} Substituindo na equação de Slutsky,
+\[
+\frac{\partial h_1}{\partial p_1}=\frac{\partial x_1^{M}}{\partial p_1}+0=-4.
+\]
+O efeito-substituição é negativo (como exige a lei da demanda compensada) e, neste caso, coincide com o efeito total: toda a queda de demanda é pura substituição.
+
+\textbf{Intuição econômica:} em preferências quase-lineares, a curva de demanda marshalliana e a hicksiana pela viagem coincidem. Não há efeito-renda sobre o bem não-numerário porque a utilidade marginal do bem composto é constante: qualquer ajuste de renda real é feito comprando mais ou menos do bem composto, sem mexer no consumo de viagens por esse canal. Por isso, quando a tarifa sobe, a consumidora reduz viagens apenas porque elas ficaram caras em termos relativos — substituição pura, sem o tempero do empobrecimento.
+\rubricalabel
+\begin{itemize}
+\item Escreve a equação de Slutsky para o próprio preço corretamente: 1 pt.
+\item Calcula $\partial x_1^{M}/\partial p_1=-32 p_1^{-3}$ e avalia $=-4$ em $p_1=2$: 1{,}5 pt.
+\item Argumenta que $\partial x_1^{M}/\partial m=0$ (quase-linearidade) $\Rightarrow$ efeito-renda nulo: 1{,}5 pt.
+\item Conclui $\partial h_1/\partial p_1=-4$, identificando o sinal negativo: 1 pt.
+\item Erro aritmético isolado com método correto (ex.: derivada bem montada, conta final errada): penalidade leve de $-0{,}5$ pt.
+\item Afirmar efeito-renda não-nulo sem justificar, mesmo chegando a número: teto de 2{,}5 pts no item.
+\end{itemize}
+\end{solucao}
+
+\textbf{c)} (5 pontos) O MetrôRio solicita uma medida monetária do impacto do reajuste sobre o bem-estar da consumidora. (i) Obtenha a função utilidade indireta $v(p_1,m)$ e, invertendo-a em $m$, a função dispêndio $e(p_1,\bar u)$. (ii) Calcule a variação compensadora (CV) do aumento de tarifa de $R\$~2$ para $R\$~4$. (iii) \emph{Sem refazer contas}, argumente, a partir da estrutura das preferências, por que a variação equivalente (EV) e a variação do excedente do consumidor $\Delta EC$ assumem aqui o \emph{mesmo} valor da CV — indique apenas o sinal de cada uma e por que coincidem. Interprete o número encontrado.
+\resolucaobox{7.6cm}
+\begin{solucao}
+\textbf{Passo 1 — utilidade indireta.} Com $x_1^{M}=16/p_1^{2}$ e $\lambda=1$, a utilidade indireta é $v(p_1,m)=8\sqrt{x_1^{M}}+(m-p_1 x_1^{M})$. Como $8\sqrt{16/p_1^{2}}=8\cdot\dfrac{4}{p_1}=\dfrac{32}{p_1}$ e $p_1 x_1^{M}=\dfrac{16}{p_1}$,
+\[
+v(p_1,m)=\frac{32}{p_1}-\frac{16}{p_1}+m=m+\frac{16}{p_1}.
+\]
+
+\textbf{Passo 2 — função dispêndio (única inversão).} Fixando $v=\bar u$ e isolando $m=e$:
+\[
+\bar u=e+\frac{16}{p_1}\;\Rightarrow\; e(p_1,\bar u)=\bar u-\frac{16}{p_1}.
+\]
+
+\textbf{Passo 3 — variação compensadora.} A CV usa a utilidade \emph{inicial} $\bar u_0=v(2,40)=40+\dfrac{16}{2}=48$. Ela é o ajuste de renda que, aos \emph{novos} preços, devolve a consumidora ao bem-estar antigo:
+\[
+\mathrm{CV}=e(p_1',\bar u_0)-e(p_1,\bar u_0)=\Big(\bar u_0-\tfrac{16}{4}\Big)-\Big(\bar u_0-\tfrac{16}{2}\Big)=\frac{16}{2}-\frac{16}{4}=8-4=4.
+\]
+O termo $\bar u_0$ cancela; sobra $\mathrm{CV}=R\$~4$.
+
+\textbf{Passo 4 — por que EV e $\Delta EC$ dão o mesmo (sem refazer contas).} Como $\partial x_1^{M}/\partial m=0$, a função dispêndio é \emph{aditivamente separável} em $\bar u$: $e(p_1,\bar u)=\bar u-16/p_1$. O nível de utilidade entra como termo aditivo e \emph{cancela} em qualquer diferença $e(p_1',\bar u)-e(p_1,\bar u)$ — não importa se usamos $\bar u_0$ (CV) ou $\bar u_1$ (EV). Logo $\mathrm{EV}=\mathrm{CV}=4$. Além disso, sem efeito-renda a hicksiana e a marshalliana coincidem ($h_1=x_1^{M}$), de modo que a área $\Delta EC$ sob a curva de demanda entre $p_1=2$ e $p_1'=4$ é a \emph{mesma} medida — daí $\Delta EC=4$ também. Todas são positivas (representam perda de bem-estar a ser compensada): $\mathrm{CV}=\mathrm{EV}=\Delta EC=R\$~4$.
+
+\textbf{Intuição econômica:} as três medidas de bem-estar — CV, EV e variação do excedente — em geral divergem porque a marshalliana embute efeito-renda e a hicksiana não, fazendo as áreas diferirem. Na utilidade quase-linear esse descompasso desaparece: como a renda não afeta a demanda pelo bem tarifado, não há ambiguidade sobre qual curva integrar nem sobre qual nível de utilidade fixar. O reajuste de $R\$~2$ para $R\$~4$ custa à consumidora exatamente $R\$~4$ de bem-estar mensal — número que o MetrôRio (ou o poder concedente) pode usar como base para dimensionar um subsídio que a compense integralmente.
+\rubricalabel
+\begin{itemize}
+\item Obtém $v(p_1,m)=m+16/p_1$: 1 pt.
+\item Inverte e obtém $e(p_1,\bar u)=\bar u-16/p_1$: 1 pt.
+\item Calcula corretamente $\mathrm{CV}=4$ usando a utilidade inicial $\bar u_0=48$: 1{,}5 pt.
+\item Argumenta (sem refazer contas) que EV$=\Delta EC=$CV pela separabilidade aditiva em $\bar u$ / efeito-renda nulo, indicando que todas são positivas: 1{,}5 pt.
+\item Erro aritmético isolado com método correto (ex.: monta $v$ e $e$ certos, troca um número na CV): penalidade leve de $-0{,}5$ pt.
+\item Apenas afirmar CV$=$EV$=\Delta EC$ sem nenhuma justificativa estrutural: teto de 3 pts no item.
+\end{itemize}
+\end{solucao}
+
+
+\clearpage
+\section*{Bloco 2 --- Equilíbrio Geral \hfill \normalsize (25 pontos)}
+
+\textbf{Questão 3.} (10 pontos) \textbf{Itens objetivos.} Nos itens \textbf{a)} e \textbf{b)}, assinale a \emph{única} alternativa correta (3 pontos cada; não há penalização por erro). Nos itens \textbf{c)} e \textbf{d)}, responda \textbf{Verdadeiro ou Falso} (2 pontos cada; vale a regra de anulação descrita na capa). Registre suas respostas no quadro-resposta ao final do bloco.
+
+\textbf{a)} (3 pontos) A pauta de comércio entre Brasil e China é frequentemente descrita como troca de soja (bem 1) por manufaturas (bem 2). Modele o comércio bilateral como uma economia de trocas pura $2\times 2$, com o Brasil ($A$) e a China ($B$) como os dois agentes. Suponha que as preferências sejam $u^A(x_1,x_2)=x_1^{1/2}x_2^{1/2}$ e $u^B(x_1,x_2)=x_1^{1/4}x_2^{3/4}$, e que as dotações iniciais sejam $\omega^A=(12,0)$ (o Brasil chega ao mercado com soja) e $\omega^B=(0,12)$ (a China chega com manufaturas). Tomando o bem 2 como numerário ($p_2=1$), o preço relativo de equilíbrio walrasiano da soja, $p_1^{*}$, é igual a:
+
+\begin{enumerate}[label=\Alph*., leftmargin=3.2em, itemsep=0.15em, topsep=0.2em]
+  \item $p_1^{*}=\dfrac{1}{3}$
+  \item $p_1^{*}=\dfrac{1}{2}$
+  \item $p_1^{*}=\dfrac{2}{3}$
+  \item $p_1^{*}=1$
+  \item $p_1^{*}=2$
+\end{enumerate}
+\gabaritoitem{B}
+\begin{solucao}
+\textbf{Passo 1 --- O que é dado e o que se pede.} Dois agentes Cobb-Douglas, dotações nos cantos, $p_2=1$. Pede-se o preço relativo $p_1^{*}$ que zera o excesso de demanda agregada.
+
+\textbf{Passo 2 --- Plano.} Para Cobb-Douglas $x_1^{\alpha}x_2^{1-\alpha}$, a demanda marshalliana pelo bem 1 é $x_1(p,m)=\alpha\, m/p_1$. Basta escrever as rendas $m^i=p\cdot\omega^i$, somar as demandas pelo bem 1 e igualar à oferta total $\bar\omega_1=12$ (pela Lei de Walras, equilibrar um mercado equilibra o outro).
+
+\textbf{Passo 3 --- Execução.} As rendas são $m^A=p_1\cdot 12 + 1\cdot 0 = 12p_1$ e $m^B=p_1\cdot 0 + 1\cdot 12 = 12$. Com $\alpha^A=\tfrac12$ e $\alpha^B=\tfrac14$:
+\begin{align*}
+x_1^A &= \tfrac12\cdot\frac{12p_1}{p_1}=6, & x_1^B &= \tfrac14\cdot\frac{12}{p_1}=\frac{3}{p_1}.
+\end{align*}
+Equilíbrio no mercado da soja: $x_1^A+x_1^B=\bar\omega_1$, ou seja, $6+\dfrac{3}{p_1}=12 \Rightarrow \dfrac{3}{p_1}=6 \Rightarrow p_1^{*}=\tfrac12$.
+
+\textbf{Passo 4 --- Verificação.} No mercado de manufaturas: $x_2^A=\tfrac12\cdot 12p_1=6p_1=3$ e $x_2^B=\tfrac34\cdot 12=9$; soma $=12=\bar\omega_2$. Os dois mercados fecham, confirmando a Lei de Walras.
+
+\textbf{Por que os distratores mais tentadores enganam.} A alternativa (E), $p_1^{*}=2$, é a inversão da razão de preços: quem lê $p_1$ como ``manufaturas por soja'' (em vez de ``soja em unidades de manufatura'') inverte o resultado. A alternativa (D), $p_1^{*}=1$, surge ao supor erroneamente que a China também pondera $\tfrac12$ a soja (simetria indevida): aí $x_1^B=6/p_1$ e $6+6/p_1=12\Rightarrow p_1=1$. Como o Brasil traz a soja (bem abundante) e a China a deseja menos intensamente ($\alpha^B=\tfrac14$), a soja sai barata em equilíbrio.
+
+\textbf{Intuição econômica:} a abundância relativa de soja do lado brasileiro, combinada à preferência chinesa mais voltada a manufaturas, faz a soja valer apenas metade de uma unidade de manufatura no equilíbrio de mercado. O preço relativo é exatamente o mensageiro que reconcilia ofertas e desejos: quanto mais abundante e menos desejado um bem, menor seu preço de troca.
+\end{solucao}
+
+\textbf{b)} (3 pontos) Uma usina sucroalcooleira do interior paulista é operada por um único produtor que decide quanto trabalhar. Trate-a como uma economia de Robinson Crusoé: o produtor dispõe de $\bar T=12$ horas/dia, que aloca entre lazer ($\ell$) e trabalho ($L=12-\ell$). A tecnologia de produção de etanol (bem $q$) é $q=f(L)=3\sqrt{L}$, exibindo retornos decrescentes do trabalho. As preferências sobre etanol e lazer são $u(q,\ell)=q^{1/2}\ell^{1/2}$. No ponto que maximiza o bem-estar do produtor, a alocação ótima de trabalho $L^{*}$, a produção $q^{*}$ e o valor comum da taxa marginal de transformação e da taxa marginal de substituição ($\text{TMT}=\text{TMS}$, ambas medindo etanol por hora de lazer) valem, respectivamente:
+
+\begin{enumerate}[label=\Alph*., leftmargin=3.2em, itemsep=0.15em, topsep=0.2em]
+  \item $L^{*}=1,\quad q^{*}=3,\quad \text{TMT}=\text{TMS}=\dfrac{3}{2}$
+  \item $L^{*}=6,\quad q^{*}=3\sqrt{6},\quad \text{TMT}=\text{TMS}=\dfrac{3}{2\sqrt{6}}$
+  \item $L^{*}=9,\quad q^{*}=9,\quad \text{TMT}=\text{TMS}=\dfrac{1}{2}$
+  \item $L^{*}=4,\quad q^{*}=6,\quad \text{TMT}=\text{TMS}=\dfrac{3}{4}$
+  \item $L^{*}=12,\quad q^{*}=6\sqrt{3},\quad \text{TMT}=\dfrac{3}{2\sqrt{12}}$
+\end{enumerate}
+\gabaritoitem{D}
+\begin{solucao}
+\textbf{Passo 1 --- O que é dado e o que se pede.} Economia com produção e um único agente. Tecnologia $q=3\sqrt{L}$, dotação de tempo $\bar T=12$, utilidade $u=q^{1/2}\ell^{1/2}$. Pede-se a alocação de Pareto (que aqui coincide com a escolha ótima do produtor): trabalho, produção e o valor comum $\text{TMT}=\text{TMS}$.
+
+\textbf{Passo 2 --- Plano.} O ótimo iguala a inclinação da fronteira de possibilidades de produção (FPP) à inclinação da curva de indiferença: $\text{TMT}=\text{TMS}$. A FPP é $q=3\sqrt{12-\ell}$.
+
+\textbf{Passo 3 --- Execução.} \emph{TMT} (etanol que se ganha por hora de lazer cedida, em módulo): ao longo da FPP, $\dfrac{dq}{d\ell}=3\cdot\dfrac{-1}{2\sqrt{12-\ell}}$, logo $\text{TMT}=\dfrac{3}{2\sqrt{12-\ell}}=\dfrac{3}{2\sqrt{L}}=f'(L)$. \emph{TMS} (etanol por lazer, com $u=q^{1/2}\ell^{1/2}$): $\text{TMS}=\dfrac{\partial u/\partial \ell}{\partial u/\partial q}=\dfrac{q}{\ell}$. Igualando e usando $q=3\sqrt{L}$ e $\ell=12-L$:
+\begin{align*}
+\frac{q}{\ell}=\frac{3}{2\sqrt{L}} \;\Longrightarrow\; \frac{3\sqrt{L}}{12-L}=\frac{3}{2\sqrt{L}} \;\Longrightarrow\; 2L = 12-L \;\Longrightarrow\; L^{*}=4.
+\end{align*}
+Então $\ell^{*}=8$, $q^{*}=3\sqrt{4}=6$ e $\text{TMT}=\text{TMS}=\dfrac{3}{2\sqrt{4}}=\dfrac{3}{4}$ --- alternativa (D).
+
+\textbf{Passo 4 --- Verificação.} Confira $\text{TMS}=q/\ell=6/8=3/4$, igual a $\text{TMT}$. O ponto é interior ($0<L^{*}<12$), coerente com a utilidade Cobb-Douglas, que sempre valoriza ambos os bens (sem solução de canto).
+
+\textbf{Por que os distratores mais tentadores enganam.} A alternativa (C), $L^{*}=9$, é a mais sedutora: corresponde a ``trabalhar mais para produzir mais'' ($q=9$), ignorando que a utilidade marginal do lazer cresce à medida que ele se torna escasso --- ali a $\text{TMS}=q/\ell=9/3=3$ excede em muito a $\text{TMT}=\dfrac{3}{2\sqrt{9}}=\dfrac12$, sinal de que se deveria trabalhar \emph{menos}. A alternativa (E), $L^{*}=12$, é o erro de maximizar produção esquecendo que lazer entra na utilidade: leva ao canto $\ell=0$, onde $u=0$. Note que nesse canto o valor reportado $\dfrac{3}{2\sqrt{12}}$ é apenas a $\text{TMT}=f'(12)$; a $\text{TMS}=q/\ell$ explode ($\ell\to 0\Rightarrow \text{TMS}\to+\infty$), de modo que \emph{não} há tangência $\text{TMT}=\text{TMS}$ --- a própria incompatibilidade das duas taxas no canto denuncia que (E) não pode ser ótimo interior.
+
+\textbf{Intuição econômica:} a economia de Robinson Crusoé sintetiza produção e consumo em um único agente, e seu ótimo é o famoso casamento $\text{TMT}=\text{TMS}$: a taxa pela qual a tecnologia \emph{permite} converter lazer em etanol deve igualar a taxa pela qual o produtor \emph{deseja} fazê-lo. Trabalhar até $L^{*}=4$ horas equilibra o esforço produtivo contra o valor do descanso; ir além desperdiça lazer que vale mais, na margem, do que o etanol adicional.
+\end{solucao}
+
+\textbf{c)} (2 pontos, V ou F) No ambiente de contratação do mercado livre de energia operado pela CCEE (Câmara de Comercialização de Energia Elétrica), modele as transações como uma economia de trocas com $L$ bens (contratos de energia diferenciados) e função de excesso de demanda agregada $z(p)$ contínua, satisfazendo a Lei de Walras $p\cdot z(p)\equiv 0$ para todo $p$. Suponha que, a um vetor de preços estritamente positivo $\bar p \gg 0$, os mercados de $L-1$ dos bens já estejam equilibrados, isto é, $z_\ell(\bar p)=0$ para todo $\ell=1,\dots,L-1$. Então, necessariamente, o $L$-ésimo mercado também está equilibrado: $z_L(\bar p)=0$.
+
+\gabaritoitem{V}
+\begin{solucao}
+\textbf{Passo 1 --- O que se afirma.} Que a Lei de Walras transforma o equilíbrio de $L-1$ mercados (a preços positivos) em equilíbrio do mercado restante.
+
+\textbf{Passo 2 --- Derivação.} A Lei de Walras impõe $\displaystyle\sum_{\ell=1}^{L} \bar p_\ell\, z_\ell(\bar p)=0$. Como $z_\ell(\bar p)=0$ para $\ell=1,\dots,L-1$, a soma colapsa em $\bar p_L\, z_L(\bar p)=0$. Sendo $\bar p \gg 0$, em particular $\bar p_L>0$, logo $z_L(\bar p)=0$.
+
+\textbf{Passo 3 --- Armadilha.} O detalhe não trivial é a hipótese $\bar p_L>0$. Se o $L$-ésimo preço pudesse ser zero, a igualdade $\bar p_L z_L=0$ se satisfaria com $z_L\neq 0$ (excesso de demanda não absorvido por um bem livre). O enunciado garante $\bar p\gg 0$, eliminando esse caso. É por isso que a afirmação é verdadeira como posta.
+
+\textbf{Por que é Verdadeira.} A conclusão segue diretamente da identidade orçamentária agregada, sem qualquer hipótese adicional sobre preferências além de a Lei de Walras valer (o que decorre de não-saciedade local e orçamentos amarrados).
+
+\textbf{Intuição econômica:} a Lei de Walras é a contabilidade agregada das restrições orçamentárias --- o valor do que se quer comprar a mais em alguns mercados é exatamente o valor do que se quer vender a mais em outros. Por isso, com preços positivos, equilibrar $L-1$ mercados ``de graça'' equilibra o último: não sobra valor para desbalancear. Operacionalmente, isso justifica por que a CCEE só precisa monitorar $L-1$ condições de \emph{clearing} independentes.
+\end{solucao}
+
+\textbf{d)} (2 pontos, V ou F) Em discussões sobre a reforma tributária brasileira, argumenta-se que o governo federal poderia, em princípio, usar transferências de soma fixa (\emph{lump-sum}) entre os agentes para alcançar qualquer distribuição desejável de bem-estar e, em seguida, deixar os mercados operarem livremente. O fundamento teórico invocado é o 2º Teorema do Bem-Estar. Considere a seguinte afirmação: ``O 2º Teorema do Bem-Estar garante que \emph{qualquer} alocação Pareto-eficiente pode ser sustentada como um equilíbrio walrasiano com transferências de soma fixa apropriadas, \emph{mesmo} quando as preferências de algum agente da economia são não-convexas.''
+
+\gabaritoitem{F}
+\begin{solucao}
+\textbf{Passo 1 --- O que se afirma.} Que o 2º Teorema vale \emph{prescindindo} de convexidade das preferências.
+
+\textbf{Passo 2 --- O enunciado correto do teorema.} O 2º Teorema do Bem-Estar exige, crucialmente, \emph{convexidade das preferências} de cada agente (além de continuidade e não-saciedade local). Sob essas hipóteses, toda alocação Pareto-eficiente é sustentável como equilíbrio com transferências (um equilíbrio com quase-equilíbrio de preços). A convexidade é o que permite o passo de separação por hiperplano (Teorema de Minkowski/Hahn-Banach): separa-se o agregado dos conjuntos ``estritamente preferidos'' por um vetor de preços. Sem convexidade, esse hiperplano separador pode não existir.
+
+\textbf{Passo 3 --- Por que é Falsa: contraexemplo conceitual.} Com preferências não-convexas (curvas de indiferença ``abauladas'' em direção à origem, como em complementaridades fortes ou bens indivisíveis), uma alocação Pareto-eficiente pode exigir, ao preço sustentador, que algum agente \emph{prefira} um ponto fora do orçamento ao ponto designado --- a reta de preços tangencia a curva de indiferença ``por dentro'', e o agente desviaria. A alocação é eficiente, mas \emph{não} é descentralizável por preços lineares mais transferência \emph{lump-sum}.
+
+\textbf{Por que é Falsa.} A palavra ``mesmo'' inverte a hipótese essencial do teorema. Convexidade não é um detalhe técnico dispensável; é precisamente a condição que viabiliza a descentralização por preços.
+
+\textbf{Intuição econômica:} o 1º Teorema (mercado competitivo $\Rightarrow$ Pareto) é robusto e quase não pede hipóteses sobre a forma das preferências. O 2º Teorema (Pareto $\Rightarrow$ descentralizável) é o lado \emph{difícil} e cobra convexidade como pedágio. A lição de política pública é cautelar: a tese ``redistribua com \emph{lump-sum} e deixe o mercado fazer o resto'' repousa sobre hipóteses (convexidade, ausência de externalidades, mercados completos, transferências de soma fixa factíveis) que raramente se sustentam na economia real --- daí o teorema ser um \emph{benchmark}, não um manual operacional.
+\end{solucao}
+
+\quadroresposta{2}
+
+\textbf{Questão 4.} (15 pontos) Considere uma geradora hidrelétrica brasileira cujo resultado financeiro depende fortemente do regime de chuvas, despachado pelo Operador Nacional do Sistema Elétrico (ONS). Modele o futuro como dois estados da natureza mutuamente exclusivos: $s_1$ = hidrologia favorável (``chuva'', reservatórios cheios, geração barata) e $s_2$ = hidrologia desfavorável (``seca'', despacho termelétrico caro). Suponha probabilidades $\pi_1=\tfrac34$ e $\pi_2=\tfrac14$. A geradora consome um único bem físico em cada estado e tem dotação contingente de fluxo de caixa $\omega=(\omega_1,\omega_2)=(100,20)$ (ganha mais quando chove). Suas preferências são de utilidade esperada com Bernoulli $v(c)=\ln c$ e sem desconto temporal. Existe um mercado completo de bens contingentes (Arrow-Debreu) onde se negociam títulos que pagam 1 unidade do bem em um estado e 0 no outro, a preços $q=(q_1,q_2)$.
+
+\textbf{a)} (5 pontos) Suponha que os preços dos títulos contingentes sejam \emph{atuarialmente justos}, isto é, $q_s=\pi_s$, de modo que $q=(\tfrac34,\tfrac14)$. Monte o problema de maximização de utilidade esperada da geradora sujeito à restrição orçamentária contingente, derive a condição de primeira ordem e determine o consumo contingente ótimo $c^{*}=(c_1^{*},c_2^{*})$. Interprete o formato da solução.
+\resolucaobox{7.6cm}
+\begin{solucao}
+\textbf{Passo 1 --- Montagem.} A riqueza inicial avaliada a mercado é $W=q\cdot\omega=\tfrac34\cdot 100+\tfrac14\cdot 20=75+5=80$. O problema é
+\[
+\max_{c_1,c_2}\;\pi_1\ln c_1+\pi_2\ln c_2\quad\text{s.a.}\quad q_1 c_1+q_2 c_2 = W.
+\]
+
+\textbf{Passo 2 --- Lagrangiano e CPO.} Com $\mathcal{L}=\pi_1\ln c_1+\pi_2\ln c_2+\lambda\,(W-q_1 c_1-q_2 c_2)$:
+\[
+\frac{\partial\mathcal{L}}{\partial c_s}=\frac{\pi_s}{c_s}-\lambda q_s=0\;\Longrightarrow\; c_s=\frac{\pi_s}{\lambda\, q_s}.
+\]
+
+\textbf{Passo 3 --- Preços justos.} Com $q_s=\pi_s$, cada $c_s=\dfrac{\pi_s}{\lambda\,\pi_s}=\dfrac{1}{\lambda}$, \emph{constante entre estados}. Logo $c_1^{*}=c_2^{*}$. Substituindo na restrição: $q_1 c+q_2 c=(\pi_1+\pi_2)c=c=W=80$. Portanto $c^{*}=(80,80)$.
+
+\textbf{Passo 4 --- Verificação.} A operação de seguro é autofinanciada: a geradora vende $100-80=20$ do título de chuva e compra $80-20=60$ do título de seca; o caixa líquido é $q_2\cdot 60-q_1\cdot 20=\tfrac14\cdot 60-\tfrac34\cdot 20=15-15=0$, coerente com $W$ inalterada. \emph{Seguro completo} a preço justo não altera a riqueza, só sua distribuição entre estados.
+
+\textbf{Intuição econômica:} sob aversão ao risco ($v$ côncava) e preços atuarialmente justos, o agente compra \emph{seguro completo} e iguala o consumo entre os estados ($c_1=c_2$) --- a clássica regra de \emph{full insurance}. A geradora troca o excedente de caixa dos anos chuvosos por proteção nos anos de seca, suavizando perfeitamente seu fluxo real e eliminando o risco hidrológico do balanço.
+\rubricalabel
+\begin{itemize}
+\item Calcula a riqueza $W=q\cdot\omega=80$ corretamente: 1 pt.
+\item Monta o problema de maximização de utilidade esperada com a restrição orçamentária contingente correta: 1 pt.
+\item Deriva a CPO $\pi_s/c_s=\lambda q_s$ (lagrangiano ou substituição equivalente): 1{,}5 pt.
+\item Conclui $c_1^{*}=c_2^{*}$ sob preços justos e obtém $c^{*}=(80,80)$: 1 pt.
+\item Interpreta como seguro completo / suavização de consumo: 0{,}5 pt.
+\item Erro aritmético com método correto (CPO certa, mas conta de $W$ ou substituição final errada): penalidade leve de no máximo $0{,}5$ pt.
+\end{itemize}
+\end{solucao}
+
+\textbf{b)} (5 pontos) Agora suponha que o mercado precifique os títulos contingentes em $q=(\tfrac12,\tfrac12)$ --- ou seja, o título que paga na \emph{seca} ficou caro relativamente à sua probabilidade. Recalcule o consumo contingente ótimo $c^{*}=(c_1^{*},c_2^{*})$ e compare com o item anterior, explicando por que a geradora deixa de se segurar plenamente.
+\resolucaobox{7.6cm}
+\begin{solucao}
+\textbf{Passo 1 --- Nova riqueza.} $W=q\cdot\omega=\tfrac12\cdot 100+\tfrac12\cdot 20=60$.
+
+\textbf{Passo 2 --- Razão de consumo via CPO.} Da CPO $c_s=\pi_s/(\lambda q_s)$, a razão entre estados é
+\[
+\frac{c_1}{c_2}=\frac{\pi_1/q_1}{\pi_2/q_2}=\frac{\pi_1\,q_2}{\pi_2\,q_1}=\frac{\tfrac34\cdot\tfrac12}{\tfrac14\cdot\tfrac12}=\frac{\tfrac34}{\tfrac14}=3.
+\]
+Logo $c_1=3c_2$ (consome \emph{mais} no estado de chuva).
+
+\textbf{Passo 3 --- Resolver a restrição.} $q_1 c_1+q_2 c_2=\tfrac12(3c_2)+\tfrac12 c_2=2c_2=60\Rightarrow c_2^{*}=30$ e $c_1^{*}=90$. Assim $c^{*}=(90,30)$.
+
+\textbf{Passo 4 --- Verificação e armadilha.} Custo total: $\tfrac12\cdot 90+\tfrac12\cdot 30=45+15=60=W$. A armadilha é supor que aversão ao risco \emph{sempre} implica $c_1=c_2$: isso só vale com preços justos. Aqui o seguro da seca está \emph{carregado} (preço $q_2=\tfrac12$ contra probabilidade $\pi_2=\tfrac14$), então a geradora compra menos proteção e aceita carregar parte do risco.
+
+\textbf{Intuição econômica:} a regra geral é igualar a \emph{taxa marginal de substituição} contingente à razão de preços: $\dfrac{\pi_1 v'(c_1)}{\pi_2 v'(c_2)}=\dfrac{q_1}{q_2}$. Quando o preço do título de seca excede sua probabilidade, segurar-se contra a seca fica caro na margem, e o agente racionalmente \emph{sub-segura} esse estado --- consome mais na chuva e menos na seca. A suavização perfeita do item (a) era um caso especial dos preços justos, não uma lei universal da aversão ao risco.
+\rubricalabel
+\begin{itemize}
+\item Recalcula a riqueza $W=60$ com os novos preços: 1 pt.
+\item Obtém a razão $c_1/c_2=(\pi_1 q_2)/(\pi_2 q_1)=3$ a partir da CPO: 1{,}5 pt.
+\item Resolve a restrição e chega a $c^{*}=(90,30)$: 1{,}5 pt.
+\item Explica corretamente por que não há seguro completo (preço da seca acima do atuarial / título carregado): 1 pt.
+\item Erro aritmético com método correto (razão certa mas conta final trocada): penalidade leve de no máximo $0{,}5$ pt.
+\end{itemize}
+\end{solucao}
+
+\textbf{c)} (5 pontos) Mantenha os preços do item (b), $q=(\tfrac12,\tfrac12)$. A geradora deseja contratar um \emph{seguro contra seca}: um título que paga $1$ no estado $s_2$ (seca) e $0$ no estado $s_1$ (chuva). (i) Pela ausência de arbitragem em mercado completo, qual é o preço desse seguro? Compare-o com o prêmio atuarialmente justo $\pi_2$ e diga se ele está barato ou \emph{carregado}. (ii) Suponha agora que apenas o título de \emph{chuva} (que paga $1$ em $s_1$ e $0$ em $s_2$) seja negociável, e nenhum outro ativo. Classifique este segundo mercado como \emph{completo} ou \emph{incompleto} e justifique em uma frase, indicando se o seguro contra seca é replicável.
+\resolucaobox{7.6cm}
+\begin{solucao}
+\textbf{Passo 1 --- Preço do seguro contra seca (mercado completo).} O seguro contra seca é exatamente o título de Arrow do estado $s_2$, com payoff $(0,1)$. Sob ausência de arbitragem, seu preço é o próprio preço de Arrow desse estado:
+\[
+P=q_2=\tfrac12.
+\]
+
+\textbf{Passo 2 --- Comparação com o prêmio justo.} O prêmio atuarialmente justo seria $\pi_2=\tfrac14$. Como $P=\tfrac12 > \tfrac14=\pi_2$, o seguro está \emph{carregado} por um fator $2$ (\emph{loading} de $100\%$): cobra-se o dobro da probabilidade. Isso é coerente com o item (b), em que a geradora, vendo o seguro caro, escolheu \emph{sub-segurar} a seca.
+
+\textbf{Passo 3 --- Classificação do segundo mercado.} Com apenas o título de chuva negociável, o único payoff replicável é da forma $x\cdot(1,0)=(x,0)$ --- o espaço gerado (\emph{span}) é a reta $\{(x,0):x\in\mathbb{R}\}$, de dimensão $1$. Como $1<2=|S|$ (número de estados), o mercado é \emph{incompleto}. Em particular, o seguro contra seca $(0,1)$ \emph{não} pertence a esse span: \emph{não é replicável}, e a geradora fica com risco de seca não-segurável.
+
+\textbf{Passo 4 --- Verificação.} Coerência interna: no mercado completo o seguro contra seca \emph{é} o título de Arrow de $s_2$, então seu preço tem de ser $q_2$ --- e de fato $P=q_2=\tfrac12$. Já no mercado com um só título, faltam estados independentes ($1$ ativo para $2$ estados), o que torna o sistema de replicação impossível para qualquer payoff com componente em $s_2$.
+
+\textbf{Intuição econômica:} um mercado é completo quando há tantos ativos linearmente independentes quanto estados da natureza --- só então todo risco contingente pode ser comprado ou vendido. Retirar um dos títulos de Arrow abre um ``buraco'' no espaço de riscos: a geradora deixa de conseguir transferir recursos para o estado de seca, e nenhum preço de mercado consegue eliminar essa exposição. A completude é, portanto, a condição que dá sentido a falar em \emph{preço único} de qualquer seguro.
+\rubricalabel
+\begin{itemize}
+\item Identifica o seguro contra seca como o título de Arrow de $s_2$ e o precifica em $P=q_2=\tfrac12$ por não-arbitragem: 1{,}5 pt.
+\item Compara com o justo $\pi_2=\tfrac14$ e conclui que está carregado (loading de $100\%$): 1 pt.
+\item Classifica corretamente o mercado com um só título como incompleto, com justificativa de span/dimensão $1<2=|S|$: 1{,}5 pt.
+\item Conclui que o seguro contra seca não é replicável nesse mercado incompleto: 1 pt.
+\item Erro aritmético com método correto (não-arbitragem certa, conta de loading trocada): penalidade leve de no máximo $0{,}5$ pt.
+\end{itemize}
+\end{solucao}
+
+
+\clearpage
+\section*{Bloco 3 --- Externalidades e Bens Públicos \hfill \normalsize (25 pontos)}
+
+\textbf{Questão 5.} (10 pontos) \textbf{Itens objetivos.} Nos itens \textbf{a)} e \textbf{b)}, assinale a \emph{única} alternativa correta (3 pontos cada; não há penalização por erro). Nos itens \textbf{c)} e \textbf{d)}, responda \textbf{Verdadeiro ou Falso} (2 pontos cada; vale a regra de anulação descrita na capa). Registre suas respostas no quadro-resposta ao final do bloco.
+
+\textbf{a)} (3 pontos) A Prefeitura de S\~ao Paulo estuda implantar um ped\'agio urbano de congestionamento na regi\~ao central. Suponha que o mercado de viagens de autom\'ovel por hora-pico no centro seja descrito pela demanda inversa $P(q) = 24 - 2q$, em que $P$ \'e o benef\'icio marginal privado da viagem (em R\$) e $q$ \'e o n\'umero de viagens (em milhares). O custo marginal privado de cada motorista (combust\'ivel e tempo pr\'oprio) \'e constante, $\text{MPC} = 6$. Cada viagem adicional impõe aos demais um custo externo marginal de congestionamento $\text{MEC}(q) = q$. O ped\'agio de Pigou \'otimo $t^*$, fixado para internalizar a externalidade, \'e igual a:
+
+\begin{enumerate}[label=\Alph*., leftmargin=3.2em, itemsep=0.15em, topsep=0.2em]
+  \item R\$~2
+  \item R\$~3
+  \item R\$~6
+  \item R\$~9
+  \item R\$~12
+\end{enumerate}
+\gabaritoitem{C}
+\begin{solucao}
+\textbf{Passo 1 -- Dados e pedido.} Demanda inversa $P(q)=24-2q$; custo marginal privado constante $\text{MPC}=6$; custo externo marginal $\text{MEC}(q)=q$. Pede-se o imposto de Pigou $t^*$, que por defini\c{c}\~ao iguala o custo externo marginal \emph{avaliado no \'otimo social}.
+
+\textbf{Passo 2 -- Plano.} Em equil\'ibrio parcial, o \'otimo social resolve $P(q)=\text{MC}_s(q)$, com $\text{MC}_s = \text{MPC} + \text{MEC}$. Encontra-se $q^*$ e depois $t^* = \text{MEC}(q^*)$.
+
+\textbf{Passo 3 -- Execu\c{c}\~ao.} O custo social marginal \'e $\text{MC}_s(q) = 6 + q$. Igualando \`a demanda:
+\[ 24 - 2q = 6 + q \;\Longrightarrow\; 18 = 3q \;\Longrightarrow\; q^* = 6. \]
+Logo $t^* = \text{MEC}(q^*) = q^* = 6$, isto \'e, $t^* = \text{R\$}~6$ (alternativa C). (Confer\^encia: o equil\'ibrio privado sem ped\'agio resolve $24-2q=6\Rightarrow q=9$; o ped\'agio corta o excesso de $9$ para $6$ mil viagens.)
+
+\textbf{Passo 4 -- Distratores.} Cada distrator mapeia um erro econ\^omico n\'itido. (i) $\text{R\$}~9$ resulta de avaliar $\text{MEC}$ no \emph{equil\'ibrio privado} $q=9$ em vez do \'otimo social $q^*=6$ -- avaliar a externalidade na quantidade errada; \'e o erro mais comum. (ii) $\text{R\$}~12$ confunde o \emph{pre\c{c}o} pago no \'otimo ($P=24-2\cdot6=12$) com o \emph{imposto}: o ped\'agio \'e a cunha entre custo social e privado, n\~ao o pre\c{c}o de mercado. (iii) $\text{R\$}~2$ confunde a \emph{inclina\c{c}\~ao} da demanda $|dP/dq|=2$ com o dano marginal -- toma um coeficiente de inclina\c{c}\~ao no lugar do custo externo. (iv) $\text{R\$}~3$ vem de calcular o custo externo \emph{m\'edio} at\'e $q^*$ em vez do \emph{marginal}: $\frac{1}{q^*}\int_0^{q^*}\text{MEC}(q)\,dq = \frac{1}{6}\cdot\frac{6^2}{2}=3$; Pigou cobra o dano \emph{marginal} no \'otimo, n\~ao o m\'edio.
+
+\textbf{Intui\c{c}\~ao econ\^omica:} o ped\'agio de Pigou faz cada motorista \emph{enxergar} o custo que impõe aos demais. Ele deve valer exatamente o dano marginal \emph{no n\'ivel eficiente de tr\^afego}, n\~ao no tr\^afego congestionado de partida; cobrar pelo dano do congestionamento original sobrecorrigiria, empurrando o tr\^afego abaixo do \'otimo.
+\end{solucao}
+
+\textbf{b)} (3 pontos) Com a entrada em vigor do Sistema Brasileiro de Com\'ercio de Emiss\~oes (SBCE), institu\'ido pela Lei n.\textsuperscript{o}~15.042/2024, suponha que dois setores regulados precisem reduzir, juntos, $R = 8$ milh\~oes de toneladas de CO$_2$. Os custos marginais de aba\-ti\-men\-to s\~ao $\text{MAC}_1(r_1) = 2 r_1$ para a siderurgia e $\text{MAC}_2(r_2) = 6 r_2$ para a fabrica\c{c}\~ao de cimento, com $r_i$ em milh\~oes de toneladas reduzidas. O governo distribui 8 milh\~oes de permiss\~oes (as CBEs -- Cotas Brasileiras de Emiss\~oes) e as firmas as negociam livremente. No equil\'ibrio competitivo do mercado de permiss\~oes, o pre\c{c}o $p$ da permiss\~ao (R\$ por tonelada) e a redu\c{c}\~ao de cada setor s\~ao:
+
+\begin{enumerate}[label=\Alph*., leftmargin=3.2em, itemsep=0.15em, topsep=0.2em]
+  \item $p = 12$, com $r_1 = 6$ e $r_2 = 2$
+  \item $p = 12$, com $r_1 = 2$ e $r_2 = 6$
+  \item $p = 8$, com $r_1 = 4$ e $r_2 = 4$
+  \item $p = 16$, com $r_1 = 6$ e $r_2 = 2$
+  \item $p = 24$, com $r_1 = 4$ e $r_2 = 4$
+\end{enumerate}
+\gabaritoitem{A}
+\begin{solucao}
+\textbf{Passo 1 -- Dados e pedido.} Meta agregada $r_1+r_2 = 8$; $\text{MAC}_1=2r_1$, $\text{MAC}_2=6r_2$. Pede-se o pre\c{c}o de equil\'ibrio das permiss\~oes e a aloca\c{c}\~ao de redu\c{c}\~ao entre setores.
+
+\textbf{Passo 2 -- Plano.} O mercado de permiss\~oes minimiza o custo total de abatimento. A condi\c{c}\~ao de m\'inimo custo iguala os custos marginais de abatimento entre as firmas, $\text{MAC}_1 = \text{MAC}_2 = p$, sujeito \`a meta. (A aloca\c{c}\~ao inicial de permiss\~oes n\~ao afeta o resultado de efici\^encia -- s\'o a distribui\c{c}\~ao de renda.)
+
+\textbf{Passo 3 -- Execu\c{c}\~ao.} Igualando os custos marginais:
+\[ 2 r_1 = 6 r_2 \;\Longrightarrow\; r_1 = 3 r_2. \]
+Substituindo na meta $r_1 + r_2 = 8$: $3 r_2 + r_2 = 8 \Rightarrow 4 r_2 = 8 \Rightarrow r_2 = 2$ e $r_1 = 6$. O pre\c{c}o \'e
+\[ p = \text{MAC}_1(6) = 2\cdot 6 = 12 = \text{MAC}_2(2) = 6 \cdot 2 = 12. \]
+Logo $p = \text{R\$}~12$/t, $r_1 = 6$, $r_2 = 2$.
+
+\textbf{Passo 4 -- Distratores.} A op\c{c}\~ao ``$p=8$, $r_1=r_2=4$'' \'e o erro mais comum: divide a meta igualmente entre os setores (comando-e-controle uniforme), ignorando que custos marginais distintos pedem esfor\c{c}o desigual; ali $\text{MAC}_1=8 \neq \text{MAC}_2=24$, logo h\'a ganho de troca n\~ao explorado. A op\c{c}\~ao ``$p=12$, $r_1=2, r_2=6$'' acerta o pre\c{c}o mas \emph{inverte} quem reduz mais: a firma de menor custo marginal (siderurgia, $\text{MAC}_1=2r_1$) deve reduzir \emph{mais}, n\~ao menos.
+
+\textbf{Intui\c{c}\~ao econ\^omica:} um mercado de permiss\~oes \emph{descentraliza} a busca pelo menor custo: quem consegue abater barato vende permiss\~oes e abate mais; quem abate caro compra permiss\~oes e abate menos. O pre\c{c}o \'unico equaliza os custos marginais de abatimento entre todas as fontes -- a mesma condi\c{c}\~ao de efici\^encia que um imposto de Pigou \'unico $t=12$ alcan\c{c}aria.
+\end{solucao}
+
+\textbf{c)} (2 pontos, V ou F) Considere um conflito de uso da terra na Amaz\^onia sob fiscaliza\c{c}\~ao do Ibama: um fazendeiro deseja desmatar uma \'area que presta servi\c{c}os ambientais a uma comunidade ribeirinha vizinha. Suponha que os direitos de propriedade sobre o uso da terra estejam perfeitamente definidos e que os custos de transa\c{c}\~ao da barganha entre as partes sejam nulos. \textbf{Afirma\c{c}\~ao:} pelo Teorema de Coase, a \'area final efetivamente desmatada ser\'a n\~ao apenas eficiente, mas tamb\'em \emph{id\^entica} quer o direito de desmatar perten\c{c}a ao fazendeiro, quer perten\c{c}a \`a comunidade, \emph{mesmo que} os efeitos-renda sobre as partes sejam grandes.
+
+\gabaritoitem{F}
+\begin{solucao}
+\textbf{Passo 1 -- O que se afirma.} A afirma\c{c}\~ao diz que, com direitos definidos e custos de transa\c{c}\~ao nulos, a \emph{aloca\c{c}\~ao} final \'e id\^entica sob qualquer atribui\c{c}\~ao do direito, \emph{mesmo com efeitos-renda grandes}.
+
+\textbf{Passo 2 -- O que o teorema garante.} A vers\~ao rigorosa do Teorema de Coase exige tr\^es hip\'oteses simult\^aneas: (i) direitos bem definidos, (ii) custos de transa\c{c}\~ao nulos e (iii) \emph{efeitos-renda desprez\'iveis} (utilidade quase-linear / aus\^encia de efeito-riqueza relevante). Sob as tr\^es, a barganha atinge uma aloca\c{c}\~ao eficiente \emph{e} a aloca\c{c}\~ao independe de quem det\'em o direito.
+
+\textbf{Passo 3 -- Por que \'e falsa.} Quando os efeitos-renda \emph{n\~ao} s\~ao desprez\'iveis, atribuir o direito ao fazendeiro ou \`a comunidade altera a \emph{riqueza inicial} de cada parte. Como a disposi\c{c}\~ao a pagar (e a aceitar) pela conserva\c{c}\~ao depende da renda, a quantidade eficiente de desmatamento \emph{difere} entre as duas atribui\c{c}\~oes. A barganha continua atingindo \emph{uma} aloca\c{c}\~ao eficiente em cada caso, mas n\~ao a \emph{mesma} -- a parte da \emph{independ\^encia} cai. A afirma\c{c}\~ao, ao garantir identidade ``mesmo com efeitos-renda grandes'', \'e \textbf{falsa}.
+
+\textbf{Passo 4 -- Armadilha.} O erro t\'ipico \'e tratar efici\^encia e independ\^encia como sin\^onimos. Efici\^encia sobrevive a efeitos-renda; \emph{independ\^encia da aloca\c{c}\~ao} em rela\c{c}\~ao \`a atribui\c{c}\~ao de direitos, n\~ao -- esta \'e justamente a hip\'otese (iii).
+
+\textbf{Intui\c{c}\~ao econ\^omica:} dar o direito a quem polui ou a quem sofre redistribui riqueza. Se essa redistribui\c{c}\~ao move a demanda por meio ambiente (bem normal), o ponto eficiente se desloca. Coase entrega efici\^encia de qualquer jeito; entrega \emph{a mesma} aloca\c{c}\~ao s\'o quando a riqueza n\~ao mexe nas valora\c{c}\~oes.
+\end{solucao}
+
+\textbf{d)} (2 pontos, V ou F) O Sistema \'Unico de Sa\'ude (SUS) oferece vacina\c{c}\~ao gratuita contra a gripe. A imuniza\c{c}\~ao de um indiv\'iduo reduz a probabilidade de contagiar terceiros, gerando uma externalidade positiva de consumo. \textbf{Afirma\c{c}\~ao:} se a decis\~ao de vacinar fosse deixada inteiramente \`a escolha privada e descentralizada de cada pessoa, com cada uma pesando apenas o pr\'oprio benef\'icio l\'iquido, a cobertura vacinal resultante tenderia a ficar \emph{abaixo} do n\'ivel socialmente \'otimo, porque cada indiv\'iduo ignora o benef\'icio marginal que sua vacina\c{c}\~ao confere aos demais.
+
+\gabaritoitem{V}
+\begin{solucao}
+\textbf{Passo 1 -- O que se afirma.} Sob escolha privada descentralizada, a externalidade positiva de consumo (imunidade de rebanho) leva a subprovis\~ao: cobertura privada abaixo da socialmente \'otima.
+
+\textbf{Passo 2 -- Estrutura do problema.} Seja $b_p$ o benef\'icio marginal \emph{privado} de se vacinar e $b_e > 0$ o benef\'icio marginal \emph{externo} (redu\c{c}\~ao do risco para terceiros). O benef\'icio marginal social \'e $b_s = b_p + b_e$. O indiv\'iduo vacina-se enquanto $b_p \ge c$ (custo, inclusive n\~ao monet\'ario); o \'otimo social ocorre onde $b_s = c$, isto \'e, onde $b_p + b_e = c$.
+
+\textbf{Passo 3 -- Por que \'e verdadeira.} Como $b_e>0$, a condi\c{c}\~ao privada $b_p=c$ \'e atingida com \emph{menos} gente vacinada do que a condi\c{c}\~ao social $b_p + b_e = c$. O indiv\'iduo marginal que deixaria de se vacinar sob escolha privada ainda geraria benef\'icio social l\'iquido positivo. Logo a cobertura privada fica \emph{abaixo} do \'otimo -- a afirma\c{c}\~ao \'e \textbf{verdadeira}. (\'E o an\'alogo, com sinal trocado, da superprodu\c{c}\~ao de uma externalidade negativa.)
+
+\textbf{Passo 4 -- Armadilha.} Confundir o sinal: alguns alunos associam ``externalidade'' a excesso e marcariam falso. Para \emph{positivas} de consumo, o vi\'es \'e de \emph{subconsumo}, n\~ao de excesso. A corre\c{c}\~ao adequada \'e um \emph{subs\'idio} pigouviano de magnitude $b_e$ -- exatamente o que a oferta gratuita pelo SUS aproxima.
+
+\textbf{Intui\c{c}\~ao econ\^omica:} quando meu ato beneficia o vizinho e eu n\~ao sou pago por isso, fa\c{c}o pouco dele. Vacina protege quem a toma \emph{e} quem est\'a ao redor; deixada ao c\'alculo individual, a sociedade se vacina de menos. O Estado fecha a cunha tornando a vacina gratuita (subs\'idio de 100\% do custo privado), empurrando a cobertura para o n\'ivel social.
+\end{solucao}
+
+\quadroresposta{3}
+
+\textbf{Questão 6.} (15 pontos) Um condom\'inio empresarial em uma capital brasileira decide contratar, em conjunto, um sistema compartilhado de seguran\c{c}a (c\^ameras, ronda e ilumina\c{c}\~ao perimetral). O servi\c{c}o \'e um bem p\'ublico local: n\~ao-rival (vigiar uma empresa a mais n\~ao reduz a prote\c{c}\~ao das demais) e n\~ao-exclu\'ivel dentro do per\'imetro. Considere duas empresas, $A$ e $B$, com prefer\^encias quase-lineares sobre um bem privado $x^i$ (em R\$ mil) e o n\'ivel de seguran\c{c}a $G$: suponha $u^A(x^A, G) = x^A + 3\ln G$ e $u^B(x^B, G) = x^B + 6\ln G$. Cada unidade de $G$ custa uma unidade de bem privado, de modo que $\text{TMT}_{G,x} = 1$. Trate $G$ como cont\'inuo e estritamente positivo.
+
+\textbf{a)} (5 pontos) Escreva a taxa marginal de substitui\c{c}\~ao $\text{TMS}^i_{G,x}$ de cada empresa e use a condi\c{c}\~ao de Samuelson para encontrar o n\'ivel socialmente \'otimo $G^*$ do servi\c{c}o de seguran\c{c}a.
+\resolucaobox{7.6cm}
+\begin{solucao}
+\textbf{Passo 1 -- Dados.} $u^A = x^A + 3\ln G$, $u^B = x^B + 6\ln G$, $\text{TMT}_{G,x}=1$. Pede-se $\text{TMS}^i$ e $G^*$.
+
+\textbf{Passo 2 -- TMS.} Para prefer\^encias quase-lineares, $\text{TMS}^i_{G,x} = \dfrac{\partial u^i/\partial G}{\partial u^i/\partial x^i}$. Como $\partial u^i/\partial x^i = 1$ e $\partial u^A/\partial G = 3/G$, $\partial u^B/\partial G = 6/G$:
+\[ \text{TMS}^A_{G,x} = \frac{3}{G}, \qquad \text{TMS}^B_{G,x} = \frac{6}{G}. \]
+
+\textbf{Passo 3 -- Samuelson.} A condi\c{c}\~ao de provis\~ao eficiente de bem p\'ublico iguala a \emph{soma} das TMS \`a TMT:
+\[ \text{TMS}^A + \text{TMS}^B = \text{TMT} \;\Longrightarrow\; \frac{3}{G} + \frac{6}{G} = 1 \;\Longrightarrow\; \frac{9}{G} = 1 \;\Longrightarrow\; G^* = 9. \]
+
+\textbf{Passo 4 -- Verifica\c{c}\~ao.} $G^*=9>0$, coerente com $\ln G$ definido. Dimens\~ao: TMS \'e adimensional (raz\~ao de utilidades marginais), iguala TMT, tamb\'em adimensional. \textbf{(Passo 5 -- peer-review)} a soma vertical das disposi\c{c}\~oes marginais a pagar -- e n\~ao a horizontal, como em bem privado -- \'e o ponto que o distrator t\'ipico erra; aqui est\'a aplicada corretamente.
+
+\textbf{Intui\c{c}\~ao econ\^omica:} como o servi\c{c}o \'e n\~ao-rival, a \emph{mesma} unidade de $G$ \'e consumida pelas duas empresas ao mesmo tempo. O valor social de uma unidade marginal \'e a soma do que cada uma pagaria por ela; igualar essa soma ao custo marginal ($\text{TMT}=1$) d\'a a regra de Samuelson e o n\'ivel $G^*=9$.
+\rubricalabel
+\begin{itemize}\item Obt\'em corretamente $\text{TMS}^A = 3/G$ e $\text{TMS}^B = 6/G$ (utilidade marginal de $G$ sobre a de $x$): 2 pts (1 pt cada).\item Enuncia/aplica a condi\c{c}\~ao de Samuelson como \emph{soma} das TMS igual \`a TMT (n\~ao a m\'edia, n\~ao individual): 2 pts.\item Resolve e chega a $G^*=9$: 1 pt.\item Erro aritm\'etico isolado com m\'etodo correto (ex.: soma certa mas conta errada de $9/G=1$): penalidade leve de 1 pt no total do sub-item.\item Usar soma horizontal (estilo bem privado) ou igualar TMS individual \`a TMT: m\'aximo 1 pt no sub-item.\item \emph{N\~ao-cumulatividade:} tetos por erro conceitual (ex.: soma horizontal $\to$ m\'ax 1 pt) prevalecem sobre penalidades aritm\'eticas leves -- n\~ao se somam.\end{itemize}
+\end{solucao}
+
+\textbf{b)} (5 pontos) Para descentralizar $G^*$ via um equil\'ibrio de Lindahl, cada empresa paga uma fra\c{c}\~ao personalizada $\tau^i$ do custo de cada unidade de $G$. Determine os pre\c{c}os de Lindahl $(\tau^A, \tau^B)$ e verifique que eles ``somam'' a TMT. Comente em uma frase por que esses pre\c{c}os diferem entre as empresas.
+\resolucaobox{7.6cm}
+\begin{solucao}
+\textbf{Passo 1 -- Plano.} No equil\'ibrio de Lindahl, cada empresa enfrenta seu pre\c{c}o personalizado $\tau^i$ e escolhe, voluntariamente, o \emph{mesmo} $G$ -- que deve coincidir com $G^*$. Isso exige $\tau^i = \text{TMS}^i$ avaliado em $G^*$, com $\sum_i \tau^i = \text{TMT}$.
+
+\textbf{Passo 2 -- C\'alculo.} Avaliando as TMS em $G^*=9$:
+\[ \tau^A = \text{TMS}^A_{G,x}(G^*) = \frac{3}{9} = \frac{1}{3}, \qquad \tau^B = \text{TMS}^B_{G,x}(G^*) = \frac{6}{9} = \frac{2}{3}. \]
+
+\textbf{Passo 3 -- Verifica\c{c}\~ao.} $\tau^A + \tau^B = \tfrac{1}{3} + \tfrac{2}{3} = 1 = \text{TMT}$. As fra\c{c}\~oes somam o custo unit\'ario total, como exige Lindahl. Confer\^encia de otimalidade: a empresa $A$, sob pre\c{c}o $1/3$, maximiza $x^A + 3\ln G$ com $x^A = \omega^A - \tfrac{1}{3}G$, CPO $3/G = 1/3 \Rightarrow G=9$; e $B$, sob $2/3$, CPO $6/G = 2/3 \Rightarrow G=9$. Ambas concordam em $G=9$. \textbf{(Passo 5 -- peer-review)} risco residual: o aluno pode confundir $\tau^i$ com o \emph{valor pago total} $\tau^i G$; o enunciado pede o \emph{pre\c{c}o} (fra\c{c}\~ao por unidade), evitando ambiguidade.
+
+\textbf{Intui\c{c}\~ao econ\^omica:} Lindahl cobra de cada um \emph{na propor\c{c}\~ao do quanto valoriza} o servi\c{c}o. A empresa $B$, que valoriza seguran\c{c}a o dobro de $A$ ($6$ contra $3$), paga o dobro por unidade ($2/3$ contra $1/3$). Com pre\c{c}os assim personalizados, cada uma, agindo egoisticamente, escolhe exatamente o n\'ivel eficiente -- os pre\c{c}os diferem porque as disposi\c{c}\~oes marginais a pagar diferem.
+\rubricalabel
+\begin{itemize}\item Reconhece que $\tau^i = \text{TMS}^i$ avaliado em $G^*=9$: 2 pts.\item Calcula $\tau^A = 1/3$ e $\tau^B = 2/3$: 2 pts (1 pt cada).\item Verifica $\tau^A + \tau^B = 1 = \text{TMT}$ e justifica em uma frase a diferen\c{c}a (B valoriza mais, logo paga mais por unidade): 1 pt.\item Avaliar a TMS no $G$ errado (ex.: $G=6$) mas com m\'etodo correto: penalidade leve de 1 pt.\item Apresentar $\tau^i$ como valor pago total $\tau^i G$ em vez de pre\c{c}o por unidade: m\'aximo 3 pts no sub-item.\item \emph{N\~ao-cumulatividade:} tetos por erro conceitual (ex.: $\tau^i$ como valor total $\to$ m\'ax 3 pts) prevalecem sobre penalidades aritm\'eticas leves -- n\~ao se somam.\end{itemize}
+\end{solucao}
+
+\textbf{c)} (5 pontos) Suponha agora que n\~ao haja mecanismo de Lindahl: cada empresa decide \emph{voluntariamente} quanto contribuir, $g^i \ge 0$, com $G = g^A + g^B$, tomando a contribui\c{c}\~ao da outra como dada (provis\~ao volunt\'aria / problema do carona). Determine o n\'ivel total provido $G^N$, quem contribui e quem ``pega carona'', compare $G^N$ com $G^*$ e explique economicamente o resultado.
+\resolucaobox{7.6cm}
+\begin{solucao}
+\textbf{Passo 1 -- Montagem.} Cada empresa resolve $\max_{g^i \ge 0} \; u^i = (\omega^i - g^i) + \theta^i \ln(g^i + g^{-i})$, com $\theta^A=3$, $\theta^B=6$, tomando $g^{-i}$ como dado (melhor-resposta). A condi\c{c}\~ao de primeira ordem interior \'e $\dfrac{\theta^i}{g^i + g^{-i}} = 1$, ou seja, cada empresa \emph{deseja} um total $G$ igual a $\theta^i$.
+
+\textbf{Passo 2 -- Reac\c{c}\~ao \'otima.} A demanda individual por \emph{total} \'e $G = \theta^A = 3$ para $A$ e $G = \theta^B = 6$ para $B$. Como as duas n\~ao podem valer simultaneamente, vale a maior: a empresa de maior valora\c{c}\~ao ($B$, $\theta^B=6$) provê at\'e seu \'otimo individual, e a de menor ($A$) encontra o total j\'a acima do que desejaria e contribui zero.
+
+\textbf{Passo 3 -- Equil\'ibrio.} Verifica-se: se $g^B = 6$ e $g^A = 0$, ent\~ao $G=6$. Para $A$: $\theta^A/G = 3/6 = 1/2 < 1$, logo a utilidade marginal de contribuir ($3/G$) \'e menor que o custo ($1$) -- $A$ n\~ao contribui, \'otimo $g^A=0$ (solu\c{c}\~ao de canto). Para $B$: $\theta^B/G = 6/6 = 1$, CPO satisfeita. Assim
+\[ g^A = 0, \quad g^B = 6, \quad G^N = 6. \]
+Comparando, $G^N = 6 < G^* = 9$; a raz\~ao \'e $G^N/G^* = 6/9 = 2/3$. Subprovis\~ao.
+
+\textbf{Passo 4 -- Verifica\c{c}\~ao e peer-review.} Casos-limite: a empresa de menor valora\c{c}\~ao \'e quem pega carona, consistente com a literatura de provis\~ao volunt\'aria assim\'etrica (Bergstrom, Blume \& Varian, 1986). \textbf{(Passo 5)} risco residual: a forma logar\'itmica garante CPO interior bem definida e canto limpo em $g^A=0$ -- com $\sqrt{G}$ surgiriam coincid\^encias num\'ericas esp\'urias entre m\'edia das valora\c{c}\~oes e Samuelson; o curso fixa $\ln G$ justamente para evit\'a-las. Confere.
+
+\textbf{Intui\c{c}\~ao econ\^omica:} sob contribui\c{c}\~ao volunt\'aria, cada empresa s\'o conta o pr\'oprio benef\'icio marginal -- ignora o que sua contribui\c{c}\~ao vale para a outra. A de maior valora\c{c}\~ao acaba ``segurando'' o bem p\'ublico sozinha, e a de menor pega carona ($g^A=0$). O total $G^N=6$ fica abaixo do eficiente $G^*=9$ porque a soma das TMS no n\'ivel provido, $9/6 = 1{,}5 > 1$, ainda excede o custo: a sociedade valoriza mais seguran\c{c}a do que o mercado descentralizado entrega. \'E exatamente a falha que Lindahl, ou um rateio compuls\'orio do condom\'inio, corrige.
+\rubricalabel
+\begin{itemize}\item Monta o problema de provis\~ao volunt\'aria com $G = g^A + g^B$ e deriva a CPO $\theta^i/G = 1$ (cada empresa deseja $G = \theta^i$): 2 pts.\item Identifica que apenas $B$ contribui ($g^B = 6$) e $A$ pega carona ($g^A = 0$), justificando o canto via $\theta^A/G < 1$: 1{,}5 pt.\item Conclui $G^N = 6$, compara com $G^* = 9$ e aponta subprovis\~ao (raz\~ao $2/3$): 1 pt.\item Explica\c{c}\~ao econ\^omica do free-rider (cada um ignora o benef\'icio externo da pr\'opria contribui\c{c}\~ao): 0{,}5 pt.\item Erro aritm\'etico isolado com m\'etodo de provis\~ao volunt\'aria correto: penalidade leve de 1 pt.\item Tratar como solu\c{c}\~ao interior com ambas contribuindo positivamente (ignorando o canto) e obter $G^N \neq 6$: m\'aximo 2{,}5 pts no sub-item.\item \emph{N\~ao-cumulatividade:} tetos por erro conceitual (ex.: ignorar o canto $\to$ m\'ax 2{,}5 pts) prevalecem sobre penalidades aritm\'eticas leves -- n\~ao se somam.\end{itemize}
+\end{solucao}
+
+
+\clearpage
+\section*{Bloco 4 --- Assimetria Informacional e Sinalização \hfill \normalsize (25 pontos)}
+
+\textbf{Questão 7.} (10 pontos) \textbf{Itens objetivos.} Nos itens \textbf{a)} e \textbf{b)}, assinale a \emph{única} alternativa correta (3 pontos cada; não há penalização por erro). Nos itens \textbf{c)} e \textbf{d)}, responda \textbf{Verdadeiro ou Falso} (2 pontos cada; vale a regra de anulação descrita na capa). Registre suas respostas no quadro-resposta ao final do bloco.
+
+\textbf{a)} (3 pontos) A Webmotors intermedeia a venda de carros usados em que cada vendedor conhece a qualidade $q$ do seu ve\'iculo, mas o comprador n\~ao. Suponha que a qualidade seja distribu\'ida uniformemente, $q \sim U[0,40]$ (em milhares de reais), que a reserva de cada vendedor seja exatamente $q$ (ele s\'o vende por um pre\c{c}o $\ge q$) e que um comprador neutro ao risco valore um carro de qualidade $q$ em $k\,q$, com $k>0$. O comprador posta um pre\c{c}o \'unico $p$ e compra de quem aceitar. Para qual condi\c{c}\~ao sobre $k$ o mercado \emph{n\~ao} colapsa, isto \'e, existe pre\c{c}o positivo $p>0$ com transa\c{c}\~oes em equil\'ibrio?
+
+\begin{enumerate}[label=\Alph*., leftmargin=3.2em, itemsep=0.15em, topsep=0.2em]
+  \item $k \ge 2$
+  \item $k \ge 1$
+  \item $k \ge \tfrac{1}{2}$
+  \item $k \ge 4$
+  \item $k > 0$ (qualquer pr\^emio positivo basta)
+\end{enumerate}
+\gabaritoitem{A}
+\begin{solucao}
+\textbf{Passo 1 (montagem).} Ao pre\c{c}o $p \in [0,40]$, vende apenas quem tem reserva $q \le p$, ou seja, os carros com $q \in [0,p]$. Pela uniformidade, a qualidade m\'edia \emph{condicional} aos que aceitam vender \'e
+\[
+E[q \mid q \le p] = \frac{0+p}{2} = \frac{p}{2}.
+\]
+\textbf{Passo 2 (disposi\c{c}\~ao a pagar do comprador).} O comprador, neutro ao risco e racional, antecipa a sele\c{c}\~ao adversa: o conjunto que aparece para vender \'e pior do que a popula\c{c}\~ao total. Seu valor esperado \'e $k\,E[q\mid q\le p] = k\,\dfrac{p}{2}$. Ele s\'o aceita pagar $p$ se
+\[
+k\,\frac{p}{2} \;\ge\; p \quad\Longleftrightarrow\quad k \ge 2 \quad(\text{para } p>0).
+\]
+\textbf{Passo 3 (conclus\~ao).} Se $k<2$, a desigualdade falha para todo $p>0$, e o \'unico equil\'ibrio \'e $p^*=0$ (colapso por \emph{unraveling}: a cada pre\c{c}o positivo, a m\'edia dos que vendem fica baixa demais). Se $k \ge 2$, h\'a pre\c{c}o positivo sustent\'avel (com $k>2$, $p$ pode subir at\'e $40$ e todos transacionam). Logo, a condi\c{c}\~ao \'e $k \ge 2$.
+
+\textbf{Por que os distratores mais tentadores falham.} O distrator $k \ge 1$ usa a m\'edia \emph{incondicional} $E[q]=20$ e compara $k\cdot 20$ com a reserva m\'edia $20$ \textemdash{} \'e o erro cl\'assico de \emph{esquecer a sele\c{c}\~ao adversa}: o comprador n\~ao enfrenta a popula\c{c}\~ao toda, s\'o os que escolhem vender. O distrator $k \ge \tfrac{1}{2}$ inverte o fator de truncamento (usa $2p$ em vez de $p/2$). O distrator $k \ge 4$ erra a m\'edia da uniforme em $[0,p]$, tomando-a como $p/4$ (m\'edia de $[0,p/2]$) em vez de $p/2$. O fator de $2$ \'e exatamente o pre\c{c}o da informa\c{c}\~ao assim\'etrica.
+
+\textbf{Intui\c{c}\~ao econ\^omica:} sob informa\c{c}\~ao assim\'etrica, qualquer pre\c{c}o positivo seleciona para baixo a qualidade ofertada; o comprador, sabendo disso, desconta. S\'o quando a valora\c{c}\~ao do comprador supera em pelo menos um fator $2$ a qualidade do vendedor o pr\^emio de qualidade vence o vi\'es de sele\c{c}\~ao e o mercado sobrevive. Abaixo disso, os bons carros somem e resta o mercado de lim\~oes.
+\end{solucao}
+
+\textbf{b)} (3 pontos) No mercado de trabalho para egressos de MBA, suponha que produtividade e sal\'ario de equil\'ibrio coincidam com o tipo do trabalhador, $\theta_L = 3$ e $\theta_H = 6$ (em unidades monet\'arias), e que o custo de obter $e$ anos de educa\c{c}\~ao formal seja $c(e,\theta) = e/\theta$ (mais barato para o tipo alto \textemdash{} \emph{single-crossing}). As empresas n\~ao observam $\theta$ diretamente, mas observam $e$ no perfil do LinkedIn do candidato. No equil\'ibrio separador de Spence de \emph{menor custo}, o tipo $L$ escolhe $e=0$ e recebe $\theta_L$, e o tipo $H$ escolhe um n\'ivel $\underline{e}$ e recebe $\theta_H$. Qual \'e o menor $\underline{e}$ que sustenta a separa\c{c}\~ao?
+
+\begin{enumerate}[label=\Alph*., leftmargin=3.2em, itemsep=0.15em, topsep=0.2em]
+  \item $\underline{e} = 12$
+  \item $\underline{e} = 3$
+  \item $\underline{e} = 18$
+  \item $\underline{e} = 6$
+  \item $\underline{e} = 9$
+\end{enumerate}
+\gabaritoitem{E}
+\begin{solucao}
+\textbf{Passo 1 (qual restri\c{c}\~ao morde).} Num separador, o tipo $L$ n\~ao pode achar vantajoso imitar o tipo $H$. A educa\c{c}\~ao do tipo alto deve ser cara o suficiente para o tipo baixo n\~ao copi\'a-la (IC do tipo $L$), mas n\~ao t\~ao cara que o pr\'oprio tipo alto prefira desistir e se passar por baixo (IC do tipo $H$). O \emph{menor} $\underline{e}$ \'e fixado pela IC do tipo $L$.
+
+\textbf{Passo 2 (IC do tipo $L$).} O tipo $L$ prefere $(e=0,\,\theta_L)$ a $(\underline{e},\,\theta_H)$ sse
+\[
+\theta_L - 0 \;\ge\; \theta_H - \frac{\underline{e}}{\theta_L}
+\quad\Longleftrightarrow\quad
+\underline{e} \;\ge\; \theta_L(\theta_H - \theta_L) = 3\,(6-3) = 9.
+\]
+\textbf{Passo 3 (cota superior, s\'o para confirmar viabilidade).} A IC do tipo $H$ exige $\theta_H - \underline{e}/\theta_H \ge \theta_L$, ou seja $\underline{e} \le \theta_H(\theta_H-\theta_L) = 6\cdot 3 = 18$. O intervalo separador \'e $\underline{e}\in[9,18]$, e o de \emph{menor custo} \'e o piso: $\underline{e}=9$.
+
+\textbf{Por que os distratores mais tentadores falham.} O distrator $\underline{e}=18$ usa a IC do tipo \emph{alto} (a cota superior) em vez da IC do tipo baixo \textemdash{} confunde qual restri\c{c}\~ao define o \emph{m\'inimo}. O distrator $\underline{e}=3$ ($=\theta_H-\theta_L$) esquece de multiplicar pelo $\theta_L$ do custo, isto \'e, trata o custo como $e$ em vez de $e/\theta$.
+
+\textbf{Intui\c{c}\~ao econ\^omica:} a educa\c{c}\~ao aqui n\~ao agrega produtividade \textemdash{} \'e puro sinal. Ela separa os tipos porque \'e \emph{diferencialmente custosa}: o tipo alto consegue acumular o diploma com menos sacrif\'icio. O menor sinal cr\'ivel \'e exatamente aquele que torna o tipo baixo indiferente entre fingir e ser honesto; qualquer coisa menos j\'a tentaria o tipo baixo a imitar, e o sinal perde valor informacional.
+\end{solucao}
+
+\textbf{c)} (2 pontos, V ou F) A Porto Seguro vende seguro de autom\'ovel a motoristas de alto e de baixo risco, sem observar o tipo de cada um. Considere o equil\'ibrio separador de Rothschild-Stiglitz (com \emph{single-crossing}) em que cada ap\'olice \'e precificada de forma atuarialmente justa. Afirma-se: \emph{nesse equil\'ibrio, o motorista de baixo risco recebe cobertura parcial (com franquia, inferior \`a integral) e o motorista de alto risco recebe cobertura integral}.
+
+\gabaritoitem{V}
+\begin{solucao}
+\textbf{Passo 1 (l\'ogica do menu de autossele\c{c}\~ao).} Sob informa\c{c}\~ao assim\'etrica, a seguradora oferece um \emph{menu} de ap\'olices e deixa o motorista escolher (\emph{screening}). Para que o menu separe os tipos, cada motorista deve preferir a ap\'olice desenhada para ele (restri\c{c}\~oes de compatibilidade de incentivos).
+
+\textbf{Passo 2 (quem distorce, quem n\~ao).} O tipo de \emph{alto} risco recebe cobertura \emph{integral} ao seu pr\'emio justo \textemdash{} sua aloca\c{c}\~ao n\~ao \'e distorcida (\emph{no distortion at the top}, aqui o ``topo'' \'e o risco alto, que \'e quem a seguradora mais teme atrair). O tipo de \emph{baixo} risco \'e racionado para baixo: recebe apenas cobertura \emph{parcial} (com franquia). \'E justamente essa franquia que torna a ap\'olice barata do tipo bom \emph{pouco atraente} para o tipo ruim, sustentando a separa\c{c}\~ao. A restri\c{c}\~ao de incentivo que morde \'e a do alto risco (ele \'e quem teria incentivo a fingir ser bom para pagar menos).
+
+\textbf{Passo 3 (veredito).} A afirma\c{c}\~ao descreve corretamente o separador R-S: baixo risco com cobertura parcial, alto risco com cobertura integral. \'E \textbf{verdadeira}.
+
+\textbf{Intui\c{c}\~ao econ\^omica:} o bom motorista paga um pre\c{c}o pela presen\c{c}a do mau motorista no mercado \textemdash{} aceita carregar parte do pr\'oprio risco (franquia) s\'o para se distinguir. A franquia funciona como um ``sinal'' custoso: o motorista de baixo risco a tolera porque raramente bate o carro; o de alto risco n\~ao a tolera, e por isso n\~ao imita. O custo do equil\'ibrio recai sobre o tipo bom, que fica sub-segurado.
+\end{solucao}
+
+\textbf{d)} (2 pontos, V ou F) No Brasil, o ENARE coordena a aloca\c{c}\~ao de m\'edicos a programas de resid\^encia usando um algoritmo de aceita\c{c}\~ao diferida (Gale-Shapley), inspirado no NRMP americano. Suponha uma rodada em que os \emph{hospitais} sejam o lado proponente (fazem ofertas; m\'edicos aceitam ou recusam provisoriamente). Afirma-se: \emph{com os hospitais propondo, o algoritmo entrega o matching est\'avel que \'e o melhor poss\'ivel para os m\'edicos \textemdash{} cada m\'edico fica com o melhor parceiro que ele tem em algum matching est\'avel}.
+
+\gabaritoitem{F}
+\begin{solucao}
+\textbf{Passo 1 (teorema da otimalidade do proponente).} No algoritmo de aceita\c{c}\~ao diferida, o resultado \'e est\'avel e \'e \'otimo \emph{para o lado que prop\~oe}: cada agente do lado proponente obt\'em o melhor parceiro que consegue em \emph{qualquer} matching est\'avel. Simultaneamente, esse mesmo resultado \'e o \emph{pior} (entre os est\'aveis) para o lado que recebe as propostas.
+
+\textbf{Passo 2 (aplica\c{c}\~ao).} Se os \emph{hospitais} prop\~oem, o matching gerado \'e \emph{\'otimo para os hospitais} e \emph{p\'essimo para os m\'edicos} (cada m\'edico fica com o pior parceiro que aparece em algum matching est\'avel). A afirma\c{c}\~ao troca os pap\'eis: ela descreve a otimalidade do lado dos m\'edicos, que s\'o ocorreria se os \emph{m\'edicos} fossem o lado proponente. Logo \'e \textbf{falsa}.
+
+\textbf{Passo 3 (porqu\^e do desenho real).} N\~ao por acaso o NRMP foi redesenhado para ter os \emph{candidatos} (residentes) como lado proponente \textemdash{} algoritmo proposto por Roth e Peranson, adotado pelo NRMP em 1997 e em uso desde 1998 \textemdash{}, justamente para favorecer o lado mais fraco do mercado e reduzir incentivos a manipula\c{c}\~ao por parte deles. (O trabalho seminal de Roth, 1984, havia mostrado que o algoritmo original do NRMP era, de fato, essencialmente hospital-proposing e est\'avel; o redesenho posterior \'e que inverteu o lado proponente.)
+
+\textbf{Intui\c{c}\~ao econ\^omica:} quem prop\~oe controla a din\^amica \textemdash{} percorre sua lista de prefer\^encias de cima para baixo e s\'o desce quando \'e rejeitado, garantindo o melhor parceiro alcan\c{c}\'avel. Quem recebe apenas acumula ofertas e fica preso \`a melhor que chegou, que pode ser fraca. Por isso a escolha do lado proponente n\~ao \'e neutra: \'e uma decis\~ao distributiva sobre qual lado do mercado a institui\c{c}\~ao quer favorecer.
+\end{solucao}
+
+\quadroresposta{4}
+
+\textbf{Questão 8.} (15 pontos) A Ag\^encia Nacional de Sa\'ude Suplementar (ANS) regula o uso de \emph{coparticipa\c{c}\~ao} (copagamento) em planos de sa\'ude no Brasil: o benefici\'ario paga uma fra\c{c}\~ao do custo quando usa o plano. Considere um benefici\'ario com utilidade $u(w)=\sqrt{w}$ sobre a riqueza l\'iquida $w$ e riqueza inicial $W=100$. Um epis\'odio de doen\c{c}a custa $L=84$. O benefici\'ario pode exercer \emph{esfor\c{c}o de preven\c{c}\~ao} (h\'abitos saud\'aveis), n\~ao observ\'avel pela operadora, ao custo de desutilidade $c=0{,}5$, o que reduz a probabilidade de doen\c{c}a de $\pi_H = \tfrac{1}{2}$ (sem esfor\c{c}o) para $\pi_L = \tfrac{1}{4}$ (com esfor\c{c}o). A operadora fixa a ap\'olice (pr\^emio e copagamento) \emph{antes} de o benefici\'ario escolher esfor\c{c}o; com copagamento $k$, a riqueza l\'iquida do benefici\'ario \'e $W$ no estado sem doen\c{c}a e $W-k$ no estado com doen\c{c}a (o pr\^emio est\'a normalizado, pois \'e o mesmo qualquer que seja o esfor\c{c}o e n\~ao afeta a escolha de esfor\c{c}o). Suponha que esses par\^ametros sejam meramente ilustrativos.
+
+\textbf{a)} (5 pontos) Mostre que, sob cobertura integral (copagamento $k=0$), o benefici\'ario escolhe \emph{n\~ao} se prevenir. Calcule a utilidade esperada com e sem esfor\c{c}o e explique por que surge o risco moral.
+\resolucaobox{7.6cm}
+\begin{solucao}
+\textbf{Passo 1 (riquezas por estado com $k=0$).} Com cobertura integral, a riqueza l\'iquida \'e $W=100$ em \emph{ambos} os estados (a operadora paga todo o $L$). Logo $u=\sqrt{100}=10$ qualquer que seja o estado.
+
+\textbf{Passo 2 (utilidade esperada com esfor\c{c}o).}
+\[
+EU_{\text{esf}} = (1-\pi_L)\sqrt{100} + \pi_L\sqrt{100} - c = 10 - 0{,}5 = 9{,}5.
+\]
+\textbf{Passo 3 (utilidade esperada sem esfor\c{c}o).}
+\[
+EU_{\text{n\~ao}} = (1-\pi_H)\sqrt{100} + \pi_H\sqrt{100} = 10.
+\]
+\textbf{Passo 4 (compara\c{c}\~ao).} Como $EU_{\text{n\~ao}} = 10 > 9{,}5 = EU_{\text{esf}}$, o benefici\'ario \emph{n\~ao se previne}. A raz\~ao \'e que, com a riqueza igualada entre estados, a probabilidade de doen\c{c}a deixou de afetar o bem-estar do benefici\'ario \textemdash{} ele s\'o enxerga o custo $c$ do esfor\c{c}o, n\~ao o benef\'icio. Esse benef\'icio (menor sinistralidade) foi inteiramente transferido \`a operadora.
+
+\textbf{Intui\c{c}\~ao econ\^omica:} cobertura integral d\'a seguro perfeito, mas mata o incentivo. Quando o benefici\'ario n\~ao sente no pr\'oprio bolso a consequ\^encia de ficar doente, ele internaliza s\'o o custo de se cuidar e descarrega a probabilidade na operadora. \'E o risco moral cl\'assico: a a\c{c}\~ao escondida (preven\c{c}\~ao) responde aos incentivos, e seguro pleno os zera.
+\rubricalabel
+\begin{itemize}
+\item Calcula $EU_{\text{esf}} = 10 - 0{,}5 = 9{,}5$ corretamente (riqueza igual nos dois estados e subtra\c{c}\~ao de $c$): 2 pts.
+\item Calcula $EU_{\text{n\~ao}} = 10$ corretamente: 1 pt.
+\item Conclui $EU_{\text{n\~ao}} > EU_{\text{esf}} \Rightarrow$ n\~ao se previne: 1 pt.
+\item Explica o mecanismo do risco moral (riqueza igualada anula o benef\'icio do esfor\c{c}o; benef\'icio transferido \`a operadora): 1 pt.
+\item Erro aritm\'etico isolado com m\'etodo correto (montou as duas EU e comparou, errou s\'o uma conta): penalidade leve de $-0{,}5$ pt, n\~ao zera o item.
+\end{itemize}
+\end{solucao}
+
+\textbf{b)} (5 pontos) Determine o copagamento m\'inimo $k^*$ que induz o benefici\'ario a se prevenir. Calcule as utilidades esperadas em fun\c{c}\~ao de $k$, imponha a condi\c{c}\~ao de incentivo e verifique que em $k^*$ ela \'e exatamente binding.
+\resolucaobox{7.6cm}
+\begin{solucao}
+\textbf{Passo 1 (utilidades esperadas com copagamento $k$).} Riqueza $100$ sem doen\c{c}a, $100-k$ com doen\c{c}a.
+\begin{align*}
+EU_{\text{esf}}(k) &= \tfrac{3}{4}\sqrt{100} + \tfrac{1}{4}\sqrt{100-k} - 0{,}5,\\
+EU_{\text{n\~ao}}(k) &= \tfrac{1}{2}\sqrt{100} + \tfrac{1}{2}\sqrt{100-k}.
+\end{align*}
+\textbf{Passo 2 (condi\c{c}\~ao de incentivo $EU_{\text{esf}} \ge EU_{\text{n\~ao}}$).} Subtraindo,
+\[
+EU_{\text{esf}}(k) - EU_{\text{n\~ao}}(k) = \Big(\tfrac{3}{4}-\tfrac{1}{2}\Big)\cdot 10 + \Big(\tfrac{1}{4}-\tfrac{1}{2}\Big)\sqrt{100-k} - 0{,}5 = \tfrac{1}{4}\big(10 - \sqrt{100-k}\big) - 0{,}5.
+\]
+Induzir esfor\c{c}o exige isso $\ge 0$:
+\[
+\tfrac{1}{4}\big(10 - \sqrt{100-k}\big) \ge 0{,}5 \;\Longleftrightarrow\; 10 - \sqrt{100-k} \ge 2 \;\Longleftrightarrow\; \sqrt{100-k} \le 8 \;\Longleftrightarrow\; k \ge 36.
+\]
+\textbf{Passo 3 (copagamento m\'inimo e verifica\c{c}\~ao do binding).} Logo $k^* = 36$. Em $k^*=36$, riqueza com doen\c{c}a $=64$, $\sqrt{64}=8$:
+\[
+EU_{\text{esf}} = \tfrac{3}{4}(10)+\tfrac{1}{4}(8) - 0{,}5 = 7{,}5 + 2 - 0{,}5 = 9, \quad EU_{\text{n\~ao}} = \tfrac{1}{2}(10)+\tfrac{1}{2}(8) = 9.
+\]
+As duas coincidem: a restri\c{c}\~ao de incentivo \'e exatamente \emph{binding} em $k^*=36$, e para $k>36$ o esfor\c{c}o \'e estritamente prefer\'ido.
+
+\textbf{Intui\c{c}\~ao econ\^omica:} o copagamento recria, no bolso do benefici\'ario, a diferen\c{c}a de bem-estar entre estar e n\~ao estar doente. Quanto maior o \emph{spread} $10-\sqrt{100-k}$ entre os estados, mais vale a pena reduzir a chance do estado ruim. O $k^*$ \'e o ponto exato em que essa diferen\c{c}a paga o custo $c$ do esfor\c{c}o. Copagamento \'e, literalmente, o pre\c{c}o do incentivo.
+\rubricalabel
+\begin{itemize}
+\item Escreve $EU_{\text{esf}}(k)$ e $EU_{\text{n\~ao}}(k)$ corretamente com $\sqrt{100-k}$: 1{,}5 pt.
+\item Deriva a diferen\c{c}a $\tfrac{1}{4}(10-\sqrt{100-k}) - 0{,}5$ e imp\~oe $\ge 0$: 1{,}5 pt.
+\item Resolve para $k^* = 36$: 1 pt.
+\item Verifica que em $k^*=36$ a condi\c{c}\~ao \'e binding ($EU_{\text{esf}}=EU_{\text{n\~ao}}=9$): 1 pt.
+\item Erro aritm\'etico isolado com m\'etodo correto (montou as EU, isolou $\sqrt{100-k}$ certo, errou s\'o a conta final): penalidade leve de $-0{,}5$ pt, n\~ao zera o item.
+\end{itemize}
+\end{solucao}
+
+\textbf{c)} (5 pontos) O esfor\c{c}o reduz o custo esperado do sinistro de $\pi_H L$ para $\pi_L L$. Compare o \emph{first-best} (esfor\c{c}o com cobertura integral, invi\'avel sob a\c{c}\~ao escondida) com o \emph{second-best} encontrado no item anterior ($k^*=36$ com esfor\c{c}o), em termos de recursos reais economizados \emph{versus} pr\^emio de risco imposto ao benefici\'ario avesso a risco. Calcule o equivalente-certeza do benefici\'ario sob $k^*=36$ e discuta sob que condi\c{c}\~ao a operadora preferiria abrir m\~ao do esfor\c{c}o e oferecer cobertura integral.
+\resolucaobox{7.6cm}
+\begin{solucao}
+\textbf{Passo 1 (ganho de recursos reais do esfor\c{c}o).} O custo esperado do sinistro cai de $\pi_H L = \tfrac{1}{2}\cdot 84 = 42$ para $\pi_L L = \tfrac{1}{4}\cdot 84 = 21$. O esfor\c{c}o economiza $42 - 21 = 21$ em sinistralidade esperada. Esse esfor\c{c}o tem, por\'em, um custo real (a desutilidade $c=0{,}5$ que o benefici\'ario suporta), de modo que o ganho real \emph{l\'iquido} de induzir esfor\c{c}o \'e $21 - 0{,}5 = 20{,}5$.
+
+\textbf{Passo 2 (pr\^emio de risco imposto pelo second-best).} Sob $k^*=36$ com esfor\c{c}o, $EU = 9$, logo o equivalente-certeza \'e $w_{CE} = 9^2 = 81$. Sob cobertura integral (sem esfor\c{c}o), o benefici\'ario tem $\sqrt{100}=10$ certo, ou seja $w_{CE}=100$. A imposi\c{c}\~ao do copagamento custa ao benefici\'ario, em equivalente-certeza, $\Delta_{CE}=100 - 81 = 19$ \textemdash{} esse \'e o pre\c{c}o, em utilidade traduzida em riqueza, de exp\^o-lo a risco para gerar incentivo.
+
+\textbf{Passo 3 (por que o first-best \'e invi\'avel).} O first-best seria esfor\c{c}o \emph{com} seguro pleno (riqueza $100$ certa e $\pi_L$). Mas, pelo item (a), sob $k=0$ o benefici\'ario nunca se esfor\c{c}a: a\c{c}\~ao escondida + cobertura integral s\~ao incompat\'iveis. Seguro pleno e incentivo n\~ao convivem; da\'i o nome \emph{second-best}.
+
+\textbf{Passo 4 (trade-off e crit\'erio).} Para comparar as duas grandezas \textemdash{} sinistralidade poupada (em reais da operadora) e perda de equivalente-certeza (em reais do benefici\'ario) \textemdash{} na mesma escala, suponha excedente transfer\'ivel: operadora competitiva que repassa ao segurado, via pr\^emio, o ganho de sinistralidade. Sob essa hip\'otese, o crit\'erio de bem-estar \'e induzir esfor\c{c}o sse o ganho real l\'iquido supera o pr\^emio de risco imposto:
+\[
+(\pi_H-\pi_L)L - c \;\ge\; \Delta_{CE}.
+\]
+Aqui $(\pi_H-\pi_L)L - c = 21 - 0{,}5 = 20{,}5$ e $\Delta_{CE}=19$, ent\~ao $20{,}5 \ge 19$: o second-best com esfor\c{c}o domina, por\'em por margem estreita. Se, no entanto, o esfor\c{c}o reduzisse pouco a probabilidade (ganho real pequeno) ou o benefici\'ario fosse muito avesso a risco (pr\^emio de risco $\Delta_{CE}$ alto), a desigualdade se inverteria, e a operadora preferiria \textbf{cobertura integral sem esfor\c{c}o}: aceita a sinistralidade maior em troca de poupar o segurado do risco.
+
+\textbf{Intui\c{c}\~ao econ\^omica:} h\'a um conflito entre \emph{seguro} (segurar bem o avesso a risco pede igualar a riqueza entre estados) e \emph{incentivo} (incentivar pede separar a riqueza entre estados). O contrato \'otimo n\~ao maximiza nenhum dos dois isoladamente: equilibra o valor real l\'iquido do esfor\c{c}o contra o custo de impor risco a quem n\~ao gosta dele. Quando o esfor\c{c}o muda pouco a realidade ou o segurado \'e muito avesso, deixa-se o risco moral acontecer de prop\'osito \textemdash{} \'e mais barato segurar do que disciplinar.
+\rubricalabel
+\begin{itemize}
+\item Calcula a economia de recursos reais $\pi_H L - \pi_L L = 42 - 21 = 21$ (cr\'edito integral mesmo se n\~ao abater $c$; ponto extra de rigor por reconhecer o l\'iquido $21 - 0{,}5 = 20{,}5$): 1 pt.
+\item Calcula o equivalente-certeza sob $k^*=36$: $w_{CE} = 9^2 = 81$ (e compara com $100$ da cobertura integral, logo $\Delta_{CE}=19$): 1{,}5 pt.
+\item Identifica que o first-best (esfor\c{c}o + seguro pleno) \'e invi\'avel sob a\c{c}\~ao escondida: 1 pt.
+\item Formula o trade-off / crit\'erio com a hip\'otese de excedente transfer\'ivel: induzir esfor\c{c}o sse $(\pi_H-\pi_L)L - c \ge \Delta_{CE}$ (ou condi\c{c}\~ao equivalente que inclua o custo $c$), e discute quando a cobertura integral sem esfor\c{c}o domina: 1{,}5 pt.
+\item Erro aritm\'etico isolado com m\'etodo correto (estrutura do trade-off certa, conta de CE ou de economia errada): penalidade leve de $-0{,}5$ pt, n\~ao zera o item.
+\end{itemize}
+\end{solucao}

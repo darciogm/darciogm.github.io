@@ -1,0 +1,207 @@
+% ============================================================
+% Caderno de Consulta — Simulado 3 · Microeconomia I (MPE)
+% 3 páginas. Regra editorial: ferramenta canônica explícita;
+% resultado que é gabarito de item vira "pergunta-guia" (▶).
+% ============================================================
+\documentclass[10pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[brazil]{babel}
+\usepackage{amsmath,amssymb,amsfonts}
+\usepackage[a4paper,top=1.6cm,bottom=1.7cm,left=1.4cm,right=1.4cm]{geometry}
+\usepackage{graphicx}
+\usepackage{fancyhdr}
+\usepackage{enumitem}
+\usepackage{xcolor}
+\usepackage{multicol}
+
+\definecolor{insperred}{HTML}{C8102E}
+\definecolor{cinzasol}{gray}{0.94}
+
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0.16em}
+\setlength{\columnsep}{0.8cm}
+\setlength{\columnseprule}{0.3pt}
+\linespread{1.01}
+
+\pagestyle{fancy}
+\fancyhf{}
+\lhead{\small Microeconomia I --- MPE}
+\chead{\small Caderno de Consulta --- Simulado 3}
+\rhead{\small Página \thepage\ de 3}
+\renewcommand{\headrulewidth}{0.5pt}
+
+% título de bloco
+\newcommand{\bloco}[1]{%
+  \par\vspace{0.42em}%
+  \noindent\colorbox{insperred}{\parbox{\dimexpr\linewidth-2\fboxsep}{\color{white}\textbf{#1}}}%
+  \par\vspace{0.24em}}
+
+% subtítulo (linha própria: âncora de varredura sob pressão de prova)
+\newcommand{\sub}[1]{\par\vspace{0.32em}\noindent\textbf{\textcolor{insperred}{#1}}\par\nopagebreak\vspace{0.04em}}
+
+% pergunta-guia: a resposta é parte do que a prova avalia
+\newcommand{\guia}[1]{\par\vspace{0.13em}\noindent{\small\textcolor{insperred}{$\blacktriangleright$}~\textit{#1}}\par\vspace{0.13em}}
+
+\begin{document}
+
+% ---------- cabeçalho da página 1 ----------
+\begin{center}
+\includegraphics[width=1.9cm]{logo-insper.png}\\[0.15em]
+{\large\textbf{Caderno de Consulta --- Simulado 3 da Avaliação Final}}\\[0.1em]
+{\small Microeconomia I · Mestrado Profissional em Economia · Turma 2026/32}
+\end{center}
+\vspace{-0.3em}
+{\small\textbf{Como usar.} Este caderno organiza a \emph{ferramenta}, não o raciocínio. Onde houver \textcolor{insperred}{$\blacktriangleright$}~\textit{pergunta-guia}, a resposta é o tipo de coisa que a prova avalia: saiba reconstruí-la \emph{antes} da sala. Na AF você leva sua própria folha A4 --- use este caderno como modelo do que destilar nela.}
+\vspace{0.2em}
+
+\begin{multicols}{2}
+\small
+
+\bloco{Bloco 1 --- Teoria do Consumidor (Aulas 1--3)}
+
+\sub{Axiomas e representação}
+\emph{Completude}, \emph{transitividade} (juntas: racionalidade), \emph{monotonicidade}, \emph{convexidade} (gosto por misturas), \emph{continuidade} ($\{y:y\succeq x\}$ e $\{y:x\succeq y\}$ fechados). Debreu: $\succeq$ completa, transitiva e \emph{contínua} $\Rightarrow$ existe $u$ contínua que a representa. Utilidade é \emph{ordinal}: transformação estritamente crescente preserva $\succeq$.
+
+\sub{UMP, formas funcionais e tangência}
+$\max u$ s.a.\ $p\cdot x=m$: interior dá tangência $\text{TMS}_{12}=p_1/p_2$ \emph{mais} a restrição $\rightarrow$ marshalliana $x^M(p,m)$ e indireta $v(p,m)=u(x^M)$. \emph{Cobb-Douglas} $u=x_1^{\alpha}x_2^{1-\alpha}$: $x_1^M=\dfrac{\alpha m}{p_1}$ (participações $s_i$ fixas no gasto). \emph{Quase-linear} $u=\varphi(x_1)+x_2$ (interior): $\varphi'(x_1)=p_1/p_2$, sem $m$. Para passar de $v$ a $e$: resolva $v(p,m)=\bar u$ em $m$ (inversão).
+
+\sub{Dualidade --- mapa completo}
+EMP: $\min p\cdot x$ s.a.\ $u(x)\ge\bar u$ $\rightarrow$ hicksiana $h(p,\bar u)$, dispêndio $e(p,\bar u)=p\cdot h$.
+\[
+e(p,v(p,m))=m,\quad x^M(p,m)=h(p,v(p,m)).
+\]
+\emph{Roy}: $x_i^M=-\dfrac{\partial v/\partial p_i}{\partial v/\partial m}$.\quad \emph{Shephard}: $h_i=\dfrac{\partial e}{\partial p_i}$. $e$ côncava e homog.\ grau 1 em $p$; $v,x^M$ homog.\ grau 0 em $(p,m)$.
+
+\sub{Simetria de Slutsky}
+Como $h_i=\partial e/\partial p_i$ (Shephard) e $e$ é $C^2$, o teorema de Young aplicado às cruzadas mistas dá
+\[
+\frac{\partial h_i}{\partial p_j}=\frac{\partial^2 e}{\partial p_j\partial p_i}=\frac{\partial^2 e}{\partial p_i\partial p_j}=\frac{\partial h_j}{\partial p_i}.
+\]
+A matriz de substituição (hicksiana) é \emph{simétrica} e seu termo próprio é $\le 0$. As demandas \emph{marshallianas} relacionam-se às hicksianas via Slutsky cruzado (abaixo), carregando termos-renda com pesos $x_j^M$ próprios.
+\guia{Escreva as duas equações de Slutsky cruzadas ($\partial x_1^M/\partial p_2$ e $\partial x_2^M/\partial p_1$), subtraia-as e caracterize o termo resultante em função dos pesos de renda. Demonstre a conclusão --- não a decida por analogia com as hicksianas.}
+
+\sub{Equação de Slutsky e taxonomia}
+\[
+\frac{\partial x_i^M}{\partial p_j}=\underbrace{\frac{\partial h_i}{\partial p_j}}_{\text{subst.}\,\le 0\ (i=j)}-\underbrace{x_j^M\,\frac{\partial x_i^M}{\partial m}}_{\text{renda}}.
+\]
+\emph{Normal/inferior}: sinal de $\partial x/\partial m$. \emph{Ordinário/Giffen}: sinal de $\partial x/\partial p$. Isolando o efeito-substituição no próprio preço: $\dfrac{\partial h_1}{\partial p_1}=\dfrac{\partial x_1^M}{\partial p_1}+x_1^M\dfrac{\partial x_1^M}{\partial m}$ --- some o termo-renda \emph{com o sinal de $\partial x/\partial m$}, que é negativo num bem inferior.
+\guia{Para um bem \emph{normal}, a alta do próprio preço soma substituição e renda na mesma direção, ou em direções opostas? E para um bem \emph{inferior}? Decida, via Slutsky, qual das duas curvas (compensada $\times$ não-compensada) responde \emph{mais} em módulo a uma alta de preço em cada caso --- e por quê. Recíprocas entre as quatro categorias caem na prova; o peso $x_j$ multiplicando o termo-renda diz quando a renda domina.}
+
+\sub{Elasticidades e classificação bruta}
+$\varepsilon_{ij}=\dfrac{\partial x_i}{\partial p_j}\dfrac{p_j}{x_i}$ (adimensional --- \emph{não} confunda com a derivada $\partial x_i/\partial p_j$),\ \ $\eta_i=\dfrac{\partial x_i}{\partial m}\dfrac{m}{x_i}$,\ \ $s_i=\dfrac{p_ix_i}{m}$. \emph{Agregação de Engel}: $\sum_i s_i\eta_i=1$.
+A elasticidade-preço \emph{cruzada} marshalliana classifica os bens em termos \emph{brutos}: $\varepsilon_{ij}>0\Rightarrow$ substitutos brutos; $\varepsilon_{ij}<0\Rightarrow$ complementos brutos. A versão \emph{líquida} (hicksiana) usa $\partial h_i/\partial p_j$ e pode discordar do sinal bruto, pois a bruta embute efeito-renda.
+\guia{Ao montar $\varepsilon_{ij}$, qual preço entra na razão de ponderação $p_j/x_i$ --- o próprio ($p_i$) ou o cruzado ($p_j$)? E o nível $x_i$ é avaliado na demanda \emph{completa} (com o termo cruzado) ou na truncada? Um erro de ponderação muda o número, não só a escala; saiba diagnosticar o seu.}
+
+\sub{Bem-estar: VC, VE e excedente (alta de preço $p^0\to p^1$, renda $m$)}
+Ordem de execução: (1) $v(p,m)$; (2) inverta para $e(p,\bar u)$; (3) avalie $u^0=v(p^0,m)$ e $u^1=v(p^1,m)$; (4) monte as variações. Pelo dispêndio:
+\[
+\text{VC}=e(p^1,u^0)-e(p^0,u^0)=e(p^1,u^0)-m,
+\]
+\[
+\text{VE}=e(p^1,u^1)-e(p^0,u^1),\quad \Delta EC=\int_{p_1^0}^{p_1^1}\! x_1^{M}\,dp_1.
+\]
+VC usa o bem-estar \emph{inicial} $u^0$; VE usa o \emph{final} $u^1$ (mnemônico: VC$\leftrightarrow$inicial, VE$\leftrightarrow$final). \emph{Equivalentemente}, como $e(p^0,u^0)=m$ (sem variação de renda), $\text{VE}=m-e(p^0,u^1)$ --- a mesma quantia lida a preços iniciais. Um \emph{lump-sum} cobrado a preços não distorcidos que reproduz $u^1$ coincide, por construção, com a VE. Compare a perda de bem-estar à \emph{receita} de um imposto específico ($t\cdot x_1$ na quantidade pós-imposto) --- a folga entre elas é a semente do peso-morto.
+\guia{Por que um imposto específico é dominado por um lump-sum de \emph{mesmo bem-estar}? A cesta escolhida sob o imposto é viável sob o lump-sum equivalente? Quando o consumidor \emph{reotimiza} a preços não distorcidos, ele melhora --- e o peso-morto é a diferença entre qual perda e qual receita? Saiba a fonte (distorção do preço relativo), não só o número. Para qual classe de preferências VC$=$VE$=\Delta EC$?}
+
+\bloco{Bloco 2 --- Equilíbrio Geral (Aulas 4--6)}
+
+\sub{Caixa de Edgeworth (trocas, $2\times 2$)}
+Factibilidade: $x^A+x^B=\omega^A+\omega^B$. \emph{Melhoria de Pareto}: ninguém piora, alguém melhora. No \emph{interior}, a CPO da eficiência é a tangência $\text{TMS}^A_{12}=\text{TMS}^B_{12}$. Curva de contrato: lugar geométrico desses pontos.
+
+\sub{Equilíbrio walrasiano --- receita}
+(1) Normalize (numerário): só preços \emph{relativos} importam (homog.\ grau 0). (2) Renda de dotação $m^i=p\cdot\omega^i$. (3) Demandas $x^i(p,m^i)$. (3.5) Monte o excesso de demanda de \emph{um} bem, $z_k(p)=\sum_i x_k^i(p,p\cdot\omega^i)-\sum_i\omega_k^i$, substituindo a renda de dotação \emph{dentro} da marshalliana antes de igualar a zero; escolha o mercado de álgebra mais limpa. (4) \emph{Market clearing}: $z_k(p)=0$ resolve $p^{*}$ (um basta, Lei de Walras $p\cdot z(p)=0$); o outro mercado fecha sozinho --- use-o como verificação. (5) Recupere as alocações.
+
+\sub{FPP linear, custo de oportunidade e vantagem comparativa}
+Com FPP \emph{linear}, o custo de oportunidade é \emph{constante} e fixa, em autarquia, a taxa interna de troca de cada economia. Para o país que produz no máximo $\bar x_1$ \emph{ou} $\bar x_2$, o custo de oportunidade de uma unidade do bem 1 (em unidades do bem 2) é $\bar x_2/\bar x_1$. \emph{Vantagem comparativa}: exporta o bem cujo custo de oportunidade interno é \emph{menor}. O comércio beneficia ambos se o preço relativo internacional ficar \emph{entre} os dois custos de autarquia.
+\guia{Em que \emph{unidade} o preço relativo foi pedido --- bem 2 por bem 1, ou o inverso? Inverter o numerário troca o intervalo pelo seu recíproco (a armadilha clássica). Os limites do intervalo são os \emph{custos de oportunidade} de cada país, não razões cruzadas de capacidade; confira que cada extremo iguala um custo de autarquia, e que a faixa é não-vazia justamente porque os custos diferem.}
+
+\sub{Produção e Robinson Crusoé}
+Tecnologia $q=f(z)$. Plano eficiente iguala a taxa marginal de transformação à razão de preços e à TMS do consumidor:
+\[
+\text{TMS}_{12}=\text{TMT}_{12}=\frac{p_1}{p_2}.
+\]
+Firma competitiva: $\max p\,f(z)-p_1 z$, CPO \emph{valor do produto marginal $=$ custo do insumo}, $p\,f'(z)=p_1$. Numa economia com \emph{produção e lucro distribuído}, a renda do consumidor-acionista é dotação \emph{mais} lucro, $M(p)=p\cdot\omega+\pi^{*}(p)$; o \emph{clearing} de um mercado fecha o preço, e o outro fecha por Walras. O problema do planejador (maximizar $u$ sobre a fronteira tecnológica) reproduz a mesma alocação --- 1.\textsuperscript{o} TBE com produção.
+\guia{Sob retornos \emph{decrescentes}, o lucro competitivo é positivo (renda de escala) e sua distribuição importa para a renda. Sob retornos \emph{constantes}, quanto vale o lucro competitivo --- e o que isso faz com a relevância de \emph{a quem} pertence a firma? Conecte à convexidade (do conjunto de produção e das preferências) que sustenta a descentralização por preços nos teoremas do bem-estar.}
+
+\sub{Teoremas do Bem-Estar}
+\emph{1.\textsuperscript{o} TBE}: todo equilíbrio competitivo é Pareto-eficiente. Hipóteses (lista neutra): \emph{não-saciedade local}, agentes preço-tomadores, mercados completos, sem externalidades. \emph{2.\textsuperscript{o} TBE}: toda alocação eficiente é sustentável como equilíbrio com transferências \emph{lump-sum}; hipóteses \emph{adicionais}: \emph{convexidade} de preferências/tecnologias e continuidade.
+\guia{Localize no \emph{argumento} de cada teorema o papel de cada hipótese: o 1.\textsuperscript{o} é robusto; o 2.\textsuperscript{o} usa um hiperplano separador (que exige convexidade). Saiba dizer, hipótese a hipótese, qual teorema sobrevive quando ela cai.}
+
+\sub{Incerteza: Arrow-Debreu e não-arbitragem}
+Estados $s$, prob.\ $\pi_s$, consumo contingente $c_s$, $EU=\sum_s\pi_s v(c_s)$. CPO interior: $\dfrac{\pi_s v'(c_s)}{\pi_t v'(c_t)}=\dfrac{q_s}{q_t}$; preço \emph{justo} $q_s/q_t=\pi_s/\pi_t$ $\Rightarrow$ avesso ao risco iguala consumo entre estados. Equivalente-certeza $c_{EC}$: $v(c_{EC})=EU$; prêmio de risco $\mathbb{E}[c]-c_{EC}\ge 0$ ($v$ côncava).
+
+\sub{Precificar por não-arbitragem (recuperar $q_s$)}
+\emph{Título de Arrow} do estado $s$: paga 1 em $s$, 0 nos demais; preço $q_s$. Sequência: (1) monte o sistema dos títulos negociados --- para cada ativo, $\text{preço}=\sum_s q_s\cdot\text{payoff}_s$; (2) resolva para $q_1,\dots,q_S$ (\emph{únicos} se completo); (3) precifique o alvo $P=\sum_s q_s\,y_s$; (4) cheque casando a carteira replicante: custo de replicar $=P$.
+
+\sub{Completude e mercados incompletos}
+Mercado \emph{completo}: span dos payoffs $=\mathbb{R}^S$ (nº de ativos linearmente independentes $=S$). O span de uma coleção de ativos é o conjunto de \emph{todas} as combinações lineares de seus payoffs.
+\guia{Para qualquer coleção de ativos: monte a matriz de payoffs por estado, conte os linearmente independentes e compare com $S$; depois descreva por extenso quais perfis de consumo contingente uma carteira alcança dentro desse span. Julgue afirmações de segurabilidade só \emph{depois} dessa conta, nunca antes.}
+\guia{Num seguro indexado, o contrato é contingente ao \emph{índice}, não à perda do segurado. Formule o requisito estatístico exato sob o qual um contrato sobre o índice replica um contrato sobre a perda --- e verifique esse requisito no caso concreto, em vez de presumi-lo num sentido ou no outro.}
+
+\bloco{Bloco 3 --- Externalidades e Bens Públicos (Aula 7)}
+
+\sub{Externalidade e imposto de Pigou (produção ou consumo)}
+Negativa de \emph{consumo}: o equilíbrio privado iguala benefício privado marginal $\text{BMgP}$ ao custo privado marginal $\text{CMgP}$, ignorando o dano externo. O ótimo iguala $\text{BMgP}$ ao \emph{custo social marginal} $\text{CMgS}=\text{CMgP}+\text{DMg}$. Imposto seletivo por unidade: $t^{*}=\text{DMg}$ \emph{avaliado no ótimo} $Q^{*}$. Negativa de \emph{produção}: $t^{*}=\text{DMg}(q^{*})$, e a firma passa a resolver $\max \pi(q)-t^{*}q$. Positiva: o instrumento espelha-se em \emph{subsídio} $=$ benefício externo marginal no ótimo.
+\guia{Antes de marcar qualquer item de imposto corretivo, anote a \emph{unidade} de cada número que você obteve no caminho (R\$ por unidade? unidades? R\$ por unidade no novo custo efetivo?) e confira qual delas o enunciado pede. Em externalidades de consumo, derive o sinal do instrumento a partir do sinal do efeito externo --- não de memória.}
+
+\sub{Recurso comum / tragédia dos comuns}
+Sob \emph{acesso livre}, cada entrante embolsa o benefício \emph{médio} do recurso, $B(N)/N$, e entra enquanto esse médio cobrir o custo $\Rightarrow$ entrada cessa em $B(N)/N=c$. O planejador compara o benefício \emph{marginal} $B'(N)$ ao custo $\Rightarrow$ ótimo em $B'(N)=c$. A cunha médio-vs-marginal é a externalidade de congestionamento que o entrante não paga.
+\guia{Derive a ordenação entre o $N$ de acesso livre e o $N$ ótimo a partir da concavidade de $B$ --- e associe cada condição (médio $=c$, marginal $=c$) ao agente certo antes de calcular. Quando os dois $N$ coincidiriam?}
+
+\sub{Bens públicos: Samuelson, agregação e cobertura}
+Bem público puro: \emph{não-rival} e \emph{não-excludente}. A regra de provisão eficiente agrega as valorações marginais:
+\[
+\sum_{i=1}^{I}\text{TMS}_i=\text{CMg}\ (=\text{TMT}).
+\]
+Provisão voluntária: cada um iguala a \emph{própria} TMS ao custo, ignorando o benefício alheio $\Rightarrow$ carona e viés de subprovisão. A correção pigouviana tem \emph{duas} dimensões independentes: a \emph{alíquota} (igualar o custo efetivo ao dano marginal) e a \emph{cobertura} (alcançar todas as fontes do dano); são perguntas diferentes.
+\guia{Para agregar demandas, decida primeiro \emph{o que} se soma e \emph{o que} se mantém fixo --- e derive essa decisão da propriedade de rivalidade de cada tipo de bem, caso a caso, em vez de aplicar a regra de memória.}
+\guia{Diante de qualquer instrumento corretivo proposto, faça \emph{duas} checagens separadas antes de julgar otimalidade: (i) a alíquota iguala o quê a quê, avaliada onde? (ii) liste o conjunto de fontes que o instrumento alcança e o conjunto de fontes do dano, e compare-os. Só conclua depois das duas.}
+
+\sub{Tecnologia de agregação: weakest-link vs.\ soma}
+A regra de Samuelson na forma de \emph{soma} pressupõe agregação aditiva, $G=\sum_i g_i$. Sob \emph{elo mais fraco} (\emph{weakest-link}), $G=\min_i\{g_i\}$: investir num elo \emph{acima} do mínimo não eleva $G$ --- é desperdício ---, então a eficiência \emph{nivela} os elos ($g_1=\dots=g_I=g$, $G=g$). O planejador maximiza o bem-estar agregado com elos igualados, lembrando que elevar $G$ em uma unidade custa reforçar \emph{todos} os elos (custo marginal $=I$ por unidade de $G$). \emph{Provisão voluntária} (Nash) sob $\min$: nenhum ente ultrapassa o esforço do vizinho (acima dele é desperdício) nem a própria demanda interior --- daí a melhor resposta tem a forma $g_i=\min\{\text{demanda própria},\,g_j\}$. Os equilíbrios formam um continuum de níveis comuns até o menor ``teto'' individual.
+\guia{Com $G=\min\{g_i\}$ e custo de nivelar $=I\cdot g$, a CPO do planejador iguala o benefício marginal social a quanto? Por que a forma $g_i=\min\{\cdot\}$ gera \emph{multiplicidade} de equilíbrios, e quem trava o nível máximo sustentável? Um subsídio cirúrgico ao \emph{elo fraco} barateia seu reforço: qual alíquota o leva ao nível eficiente, e por que subsidiar o elo \emph{folgado} seria inócuo?}
+
+\bloco{Bloco 4 --- Assimetria Informacional e Sinalização (Aulas 8--9)}
+
+\sub{Mapa do território}
+\emph{Informação oculta} (característica, \emph{antes} do contrato) $\rightarrow$ seleção adversa. \emph{Ação oculta} (esforço, \emph{depois}) $\rightarrow$ risco moral. \emph{Verificação} (estado/perda observável só a custo) é um terceiro eixo. Informado emite \emph{sinal}; não-informado desenha \emph{menu} (screening).
+\guia{Diante de qualquer desenho contratual, percorra a checklist dos três eixos (seleção \emph{ex ante}, ação oculta, verificação \emph{ex post}) e avalie, eixo a eixo, o que o mecanismo altera --- só então julgue afirmações do tipo ``elimina X''.}
+
+\sub{Seguros e seleção adversa}
+Prêmio atuarialmente justo $=\pi\times$ indenização. Sob seleção adversa, a seguradora desenha um \emph{menu separador} (uma apólice com franquia, outra integral); as restrições de \emph{participação} (IR) e \emph{autosseleção} (IC) determinam qual tipo fica com cada apólice.
+\guia{Ao avaliar um produto de seguro concreto, identifique quem detém informação privada, sobre o quê, e em que momento (antes de aderir? ao agir? ao reportar o sinistro?) --- e então verifique, ponto a ponto, quais desses momentos o desenho do contrato modifica.}
+
+\sub{Sinalização (Spence) e garantia como sinal}
+Sinal custoso com \emph{single-crossing}: custo marginal do sinal \emph{menor} para o tipo de melhor qualidade. \emph{Separador}: o sinal é caro o bastante para o tipo pior \emph{não} imitar. Uma \emph{garantia} de valor $B$ acionada com probabilidade $p_i$ custa, em esperança, $p_i B$ --- maior para o tipo de pior qualidade ($p_L>p_H$). O sinal separa se o tipo pior prefere não oferecer a garantia a capturar o prêmio $\Delta$ de parecer bom:
+\[
+\underbrace{p_L\,B\ \ge\ \Delta}_{\text{pior não imita}}\qquad\text{e}\qquad \underbrace{p_H\,B\ \le\ \Delta}_{\text{melhor sinaliza}}.
+\]
+\guia{Monte as duas desigualdades com os dados do problema, resolva \emph{cada uma} para $B$ e examine o intervalo resultante por inteiro antes de responder qualquer pergunta sobre o sinal ``mínimo'' ou ``máximo''. Pergunte-se também: o sinal precisa elevar produtividade real para separar?}
+
+\sub{Risco moral e contrato fixo vs.\ bônus}
+Esforço não observável $\Rightarrow$ contrato condiciona só no resultado. Trade-off: \emph{seguro} (proteger o avesso) vs.\ \emph{incentivo} (expô-lo ao resultado). Para agente \emph{avesso}, a \emph{IC de esforço} é $\sum_s \pi_s^{e}v(w_s)-c(e)\ge\sum_s \pi_s^{0}v(w_s)$. Para agente \emph{neutro ao risco} (compara pagamentos esperados), com contrato base fixa $+$ fração $\beta$ do resultado, a IC vira \emph{linear}:
+\[
+\beta\,\mathbb{E}[R\mid e=1]-c\ \ge\ \beta\,\mathbb{E}[R\mid e=0]\ \Longleftrightarrow\ \beta\ \ge\ \frac{c}{\Delta_R},
+\]
+com $\Delta_R=\mathbb{E}[R\mid e=1]-\mathbb{E}[R\mid e=0]$ o incremento esperado do resultado.
+A base fixa não cria incentivo (cancela dos dois lados); só a fração $\beta$ atrelada ao resultado move o esforço.
+\guia{Monte $\Delta_R$ explicitamente a partir dos \emph{dois} cenários de esforço --- escreva as duas esperanças por extenso, com todos os estados de cada uma --- antes de dividir qualquer coisa. First-best (esforço observável, salário fixo) vs.\ second-best: a distorção é o custo da informação.}
+
+\sub{Screening de monopólio (menu de 2.\textsuperscript{o} grau)}
+Tipos $\theta_L<\theta_H$, valor $\theta q$, custo $C(q)$, excedente do cliente $\theta q-T$. \emph{First-best} (tipo observável): $q_i^{FB}$ eficiente ($\theta_i=C'(q_i)$), IR vincula, $T_i=\theta_i q_i$ extrai tudo --- \emph{sem renda informacional}. \emph{Second-best} (menu): vinculam $(\text{IR}_L)$ e $(\text{IC}_H)$; o tipo $H$ retém \emph{renda informacional} (o excedente de imitar o pacote do $L$), e o tipo $L$ é distorcido \emph{para baixo} para reduzi-la --- \emph{sem distorção no topo} ($q_H$ eficiente).
+\guia{Monte as quatro restrições (duas IR, duas IC), identifique \emph{derivando} quais valem com igualdade no ótimo, e extraia a renda do $H$ da restrição ativa --- ela sai proporcional a uma quantidade do menu: descubra qual, e o que isso implica para o desenho de $q_L$. Para decompor o custo da assimetria (queda de lucro FB$\to$SB), liste as duas fontes candidatas e calcule cada parcela. Uma \emph{taxa de adesão} lump-sum entra em quais restrições? Refaça a comparação de imitação \emph{com} a taxa incluída e conclua você mesmo o efeito.}
+
+\sub{Matching (aceitação diferida, Gale-Shapley)}
+Pareamento \emph{estável}: sem \emph{par bloqueante} (dois agentes não-pareados entre si que se preferem aos pares atuais). \emph{Aceitação diferida}: propostas iterativas com aceitação provisória; termina sempre em pareamento estável; o lado \emph{proponente} obtém seu \emph{melhor} pareamento estável.
+\guia{Derive as propriedades de \emph{incentivo} do mecanismo a partir da otimalidade-do-proponente: para cada lado do mercado, pergunte o que aquele lado tem a ganhar reportando preferências distintas das verdadeiras --- e teste sua conclusão construindo um micro-exemplo $3\times 3$ antes da prova.}
+
+\vspace{0.35em}
+\noindent\colorbox{cinzasol}{\parbox{\dimexpr\linewidth-2\fboxsep}{\footnotesize
+\textbf{Gestão da prova (180 min, 100 pts).} 16 objetivas (8 ME $+$ 8 V/F) e 4 abertas, $25$ pts por bloco (objetivas $+$ aberta de $15$). Orçamento: $\approx$40 min/bloco $+$ 20 min de leitura/revisão; reserve folga aos Blocos 2 e 4 (abertas pesadas). Objetivas primeiro ($\approx$15 min), aberta depois; se travar, fixe teto de 30 min, garanta os primeiros subitens e siga. Leia as 4 abertas \emph{antes} e ataque a que domina. Nas V/F, \emph{se} a regra for acerto $+1$ / erro $-\tfrac12$ (capa, item 4), o valor esperado do chute é positivo quando sua confiança supera $1/3$ --- raramente o branco domina o chute \emph{informado}, mas só chute com \emph{alguma} leitura do item, não às cegas. Transcreva os quadros-resposta \emph{ao terminar cada bloco}.}}
+
+\vspace{0.3em}
+\noindent{\footnotesize\textit{Ao corrigir o simulado com a rubrica, anote cada ferramenta que faltou na hora --- essa lista, não este caderno, é o melhor rascunho da sua folha A4.}}
+
+\end{multicols}
+\end{document}
