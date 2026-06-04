@@ -127,7 +127,7 @@ The decomposition logic:
 |---|---|---:|---|
 | Total | Broad OLS with item+year+PBU FE | **+0.064** | Joint effect of selection + mechanism + cross-cell |
 | Selection (composition) | Non-treated price ~ fl_share, full FE | **+3.55** | Cartels in high-price cells |
-| Mechanism (within-cell) | Overlap-cell ATT | **−0.097** | Cover-bidding theater depresses observed prices within cell |
+| Mechanism (within-cell) | Overlap-cell ATT | **−0.097** | Within-cell association: observed prices lower where FL present (channel is bidder count, not identified theater — [AN-040](an-040-within-cell-mechanism-test.md)) |
 
 The two components have **opposite signs and very different
 magnitudes**. The selection effect (+3.55 on log-price per unit
@@ -137,11 +137,13 @@ removed by ATT weighting.
 
 **For [H:price-scope-sign-reversal](../hypotheses/price-scope-sign-reversal.md):**
 the sign-reversal is not merely a specification artifact. It is the
-empirical signature of a **two-component decomposition**: cartels with
-cover bidders *select* into high-rent cells (positive across cells)
-and *depress observed prices* within those cells via the cover-bidding
-theater (negative within cell). The overlap-ATT spec removes the
-selection and isolates the mechanism.
+empirical signature of a **two-component decomposition**: frequent-loser
+activity *selects* into high-rent cells (positive across cells) and is
+associated with *lower observed prices* within those cells (negative
+within cell). The overlap-ATT spec removes the selection and isolates
+the within-cell association — which [AN-040](an-040-within-cell-mechanism-test.md)
+shows loads on genuine-bidder count, so the cover-bidding "theater"
+mechanism is *consistent with* the pattern but **not identified**.
 
 In the manuscript (§7) this is reported as **descriptive scope
 evidence, not mechanism identification**: the sign-reversal is

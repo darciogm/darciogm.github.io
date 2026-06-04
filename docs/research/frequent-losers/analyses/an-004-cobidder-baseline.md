@@ -7,7 +7,7 @@ question: Does the FL14 stratum contain a disproportionate share of CADE-adjudic
 status: done
 status_date: 2026-05-22
 confidence: green
-headline: "FL14 binary recovers AUC 0.924 [0.921, 0.926] against cobidders; the continuous log(1+tenders_count) reaches AUC 0.939 [0.932, 0.946]; the loser-side stratum carries the cobidder concentration."
+headline: "Pooled (exposure-inflated) baseline: FL14 binary AUC 0.924 [0.921, 0.926], continuous log(1+tenders_count) AUC 0.939 [0.932, 0.946] against cobidders. These are NOT the discrimination headline — most of the gap is opportunity arithmetic. Within-stratum (exposure-stripped) AUC is 0.7715, a genuine increment of +0.042 over the exposure-only benchmark of 0.946 (DeLong p ≈ 2e-6)."
 created: 2026-05-22
 script: scripts/02_analysis.R
 target: output/tables/tab_cobidder_baseline.tex
@@ -21,7 +21,7 @@ design:
 # AN-004: Baseline cobidder concentration in FL14 stratum
 
 !!! abstract "Intuition (plain-language)"
-    Do the firms the screen flags actually cluster on the loser side of adjudicated cartels? Yes — FL14 separates cobidders from other always-losers at AUC 0.924, and the continuous score reaches 0.939 (0.5 is a coin flip). Economically, this says the loser-side concentration a cartel needs in order to fake competition is visible in cheap award records alone, with no bid microdata. This is the headline; everything after it is an attempt to break it with placebos, leakage audits, and timing discipline.
+    Do the firms the screen flags cluster on the loser side of adjudicated cartels? In a pooled comparison, yes — FL14 separates cobidders from other always-losers at AUC 0.924, the continuous score at 0.939 (0.5 is a coin flip). But most of that gap is *opportunity arithmetic*: firms that bid in more tenders mechanically overlap more cartel environments. Strip exposure out by comparing firms *within* the same opportunity stratum and the AUC falls to 0.7715 — a genuine but modest increment of +0.042 over the exposure-only benchmark of 0.946. So this pooled number is the starting point, not the discrimination headline; everything after it decomposes the signal and tests where it reaches.
 
 ## Question
 
@@ -45,19 +45,40 @@ This is the headline-baseline triage result.
 
 ## Results
 
+**Pooled (exposure-inflated) baseline — the starting point, not the
+headline:**
+
 | Score | AUC | 95% CI |
 |---|---:|---|
-| FL14 (binary) | **0.924** | [0.921, 0.926] |
-| log(1 + tenders_count) (continuous) | **0.939** | [0.932, 0.946] |
+| FL14 (binary) | 0.924 | [0.921, 0.926] |
+| log(1 + tenders_count) (continuous) | 0.939 | [0.932, 0.946] |
+
+**Exposure decomposition — the disciplined reading:**
+
+| Quantity | AUC |
+|---|---:|
+| Exposure-only benchmark | 0.946 |
+| Within-opportunity-stratum (exposure-stripped) | **0.7715** |
+| Genuine increment over exposure-only | **+0.042** (DeLong p ≈ 2 × 10⁻⁶) |
+
+The pooled firm-level numbers are *exposure-inflated*: most of the raw
+separation is opportunity arithmetic — firms that participate more
+mechanically overlap more adjudicated cartel environments. The genuine
+loser-side signal, isolated within the opportunity stratum, is the
+0.7715 / +0.042 pair. See
+[AN-027](an-027-universe-anchored-stratum-scope.md) and
+[AN-028](an-028-exposure-stratum-balance.md) for the full exposure
+audit.
 
 Macros: `\valAUCFLfirm`, `\valAUCFLfirmCI`, `\valAUClogtc`,
 `\valAUClogtcCI`.
 
 ![AN-004 baseline cobidder AUC](../assets/figures/fig_an004_baseline_auc.png)
 
-*Figure: baseline cobidder AUC for FL14 binary (0.924, [0.921, 0.926])
-and continuous log(1+tenders_count) (0.939, [0.932, 0.946]). Both
-substantially above the random benchmark (0.5).*
+*Figure: pooled baseline cobidder AUC for FL14 binary (0.924, [0.921,
+0.926]) and continuous log(1+tenders_count) (0.939, [0.932, 0.946]).
+Both substantially above the random benchmark (0.5) — but these are
+exposure-inflated; the exposure-stripped within-stratum AUC is 0.7715.*
 
 The cobidder share inside FL14 is 7.1% (`\valCobidShareFL`), against a
 baseline always-loser cobidder rate that is much lower. This corresponds
@@ -66,13 +87,19 @@ to the headline 131/193 cobidder recovery in the gatekeeping setup
 
 ## Interpretation
 
-Both the binary and continuous variants concentrate cobidders well
-inside the always-loser pool. The continuous score is the dominating
-ranking ([AN-011](an-011-horse-race-continuous.md)); FL14 is the
-auditable implementation. The baseline numbers are inflated relative to
-operational deployment — the disciplined columns in
+Both the pooled binary and continuous variants separate cobidders well
+inside the always-loser pool, but the bulk of that separation is
+opportunity arithmetic. Once exposure is stripped out, the genuine
+within-stratum signal is AUC 0.7715 (+0.042 over the 0.946 exposure-only
+benchmark, DeLong p ≈ 2 × 10⁻⁶) — real but modest. The continuous score
+is the dominating ranking ([AN-011](an-011-horse-race-continuous.md));
+FL14 is the administrative auditable implementation, not a structural
+threshold. The pooled baseline numbers are exposure-inflated and inflated
+relative to operational deployment — the disciplined columns in
 [AN-013](an-013-precision-at-k-audit.md) and
-[AN-014](an-014-leakage-audit-d3.md) are the right operational reading.
+[AN-014](an-014-leakage-audit-d3.md), and the exposure decomposition in
+[AN-027](an-027-universe-anchored-stratum-scope.md)/[AN-028](an-028-exposure-stratum-balance.md),
+are the right reading.
 
 ## Follow-ups
 

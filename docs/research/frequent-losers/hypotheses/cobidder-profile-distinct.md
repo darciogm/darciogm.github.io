@@ -6,17 +6,18 @@ title: "FL cobidders are economically distinct from other frequent losers"
 cluster: C
 paper_section: "§5"
 status: partial (strongly supported)
-last_updated: 2026-05-23
+last_updated: 2026-06-02
 ---
 
 # H:cobidder-profile-distinct — FL cobidders are economically distinct from other frequent losers
 
 If the frequent-loser ranking captures more than raw participation
-intensity, then cobidders inside the FL stratum should look different from
+intensity, then cobidders inside the FL stratum should *look different* from
 other firms in the same stratum along economically meaningful dimensions:
 buyer-portfolio breadth, product-portfolio concentration, proximity to
-legal cartel anchors, and bid-level behavior consistent with credible
-losing roles.
+legal anchors, and bid-level patterns consistent with — but not diagnostic
+of — credible losing roles. This is **descriptive economic content** about a
+firm type the ranking surfaces; it is not proof of a cover-bidding role.
 
 !!! abstract "Intuition (plain-language)"
     Within the frequent-loser group, are cobidders qualitatively different from other firms in the same group, or are they just the highest-volume members? The robust answer is **structural**: cobidders specialize in narrower product portfolios, spread across more distinct winners, sit closer to legal cartel anchors, and bid closer to the winning price. Cobidders bid in ~1.8× more tenders, so the obvious worry is volume — but the volume-matched audit (AN-041) strongly supports the distinction: matching on participation count (SMD 0.49 → 0.00), the structural distinctness *holds or strengthens*. That is the strongly-supported core. The bid-conduct side is narrower and honestly bounded: one channel survives (bidding closer to the winner), while the bid-dispersion sub-signal (AN-041) and the bid-timing channel (AN-042) are documented nulls. The remaining negatives — the across-cell price/mechanism heterogeneity (AN-032) and the first-time-FL channel (AN-021) — are about a *causal-mechanism* reading the hypothesis does not assert, not about the structural distinctness. Promotion beyond strongly-supported needs non-BEC replication.

@@ -5,14 +5,66 @@ paper: frequent-losers
 # Analyses — Cheap Signals, Costly Proof
 
 This page is the **directory of analyses** for *Cheap Signals, Costly
-Proof: Award-Layer Evidence Triage in Cartel Enforcement*. Each AN-NNN page is
-anchored by a YAML frontmatter block that drives the generated index
-below.
+Proof: The Reach and Limits of Award-Layer Screening in Cartel
+Enforcement*. Each AN-NNN page is anchored by a YAML frontmatter block
+that drives the generated index below.
 
 This page is the directory of *designs and results*. For curated claims
 about the world — sentences that could go in the paper — see
 [Findings](../findings/index.md). For the testable predictions and their
 cross-references to AN pages, see [Hypotheses](../hypotheses/index.md).
+
+---
+
+## What the analyses establish
+
+The paper's contribution is a **decomposition method** plus a
+**reach-and-limits map**, not a cartel detector. Cheap award-layer
+records (who participated, who lost) can *order forensic priority* — they
+cannot prove conduct. The analyses below decompose what looks like a
+strong screen into three pieces and trace where each one reaches and
+where it stops:
+
+1. **Opportunity arithmetic.** Most of the raw discriminating power is
+   *exposure*: firms that bid in more tenders mechanically overlap more
+   adjudicated cartel environments. The pooled firm-level AUC (0.924
+   in-sample, 0.864 temporal-holdout) is exposure-inflated. Stripping
+   exposure out — comparing firms *within* the same opportunity stratum —
+   leaves a within-stratum AUC of **0.7715**, a genuine increment of
+   **+0.042** over the exposure-only benchmark of **0.946** (DeLong
+   p ≈ 2 × 10⁻⁶). The genuine loser-side signal is real but modest; the
+   headline number is mostly opportunity arithmetic.
+2. **Single-case concentration.** Much of the operational performance
+   leans on one or two adjudicated cases. Leave-largest-out cuts the
+   single-case PR-AUC from 0.126 to 0.036 (−71%); one case accounts for
+   ≈55%.
+3. **Timing.** Strict ex-ante construction survives only inside the
+   always-loser pool (~0.77); at full-universe scale it collapses toward
+   random. The screen is largely **retrospective among incumbents**, not
+   a prospective alarm.
+
+What the screen does *not* do is equally load-bearing: AUC ≈ 0.49 against
+**direct CADE defendants** (the cartel's winners) is a scope boundary by
+design, not a failure.
+
+### Reading the catalogue by threat
+
+| Threat the analysis confronts | AN pages |
+|---|---|
+| **Construct** — how the rank is built; is the FL14 cutoff arbitrary? | [AN-001](an-001-zero-win-rank.md), [AN-002](an-002-iqr-threshold.md), [AN-003](an-003-cade-bec-linkage.md), [AN-023](an-023-theory-operationalization-audit.md), [AN-025](an-025-cutoff-sweep-robustness.md) |
+| **Opportunity** — is it just exposure / participation volume? | [AN-004](an-004-cobidder-baseline.md), [AN-005](an-005-sham-fl-permutation.md), [AN-027](an-027-universe-anchored-stratum-scope.md), [AN-028](an-028-exposure-stratum-balance.md), [AN-041](an-041-volume-matched-cobidder-audit.md) |
+| **Timing** — would it flag firms before cases closed? | [AN-006](an-006-strict-prospective-holdout.md), [AN-013](an-013-precision-at-k-audit.md), [AN-015](an-015-gate-d1.md), [AN-029](an-029-three-classifier-timing-battery.md), [AN-030](an-030-market-persistence.md) |
+| **Single-case concentration** — does one case carry it? | [AN-013](an-013-precision-at-k-audit.md), [AN-034](an-034-sequential-gatekeeping-envelope.md), [AN-036](an-036-cv-precision-stability.md) |
+| **Scope** — what the screen cannot and should not cover | [AN-007](an-007-auc-direct-cade.md), [AN-016](an-016-gate-d2.md), [AN-018](an-018-gate-d4.md), [AN-027](an-027-universe-anchored-stratum-scope.md) |
+| **Division of labor** — award layer vs bid layer | [AN-010](an-010-imhof-full-pipeline.md), [AN-011](an-011-horse-race-continuous.md), [AN-033](an-033-imhof-incremental-delong.md), [AN-035](an-035-architecture-cost-of-evidence-matrix.md) |
+| **Price = scope, not damages** | [AN-019](an-019-rdd-cap-price.md), [AN-020](an-020-did-decreto-2018.md), [AN-022](an-022-falsification-pregao.md), [AN-037](an-037-sign-reversal-decomposition.md), [AN-038](an-038-negative-cell-segment-audit.md), [AN-039](an-039-selection-mechanism-test.md), [AN-040](an-040-within-cell-mechanism-test.md) |
+| **Leakage** — is ~1.0 AUC memorization? | [AN-014](an-014-leakage-audit-d3.md), [AN-017](an-017-gate-d3.md) |
+
+Throughout: the rank **orders forensic priority**; it does not detect or
+prove. FL14 is an **administrative** cutoff (median + 1.5 × IQR), not a
+structural threshold; the continuous log-participation score is the
+underlying primitive. Price differentials are read as **scope**, not
+damages or overcharge.
 
 ---
 

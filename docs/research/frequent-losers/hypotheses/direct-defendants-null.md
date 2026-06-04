@@ -2,54 +2,57 @@
 paper: frequent-losers
 id: h2
 slug: direct-defendants-null
-title: "The frequent-loser ranking does not discriminate direct CADE defendants"
+title: "The ranking does not order direct CADE defendants (scope boundary by design)"
 cluster: A
 paper_section: "§4.3"
 status: partial (strongly supported)
-last_updated: 2026-05-22
+last_updated: 2026-06-02
 ---
 
-# H:direct-defendants-null — The frequent-loser ranking does not discriminate direct CADE defendants
+# H:direct-defendants-null — The frequent-loser ranking does not order direct CADE defendants
 
 A loser-side screen built from persistent zero-win participation should
-fail when used as a generic cartel-membership detector: direct CADE
-defendants typically include the designated winners of the rotation, who
-are not zero-win firms. A null AUC against direct defendants is therefore
-part of the design — it supports the interpretation that the ranking carries loser-side scope,
-not membership scope.
+*not* order direct CADE defendants — these are legal anchors that typically
+include the designated winners of the rotation, who are not zero-win firms.
+A null AUC against direct defendants is therefore a **scope boundary by
+design**, not a failure: it marks the edge of what a cheap award-layer
+ranking can reach, and it disciplines the rest of the paper against any
+"cartel-detector" reading.
 
 !!! abstract "Intuition (plain-language)"
-    Direct CADE defendants in procurement cartels are typically the *winners* of the rotation, not the systematic losers. A loser-side screen — built on persistent zero-win participation — cannot rank winners, and the data confirm this (AUC ≈ 0.49, indistinguishable from random). The null is the predicted finding under the loser-side scope. Far from being a failure, the null defines what the screen *claims* to do (rank cover-bidders) and what it *doesn't* claim to do (identify ringleaders). This is the anti-claim that disciplines the rest of the paper.
+    Direct CADE defendants in procurement cartels are typically the *winners* of the rotation, not the systematic losers. A loser-side screen — built on persistent zero-win participation — cannot order winners, and the data confirm this (AUC ≈ 0.49, indistinguishable from random). The null is the predicted finding: it is a scope boundary by design, not a failure. It defines what the screen *claims* to do (order forensic priority toward adjudication-anchored losers) and what it *doesn't* claim to do (identify ringleaders). This is the anti-claim that disciplines the rest of the paper.
 
 
 > **Evidence strength: Strong.**
-> AUC against 47 direct CADE defendants = 0.491 [0.461, 0.520];
+> AUC against direct CADE defendants ≈ 0.491 [0.461, 0.520];
 > indistinguishable from random and stable across raw, OOF, and
-> temporal-holdout regimes. D4 mechanistic check: only 14.9% (7/47) of
+> temporal-holdout regimes. D4 mechanistic check: only 14.9% of
 > direct defendants are always-losers; median win rate 0.261 vs 0.086
 > for cobidders (Mann–Whitney p < 0.05). The null is the predicted
-> finding under the loser-side scope.
+> finding — the loser-side screen misses win-heavy defendants by design.
 
 ## Theory
 
 The cartel theory underlying the loser-side construction
 \citep{marshall2012economics,clark2021collusion} predicts heterogeneous
 roles: winners take the contract, cobidders manufacture competition. A
-participation-intensity score over zero-win firms cannot rank winners by
-construction. If the score *did* discriminate direct defendants, it would
-either be picking up volume rather than role allocation, or the underlying
-cartel theory would not be operative.
+participation-intensity score over zero-win firms cannot order winners by
+construction. If the score *did* order direct defendants, it would either be
+picking up opportunity volume rather than loser-side exposure, or the
+"cheap-signal" framing of the paper would be wrong.
 
 ## Prediction
 
 AUC of the frequent-loser score against direct CADE defendants ≈ 0.50
-(random); it should not reach the levels obtained against cobidders.
+(random); it should not reach the exposure-adjusted increment obtained
+against cobidders.
 
 ## Competing prediction
 
-**Generic-detector reading.** If the FL score had general predictive power
-for cartel membership, AUC against direct defendants would be substantially
-above 0.50, undermining the loser-side scope interpretation.
+**Generic-detector reading.** If the score had general predictive power for
+cartel membership, AUC against direct defendants would be substantially
+above 0.50, contradicting the reach-and-limits map: a cheap award-layer
+ranking orders loser-side priority, it does not detect cartelists.
 
 ## Case evidence
 
@@ -63,7 +66,7 @@ see §2.3 of the [manuscript](../paper.md).
 - *Outcome*: direct-defendant indicator (1 if firm is a direct CADE
   defendant).
 - *Variation*: position in the FL stratum vs other firms in BEC.
-- *Specification*: AUC of `FL14` and `log(1+tenders_count)` over the full
+- *Specification*: AUC of the score `s = log(1+T)` (and `FL14`) over the full
   firm panel, with direct defendants as the positive class.
 - *Identification*: same as [H:cobidder-concentration](cobidder-concentration.md),
   but with a different positive label.

@@ -7,7 +7,7 @@ question: Across the full architecture × k × regime grid, what are the recall,
 status: done
 status_date: 2026-05-22
 confidence: green
-headline: "At the §6 headline (k=1,000, in-sample), sequential award→bid recovers 131 of 193 cobidders vs joint's 142 — 92% of joint recall using 17% of the bid-microdata footprint (2,000 of 11,676 firms). Under temporal holdout sequential recall is comparable to joint (114 vs 111 at k=1,000) and more robust to the temporal drop. Sequential approaches, not dominates, the full-observability joint benchmark."
+headline: "At the §6 operating point (k=1,000, in-sample), sequential award→bid recovers 131 of 193 cobidders vs joint's 142 — 92% of joint recall at a much smaller bid-row footprint. Under temporal holdout sequential recall is comparable to joint (114 vs 111 at k=1,000). This is ONE point on a cost–recall frontier, not an optimal cutoff; joint is a full-observability upper bound, not an attainable target. RETIRES the '83% universal reduction' headline: the firm-pool cut and the ~33% bid-row cost cut are different objects."
 created: 2026-05-22
 script: scripts/architecture_gatekeeper.R
 target: output/architecture_gatekeeper/precision_at_k.csv
@@ -21,7 +21,7 @@ design:
 # AN-035: Architecture × k × regime cost-of-evidence matrix
 
 !!! abstract "Intuition (plain-language)"
-    The full operations grid: four sequencing rules × six recall targets × two evaluation regimes. The result that matters is in the *honest* temporal-holdout regime, where the cheap sequential gatekeeper actually edges out full joint scoring (114 vs 111 true positives) using under a quarter of the bid-microdata footprint. Where hindsight is removed, paying for less evidence is not just cheaper — it is at least as good. That inverts the usual "more data is better" instinct for exactly the reason that matters to a budget-constrained regulator.
+    The full operations grid: four sequencing rules × six recall targets × two evaluation regimes. The honest read is the temporal-holdout regime, where the cheap sequential gatekeeper is comparable to full joint scoring (114 vs 111 true positives) using a fraction of the bid-row footprint. The point is not "less data beats more" — the joint number is a full-observability upper bound — but that a single operating point on a cost–recall frontier lets a budget-constrained regulator order forensic priority cheaply. The award layer orders where evidence is opened; it does not detect cartels.
 
 ## Question
 
@@ -113,12 +113,16 @@ with zero microdata cost.*
 
 The full matrix establishes four operational claims:
 
-1. **The 83% pool-reduction claim is robust.** At the FL14 cutoff
-   (~2,735 firms out of 16,843 always-losers = 84% pool reduction),
-   the matrix shows the recall is 78–88% in-sample and 80–89%
-   temporal-holdout depending on architecture. The pool reduction is a
-   property of the FL14 cutoff (not the evaluation regime) and is
-   confirmed across both regimes.
+1. **Firm-pool reduction is real, but it is NOT a universal evidentiary
+   reduction.** At the FL14 cutoff (~2,735 firms out of 16,843
+   always-losers) the *firm* pool shrinks substantially, but the
+   quantity that matters for forensic cost is the bid-row footprint,
+   which falls only ~33% under the K = 2,000 sequential rule. The
+   retired "83% universal reduction" headline conflated the firm-count
+   cut with the evidence-cost cut; they are different objects. The
+   honest statement is a cost–recall frontier: recall is 78–88%
+   in-sample and 80–89% temporal-holdout depending on architecture, at
+   a bid-row cost well below the full-observability benchmark.
 
 2. **Sequential K=2,000 is the operational sweet spot.** In temporal
    holdout at k=1,000 it recovers comparable TP to joint (114 vs 111)

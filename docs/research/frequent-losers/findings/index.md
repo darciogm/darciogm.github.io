@@ -53,34 +53,44 @@ here rest on the project's own BEC 2009–2019 runs and start at 🟡.
 
 ---
 
-## Findings overview
+## Findings overview — what the screen reaches, and where it stops
 
-All findings below are scaffolds at 🟡 (single-source own-project estimates)
-or 🟢 (load-bearing for the paper's framing) and link to the AN pages that
-carry the design + numbers. Promotion to 🟢 (when not already there) would
-require independent replication on a non-BEC procurement panel.
+*Cheap Signals, Costly Proof* is a **reach-and-limits map**. The cheap
+award-layer records can **order forensic priority** — tell an enforcer
+where to spend costly bid-recovery effort first — but they cannot prove
+conduct on any firm. The findings below are organized so that **every
+reach is paired with its limit**. The contribution is the decomposition
+method (separating opportunity from loss-intensity signal) and the map
+of where the screen is informative versus where it goes silent.
 
-**Award-layer triage scope** *(empirical + interpretive)*
+All findings are at 🟡 (single-source own-project estimates) or 🟢
+(load-bearing for the paper's framing) and link to the AN pages that
+carry the design + numbers. Promotion to 🟢 generally requires
+independent replication on a non-BEC procurement panel.
 
-- [CADE-adjacent cobidders concentrate in the FL14 stratum](cobidders-concentrated-in-fl-stratum.md) — 🟡 131/193 cobidders recovered inside the FL stratum; rank construction = persistent zero-win participation.
-- [The FL ranking is null on direct CADE defendants — by design](direct-defendants-null-result.md) — 🟢 AUC ≈ 0.49–0.50; the predicted finding under the loser-side scope.
+**What the screen reaches** *(empirical + interpretive)*
+
+- [The ranking concentrates adjudication-anchored cobidders — but most of it is opportunity](cobidders-concentrated-in-fl-stratum.md) — 🟡 exposure-only AUC 0.946 vs within-stratum 0.7715; the **genuine loss-intensity increment is only +0.042** (DeLong p ≈ 2.1×10⁻⁶). Real, but modest.
+- [FL cobidders are operationally distinct from other frequent losers](cobidders-operationally-distinct.md) — 🟡 broader deployment, concentrated portfolios, closer to legal anchors, bid patterns consistent-with-but-not-diagnostic-of credible losing roles; distinctness survives volume matching (AN-041). Descriptive economic content, not proof of role.
+- [Joint award + bid scoring is the full-observability upper bound](full-observability-upper-bound.md) — 🟡 combined AUC 0.962, achievable only by recovering the bid layer; the two layers are complementary (a division of labor), and the sequential rule never beats this ceiling.
+
+**Where the screen stops** *(the limits, front-paged as findings)*
+
+- [The ranking is null on direct CADE defendants — by design](direct-defendants-null-result.md) — 🟢 AUC ≈ 0.49; the predicted scope boundary. A loser-side score is blind to designated winners by construction.
+- **The screen is retrospective, not prospective.** Under strict ex-ante scoring (train 2009–2016, test 2017–2019) on the full candidate universe, ROC ≈ 0.55 and precision@500 ≈ 0 — the strict-timing deployment is effectively infeasible ([AN-006](../analyses/an-006-strict-prospective-holdout.md), [AN-027](../analyses/an-027-universe-anchored-stratum-scope.md)). The signal documents past structure; it does not forecast fresh cartels.
+- **One case dominates the labeled signal.** Leave-largest-case-out drops PR-AUC from 0.126 to 0.036 (−71%); a single adjudicated case supplies ≈55% of the positives. The performance is real but **not yet broad-based** ([docs/results.md](../results.md)).
 
 **Audit discipline** *(empirical)*
 
-- [Cobidder concentration survives exposure, leakage, and timing audits](concentration-survives-audits.md) — 🟡 result holds under sham FL placebo, out-of-fold leakage audit, and strict timing.
-
-**Cobidder economic profile** *(empirical)*
-
-- [FL cobidders are operationally distinct from other frequent losers](cobidders-operationally-distinct.md) — 🟡 broader buyer deployment, more concentrated product portfolios, closer to legal cartel anchors, bid patterns consistent with credible losing roles; distinctness survives volume matching (AN-041).
+- [Cobidder concentration survives exposure, leakage, and timing audits — modestly](concentration-survives-audits.md) — 🟡 the +0.042 increment survives opportunity-cell permutation, leakage audit (item-level 0.995 → out-of-fold 0.891 → temporal 0.864, honest attenuation), and thin clustered-RI (p ≈ 0.015). Real after discipline, but small.
 
 **Sequential architecture / cost of evidence** *(empirical + interpretive)*
 
-- [Award-layer gatekeeping cuts the bid-microdata pool by 83%](gatekeeping-cuts-pool-83pct.md) — 🟡 131/193 cobidders recovered after the cut; the paper's operational headline.
-- [Joint award + bid scoring is the full-observability upper bound](full-observability-upper-bound.md) — 🟡 the two layers are complementary, not substitutes.
+- [Sequential gatekeeping traces a cost-recall frontier](gatekeeping-cuts-pool-83pct.md) — 🟡 not a universal "83% cut": at K₁ = 2,000 the firm pool falls ~88% but the **bid-row burden falls only ~33%** (survivors are heavy bidders), recall ~0.67, beating random 3–12×. The frontier — not an optimal cutoff — is the design object.
 
 **Price scope** *(interpretive)*
 
-- [Price coefficient sign reverses — scope, not damages](price-sign-reversal-scope.md) — 🟡 the sign reversal defeats the damages reading and supports a scope interpretation.
+- [Price coefficient sign reverses — scope, not damages](price-sign-reversal-scope.md) — 🟡 broad +0.064 (selection) → overlap-cell ATT −0.097 → Q4 +0.041 (only positive cell); direct-CADE price null; the cover-bidding "theater" mechanism is **not identified**. Price marks scope, never damages.
 
 ---
 
@@ -91,7 +101,8 @@ require independent replication on a non-BEC procurement panel.
   data-acquisition decision (ComprasNet federal, or another state's
   e-procurement platform).
 - **Numeric headlines are bound to `values.tex`** macros (e.g.,
-  `\valAUCFLfirm`, `\valAUClogtc`, `\valCobidders`, `\valPrecTHFivehu`)
+  `\valExpOnlyAUC`, `\valExpWithinAUC`, `\valExpIncrement`,
+  `\valCostFirmRedTwoK`, `\valCostBidRowRedTwoK`, `\valBetaOverlapATT`)
   auto-generated by `scripts/99_make_paper_values.R`. Regenerate
   `values.tex` and the analysis-index after each upstream re-run; the
   finding and AN pages quote the macros' current canonical values.
@@ -102,12 +113,12 @@ All 7 finding pages, auto-generated from the body of each `docs/findings/<slug>.
 
 | Conf. | Finding | Summary |
 |:-:|---|---|
-| 🟢 | [CADE-adjacent cobidders concentrate in the FL14 stratum](cobidders-concentrated-in-fl-stratum.md) | In São Paulo's BEC procurement platform (2009–2019), always-loser firms that bid alongside direct CADE defendants in adjudicated cartel environments concentrate disproportionately inside the FL14 stratum identified by… |
-| 🟡 | [FL cobidders are operationally distinct from other frequent losers](cobidders-operationally-distinct.md) | Inside the FL14 stratum, cobidders look different from other always-losers along four economically meaningful dimensions, with effect sizes (Cohen's d) in the 0.3–1.0 band — large in social-science terms. |
-| 🟡 | [Cobidder concentration survives exposure, leakage, and timing audits](concentration-survives-audits.md) | The cobidder concentration result from CADE-adjacent cobidders concentrate in the FL14 stratum survives the three audit disciplines introduced in §4.2 of the manuscript — though the operational deployment metrics are… |
-| 🟢 | [The FL ranking is null on direct CADE defendants — by design](direct-defendants-null-result.md) | The frequent-loser ranking, evaluated against the 47 direct CADE defendants in 2009–2019 procurement-cartel adjudications, returns AUC = 0.491 [0.461, 0.520] — indistinguishable from random. The null is the predicted… |
-| 🟡 | [Joint award + bid scoring is the full-observability upper bound](full-observability-upper-bound.md) | On the cobidder target, a classifier that uses both the award- layer score (FL14 or continuous log_tc) and the Imhof-style bid- distribution features achieves the highest AUC: 0.955 [0.943, 0.967] with FL14 + Imhof, and… |
-| 🟡 | [Award-layer gatekeeping cuts the bid-microdata pool by 83%](gatekeeping-cuts-pool-83pct.md) | Used as a gatekeeper, the FL14 ranking cuts the bid-microdata pool required for the forensic stage by 83% while still recovering 131 of 193 adjudicated cobidders (68%). This is the cost-of-evidence headline of the… |
-| 🟡 | [Price coefficient sign reverses — scope, not damages](price-sign-reversal-scope.md) | The price coefficient associated with the FL margin reverses sign when overlap discipline is applied, in a pattern that defeats the naive damages reading and supports a scope interpretation: prices tell us where the… |
+| 🟡 | [The ranking concentrates adjudication-anchored cobidders](cobidders-concentrated-in-fl-stratum.md) | The frequent-loser ranking concentrates adjudication-anchored cobidders in the always-loser stratum, but an exposure-only benchmark already reaches AUC 0.946; the genuine loss-intensity increment beyond opportunity is only +0.042 (DeLong p ≈ 2.1×10⁻⁶). Real, but modest. |
+| 🟡 | [FL cobidders are operationally distinct from other frequent losers](cobidders-operationally-distinct.md) | Inside the always-loser stratum, adjudication-anchored cobidders differ from other always-losers along four economically meaningful dimensions (Cohen's d 0.3–1.0). Descriptive economic content, not proof of role. |
+| 🟡 | [Cobidder concentration survives exposure, leakage, and timing audits — modestly](concentration-survives-audits.md) | The +0.042 increment survives opportunity-cell permutation, leakage audit (item-level 0.995 → out-of-fold 0.891 → temporal 0.864 — honest attenuation), and thin clustered-RI (p ≈ 0.015). Real after discipline, but small. |
+| 🟢 | [The ranking is null on direct CADE defendants — by design](direct-defendants-null-result.md) | Against the 47 direct CADE defendants (the legal anchors) the ranking returns AUC ≈ 0.49 — indistinguishable from random. The predicted scope boundary, front-paged as the honest limit of an award-layer screen. |
+| 🟡 | [Joint award + bid scoring is the full-observability upper bound](full-observability-upper-bound.md) | A classifier using both the award-layer score and Imhof bid-distribution features reaches AUC 0.962 — but only by recovering the bid layer for every firm. The two layers are complementary; the sequential rule never beats this ceiling. |
+| 🟡 | [Sequential gatekeeping traces a cost-recall frontier](gatekeeping-cuts-pool-83pct.md) | Not a universal 83% cut: at K₁ = 2,000 the firm pool falls ~88% but the bid-row burden — what an agency actually pays — falls only ~33%, recall ~0.67, beating random 3–12×. The frontier, not a cutoff, is the design object. |
+| 🟡 | [Price coefficient sign reverses — scope, not damages](price-sign-reversal-scope.md) | Broad +0.064 (selection) → overlap-cell ATT −0.097 → high-value Q4 +0.041 (only positive cell); direct-CADE price null; the cover-bidding "theater" mechanism is not identified. Price marks scope, never damages. |
 
 **Confidence legend.** 🟢 replicated / load-bearing for paper framing; 🟡 single-source own-project estimate; 🔴 provisional, kept for the record only. Promotion to 🟢 generally requires independent replication on a non-BEC procurement panel.

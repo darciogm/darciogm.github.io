@@ -76,7 +76,7 @@ log(1+tenders_count) is the empirical primitive.
 The sign reversal of the FL14 coefficient in the joint specification
 flips the price reading: under the joint model the binary picks up
 truncation noise that disconnects from the price signal. This is part
-of the scope-vs-damages story in
+of the scope, not damages, story in
 [AN-019](an-019-rdd-cap-price.md) and
 [H:price-scope-sign-reversal](../hypotheses/price-scope-sign-reversal.md).
 

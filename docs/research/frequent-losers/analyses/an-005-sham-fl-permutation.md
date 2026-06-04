@@ -7,7 +7,7 @@ question: Does cobidder concentration in the FL14 stratum survive a participatio
 status: done
 status_date: 2026-05-22
 confidence: green
-headline: "Formal permutation test (B = 2,000) rejects the volume-only null: observed AUC 0.924 vs sham distribution mean 0.500 (SD 0.013, q99 0.531, max 0.547); p < 1/2000. Observed AUC is 32 SDs above the sham mean."
+headline: "Permutation null (B = 2,000) the observed ranking clears: observed AUC 0.924 vs sham distribution mean 0.500 (SD 0.013, q99 0.531, max 0.547); permutation p < 1/2,000. Volume-matched reshuffling does not reproduce the loser-side concentration."
 created: 2026-05-22
 script: scripts/25_sham_fl_permutation.R
 target: output/sham_fl/sham_summary.csv
@@ -21,7 +21,7 @@ design:
 # AN-005: Sham FL permutation — formal test against the volume-only null
 
 !!! abstract "Intuition (plain-language)"
-    The skeptic's first move: the screen is just a high-volume detector — firms that bid a lot mechanically bump into cartels by sharing products, buyers, and years. To isolate loser-side concentration from raw volume, a placebo reshuffles cobidder labels 2,000 times while holding each firm's bid count fixed. The reshuffled null sits at AUC 0.500; the real signal (0.911) is 32 standard deviations away. Volume alone cannot manufacture the concentration — the footprint is about *losing*, not just *bidding*.
+    The skeptic's first move: the screen just ranks high-volume firms — firms that bid a lot mechanically bump into cartels by sharing products, buyers, and years. To isolate loser-side concentration from raw volume, a placebo reshuffles cobidder labels 2,000 times while holding each firm's bid count fixed. The reshuffled null sits at AUC 0.500; the observed ranking (0.924) clears the entire null distribution (max draw 0.547). Volume-matched reshuffling cannot manufacture the concentration — the footprint is about *losing*, not just *bidding*. This separates a genuine signal from the opportunity arithmetic of exposure.
 
 ## Question
 
@@ -42,7 +42,7 @@ many SDs is the observed AUC above the sham null distribution?
 - **Test statistic**: AUC against cobidder labels.
 - **Permutation p-value**: share of sham AUCs ≥ observed.
 - **Auxiliary**: same B sham draws also compute the price coefficient
-  on FL14 presence (for the scope-vs-damages reading).
+  on FL14 presence (for the scope, not damages, reading).
 
 ## Results
 
@@ -59,12 +59,13 @@ many SDs is the observed AUC above the sham null distribution?
 | Sham q99 | 0.531 |
 | Sham max | 0.547 |
 | Permutation p-value | **0** (< 1/2,000) |
-| Reject null at 99% | TRUE |
-| Observed in SD units above sham mean | ≈ **32 σ** |
+| Clears null at 99% | TRUE |
 
-The observed AUC of 0.924 is 32 sham SDs above the sham mean. Among
-2,000 random reassignments, zero permutations reached even 0.55. The
-volume-only null is decisively rejected.
+The observed AUC of 0.924 sits above the entire sham distribution. Among
+2,000 volume-matched random reassignments, zero permutations reached even
+0.55. The volume-only null does not reproduce the observed concentration:
+the ranking separates a genuine loser-side signal from the opportunity
+arithmetic of exposure.
 
 ### Price coefficient under the same sham (auxiliary)
 
@@ -78,12 +79,13 @@ volume-only null is decisively rejected.
 | Permutation p-value | 0.989 |
 | Reject null at 99% | FALSE |
 
-The price coefficient does NOT reject the volume-only null — the sham
+The price coefficient does NOT clear the volume-only null — the sham
 mean (+0.144) is actually larger than the observed (+0.064). This is
-the second piece of the **scope-vs-damages** reading
+the second piece of the **scope, not damages** reading
 ([H:price-scope-sign-reversal](../hypotheses/price-scope-sign-reversal.md)):
-the price effect at the FL margin is not the part of the result that
-demands explanation; the AUC concentration is.
+the price effect at the FL margin is scope information, not a damages or
+overcharge parameter, and is not the part of the result that demands
+explanation; the AUC concentration is.
 
 ### Complementary CADE-label permutation
 
@@ -103,28 +105,29 @@ Sources: `output/sham_fl/sham_summary.csv` (formal AUC + price test),
 
 *Figure: B = 2,000 sham FL permutation draws. The AUC distribution
 (left) is tightly centered on 0.500 (SD = 0.013, max = 0.547); the
-observed 0.924 falls ~32 SDs above the sham mean. The price-
+observed 0.924 sits above the entire null distribution. The price-
 coefficient distribution (right) is wider and asymmetric, with sham
 mean +0.144 — larger than the observed +0.064 — explaining why the
-price-coefficient placebo does NOT reject under the same draws (the
-scope-vs-damages reading).*
+price-coefficient placebo is NOT cleared under the same draws (the
+scope, not damages, reading).*
 
 ## Interpretation
 
-**Volume-only is dead as a candidate explanation.** Two independent
-permutation procedures both reject the null that observed concentration
-could arise from volume alone:
+**Volume-matched reshuffling does not reproduce the concentration.** Two
+independent permutation procedures both fail to reproduce the observed
+concentration from volume alone:
 
 - Sham FL permutation: B = 2,000 draws, sham mean 0.500, observed 0.924.
-  The observed AUC is more than 32 SDs above the sham null.
+  The observed AUC sits above the entire null distribution.
   Permutation p-value = 0.
 - CADE-label permutation: pre/post band 0.713–0.783, observed 0.924.
 
-The asymmetry between the AUC result (decisive rejection) and the price
-coefficient (does not reject, sham mean larger than observed) is the
-honest reading of what the screen does and does not measure: it
-discriminates cobidders by participation pattern at a level that volume
-cannot match, but the price reading is descriptive scope information,
+The asymmetry between the AUC result (null cleared) and the price
+coefficient (null not cleared, sham mean larger than observed) is the
+honest reading of what the screen does and does not measure: it ranks
+cobidders by participation pattern at a level volume-matched reshuffling
+cannot match — a genuine signal separated from the opportunity arithmetic
+of exposure — but the price reading is descriptive scope information,
 not a damages parameter.
 
 This is the **load-bearing audit** for [H:exposure-discipline](../hypotheses/exposure-discipline.md):

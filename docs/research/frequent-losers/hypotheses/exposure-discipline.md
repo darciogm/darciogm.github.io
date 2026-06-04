@@ -2,46 +2,48 @@
 paper: frequent-losers
 id: h3
 slug: exposure-discipline
-title: "Cobidder concentration survives exposure-disciplined placebos"
+title: "A limited genuine signal survives once opportunity exposure is netted out"
 cluster: B
 paper_section: "§4.2"
 status: "partial (strongly supported)"
-last_updated: 2026-05-22
+last_updated: 2026-06-02
 ---
 
-# H:exposure-discipline — Cobidder concentration survives exposure-disciplined placebos
+# H:exposure-discipline — A limited genuine signal survives once opportunity exposure is netted out
 
-A raw co-bidding association could reflect *opportunity-set exposure* — firms
+A raw co-bidding association mostly reflects *opportunity exposure* — firms
 active in the same products, buyers, years, and modalities as CADE defendants
 mechanically have more chances of appearing near those legal anchors. The
-hypothesis is that the FL ranking still concentrates cobidders after the
-exposure margin is disciplined away by participation-volume placebos and
-audits within tighter opportunity sets.
+honest hypothesis is therefore not that the raw concentration is genuine, but
+that **a limited signal survives** once opportunity is disciplined away: the
+within-stratum increment over an exposure-only benchmark is positive and
+significant, even though it is far smaller than the exposure-inflated raw
+numbers.
 
 !!! abstract "Intuition (plain-language)"
-    The headline result might be an artifact — perhaps the screen just identifies firms that bid a lot, and high-volume firms happen to cluster around CADE cases by mechanical overlap (same products, buyers, periods). Several audits discipline this: a formal sham permutation rejects the volume-only null at 32 standard deviations, a leakage audit preserves AUC above 0.85, a universe-scope matrix rules out generic-detector readings. The observed signal is not explained by any within-data artifact family we can test.
+    The eye-catching raw concentration is largely an opportunity artifact — an exposure-only model (who could possibly bid near a CADE case, given where they participate) already reaches AUC 0.946. The real question is what is left after you net opportunity out. The answer is modest but real: inside a fixed opportunity stratum the score still discriminates at AUC 0.7715, a genuine increment of about +0.042 over the exposure-only benchmark (DeLong p ≈ 2 × 10⁻⁶). Most of the concentration is opportunity; a limited, statistically real signal survives. That honest split — not a 0.92 headline — is the contribution.
 
 
 > **Evidence strength: Partial (strongly supported).**
-> Four converging audit chains, all strong within the BEC × CADE
-> data:
-> (i) **Formal sham permutation** ([AN-005](../analyses/an-005-sham-fl-permutation.md)):
-> B = 2,000 volume-matched permutations; sham AUC distribution mean
-> 0.500, SD 0.013, q99 0.531, max 0.547. Observed 0.924 is **~32 sham
-> SDs above the mean**; permutation p < 1/2,000 = 0; rejects volume-only
-> null at 99%.
-> (ii) **Leakage audit** ([AN-014](../analyses/an-014-leakage-audit-d3.md)):
-> raw item-level 0.995 → OOF firm-level 0.891 [0.887, 0.894] → temporal
-> firm-level 0.864 [0.858, 0.870]. Attenuation 0.10–0.13, residual AUC
-> >> sham distribution.
-> (iii) **Universe-anchored stratum scope** ([AN-027](../analyses/an-027-universe-anchored-stratum-scope.md)):
-> 8-row meta-table confirms the score targets only what the framing
-> predicts. Crucial row 4: participation count on all BEC vs direct CADE
-> = **0.383** — below 0.5, the score actively repels winner-heavy
-> defendants. No "generic detector" reading possible.
-> (iv) **Exposure-stratum balance** ([AN-028](../analyses/an-028-exposure-stratum-balance.md)):
-> within the FL14 stratum, cobidders distinct from non-cobidder FLs at
-> Cohen's d 0.19–1.00 across 7 dimensions; not driven by volume alone.
+> The exposure decomposition on the BEC × CADE data:
+> (i) **Most concentration is opportunity** ([AN-004](../analyses/an-004-cobidder-baseline.md),
+> [AN-027](../analyses/an-027-universe-anchored-stratum-scope.md)):
+> an exposure-only model reaches AUC 0.946, so the raw concentration is
+> exposure-inflated rather than discriminating power.
+> (ii) **A limited genuine signal survives** ([AN-004](../analyses/an-004-cobidder-baseline.md)):
+> the within-stratum AUC is 0.7715, a genuine increment of **+0.042** over
+> the exposure-only benchmark (DeLong p ≈ 2 × 10⁻⁶). Limited, but real.
+> (iii) **Sham permutation** ([AN-005](../analyses/an-005-sham-fl-permutation.md)):
+> a volume-matched permutation null is rejected — opportunity alone does
+> not reproduce the increment.
+> (iv) **Leakage audit** ([AN-014](../analyses/an-014-leakage-audit-d3.md)):
+> in-sample item-level numbers attenuate sharply under out-of-fold and
+> temporal holdout; the within-stratum increment is reported on the
+> disciplined, not the inflated, numbers.
+> (v) **Universe-anchored scope** ([AN-027](../analyses/an-027-universe-anchored-stratum-scope.md)):
+> the score actively repels winner-heavy direct defendants (below random),
+> so no "generic detector" reading is possible — the signal is loser-side
+> exposure, not membership.
 > Promotion to 🟢 (**Confirmed**) requires independent replication on a
 > non-BEC procurement panel — see the H3 page commentary section on why
 > within-data exhaustion (however strong) does not satisfy the bar.
@@ -56,20 +58,22 @@ how they bid. The discipline isolates the signal from the volume
 
 ## Prediction
 
-Cobidder concentration inside the FL stratum should remain elevated when:
+After opportunity is netted out, a **limited but non-zero** within-stratum
+increment should survive:
 
-- the FL score is recomputed on a participation-matched placebo sample
-  ("sham FL"); and
-- cobidder classification is restricted to firms within the same
-  (product × buyer × year × modality) opportunity sets as direct CADE
-  defendants.
+- the exposure-only benchmark should account for most of the raw
+  concentration (AUC ≈ 0.946); and
+- the score should still discriminate within a fixed opportunity stratum
+  (AUC ≈ 0.7715), a genuine increment of order +0.042 (DeLong p ≈ 2e-6) over
+  that benchmark — not collapsing to it.
 
 ## Competing prediction
 
-**Mechanical exposure.** If concentration falls to baseline under either
-discipline, the result reduces to opportunity-set overlap rather than a
-behavioral signal. The hypothesis predicts robustness; the placebo predicts
-attenuation.
+**Pure opportunity.** If the within-stratum increment is zero — i.e.,
+concentration falls all the way to the exposure-only benchmark — the result
+reduces to opportunity-set overlap with no genuine loser-side signal. The
+hypothesis predicts a limited surviving increment; the null predicts full
+collapse to the exposure benchmark.
 
 ## Case evidence
 
@@ -79,12 +83,15 @@ strata that procurement-cartel cases typically operate in (see
 
 ## Empirical test
 
+- *Exposure benchmark*: an exposure-only model of who could plausibly bid
+  near a CADE anchor given where they participate (AUC ≈ 0.946) — the share
+  of raw concentration that is mechanical opportunity.
+- *Within-stratum increment*: discrimination of the score inside a fixed
+  opportunity stratum, net of the benchmark (AUC ≈ 0.7715, +0.042).
 - *Sham FL*: random reassignment of the FL label among always-losers,
-  preserving the marginal distribution; recompute AUC and compare to
-  observed.
-- *Exposure-adjusted audit*: restrict the cobidder benchmark to firms in
-  the same exposure stratum and recompute concentration.
-- *Outcome*: AUC against the cobidder set in each discipline.
+  preserving the marginal distribution; tests whether opportunity alone
+  reproduces the increment.
+- *Outcome*: the genuine within-stratum increment and its DeLong p-value.
 
 ## Data requirements and limitations
 
@@ -98,11 +105,12 @@ participation distortions.
 
 | Analysis | Bearing | Status | Key takeaway |
 |---|---|---|---|
-| [AN-005](../analyses/an-005-sham-fl-permutation.md) (sham FL placebo, formal) | Direct | done | B=2,000 permutation; sham mean 0.500 SD 0.013; observed 0.924 = 32 σ above; p < 1/2,000 |
-| [AN-014](../analyses/an-014-leakage-audit-d3.md) (leakage audit D3) | Direct | done | Raw 0.995 → OOF 0.891 → temporal 0.864; attenuation 0.10–0.13 |
-| [AN-027](../analyses/an-027-universe-anchored-stratum-scope.md) (universe-anchored scope matrix) | Direct | done | 8-row meta-table; row 4 (participation count vs direct CADE) = 0.383, below random |
+| [AN-004](../analyses/an-004-cobidder-baseline.md) (exposure decomposition) | Direct | done | Exposure-only AUC 0.946 (raw is opportunity-inflated); within-stratum 0.7715, genuine increment +0.042 (DeLong p ≈ 2e-6) |
+| [AN-005](../analyses/an-005-sham-fl-permutation.md) (sham FL placebo, formal) | Direct | done | Volume-matched permutation null rejected; opportunity alone does not reproduce the increment |
+| [AN-014](../analyses/an-014-leakage-audit-d3.md) (leakage audit D3) | Direct | done | In-sample item-level numbers attenuate sharply under OOF / temporal holdout; increment reported on disciplined numbers |
+| [AN-027](../analyses/an-027-universe-anchored-stratum-scope.md) (universe-anchored scope matrix) | Direct | done | Score repels winner-heavy direct defendants (below random) — loser-side exposure, not membership; no generic-detector reading |
 | [AN-028](../analyses/an-028-exposure-stratum-balance.md) (within-FL standardized diffs) | Direct | done | Cobidders distinct from non-cobidder FLs at d 0.19–1.00 across 7 dimensions |
-| [AN-006](../analyses/an-006-strict-prospective-holdout.md) (exposure + timing) | Supports | done | Strict ex ante firm AUC 0.767 [0.734, 0.800] |
+| [AN-006](../analyses/an-006-strict-prospective-holdout.md) (exposure + timing) | Supports | done | Strict ex ante firm AUC ≈ 0.77 inside the always-loser pool [0.734, 0.800] |
 
 ## Open tests
 
@@ -116,12 +124,14 @@ participation distortions.
 
 ## Why not 🟢 Confirmed?
 
-The within-data evidence is strong at the audit level: sham
-permutation rejects at p < 1/2,000 (32 σ above null), the leakage audit
-preserves AUC > 0.85, the universe matrix shows row-by-row scope
-discipline, and the standardized-diff battery rules out within-stratum
-volume artifact. By the rubric of *audit-survival* claims, H3 is
-near-exhaustive.
+The within-data evidence is strong at the decomposition level: the
+exposure-only benchmark accounts for most of the raw concentration (AUC
+0.946), and a limited genuine within-stratum increment still survives (AUC
+0.7715, +0.042, DeLong p ≈ 2e-6); the sham permutation rejects the
+opportunity-only null; the universe matrix shows the score repels
+winner-heavy defendants; and the standardized-diff battery rules out a
+within-stratum volume artifact. By the rubric of *audit-survival* claims, H3
+is near-exhaustive.
 
 So why not 🟢? Two artifact families remain untested by any within-data
 audit:
@@ -137,7 +147,7 @@ audit:
    selects which cartels to adjudicate non-randomly (e.g., easier
    cases, larger-impact cases, politically prominent cases), the
    loser-side signal could be tracking that selection rather than
-   cartel-adjacent behavior in general.
+   adjudication-anchored loser-side exposure in general.
 
 Both can only be ruled out by replication on a non-BEC panel
 (ComprasNet federal, another state's e-procurement, or another

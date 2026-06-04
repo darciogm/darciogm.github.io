@@ -7,7 +7,7 @@ question: Does cobidder concentration survive when the FL score is formed strict
 status: done
 status_date: 2026-05-22
 confidence: yellow
-headline: "Strict ex ante (train 2009–2016, evaluate 2017–2019) firm-level AUC drops from in-sample 0.924 (FL14) / 0.939 (continuous) to 0.767 [0.734, 0.800] and 0.750 [0.706, 0.795] respectively; concentration retains operational meaning under timing discipline."
+headline: "Timing is a LIMIT. Strict ex ante (train 2009–2016, evaluate 2017–2019) survives only inside the always-loser pool: firm-level AUC ~0.77 (FL14 0.767, continuous 0.750). At full-universe item scale it collapses toward random (item-level binary 0.565; full-universe ROC ≈ 0.55, precision@500 ≈ 0). The screen is largely RETROSPECTIVE among incumbents, not a prospective alarm; sequential strict-timing deployment is infeasible."
 created: 2026-05-22
 script: scripts/27_strict_prospective_holdout.R
 target: output/strict_train_threshold/strict_train_threshold.csv
@@ -21,7 +21,7 @@ design:
 # AN-006: Strict prospective holdout (timing + exposure)
 
 !!! abstract "Intuition (plain-language)"
-    A screen is only useful if it would have flagged firms *before* the cases closed. We rebuild it on 2009–2016 data and test it on cobidders adjudicated in 2017–2019. Discrimination falls from in-sample 0.924 to 0.767 — the honest cost of using a real-time information set instead of hindsight. Lower, but well above random: the loser-side footprint forms early enough to carry operational value for a regulator, not merely retrospective fit.
+    A screen is only useful if it would have flagged firms *before* the cases closed. We rebuild it on 2009–2016 data and test it on cobidders adjudicated in 2017–2019. The honest verdict is a limit: discrimination survives only *inside the always-loser pool* (firm-level ~0.77), where the comparison is between incumbents already known to bid heavily. Scale up to the full universe of items and it collapses toward random (item-level binary 0.565; full-universe ROC ≈ 0.55, precision@500 ≈ 0). The footprint is largely *retrospective among incumbents* — it sorts firms a regulator is already watching, rather than raising a prospective alarm. This boundary is part of the contribution, not a number to soften.
 
 ## Question
 
@@ -58,17 +58,25 @@ Macros: `\valAUCStrictFirmFL`, `\valAUCStrictFirmFLCI`,
 
 ## Interpretation
 
-Firm-level concentration retains roughly 80–85% of the in-sample AUC
-under strict timing (0.767 vs 0.924 for FL14; 0.750 vs 0.939 for
-continuous). The item-level binary collapses (0.565) — the binary
-indicator loses too much information when projected to item granularity
-— while the item-level continuous holds at 0.770. Direct-defendant AUC
-stays at 0.511 (random) in the temporal holdout, matching the predicted
-null in [AN-007](an-007-auc-direct-cade.md).
+**Timing is a limit, not a clean pass.** Firm-level discrimination
+survives only inside the always-loser pool — a comparison among
+incumbents already known to participate heavily — retaining roughly
+80–85% of the pooled AUC under strict timing (0.767 vs 0.924 for FL14;
+0.750 vs 0.939 for continuous). But that pool is itself the
+exposure-selected set; at full-universe item scale the screen collapses
+toward random (item-level binary 0.565; full-universe ROC ≈ 0.55,
+operational precision@500 ≈ 0). The item-level continuous holds higher
+(0.770) but is leakage-sensitive (see
+[AN-014](an-014-leakage-audit-d3.md)). Direct-defendant AUC stays at
+0.511 (random) in the temporal holdout, matching the predicted null in
+[AN-007](an-007-auc-direct-cade.md).
 
-The drop is the honest discipline price: in-sample numbers overstate
-operational discrimination, but the rank still ranks cobidders well above
-random.
+The honest reading: the rank is largely **retrospective among
+incumbents**, sorting firms a regulator is already watching rather than
+raising a prospective alarm. Sequential strict-timing deployment — refit
+the score each period and act on it ex ante — is **infeasible** at
+universe scale. This timing boundary is reported as part of the
+reach-and-limits map, not minimized.
 
 ## Follow-ups
 

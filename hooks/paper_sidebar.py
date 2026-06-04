@@ -47,7 +47,7 @@ PAPER_NAVS = {
         {"title": "Advanced",    "url": "/research/frequent-losers/advanced/"},
         {"title": "Replication", "url": "/research/frequent-losers/replication/"},
         {"title": "Authors",     "url": "/research/frequent-losers/authors/"},
-        {"title": "Mind Map",    "url": "/research/frequent-losers/mindmap/"},
+        {"title": "DAG",         "url": "/research/frequent-losers/dag/"},
         {"title": "Changelog",   "url": "/research/frequent-losers/changelog/"},
     ],
     "beneath-surface": [

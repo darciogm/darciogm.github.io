@@ -7,7 +7,7 @@ question: How does AUC behave when the universe and the positive class are syste
 status: done
 status_date: 2026-05-22
 confidence: green
-headline: "Eight-row meta-table confirms scope discipline: 0.924 (FL on AL vs cobidders), 0.491 (FL on all BEC vs direct CADE; predicted null), 0.383 (participation count on all BEC vs direct CADE; loser-side score actively repels winner-heavy defendants), 0.767 (frozen 2009-2016 vs 2017-2019)."
+headline: "Eight-row meta-table confirms scope discipline: 0.924 (FL on AL vs cobidders; an EXPOSURE-INFLATED pooled number), 0.491 (FL on all BEC vs direct CADE; predicted null), 0.383 (participation count on all BEC vs direct CADE; loser-side score actively repels winner-heavy defendants), 0.767 (frozen 2009-2016 vs 2017-2019). Opportunity decomposition: exposure-only AUC 0.946, within-stratum 0.7715, genuine increment +0.042 (DeLong p≈2e-6) — most raw concentration is opportunity arithmetic; a limited signal survives."
 created: 2026-05-22
 script: scripts/48_stratum_scope_reframe.R
 target: output/stratum_scope/stratum_scope_metrics.csv
@@ -21,7 +21,7 @@ design:
 # AN-027: Universe-anchored stratum scope matrix
 
 !!! abstract "Intuition (plain-language)"
-    An eight-cell matrix varies *who* gets ranked (always-losers vs all BEC firms) and *what* counts as a hit (cobidders vs direct defendants). The disciplining row: ranking by raw participation against direct defendants on the full panel gives AUC 0.383 — below random. The loser-side score doesn't merely miss winner-heavy ringleaders, it actively *repels* them. That is exactly the behavior a scope-honest screen should show, and it rules out a "generic detector" reading.
+    An eight-cell matrix varies *who* gets ranked (always-losers vs all BEC firms) and *what* counts as a hit (cobidders vs direct defendants). Two lessons. First, the headline 0.924 is *exposure-inflated*: a firm that bids more simply has more chances to brush against a defendant, and an opportunity decomposition shows exposure alone scores 0.946 while the genuine within-stratum increment is only +0.042 (still real, p ≈ 2e-6). Second, the disciplining row — ranking by raw participation against direct defendants gives AUC 0.383, *below* random — shows the loser-side score actively *repels* winner-heavy ringleaders. The method separates genuine signal from opportunity arithmetic; it is not a generic detector.
 
 ## Question
 
@@ -93,6 +93,32 @@ Headline readings from the source CSV:
   binary flag does not generalize prospectively.
 - Row 8: "No; direct-defendant scope failure remains" — direct-defendant
   null survives temporal holdout.
+
+## Opportunity decomposition (the headline reframe)
+
+The raw within-stratum AUC numbers (rows 1–2: 0.924 / 0.939) are
+**exposure-inflated pooled numbers**: most of the apparent
+concentration is opportunity arithmetic — firms that bid in more
+tenders mechanically have more chances to co-bid with a defendant.
+The v22 contribution is to *decompose* that raw signal:
+
+- **Exposure-only** (rank firms by bidding opportunity alone): AUC
+  **0.946** — i.e. raw opportunity by itself reproduces almost all of
+  the pooled discrimination.
+- **Within-stratum** (hold opportunity fixed, ask whether the loser-side
+  score still ranks): AUC **0.7715**.
+- **Genuine increment** (the signal that survives once opportunity is
+  netted out): **+0.042**, DeLong p ≈ 2 × 10⁻⁶.
+
+So the honest claim is *not* "the screen discriminates at 0.92". It is:
+raw concentration is mostly opportunity, and a **limited but real**
+signal (+0.042) survives the opportunity match. The volume- and
+opportunity-matched audits
+([AN-041](an-041-volume-matched-cobidder-audit.md),
+[AN-042](an-042-volume-matched-timing-audit.md)) reach the same verdict
+from the firm-profile side. This is a decomposition method — separating
+genuine loser-side signal from opportunity arithmetic — not a cartel
+detector.
 
 ## Interpretation
 

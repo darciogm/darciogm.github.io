@@ -11,9 +11,13 @@ paper: frequent-losers
 layer score (FL14 or continuous log_tc) and the Imhof-style bid-
 distribution features achieves the highest AUC: **0.955 [0.943, 0.967]**
 with FL14 + Imhof, and **0.962 [0.954, 0.969]** with continuous + Imhof
-([AN-010](../analyses/an-010-imhof-full-pipeline.md)).
+([AN-010](../analyses/an-010-imhof-full-pipeline.md)). This 0.962 is the
+**full-observability upper bound** — it is achievable only by *recovering
+the bid layer for every firm*, the very cost the cheap award-layer screen
+exists to avoid.
 
-The two layers are **complementary**, not substitutes:
+The two layers are **complementary** — a division of labor, not
+substitutes:
 
 - **Imhof seven-feature pipeline alone**: AUC 0.888 [0.865, 0.911].
 - **FL14 binary alone**: AUC 0.921 [0.914, 0.928].
@@ -21,11 +25,13 @@ The two layers are **complementary**, not substitutes:
 - **Joint**: AUC 0.955–0.962 — gain of ~0.05–0.07 over each layer
   individually.
 
-The joint score is the *full-observability upper bound*: what an
-agency could achieve if it had already opened the bid layer for every
-firm. It is the right benchmark for the gatekeeping comparison in
-[Award-layer gatekeeping cuts the bid-microdata pool by 83%](gatekeeping-cuts-pool-83pct.md):
-"how much do we give up by triaging before recovering bid data?"
+The joint score is the *ceiling*: what an agency could achieve if it had
+already opened the bid layer for every firm. It is the right benchmark
+for the cost-recall comparison in
+[the sequential gatekeeping frontier](gatekeeping-cuts-pool-83pct.md):
+"how much recall do we give up by triaging *before* paying to recover
+bid data?" By construction, **the sequential award-then-bid rule never
+beats this bound** — it approximates it at lower informational cost.
 
 Note also that the **Imhof CV-only** specification (the pure
 bid-distribution moments) achieves AUC = 0.585 [0.553, 0.616] — close

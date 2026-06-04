@@ -2,42 +2,49 @@
 paper: frequent-losers
 ---
 
-# Award-layer gatekeeping cuts the bid-microdata pool by 83%
+# Sequential gatekeeping traces a cost-recall frontier
 
 !!! abstract "Intuition (plain-language)"
-    This is the whole point, stated as a budget. Forensic bid analysis is costly, so you cannot run it on every firm. Route it instead through the top of the cheap loser-side ranking: you open expensive bid microdata for only ~17% of firms and still recover about two-thirds of the known cartel-linked losers. The screen earns its keep not by catching everyone, but by telling an enforcer *where to spend the forensic budget first*.
+    Forensic bid analysis is costly, so you cannot run it on every firm. Route it instead through the top of the cheap loser-side ranking: you decide how big a survivor pool to forward to the expensive stage, and each choice buys you a level of recall. There is no single magic cutoff — there is a *frontier*. And "how much you save" depends on how you count cost: by *firms*, a pool of 2,000 looks like an 88% cut; but those survivors are heavy bidders, so by *bid rows* — the data you actually have to recover — the saving is only about 33%. The screen's value is the shape of the frontier, not a headline percentage.
 
-🟡 Used as a gatekeeper, the FL14 ranking **cuts the bid-microdata pool
-required for the forensic stage by 83%** while still recovering **131
-of 193 adjudicated cobidders (68%)**. This is the cost-of-evidence
-headline of the paper: the award layer pays for itself by triaging
-where costly bid recovery should begin.
+🟡 Used as a sequential gatekeeper, the award-layer ranking traces a
+**cost-recall frontier**: each survivor-pool size forwarded to the
+costly bid stage buys a level of recall against the adjudication-anchored
+cobidders. There is **no universal "83% cut"** — there is a frontier,
+and one informative **operating point** on it.
 
-The in-sample operational metrics: precision@500 = 0.132 (lift 11.5×),
-precision@1000 = 0.097 (lift 8.5×), recall@1000 = 50%
-([AN-012](../analyses/an-012-operational-metrics.md)).
+**The honest cost depends on what you count.** At the operating point
+K₁ = 2,000 survivors:
 
-Under temporal-holdout discipline (the operationally honest column):
-precision@500 = **0.070** (lift 6.1×, retention 53%), precision@1000 =
-**0.066** (retention 68%); recall@500 = 18%, recall@1000 = 34%
-([AN-013](../analyses/an-013-precision-at-k-audit.md)).
+- By **firms opened**, the pool falls **~88%** (`\valCostFirmRedTwoK`).
+- By **bid rows to recover** — the data an agency actually pays for —
+  the saving is only **~33%** (`\valCostBidRowRedTwoK`), because the
+  survivors are high-participation firms that carry most of the bid
+  volume. The firm count overstates the burden saving.
 
-The gatekeeping arithmetic is the operational architecture relevant
-for agencies that cannot afford to open the bid layer for every firm.
-The joint-scoring upper bound from
-[AN-010](../analyses/an-010-imhof-full-pipeline.md) (AUC 0.955) is the
-full-observability counterfactual that gatekeeping approximates at
-lower cost.
+**Recall at that point.** The sequential award→bid rule recovers
+**~0.67** of cobidders at K₁ = 2,000 forwarding the top k = 1,000
+([AN-034](../analyses/an-034-sequential-gatekeeping-envelope.md),
+[AN-035](../analyses/an-035-architecture-cost-of-evidence-matrix.md)) —
+versus a random survivor pool of the same size that recovers ~0.10, so
+the screen **beats random by roughly 3–12×** across the frontier. It
+does not beat the
+[full-observability upper bound](full-observability-upper-bound.md)
+(joint recall ~0.78 at k = 1,000) — by construction it approximates that
+ceiling at lower informational cost.
 
-**Caveat.** Recovery and pool-reduction numbers are in-sample; the
-operational reading uses the **temporal-holdout precision@k**
-([AN-013](../analyses/an-013-precision-at-k-audit.md)), which retains
-roughly half the in-sample lift. The 83% pool cut is robust (it is a
-property of the ranking + cutoff, not of the evaluation regime); the
-precision claim is calibrated against the audited column.
+The **frontier — not a single optimal cutoff — is the design object**.
+An agency picks the operating point that fits its forensic budget; the
+paper supplies the trade-off curve, not a prescription.
 
-The reading is 🟡 pending independent replication on a non-BEC
-procurement panel.
+**Caveat.** Pool-reduction numbers are full-obs evaluation figures;
+the precision/recall that an agency would experience prospectively is
+lower (see the
+[audit page](concentration-survives-audits.md): temporal-holdout
+precision@500 retains ~53% of the in-sample lift). The bid-row counting
+correction is the substantive honesty here: do **not** quote the
+88% firm figure as the burden saving. The reading is 🟡 pending
+independent replication on a non-BEC procurement panel.
 
 **Sources.**
 
@@ -58,11 +65,13 @@ procurement panel.
 - *Cross-refs*:
   [H:gatekeeping-cost-of-evidence](../hypotheses/gatekeeping-cost-of-evidence.md);
   [docs/results.md](../results.md).
-- *Macros*: `\valFL` (2,735 firms above cutoff), `\valCobidders` (193),
-  `\valPrecInSFivehu` (0.132 in-sample), `\valPrecTHFivehu` (0.070
-  temporal), `\valLiftTHFivehu` (6.1×), `\valOpRetentionFiveHund`
-  (53%), `\valOpFlaggedFiveHund` (35 cobidders flagged in top-500
-  temporal holdout).
+- *Macros*: `\valCostFirmRedTwoK` (88% firm reduction at K₁=2,000),
+  `\valCostBidRowRedTwoK` (33% bid-row reduction — the honest burden
+  figure), `\valCostRecallSeqTwoKkOneK` (0.67 sequential recall),
+  `\valCostRecallJointkOneK` (0.78 full-obs ceiling),
+  `\valCostRandomRecallTwoK` (0.10 random baseline; 3–12× lift),
+  `\valCostPoolN` (16,772), `\valCostNpos` (190 positives),
+  `\valFL` (2,735), `\valCobidders` (193).
 - *Validation*: backing scripts `scripts/42_operational_metrics.R`,
   `scripts/43_precision_at_k_audit.R`,
   `scripts/40_leakage_audit_d3.R`.

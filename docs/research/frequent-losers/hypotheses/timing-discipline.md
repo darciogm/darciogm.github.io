@@ -2,46 +2,46 @@
 paper: frequent-losers
 id: h4
 slug: timing-discipline
-title: "Cobidder concentration survives timing discipline"
+title: "Under strict timing the signal is retrospective among incumbents, not prospective"
 cluster: B
 paper_section: "§4.2"
 status: "partial (strongly supported)"
-last_updated: 2026-05-22
+last_updated: 2026-06-02
 ---
 
-# H:timing-discipline — Cobidder concentration survives timing discipline
+# H:timing-discipline — Under strict timing the signal is retrospective among incumbents, not prospective at the universe
 
 A retrospective screen built using post-target information leaks predictive
-power. The hypothesis is that the FL ranking still concentrates cobidders
-when the score is formed strictly before the target window — including
-strict ex ante definitions that exclude any in-target information.
+power. The honest hypothesis is *not* that the ranking is fully prospective,
+but that we can disclose **exactly where strict timing leaves it standing and
+where it does not**: the signal survives strict holdout only inside the
+always-loser pool, it is retrospective among incumbents rather than
+prospective at the full universe, a fully sequential strict-timing deployment
+is infeasible on this panel, and the result leans heavily on a single CADE
+case.
 
 !!! abstract "Intuition (plain-language)"
-    Could the screen perform well only because we built it with hindsight, using post-period information that wouldn't be available to a regulator in real time? We test this with progressively stricter timing rules: train on 2009–2015 data only; test against cobidders linked to cartels adjudicated AFTER 2019. The screen still achieves AUC 0.79–0.89 against this strictly disjoint target. Combined with the structural fact that 91% of test-window firms are not in the training pool, the timing discipline is about as well-supported as within-data evidence allows.
+    Could the screen work only because we built it with hindsight? Under strict timing the answer is split, and the paper discloses both halves. *Inside the always-loser pool* — i.e., conditioning on incumbents the screen already flags — the score still discriminates at firm AUC ≈ 0.77. But *at the full universe*, where a regulator would actually deploy it cold, ROC collapses to ≈ 0.55 and precision@500 falls to roughly zero: the screen is retrospective among incumbents, not prospective. A fully sequential strict-timing pipeline is infeasible on this panel. And the signal leans on one case: leaving the largest cartel out drops PR-AUC from 0.126 to 0.036 (−71%), because that one case is about 55% of the positives. All disclosed, not buried.
 
 
 > **Evidence strength: Partial (strongly supported).**
-> Five converging timing audits within the BEC × CADE data:
-> (i) **Three-classifier battery** ([AN-029](../analyses/an-029-three-classifier-timing-battery.md)):
-> clf_2015 FL AUC 0.791 / continuous 0.851; clf_2017 FL 0.856 /
-> continuous 0.897 vs all cobidders. Against truly out-of-time
-> cobid_post2019 (CADE cases adjudicated AFTER the train window):
-> clf_2015 FL 0.786 / continuous 0.854; clf_2017 FL 0.844 / continuous
-> 0.894. AUC preserved across three train horizons × two genuine OOS
-> targets.
-> (ii) **Strict ex ante firm-level** ([AN-006](../analyses/an-006-strict-prospective-holdout.md)):
-> 0.767 [0.734, 0.800] (FL14) and 0.750 [0.706, 0.795] (continuous).
-> (iii) **Precision@k temporal holdout** ([AN-013](../analyses/an-013-precision-at-k-audit.md)):
-> precision@500 = 0.070 (lift 6.1×, retention 53%). Operational claim
-> uses this column.
-> (iv) **Leakage audit firm AUC under temporal holdout** ([AN-014](../analyses/an-014-leakage-audit-d3.md)):
-> 0.864 [0.858, 0.870]; direct-defendant AUC stays at 0.511 (regime-
-> invariant null).
-> (v) **Structural firm turnover** ([AN-030](../analyses/an-030-market-persistence.md)):
-> firm persistence between early (2009–2016) and late (2017–2019)
-> windows = **8.7%**; market persistence 12.4%. The temporal holdout
-> evaluates an essentially fresh firm population — not the same firms
-> in disguise.
+> The honest timing disclosure on the BEC × CADE data:
+> (i) **Survives only inside the always-loser pool** ([AN-006](../analyses/an-006-strict-prospective-holdout.md)):
+> strict ex ante firm AUC ≈ 0.77 [0.734, 0.800] *conditional on incumbents
+> the screen flags* — not at the full universe.
+> (ii) **Retrospective, not prospective at the universe** ([AN-013](../analyses/an-013-precision-at-k-audit.md)):
+> at the full universe under strict timing, ROC ≈ 0.55 and precision@500 ≈ 0.
+> The signal is retrospective among incumbents, not a cold prospective
+> screen.
+> (iii) **Sequential strict-timing infeasible** ([AN-029](../analyses/an-029-three-classifier-timing-battery.md)):
+> a fully sequential strict-timing deployment cannot be constructed on this
+> panel — disclosed as a limit, not papered over.
+> (iv) **Single-case dependence** ([AN-013](../analyses/an-013-precision-at-k-audit.md),
+> [AN-030](../analyses/an-030-market-persistence.md)): leave-largest-out drops
+> PR-AUC from 0.126 to 0.036 (**−71%**); one case is ≈ 55% of the positives.
+> (v) **Leakage audit** ([AN-014](../analyses/an-014-leakage-audit-d3.md)):
+> in-sample item-level numbers attenuate under temporal holdout; the
+> direct-defendant null is regime-invariant.
 > Promotion to 🟢 (**Confirmed**) requires independent replication on a
 > non-BEC procurement panel; see the H4 page section on why even the
 > strictest within-data timing audits cannot satisfy that bar.
@@ -56,18 +56,21 @@ allocated.
 
 ## Prediction
 
-The cobidder concentration result should hold:
+Under strict timing, the disclosure should show:
 
-- under a **relaxed** timing rule (score formed before the target window but
-  with overlap allowed at the firm-history level); and
-- under a **strict** ex ante rule (no post-target information in the score,
-  including no firms with post-target participation).
+- the signal **survives inside the always-loser pool** (firm AUC ≈ 0.77,
+  conditional on incumbents the screen flags);
+- but **collapses at the full universe** (ROC ≈ 0.55, precision@500 ≈ 0) —
+  it is retrospective among incumbents, not prospective; and
+- it is **single-case-dependent** (leave-largest-out PR-AUC 0.126 → 0.036).
 
 ## Competing prediction
 
-**Hindsight inflation.** If concentration collapses under strict timing, the
-result reflects retrospective knowledge of cartel adjudications. The
-hypothesis predicts retention of the signal; the placebo predicts collapse.
+**Fully prospective screen.** A naive reading would claim the screen is a cold
+prospective detector that ranks new entrants. The disclosed result rejects
+that reading: at the universe under strict timing the screen is at chance, and
+a fully sequential strict-timing deployment is infeasible. The honest claim is
+the retrospective-among-incumbents one.
 
 ## Case evidence
 
@@ -77,11 +80,13 @@ constructs the strict ex ante variant.
 
 ## Empirical test
 
-- *Relaxed timing*: score uses pre-target participation; cobidder
-  classification uses any-time participation.
-- *Strict timing*: score uses pre-target participation; cobidder
-  classification restricted to pre-target cobidders.
-- *Outcome*: AUC against cobidders under each timing rule.
+- *Within-pool strict timing*: score uses pre-target participation; evaluated
+  inside the always-loser pool (firm AUC ≈ 0.77).
+- *Universe strict timing*: same score deployed cold at the full universe
+  (ROC ≈ 0.55, precision@500 ≈ 0).
+- *Single-case stress*: leave-largest-out PR-AUC (0.126 → 0.036).
+- *Outcome*: the disclosed map of where strict timing leaves the signal
+  standing and where it collapses.
 
 ## Data requirements and limitations
 
@@ -94,11 +99,11 @@ deployment scenario.
 
 | Analysis | Bearing | Status | Key takeaway |
 |---|---|---|---|
-| [AN-006](../analyses/an-006-strict-prospective-holdout.md) (strict ex ante firm) | Direct | done | Firm AUC 0.767 (FL14) / 0.750 (continuous) |
-| [AN-013](../analyses/an-013-precision-at-k-audit.md) (precision@k audit) | Direct | done | Precision retention 53%; lift retention 53%; ~47% inflation share |
-| [AN-014](../analyses/an-014-leakage-audit-d3.md) (leakage audit) | Supports | done | Temporal-holdout firm AUC 0.864 [0.858, 0.870] |
-| [AN-029](../analyses/an-029-three-classifier-timing-battery.md) (three-classifier battery) | Direct | done | 6 cells across clf × target preserve AUC 0.79–0.90 incl. truly-OOT cobid_post2019 |
-| [AN-030](../analyses/an-030-market-persistence.md) (firm/market persistence) | Direct | done | 8.7% firm persistence: temporal holdout is genuinely fresh population |
+| [AN-006](../analyses/an-006-strict-prospective-holdout.md) (strict ex ante firm) | Direct | done | Survives only inside the always-loser pool: firm AUC ≈ 0.77 (FL14) / 0.750 (continuous) — conditional on incumbents |
+| [AN-013](../analyses/an-013-precision-at-k-audit.md) (precision@k + universe + leave-largest-out) | Direct | done | At full universe ROC ≈ 0.55, precision@500 ≈ 0 (retrospective, not prospective); leave-largest-out PR-AUC 0.126 → 0.036 (−71%), one case ≈ 55% of positives |
+| [AN-014](../analyses/an-014-leakage-audit-d3.md) (leakage audit) | Supports | done | In-sample item-level numbers attenuate under temporal holdout; direct-defendant null regime-invariant |
+| [AN-029](../analyses/an-029-three-classifier-timing-battery.md) (timing battery) | Direct | done | A fully sequential strict-timing deployment is infeasible on this panel — disclosed as a limit |
+| [AN-030](../analyses/an-030-market-persistence.md) (firm/market persistence) | Supports | done | 8.7% firm persistence between windows; the pool the screen survives in is incumbents, not fresh entrants |
 
 ## Open tests
 
@@ -110,34 +115,35 @@ deployment scenario.
 
 ## Why not 🟢 Confirmed?
 
-The within-data timing evidence is unusually clean: the truly out-of-
-time `cobid_post2019` target (cobidders defined by CADE adjudications
-that happened AFTER even the clf_2017 training window) is genuinely
-independent of train data by construction, and the screen still
-returns FL AUC 0.79–0.84 and continuous AUC 0.85–0.89 against it.
-Combined with 8.7% firm persistence between windows, the temporal
-holdout is essentially a fresh-population evaluation.
+The within-data timing evidence is honestly split, and the paper
+discloses both halves. Inside the always-loser pool the screen survives
+strict timing (firm AUC ≈ 0.77, conditional on incumbents); at the full
+universe it does not (ROC ≈ 0.55, precision@500 ≈ 0), so the operational
+content is retrospective among incumbents, not a cold prospective screen.
+A fully sequential strict-timing pipeline is infeasible on this panel, and
+the signal leans on a single CADE case (leave-largest-out drops PR-AUC
+0.126 → 0.036, ≈ 55% of positives in one case). These are disclosed limits,
+not hidden weaknesses — the honest map is the contribution.
 
-Two artifact families nonetheless remain untested by any within-data
-timing audit:
+Two artifact families further remain untested by any within-data
+timing audit, and bound the within-pool survival itself:
 
-1. **Same data-generating process.** All evidence — including
-   `cobid_post2019` — lives in BEC-SP procurement and CADE-Brasil
-   adjudication. A systematic feature of *this institutional
-   environment* could be driving the persistence of the signal across
-   sub-windows (e.g., a structural feature of how Brazilian
+1. **Same data-generating process.** All evidence lives in BEC-SP
+   procurement and CADE-Brasil adjudication. A systematic feature of *this
+   institutional environment* could be driving the within-pool survival
+   across sub-windows (e.g., a structural feature of how Brazilian
    procurement-cartel cases get adjudicated; a feature of BEC's
-   participation registration that produces consistent
-   loser-side footprints across sub-periods). The temporal holdout
-   cannot distinguish "the screen generalizes across firms and time"
-   from "the screen captures a stable feature of BEC-SP".
+   participation registration that produces consistent loser-side
+   footprints across sub-periods). The temporal holdout cannot distinguish
+   "the within-pool signal generalizes across firms and time" from "it
+   captures a stable feature of BEC-SP".
 
-2. **Selection-on-CADE-adjudication is time-correlated.** The
-   `cobid_post2019` cobidders are still defined relative to CADE's
-   adjudication choices. If CADE's selection of which cartels to
-   adjudicate has a stable bias (e.g., always selecting cases with
-   loser-side activity), the post-2019 cobidders would inherit that
-   bias even though they are out-of-time relative to the train window.
+2. **Selection-on-CADE-adjudication is time-correlated.** The cobidder
+   labels are defined relative to CADE's adjudication choices. If CADE's
+   selection of which cartels to adjudicate has a stable bias (e.g., always
+   selecting cases with loser-side activity), out-of-time cobidders inherit
+   that bias — and, given the single-case dependence above, much of the
+   within-pool signal traces to one large adjudicated case.
 
 Both can only be ruled out by replication on a non-BEC panel with an
 independent cartel anchor (ComprasNet federal + a federal-level

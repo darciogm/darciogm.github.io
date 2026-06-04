@@ -25,12 +25,12 @@ with [Paulo Furquim de Azevedo](https://www.insper.edu.br/pesquisa-e-conheciment
 
 ---
 
-### [Cheap Signals, Costly Proof: Award-Layer Evidence Triage in Cartel Enforcement](frequent-losers/index.md)
+### [Cheap Signals, Costly Proof: The Reach and Limits of Award-Layer Screening in Cartel Enforcement](frequent-losers/index.md)
 
-with [Paulo Furquim de Azevedo](https://www.insper.edu.br/pesquisa-e-conhecimento/docentes-pesquisadores/paulo-furquim-de-azevedo/) (updated May, 2026 — JLEO submission-clean version) | [PDF](frequent-losers/paper.pdf) | [Online appendix](frequent-losers/online_appendix.pdf)
+with [Paulo Furquim de Azevedo](https://www.insper.edu.br/pesquisa-e-conhecimento/docentes-pesquisadores/paulo-furquim-de-azevedo/) (updated June 2026 — JLEO submission version) | [PDF](frequent-losers/paper.pdf) | [Online appendix](frequent-losers/online_appendix.pdf)
 
 ??? abstract "Abstract"
-    Cartel enforcement begins before legal proof exists. Agencies often observe contract-award records long before they recover the bid-level evidence needed to prove coordination. This paper asks whether that cheap award layer can allocate costly forensic attention. Using São Paulo's BEC procurement platform (2009--2019) and CADE adjudications, we construct a *frequent-loser* screen from award records alone: among zero-win firms, persistent participation ranks loser-side cartel-adjacency risk. The screen targets forensic priority, not cartel membership. We validate the ranking against adjudication-anchored cobidder labels, discipline it with participation and opportunity-set exposure audits, timing and leakage checks, and direct-defendant scope checks, and compare it with bid-distribution forensics on the same target. Used sequentially, the award-layer ranking reduces the bid-microdata pool for the forensic stage by 83% while recovering 131 of 193 adjudicated cobidders.
+    Cartel enforcement must allocate costly proof-producing effort before legal proof exists, drawing first on administrative records that are cheap but legally thin. How far can such records screen? Using São Paulo's BEC procurement platform (2009--2019) and CADE adjudications, we build a minimal award-layer construct—persistent zero-win participation among always-loser firms, the *frequent losers*—and subject it to a decomposition that most screening studies omit. The construct concentrates adjudication-anchored exposure to adjudicated cartel environments; the decomposition then draws a sharp boundary. Much of its apparent power reflects procurement opportunity and a single adjudicated case, and it orders firms retrospectively among incumbents rather than prospectively across the platform. Our contribution is a transferable method for separating genuine screening signal from exposure arithmetic and case concentration, and a map of where cheap administrative records can, and cannot, order forensic priority. Liability remains in the richer bid-level record.
 
 ??? note "Media coverage"
     - [National Dissertation Award - CAPES](https://www.insper.edu.br/noticias/premio-capes-de-teses-2021-darcio-genicolo-martins/)

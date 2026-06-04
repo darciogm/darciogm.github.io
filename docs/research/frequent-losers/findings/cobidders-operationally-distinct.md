@@ -7,10 +7,11 @@ paper: frequent-losers
 !!! abstract "Intuition (plain-language)"
     Not every firm that loses a lot is a cover bidder — most are just uncompetitive. So the screen would be useless if cartel-linked losers looked exactly like ordinary losers. They don't: the cartel-linked ones range across more buyers, concentrate on narrower product lines, and keep showing up beside the same winners. Those are footprints of a *role played inside a scheme*, not of generic weakness — which is what makes the loser-side signal informative rather than just a ranking of weak firms.
 
-🟡 Inside the FL14 stratum, **cobidders look different from other
-always-losers** along four economically meaningful dimensions, with
-effect sizes (Cohen's d) in the 0.3–1.0 band — large in social-science
-terms.
+🟡 Inside the FL14 stratum, **adjudication-anchored cobidders look
+different from other always-losers** along four economically meaningful
+dimensions, with effect sizes (Cohen's d) in the 0.3–1.0 band — large in
+social-science terms. This is **descriptive economic content** about how
+these firms deploy, not proof that any of them played a cartel role.
 
 1. **Buyer breadth** ([AN-008](../analyses/an-008-pbu-characterization.md)).
    Cobidders bid in 136.5 tenders on average vs 76.7 for non-cobidder
@@ -19,14 +20,15 @@ terms.
 2. **Product concentration** ([AN-009](../analyses/an-009-network-hhi.md)).
    Cobidder product-portfolio HHI is 0.380 vs 0.288 for non-cobidder
    FLs (**d = +0.39**) — more focused product portfolios.
-3. **Network proximity** ([AN-008](../analyses/an-008-pbu-characterization.md),
+3. **Proximity to legal anchors** ([AN-008](../analyses/an-008-pbu-characterization.md),
    [AN-009](../analyses/an-009-network-hhi.md)). 1.5% of cobidders have
    a direct-defendant counterpart vs 0.2% of non-cobidder FLs (**d =
    +0.46**). FL-bidder-present markets have winner-side HHI 0.178 vs
    0.303 — cobidders show up in the more contestable markets.
 4. **Bid-level patterns** ([AN-010](../analyses/an-010-imhof-full-pipeline.md),
-   [AN-024](../analyses/an-024-unified-mechanism.md)). Consistent with
-   credible losing roles, not diagnostic of them.
+   [AN-024](../analyses/an-024-unified-mechanism.md)). **Consistent with,
+   but not diagnostic of**, credible losing roles — a pattern, not a
+   proof.
 5. **Survives volume matching** ([AN-041](../analyses/an-041-volume-matched-cobidder-audit.md)).
    Cobidders bid in ~1.8× more tenders, so the obvious worry is that
    the distinctness is just volume. Matching cobidders to non-cobidder
@@ -37,10 +39,11 @@ terms.
    AN-031 bid-dispersion elevation collapses (**+0.05, n.s.**) and is
    dropped as a volume artifact.
 
-These differences give the loser-side adjacency target economic
-content and make it harder to reduce the result to ordinary high-
-volume losing alone — a worry now directly addressed by the
-volume-matched audit.
+These differences give the adjudication-anchored cobidder target
+economic content and make it harder to reduce the result to ordinary
+high-volume losing alone — a worry now directly addressed by the
+volume-matched audit. They describe a deployment profile; they do **not**
+identify a role.
 
 **Caveat.** The distinctness that survives volume matching is
 **structural** (product specialization, winner spread, proximity to the

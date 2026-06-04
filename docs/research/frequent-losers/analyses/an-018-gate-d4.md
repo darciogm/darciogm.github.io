@@ -74,7 +74,8 @@ construction.
 
 This mechanistically explains the predicted null AUC against direct
 defendants ([AN-007](an-007-auc-direct-cade.md)): the scope of the
-screen is loser-side adjacency, not membership.
+screen is adjudication-anchored exposure on the loser side, not cartel
+membership.
 
 D4 closes the four-diagnostic gate battery (D1–D4) from 2026-04-30. The
 result is load-bearing for the framing of §4.3 of the

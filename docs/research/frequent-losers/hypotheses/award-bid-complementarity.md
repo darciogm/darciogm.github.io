@@ -2,57 +2,51 @@
 paper: frequent-losers
 id: h6
 slug: award-bid-complementarity
-title: "Award-layer and bid-layer information are complementary"
+title: "Award and bid layers are complementary (division of labor, not dominance)"
 cluster: D
 paper_section: "§6.1 + §6.2"
 status: "partial (strongly supported)"
-last_updated: 2026-05-22
+last_updated: 2026-06-02
 ---
 
-# H:award-bid-complementarity — Award-layer and bid-layer information are complementary
+# H:award-bid-complementarity — Award and bid layers are complementary (division of labor, not dominance)
 
-Sequencing matters under costly observability. The hypothesis is that
-award-layer triage adds information to bid-distribution screens on the same
-adjudication-anchored target — not because awards dominate bids, but
-because the two layers operate at different evidentiary stages. A joint
-classifier should outperform each layer individually.
+Sequencing matters under costly observability. The hypothesis is that the
+cheap award layer and the expensive bid-distribution layer carry
+**complementary** information on the same adjudication-anchored target — a
+division of labor, not a contest. The award layer ranks *where to look*; the
+bid layer evaluates *what is found*. Combining the two beats either alone, but
+the point is the division of labor, not that one dominates.
 
 !!! abstract "Intuition (plain-language)"
-    There are two layers of procurement data: cheap administrative award records (who participated, who won) and expensive bid-level microdata (every bid amount in every tender). The hypothesis: they carry complementary, non-redundant information for cartel detection. The data strongly support this — joint scoring (using both layers) gains +0.10 AUC over either layer alone with p = 10⁻²⁶. The two layers are not measuring the same thing, and this matters for the architecture of enforcement.
+    There are two layers of procurement data: cheap administrative award records (who participated, who won) and expensive bid-level microdata (every bid amount in every tender). The hypothesis: they carry complementary, non-redundant information. The data support this as a *division of labor* — Imhof bid-distribution screens reach AUC 0.888, the award-layer FL-binary 0.921, and combining the two 0.962. Neither dominates: the award layer cheaply ranks *where to look first*, and the bid layer then evaluates *what is found* in the prioritized cells. The combined number is leakage-sensitive and is not an operational claim.
 
 
 > **Evidence strength: Partial (strongly supported).**
-> The complementarity claim is established at the same-sample level
-> with formal statistical significance and an operational deployment
-> envelope:
+> The complementarity (division-of-labor) claim at the same-sample level:
 > (i) **AUC bands** ([AN-010](../analyses/an-010-imhof-full-pipeline.md)):
-> Imhof full 0.888 [0.865, 0.911]; FL14 alone 0.921 [0.914, 0.928];
-> joint 0.955 [0.943, 0.967].
-> (ii) **Formal DeLong incremental tests** ([AN-033](../analyses/an-033-imhof-incremental-delong.md)):
-> Imhof + FL14 vs Imhof full Δ = +0.096, **p = 1.2 × 10⁻²⁶**; FL14 vs
-> Imhof Δ = +0.035, **p = 0.014** (the award-layer signal alone is at
-> least as discriminating as the full Imhof pipeline, at lower
-> information cost — a complementarity diagnostic, not an outperformance
-> claim).
-> (iii) **Feature decomposition** ([AN-033](../analyses/an-033-imhof-incremental-delong.md)):
-> Imhof-base AUC 0.785 → +participation features +0.154 → +FL binary
-> +0.003. Continuous participation is the load-bearing complement to
-> Imhof; FL14 binary is the auditable simplification of that signal.
+> Imhof bid-distribution 0.888; award-layer FL-binary 0.921; combined
+> 0.962. Combining beats either layer — the layers are not measuring the
+> same thing.
+> (ii) **Division of labor, not dominance** ([AN-033](../analyses/an-033-imhof-incremental-delong.md)):
+> the award layer cheaply ranks *where to look*; the bid layer evaluates
+> *what is found*. The incremental gain from each layer over the other is a
+> complementarity diagnostic, not an outperformance/dominance claim.
+> (iii) **Continuous participation is the load-bearing complement** ([AN-033](../analyses/an-033-imhof-incremental-delong.md)):
+> adding loss-intensity participation features to the bid-distribution base
+> contributes most of the gain; the administrative FL14 binary is an
+> auditable simplification of that continuous signal.
 > (iv) **Same-sample horse race** ([AN-011](../analyses/an-011-horse-race-continuous.md), [AN-015](../analyses/an-015-gate-d1.md)):
-> continuous AUC 0.939 dominates the binary FL14 flag (0.924); the
-> gap is 0.015 under the corrected FL14 ≥ 14 definition (DeLong
-> Z = −4.38, p = 1.2 × 10⁻⁵).
-> (v) **Operational sequential envelope** ([AN-034](../analyses/an-034-sequential-gatekeeping-envelope.md)):
-> sequential award → bid gatekeeping at Stage-1 K=2,000 recovers 131
-> of 193 cobidders (recall 0.679) using 17% of the bid-microdata
-> footprint (2,000 of 11,676 firms). The architecture
-> approximates the full-observability upper bound at much lower
-> forensic cost.
-> Imhof CV-only is chance-level (0.585) — the bid-distribution pipeline
-> needs award-side features to reach its headline AUC.
+> continuous loss intensity (0.939) carries the award-layer signal better
+> than the FL14 cut (0.924) (DeLong Z = −4.38, p = 1.2 × 10⁻⁵).
+> (v) **Leakage sensitivity** ([AN-014](../analyses/an-014-leakage-audit-d3.md),
+> [AN-034](../analyses/an-034-sequential-gatekeeping-envelope.md)): the
+> combined 0.962 is an in-sample full-observability number and attenuates
+> under out-of-fold / temporal holdout; it is a division-of-labor diagnostic,
+> not an operational deployment guarantee.
 > Promotion to 🟢 (**Confirmed**) requires non-BEC replication of the
 > within-data complementarity pattern — see the H6 page section on why
-> within-data DeLong significance does not satisfy the bar.
+> within-data significance does not satisfy the bar.
 
 ## Theory
 
@@ -110,11 +104,11 @@ therefore supports — but does not require — the gatekeeping deployment of
 
 | Analysis | Bearing | Status | Key takeaway |
 |---|---|---|---|
-| [AN-010](../analyses/an-010-imhof-full-pipeline.md) (Imhof benchmark) | Direct | done | Imhof 0.888 vs FL14 0.921 vs joint 0.955 |
-| [AN-011](../analyses/an-011-horse-race-continuous.md) (horse race) | Direct | done | Continuous dominates binary, DeLong p = 2e-5 |
+| [AN-010](../analyses/an-010-imhof-full-pipeline.md) (Imhof benchmark) | Direct | done | Imhof bid-distribution 0.888 / award FL-binary 0.921 / combined 0.962 — combining beats either layer |
+| [AN-011](../analyses/an-011-horse-race-continuous.md) (horse race) | Direct | done | Continuous loss intensity (0.939) carries the award signal better than the FL14 cut (0.924), DeLong p = 2e-5 |
 | [AN-015](../analyses/an-015-gate-d1.md) (D1 harmonized) | Supports | done | D1 passes; price coefficients align in single-score specs |
-| [AN-033](../analyses/an-033-imhof-incremental-delong.md) (formal DeLong incremental) | Direct | done | Imhof + FL Δ = +0.096, p = 1.2e-26; FL alone vs Imhof Δ = +0.035, p = 0.014; FL binary marginal beyond TC = +0.003 |
-| [AN-034](../analyses/an-034-sequential-gatekeeping-envelope.md) (sequential envelope) | Direct | done | Sequential K=2,000: 74% of joint recall at 17% microdata footprint |
+| [AN-033](../analyses/an-033-imhof-incremental-delong.md) (incremental decomposition) | Direct | done | Division of labor: continuous participation is the load-bearing complement to the bid-distribution base; FL14 binary is the auditable simplification |
+| [AN-034](../analyses/an-034-sequential-gatekeeping-envelope.md) (sequential envelope) | Direct | done | Award ranks where to look, bid evaluates what is found; combined number is leakage-sensitive, not an operational guarantee |
 
 ## Open tests
 
@@ -127,17 +121,18 @@ therefore supports — but does not require — the gatekeeping deployment of
 
 ## Why not 🟢 Confirmed?
 
-H6's within-data evidence is uniquely strong:
+H6's within-data evidence is a clean division-of-labor result:
 
-- DeLong p = 1.2 × 10⁻²⁶ on the joint complementarity gain (Imhof + FL
-  vs Imhof) is at the level where statistical artifact essentially
-  cannot explain the result. The two feature sets carry independent
-  signal in an information-theoretic sense.
-- The sequential envelope demonstrates the complementarity at the
-  operational level: 74% of joint recall at 17% bid-microdata cost.
-- The Shapley-like decomposition pinpoints that continuous participation
-  is the load-bearing complement (+0.154 over Imhof base), while
-  FL14 binary's marginal beyond continuous is only +0.003.
+- Combining the layers (0.962) beats either the bid-distribution layer
+  (0.888) or the award layer (0.921) alone — the two feature sets carry
+  complementary, non-redundant signal.
+- The incremental decomposition pinpoints that continuous loss-intensity
+  participation is the load-bearing award-side complement, while the
+  administrative FL14 binary is an auditable simplification of that signal.
+- The combined number is an in-sample full-observability diagnostic and is
+  leakage-sensitive — it attenuates under out-of-fold and temporal holdout,
+  so it is read as complementarity, not as an operational guarantee or a
+  dominance claim.
 
 Two artifact families nonetheless remain untested by the within-data
 evidence:

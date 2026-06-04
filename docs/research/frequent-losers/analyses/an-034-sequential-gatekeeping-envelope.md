@@ -7,7 +7,7 @@ question: When deployed sequentially (FL gatekeeper → Imhof forensic stage) vs
 status: done
 status_date: 2026-05-22
 confidence: green
-headline: "At k=50 firms / precision target 0.1: Joint scoring recovers 23 TP using 11,676 bid records; Sequential FL→Imhof at Stage-1 K=2000 recovers 17 TP (74% of joint) using only 2,000 bid records (83% bid-microdata reduction). Sequential is the operational architecture that approximates the joint upper bound at much lower forensic cost."
+headline: "At k=50 firms / precision target 0.1: joint scoring recovers 23 TP using 11,676 bid records; sequential FL→Imhof at Stage-1 K=2000 recovers 17 TP (74% of joint) using only 2,000 bid records. This is ONE operating point on a cost–recall frontier, not an optimal cutoff: the bid-row footprint falls ~33% (not the firm-count reduction), and the joint number is a full-observability upper bound. The award layer orders forensic priority — a division of labor, not a cartel detector."
 created: 2026-05-22
 script: scripts/architecture_gatekeeper.R
 target: output/architecture_gatekeeper/sequential_envelope.csv
@@ -21,7 +21,7 @@ design:
 # AN-034: Sequential gatekeeping envelope — joint vs sequential cost-of-evidence
 
 !!! abstract "Intuition (plain-language)"
-    Opening full bid-level microdata is the expensive forensic step. Can a near-free award screen act as the gatekeeper that decides which firms are worth that cost? Yes: an FL → Imhof pipeline keeping the top 2,000 firms recovers 74% of the true positives the full joint model finds, while pulling 83% fewer bid records into forensic analysis. This is the paper's core cost-of-evidence argument — most of the signal at a fraction of the evidentiary bill.
+    Opening full bid-level microdata is the expensive forensic step. Can a near-free award screen order which firms enter that cost first? An FL → Imhof pipeline keeping the top 2,000 firms recovers 74% of the true positives the full joint model finds, while substantially shrinking the bid-row footprint pulled into forensic analysis (on the order of a third, not the firm-count reduction). This is the paper's cost-of-evidence argument read honestly: it maps a cost–recall frontier where one operating point trades evidence for recall — there is no single optimal cutoff, and the joint benchmark is a full-observability upper bound, not an attainable target.
 
 ## Question
 
@@ -122,8 +122,12 @@ adds incremental discrimination at additional microdata cost; joint
 is the upper bound; sequential approximates joint at lower cost.
 
 This is the architecture defended in §6 of the
-[manuscript](../paper.md): the award layer gatekeeps where the bid
-layer is opened. AN-013 reports the temporal-holdout precision metrics
+[manuscript](../paper.md): the award layer orders forensic priority,
+deciding where the bid layer is opened — a division of labor, not a
+cartel detector. The envelope is a cost–recall frontier: K = 2,000 is
+a reported operating point, not an optimal cutoff, and the joint
+benchmark is a full-observability upper bound rather than an attainable
+deployment target. AN-013 reports the temporal-holdout precision metrics
 under this architecture.
 
 ## Follow-ups

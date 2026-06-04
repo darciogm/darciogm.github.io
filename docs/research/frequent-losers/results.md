@@ -5,139 +5,117 @@ paper: frequent-losers
 # Main Results
 
 !!! abstract "Intuition (plain-language)"
-    Read these results as answers to one practical question: can a signal a regulator *already has for free* — which firms keep losing — make expensive cartel forensics cheaper? Yes. The persistent-loser ranking separates cartel-linked cover bidders from ordinary losers well enough (AUC ≈ 0.86 out of sample) that using it as a first-stage filter cuts the costly bid-microdata pool by ~83% while still catching about two-thirds of known cobidders. It complements, rather than duplicates, the classic bid-distribution screens. The price results come last and on purpose: they describe *where* the signal is active, not *how much* any cartel overcharged.
+    Read these results as answers to one practical question: can a signal a regulator *already has for free* — which firms keep losing — order where expensive cartel forensics should look first? Partly. Most of the raw concentration of cobidders among persistent losers is **opportunity arithmetic**: firms that participate more have more chances to appear adjacent to anything, including a cartel. Once procurement opportunity is held fixed, a *limited but real* signal survives — roughly four points of AUC over what mechanical exposure already buys. That residual is the honest object. The award layer **ranks where to look**; it does not prove conduct, and it cannot reach the win-heavy defendants who sit at the center of the cases. The price results come last and on purpose: they describe *where* the signal is active (scope), not *how much* any cartel overcharged.
 
-This page presents the empirical findings in the order the paper now privileges: discrimination first, architectural complementarity second, pricing imprint third (descriptive corroboration only).
+This page presents the empirical findings in the order the paper now privileges: the opportunity decomposition first (the honest discrimination object), then the scope boundary, the timing and single-case limits, the division of labor with the bid layer, the cost-recall frontier, and finally the pricing imprint (scope only).
 
 ---
 
-## 1. Discrimination Against the Cobidder Population
+## 1. The Opportunity Decomposition (Headline)
 
-The screen's primary validation is firm-level discrimination of cobidders inside the always-loser stratum.
+The central methodological move is to separate **genuine signal** from **opportunity arithmetic**. A firm that participates in many tenders has many chances to co-bid with anyone — a cartel included — purely by exposure. The decomposition asks how much discrimination survives once procurement opportunity is held fixed.
 
-### Headline AUC
+### Pooled vs. within-stratum AUC
 
 | Metric | Value |
 |---|---|
-| **Firm-level AUC, temporal holdout (train 2009–2016, test 2017–2019)** | **0.864** [95% CI: 0.858, 0.870] |
-| Firm-level AUC, in-sample (binary FL14 flag) | 0.924 [95% CI: 0.921, 0.926] |
-| Firm-level AUC, in-sample (continuous log participation) | 0.939 |
-| AUC, strict pre-2020 benchmark with participation-stratified permutation null | corroborated by 3.2× excess over random-matching baseline ($p < 0.001$) |
-| AUC against direct CADE defendants in broader BEC firm universe | ≈ 0.49 (random — by design; loser-side scope, not winner-side identity) |
+| **Pooled / exposure-only AUC** | **0.946** |
+| **Within-stratum AUC (procurement opportunity held fixed)** | **0.7715** |
+| **Genuine increment over mechanical exposure** | **+0.042** (DeLong $p \approx 2 \times 10^{-6}$) |
 
-!!! success "AUC 0.864 under temporal holdout"
-    The temporal-holdout AUC is the headline reference for all operational claims. The construct is not retrofit on post-2020 data; the score is computed using only 2009–2016 participation and evaluated on items in 2017–2019. Out-of-fold CV at cobidder-firm level returns 0.891 [0.887, 0.894], confirming the structural component dominates.
+!!! success "The +0.042 increment is the honest headline"
+    Most of the raw concentration is **opportunity**, not signal. When firms are compared *within* strata of equal procurement exposure, the within-AUC falls to **0.7715** — still well above chance, but far below the pooled 0.946. The portion attributable to mechanical exposure alone reaches **0.946** by itself; the portion that survives stratification is the genuine award-layer signal of **+0.042** over that exposure baseline. This is the number the paper leads with.
 
-### Leakage audit (decomposition of in-sample item-level AUC)
+!!! warning "The old 'firm-level AUC 0.86 / 0.92' is the exposure-inflated number"
+    Earlier framings reported a firm-level discrimination headline of 0.864 (temporal holdout) or 0.924 (in-sample FL14 flag). Those figures are now understood as **exposure-inflated pooled** numbers: they bundle the genuine signal together with the opportunity arithmetic. They are demoted. The disciplined claim is the within-stratum 0.7715 and the +0.042 increment over exposure-only.
 
-The raw in-sample item-level AUC of 0.995 is partly tautological by construction. The audit decomposes it into structural and leakage components:
-
-| Audit | Specification | AUC | 95% CI |
-|---|---|---|---|
-| Original | In-sample, full pool | 0.995 | [0.995, 0.995] |
-| Audit 1 — scope | Same score, swapped to direct-CADE label | 0.506 | [0.505, 0.507] |
-| Audit 2 — tautology | 5-fold CV at cobidder-firm level | 0.891 | [0.887, 0.894] |
-| Audit 3 — generalization | Train 2009–2016 → test 2017–2019, any-cobidder | 0.864 | [0.859, 0.870] |
-| Audit 3 — direct-CADE label | Same temporal split, against direct-CADE label | 0.511 | [0.510, 0.513] |
-
-The 0.10–0.13 drop from in-sample to audit-corrected AUC is the pure-leakage component. Audits against direct-CADE labels return random AUC, consistent with the loser-side scope.
-
-### Formal sham permutation: 32 σ above the volume-only null
-
-A formal version of the volume placebo permutes the FL14 label across always-losers while preserving the marginal participation distribution. Across **B = 2,000** sham draws, the sham AUC distribution has mean 0.500, SD 0.013, and 99th percentile 0.531. The observed FL14 AUC of 0.924 falls **~32 standard deviations above the sham mean**; permutation *p* < 1/2,000 (decisively rejects the volume-only null at the 99% level). The price coefficient under the same sham *does not* reject the null (observed +0.064 vs sham mean +0.144, *p* = 0.989) — the second piece of the scope-not-damages reading.
-
-### Three-classifier timing battery: discrimination preserved under strict ex ante training
-
-A stricter version of the temporal holdout trains on progressively earlier windows and evaluates against cobidders linked to CADE adjudications closed only after the training window. Even at the strictest horizon — **clf_2015** trained on 2009–2015 only, evaluated against **cobid_post2019** (truly out-of-time, by construction unavailable in the training data) — the firm-level FL AUC is **0.786** and the continuous AUC is **0.854**. clf_2017 returns 0.844 / 0.894 against the same target. Firm persistence between the early and late panel windows is **8.7%**: roughly nine in ten test-window firms were not in the training pool. The temporal holdout therefore evaluates a substantially fresh firm population, not the same firms in different years.
-
-### Why direct-CADE AUC ≈ 0.49 is the design's empirical signature
-
-The flag recovers loser-side participation, not winner-side identity. Direct CADE defendants are by construction the winner side of the same arrangements. The asymmetry between cobidder discrimination (0.864) and direct-defendant discrimination (≈ 0.49) is not a failure of validation but the empirical fingerprint of what a screen built on the loser side can and cannot do.
-
-The stronger version of this scope check uses raw participation count against direct CADE defendants in the full BEC firm universe: AUC = **0.383**, which is *below* random. A high-participation BEC firm is *less* likely, not more likely, to be a direct CADE defendant under the loser-side scoring logic. The score does not merely fail to identify winner-heavy defendants; the relevant direction is reversed.
+The decomposition is the contribution: a method that **separates genuine signal from opportunity arithmetic**, applied to award-layer records that any procurement authority already holds.
 
 ---
 
-## 2. Architecture: Award-Layer Triage Before Bid-Layer Forensics
+## 2. The Scope Boundary: Direct-CADE AUC ≈ 0.49 (By Design)
 
-This is the paper's headline contribution.
+The screen recovers loser-side participation, not winner-side identity. Direct CADE defendants are by construction the **winner side** of the same arrangements — they are who *takes* the contract under a rotation scheme. A loser-side score is built to miss them.
 
-### Sequential gatekeeper rule
-
-| Quantity | Without architecture | With award-layer triage | Improvement |
-|---|---|---|---|
-| Firms entering forensic stage | 11,676 (all always-losers) | **2,000** (top-$K_1$ award-ranked survivor pool) | **83% reduction in bid-microdata pool** |
-| Cobidders recovered (of 193 adjudicated) | 193 (full coverage) | **131** | 68% recall preserved |
-| Bid-microdata interrogation cost | full | ~17% of full | ~83% saving |
-
-!!! success "83% footprint reduction"
-    Routing forensic interrogation through the screen reduces the bid-microdata pool the forensic stage must work on by 83% while still recovering 131 of 193 adjudicated cobidders. The recall robustness survives the temporal-holdout audit.
-
-### Complementarity with bid-distribution screens
-
-Against the seven-feature Imhof–Wallimann bid-distribution pipeline trained on the forensic-recoverable layer:
-
-| Model (same five-fold CV sample, $N = 16{,}779$) | AUC | 95% CI |
+| Target | AUC | Reading |
 |---|---|---|
-| Frequent-loser flag (alone) | 0.921 | [0.914, 0.928] |
-| Participation intensity (continuous, alone) | 0.884 | [0.860, 0.908] |
-| Imhof–Wallimann pipeline (alone) | 0.888 | [0.865, 0.911] |
-| Award layer + bid layer (combined) | **0.962** | [0.954, 0.969] |
+| Adjudication-anchored exposure (cobidders, within always-loser pool) | within-stratum 0.7715 | limited but real signal |
+| **Direct CADE defendants (full BEC firm universe)** | **≈ 0.49 (chance)** | **scope signature, by design** |
 
-The frequent-loser flag adds **+0.035 AUC** over the Imhof–Wallimann benchmark alone (DeLong $p = 0.014$); the combined specification gains **+0.096 to +0.098 AUC** over the bid-layer benchmark ($p < 0.001$). The increment is not an outperformance claim — it shows the two layers are not measuring the same thing.
+!!! info "A scope signature, not a failure — front-page it"
+    The ≈ 0.49 AUC against direct defendants is not a validation failure. It is the empirical fingerprint of what an award-layer, loser-side screen can and cannot do: it orders forensic priority among **cover-side** participants and is structurally blind to the **win-heavy** defendants at the legal center of the cases. The paper front-pages this boundary rather than burying it.
 
-!!! note "Why +0.035 and not 0.921 − 0.888 = 0.033"
-    The DeLong test requires paired observations on identical firms, so the **+0.035** increment is computed on the stricter same-sample subset with complete bid-layer features ($N = 11{,}676$: Imhof full 0.846, FL 0.881). The table levels above are the larger 16,779-firm pool, whose raw gap is 0.033. The two differ only because the samples differ; the DeLong-valid number is +0.035.
-
-!!! warning "Informational complements, not substitutes"
-    The two screens carry non-redundant information about the same target. The screening stage functions as a credible Stage-1 gatekeeper for the forensic stage. Reforms that mandate operational bid-microdata archival expand the forensic stage, not the screening one.
-
-### Operational metrics under temporal holdout
-
-The temporal-holdout column is the headline reference (in-sample reported only for transparency):
-
-| Top-$k$ | Holdout TP | Holdout Precision | Holdout Recall | Holdout Lift | In-sample Lift |
-|---:|---:|---:|---:|---:|---:|
-| 50 | 1 | 0.020 | 0.005 | 1.7× | 26.2× |
-| 100 | 7 | 0.070 | 0.036 | 6.1× | 14.8× |
-| 250 | 19 | 0.076 | 0.098 | 6.6× | 14.0× |
-| 500 | 35 | 0.070 | 0.181 | **6.1×** | 11.5× |
-| 1,000 | 66 | 0.066 | 0.342 | **5.8×** | 8.5× |
-
-The in-sample columns over-state precision by approximately 50% at top-500 because roughly 47% of the in-sample top-500 ranking comes from 2017–2019 participation, after CADE adjudications were already underway for some cartels. All operational claims in the paper are read off the holdout column.
+The 193 cobidders are **adjudication-anchored exposure** — firms whose participation places them adjacent to adjudicated arrangements — **not** cartel members. The direct CADE defendants are the legal anchors. The screen ranks the former and cannot reach the latter.
 
 ---
 
-## 3. Within-Stratum Bridge: How Cobidders Behave
+## 3. Timing and Single-Case Limits
 
-The cobidder population behaves like the modeled cover-bidder type along five firm-level and bid-level predictions.
+### Timing: retrospective among incumbents, not prospective
 
-### Firm-level (4 of 5 predictions confirmed)
+A strict 2009–2016 → 2017–2019 split is the honest test of whether the screen orders firms *before* the fact.
 
-| Prediction | Cohen's $d$ | Interpretation |
+| Test | Result |
+|---|---|
+| Strict split **within the always-loser pool** | survives, ROC ≈ **0.77** |
+| Strict split across the **full platform universe** | ROC ≈ **0.55**; precision@500 ≈ **0** |
+| Sequential strict-timing on the open platform | **infeasible** |
+
+!!! warning "The screen orders retrospectively, not prospectively"
+    On the full platform universe the strict-timing ROC collapses to ≈ 0.55 and precision@500 is ≈ 0. The screen orders firms **retrospectively among incumbents** — it tells you who, *among firms already present*, looks like cover-side participation — not who *will* enter a cartel prospectively. Sequential strict-timing detection is infeasible here. This is disclosed, not hidden.
+
+### Single-case dominance: one case carries the headline
+
+| Check | PR-AUC | Change |
 |---|---|---|
-| Cobidders deploy at higher intensity than FL non-cobidders | $d = 0.97$ on unique winners faced | Confirmed |
-| Cobidders bid proximally to direct CADE defendants | $d = 1.49$ | Confirmed |
-| Cobidders concentrate in narrower markets (portfolio HHI) | $d = 0.61$ | Confirmed |
-| Cobidders show repeat-pair structure with adjudicated firms | excess persistent pairs $p < 0.001$ | Confirmed |
-| Cobidders' tenure distribution distinguishes from FL non-cobidders | small effect | Mixed |
+| All cases | **0.126** | — |
+| Leave-largest-case-out (rail/metro) | **0.036** | **−71%** |
 
-### Bid-level (signature of credible cover bidding)
-
-At the bid level, cobidders bid **plausibly close to winners** with **elevated within-firm cross-bid dispersion**:
-
-| Statistic | Cobidders | FL non-cobidders | Gap (Cohen's $d$) |
-|---|---:|---:|---:|
-| Median per-firm gap to winner (log) | 0.582 | 0.809 | $d = -0.281$ ($p < 10^{-6}$) |
-| Per-firm bid SD | 1.207 | 1.099 | $d = +0.147$ |
-
-A multivariate logit holding $\log(1+\text{tenders\_count})$ constant confirms both signs at $p < 10^{-3}$. The directions are consistent with **credible cover bidding** (Marshall & Marx 2012, Asker 2010) — bids low enough to be plausible, dispersed enough to track rotation across cover roles — rather than the textbook deliberately-uncompetitive cover bid the early literature described.
+!!! warning "One case ≈ 55% of the positives"
+    A single case (rail/metro) accounts for roughly **55%** of the positives. Leaving it out drops PR-AUC by **71%** (0.126 → 0.036). The aggregate operational metrics are not a property of many independent cartels; they lean heavily on one large, well-documented case. The paper reports this concentration as a first-order limit on generalization.
 
 ---
 
-## 4. Pricing Imprint as Descriptive Corroboration
+## 4. Division of Labor with the Bid Layer
 
-The paper does not rest on this section. The screening contribution is carried by Sections 1 and 2 above. The pricing imprint is reported because the cover-bidding literature would expect a price footprint, but the available identification cannot settle whether the association is causal.
+Against the seven-feature Imhof–Wallimann bid-distribution pipeline, the award layer adds information **beyond** the bid benchmark — but as a complement, not a replacement.
+
+| Model (same five-fold CV sample) | AUC |
+|---|---|
+| Imhof–Wallimann bid-distribution pipeline (alone) | **0.888** |
+| Frequent-loser flag (alone) | **0.921** |
+| **Award layer + bid layer (combined)** | **0.962** |
+
+!!! note "Complementarity, not dominance"
+    The combined specification (0.962) exceeds the bid benchmark alone (0.888): the award layer carries **non-redundant** information about the same target. This is **complementarity**, not an outperformance claim, and the increment is **leakage-sensitive** (see the leakage audits on the Robustness page). The two layers do different jobs.
+
+!!! abstract "Award ranks where to look; bid evaluates what is found"
+    The award layer **ranks where to look** — it orders forensic priority cheaply, from records every authority already holds. The bid layer **evaluates what is found** — it interrogates conduct once microdata are pulled. Reforms that mandate operational bid-microdata archival expand the *evaluation* stage; they do not substitute for the cheap award-layer ranking.
+
+---
+
+## 5. The Cost-Recall Frontier
+
+The operational question is not "what is the optimal cutoff" but "what does each operating point on the cost-recall frontier buy." We report one representative point.
+
+| Operating point ($K_1 = 2000$) | Value |
+|---|---|
+| Cobidder recall | ~**0.67** |
+| **Firm-count reduction** | ~**88%** |
+| **Bid-row reduction** | ~**33%** |
+| Beats random by | **3–12×** |
+| Award-survivor recall | ~**0.78** |
+
+!!! warning "Retire the '83% universal reduction' — it was one operating point read as a cutoff"
+    The earlier "83% reduction" headline conflated a single operating point with a universal saving. At $K_1 = 2000$ the **firm-count** reduction is ~88%, but the **bid-row** reduction is only ~**33%**: the firms that survive triage are exactly the **high-participation** ones, so they carry a disproportionate share of bid rows. The object of interest is the **frontier**, not a cutoff. At this point recall is ~0.67 (award-survivor recall ~0.78), beating random by 3–12×.
+
+The award layer cheapens the *firm* pool the forensic stage must consider, but because survivors are high-participation, the *bid-row* interrogation cost falls far less. That asymmetry is the honest operating economics of award-layer triage.
+
+---
+
+## 6. The Pricing Imprint (Scope, Not Damages)
+
+The paper does not rest on price. The pricing imprint describes **where** the screen is active (scope), not **how much** any cartel overcharged. There is no identified damages base.
 
 ### Broad-sample association
 
@@ -148,64 +126,41 @@ The paper does not rest on this section. The screening contribution is carried b
 | (3) Pregão only (all FE) | 0.089*** | (0.025) | +9.3% | 1,334,729 |
 | (4) Convite only (all FE) | 0.037 | (0.022) | +3.8% | 319,718 |
 
-Cross-fit (0.036), CEM matching (0.077), IPW (0.055), and a leave-one-out IV bound the conditional range at +3.6% to +7.7%.
+The broad-sample +0.064 reflects **selection into higher-price cells** — *where* FL-present items concentrate — not a markup.
 
-### Sign reversal under overlap restriction
+### Overlap-cell ATT blocks the markup reading
 
-Restricting comparisons to cells where FL-present and -absent items genuinely overlap on observables and reweighting to the average treatment effect on the treated produces a reversed coefficient: overlap-cell ATT $-0.097$ ($p < 0.001$); the negative sign is robust to propensity-score trimming (full coefficients in Online Appendix B). The reversal is real; the paper does not rest on either sign.
+Restricting comparisons to cells where FL-present and -absent items genuinely overlap on observables, and reweighting to the average treatment effect on the treated, **reverses the sign**: overlap-cell ATT $= -0.097$ ($p < 0.001$).
 
-The within-quartile decomposition:
+!!! warning "The overlap-cell ATT blocks a damages reading"
+    The broad-sample positive (+0.064) does not survive overlap discipline: within genuinely comparable cells the coefficient goes to **−0.097**. This blocks any "FL presence raises prices by X%" damages interpretation. The price object is **scope** — which segments the screen lights up — not overcharge.
 
-| Quintile | Broad-sample $\beta$ | $p$-value | ATT |
-|---|---:|---:|---:|
-| Q1 | $-0.065$ | $< 10^{-15}$ | similar |
-| Q2 | $-0.057$ | $< 10^{-15}$ | similar |
-| Q3 | $-0.040$ | $< 10^{-15}$ | similar |
-| **Q4 (largest tender value)** | **+0.046** | 0.012 | **+0.041** ($p = 0.045$) |
+### Scope heterogeneity: only Q4 is positive
 
-Q4 — the segment where deployment value is highest a priori on contract size — carries the positive imprint that the framework predicts the cartel concentrates on. Q1–Q3 carry negative imprints consistent with several non-exclusive non-screening mechanisms (thin-market price formation, item-characteristic selection, composition heterogeneity in the firm pool).
+| Quartile (tender value) | Broad-sample $\beta$ | ATT |
+|---|---:|---:|
+| Q1 | $-0.065$ | similar |
+| Q2 | $-0.057$ | similar |
+| Q3 | $-0.040$ | similar |
+| **Q4 (largest tenders)** | **+0.046** | **+0.041** ($p = 0.045$) |
 
-The discrimination evidence (Section 1) and the architectural test (Section 2) carry the contribution; the broad-sample imprint is bracketed by Cinelli–Hazlett $RV_{q=1} = 17.5\%$ and Oster $\hat{\delta}$ against selection on observables already absorbed by the fixed effects.
+Q4 — the largest tenders — is the only cell carrying a positive imprint. We read this as **scope heterogeneity** (the screen is active where stakes are highest), not as a per-tender overcharge estimate.
 
-!!! info "Why this section is descriptive"
-    The screening-value formalization that motivates why the broad-sample $\beta$ remains an economic object under coarsened observability is in Online Appendix A (Proposition 3); the body of the paper does not lean on that formalization. The screen is validated in Sections 1–2; the price imprint here is corroboration that the construct also tracks an outcome the cover-bidding literature would expect, not identification of a causal effect.
+### Direct-CADE price null; mechanism not identified
 
----
-
-## 5. Heterogeneity Across Detection Regimes
-
-Where the screening signal varies tells us something the level does not. Splitting the sample into quartiles of procuring-unit size:
-
-| Quartile | FL price coefficient | Interpretation |
-|---|---:|---|
-| Q1 (smallest buyers, weakest oversight) | +21.4% | Strongest signal |
-| Q2 | +9.8% | |
-| Q3 | +4.5% | |
-| Q4 (largest buyers, strongest oversight) | +1.7% | Weakest signal |
-
-A 12.5× extreme-quartile gradient. The framework predicts the contrast direction through the detection-cost comparative static $\partial m^*/\partial \theta_k < 0$: cover-bidder deployment is more aggressive where the principal cost of detection is lower.
-
-!!! warning "Scope information, not institutional channel identification"
-    Buyer size proxies for several correlated institutional features — procurement-officer tenure (Coviello & Mariniello 2014), internal-audit infrastructure, item composition, discretionary procedure use (Decarolis et al. 2025) — none separable with the variation we have. We read the gradient as heterogeneity in the screening object across the monitoring environment, in the framework's predicted direction, with the magnitude concentrated at the extremes — not as identification of an institutional channel.
+Against direct CADE defendants the price association is null — there is no damages base to estimate. And the cover-bidding **"theater" mechanism is not identified**: within comparable cells, the price variation loads on **genuine-bidder count**, not on FL presence. The data are consistent with cover bidding but do not isolate it from competing explanations.
 
 ---
 
-## 6. Modal Asymmetry: Pregão vs. Convite (Scope Information)
+## Summary: Reach and Limits
 
-On the discrimination side, the modal-by-modal AUC against the 193 adjudicated cobidders is 0.952 in pregão primary auctions versus 0.816 in convite primary auctions (bootstrap difference $-0.136$, $p \approx 0$).
+The paper maps both the reach and the limits of award-layer screening, in declining order of confidence:
 
-!!! warning "Scope information for the screen, not a positive test of any institutional mechanism"
-    The convite minimum-bidder rule (Lei 8.666/93, Art. 22 §3) would predict a sharper screening signal where the rule binds (convite). The data reverse this prediction. We do not read the reversal as a positive test of any alternative institutional theory. The modal asymmetry is reported as scope information for the screening object — the construct discriminates better in pregão environments — and not as a positive test of the minimum-bidder-rule mechanism, which would require institutional variation the BEC setting does not deliver.
+1. **The decomposition works (method contribution).** Within-stratum AUC **0.7715**; genuine increment **+0.042** over exposure-only 0.946 (DeLong $p \approx 2\times10^{-6}$). Most raw concentration is opportunity; a limited but real signal survives.
+2. **The scope boundary is real and by design.** Direct-CADE AUC ≈ **0.49** — the screen reaches cover-side participants, not win-heavy defendants.
+3. **Timing and single-case limits bind.** Retrospective among incumbents (full-universe ROC ≈ 0.55); one case ≈ 55% of positives (leave-largest-out PR-AUC −71%).
+4. **The award and bid layers divide labor.** Imhof 0.888 / FL 0.921 / combined 0.962 — complementarity, leakage-sensitive. Award ranks where to look; bid evaluates what is found.
+5. **The cost-recall frontier is the object, not a cutoff.** At $K_1=2000$: firm reduction ~88% but bid-row reduction only ~33%; recall ~0.67.
+6. **The price imprint is scope, not damages.** +0.064 broad → −0.097 overlap-cell ATT; only Q4 positive; mechanism not identified.
 
----
-
-## Summary: What the Empirical Strategy Establishes
-
-The paper makes four empirical claims, in declining order of confidence:
-
-1. **The architecture works.** 83% reduction in forensic pool with 68% recall preserved. (Headline.)
-2. **The screen discriminates.** Firm-level AUC 0.864 under temporal holdout against adjudicated cobidders.
-3. **The screen complements bid-distribution methods.** +0.035 AUC over Imhof–Wallimann pipeline ($p = 0.014$).
-4. **A pricing imprint is present in the broad sample.** +3.6% to +7.7% across four estimators, with sign reversal under overlap and Q4-concentrated positive — reported descriptively, not causally.
-
-Claims 1–3 are the paper. Claim 4 is corroboration.
+The contribution is a **decomposition method**, a **single-case concentration finding**, and a **reach-and-limits map** — cheap award-layer records **order forensic priority**; they do not prove conduct.

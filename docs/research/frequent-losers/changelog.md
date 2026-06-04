@@ -6,6 +6,46 @@ paper: frequent-losers
 
 ---
 
+## v22 — June 3, 2026 (Current — JLEO submission)
+
+**Title:** *Cheap Signals, Costly Proof: The Reach and Limits of Award-Layer
+Screening in Cartel Enforcement.* Canonical source:
+`work/v22-editor/submission_clean/`. JLEO submission-ready
+(GO_WITH_MINOR_REPAIRS); main 38 pp + online appendix 31 pp.
+
+**Substantive reframe — "reach and limits."** The paper is no longer cast as a
+deployable cartel screen. The contribution is now (1) reframing
+procurement-cartel screening as **evidence allocation under costly
+observability**, (2) a transferable **decomposition method** that separates a
+genuine ranking signal from mechanical opportunity exposure and single-case
+concentration, and (3) a **map of reach and limits**.
+
+- **Opportunity decomposition is the headline.** Pooled/exposure-only
+  discrimination AUC **0.946** falls to **0.7715** once procurement opportunity
+  is held fixed; the genuine increment over mechanical exposure is **+0.042**
+  (DeLong p ≈ 2×10⁻⁶). The earlier firm-level 0.924/0.864 figures are now
+  reported as exposure-inflated pooled numbers, not the discrimination headline.
+- **Limits front-paged.** The ranking is **retrospective among incumbents**
+  (full-universe ROC ≈ 0.55; sequential strict-timing infeasible) and leans on
+  one case (**leave-largest-case-out PR-AUC 0.126 → 0.036, −71%**; one case
+  ≈ 55% of positives). AUC ≈ **0.49** against direct CADE defendants is a scope
+  boundary **by design**.
+- **"83% reduction" retired.** The cost-recall frontier reports firm-pool
+  reduction ≈ 88% but **bid-row footprint reduction ≈ 33%** at one operating
+  point (K₁ = 2000); the frontier, not a universal cutoff, is the design object.
+  Combined award+bid AUC **0.962** is a full-observability upper bound.
+- **Price = scope, not damages.** Broad +0.064 → overlap-cell ATT −0.097 → Q4
+  +0.041 (only positive cell); cover-bidding "theater" **mechanism not
+  identified**.
+- **Language disciplined throughout:** "adjudication-anchored exposure" (not
+  cartel-adjacency / membership); "orders forensic priority" (not detects /
+  proves); cobidders are a validation target, not cartel members.
+- **Site:** all sections rewritten to this reframe; the Mind Map was replaced by
+  a **paper DAG** of the argument; one fabricated reference removed after
+  verification.
+
+---
+
 ## v20 submission-clean — May 23, 2026 (Current — JLEO)
 
 **Title:** *Cheap Signals, Costly Proof: Award-Layer Evidence Triage in

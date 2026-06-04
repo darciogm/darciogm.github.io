@@ -7,7 +7,7 @@ question: How does cobidder AUC vary as the FL cutoff sweeps from FL2 through FL
 status: done
 status_date: 2026-05-22
 confidence: green
-headline: "The cutoff sweep (tenders_count > k) forms a clean inverted-U. The paper's FL14 (≥ 14, i.e. the > 13 cutoff) sits at the peak: AUC 0.924, 2,735 firms, 193 cobidders. Tighter cutoffs (FL15+) decline as cobidders get excluded. FL14 sits at the top of a broad high plateau, not on a fragile spike."
+headline: "The cutoff sweep (tenders_count > k) forms a clean inverted-U with a broad high plateau (FL10–FL15 all ≥ 0.90). FL14 (≥ 14, the > 13 cutoff) sits near the top: AUC 0.924, 2,735 firms, 193 cobidders. FL14 is an ADMINISTRATIVE auditable cutoff (median + 1.5·IQR), NOT a structural optimum — the continuous rank is the economic object. The sweep is a robustness frontier, not a search for an optimal cutoff."
 created: 2026-05-22
 script: scripts/22_continuous_vs_binary.R
 target: output/continuous_vs_binary/auc_threshold_sweep.csv
@@ -104,13 +104,17 @@ The sweep accomplishes three things:
    cobidders themselves (false negatives at the construct level — the
    N cobidders above cutoff column shows this directly).
 
-3. **The paper's FL14 (≥ 14) IS the peak of the sweep.** Because the
-   sweep indexes cutoffs as `> k`, the paper's ≥ 14 rule is the `> 13`
+3. **FL14 (≥ 14) is administrative, not a structural optimum.** Because
+   the sweep indexes cutoffs as `> k`, the paper's ≥ 14 rule is the `> 13`
    row: AUC 0.924, 2,735 firms, 193 cobidders — matching the headline
-   AUC in [AN-004](an-004-cobidder-baseline.md). The `> 14` (FL15) row
-   sits one bucket tighter at 0.911. There is no auditability trade-off
-   against a higher peak; the IQR-defined FL14 sits at the top of a
-   broad high plateau.
+   AUC in [AN-004](an-004-cobidder-baseline.md). It happens to sit near
+   the top of the plateau, but the paper does **not** select FL14 because
+   it is the AUC peak — it is fixed *ex ante* by the median + 1.5·IQR
+   administrative rule. The economic object is the continuous loser-side
+   rank ([AN-011](an-011-horse-race-continuous.md),
+   [AN-023](an-023-theory-operationalization-audit.md)); FL14 is the
+   auditable deployable layer on top of it. The sweep is a robustness
+   frontier, not a search for an optimal cutoff.
 
 This is the robustness check that converts H1 from "single-cutoff
 result" to "robust across a wide cutoff band". See

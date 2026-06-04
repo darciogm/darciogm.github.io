@@ -6,30 +6,32 @@ title: "Price evidence carries scope information, not damages"
 cluster: E
 paper_section: "§7.1 + §7.2"
 status: "partial (strongly supported)"
-last_updated: 2026-05-22
+last_updated: 2026-06-02
 ---
 
 # H:price-scope-sign-reversal — Price evidence carries scope information, not damages
 
-The manuscript reports a price sign reversal when the cobidder margin is
-introduced. The hypothesis is that the price result should be read as
-**scope information** — telling us where the loser-side ranking applies —
-rather than as a damages calculation. A naive damages reading would predict
-a stable, signed effect; the scope reading predicts that the sign and
-magnitude depend on the validation target.
+The manuscript reports a price sign reversal when comparisons are restricted
+to overlapping cells. The hypothesis is that the price result should be read
+as **scope information** — telling us *where* the loser-side ranking applies —
+not as a damages/overcharge magnitude. A naive damages reading would predict a
+stable, signed markup; the scope reading predicts that the sign and magnitude
+depend on the cell composition, and that no cover-bidding "theater" mechanism
+is identified by the price evidence.
 
 !!! abstract "Intuition (plain-language)"
-    The presence of frequent losers in a tender is associated with higher negotiated prices on average (+6.4% — a damages-like reading that a careless reader might interpret as the size of the cartel overcharge). But once we restrict comparisons to comparable cells under matched ATT weighting, the sign FLIPS to negative (−9.7%). The hypothesis is that this sign reversal is informative and disciplining: the price evidence is *scope* information about WHERE the loser-side ranking applies, not a damages estimate. The paper deliberately treats price evidence as secondary corroboration, and the sign reversal is what justifies that disciplined reading.
+    The presence of frequent losers in a tender is associated with higher negotiated prices on average (+6.4%). A careless reader might call that the size of a cartel overcharge — but it is *selection*: frequent losers concentrate in structurally higher-price cells, so the positive sign is about *which* cells they occupy, not a markup. Once comparisons are restricted to overlapping comparable cells, the sign FLIPS to negative (overlap ATT −9.7%), which actively blocks a markup reading; only the top tender-value quartile (Q4) stays positive (+4.1%). Price against direct CADE defendants is null. The price evidence is *scope* information about WHERE the ranking applies — not damages — and it does **not** identify a cover-bidding "theater" mechanism. The paper treats price as secondary, disciplined corroboration.
 
 
 > **Evidence strength: Partial (strongly supported).**
-> Eight lines of evidence document the sign-reversal pattern that
-> defeats a naive damages reading — six describe the pattern, two
-> describe the within-cell decomposition behind it (descriptive scope
-> evidence, not mechanism identification):
+> Nine lines of evidence establish price as *scope, not damages* — and,
+> crucially, that no cover-bidding "theater" mechanism is identified. The
+> decomposition lines are descriptive scope evidence, not mechanism
+> identification:
 > (i) **Headline three-spec progression** ([AN-037](../analyses/an-037-sign-reversal-decomposition.md)):
-> broad +0.064 (p=0.003) → overlap unweighted +0.044 (p=0.035) →
-> overlap ATT **−0.097** (p = 1.7 × 10⁻¹⁰). Clean structural sign flip.
+> broad **+0.064** (selection into higher-price cells) → overlap unweighted
+> +0.044 → overlap ATT **−0.097** (p = 1.7 × 10⁻¹⁰) — the overlap-cell flip
+> actively blocks a markup/damages reading.
 > (ii) **Within-overlap subgroup decomposition** ([AN-037](../analyses/an-037-sign-reversal-decomposition.md)):
 > negative coefficient survives both modalities (Convite −0.099,
 > Pregão −0.098), all 4 PBU-size quartiles, tender-value Q1–Q3, items
@@ -52,17 +54,21 @@ magnitude depend on the validation target.
 > [AN-022](../analyses/an-022-falsification-pregao.md)): Pregão 2.45×
 > Convite in binary price spec; joint specs flip binary FL14 sign.
 > (vii) **Selection component** ([AN-039](../analyses/an-039-selection-mechanism-test.md)):
-> among non-treated items, mean log-price rises monotonically from 1.35
-> (lowest FL-share quintile) to 6.93 (highest); Δ = 5.58 log-points,
-> full-FE FL-share coefficient +3.55 (SE 0.23). Frequent losers are
-> concentrated in structurally high-price cells — the naive positive
-> coefficient is selection, not damages.
+> among non-treated items, mean log-price rises monotonically from the
+> lowest to the highest FL-share quintile (Δ ≈ 5.58 log-points; full-FE
+> FL-share coefficient +3.55, SE 0.23). Frequent losers concentrate in
+> structurally high-price cells — the naive positive coefficient is
+> **selection into higher-price cells**, not damages.
 > (viii) **Within-cell component** ([AN-040](../analyses/an-040-within-cell-mechanism-test.md)):
-> within overlap cells FL presence is associated with +0.507 log-bidders
-> (≈66% more) and a winner bid −0.048 closer to reference; the
-> winner-vs-reference association vanishes once bidder count is controlled.
-> Selection dominates where bidders are few, the within-cell association
-> where they are many. Descriptive associations, not a mechanism.
+> within overlap cells FL presence is associated with ≈66% more bidders
+> and a winner bid slightly closer to reference; the winner-vs-reference
+> association vanishes once bidder count is controlled. These are
+> **descriptive associations, not a mechanism** — the cover-bidding
+> "theater" story is *not identified* by the price evidence.
+> (ix) **Direct-CADE price null** ([AN-019](../analyses/an-019-rdd-cap-price.md),
+> [AN-016](../analyses/an-016-gate-d2.md)): the price signal against direct
+> CADE defendants is null, consistent with price being scope (where the
+> ranking applies), not an overcharge attached to adjudicated conduct.
 > Promotion to 🟢 (**Confirmed**) requires non-BEC replication of the
 > sign-reversal pattern — see the H8 page section on why within-data
 > evidence does not satisfy the bar.
@@ -80,15 +86,21 @@ rather than the size of the cartel overcharge \citep{chassang2022robust}.
 
 The sign of the price coefficient associated with the FL margin should:
 
-- flip when the validation target shifts (direct defendants vs cobidders);
-- vary in magnitude across modality (Convite vs Pregão) consistently with
-  the loser-side scope rather than with a single damages parameter.
+- be positive broadly (selection into higher-price cells), then flip to
+  negative once comparisons are restricted to overlapping cells (overlap ATT
+  −0.097), with only the top tender-value quartile (Q4 +0.041) staying
+  positive — marking the *scope* of where the ranking applies;
+- be null against direct CADE defendants — price is scope, not an overcharge
+  attached to adjudicated conduct;
+- and **not** identify a cover-bidding "theater" mechanism: the within-cell
+  associations are descriptive, not a structural mechanism.
 
 ## Competing prediction
 
-**Damages reading.** A single signed price coefficient that is stable
-across targets and modalities, supporting a conventional damages
-interpretation. The hypothesis rejects this reading.
+**Damages reading.** A single signed price coefficient, stable across cells
+and targets, interpretable as a cartel overcharge. The hypothesis rejects
+this reading: the sign is not stable, it tracks cell composition (selection),
+and the overlap-cell flip blocks any markup interpretation.
 
 ## Case evidence
 
@@ -113,15 +125,17 @@ record (administrative-law standard).
 ## Data requirements and limitations
 
 Requires reference prices and the FL-presence indicator at the item level.
-Limitation: the sign-reversal interpretation depends on the assumption
-that the loser-side scope is correctly identified; the price reading is
-descriptive and supportive, not causal.
+Limitation: the price reading is descriptive and supportive, not causal —
+it marks the *scope* of where the ranking applies, not an overcharge. The
+within-cell associations do **not** identify a cover-bidding "theater"
+mechanism; the broad positive coefficient is selection into higher-price
+cells, and the overlap-cell flip blocks a markup interpretation.
 
 ## Evidence
 
 | Analysis | Bearing | Status | Key takeaway |
 |---|---|---|---|
-| [AN-019](../analyses/an-019-rdd-cap-price.md) (RDD price + overlap) | Direct | done | Baseline +6.36% → overlap −9.72% → PS −30.67% |
+| [AN-019](../analyses/an-019-rdd-cap-price.md) (RDD price + overlap) | Direct | done | Broad +6.4% (selection into high-price cells) → overlap ATT −9.7% (blocks markup reading); price against direct CADE null — scope, not damages |
 | [AN-020](../analyses/an-020-did-decreto-2018.md) (DiD around decree) | Supports | done | Callaway-Sant'Anna ATT +0.014 (SE 0.039); stacked DiD −0.006 — null |
 | [AN-016](../analyses/an-016-gate-d2.md) (modal AUC asymmetry) | Supports | done | Pregão 0.952 vs Convite 0.816 — opposite direction to inst. theory |
 | [AN-022](../analyses/an-022-falsification-pregao.md) (modal falsification) | Supports | done | Pregão/Convite price ratio 2.45×; joint specs flip binary sign |

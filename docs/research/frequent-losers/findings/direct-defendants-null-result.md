@@ -8,12 +8,13 @@ paper: frequent-losers
     The same logic that makes the screen work also fixes its limit. A score built on "this firm never wins" is, by construction, blind to the firms that *did* win the rigged contracts — designated winners are not zero-win firms. So the screen scores essentially at random (AUC ≈ 0.49) against the convicted ring-leaders. That is not a failure to hide; it is the honest boundary of a loser-side tool: it tells you *where to look*, never *who is guilty*.
 
 🟢 The frequent-loser ranking, evaluated against the **47 direct CADE
-defendants** in 2009–2019 procurement-cartel adjudications, returns
-**AUC = 0.491 [0.461, 0.520]** — indistinguishable from random. The
-null is the predicted finding under the loser-side scope: a score
-built from persistent zero-win participation cannot rank designated
-winners, who are *not* zero-win firms by construction
-([AN-007](../analyses/an-007-auc-direct-cade.md)).
+defendants** (the legal anchors) in 2009–2019 procurement-cartel
+adjudications, returns **AUC ≈ 0.49** — indistinguishable from random.
+This is a **predicted scope boundary, by design**, not a failure: a
+score built from persistent zero-win participation cannot rank
+designated winners, who are *not* zero-win firms by construction
+([AN-007](../analyses/an-007-auc-direct-cade.md)). The paper
+**front-pages** this null as the honest limit of an award-layer screen.
 
 Diagnostic D4 ([AN-018](../analyses/an-018-gate-d4.md)) confirms the
 null mechanistically: only **7 of 47 direct defendants (14.9%)** are
@@ -26,9 +27,10 @@ The null survives every evaluation regime: 0.506 in the leakage audit
 0.511 under temporal holdout — all within sampling distance of 0.5.
 
 This finding is the **anti-claim** that disciplines the rest of the
-paper. It rules out the generic-cartel-detector reading and pins the
-interpretation to loser-side adjacency. Without it, the screen would
-overclaim; with it, the scope is honest.
+paper. It rules out the "cartel detector" reading and pins the
+interpretation to a loser-side tool that **orders forensic priority**,
+never proves conduct. Without it, the screen would overclaim; with it,
+the reach-and-limits map is honest.
 
 **Caveat.** The null is the *predicted* finding under the loser-side
 scope interpretation; reading it as a failure of the screen would

@@ -21,7 +21,7 @@ design:
 # AN-033: Imhof incremental — formal DeLong tests for complementarity
 
 !!! abstract "Intuition (plain-language)"
-    How much does the cheap award layer add *on top of* the expensive bid-distribution screen? A formal DeLong test answers: +0.096 AUC, p ≈ 10⁻²⁶ — the two are statistically distinct signals, not the same information measured twice. Strikingly, FL alone even beats Imhof alone on the same sample (+0.035, p = 0.014). The economic implication is an architecture one: spend on bid microdata only after a near-free award screen has already done its share of the work.
+    How much does the cheap award layer add *on top of* the expensive bid-distribution screen? A formal DeLong test answers: +0.096 AUC, p ≈ 10⁻²⁶ — the two are statistically distinct signals, not the same information measured twice. On this same sample the award layer alone is at least comparable to Imhof alone (+0.035, p = 0.014) — read as complementarity and a division of labor, not as the cheap screen "beating" the expensive one. The economic implication is architectural: spend on bid microdata after a near-free award screen has already ordered forensic priority.
 
 ## Question
 
@@ -44,6 +44,21 @@ deserves a formal statistical test rather than a visual gap-reading.
   - *imhof_plus_tenders*: Imhof full + continuous tenders.
 - **Statistic**: AUC, 95% CI, delta vs Imhof baseline, **DeLong paired
   AUC-difference p-value** (same-sample test).
+
+!!! note "Two samples, one reading"
+    This page reports the **same-sample DeLong pool** (N = 11,676), where
+    Imhof full = 0.846, FL = 0.881, joint = 0.942. The manuscript headline
+    (§6) uses the larger labeled pool (N = 16,779), where the canonical
+    numbers are **Imhof 0.888 / FL 0.921 / combined 0.962**. The two
+    samples differ in which firms have both feature sets; the qualitative
+    conclusion is identical and the cross-sample gap is reconciled in a
+    table footnote. The result is a **complementarity / division-of-labor**
+    finding — the cheap award layer and the bid layer carry partly
+    distinct information — **not** a claim that FL dominates Imhof. The
+    joint number is a full-observability upper bound and is
+    **leakage-sensitive**: it rests on in-sample firm history and falls
+    under temporal holdout (see [AN-014](an-014-leakage-audit-d3.md),
+    [AN-035](an-035-architecture-cost-of-evidence-matrix.md)).
 
 ## Results
 

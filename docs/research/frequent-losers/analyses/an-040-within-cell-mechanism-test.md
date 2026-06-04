@@ -21,7 +21,7 @@ design:
 # AN-040: Within-Cell Mechanism Test (Test 2 of the Sign-Reversal Rationalization)
 
 !!! abstract "Intuition (plain-language)"
-    Second half: the *mechanism*. Within a comparable cell, FL presence brings ~67% more bidders into the tender and pulls the winning bid ~5% closer to the reference price — and that price effect vanishes once you control for the number of bidders. So the channel is bidder inflation: cover bidding manufactures apparent competition, which mechanically tightens the winning bid. The two forces compete — selection dominates in sparse tenders (FL items look pricier), the mechanism dominates in dense ones (FL items look cheaper) — and together they explain why the raw sign and the within-cell sign disagree.
+    Second half: the *within-cell association*. In a comparable cell, FL presence comes with ~67% more bidders and a winning bid ~5% closer to the reference price — and that price gap vanishes once you control for the number of bidders. So the channel is bidder count, not FL status per se: the pattern is *consistent with* cover bidding manufacturing apparent competition, but it does not identify that mechanism apart from ordinary entry. The two forces still pull opposite ways — selection makes FL items look pricier in sparse tenders, the bidder-count association makes them look cheaper in dense ones — which is why the raw sign and the within-cell sign disagree.
 
 ## Question
 
@@ -76,8 +76,12 @@ the appearance of competition.
 
 `exp(0.507) − 1 ≈ 66%`: FL-present items have ~66% more bidders within
 the same cell type. Combined with M2: those extra bidders pull the
-winner bid 4.8% closer to the reference price. **Cover-bidding theater
-is empirically detectable**.
+winner bid 4.8% closer to the reference price. **The "theater"
+mechanism is NOT identified, however**: once `log(n_firms)` is
+controlled the FL effect on the winner-to-reference ratio vanishes, so
+the within-cell movement loads on **genuine-bidder count**, not on FL
+status specifically. The pattern is *consistent with* a cover-bidding
+reading but does not isolate cover bidding from ordinary entry.
 
 ### Test 2c: heterogeneity by bidder-count
 
@@ -133,17 +137,20 @@ cell). The overlap-cell ATT (−0.097) isolates the mechanism by
 weighting toward cells where both treated and untreated items are
 present and reweighting toward the treatment-bearing cells.
 
-**The mechanism story is empirically clean:**
+**The mechanism story is descriptive, not identified.** What the data
+support is an association running through bidder count, not an
+identified cover-bidding mechanism:
 
-1. Cover bidders **manufacture the appearance of competition** by
-   bringing more bidders into the auction (+66% bidder count within
-   cell, p < 10⁻³⁰).
-2. The extra bidders **mechanically depress the winner's bid** relative
+1. FL-present cells have **more bidders** (+66% bidder count within
+   cell, p < 10⁻³⁰) — *consistent with* manufactured competition, but
+   also with ordinary entry into FL-active cells.
+2. Those extra bidders are associated with a **lower winner bid** relative
    to the reference price (−4.8 percentage points in the winner-vs-ref
-   ratio).
-3. The mechanism is **conditional on a critical mass of bidders** —
-   below 6 bidders, cover bidding has no leverage to compress the
-   winner's markup; above 11, the mechanism dominates.
+   ratio); the FL coefficient is absorbed once bidder count is controlled,
+   so the channel is **genuine-bidder count**, not FL status.
+3. The association is **conditional on a critical mass of bidders** —
+   below 6 bidders the effect is absent; above 11 it dominates. This is
+   a descriptive heterogeneity, not an identified mechanism.
 
 **Implications for the manuscript §7:**
 
@@ -161,7 +168,7 @@ present and reweighting toward the treatment-bearing cells.
   estimate of OVERCHARGE). But the decomposition explains WHY the
   damages reading fails: the observed price is the result of two
   competing forces, and a single coefficient cannot capture both.
-- Deployment guidance becomes more concrete: detection is most informative where the within-cell scope pattern dominates (dense-bidding cells), and the screen design should reflect this.
+- Deployment guidance becomes more concrete: the screen orders forensic priority most informatively where the within-cell scope pattern dominates (dense-bidding cells), and the screen design should reflect this.
 
 ## Follow-ups
 
