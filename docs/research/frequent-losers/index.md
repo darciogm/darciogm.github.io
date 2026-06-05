@@ -17,34 +17,36 @@ hide:
 [Online appendix](online_appendix.pdf){ .md-button }
 </p>
 
-<p class="version-tag"><em>JLEO submission version &mdash; June 2026 (canonical-target re-estimation, 2026-06-04).</em></p>
+<p class="version-tag"><em>JLEO submission version &mdash; June 2026 (canonical target + hostile-review armor, 2026-06-04).</em></p>
 
 </div>
 
 <div class="key-result" markdown>
 <span class="number">&approx; 0.50</span>
-<span class="label">Within-opportunity AUC of the award-layer score against a reproducible, non-circular validation target — once procurement opportunity is held fixed, the cheap signal's apparent reach is opportunity arithmetic, not screening signal</span>
+<span class="label">Within-opportunity AUC of the award-layer score against a reproducible, non-circular validation target — a null that is <em>falsifiable</em> (a positive-control score ranks at 0.95 in the same strata) and <em>powered</em> (the permutation test rejects with probability 0.97 at within-AUC 0.55)</span>
 </div>
 
 ## Abstract
 
 Cartel enforcement must allocate costly proof-producing effort
-before legal proof exists. Using São Paulo's BEC procurement
-platform and CADE adjudications, we ask how far routine award
-records can rank where bid-level forensics should begin. We study
-a minimal award-layer construct—persistent zero-win
-participation—and validate it against a reproducibly constructed,
-adjudication-anchored cobidder label that never uses the screen
-itself. The decomposition is deliberately deflationary: the cheap
-signal's apparent reach mostly reflects procurement opportunity
-and case concentration; within comparable opportunity sets the
-residual ordering is marginal at best, strict prospective ranking
-fails outside incumbent pools, and exposure concentrates in a few
-adjudicated cases. The transferable contribution is the audit
-framework—label construction, opportunity adjustment, timing
-discipline, case-composition and cost-recall accounting—that
-shows where cheap screens stop and what bid-layer follow-up
-costs. Liability remains in the richer evidentiary record.
+before proof exists. Using São Paulo's BEC procurement platform
+and CADE adjudications, we ask how far routine award records can
+rank where bid-level forensics should begin. We study a minimal
+award-layer construct—persistent zero-win participation,
+implemented as a frequent-loser flag—validated against a
+reproducible, adjudication-anchored cobidder label that never uses
+the screen. Validating an administrative screen against
+adjudicated cases without adjusting for procurement opportunity
+systematically over-credits it: decomposed by opportunity, timing,
+and case concentration, the cheap signal's apparent reach mostly
+reflects mechanical co-participation exposure and case
+concentration, the residual ordering net of opportunity is
+marginal at best, and prospective ranking fails outside incumbent
+pools. The contribution is the organizational result—the
+award-to-bid recovery decision is a sequential cost-recall problem
+whose frontier, not any cutoff, is the design object—and a
+disciplined audit protocol. Liability remains in the richer
+evidentiary record.
 
 **JEL Classification:**
 <span class="badge">D44</span>
@@ -68,14 +70,17 @@ costs. Liability remains in the richer evidentiary record.
 !!! success "A reproducible, non-circular validation target"
     The validation label is built from current scripts: **651 unique always-loser cobidders** — zero-win firms sharing at least one tender-item with a BEC-active adjudicated CADE defendant (defendants excluded). The frequent-loser flag is never used to construct the label: 341 positives are frequent losers, **310 are not**. Every downstream table is estimated against this label.
 
-!!! warning "The deflationary core result"
-    Raw discrimination looks respectable (ROC-AUC **0.761**, lift 5.6&times; at the top 500) — but an opportunity-only model with no score reaches **0.905**, and within comparable opportunity sets the score ranks at **&approx; chance (0.47–0.51)**. Permutation tests do not reject the opportunity-only null (p = 0.13–0.39), and the result is robust to intensity-restricted labels (contact &geq; 2 strengthens it). The cheap signal's apparent reach is opportunity arithmetic.
+!!! warning "The deflationary core result — and its mechanism, stated precisely"
+    Raw discrimination looks respectable (ROC-AUC **0.761**, lift 5.6&times; at the top 500), but it is **anchor-agnostic co-participation arithmetic**: placebo anchors reproduce it (p = 0.46), anchors built from non-CADE high-volume *winners* exceed it (0.78, p = 0.91), and within comparable opportunity sets the score ranks at **&approx; chance (0.47–0.51)**. Exposure benchmarks are read in tiers — observed contact (0.905) and plug-in expected contact (0.985) encode the label mechanically, while genuine **label-blind** opportunity structure ranks the label at only **0.553** — so the audit rests on the anchor-agnostic battery, not on "exposure beats the score". Robust to intensity-restricted labels (contact &geq; 2 strengthens it).
+
+!!! success "The audit is armored: falsifiable, powered, label-frozen"
+    The within-stratum null is **falsifiable** — a positive-control score ranks the label at **0.953** in the very same strata — and stable across stratification granularities (0.49–0.60). The permutation test is correctly sized and rejects with probability **0.97** once true within-stratum AUC reaches 0.55, so non-rejections genuinely bound any residual. A fully **label-frozen** timing design (pool, score, and label ingredients all frozen on 2009–2016) shows the frozen score ranks *new* 2017–2019 defendant contact at 0.713 among 13,051 incumbents — participation volume forecasting generic future contact, not a cartel-specific signal.
 
 !!! note "Reach and limits — timing and case concentration"
     Strict prospective ranking fails outside incumbent pools (full-universe ROC 0.47; zero true positives in the top 500 in every rolling-origin year; 23.5% of positives are unrankable entrants). One adjudicated case (rail/metro) supplies **32% of positives** and 45% of top-500 true positives — dropping it cuts PR-AUC by 37%. The estimated ranking is not a portable cartel score.
 
-!!! info "What transfers: the audit framework"
-    The contribution is the decomposition an enforcement agency can run **before** opening costly bid records: label construction, opportunity adjustment, timing discipline, case-composition audit, bid-layer comparison, and cost-recall accounting (firm-count savings of 88% shrink to 33% in bid rows — denominators matter). It shows where cheap screens stop. Liability remains in the richer evidentiary record.
+!!! info "What transfers: the organizational result + the audit protocol"
+    Contribution 1 is organizational: the award-to-bid recovery decision is a **sequential cost-recall problem whose frontier — not any cutoff — is the design object** (firm-count savings of 88% shrink to 33% in bid rows; denominators matter). Contribution 2 is the disciplined audit protocol — label construction, opportunity adjustment with leakage tiers, powered permutation, label-frozen timing, case-composition audit, bid-layer comparison — built around one portable principle: *validating an administrative screen against adjudicated cases without adjusting for procurement opportunity systematically over-credits it.* Liability remains in the richer evidentiary record.
 
 ---
 

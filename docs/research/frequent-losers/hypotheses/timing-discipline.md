@@ -10,6 +10,7 @@ last_updated: 2026-06-04
 ---
 
 <!-- REVISED: canonical-target reframe 2026-06-04 -->
+<!-- REVISED: hostile-review armor 2026-06-04 -->
 
 # H:timing-discipline — Under strict timing the signal is retrospective among incumbents, not prospective at the universe
 
@@ -47,6 +48,11 @@ case.
 > (v) **Leakage audit** ([AN-014](../analyses/an-014-leakage-audit-d3.md)):
 > in-sample item-level numbers attenuate under temporal holdout; the
 > direct-defendant null is regime-invariant.
+> (vi) **Label-frozen timing armor** (`outputs/diagnostics/audit_armor/`):
+> with pool, score, and label all frozen on 2009–2016 (13,051 incumbents),
+> the prospective new-contact AUC is **0.713** (231 positives) — but nearly
+> identical to the retrospective 0.718, so this is **generic co-participation
+> forecasting, not cartel-specific prediction**.
 > The hypothesis is **not confirmed at the universe**: the labels are
 > retrospective adjudication anchors, and only an incumbent-firm residue
 > survives strict timing. Non-BEC replication remains the path to any

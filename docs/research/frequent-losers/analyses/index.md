@@ -5,6 +5,7 @@ paper: frequent-losers
 # Analyses — Cheap Signals, Costly Proof
 
 <!-- REVISED: canonical-target reframe 2026-06-04 -->
+<!-- REVISED: hostile-review armor 2026-06-04 -->
 
 !!! warning "AN pages predating 2026-06-04 are superseded by the canonical re-estimation"
     On 2026-06-04 the paper's validation target was replaced by a
@@ -42,11 +43,14 @@ cannot prove conduct. The analyses below decompose what looks like a
 strong screen into three pieces and trace where each one reaches and
 where it stops:
 
-1. **Opportunity arithmetic.** Most of the raw discriminating power is
-   *exposure*: firms that bid in more tenders mechanically overlap more
-   adjudicated cartel environments. Against the canonical 651-cobidder
-   label the raw award score reaches only ROC **0.761** / PR-AUC **0.143**,
-   and the unconditional exposure-only model alone reaches **0.905**.
+1. **Mechanical co-participation exposure.** Most of the raw
+   discriminating power is *exposure*: firms that bid in more tenders
+   mechanically overlap more adjudicated cartel environments. Against the
+   canonical 651-cobidder label the raw award score reaches only ROC
+   **0.761** / PR-AUC **0.143**, and genuine label-blind opportunity
+   ranks the label at only **0.553** (ranking by *observed* contact
+   reaches 0.905, but that is mechanical label encoding — a cobidder *is*
+   a firm with positive contact — not a competing model).
    Stripping exposure out — comparing firms *within* the same opportunity
    stratum — leaves a within-stratum AUC of **0.471 (≈ chance)**; the only
    positive is a fragile nested increment of **+0.010** (DeLong

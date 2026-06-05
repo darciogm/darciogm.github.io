@@ -5,6 +5,7 @@ paper: frequent-losers
 # Papers from this Research Program
 
 <!-- REVISED: canonical-target reframe 2026-06-04 -->
+<!-- REVISED: hostile-review armor 2026-06-04 -->
 
 This page lists the paper currently in submission preparation and a
 ranked set of follow-up paper ideas that can be built using the same
@@ -39,25 +40,32 @@ manuscript at submission.
 
 **Distinctive contributions:**
 
-1. *Screening as evidence allocation* — reframes procurement-cartel
-   screening as an evidence-allocation problem under costly
-   observability rather than a stand-alone classification problem.
-   Enforcement must spend costly proof-producing effort *before* legal
-   proof exists; cheap award-layer records (who participates, wins,
-   keeps losing) can order forensic priority, not prove conduct.
-2. *A transferable decomposition framework* — separates a screen's
-   genuine ranking signal from three confounds most screening studies
-   leave bundled: mechanical opportunity exposure, retrospective
-   information, and single-case concentration. Applied to the
-   frequent-loser construct against the broad adjudication-anchored
-   cobidder target (651 positives; the frequent-loser flag is not used to
-   build the label), raw concentration is modest (continuous-score
-   ROC 0.761, PR-AUC 0.143) and mostly exposure (unconditional
-   exposure-only ROC 0.905); holding procurement opportunity fixed, the
-   within-stratum AUC is 0.471 — essentially chance — and the only
-   positive is a fragile nested increment of +0.010 (DeLong $p = 0.013$)
-   that is not robust across designs. The deflationary decomposition
-   itself is the contribution.
+1. *An organizational result* — recasts procurement-cartel screening as
+   a resource-allocation problem under costly observability rather than a
+   stand-alone classification problem. Award-to-bid recovery is a
+   sequential cost-recall problem in which the **frontier, not any
+   cutoff, is the design object**. Enforcement must spend costly
+   proof-producing effort *before* legal proof exists; cheap award-layer
+   records (who participates, wins, keeps losing) can order forensic
+   priority, not prove conduct.
+2. *A disciplined audit protocol* — separates a screen's genuine ranking
+   signal from three confounds most screening studies leave bundled:
+   mechanical co-participation exposure, retrospective information, and
+   single-case concentration. Applied to the frequent-loser construct
+   against the broad adjudication-anchored cobidder target (651
+   positives; the frequent-loser flag is not used to build the label),
+   raw concentration is modest (continuous-score ROC 0.761, PR-AUC 0.143)
+   and mostly mechanical exposure: genuine label-blind opportunity ranks
+   the label at only ROC 0.553 (ranking by *observed* contact reaches
+   0.905, but that is mechanical label encoding, not a competing model).
+   Holding procurement opportunity fixed, the within-stratum AUC is
+   0.471 — essentially chance — and the only positive is a fragile nested
+   increment of +0.010 (DeLong $p = 0.013$) that is not robust across
+   designs. An anchor-agnostic armor battery confirms the verdict (a
+   planted positive control recovers AUC 0.953; permutation power 0.97 at
+   within-AUC 0.55). The protocol carries a portable principle:
+   *validating an administrative screen against adjudicated cases without
+   adjusting for procurement opportunity systematically over-credits it.*
 3. *A map of reach and limits* — where cheap administrative records
    can and cannot order forensic priority. The FL-binary flag is at
    chance (AUC $\approx$ 0.49) against win-heavy direct CADE defendants
@@ -96,9 +104,9 @@ identified; no overcharge is claimed.
 
 | Tier | Journal | R&R prob. | Fit rationale |
 |:-:|---|:-:|---|
-| 1 | **JLEO** (J. of Law, Economics, and Organization) | **65–70%** | Institutional economics core; the evidence-allocation framing and the transferable decomposition method are JLEO-resonant; the reach-and-limits map reads as disciplined rather than overclaimed. Single-jurisdiction cap is the binding constraint. |
+| 1 | **JLEO** (J. of Law, Economics, and Organization) | **65–70%** | Institutional economics core; the organizational (sequential cost-recall) framing and the disciplined audit protocol are JLEO-resonant; the reach-and-limits map reads as disciplined rather than overclaimed. Single-jurisdiction cap is the binding constraint. |
 | 2 | **JLE** (J. of Law and Economics) | **50–55%** | Adjacent home journal. JLE referees tend to want stronger causal identification; the theater mechanism is explicitly not identified, so referees with strong IV preferences may downgrade. |
-| 3 | **AEJ: Applied Economics** | **40–50%** | Strong general-purpose journal. Would value the decomposition method, but the institutional framing is less natural; AEJ:A referees prefer cleaner identification or larger external validity. |
+| 3 | **AEJ: Applied Economics** | **40–50%** | Strong general-purpose journal. Would value the disciplined audit protocol, but the institutional framing is less natural; AEJ:A referees prefer cleaner identification or larger external validity. |
 
 **Current submission gating constraints:**
 

@@ -10,6 +10,7 @@ last_updated: 2026-06-04
 ---
 
 <!-- REVISED: canonical-target reframe 2026-06-04 -->
+<!-- REVISED: hostile-review armor 2026-06-04 -->
 
 # H:direct-defendants-null — The frequent-loser binary flag does not order direct CADE defendants
 
@@ -32,7 +33,8 @@ ranking can reach, and it disciplines the rest of the paper against any
 > ranks defendants moderately above chance (0.658 full / 0.695 strict) —
 > volume is generically informative; the loser-side *binary flag* is not.
 > D4 mechanistic check: only 14.9% of direct defendants are always-losers;
-> median win rate 0.261 vs 0.086 for cobidders (Mann–Whitney p < 0.05).
+> their median win rate is 0.261, whereas cobidders — being always-losers —
+> have win rate ≡ 0 by construction.
 > The binary null is the predicted finding — the loser-side flag misses
 > win-heavy defendants by design.
 

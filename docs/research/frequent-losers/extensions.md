@@ -5,9 +5,10 @@ paper: frequent-losers
 # Extensions
 
 <!-- REVISED: canonical-target reframe 2026-06-04 -->
+<!-- REVISED: hostile-review armor 2026-06-04 -->
 
 !!! abstract "Intuition (plain-language)"
-    The current paper maps the *reach and limits* of award-layer screening: cheap records do not prove conduct, and under a reproducible non-circular label they carry no robust cartel-ordering signal net of opportunity. These extensions are the open problems that follow from that deflationary map. Does the decomposition framework — splitting an apparent signal into opportunity arithmetic, single-case concentration, and any genuine increment — replicate in another jurisdiction (where a residual might actually survive)? Can a screen be made to work *prospectively*, before an investigation is already underway? And what would a richer integration of the bid layer add? None of these is solved here; they are the research agenda the reach-and-limits framing opens up.
+    The current paper maps the *reach and limits* of award-layer screening: cheap records do not prove conduct, and under a reproducible non-circular label they carry no robust cartel-ordering signal net of opportunity. These extensions are the open problems that follow from that deflationary map. Does the audit protocol — splitting an apparent signal into mechanical co-participation exposure, single-case concentration, and any genuine increment — replicate in another jurisdiction (where a residual might actually survive)? Can a screen be made to work *prospectively*, before an investigation is already underway? And what would a richer integration of the bid layer add? None of these is solved here; they are the research agenda the reach-and-limits framing opens up.
 
 This page collects future-work directions that follow from the paper's
 central result — that award-layer records **order forensic priority**
@@ -29,18 +30,22 @@ claim the current paper already settles.
 
 ## Cross-Jurisdiction Transfer of the Decomposition Method
 
-The paper's transferable contribution is a **decomposition method**, not
+The paper's durable contribution is a **disciplined audit protocol**, not
 a single AUC. An apparent loser-side signal is separated into three
-parts: an *opportunity-arithmetic* component (firms that bid more have
-more chances to co-appear with anyone, including defendants), a
+parts: a *mechanical co-participation exposure* component (firms that bid
+more have more chances to co-appear with anyone, including defendants), a
 *single-case-concentration* component (one adjudicated case can dominate
 the positive labels), and any *genuine increment* that survives both
-adjustments.
+adjustments. The protocol carries a portable principle: *validating an
+administrative screen against adjudicated cases without adjusting for
+procurement opportunity systematically over-credits it.*
 
-On BEC-SP the decomposition is deflationary: exposure-only AUC **0.905**
-(unconditional), raw award score ROC **0.761**, within-stratum AUC
-**0.471 (≈ chance)**, and only a fragile nested increment of **+0.010**
-(DeLong *p* = 0.013) that is **not robust across designs**. The open
+On BEC-SP the decomposition is deflationary: genuine label-blind
+opportunity ranks the label at only AUC **0.553** (ranking by observed
+contact reaches 0.905, but that is mechanical label encoding), raw award
+score ROC **0.761**, within-stratum AUC **0.471 (≈ chance)**, and only a
+fragile nested increment of **+0.010** (DeLong *p* = 0.013) that is **not
+robust across designs**. The open
 question is whether on a different procurement system, with a different
 adjudication history, a within-stratum increment **does** survive. If the
 opportunity-only term again carries essentially all the raw discrimination

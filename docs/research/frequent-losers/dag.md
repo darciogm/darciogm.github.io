@@ -5,6 +5,7 @@ paper: frequent-losers
 # Paper DAG
 
 <!-- REVISED: canonical-target reframe 2026-06-04 -->
+<!-- REVISED: hostile-review armor 2026-06-04 -->
 
 The directed acyclic graph of the paper's argument: how the institutional
 premise flows through the award-layer construct, the **decomposition** that
@@ -37,16 +38,18 @@ flowchart TD
     %% ---------- Decomposition: the method ----------
     subgraph DEC["Decomposition — the contribution"]
       direction TB
-      D1["Hold procurement <b>opportunity</b> fixed<br/>raw ROC 0.761 (exposure-only 0.905) &rarr; within-stratum 0.471 (&approx;chance)<br/><b>fragile increment +0.010</b> (p=0.013, not robust)"]:::method
+      D1["Hold procurement <b>opportunity</b> fixed<br/>raw ROC 0.761; label-blind opportunity 0.553 &rarr; within-stratum 0.471 (&approx;chance)<br/><b>fragile increment +0.010</b> (p=0.013, not robust)"]:::method
       D2["<b>Timing</b>: orders firms retrospectively<br/>among incumbents; full-universe ROC &approx; 0.474 (below chance);<br/>sequential strict-timing infeasible"]:::limit
       D3["<b>Single-case</b>: leave-largest-case-out<br/>PR-AUC 0.143 &rarr; 0.090 (&minus;37%);<br/>one case &approx; 32% of positives"]:::limit
       D4["<b>Scope</b>: binary AUC &approx; 0.49 vs direct defendants<br/>&mdash; by design (continuous score 0.66&ndash;0.70)"]:::limit
+      D5["<b>Armor battery</b> (anchor-agnostic):<br/>label-blind opportunity 0.553; positive control 0.953;<br/>perm power 0.97 @ 0.55; label-frozen timing 0.713"]:::method
     end
     V1 --> D1
     D1 --> D2
     D1 --> D3
     V1 --> D4
     V2 --> D4
+    D1 --> D5
 
     %% ---------- Architecture ----------
     subgraph ARC["Division of labor between layers"]
@@ -69,6 +72,7 @@ flowchart TD
     D1 --> Z1
     D2 --> Z1
     D3 --> Z1
+    D5 --> Z1
     A3 --> Z1
     PR1 --> Z1
     Z1 --> Z2
@@ -84,13 +88,19 @@ flowchart TD
 ```
 
 !!! note "How to read it"
-    The green node is the paper's methodological core — the **opportunity
-    decomposition** that strips mechanical exposure arithmetic (unconditional
-    0.905) from the raw award-layer score (0.761) and finds that almost nothing
-    survives: the within-stratum AUC is ≈ chance (0.471) and the only positive is
-    a fragile +0.010 increment that is not robust across designs. The brown nodes
-    are the **limits** the same decomposition exposes (below-chance out-of-time
-    ordering, single-case dependence, the direct-defendant scope boundary). The
-    contribution is not a deployable cartel detector — it is the **framework**
-    that draws this boundary and shows where cheap administrative records can, and
-    cannot, order forensic priority.
+    The green nodes are the paper's methodological core — the **opportunity
+    decomposition** that strips mechanical co-participation exposure from the raw
+    award-layer score (0.761) and finds that almost nothing survives: genuine
+    label-blind opportunity ranks the label at only 0.553, the within-stratum AUC
+    is ≈ chance (0.471), and the only positive is a fragile +0.010 increment that
+    is not robust across designs. The **armor battery** (anchor-agnostic) decides
+    the deflationary verdict: a planted positive control recovers 0.953
+    (falsifiability), the permutation test has power 0.97 at within-AUC 0.55, and
+    label-frozen timing (0.713) shows generic contact forecasting, not
+    cartel-specific prediction. The ranking by *observed* contact (0.905) is
+    mechanical label encoding, not a winning model. The brown nodes are the
+    **limits** the same decomposition exposes (below-chance out-of-time ordering,
+    single-case dependence, the direct-defendant scope boundary). The contributions
+    are an **organizational result** (the cost-recall frontier is the design
+    object) and a **disciplined audit protocol** — not a deployable cartel
+    detector.

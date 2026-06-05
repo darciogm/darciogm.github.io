@@ -5,9 +5,10 @@ paper: frequent-losers
 # Advanced Methods
 
 <!-- REVISED: canonical-target reframe 2026-06-04 -->
+<!-- REVISED: hostile-review armor 2026-06-04 -->
 
 !!! abstract "Intuition (plain-language)"
-    The conceptual move on this page is to be precise about *what is being identified*. The screen does not estimate guilt or damages; it is meant to produce a defensible *ordering of forensic priority* — "investigate whom first," not "who is liable." The methodological core is a decomposition: an apparent loser-side signal is split into opportunity arithmetic (firms that bid more co-appear with everyone), single-case concentration (one adjudicated case can dominate the labels), and any genuine increment that survives both. Under the reproducible non-circular label the finding is **deflationary**: almost all raw concentration is opportunity, and the residual ordering is marginal at best and not robust across designs. The two things the data cannot settle — quirks of the source and which cartels prosecutors pursued — are exactly what cross-jurisdiction replication is meant to test.
+    The conceptual move on this page is to be precise about *what is being identified*. The screen does not estimate guilt or damages; it is meant to produce a defensible *ordering of forensic priority* — "investigate whom first," not "who is liable." The methodological core is a decomposition: an apparent loser-side signal is split into mechanical co-participation exposure (firms that bid more co-appear with everyone), single-case concentration (one adjudicated case can dominate the labels), and any genuine increment that survives both. Under the reproducible non-circular label the finding is **deflationary**: almost all raw concentration is exposure, and the residual ordering is marginal at best and not robust across designs. The two things the data cannot settle — quirks of the source and which cartels prosecutors pursued — are exactly what cross-jurisdiction replication is meant to test.
 
 This page collects the methodological machinery that supports the
 empirical claims in the manuscript but is too heavy for the
@@ -52,15 +53,18 @@ Two scope conditions discipline the interpretation:
 The methodological core of the paper is a three-way decomposition of the
 apparent loser-side signal.
 
-**Step 1 — opportunity arithmetic.** Firms that bid more often have more
-chances to co-appear with *any* given firm, including a CADE defendant.
-To isolate this, each firm's **expected-contact** quantity *E*ᵢ is
-constructed from participation volume and the defendants' exposure
-footprint, and firms are grouped into opportunity strata. The
-opportunity-only model — discrimination available from exposure alone —
-reaches AUC **0.905** unconditionally (0.713 within the exposed pool).
-This is the arithmetic baseline that any honest signal must beat, and the
-raw award-layer score (ROC **0.761**, PR **0.143**) barely exceeds it.
+**Step 1 — mechanical co-participation exposure.** Firms that bid more
+often have more chances to co-appear with *any* given firm, including a
+CADE defendant. To isolate this, each firm's **expected-contact**
+quantity *E*ᵢ is constructed from participation volume and the
+defendants' exposure footprint, and firms are grouped into opportunity
+strata. Ranking by **observed** contact reaches AUC **0.905** — but this
+is **mechanical label encoding** (a cobidder *is*, by construction, a
+firm with positive contact), reported only to expose inflation, not a
+competing model. Stepping toward genuinely label-blind opportunity
+collapses the number to **0.553** (see the armor pack below). The raw
+award-layer score (ROC **0.761**, PR **0.143**) is itself mostly
+exposure.
 
 **Step 2 — within-stratum discrimination.** Evaluating the ordering
 *within* opportunity strata removes the mechanical advantage of high
@@ -71,8 +75,8 @@ exposure baseline (DeLong *p* = 0.013
 robust across designs**: the matched-stratum label permutation is not
 significant (*p* = 0.127), the within-matched-strata FL-enrichment is not
 significant (*p* = 0.067), and the matched change in cobidder probability
-for FL14 is **negative** (−0.017). Most raw discrimination is opportunity
-arithmetic, and **no robust residual ordering survives**.
+for FL14 is **negative** (−0.017). Most raw discrimination is mechanical
+co-participation exposure, and **no robust residual ordering survives**.
 
 **Step 3 — single-case concentration.** The positive labels are not
 evenly spread across CADE cases. A **leave-largest-case-out** audit
@@ -80,13 +84,14 @@ removes the single most influential adjudicated case and re-evaluates:
 precision–recall AUC falls from **0.143 to 0.090 (−37%)**, because one
 case accounts for ≈ **32%** of the positive labels and 45.4% of true
 positives at *k* = 500. The estimated ranking is therefore
-**case-sensitive** — not a portable cartel score; the transferable object
-is the decomposition framework, not the ranking.
+**case-sensitive** — not a portable cartel score; the durable object is
+the audit protocol and its portable principle, not the ranking.
 
 | Decomposition step | Quantity | Value |
 |---|---|---|
 | Raw award-layer score | ROC / PR-AUC | 0.761 / 0.143 |
-| Opportunity-only (exposure arithmetic) | AUC (unconditional) | 0.905 |
+| Observed-contact ranking (mechanical label encoding) | AUC | 0.905 |
+| Genuine label-blind opportunity | AUC | 0.553 |
 | Within-stratum (opportunity removed) | AUC | 0.471 (≈ chance) |
 | Nested increment over baseline | ΔAUC (DeLong *p*) | +0.010 (*p* = 0.013); not robust |
 | Matched permutation / FL-enrichment | *p* | 0.127 / 0.067 (both ns) |
@@ -145,6 +150,37 @@ The chain enumerates the within-data artifact families systematically.
 Each audit rules out a candidate explanation for the observed
 concentration — and where it cannot (timing, single-case concentration),
 that is stated as a limit.
+
+## Audit-of-the-audit armor pack
+
+The deflationary verdict is decided by an **anchor-agnostic battery**,
+not by any claim that "exposure beats the score." All four results are
+regenerated under `outputs/diagnostics/audit_armor/` (scripts
+`12_audit_armor.R` + `12b_audit_armor_fixup.R`).
+
+| Armor result | Value | Use |
+|---|---|---|
+| Exposure tiers: $O_i$ / $E_{\text{plug}}$ / $E_{\text{firm-LOO}}$ / **label-blind** | 0.905 / 0.985 / 0.855 / **0.553** | exposure benchmark is an *upper bound* on opportunity's role; 0.905/0.985 are mechanical label encoding |
+| Positive control $O_i$ within MEDIUM strata | **0.953** | falsifiability — the design *detects* residual signal when one is planted |
+| Within-stratum sweep (E-LOO): COARSE / MEDIUM / STRICT | 0.508 / 0.493 / 0.600 | stable across granularities ($N$ 15,246 / 2,213 / 615) |
+| Permutation power (α = .05) at within-AUC 0.52 / 0.55 / 0.60 | 0.28 / **0.97** / 1.00 (size 0.05) | non-rejection bounds the residual below ≈ 0.55 |
+| Label-frozen timing: pool / prospective / retrospective | 13,051 / **0.713** (231 pos) / 0.718 (582 pos) | clean timing benchmark — volume forecasts *generic* contact, not cartels |
+
+!!! note "What the armor pack settles"
+    The retired claim ("an exposure-only model reaches 0.905 and
+    out-predicts the raw score / exposure is the better model") was itself
+    partly mechanical: a cobidder *is* a firm with positive observed
+    contact. Computed label-blind, opportunity ranks the label at only
+    **0.553**. The within-stratum test is **not** dead by construction — a
+    planted positive control ($O_i$) recovers AUC **0.953** — and the
+    permutation test has **power 0.97 at a within-AUC of 0.55**, so the
+    observed non-detections genuinely bound any residual below ≈ 0.55. The
+    label-frozen timing benchmark (prospective 0.713 ≈ retrospective 0.718)
+    is **generic co-participation forecasting, not cartel-specific
+    prediction**, consistent with the negative controls (placebo
+    *p* = 0.46; non-CADE high-volume-winner anchors 0.78 > real, *p* = 0.91).
+    Defendant roles regenerated alongside: 14.9% always-losers, median win
+    rate 0.261; cobidders have win rate ≡ 0 by construction.
 
 ## Cost–recall frontier construction
 

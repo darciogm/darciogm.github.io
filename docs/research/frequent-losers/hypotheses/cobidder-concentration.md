@@ -10,6 +10,7 @@ last_updated: 2026-06-04
 ---
 
 <!-- REVISED: canonical-target reframe 2026-06-04 -->
+<!-- REVISED: hostile-review armor 2026-06-04 -->
 
 # H:cobidder-concentration — The ranking concentrates adjudication-anchored exposure above mechanical opportunity
 
@@ -23,7 +24,7 @@ should order cobidders, not direct defendants — and the genuine question is
 how much of that ordering survives once mechanical opportunity is netted out.
 
 !!! abstract "Intuition (plain-language)"
-    Among always-loser firms in Brazilian procurement, the ones that bid most often (frequent losers) sit disproportionately near cartels formally adjudicated by Brazil's antitrust authority. But almost all of that raw proximity is *opportunity*: firms that bid a lot mechanically end up near anyone, including CADE defendants. The honest question is what is left after you net opportunity out. The answer under the reproducible non-circular label: a raw concentration that looks high (ROC 0.761, lift 5.6×) is generic co-participation arithmetic; the signal *inside* a fixed opportunity stratum is 0.471 — at chance — and the marginal nested increment (+0.010, p = 0.013) does not survive the permutation tests. Cheap award records concentrate *where to look first*; they do not prove cover-bidding, and net of opportunity they carry no robust residual.
+    Among always-loser firms in Brazilian procurement, the ones that bid most often (frequent losers) sit disproportionately near cartels formally adjudicated by Brazil's antitrust authority. But almost all of that raw proximity is *opportunity*: firms that bid a lot mechanically end up near anyone, including CADE defendants. The honest question is what is left after you net opportunity out. The answer under the reproducible non-circular label: a raw concentration that looks high (ROC 0.761, lift 5.6×) is mechanical, anchor-agnostic co-participation exposure — genuine label-blind opportunity ranks the label at only 0.553 (ranking by *observed* contact reaches 0.90, but that is mechanical label encoding, not a competing model); the signal *inside* a fixed opportunity stratum is 0.471 — at chance — and the marginal nested increment (+0.010, p = 0.013) does not survive the permutation tests. Cheap award records concentrate *where to look first*; they do not prove cover-bidding, and net of opportunity they carry no robust residual.
 
 
 > **Evidence strength: Not confirmed (opportunity explains it).**

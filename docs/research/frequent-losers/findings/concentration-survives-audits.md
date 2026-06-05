@@ -5,9 +5,10 @@ paper: frequent-losers
 # Exposure explains the ranking — no robust residual survives the audits
 
 <!-- REVISED: canonical-target reframe 2026-06-04 -->
+<!-- REVISED: hostile-review armor 2026-06-04 -->
 
 !!! abstract "Intuition (plain-language)"
-    The natural skeptic's reply is "of course cartel-linked firms score high — they bid a lot, and your score just counts bids." The audits stress-test exactly that: strip out raw bidding volume, hold opportunity fixed, and ask the permutations whether anything is left. The answer under the reproducible non-circular label is: essentially nothing. Within a fixed opportunity stratum the ranking is at chance, and the marginal nested increment fails the permutation tests. The honest reading is that exposure — generic co-participation arithmetic — explains the concentration, not a residual loss-intensity signal.
+    The natural skeptic's reply is "of course cartel-linked firms score high — they bid a lot, and your score just counts bids." The audits stress-test exactly that: strip out raw bidding volume, hold opportunity fixed, and ask the permutations whether anything is left. The answer under the reproducible non-circular label is: essentially nothing. Within a fixed opportunity stratum the ranking is at chance, and the marginal nested increment fails the permutation tests. The honest reading is that exposure — mechanical, anchor-agnostic co-participation — explains the concentration, not a residual loss-intensity signal.
 
 🟡 Under the reproducible non-circular label (651 always-loser
 cobidders), the audit disciplines of §4.2 of the
@@ -52,6 +53,17 @@ permutation is non-significant, and the FL-enrichment is non-significant.
    is not significant (p = 0.103)** — the concentration is real but not
    broad-based across cases.
 
+5. **Anchor-agnostic armor battery** (`outputs/diagnostics/audit_armor/`).
+   The deflationary verdict is decided here, not by "exposure beats the
+   score". Genuine **label-blind opportunity ranks the label at only 0.553**
+   (ranking by *observed* contact reaches 0.905, but that is mechanical
+   label encoding). A planted **positive control recovers within-stratum
+   AUC 0.953**, so the within-stratum test is not dead by construction; the
+   **permutation test has power 0.97 at within-AUC 0.55**, bounding any
+   residual below ≈ 0.55; and a **label-frozen timing** benchmark
+   (prospective 0.713 ≈ retrospective 0.718) shows generic contact
+   forecasting, not cartel-specific prediction.
+
 The audited (not the in-sample) numbers are what the cost-of-evidence
 architecture of §6 must rely on, and they do not support a residual
 loss-intensity claim.
@@ -86,8 +98,10 @@ works.
 - *Macros*: `\valExpWithinAUC` (0.471, ≈chance), `\valExpIncrement`
   (+0.010), `\valExpDeLongP` (0.013), `\valStrictUnivAUC` (0.474),
   `\valStrictPoolAUC` (0.684), `\valClusterRIcovP` (0.103),
+  `\valArmorLabelBlind` (0.553), `\valArmorPosControl` (0.953),
   `\valMainCobidders` (651).
 - *Validation*: backing scripts `scripts/25_sham_fl_permutation.R`,
   `scripts/27_strict_prospective_holdout.R`,
+  `scripts/12_audit_armor.R`, `scripts/12b_audit_armor_fixup.R`,
   `scripts/40_leakage_audit_d3.R`,
   `scripts/43_precision_at_k_audit.R`.

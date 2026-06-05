@@ -6,7 +6,39 @@ paper: frequent-losers
 
 ---
 
-## v22.1 — June 4, 2026 (Current — canonical-target re-estimation)
+## v22.2 — June 4, 2026 (Current — hostile-review armor + narrative repair)
+
+**Five-referee hostile pre-submission review executed, and its Action Plan applied.**
+Integrity verdicts were clean (≈190 numbers traced, 0 fatal; 0 fabricated references); the
+substantive critique — "the audit is tilted toward its own deflationary conclusion" — was
+answered with computation, not prose:
+
+- **Exposure-benchmark leakage tiers.** Observed contact ranks the label at 0.905 and
+  plug-in expected contact at 0.985 (mechanical label encoding); the firm-leave-one-out
+  benchmark gives 0.855; recomputing every cell's defendant density from **non-cobidder rows
+  only** leaves genuine label-blind opportunity at **0.553**. The earlier "exposure-only is
+  the better model" framing was itself partially mechanical and is retired; the deflation now
+  rests on the anchor-agnostic battery (negative controls, powered permutation, label-frozen
+  timing).
+- **Falsifiability.** A positive-control score ranks at **0.953** within the same strata that
+  put the screen at chance; the within-stratum null is stable across granularities
+  (0.49–0.60).
+- **Power.** The matched-strata permutation is correctly sized and rejects with probability
+  **0.97** at true within-AUC 0.55 — non-rejections now bound any residual.
+- **Label-frozen timing.** Pool, score, and label ingredients all frozen on 2009–2016:
+  the frozen score ranks new 2017–2019 defendant contact at **0.713** among 13,051
+  incumbents — generic contact forecasting, not cartel-specific signal.
+- **Narrative:** contributions reordered (organizational result first: the award-to-bid
+  frontier is the design object); "transferable framework" → disciplined audit protocol +
+  portable principle; stakes documented via the institutional red-flag lineage
+  (Fazekas–Kocsis 2020 BJPolS; OECD 2022); §5 leads with what adjustment removes; §7 gaming
+  reframed as instability of a published cutoff; §2.1 folded into §1; appendix deduplicated.
+- Abstract 133 words; paper 40 pp + appendix 34 pp (single-spaced); builds 0 errors /
+  0 undefined. Post-repair calibration: P(desk) ≈ 0.25.
+
+---
+
+## v22.1 — June 4, 2026 (superseded by v22.2 — canonical-target re-estimation)
 
 **Credibility repair: reproducible, non-circular validation target.** The
 previous main target (193 cobidders, a static file whose builder was archived

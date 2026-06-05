@@ -5,9 +5,10 @@ paper: frequent-losers
 # Robustness
 
 <!-- REVISED: canonical-target reframe 2026-06-04 -->
+<!-- REVISED: hostile-review armor 2026-06-04 -->
 
 !!! abstract "Intuition (plain-language)"
-    Each check here exists to discipline the ranking — to separate any *genuine* award-layer signal from the *opportunity arithmetic* that inflates it, and to map where the signal degrades. Under the reproducible non-circular label the honest finding is **deflationary**: almost all raw concentration is exposure, and within comparable opportunity sets the residual ordering is **marginal at best and not robust across designs**. The page keeps the limits in plain sight: the price-as-damages reading does not survive overlap discipline, strict-timing detection is below chance on the open platform, one case carries much of the operational headline, the bid-layer comparison is only conditionally complementary, and negative controls do **not** separate the real label from placebos. A framework worth trusting is one whose limits are mapped as carefully as its strengths.
+    Each check here exists to discipline the ranking — to separate any *genuine* award-layer signal from the *mechanical, anchor-agnostic co-participation exposure* that inflates it, and to map where the signal degrades. Under the reproducible non-circular label the honest finding is **deflationary**: almost all raw concentration is exposure, and within comparable opportunity sets the residual ordering is **marginal at best and not robust across designs**. The page keeps the limits in plain sight: the price-as-damages reading does not survive overlap discipline, strict-timing detection is below chance on the open platform, one case carries much of the operational headline, the bid-layer comparison is only conditionally complementary, and negative controls do **not** separate the real label from placebos. A protocol worth trusting is one whose limits are mapped as carefully as its strengths.
 
 This page presents the decomposition and audit battery that disciplines the award-layer ranking. Each audit is reported with both what it shows **and** its limit. The validation label is the broad adjudication-anchored cobidder target (**651 positives**; the frequent-loser flag is not used to build it).
 
@@ -15,16 +16,18 @@ This page presents the decomposition and audit battery that disciplines the awar
 
 ## 1. Opportunity-Cell Decomposition (the primary audit)
 
-The first-order concern is **opportunity arithmetic**: high-participation firms appear adjacent to anything, including a cartel, by exposure alone. The decomposition holds procurement opportunity fixed.
+The first-order concern is **mechanical, anchor-agnostic co-participation exposure**: high-participation firms appear adjacent to anything, including a cartel, by exposure alone. The decomposition holds procurement opportunity fixed.
 
 | Comparison | AUC | Interpretation |
 |---|---:|---|
 | Raw award score (continuous) | **0.761** (PR 0.143) | bundled signal + exposure |
-| Exposure-only, unconditional | **0.905** | exposure arithmetic alone reaches this |
 | Within-stratum (opportunity held fixed) | **0.471** (≈ chance) | almost nothing survives |
 | Nested increment over exposure | **+0.010** (DeLong $p = 0.013$) | marginal; not robust across designs |
 
-**What it shows:** most of the raw 0.761 is opportunity; the unconditional exposure-only model alone already reaches 0.905, and holding opportunity fixed the within-stratum AUC collapses to ≈ chance. **Its limit:** the only positive is a fragile +0.010 nested increment whose significance is **not corroborated** by the permutation and matched audits below — the disciplined conclusion is that there is **no robust residual ordering net of opportunity**.
+**What it shows:** most of the raw 0.761 is exposure; holding opportunity fixed the within-stratum AUC collapses to ≈ chance. **Its limit:** the only positive is a fragile +0.010 nested increment whose significance is **not corroborated** by the permutation and matched audits below — the disciplined conclusion is that there is **no robust residual ordering net of opportunity**.
+
+!!! note "Ranking by exposure is mechanical label encoding, not a winning model"
+    Earlier drafts reported an "exposure-only model" reaching 0.905 that "out-predicts the raw score". That framing is **retired**. Ranking firms by **observed** contact reaches 0.905 only because a cobidder *is*, by construction, a firm with positive contact — this is **mechanical label encoding**, reported only to expose the inflation. The honest, **genuinely label-blind opportunity benchmark is 0.553**. The deflationary verdict does not rest on "exposure beats the score"; it rests on the **anchor-agnostic armor battery** below (Section 14).
 
 ---
 
@@ -80,7 +83,7 @@ The operational headline is stress-tested for single-case dependence.
 | Leave top two cases out | 0.058 | further drop |
 | Case-balanced precision@500 | 0.043 (vs pooled 0.216) | — |
 
-**What it shows:** one case (rail/metro) accounts for **32.0%** of positives and **45.4%** of true positives at $k=500$; leaving it out drops PR-AUC by 37% (ROC stays ≈ 0.76). **Its limit:** the aggregate metrics are not a property of many independent cartels — they lean on one large, well-documented case. The **estimated BEC ranking is case-sensitive and not a portable cartel score**; the transferable object is the decomposition framework. Clustered randomization inference at item-group × year is significant for ROC/PR/precision but not for coverage ($p = 0.103$).
+**What it shows:** one case (rail/metro) accounts for **32.0%** of positives and **45.4%** of true positives at $k=500$; leaving it out drops PR-AUC by 37% (ROC stays ≈ 0.76). **Its limit:** the aggregate metrics are not a property of many independent cartels — they lean on one large, well-documented case. The **estimated BEC ranking is case-sensitive and not a portable cartel score**; the durable object is the audit protocol and its portable principle. Clustered randomization inference at item-group × year is significant for ROC/PR/precision but not for coverage ($p = 0.103$).
 
 ---
 
@@ -95,7 +98,7 @@ Because positives are defined through shared tender-items, naïve item-level eva
 | Excl. label-defining tenders (contamination removed; 569 pos retained) | 0.829 / 0.156 | stable after removing label-defining overlap |
 | Same continuous score, direct-CADE binary label | 0.49 | confirms loser-side scope, not winner-side |
 
-**What it shows:** removing the label-defining tenders does not collapse the score (ROC 0.829, PR 0.156 on the retained positives), so the pooled discrimination is not pure tautology. **Its limit:** even the contamination-robust pooled numbers still embed opportunity arithmetic; the disciplined object remains the within-stratum AUC (≈ chance), not these pooled values.
+**What it shows:** removing the label-defining tenders does not collapse the score (ROC 0.829, PR 0.156 on the retained positives), so the pooled discrimination is not pure tautology. **Its limit:** even the contamination-robust pooled numbers still embed mechanical co-participation exposure; the disciplined object remains the within-stratum AUC (≈ chance), not these pooled values.
 
 ---
 
@@ -205,6 +208,57 @@ A maintained-assumption check on persistence, **not** a structural identificatio
 
 ---
 
+## 14. Audit-of-the-Audit Armor Pack (anchor-agnostic battery)
+
+This is the decisive evidence for the deflationary verdict — and it is built to be falsifiable. All four results are regenerated under `outputs/diagnostics/audit_armor/` (scripts `12_audit_armor.R` + `12b_audit_armor_fixup.R`).
+
+### 14.1 Exposure tiers — the benchmark is an upper bound, not a winning model
+
+| Exposure tier | ROC | What it ranks by |
+|---|---:|---|
+| Observed contact $O_i$ | **0.905** | mechanical: a cobidder *is* a firm with $O_i>0$ |
+| Plug-in expected contact $E_{\text{plug}}$ | **0.985** | mechanical: plug-in still sees the label |
+| Firm-leave-one-out expected contact $E_{\text{firm-LOO}}$ | **0.855** | upper bound on opportunity's role |
+| **Genuine label-blind opportunity** | **0.553** | the honest opportunity benchmark |
+
+**What it shows:** the 0.905/0.985 figures are **mechanical label encoding**, reported only to expose inflation; once contact is computed label-blind, opportunity ranks the label at just **0.553**. The retired claim that "exposure is the better model that out-predicts the score" was itself partly mechanical and is removed.
+
+### 14.2 Falsifiability — positive control + granularity stability
+
+| Test | Result | Reading |
+|---|---:|---|
+| Positive control: $O_i$ within MEDIUM strata | **0.953** | the design *detects* residual signal when one exists |
+| Within-stratum sweep (E-LOO): COARSE / MEDIUM / STRICT | 0.508 / 0.493 / **0.600** | stable across granularities ($N$ 15,246 / 2,213 / 615) |
+| Within-stratum on label-blind $E$ (all AL / exposed) | 0.722 / 0.665 | generic co-participation geometry |
+
+**What it shows:** the within-stratum test is **not** dead by construction — when a genuine residual is planted ($O_i$ positive control) it recovers AUC 0.953. The real label's within-stratum AUC (0.49–0.60) is therefore an informative non-detection, not an artifact of over-conditioning.
+
+### 14.3 Powered permutation — non-rejection bounds the residual
+
+| Within-AUC alternative | Power (α = .05) |
+|---|---:|
+| 0.52 | 0.28 |
+| **0.55** | **0.97** |
+| 0.60 | 1.00 |
+| (size at the null) | 0.05 |
+
+**What it shows:** the permutation test is correctly sized (0.05 at the null) and has **power 0.97 at a within-AUC of 0.55**. The observed non-rejections therefore bound any residual ordering at **below ≈ 0.55** — the failure to detect is genuine, not underpowered.
+
+### 14.4 Label-frozen timing — generic contact forecasting, not cartel-specific
+
+| Design (pool + score + label frozen on 2009–2016) | AUC |
+|---|---:|
+| Frozen incumbent pool | 13,051 firms |
+| **Prospective new-contact** (231 positives) | **0.713** |
+| Retrospective (582 positives) | 0.718 |
+
+**What it shows:** with pool, score, and label all frozen in 2009–2016, the score forecasts *future co-participation contact* at ≈ 0.71 — but the prospective and retrospective AUCs are nearly identical, so this is **generic contact forecasting, not cartel-specific prediction**. Consistent with the negative controls (placebo $p = 0.46$; non-CADE high-volume-winner anchors 0.78 > real, $p = 0.91$).
+
+!!! note "Provenance"
+    All armor results: `outputs/diagnostics/audit_armor/` (scripts `12_audit_armor.R`, `12b_audit_armor_fixup.R`). Defendant roles regenerated alongside: 14.9% always-losers, median win rate 0.261; cobidders have win rate ≡ 0 by construction.
+
+---
+
 ## Robustness Summary
 
 | Object | Audit | Result |
@@ -215,6 +269,10 @@ A maintained-assumption check on persistence, **not** a structural identificatio
 | **Single-case dependence** | leave-largest-case-out | PR-AUC −37%; one case ≈ 32% of positives; ranking case-sensitive |
 | **Bid-layer comparison** | random vs case-grouped CV | comparable (0.760 vs 0.717); combined beats award on PR random-CV but **below** award under case-grouped folds |
 | **Negative controls** | placebo / high-volume-winner | **no separation** ($p = 0.46$ / $0.91$) — corroborate opportunity account |
+| **Armor: exposure tiers** | observed → label-blind | 0.905/0.985 mechanical; **label-blind opportunity 0.553** |
+| **Armor: falsifiability** | positive control + sweep | $O_i$ recovers **0.953**; real label within-stratum 0.49–0.60 |
+| **Armor: powered permutation** | size + power | size 0.05; **power 0.97 @ within-AUC 0.55** → residual < ~0.55 |
+| **Armor: label-frozen timing** | frozen pool/score/label | prospective **0.713** ≈ retrospective 0.718 — generic contact forecasting |
 | **Cost-recall** | cutoff sweep / frontier | no optimal $K$; firm 88.1% vs bid-row 32.7% at one operating point |
 | **Dilution sensitivity** | contact ≥ 2 label | deflationary verdict holds; within-stratum ≈ chance, increment $p = 0.47$ |
 | **Pricing imprint** | overlap discipline; sensitivity | scope not damages; sign reverses; **mechanism not identified** |

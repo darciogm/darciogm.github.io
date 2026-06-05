@@ -5,6 +5,7 @@ paper: frequent-losers
 # Replication
 
 <!-- REVISED: canonical-target reframe 2026-06-04 -->
+<!-- REVISED: hostile-review armor 2026-06-04 -->
 
 This page describes how to reproduce every table and figure in the paper,
 and the data-access and confidentiality position that governs what can be
@@ -213,20 +214,29 @@ The master script runs the core pipeline sequentially as subprocesses:
 | `08_additional_dvs.R` | Price ratio, procedure duration | `tab_additional_dvs.tex` |
 | `09_matching.R` | CEM + IPW matching, balance table | `tab_matching.tex` |
 | `10_fl_characteristics.R` | FL firm characterization (size, age, CNAE) | `tab_fl_characteristics.tex` |
+| `12_audit_armor.R` | Anchor-agnostic armor battery: exposure tiers (observed / plug-in / firm-LOO / label-blind), within-stratum granularity sweep + positive control, powered permutation, label-frozen timing, regenerated defendant roles | `outputs/diagnostics/audit_armor/` |
+| `12b_audit_armor_fixup.R` | Fixups / regeneration for the armor pack (`\valArmor*` macros) | `outputs/diagnostics/audit_armor/` |
 
 !!! note "Canonical-label, decomposition, audit, and frontier scripts"
     The canonical validation label is built by
     `00_build_canonical_validation_targets.R` (651 positives; FL flag never
     used), and the contact-intensity sensitivity (≥ 2 shared tender-items,
     368 positives) by `02b_opportunity_sensitivity_contact2.R`. The
-    opportunity decomposition (raw vs exposure-only vs within-stratum AUC
-    and the nested-increment DeLong test), the permutation and negative-
-    control audits, the leakage / contamination and timing audits, the
-    leave-largest-case-out single-case-concentration audit, the
-    bid-distribution benchmark, and the cost–recall frontier (K1 grid,
-    firm-vs-bid-row denominators) are produced by additional numbered
-    scripts (e.g. `31_imhof_full_pipeline.R`, `40_leakage_audit_d3.R`, the
+    opportunity decomposition (raw vs label-blind opportunity vs
+    within-stratum AUC and the nested-increment DeLong test), the
+    permutation and negative-control audits, the leakage / contamination
+    and timing audits, the leave-largest-case-out
+    single-case-concentration audit, the bid-distribution benchmark, and
+    the cost–recall frontier (K1 grid, firm-vs-bid-row denominators) are
+    produced by additional numbered scripts (e.g.
+    `31_imhof_full_pipeline.R`, `40_leakage_audit_d3.R`, the
     decomposition/timing scripts, and the architecture/frontier scripts).
+    The anchor-agnostic **armor battery** — exposure tiers (observed contact
+    0.905 / plug-in 0.985 / firm-LOO 0.855 / label-blind 0.553), the
+    within-stratum granularity sweep with planted positive control (0.953),
+    the powered permutation, and the label-frozen timing benchmark — is
+    produced by `12_audit_armor.R` and `12b_audit_armor_fixup.R`, writing to
+    `outputs/diagnostics/audit_armor/` (macros `\valArmor*`).
     Each `\val*` macro in `values.tex` carries an explicit `% src:` line
     naming the producing script and output CSV — the **output → script
     map** that travels with the shareable package.

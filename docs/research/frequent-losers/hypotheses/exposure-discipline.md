@@ -10,6 +10,7 @@ last_updated: 2026-06-04
 ---
 
 <!-- REVISED: canonical-target reframe 2026-06-04 -->
+<!-- REVISED: hostile-review armor 2026-06-04 -->
 
 # H:exposure-discipline — No robust residual ordering survives once opportunity exposure is netted out
 
@@ -23,7 +24,7 @@ the permutation designs, and negative controls corroborate the opportunity
 account.
 
 !!! abstract "Intuition (plain-language)"
-    The eye-catching raw concentration is largely an opportunity artifact — an exposure-only model (who could possibly bid near a CADE case, given where they participate) already reaches ROC ≈ 0.90 unconditionally. The real question is what is left after you net opportunity out. Under the non-circular label the answer is: nothing robust. Inside a fixed opportunity stratum the score discriminates at ROC 0.471 — at chance — and the marginal nested increment (+0.010, p = 0.013) does not survive matched permutation (p = 0.127) or FL-enrichment (p = 0.067). Most of the concentration is opportunity, and what is left fails the permutation tests. That honest split — exposure explains the ranking — is the contribution.
+    The eye-catching raw concentration is largely an opportunity artifact. Ranking firms by *observed* contact reaches ROC ≈ 0.90, but that is mechanical label encoding (a cobidder *is* a firm with positive contact); the honest, genuinely label-blind opportunity benchmark is only ≈ 0.553. The real question is what is left after you net opportunity out. Under the non-circular label the answer is: nothing robust. Inside a fixed opportunity stratum the score discriminates at ROC 0.471 — at chance — and the marginal nested increment (+0.010, p = 0.013) does not survive matched permutation (p = 0.127) or FL-enrichment (p = 0.067). An anchor-agnostic armor battery confirms this is not an artifact: a planted positive control recovers within-stratum AUC 0.953, and the permutation test has power 0.97 at within-AUC 0.55 (bounding any residual below ≈ 0.55). The deflationary verdict rests on this battery — not on "exposure beats the score". That honest split is the contribution.
 
 
 > **Evidence strength: Not confirmed (opportunity explains it).**
@@ -31,8 +32,9 @@ account.
 > 651-cobidder label:
 > (i) **Most concentration is opportunity** ([AN-004](../analyses/an-004-cobidder-baseline.md),
 > [AN-027](../analyses/an-027-universe-anchored-stratum-scope.md)):
-> an exposure-only model reaches ROC ≈ 0.90, so the raw concentration is
-> exposure-inflated rather than discriminating power.
+> ranking by *observed* contact reaches ROC ≈ 0.90 (mechanical label
+> encoding) and genuine label-blind opportunity ≈ 0.553, so the raw
+> concentration is exposure-inflated rather than discriminating power.
 > (ii) **No robust residual survives** ([AN-004](../analyses/an-004-cobidder-baseline.md)):
 > the within-stratum AUC is 0.471 (≈chance); the nested increment over the
 > exposure-only benchmark is **+0.010** (DeLong p = 0.013), marginal at best.
