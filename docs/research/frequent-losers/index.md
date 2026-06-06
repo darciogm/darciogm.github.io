@@ -82,7 +82,7 @@ record.
     Contribution 1 is organizational: the award-to-bid recovery decision is a **sequential cost-recall problem whose frontier — not any cutoff — is the design object** (firm-count savings of 88% shrink to 33% in bid rows; denominators matter). Contribution 2 is the disciplined audit protocol — label construction, opportunity adjustment with leakage tiers, powered permutation, label-frozen timing, case-composition audit, bid-layer comparison — built around one portable principle: *validating an administrative screen against adjudicated cases without adjusting for procurement opportunity systematically over-credits it.* Liability remains in the richer evidentiary record.
 
 !!! abstract "Now demonstrated on two platforms"
-    The award-layer triage protocol is re-run on a second, independent procurement
+    The award-layer triage protocol is re-run on a second, institutionally distinct procurement
     platform — federal **ComprasNet** (2013–2019, pure Pregão) — against the same family of
     CADE cartel anchors, integrated into the manuscript as §5 (*The Audit on a Second Platform*)
     and Appendix G. The federal leg **replicates the deflation anatomy**: the raw screen ranks

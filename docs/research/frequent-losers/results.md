@@ -185,6 +185,77 @@ Against direct CADE defendants the price association is null — there is no dam
 
 ---
 
+## 7. The Audit on a Second Platform (ComprasNet)
+
+<!-- REVISED: v23 two-platform extension (ComprasNet) 2026-06-06 -->
+
+A decomposition is only worth carrying if it travels. The paper re-runs the **same audit, unchanged**, on a second procurement system — federal **ComprasNet** (2013–2019, pure Pregão) — and asks what the protocol returns where the institutions differ. The federal platform is single national system aggregating procuring units across the whole federal administration; the sealed-bid convite modality is extinct federally, so the panel is effectively pure Pregão (~15% regular auction, ~85% price-registration/SRP) and there is no modality margin to stratify on. The federal release exposes participation and the winner flag but **no bid microdata** at all.
+
+!!! warning "Partially overlapping legal anchors — provisional, not independent replication"
+    The seven federal CADE cases are the **same cartels** as the BEC portfolio, anchored at the federal establishment level. This is a robustness leg under **partially overlapping legal anchors**, not a clean out-of-sample replication on an unrelated cartel set. It does **not** by itself promote any finding to Confirmed. The exercise tests portability of the *method* and the loser-side *construct*; we read it as neither confirmation nor refutation of any firm's legal status.
+
+### The side-by-side verdict
+
+The federal audit returns the **same verdict** the BEC audit returns, and on the row that matters it returns it more cleanly. Each row is the comparable quantity from the BEC battery, re-run on the federal panel under the same definitions.
+
+| Audit stage | BEC–SP | ComprasNet |
+|---|---:|---:|
+| Raw award-layer ROC | **0.761** | **0.744** |
+| Exposure-only ROC (no score) | 0.713 | **0.754** |
+| Label-blind opportunity expectation (AUC) | 0.553 | **0.611** |
+| Within-stratum residual (AUC, MEDIUM cells) | 0.471 (≈ chance) | **0.462** (≈ chance) |
+| Nested DeLong increment over exposure | +0.010 ($p = 0.013$) | **+0.005** ($p = 0.191$, null) |
+| Matched-permutation $p$ (within-strata shuffle) | 0.127 | **0.906** |
+| Label-frozen prospective timing (AUC) | 0.713 | **0.595** ($N^+ = 98$) |
+| Top-case concentration (share of positives) | 32.0% | **64.4% top-two** |
+| Negative-control verdict | generic geometry | generic geometry |
+
+!!! abstract "What ports is the audit, not a deployable score"
+    On both platforms the raw validation **over-credits** the screen: the raw award-layer ROC (0.744 federally) looks like discrimination until one asks what an analyst would have predicted from procurement opportunity alone. Federally that question answers itself in a single line — the **exposure-only ranking, which never sees the score, reaches 0.754, matching and if anything edging out the raw score itself (0.744)**. Where on BEC the exposure axis only *approaches* the raw score, federally it already *equals* it. The rest of the battery confirms the reading from below: the within-stratum residual collapses to near chance (0.462), the nested model adds nothing detectable over exposure (+0.005, $p = 0.191$), and the matched-strata permutation does not reject ($p = 0.906$). The deflation **replicates**: what transfers across the two systems is the **audit protocol** — the decomposition that catches the over-crediting wherever it is run — **not a deployable loser-side ranking**.
+
+### Power-bound honesty
+
+The federal positive set ($N^+ = 195$) is roughly **30% of BEC's**, so the federal null is stated as a power bound, not a clean small-residual null:
+
+| True within-AUC | Federal detection probability | BEC |
+|---|---:|---:|
+| 0.55 | **0.35** (underpowered) | 0.97 |
+| 0.60 | **0.90** (ruled out) | — |
+| 0.65 | 1.00 | — |
+
+The matched-permutation null is **informative against a within-stratum residual ≥ 0.60** but **underpowered against 0.55**, so the federal deflation does not rest on the permutation alone. It rests on four power-robust pillars no sample-size argument dissolves: the exposure-only ranking already matches the raw score, the within-stratum point estimate sits **below 0.5**, the matched permutation does not reject, and the negative controls return the same generic geometry. The within-stratum **positive control recovers ≥ 0.99** ($O_i$ control 0.992) — so the design provably detects within-stratum signal when present; the federal null is a power bound on a genuine null, not a design artifact.
+
+### Negative controls: generic geometry
+
+Both placebos reproduce the real raw AUC — the protocol's designated arbiter ruling that the surviving ordering is generic opportunity/volume geometry, not cartel-specific:
+
+| Control | Real AUC | Null mean | $p$ |
+|---|---:|---:|---:|
+| Matched-volume placebo anchors | 0.744 | 0.728 | **0.258** (ns) |
+| Non-CADE high-volume-winner anchors | 0.744 | 0.746 | **0.582** (ns) |
+
+### Case-concentration disclosure
+
+The federal positive base is **more cartel-concentrated than BEC's**, and the operational ranking is one-to-two-cartel-dominated. The disclosure is dual and mandatory:
+
+| Concentration metric | Federal | Read |
+|---|---:|---|
+| Top-case share of positives | 35.4% (69/195) | most flattering — never led with alone |
+| **Top-two share of positives** | **64.4%** | mandated headline disclosure |
+| **Top-case share of TP@500** | **87.5%** | honest operational concentration |
+| LOCO ROC drop-largest case | 0.744 → **0.744** | ordering robust |
+| Clustered-RI $p$ (ROC ordering) | **0.001** | ordering non-random |
+| Clustered-RI $p$ (case-coverage breadth) | 0.487 (ns) | breadth not distinguishable from random |
+
+!!! warning "The ordering is LOCO-robust; the realized detections are one-cartel-dominated"
+    The ROC *ordering* is genuinely multi-case — leaving out the largest case keeps ROC at 0.744 → 0.744, clustered-randomization-inference ordering $p = 0.001$ — so the rank-ordering is not driven by any single cartel. But the realized **operational** detections are one-to-two-cartel-dominated: TP@500 is **87.5% one case**, the top two cases are **64.4% of positives**, and the case-coverage-breadth test is non-significant ($p = 0.487$). The federal leg is therefore a **single-system, concentrated-anchor stress test** of the protocol, **not a multi-case operational generalization**.
+
+### Timing and contact-intensity (same shape as BEC)
+
+The strict-temporal carrier replicates: the prospective ranking collapses outside the incumbent pool on both platforms (strict full-universe ROC **0.489** federal / 0.474 BEC), while the incumbent-pool continuous score deflates in the same magnitude class (**0.666** federal vs 0.684 BEC). The label-frozen prospective score ranks new 2017–2019 contact at **0.595** ($N^+ = 98$, above chance but below the $N \geq 120$ comparability floor — reported as such, not led upon). Restricting cobidders to ≥2 co-participations with a defendant ($N^+ = 108$) does not overturn the reading: within-stratum stays below chance (0.432), matched-permutation $p = 0.951$ — the dilution objection is closed. Direct-defendant FL-binary AUC is ≈ chance (0.465–0.503), reproducing the loser-side scope by design.
+
+---
+
 ## Summary: Reach and Limits
 
 The paper maps both the reach and the limits of award-layer screening, in declining order of confidence:
@@ -195,5 +266,6 @@ The paper maps both the reach and the limits of award-layer screening, in declin
 4. **The award and bid layers are comparable.** Award 0.760/0.143 vs bid RF 0.717/0.116; combined beats award on PR under random CV (0.188) but falls below it under case-grouped folds (0.103). Conditional, case-fragile complementarity.
 5. **The cost-recall frontier is the object, not a cutoff.** At $K_1 = 2000$: firm reduction 88.1% but bid-row reduction only 32.7%; $K_1 = 1000$ beats $K_1 = 2000$; no optimal $K$.
 6. **The price imprint is scope, not damages.** +0.064 broad → −0.097 overlap-cell ATT; only Q4 positive; mechanism not identified.
+7. **The audit ports to a second platform — provisionally.** On federal ComprasNet (2013–2019, partially overlapping anchors) the deflation **replicates** and on the decisive row lands more cleanly: exposure-only ROC 0.754 ≥ raw 0.744; within-stratum 0.462 (≈ chance); nested +0.005 ($p = 0.191$); negative controls $p = 0.258 / 0.582$. What ports is the **audit protocol and the construct**, not a deployable score — and the federal leg is a concentrated-anchor stress test (top-two 64.4%, TP@500 87.5% one case), not a multi-case generalization.
 
 The contributions are (1) an **organizational result** — award-to-bid recovery as a sequential cost-recall problem in which the frontier, not any cutoff, is the design object; (2) a **disciplined audit protocol** — label construction, opportunity adjustment, timing discipline, case-composition audit, bid-layer comparison, and cost-recall accounting — carrying the portable principle that *validating an administrative screen against adjudicated cases without adjusting for procurement opportunity systematically over-credits it*; and (3) a **reach-and-limits map** showing that cheap award-layer records, under a non-circular label, do **not** carry a robust cartel-ordering signal net of opportunity. They support **incumbent-firm triage with retrospective validation**, not platform-wide prospective deployment, and they do not prove conduct.

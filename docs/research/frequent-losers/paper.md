@@ -6,8 +6,40 @@ paper: frequent-losers
 
 <!-- REVISED: canonical-target reframe 2026-06-04 -->
 <!-- REVISED: hostile-review armor 2026-06-04 -->
+<!-- REVISED: v23 two-platform extension (ComprasNet) 2026-06-06 -->
 
 This page summarizes the contribution, institutional setting, formal framework, and empirical strategy of the paper.
+
+**Title:** *Cheap Signals, Costly Proof: The Reach and Limits of Award-Layer Screening in Cartel Enforcement.* 45-page main text + 40-page online appendix; 7 main tables and 3 figures.
+
+---
+
+## Abstract
+
+> Cartel enforcement must allocate costly proof-producing effort before proof exists. Using São Paulo's BEC platform and CADE adjudications, we ask how far award records can rank where bid-level forensics should begin. We study a minimal award-layer construct — persistent zero-win participation — validated against a reproducible, adjudication-anchored cobidder label that never uses the screen. Decomposed by opportunity, timing, and case concentration, the cheap signal's apparent reach mostly reflects mechanical co-participation exposure and case concentration; the residual ordering net of opportunity is marginal. Re-running the same audit on a second federal platform with partially overlapping legal anchors returns the same verdict, so what transfers is the audit protocol, not a deployable score. The contribution is the organizational result — the award-to-bid recovery decision is a sequential cost-recall problem whose frontier, not any cutoff, is the design object — and a disciplined audit protocol demonstrated across two platforms. Liability remains in the richer evidentiary record.
+
+---
+
+## Manuscript structure
+
+The main text now runs in nine sections, with the second-platform audit inserted as a new Section 5 directly after the BEC validation:
+
+| § | Section | Content |
+|---|---|---|
+| 1 | **Introduction** | Evidence-allocation framing; three contributions |
+| 2 | **Costly Proof and Observable Awards** | The two observability layers; BEC institutional setting |
+| 3 | **Award-Layer Triage** | The frequent-loser construct; formal framework |
+| 4 | **Validating the Loser-Side Ranking** | Opportunity decomposition, timing, single-case audits (BEC) |
+| 5 | **The Audit on a Second Platform** *(NEW)* | Federal ComprasNet — same audit re-run; the deflation replicates |
+| 6 | **Economic Content and Ordinary-Loser Alternatives** | Cobidder type, ordinary-loser placebos |
+| 7 | **From Award-Layer Triage to Bid-Layer Forensics** | Bid-benchmark comparison; cost-recall frontier |
+| 8 | **Scope, Limits, and Price Corroboration** | Scope boundary; price imprint (scope, not damages) |
+| 9 | **Conclusion** | Reach-and-limits summary |
+
+**Online appendix (40pp)** includes the framework and proofs (Appendix A), data and labels, validation audits, the adaptive-deployment and forensic-sequence material, the bid-benchmark audit, and — new in v23 — **Appendix G, the Federal Audit Battery (ComprasNet)**: the full federal deflation battery (label funnel, control-function validation, timing and case-composition synthesis, and the audit-stage graduation table) that the new Section 5 summarizes.
+
+!!! warning "Partially overlapping legal anchors (every federal mention)"
+    The federal exercise is a **provisional** robustness leg, not a promotion to Confirmed. The seven federal CADE cases are the *same cartels* as the BEC portfolio, anchored at the federal establishment level — so the two platforms have **partially overlapping legal anchors**, not independent ground truth. The federal evidence tests whether the audit *protocol* and the loser-side *construct* port across procurement systems; it does not assemble a fresh cartel population, and we read it as neither confirmation nor refutation of any firm's legal status.
 
 ---
 
@@ -19,7 +51,7 @@ Three substantive contributions:
 
 1. **An organizational result.** The paper recasts the problem from stand-alone classification to resource allocation: which firms and environments justify the costly recovery of bid-level evidence? Award-to-bid recovery is a **sequential cost-recall problem** in which the **frontier — not any cutoff — is the design object**. Cheap award-layer records order *where* to look; the richer bid layer evaluates *what* is found. Liability remains in the bid-level record.
 
-2. **A disciplined audit protocol.** The construct's apparent power is decomposed into any genuine ranking signal and three confounds most screening studies leave bundled — mechanical co-participation exposure, retrospective information, and single-case concentration. Against the broad adjudication-anchored cobidder target (**651 positives**; the frequent-loser flag is not used to build the label), raw concentration looks modest (continuous-score **ROC 0.761**, PR-AUC **0.143**) and is mostly exposure: genuine label-blind opportunity ranks the label at only ROC **0.553** (ranking by *observed* contact reaches 0.905, but that is mechanical label encoding — a cobidder *is* a firm with positive contact). Holding procurement opportunity fixed, the within-stratum **AUC is 0.471 — essentially chance**; the only positive is a nested increment of **+0.010** (DeLong $p = 0.013$) that is **not robust across designs** (matched permutation $p = 0.127$; FL-enrichment $p = 0.067$; matched change in cobidder probability negative). An anchor-agnostic armor battery confirms the verdict (a planted positive control recovers AUC 0.953, so the within-stratum test is not dead by construction; the permutation test has power 0.97 at within-AUC 0.55). The protocol carries a portable principle: *validating an administrative screen against adjudicated cases without adjusting for procurement opportunity systematically over-credits it.*
+2. **A disciplined audit protocol — demonstrated on two platforms.** The construct's apparent power is decomposed into any genuine ranking signal and three confounds most screening studies leave bundled — mechanical co-participation exposure, retrospective information, and single-case concentration. Against the broad adjudication-anchored cobidder target (**651 positives**; the frequent-loser flag is not used to build the label), raw concentration looks modest (continuous-score **ROC 0.761**, PR-AUC **0.143**) and is mostly exposure: genuine label-blind opportunity ranks the label at only ROC **0.553** (ranking by *observed* contact reaches 0.905, but that is mechanical label encoding — a cobidder *is* a firm with positive contact). Holding procurement opportunity fixed, the within-stratum **AUC is 0.471 — essentially chance**; the only positive is a nested increment of **+0.010** (DeLong $p = 0.013$) that is **not robust across designs** (matched permutation $p = 0.127$; FL-enrichment $p = 0.067$; matched change in cobidder probability negative). An anchor-agnostic armor battery confirms the verdict (a planted positive control recovers AUC 0.953, so the within-stratum test is not dead by construction; the permutation test has power 0.97 at within-AUC 0.55). **The same audit, re-run unchanged on a second federal platform (ComprasNet, 2013–2019) with partially overlapping legal anchors, returns the same verdict** — and on the decisive row it lands more cleanly: exposure-only ROC **0.754** equals-to-edges-out the raw score (**0.744**), the within-stratum residual collapses to **0.462** (≈ chance), the nested increment is null (**+0.005**, DeLong $p = 0.191$), and both negative controls reproduce the order ($p = 0.258 / 0.582$). What ports is the **protocol and the construct**, not a deployable score. The protocol carries a portable principle: *validating an administrative screen against adjudicated cases without adjusting for procurement opportunity systematically over-credits it.*
 
 3. **A map of reach and limits.** The paper marks where cheap administrative records can and cannot order forensic priority. The FL-binary flag is at chance (**AUC $\approx$ 0.49**) against win-heavy direct CADE defendants *by design* (loser-side scope signature; the continuous score ranks them at 0.66–0.70). It orders firms **retrospectively among incumbents**, not prospectively across the platform (strict 2009–16 → 2017–19 timing reaches only $\approx 0.68$ inside the training always-loser pool; platform-wide ROC $\approx 0.474$, **below chance**, precision@500 $= 0$ in every rolling-origin year). And one adjudicated case (rail/metro) supplies $\approx 32\%$ of positives and 45.4% of true positives at $k=500$ (leave-largest-case-out drops PR-AUC from 0.143 to 0.090, $-37\%$); the estimated ranking is case-sensitive, not a portable cartel score.
 
@@ -105,6 +137,23 @@ Full assumptions, statements, and proofs are in Online Appendix A.
 | **Firms** | ~41,000 total; 16,843 always-losers |
 | **PBUs** | 1,308 public buying units |
 | **Adjudication-anchored cobidders** | 651 firms (validation target — always-losers that share ≥1 BEC tender-item with a BEC-active direct CADE defendant; *not* cartel members; 341 FL / 310 non-FL, so the label is not flag-conditioned) |
+
+#### Second platform (federal ComprasNet, §5 / Appendix G)
+
+The audit is re-run on a structurally different system. The construct is re-derived from federal data, not transported — the IQR rule yields a federal threshold of **32** (vs 14 on BEC), so the rule is the construct, not the cutoff value.
+
+| Dimension | Federal (ComprasNet) | BEC twin |
+|---|---|---|
+| **Source / window** | ComprasNet (federal, 2013–2019, pure Pregão) | BEC (SP, 2009–2019) |
+| **Participation rows** | 51.0 million | 1.65M (analysis sample) |
+| **Firms** | 92,600 | ~41,000 |
+| **Always-losers** | 35,943 | 16,843 |
+| **FL threshold (IQR rule, re-estimated)** | 32 (≥) | 14 (≥) |
+| **Frequent losers** | 6,491 | 2,735 |
+| **Adjudication-anchored cobidders** | 195 broad-AL (94 FL / 101 non-FL) | 651 |
+| **Legal anchors** | 7 numbered CADE cases (*partially overlapping* BEC's), 25 platform-active direct-defendant establishments | 12 cases |
+
+The federal release exposes participation and the winner flag but **no bid microdata** — there is no federal analogue to the BEC `LANCES` bid ladder, so the downstream bid-layer forensic step cannot be built from public federal data at all. That observability gap is on-thesis: the cheap award-layer audit is exactly the audit that remains feasible where the richer information is missing.
 
 ### Two-step rule
 

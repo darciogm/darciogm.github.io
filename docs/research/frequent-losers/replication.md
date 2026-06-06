@@ -183,6 +183,88 @@ key**, never by raw CNPJ:
 
 ---
 
+## Federal (ComprasNet) Replication — the Second Platform
+
+!!! info "One config, two sources — `--source={bec,comprasnet}`"
+    As of v23 the audit pipeline runs on **two procurement platforms** from a
+    single code base. Every analysis script accepts a `--source=` flag
+    (default `bec`) and reads **all** of its data paths, constants,
+    key-extraction lambdas, and output directories from one abstraction layer,
+    `scripts/utils/source_config.R`. There is **no forked per-platform logic**:
+    BEC behaviour is byte-identical to the single-platform release, and the
+    federal pipeline differs only where the data genuinely differ. To run the
+    federal leg, every numbered script is invoked with
+    `--source=comprasnet`; the orchestration is in
+    `scripts/build/run_federal_chain.sh`.
+
+### Federal data provenance (public federal records)
+
+The federal panel is assembled from **two public federal sources** — no
+licensed microdata and, importantly, **no federal bid microdata**: the public
+federal data are **participation-only**, so no bid-distribution / Imhof
+forensic benchmark is constructible federally (a platform-observability
+difference, documented as on-thesis).
+
+| Source | Role | Coverage |
+|--------|------|----------|
+| **Portal da Transparência (CGU) bulk download** | Participation panel — who participated / won, buyer (UASG), item | 2013–2019 (`item_level_panel.parquet`) |
+| **`compras.dados.gov.br` API (`item_pregao`)** | Price signals only (`menorLance`, `valorEstimadoItem`, `valorHomologadoItem`) | parsed into a price panel; **not used for any federal price claim in this submission** |
+
+!!! warning "No federal price claim is made"
+    The federal price panel is built (12.4M rows) but is a **future-upgrade
+    hook only**. The current submission makes **zero federal price claim**;
+    the federal leg is participation + winner-flag only.
+
+### Federal pipeline chain
+
+The federal chain runs the same numbered scripts as BEC, `00 → 12b`, each with
+`--source=comprasnet`, plus one federal-only robustness leg:
+
+| Script | Federal role |
+|--------|--------------|
+| `00 … 12b` (the BEC chain) | Identical audit battery, re-pathed and re-keyed via `source_config.R` |
+| `13_srp_stratified_validation.R` | **Federal-only SRP leg** — stratifies the two federal Pregão variants (regular `po_phase_code = 5` vs SRP `po_phase_code = 9999`) and checks the loser-side signal is consistent across them (referee attack A7) |
+
+!!! note "Federal key semantics differ from BEC"
+    BEC and ComprasNet share the same column **names** but not the same key
+    **semantics**, which is precisely why a single config exists. Federal
+    `numerodaoc` is a 9-char string whose trailing digits are the *numbering*
+    year — which differs from the *award* year for ≈ 23% of rows — so the
+    federal year is **never string-extracted**; it comes from a
+    `(numerodaoc, codigoitem) → year` lookup. The federal buyer (`codigo_ug`,
+    6-digit UASG) is a separate column, not a substring. Convite is extinct
+    federally (pure Pregão), so the BEC modality stratification is replaced by
+    the SRP-vs-regular contrast.
+
+### Canonical federal targets (same IQR rule, re-estimated cut)
+
+The federal targets are built by the **same rules** as BEC — the FL cut is
+re-estimated on the federal data, **not transported** from BEC:
+
+| Quantity | Federal value | BEC analogue |
+|----------|--------------|--------------|
+| Participation panel | 51.0M rows / 92,600 firms | — |
+| Always-losers | 35,943 | 16,843 |
+| FL cut (`median + 1.5 × IQR`, `≥`) | **32** → **6,491** frequent losers | 14 → 2,735 |
+| Broad-rule cobidders | 3,850 | — |
+| Broad-AL cobidders (main target) | **195** (94 FL / 101 non-FL) | 651 |
+| CADE cases (numbered) | 7 | 12 |
+| Window | 2013–2019 | 2009–2019 |
+
+!!! warning "Partially overlapping legal anchors"
+    The federal target is **establishment-anchored** on the same family of
+    CADE cartels as the BEC portfolio. The 7 federal cases are the *same
+    cartels* as BEC's, **partially overlapping** — so the two legs are
+    correlated, not fully independent. The federal leg tests the
+    **portability** of the audit protocol and the loser-side construct, not an
+    independent ground truth; it is a second-platform demonstration,
+    **provisional pending genuinely independent anchors**, not a promotion to
+    "Confirmed." The cobidder count was rebuilt establishment-anchored (CADE
+    linkage v3), with the establishment-vs-`raiz` grain difference verified to
+    be zero.
+
+---
+
 ## Running the Analysis
 
 ### Step 1 — data build (Python, ~6 min, only if Parquets are missing)
@@ -272,6 +354,7 @@ pdflatex paper_submission_clean.tex
 | **Provenance** | Each macro carries a `% src:` comment naming the script and output CSV that produced it. |
 | **Caching** | `/tmp/p3_prepared.rds` (analysis dataset) and `/tmp/p3_models.rds` (fitted models) for fast reload. |
 | **Threads** | `fixest` and `data.table` use `min(detectCores(logical = FALSE), 16)`; DuckDB joins use `PRAGMA threads = 12`. |
+| **Determinism** | The two-source package enforces deterministic ordering; bit-exact reproduction requires that enforced ordering. A DuckDB parallel-aggregation / emission-order nondeterminism was fixed by stabilizing tie-breaks to a total order, so the audit reproduces bit-for-bit on a given environment across both sources. |
 
 ---
 

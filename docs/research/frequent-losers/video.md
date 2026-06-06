@@ -25,6 +25,12 @@ A narrated visual walkthrough of the paper's key ideas and findings.
     framework** supporting incumbent-firm triage with retrospective
     validation, not a working cartel detector.
 
+    *Note (2026-06-06):* this animation was produced under the
+    single-platform framing; the two-platform extension — the federal
+    ComprasNet audit reported in §5, where the deflation replicates under
+    partially overlapping legal anchors — postdates it and is **not**
+    reflected here. See the [Changelog](changelog.md) v23 entry.
+
 <div style="position:relative; width:100%; padding-bottom:56.25%; border-radius:12px; overflow:hidden; box-shadow: 0 4px 24px rgba(0,0,0,0.15); margin-bottom:2em;">
   <iframe
     src="../assets/storytelling_video.html"

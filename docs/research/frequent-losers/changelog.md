@@ -9,7 +9,7 @@ paper: frequent-losers
 ## v23 — The Audit on a Second Platform (ComprasNet) — June 6, 2026 (Current)
 
 **Headline:** the award-layer evidence-triage protocol is now demonstrated on **two
-independent procurement platforms**. Beyond São Paulo's BEC (2009–2019), we re-run the full
+institutionally distinct procurement platforms**. Beyond São Paulo's BEC (2009–2019), we re-run the full
 audit battery on the **federal ComprasNet** platform (2013–2019, pure Pregão) against the same
 family of CADE cartel anchors, integrated into the manuscript as a new Section 5, *The Audit
 on a Second Platform*, with the full federal battery in Appendix G. The federal leg

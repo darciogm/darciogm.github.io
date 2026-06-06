@@ -50,8 +50,12 @@ account.
 > while participation volume ranks them moderately (0.66–0.70) — the
 > asymmetry is on the loser-side binary flag, not a generic detector.
 > The hypothesis is **not confirmed** under the non-circular label: net of
-> opportunity there is no robust residual ordering. Non-BEC replication
-> remains the only path to any generalizable claim.
+> opportunity there is no robust residual ordering. The deflation now
+> replicates on a second platform (federal ComprasNet,
+> [AN-043](../analyses/an-043-federal-opportunity-adjusted-validation.md),
+> provisional under partially overlapping anchors); a genuinely
+> independent cartel anchor remains the path to any Confirmed
+> generalizable claim.
 
 ## Theory
 
@@ -159,7 +163,17 @@ non-BEC replication:
 
 Both can only be assessed by replication on a non-BEC panel
 (ComprasNet federal, another state's e-procurement, or another
-country's data) with an independent cartel anchor. Under the current
+country's data) with an independent cartel anchor. The v23 R&R takes the
+first cross-platform step: the audit battery is re-run on federal
+ComprasNet ([AN-043](../analyses/an-043-federal-opportunity-adjusted-validation.md)),
+and the **deflation anatomy replicates** — exposure-only discrimination
+≥ raw (0.754 ≥ 0.744), the within-stratum residual collapses to chance
+(0.462), the nested increment is null (+0.005, DeLong p = 0.191), and the
+negative controls reproduce the order (placebo p = 0.258 ns; HV-winner
+p = 0.582 ns). This is reported as **provisional** rather than Confirmed
+because the 7 federal CADE anchors are the *same cartels* as the BEC
+portfolio (establishment-anchored, partially overlapping) — so a
+*genuinely* independent cartel anchor remains the bar. Under the current
 evidence H3 is **not confirmed (opportunity explains it)**, consistent
 with the project-wide rule documented in
 [findings/index.md](../findings/index.md).

@@ -104,3 +104,21 @@ flowchart TD
     are an **organizational result** (the cost-recall frontier is the design
     object) and a **disciplined audit protocol** — not a deployable cartel
     detector.
+
+!!! abstract "Second platform: the same DAG re-run on federal ComprasNet (§5)"
+    The entire decomposition branch above (raw award score → label-blind
+    opportunity → within-stratum residual → armor battery) was re-run
+    **unchanged** on the federal **ComprasNet** platform (2013–2019, pure
+    Pregão) against the same family of CADE anchors, and **reaches the same
+    verdict**: the deflation replicates. Federally the raw award-layer ROC is
+    0.744, label-blind opportunity ranks the label at 0.611, the within-stratum
+    residual falls to ≈ chance (**0.462**), the nested increment is null
+    (**+0.005, $p = 0.191$**), and the negative controls return the surviving
+    order to generic opportunity/volume geometry. The strict full-universe
+    prospective collapse carries too (ROC 0.489 federal / 0.474 BEC). The
+    construct **ports and deflates; it does not break.** This is a
+    second-platform demonstration of the protocol, **provisional** —
+    **partially overlapping legal anchors** (the 7 federal cases are the same
+    cartels as the BEC portfolio, establishment-anchored), not a promotion to
+    "Confirmed." Full battery in §5 and Appendix G; see the
+    [Changelog](changelog.md) v23 entry.

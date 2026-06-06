@@ -167,7 +167,7 @@ All 43 AN pages, auto-generated from the YAML frontmatter of each `docs/analyses
 | [AN-040](an-040-within-cell-mechanism-test.md) | descriptive | done | 🟢 | [price-scope-sign-reversal](../hypotheses/price-scope-sign-reversal.md) | Within overlap cells, does FL presence depress the observed winner bid relative to the reference price? Does… |
 | [AN-041](an-041-volume-matched-cobidder-audit.md) | descriptive | done | 🟢 | [cobidder-profile-distinct](../hypotheses/cobidder-profile-distinct.md) | Does the within-FL distinctness of cobidders (AN-028 participation dimensions, AN-031 bid-level gap-to-winner… |
 | [AN-042](an-042-volume-matched-timing-audit.md) | descriptive | done | 🟡 | [cobidder-profile-distinct](../hypotheses/cobidder-profile-distinct.md) | Are cobidders distinct from non-cobidder FLs on bid TIMING (revision intensity, inter-bid interval, last-bid… |
-| [AN-043](an-043-federal-opportunity-adjusted-validation.md) | validation | provisional | 🟡 | [exposure-discipline](../hypotheses/exposure-discipline.md) | Does the award-layer evidence-triage protocol replicate on a SECOND, independent procurement platform (feder… |
+| [AN-043](an-043-federal-opportunity-adjusted-validation.md) | validation | provisional | 🟡 | [exposure-discipline](../hypotheses/exposure-discipline.md) | Does the award-layer evidence-triage protocol replicate on a SECOND, institutionally distinct procurement platform (feder… |
 
 **Status legend.** `done` = analysis run and interpretation written; `pending` = scaffolded only; `stale` = superseded.
 

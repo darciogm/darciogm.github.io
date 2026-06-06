@@ -110,10 +110,21 @@ identified; no overcharge is claimed.
 
 **Current submission gating constraints:**
 
-- *Single-jurisdiction limitation* — every audit lives in BEC × CADE.
-  Cross-jurisdiction replication (ComprasNet federal) would push R&R
-  to 75–80% at JLEO. See
-  [`COMPRASNET_PATH_TO_CONFIRMED.md`](https://github.com/darciogm/bitter-pills/blob/main/paper3-frequent-losers/COMPRASNET_PATH_TO_CONFIRMED.md).
+- *Cross-platform replication — EXECUTED (2026-06-06).* The full audit
+  battery was re-run on the **federal ComprasNet** platform (2013–2019,
+  pure Pregão) against the same family of CADE anchors, integrated as
+  §5 *The Audit on a Second Platform* + Appendix G. **The deflation
+  replicates**: under opportunity adjustment the within-stratum residual
+  falls to chance (federal within-stratum AUC 0.462; nested increment
+  +0.005, $p = 0.191$; negative controls return the order to generic
+  opportunity/volume geometry), and the strict full-universe prospective
+  collapse carries (ROC 0.489 federal / 0.474 BEC). The construct *ports
+  and deflates; it does not break.* This is a **second-platform
+  demonstration of the audit protocol, provisional pending genuinely
+  independent anchors** — the 7 federal CADE cases are the *same cartels*
+  as the BEC portfolio (**partially overlapping legal anchors**,
+  establishment-anchored), so the two legs are correlated, not fully
+  independent. Not a promotion to "Confirmed."
 - *Single-case concentration* — one adjudicated cartel supplies
   $\approx 32\%$ of positive labels and 45.4% of true positives at the
   top-500 operating point; the estimated ranking is case-sensitive, and
@@ -531,4 +542,4 @@ competing intellectually with the current paper.
 
 ---
 
-*Last updated: 2026-06-03*
+*Last updated: 2026-06-06*

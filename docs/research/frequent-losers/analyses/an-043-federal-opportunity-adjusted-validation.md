@@ -3,7 +3,7 @@ paper: frequent-losers
 id: an-043
 hypothesis: exposure-discipline
 type: validation
-question: Does the award-layer evidence-triage protocol replicate on a SECOND, independent procurement platform? On federal ComprasNet (2013–2019, pure Pregão) against the same family of CADE cartel anchors, does the opportunity-adjusted deflation anatomy reproduce — exposure-only discrimination ≥ raw, within-stratum residual collapsing to chance — and does the strict-temporal prospective collapse port?
+question: Does the award-layer evidence-triage protocol replicate on a SECOND, institutionally distinct procurement platform? On federal ComprasNet (2013–2019, pure Pregão) against the same family of CADE cartel anchors, does the opportunity-adjusted deflation anatomy reproduce — exposure-only discrimination ≥ raw, within-stratum residual collapsing to chance — and does the strict-temporal prospective collapse port?
 status: provisional
 status_date: 2026-06-06
 confidence: yellow

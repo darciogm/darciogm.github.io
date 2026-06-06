@@ -259,6 +259,55 @@ This is the decisive evidence for the deflationary verdict — and it is built t
 
 ---
 
+## 15. Federal Robustness Block (ComprasNet)
+
+<!-- REVISED: v23 two-platform extension (ComprasNet) 2026-06-06 -->
+
+The full deflation battery is re-run on federal **ComprasNet** (2013–2019, pure Pregão). The headline federal verdict and side-by-side comparative table live on the [results](results.md#7-the-audit-on-a-second-platform-comprasnet) page; this block reports the federal-specific robustness checks that discipline that verdict.
+
+!!! warning "Partially overlapping legal anchors (provisional)"
+    The seven federal CADE cases are the **same cartels** as the BEC portfolio, anchored at the federal establishment level — **partially overlapping legal anchors**, not independent ground truth. The federal leg tests portability of the *protocol* and the *construct*; it is provisional and promotes nothing to Confirmed. Where this page diverges from the paper, the paper wins.
+
+### 15.1 Contact-intensity sensitivity (contact ≥ 2)
+
+A pre-registered sensitivity restricts the federal cobidder label to firms that share **≥ 2** tender-items with a direct defendant, removing the "loose 1-contact rule" objection.
+
+| Quantity | Value |
+|---|---|
+| Positives retained ($N^+$) | **108 of 195** (55.4%) |
+| Within-stratum residual | **0.432** (below chance) |
+| Matched-stratum permutation $p$ | **0.951** (not significant) |
+| Pre-adjustment AUC (raw, exposure-only) | both *rise* on the cleaner, more exposure-loaded set |
+
+**What it shows:** restricting to higher-contact positives raises the *raw* AUC (as opportunity mechanics predict — more contact ↔ more participation), but the within-stratum residual stays **below chance** and the matched-permutation does not reject. **Its limit / verdict:** the deflation reading is **consistent** with BEC's contact ≥ 2 sensitivity; the dilution objection is closed on both platforms.
+
+### 15.2 SRP vs. regular-pregão stratification
+
+Federal Pregão splits into ~15% regular electronic auction and ~85% price-registration (SRP). Stratifying tests whether the pooled federal reading is an artifact of the SRP-heavy mix. The pooled construct is held fixed across strata.
+
+| Quantity | Regular Pregão | SRP |
+|---|---:|---:|
+| Raw award-layer ROC | **0.748** | **0.703** |
+| Exposure-only ROC | 0.859 | 0.874 |
+| FL32-binary ROC | **0.656** | **0.641** |
+
+**What it shows:** raw, exposure-only, and FL32-binary discrimination are **cross-stratum consistent** (gaps 0.045 / 0.015 / 0.015); both strata clear the audit gates (regular 3,546 / SRP 4,069 firms). **Its limit:** the script-13 within-(year×buyer)-cell C-statistic is a **different estimand** (it leaves exposure free to vary, re-encoding the raw signal) and is **not published** alongside the exposure-stratum within column; the SRP answer rides on the comparable raw / exposure-only / FL32 rows above.
+
+### 15.3 Case-exclusion and data-quality filters
+
+| Filter | Effect | Status |
+|---|---|---|
+| **TI/DF unnumbered summary case excluded** | Only federal-only anchor dropped (lacks firm-level identification); v3-reinstatement reproduces bit-for-bit | disclosed; effect known and non-strategic |
+| **Junk / sentinel CNPJ filter** | Sentinel CNPJ `000000000000-2` dropped in the 2026-06-05 target-quality fix (196 → 195 broad-AL; 95 → 94 FL) | applied |
+| Establishment-anchored grain (vs raiz) | 195 establishment-anchored is the main target; the 195-vs-222 gap is **entirely** the TI/DF exclusion + 1 junk CNPJ — the establishment-vs-raiz grain contributes **0** | decomposed |
+
+### 15.4 The estimand wall (raw-timing vs opportunity-adjusted)
+
+!!! note "Two different estimands — mutually consistent, not contradictory"
+    The federal **raw-timing** rows (strict full-universe 0.489 / training-AL incumbent-pool continuous 0.666) measure the **temporal stability of the unadjusted screen** over the firm universe. The **opportunity-adjusted within-cell** rows (within-stratum 0.462; nested +0.005, $p = 0.191$; matched-permutation $p = 0.906$) measure **residual discrimination after netting out exposure** within matched cells. These are **different estimands on different samples**: a high raw-timing AUC and a null adjusted increment are **mutually consistent, not contradictory**. The timing rows are marginal *unadjusted* discrimination; the deflation rows are residual discrimination net of opportunity. (Federal MEDIUM cells = year × buyer/UASG; the item-group margin is not observed federally, so federal cells are one margin **coarser** than BEC — the null is conservative a-fortiori.)
+
+---
+
 ## Robustness Summary
 
 | Object | Audit | Result |
@@ -276,5 +325,8 @@ This is the decisive evidence for the deflationary verdict — and it is built t
 | **Cost-recall** | cutoff sweep / frontier | no optimal $K$; firm 88.1% vs bid-row 32.7% at one operating point |
 | **Dilution sensitivity** | contact ≥ 2 label | deflationary verdict holds; within-stratum ≈ chance, increment $p = 0.47$ |
 | **Pricing imprint** | overlap discipline; sensitivity | scope not damages; sign reverses; **mechanism not identified** |
+| **Federal: second-platform audit** | full battery re-run on ComprasNet | deflation **replicates** (provisional, partially overlapping anchors); exposure-only 0.754 ≥ raw 0.744; within-stratum 0.462; nested $p = 0.191$; controls $p = 0.258/0.582$ |
+| **Federal: contact ≥ 2** | dilution sensitivity | consistent — within-stratum 0.432, perm $p = 0.951$ |
+| **Federal: SRP vs regular pregão** | modality-mix stratification | consistent — raw 0.748 vs 0.703, FL32 0.656 vs 0.641 |
 
-The audit battery disciplines the ranking rather than defending a detector. The honest result: under a reproducible non-circular label, cheap award-layer records carry **no robust cartel-ordering signal net of opportunity** — they support **incumbent-firm triage with retrospective validation**, not platform-wide prospective deployment, do not prove conduct, cannot reach win-heavy defendants via the binary flag, order below chance out-of-time on the open platform, and lean heavily on a single case.
+The audit battery disciplines the ranking rather than defending a detector. The honest result: under a reproducible non-circular label, cheap award-layer records carry **no robust cartel-ordering signal net of opportunity** — they support **incumbent-firm triage with retrospective validation**, not platform-wide prospective deployment, do not prove conduct, cannot reach win-heavy defendants via the binary flag, order below chance out-of-time on the open platform, and lean heavily on a single case. **Re-running the same audit on a second federal platform (ComprasNet) with partially overlapping legal anchors returns the same deflationary verdict** — provisionally, since the federal anchors are the same cartels as BEC's and the federal positives are case-concentrated — so what ports across the two platforms is the **audit protocol and the loser-side construct, not a deployable score**.
