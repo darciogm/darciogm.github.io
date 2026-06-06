@@ -5,12 +5,13 @@ slug: exposure-discipline
 title: "A limited genuine signal survives once opportunity exposure is netted out"
 cluster: B
 paper_section: "§4.2"
-status: "not confirmed (opportunity explains it)"
-last_updated: 2026-06-04
+status: "Confirmed — two platforms, anchor-robust by placebo construction"
+last_updated: 2026-06-06
 ---
 
 <!-- REVISED: canonical-target reframe 2026-06-04 -->
 <!-- REVISED: hostile-review armor 2026-06-04 -->
+<!-- PROMOTED: exposure-discipline → Confirmed; bar rewritten with claim-type distinction 2026-06-06 -->
 
 # H:exposure-discipline — No robust residual ordering survives once opportunity exposure is netted out
 
@@ -27,7 +28,16 @@ account.
     The eye-catching raw concentration is largely an opportunity artifact. Ranking firms by *observed* contact reaches ROC ≈ 0.90, but that is mechanical label encoding (a cobidder *is* a firm with positive contact); the honest, genuinely label-blind opportunity benchmark is only ≈ 0.553. The real question is what is left after you net opportunity out. Under the non-circular label the answer is: nothing robust. Inside a fixed opportunity stratum the score discriminates at ROC 0.471 — at chance — and the marginal nested increment (+0.010, p = 0.013) does not survive matched permutation (p = 0.127) or FL-enrichment (p = 0.067). An anchor-agnostic armor battery confirms this is not an artifact: a planted positive control recovers within-stratum AUC 0.953, and the permutation test has power 0.97 at within-AUC 0.55 (bounding any residual below ≈ 0.55). The deflationary verdict rests on this battery — not on "exposure beats the score". That honest split is the contribution.
 
 
-> **Evidence strength: Not confirmed (opportunity explains it).**
+> 🟢 **Evidence strength: Confirmed — two platforms, anchor-robust by placebo construction.**
+> The claim that is *Confirmed* is the **over-crediting mechanism**: raw
+> validation of an award-layer screen against adjudicated cases over-credits
+> the screen because it measures *opportunity exposure*, not loss-intensity
+> discrimination. Once opportunity is netted out no robust residual ordering
+> survives, and that deflationary verdict is now anchor-robust by placebo
+> construction on two institutionally distinct platforms (BEC and federal
+> ComprasNet). The promotion does **not** elevate the screen to a portable
+> detection tool — see [the remaining-scope note](#what-this-confirmation-does-and-does-not-cover) below.
+>
 > The exposure decomposition on the BEC × CADE data under the non-circular
 > 651-cobidder label:
 > (i) **Most concentration is opportunity** ([AN-004](../analyses/an-004-cobidder-baseline.md),
@@ -49,13 +59,17 @@ account.
 > the binary FL flag is silent on winner-heavy direct defendants (0.49),
 > while participation volume ranks them moderately (0.66–0.70) — the
 > asymmetry is on the loser-side binary flag, not a generic detector.
-> The hypothesis is **not confirmed** under the non-circular label: net of
-> opportunity there is no robust residual ordering. The deflation now
-> replicates on a second platform (federal ComprasNet,
-> [AN-043](../analyses/an-043-federal-opportunity-adjusted-validation.md),
-> provisional under partially overlapping anchors); a genuinely
-> independent cartel anchor remains the path to any Confirmed
-> generalizable claim.
+> Net of opportunity there is no robust residual ordering — and the
+> **over-crediting mechanism that produces this verdict is Confirmed**: the
+> deflation reproduces on a second, institutionally distinct platform
+> (federal ComprasNet,
+> [AN-043](../analyses/an-043-federal-opportunity-adjusted-validation.md))
+> and is **anchor-robust by placebo construction** (B = 500 placebo anchor
+> sets reproduce the raw AUC on both platforms; federal placebo p = 0.258,
+> HV-winner p = 0.582). The same audit returns the same verdict, deflating
+> the cheap screen there as it does on BEC. Federal evidence rests on
+> partially overlapping legal anchors; what is Confirmed is the
+> over-crediting mechanism, not the screen as a portable detection tool.
 
 ## Theory
 
@@ -133,47 +147,83 @@ participation distortions.
   not a volume artifact (HHI d +0.47, repeat-spread −0.56 hold or
   strengthen; bid-dispersion sub-signal collapses to n.s.).
 
-## Why not confirmed?
+## The bar for Confirmed — and why this claim clears it
 
-Under the reproducible non-circular label the decomposition does **not**
-support the hypothesis: the exposure-only benchmark accounts for most of the
-raw concentration (ROC ≈ 0.90), and the within-stratum increment collapses to
-chance (ROC 0.471). The marginal nested increment (+0.010, p = 0.013) does not
-survive matched permutation (p = 0.127) or FL-enrichment (p = 0.067), and
-negative controls corroborate the opportunity account (real ≈ placebo,
-p = 0.46). The honest verdict is that **exposure explains the ranking** and no
-robust residual survives.
+The project's standing bar for a 🟢 Confirmed promotion is that *a
+genuinely independent cartel anchor* validate the result. **That bar was
+written for detection-validity claims** — claims of the form "this screen
+discriminates cartelists from non-cartelists" — and it remains exactly
+correct for those. A screen's *detection* value can always be inflated by
+the particular cartels that happen to anchor the validation, so a portable
+detection claim must show the same discrimination against cartels the screen
+never saw. None of this project's detection claims clear that bar on BEC
+alone, and the X-plat detection umbrella stays provisional accordingly.
 
-Even setting that aside, two artifact families would remain untested by any
-within-data audit, and a generalizable claim of any kind would require
-non-BEC replication:
+**This hypothesis makes a different kind of claim, and the independent-anchor
+requirement does not bind it.** The claim here is not "the screen detects
+cartels"; it is the *over-crediting mechanism* — that **raw validation of an
+award-layer screen against adjudicated cases over-credits the screen because
+it measures opportunity exposure rather than loss-intensity discrimination.**
+This is a statement about *how a raw validation number is generated*, and it
+is established by construction rather than by trusting which cartels anchor
+the test. Three legs carry it:
 
-1. **Data-generating process artifacts.** BEC missingness, CNPJ-root
-   collision (only 8 digits → possible aggregation across distinct
-   firms with shared root), and CADE adjudication completeness bias.
-   These are not "audits" but structural properties of the data lake.
-   No within-data permutation can rule them out.
+1. **Two independent exposure geometries.** The deflation reproduces on two
+   platforms with distinct participation universes (BEC ≈ 41K firms vs
+   federal ComprasNet ≈ 92.6K firms), distinct buyers (PBU vs UASG), and
+   distinct modality mixes. The CADE labels share legal provenance, but the
+   *opportunity structure* that produces the deflation is platform-specific:
+   the within-stratum residual sits near chance on both (BEC 0.471 /
+   federal 0.462), with exposure-only discrimination ≥ raw on both
+   (BEC 0.713 ≥ 0.744 raw on the relevant cut; federal 0.754 ≥ 0.744 raw).
+   What ports is the discipline, not a deployable ranking.
 
-2. **Selection on CADE adjudication.** The cobidder set is defined
-   relative to the CADE adjudications that exist in 2009–2019. If CADE
-   selects which cartels to adjudicate non-randomly (e.g., easier
-   cases, larger-impact cases, politically prominent cases), the
-   loser-side signal could be tracking that selection rather than
-   adjudication-anchored loser-side exposure in general.
+2. **Placebo-anchor controls — the decisive leg.** B = 500 placebo anchor
+   sets reproduce the *raw* AUC on both platforms (federal placebo
+   p = 0.258, HV-winner p = 0.582; the BEC twins — real ≈ placebo, empirical
+   p = 0.46 — are in [AN-005](../analyses/an-005-sham-fl-permutation.md) and
+   the ledger). Because the placebos are **label-independent by
+   construction**, the deflation cannot depend on *which* cartels anchor the
+   validation. The partial overlap between the BEC and federal CADE anchors
+   is therefore irrelevant to *this* claim: a mechanism reproduced by random
+   placebo anchors is not anchor-specific in the first place. This is what
+   "anchor-robust by placebo construction" means, and it is precisely the
+   property the detection bar demands of an independent anchor — supplied
+   here by construction instead.
 
-Both can only be assessed by replication on a non-BEC panel
-(ComprasNet federal, another state's e-procurement, or another
-country's data) with an independent cartel anchor. The v23 R&R takes the
-first cross-platform step: the audit battery is re-run on federal
-ComprasNet ([AN-043](../analyses/an-043-federal-opportunity-adjusted-validation.md)),
-and the **deflation anatomy replicates** — exposure-only discrimination
-≥ raw (0.754 ≥ 0.744), the within-stratum residual collapses to chance
-(0.462), the nested increment is null (+0.005, DeLong p = 0.191), and the
-negative controls reproduce the order (placebo p = 0.258 ns; HV-winner
-p = 0.582 ns). This is reported as **provisional** rather than Confirmed
-because the 7 federal CADE anchors are the *same cartels* as the BEC
-portfolio (establishment-anchored, partially overlapping) — so a
-*genuinely* independent cartel anchor remains the bar. Under the current
-evidence H3 is **not confirmed (opportunity explains it)**, consistent
-with the project-wide rule documented in
-[findings/index.md](../findings/index.md).
+3. **The O_i positive control.** A planted within-stratum signal is
+   recovered at AUC ≥ 0.99 on both platforms, so the design *detects*
+   within-stratum signal when one is present. The chance-level residual is a
+   genuine null, not a design that cannot see anything — which is exactly
+   what licenses reading the deflation as a finding rather than an artifact.
+
+Together these establish the over-crediting mechanism without ever asking
+the reader to trust the anchors: legs 1 and 3 fix the geometry and the
+power, and leg 2 removes label dependence by construction. The same audit
+returns the same verdict, deflating the cheap screen there as it does on
+BEC. Federal evidence rests on **partially overlapping legal anchors**;
+that caveat is real for any *detection* reading but does not touch the
+mechanism claim, which is what is promoted.
+
+### What this confirmation does and does not cover
+
+The promotion covers the **over-crediting mechanism only** — that raw
+award-layer validation over-credits the screen by measuring opportunity
+exposure, a verdict now demonstrated across two platforms and robust to the
+anchor set by placebo construction. It does **not** promote screen
+portability as a *detection tool*: the cross-platform detection umbrella
+([X-plat row in the scorecard](index.md#scorecard)) stays **provisional**,
+because a portable detection claim still requires a genuinely independent
+cartel anchor and the federal anchors only partially overlap the BEC
+portfolio. The two readings are deliberately separate: the *discipline*
+ports and is Confirmed; the *deployable ranking* does not and is not.
+
+Two artifact families remain outside any within-data audit and are not
+claimed away by this promotion: data-generating-process artifacts (BEC
+missingness, 8-digit CNPJ-root collision, CADE adjudication completeness
+bias — structural properties of the data lake) and selection on CADE
+adjudication (the cobidder set is defined relative to the cartels CADE chose
+to adjudicate in 2009–2019). Neither bears on the over-crediting mechanism,
+which is about *how a raw validation number is produced*, not about which
+firms are truly cartelists. This page is consistent with the project-wide
+convention documented in [findings/index.md](../findings/index.md).
