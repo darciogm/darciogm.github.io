@@ -7256,6 +7256,105 @@
 <p>All armor results: <code>outputs/diagnostics/audit_armor/</code> (scripts <code>12_audit_armor.R</code>, <code>12b_audit_armor_fixup.R</code>). Defendant roles regenerated alongside: 14.9% always-losers, median win rate 0.261; cobidders have win rate ≡ 0 by construction.</p>
 </div>
 <hr>
+<h2 id="15-federal-robustness-block-comprasnet">15. Federal Robustness Block (ComprasNet)<a class="headerlink" href="#15-federal-robustness-block-comprasnet" title="Permanent link">¶</a></h2>
+<!-- REVISED: v23 two-platform extension (ComprasNet) 2026-06-06 -->
+
+<p>The full deflation battery is re-run on federal <strong>ComprasNet</strong> (2013–2019, pure Pregão). The headline federal verdict and side-by-side comparative table live on the <a href="../results/#7-the-audit-on-a-second-platform-comprasnet">results</a> page; this block reports the federal-specific robustness checks that discipline that verdict.</p>
+<div class="admonition warning">
+<p class="admonition-title">Partially overlapping legal anchors (provisional)</p>
+<p>The seven federal CADE cases are the <strong>same cartels</strong> as the BEC portfolio, anchored at the federal establishment level — <strong>partially overlapping legal anchors</strong>, not independent ground truth. The federal leg tests portability of the <em>protocol</em> and the <em>construct</em>; it is provisional and promotes nothing to Confirmed. Where this page diverges from the paper, the paper wins.</p>
+</div>
+<h3 id="151-contact-intensity-sensitivity-contact-2">15.1 Contact-intensity sensitivity (contact ≥ 2)<a class="headerlink" href="#151-contact-intensity-sensitivity-contact-2" title="Permanent link">¶</a></h3>
+<p>A pre-registered sensitivity restricts the federal cobidder label to firms that share <strong>≥ 2</strong> tender-items with a direct defendant, removing the "loose 1-contact rule" objection.</p>
+<table>
+<thead>
+<tr>
+<th>Quantity</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Positives retained (<span class="arithmatex">\(N^+\)</span>)</td>
+<td><strong>108 of 195</strong> (55.4%)</td>
+</tr>
+<tr>
+<td>Within-stratum residual</td>
+<td><strong>0.432</strong> (below chance)</td>
+</tr>
+<tr>
+<td>Matched-stratum permutation <span class="arithmatex">\(p\)</span></td>
+<td><strong>0.951</strong> (not significant)</td>
+</tr>
+<tr>
+<td>Pre-adjustment AUC (raw, exposure-only)</td>
+<td>both <em>rise</em> on the cleaner, more exposure-loaded set</td>
+</tr>
+</tbody>
+</table>
+<p><strong>What it shows:</strong> restricting to higher-contact positives raises the <em>raw</em> AUC (as opportunity mechanics predict — more contact ↔ more participation), but the within-stratum residual stays <strong>below chance</strong> and the matched-permutation does not reject. <strong>Its limit / verdict:</strong> the deflation reading is <strong>consistent</strong> with BEC's contact ≥ 2 sensitivity; the dilution objection is closed on both platforms.</p>
+<h3 id="152-srp-vs-regular-pregao-stratification">15.2 SRP vs. regular-pregão stratification<a class="headerlink" href="#152-srp-vs-regular-pregao-stratification" title="Permanent link">¶</a></h3>
+<p>Federal Pregão splits into ~15% regular electronic auction and ~85% price-registration (SRP). Stratifying tests whether the pooled federal reading is an artifact of the SRP-heavy mix. The pooled construct is held fixed across strata.</p>
+<table>
+<thead>
+<tr>
+<th>Quantity</th>
+<th style="text-align: right;">Regular Pregão</th>
+<th style="text-align: right;">SRP</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Raw award-layer ROC</td>
+<td style="text-align: right;"><strong>0.748</strong></td>
+<td style="text-align: right;"><strong>0.703</strong></td>
+</tr>
+<tr>
+<td>Exposure-only ROC</td>
+<td style="text-align: right;">0.859</td>
+<td style="text-align: right;">0.874</td>
+</tr>
+<tr>
+<td>FL32-binary ROC</td>
+<td style="text-align: right;"><strong>0.656</strong></td>
+<td style="text-align: right;"><strong>0.641</strong></td>
+</tr>
+</tbody>
+</table>
+<p><strong>What it shows:</strong> raw, exposure-only, and FL32-binary discrimination are <strong>cross-stratum consistent</strong> (gaps 0.045 / 0.015 / 0.015); both strata clear the audit gates (regular 3,546 / SRP 4,069 firms). <strong>Its limit:</strong> the script-13 within-(year×buyer)-cell C-statistic is a <strong>different estimand</strong> (it leaves exposure free to vary, re-encoding the raw signal) and is <strong>not published</strong> alongside the exposure-stratum within column; the SRP answer rides on the comparable raw / exposure-only / FL32 rows above.</p>
+<h3 id="153-case-exclusion-and-data-quality-filters">15.3 Case-exclusion and data-quality filters<a class="headerlink" href="#153-case-exclusion-and-data-quality-filters" title="Permanent link">¶</a></h3>
+<table>
+<thead>
+<tr>
+<th>Filter</th>
+<th>Effect</th>
+<th>Status</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>TI/DF unnumbered summary case excluded</strong></td>
+<td>Only federal-only anchor dropped (lacks firm-level identification); v3-reinstatement reproduces bit-for-bit</td>
+<td>disclosed; effect known and non-strategic</td>
+</tr>
+<tr>
+<td><strong>Junk / sentinel CNPJ filter</strong></td>
+<td>Sentinel CNPJ <code>000000000000-2</code> dropped in the 2026-06-05 target-quality fix (196 → 195 broad-AL; 95 → 94 FL)</td>
+<td>applied</td>
+</tr>
+<tr>
+<td>Establishment-anchored grain (vs raiz)</td>
+<td>195 establishment-anchored is the main target; the 195-vs-222 gap is <strong>entirely</strong> the TI/DF exclusion + 1 junk CNPJ — the establishment-vs-raiz grain contributes <strong>0</strong></td>
+<td>decomposed</td>
+</tr>
+</tbody>
+</table>
+<h3 id="154-the-estimand-wall-raw-timing-vs-opportunity-adjusted">15.4 The estimand wall (raw-timing vs opportunity-adjusted)<a class="headerlink" href="#154-the-estimand-wall-raw-timing-vs-opportunity-adjusted" title="Permanent link">¶</a></h3>
+<div class="admonition note">
+<p class="admonition-title">Two different estimands — mutually consistent, not contradictory</p>
+<p>The federal <strong>raw-timing</strong> rows (strict full-universe 0.489 / training-AL incumbent-pool continuous 0.666) measure the <strong>temporal stability of the unadjusted screen</strong> over the firm universe. The <strong>opportunity-adjusted within-cell</strong> rows (within-stratum 0.462; nested +0.005, <span class="arithmatex">\(p = 0.191\)</span>; matched-permutation <span class="arithmatex">\(p = 0.906\)</span>) measure <strong>residual discrimination after netting out exposure</strong> within matched cells. These are <strong>different estimands on different samples</strong>: a high raw-timing AUC and a null adjusted increment are <strong>mutually consistent, not contradictory</strong>. The timing rows are marginal <em>unadjusted</em> discrimination; the deflation rows are residual discrimination net of opportunity. (Federal MEDIUM cells = year × buyer/UASG; the item-group margin is not observed federally, so federal cells are one margin <strong>coarser</strong> than BEC — the null is conservative a-fortiori.)</p>
+</div>
+<hr>
 <h2 id="robustness-summary">Robustness Summary<a class="headerlink" href="#robustness-summary" title="Permanent link">¶</a></h2>
 <table>
 <thead>
@@ -7331,9 +7430,24 @@
 <td style="text-align: left;">overlap discipline; sensitivity</td>
 <td style="text-align: left;">scope not damages; sign reverses; <strong>mechanism not identified</strong></td>
 </tr>
+<tr>
+<td style="text-align: left;"><strong>Federal: second-platform audit</strong></td>
+<td style="text-align: left;">full battery re-run on ComprasNet</td>
+<td style="text-align: left;">deflation <strong>replicates</strong> (provisional, partially overlapping anchors); exposure-only 0.754 ≥ raw 0.744; within-stratum 0.462; nested <span class="arithmatex">\(p = 0.191\)</span>; controls <span class="arithmatex">\(p = 0.258/0.582\)</span></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Federal: contact ≥ 2</strong></td>
+<td style="text-align: left;">dilution sensitivity</td>
+<td style="text-align: left;">consistent — within-stratum 0.432, perm <span class="arithmatex">\(p = 0.951\)</span></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Federal: SRP vs regular pregão</strong></td>
+<td style="text-align: left;">modality-mix stratification</td>
+<td style="text-align: left;">consistent — raw 0.748 vs 0.703, FL32 0.656 vs 0.641</td>
+</tr>
 </tbody>
 </table>
-<p>The audit battery disciplines the ranking rather than defending a detector. The honest result: under a reproducible non-circular label, cheap award-layer records carry <strong>no robust cartel-ordering signal net of opportunity</strong> — they support <strong>incumbent-firm triage with retrospective validation</strong>, not platform-wide prospective deployment, do not prove conduct, cannot reach win-heavy defendants via the binary flag, order below chance out-of-time on the open platform, and lean heavily on a single case.</p>
+<p>The audit battery disciplines the ranking rather than defending a detector. The honest result: under a reproducible non-circular label, cheap award-layer records carry <strong>no robust cartel-ordering signal net of opportunity</strong> — they support <strong>incumbent-firm triage with retrospective validation</strong>, not platform-wide prospective deployment, do not prove conduct, cannot reach win-heavy defendants via the binary flag, order below chance out-of-time on the open platform, and lean heavily on a single case. <strong>Re-running the same audit on a second federal platform (ComprasNet) with partially overlapping legal anchors returns the same deflationary verdict</strong> — provisionally, since the federal anchors are the same cartels as BEC's and the federal positives are case-concentrated — so what ports across the two platforms is the <strong>audit protocol and the loser-side construct, not a deployable score</strong>.</p>
 
 
 

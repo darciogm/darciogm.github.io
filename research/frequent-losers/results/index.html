@@ -7155,6 +7155,181 @@
 <h3 id="direct-cade-price-null-mechanism-not-identified">Direct-CADE price null; mechanism not identified<a class="headerlink" href="#direct-cade-price-null-mechanism-not-identified" title="Permanent link">¶</a></h3>
 <p>Against direct CADE defendants the price association is null — there is no damages base to estimate. And the cover-bidding <strong>"theater" mechanism is not identified</strong>: within comparable cells, the price variation loads on <strong>genuine-bidder count</strong>, not on FL presence. The data are consistent with cover bidding but do not isolate it from competing explanations.</p>
 <hr>
+<h2 id="7-the-audit-on-a-second-platform-comprasnet">7. The Audit on a Second Platform (ComprasNet)<a class="headerlink" href="#7-the-audit-on-a-second-platform-comprasnet" title="Permanent link">¶</a></h2>
+<!-- REVISED: v23 two-platform extension (ComprasNet) 2026-06-06 -->
+
+<p>A decomposition is only worth carrying if it travels. The paper re-runs the <strong>same audit, unchanged</strong>, on a second procurement system — federal <strong>ComprasNet</strong> (2013–2019, pure Pregão) — and asks what the protocol returns where the institutions differ. The federal platform is single national system aggregating procuring units across the whole federal administration; the sealed-bid convite modality is extinct federally, so the panel is effectively pure Pregão (~15% regular auction, ~85% price-registration/SRP) and there is no modality margin to stratify on. The federal release exposes participation and the winner flag but <strong>no bid microdata</strong> at all.</p>
+<div class="admonition warning">
+<p class="admonition-title">Partially overlapping legal anchors — provisional, not independent replication</p>
+<p>The seven federal CADE cases are the <strong>same cartels</strong> as the BEC portfolio, anchored at the federal establishment level. This is a robustness leg under <strong>partially overlapping legal anchors</strong>, not a clean out-of-sample replication on an unrelated cartel set. It does <strong>not</strong> by itself promote any finding to Confirmed. The exercise tests portability of the <em>method</em> and the loser-side <em>construct</em>; we read it as neither confirmation nor refutation of any firm's legal status.</p>
+</div>
+<h3 id="the-side-by-side-verdict">The side-by-side verdict<a class="headerlink" href="#the-side-by-side-verdict" title="Permanent link">¶</a></h3>
+<p>The federal audit returns the <strong>same verdict</strong> the BEC audit returns, and on the row that matters it returns it more cleanly. Each row is the comparable quantity from the BEC battery, re-run on the federal panel under the same definitions.</p>
+<table>
+<thead>
+<tr>
+<th>Audit stage</th>
+<th style="text-align: right;">BEC–SP</th>
+<th style="text-align: right;">ComprasNet</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Raw award-layer ROC</td>
+<td style="text-align: right;"><strong>0.761</strong></td>
+<td style="text-align: right;"><strong>0.744</strong></td>
+</tr>
+<tr>
+<td>Exposure-only ROC (no score)</td>
+<td style="text-align: right;">0.713</td>
+<td style="text-align: right;"><strong>0.754</strong></td>
+</tr>
+<tr>
+<td>Label-blind opportunity expectation (AUC)</td>
+<td style="text-align: right;">0.553</td>
+<td style="text-align: right;"><strong>0.611</strong></td>
+</tr>
+<tr>
+<td>Within-stratum residual (AUC, MEDIUM cells)</td>
+<td style="text-align: right;">0.471 (≈ chance)</td>
+<td style="text-align: right;"><strong>0.462</strong> (≈ chance)</td>
+</tr>
+<tr>
+<td>Nested DeLong increment over exposure</td>
+<td style="text-align: right;">+0.010 (<span class="arithmatex">\(p = 0.013\)</span>)</td>
+<td style="text-align: right;"><strong>+0.005</strong> (<span class="arithmatex">\(p = 0.191\)</span>, null)</td>
+</tr>
+<tr>
+<td>Matched-permutation <span class="arithmatex">\(p\)</span> (within-strata shuffle)</td>
+<td style="text-align: right;">0.127</td>
+<td style="text-align: right;"><strong>0.906</strong></td>
+</tr>
+<tr>
+<td>Label-frozen prospective timing (AUC)</td>
+<td style="text-align: right;">0.713</td>
+<td style="text-align: right;"><strong>0.595</strong> (<span class="arithmatex">\(N^+ = 98\)</span>)</td>
+</tr>
+<tr>
+<td>Top-case concentration (share of positives)</td>
+<td style="text-align: right;">32.0%</td>
+<td style="text-align: right;"><strong>64.4% top-two</strong></td>
+</tr>
+<tr>
+<td>Negative-control verdict</td>
+<td style="text-align: right;">generic geometry</td>
+<td style="text-align: right;">generic geometry</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition abstract">
+<p class="admonition-title">What ports is the audit, not a deployable score</p>
+<p>On both platforms the raw validation <strong>over-credits</strong> the screen: the raw award-layer ROC (0.744 federally) looks like discrimination until one asks what an analyst would have predicted from procurement opportunity alone. Federally that question answers itself in a single line — the <strong>exposure-only ranking, which never sees the score, reaches 0.754, matching and if anything edging out the raw score itself (0.744)</strong>. Where on BEC the exposure axis only <em>approaches</em> the raw score, federally it already <em>equals</em> it. The rest of the battery confirms the reading from below: the within-stratum residual collapses to near chance (0.462), the nested model adds nothing detectable over exposure (+0.005, <span class="arithmatex">\(p = 0.191\)</span>), and the matched-strata permutation does not reject (<span class="arithmatex">\(p = 0.906\)</span>). The deflation <strong>replicates</strong>: what transfers across the two systems is the <strong>audit protocol</strong> — the decomposition that catches the over-crediting wherever it is run — <strong>not a deployable loser-side ranking</strong>.</p>
+</div>
+<h3 id="power-bound-honesty">Power-bound honesty<a class="headerlink" href="#power-bound-honesty" title="Permanent link">¶</a></h3>
+<p>The federal positive set (<span class="arithmatex">\(N^+ = 195\)</span>) is roughly <strong>30% of BEC's</strong>, so the federal null is stated as a power bound, not a clean small-residual null:</p>
+<table>
+<thead>
+<tr>
+<th>True within-AUC</th>
+<th style="text-align: right;">Federal detection probability</th>
+<th style="text-align: right;">BEC</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0.55</td>
+<td style="text-align: right;"><strong>0.35</strong> (underpowered)</td>
+<td style="text-align: right;">0.97</td>
+</tr>
+<tr>
+<td>0.60</td>
+<td style="text-align: right;"><strong>0.90</strong> (ruled out)</td>
+<td style="text-align: right;">—</td>
+</tr>
+<tr>
+<td>0.65</td>
+<td style="text-align: right;">1.00</td>
+<td style="text-align: right;">—</td>
+</tr>
+</tbody>
+</table>
+<p>The matched-permutation null is <strong>informative against a within-stratum residual ≥ 0.60</strong> but <strong>underpowered against 0.55</strong>, so the federal deflation does not rest on the permutation alone. It rests on four power-robust pillars no sample-size argument dissolves: the exposure-only ranking already matches the raw score, the within-stratum point estimate sits <strong>below 0.5</strong>, the matched permutation does not reject, and the negative controls return the same generic geometry. The within-stratum <strong>positive control recovers ≥ 0.99</strong> (<span class="arithmatex">\(O_i\)</span> control 0.992) — so the design provably detects within-stratum signal when present; the federal null is a power bound on a genuine null, not a design artifact.</p>
+<h3 id="negative-controls-generic-geometry">Negative controls: generic geometry<a class="headerlink" href="#negative-controls-generic-geometry" title="Permanent link">¶</a></h3>
+<p>Both placebos reproduce the real raw AUC — the protocol's designated arbiter ruling that the surviving ordering is generic opportunity/volume geometry, not cartel-specific:</p>
+<table>
+<thead>
+<tr>
+<th>Control</th>
+<th style="text-align: right;">Real AUC</th>
+<th style="text-align: right;">Null mean</th>
+<th style="text-align: right;"><span class="arithmatex">\(p\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Matched-volume placebo anchors</td>
+<td style="text-align: right;">0.744</td>
+<td style="text-align: right;">0.728</td>
+<td style="text-align: right;"><strong>0.258</strong> (ns)</td>
+</tr>
+<tr>
+<td>Non-CADE high-volume-winner anchors</td>
+<td style="text-align: right;">0.744</td>
+<td style="text-align: right;">0.746</td>
+<td style="text-align: right;"><strong>0.582</strong> (ns)</td>
+</tr>
+</tbody>
+</table>
+<h3 id="case-concentration-disclosure">Case-concentration disclosure<a class="headerlink" href="#case-concentration-disclosure" title="Permanent link">¶</a></h3>
+<p>The federal positive base is <strong>more cartel-concentrated than BEC's</strong>, and the operational ranking is one-to-two-cartel-dominated. The disclosure is dual and mandatory:</p>
+<table>
+<thead>
+<tr>
+<th>Concentration metric</th>
+<th style="text-align: right;">Federal</th>
+<th>Read</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Top-case share of positives</td>
+<td style="text-align: right;">35.4% (69/195)</td>
+<td>most flattering — never led with alone</td>
+</tr>
+<tr>
+<td><strong>Top-two share of positives</strong></td>
+<td style="text-align: right;"><strong>64.4%</strong></td>
+<td>mandated headline disclosure</td>
+</tr>
+<tr>
+<td><strong>Top-case share of TP@500</strong></td>
+<td style="text-align: right;"><strong>87.5%</strong></td>
+<td>honest operational concentration</td>
+</tr>
+<tr>
+<td>LOCO ROC drop-largest case</td>
+<td style="text-align: right;">0.744 → <strong>0.744</strong></td>
+<td>ordering robust</td>
+</tr>
+<tr>
+<td>Clustered-RI <span class="arithmatex">\(p\)</span> (ROC ordering)</td>
+<td style="text-align: right;"><strong>0.001</strong></td>
+<td>ordering non-random</td>
+</tr>
+<tr>
+<td>Clustered-RI <span class="arithmatex">\(p\)</span> (case-coverage breadth)</td>
+<td style="text-align: right;">0.487 (ns)</td>
+<td>breadth not distinguishable from random</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition warning">
+<p class="admonition-title">The ordering is LOCO-robust; the realized detections are one-cartel-dominated</p>
+<p>The ROC <em>ordering</em> is genuinely multi-case — leaving out the largest case keeps ROC at 0.744 → 0.744, clustered-randomization-inference ordering <span class="arithmatex">\(p = 0.001\)</span> — so the rank-ordering is not driven by any single cartel. But the realized <strong>operational</strong> detections are one-to-two-cartel-dominated: TP@500 is <strong>87.5% one case</strong>, the top two cases are <strong>64.4% of positives</strong>, and the case-coverage-breadth test is non-significant (<span class="arithmatex">\(p = 0.487\)</span>). The federal leg is therefore a <strong>single-system, concentrated-anchor stress test</strong> of the protocol, <strong>not a multi-case operational generalization</strong>.</p>
+</div>
+<h3 id="timing-and-contact-intensity-same-shape-as-bec">Timing and contact-intensity (same shape as BEC)<a class="headerlink" href="#timing-and-contact-intensity-same-shape-as-bec" title="Permanent link">¶</a></h3>
+<p>The strict-temporal carrier replicates: the prospective ranking collapses outside the incumbent pool on both platforms (strict full-universe ROC <strong>0.489</strong> federal / 0.474 BEC), while the incumbent-pool continuous score deflates in the same magnitude class (<strong>0.666</strong> federal vs 0.684 BEC). The label-frozen prospective score ranks new 2017–2019 contact at <strong>0.595</strong> (<span class="arithmatex">\(N^+ = 98\)</span>, above chance but below the <span class="arithmatex">\(N \geq 120\)</span> comparability floor — reported as such, not led upon). Restricting cobidders to ≥2 co-participations with a defendant (<span class="arithmatex">\(N^+ = 108\)</span>) does not overturn the reading: within-stratum stays below chance (0.432), matched-permutation <span class="arithmatex">\(p = 0.951\)</span> — the dilution objection is closed. Direct-defendant FL-binary AUC is ≈ chance (0.465–0.503), reproducing the loser-side scope by design.</p>
+<hr>
 <h2 id="summary-reach-and-limits">Summary: Reach and Limits<a class="headerlink" href="#summary-reach-and-limits" title="Permanent link">¶</a></h2>
 <p>The paper maps both the reach and the limits of award-layer screening, in declining order of confidence:</p>
 <ol>
@@ -7164,6 +7339,7 @@
 <li><strong>The award and bid layers are comparable.</strong> Award 0.760/0.143 vs bid RF 0.717/0.116; combined beats award on PR under random CV (0.188) but falls below it under case-grouped folds (0.103). Conditional, case-fragile complementarity.</li>
 <li><strong>The cost-recall frontier is the object, not a cutoff.</strong> At <span class="arithmatex">\(K_1 = 2000\)</span>: firm reduction 88.1% but bid-row reduction only 32.7%; <span class="arithmatex">\(K_1 = 1000\)</span> beats <span class="arithmatex">\(K_1 = 2000\)</span>; no optimal <span class="arithmatex">\(K\)</span>.</li>
 <li><strong>The price imprint is scope, not damages.</strong> +0.064 broad → −0.097 overlap-cell ATT; only Q4 positive; mechanism not identified.</li>
+<li><strong>The audit ports to a second platform — provisionally.</strong> On federal ComprasNet (2013–2019, partially overlapping anchors) the deflation <strong>replicates</strong> and on the decisive row lands more cleanly: exposure-only ROC 0.754 ≥ raw 0.744; within-stratum 0.462 (≈ chance); nested +0.005 (<span class="arithmatex">\(p = 0.191\)</span>); negative controls <span class="arithmatex">\(p = 0.258 / 0.582\)</span>. What ports is the <strong>audit protocol and the construct</strong>, not a deployable score — and the federal leg is a concentrated-anchor stress test (top-two 64.4%, TP@500 87.5% one case), not a multi-case generalization.</li>
 </ol>
 <p>The contributions are (1) an <strong>organizational result</strong> — award-to-bid recovery as a sequential cost-recall problem in which the frontier, not any cutoff, is the design object; (2) a <strong>disciplined audit protocol</strong> — label construction, opportunity adjustment, timing discipline, case-composition audit, bid-layer comparison, and cost-recall accounting — carrying the portable principle that <em>validating an administrative screen against adjudicated cases without adjusting for procurement opportunity systematically over-credits it</em>; and (3) a <strong>reach-and-limits map</strong> showing that cheap award-layer records, under a non-circular label, do <strong>not</strong> carry a robust cartel-ordering signal net of opportunity. They support <strong>incumbent-firm triage with retrospective validation</strong>, not platform-wide prospective deployment, and they do not prove conduct.</p>
 

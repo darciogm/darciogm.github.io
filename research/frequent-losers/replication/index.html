@@ -7070,6 +7070,149 @@ construct orders <strong>forensic priority</strong>; the binary cutoff is a
 deployable convenience, not the object of inference.</p>
 </div>
 <hr>
+<h2 id="federal-comprasnet-replication-the-second-platform">Federal (ComprasNet) Replication — the Second Platform<a class="headerlink" href="#federal-comprasnet-replication-the-second-platform" title="Permanent link">¶</a></h2>
+<div class="admonition info">
+<p class="admonition-title">One config, two sources — <code>--source={bec,comprasnet}</code></p>
+<p>As of v23 the audit pipeline runs on <strong>two procurement platforms</strong> from a
+single code base. Every analysis script accepts a <code>--source=</code> flag
+(default <code>bec</code>) and reads <strong>all</strong> of its data paths, constants,
+key-extraction lambdas, and output directories from one abstraction layer,
+<code>scripts/utils/source_config.R</code>. There is <strong>no forked per-platform logic</strong>:
+BEC behaviour is byte-identical to the single-platform release, and the
+federal pipeline differs only where the data genuinely differ. To run the
+federal leg, every numbered script is invoked with
+<code>--source=comprasnet</code>; the orchestration is in
+<code>scripts/build/run_federal_chain.sh</code>.</p>
+</div>
+<h3 id="federal-data-provenance-public-federal-records">Federal data provenance (public federal records)<a class="headerlink" href="#federal-data-provenance-public-federal-records" title="Permanent link">¶</a></h3>
+<p>The federal panel is assembled from <strong>two public federal sources</strong> — no
+licensed microdata and, importantly, <strong>no federal bid microdata</strong>: the public
+federal data are <strong>participation-only</strong>, so no bid-distribution / Imhof
+forensic benchmark is constructible federally (a platform-observability
+difference, documented as on-thesis).</p>
+<table>
+<thead>
+<tr>
+<th>Source</th>
+<th>Role</th>
+<th>Coverage</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Portal da Transparência (CGU) bulk download</strong></td>
+<td>Participation panel — who participated / won, buyer (UASG), item</td>
+<td>2013–2019 (<code>item_level_panel.parquet</code>)</td>
+</tr>
+<tr>
+<td><strong><code>compras.dados.gov.br</code> API (<code>item_pregao</code>)</strong></td>
+<td>Price signals only (<code>menorLance</code>, <code>valorEstimadoItem</code>, <code>valorHomologadoItem</code>)</td>
+<td>parsed into a price panel; <strong>not used for any federal price claim in this submission</strong></td>
+</tr>
+</tbody>
+</table>
+<div class="admonition warning">
+<p class="admonition-title">No federal price claim is made</p>
+<p>The federal price panel is built (12.4M rows) but is a <strong>future-upgrade
+hook only</strong>. The current submission makes <strong>zero federal price claim</strong>;
+the federal leg is participation + winner-flag only.</p>
+</div>
+<h3 id="federal-pipeline-chain">Federal pipeline chain<a class="headerlink" href="#federal-pipeline-chain" title="Permanent link">¶</a></h3>
+<p>The federal chain runs the same numbered scripts as BEC, <code>00 → 12b</code>, each with
+<code>--source=comprasnet</code>, plus one federal-only robustness leg:</p>
+<table>
+<thead>
+<tr>
+<th>Script</th>
+<th>Federal role</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>00 … 12b</code> (the BEC chain)</td>
+<td>Identical audit battery, re-pathed and re-keyed via <code>source_config.R</code></td>
+</tr>
+<tr>
+<td><code>13_srp_stratified_validation.R</code></td>
+<td><strong>Federal-only SRP leg</strong> — stratifies the two federal Pregão variants (regular <code>po_phase_code = 5</code> vs SRP <code>po_phase_code = 9999</code>) and checks the loser-side signal is consistent across them (referee attack A7)</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition note">
+<p class="admonition-title">Federal key semantics differ from BEC</p>
+<p>BEC and ComprasNet share the same column <strong>names</strong> but not the same key
+<strong>semantics</strong>, which is precisely why a single config exists. Federal
+<code>numerodaoc</code> is a 9-char string whose trailing digits are the <em>numbering</em>
+year — which differs from the <em>award</em> year for ≈ 23% of rows — so the
+federal year is <strong>never string-extracted</strong>; it comes from a
+<code>(numerodaoc, codigoitem) → year</code> lookup. The federal buyer (<code>codigo_ug</code>,
+6-digit UASG) is a separate column, not a substring. Convite is extinct
+federally (pure Pregão), so the BEC modality stratification is replaced by
+the SRP-vs-regular contrast.</p>
+</div>
+<h3 id="canonical-federal-targets-same-iqr-rule-re-estimated-cut">Canonical federal targets (same IQR rule, re-estimated cut)<a class="headerlink" href="#canonical-federal-targets-same-iqr-rule-re-estimated-cut" title="Permanent link">¶</a></h3>
+<p>The federal targets are built by the <strong>same rules</strong> as BEC — the FL cut is
+re-estimated on the federal data, <strong>not transported</strong> from BEC:</p>
+<table>
+<thead>
+<tr>
+<th>Quantity</th>
+<th>Federal value</th>
+<th>BEC analogue</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Participation panel</td>
+<td>51.0M rows / 92,600 firms</td>
+<td>—</td>
+</tr>
+<tr>
+<td>Always-losers</td>
+<td>35,943</td>
+<td>16,843</td>
+</tr>
+<tr>
+<td>FL cut (<code>median + 1.5 × IQR</code>, <code>≥</code>)</td>
+<td><strong>32</strong> → <strong>6,491</strong> frequent losers</td>
+<td>14 → 2,735</td>
+</tr>
+<tr>
+<td>Broad-rule cobidders</td>
+<td>3,850</td>
+<td>—</td>
+</tr>
+<tr>
+<td>Broad-AL cobidders (main target)</td>
+<td><strong>195</strong> (94 FL / 101 non-FL)</td>
+<td>651</td>
+</tr>
+<tr>
+<td>CADE cases (numbered)</td>
+<td>7</td>
+<td>12</td>
+</tr>
+<tr>
+<td>Window</td>
+<td>2013–2019</td>
+<td>2009–2019</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition warning">
+<p class="admonition-title">Partially overlapping legal anchors</p>
+<p>The federal target is <strong>establishment-anchored</strong> on the same family of
+CADE cartels as the BEC portfolio. The 7 federal cases are the <em>same
+cartels</em> as BEC's, <strong>partially overlapping</strong> — so the two legs are
+correlated, not fully independent. The federal leg tests the
+<strong>portability</strong> of the audit protocol and the loser-side construct, not an
+independent ground truth; it is a second-platform demonstration,
+<strong>provisional pending genuinely independent anchors</strong>, not a promotion to
+"Confirmed." The cobidder count was rebuilt establishment-anchored (CADE
+linkage v3), with the establishment-vs-<code>raiz</code> grain difference verified to
+be zero.</p>
+</div>
+<hr>
 <h2 id="running-the-analysis">Running the Analysis<a class="headerlink" href="#running-the-analysis" title="Permanent link">¶</a></h2>
 <h3 id="step-1-data-build-python-6-min-only-if-parquets-are-missing">Step 1 — data build (Python, ~6 min, only if Parquets are missing)<a class="headerlink" href="#step-1-data-build-python-6-min-only-if-parquets-are-missing" title="Permanent link">¶</a></h3>
 <div class="highlight"><pre><span></span><code><span class="nb">cd</span><span class="w"> </span>paper3-frequent-losers
@@ -7226,6 +7369,10 @@ biblatex/biber). Use <code>bibtex</code> for the bibliography pass.</p>
 <tr>
 <td><strong>Threads</strong></td>
 <td><code>fixest</code> and <code>data.table</code> use <code>min(detectCores(logical = FALSE), 16)</code>; DuckDB joins use <code>PRAGMA threads = 12</code>.</td>
+</tr>
+<tr>
+<td><strong>Determinism</strong></td>
+<td>The two-source package enforces deterministic ordering; bit-exact reproduction requires that enforced ordering. A DuckDB parallel-aggregation / emission-order nondeterminism was fixed by stabilizing tie-breaks to a total order, so the audit reproduces bit-for-bit on a given environment across both sources.</td>
 </tr>
 </tbody>
 </table>
