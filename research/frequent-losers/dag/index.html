@@ -6767,7 +6767,7 @@ Each node is a claim or object; each arrow is "supports / leads to."</p>
       D3["&lt;b&gt;Single-case&lt;/b&gt;: leave-largest-case-out&lt;br/&gt;PR-AUC 0.143 &amp;rarr; 0.090 (&amp;minus;37%);&lt;br/&gt;one case &amp;approx; 32% of positives"]:::limit
       D4["&lt;b&gt;Scope&lt;/b&gt;: binary AUC &amp;approx; 0.49 vs direct defendants&lt;br/&gt;&amp;mdash; by design (continuous score 0.66&amp;ndash;0.70)"]:::limit
       D5["&lt;b&gt;Armor battery&lt;/b&gt; (anchor-agnostic):&lt;br/&gt;label-blind opportunity 0.553; positive control 0.953;&lt;br/&gt;perm power 0.97 @ 0.55; label-frozen timing 0.713"]:::method
-      D6["&lt;b&gt;Over-crediting bias as an estimable object&lt;/b&gt; (Prop., App. C):&lt;br/&gt;&amp;Delta; = AUC_raw &amp;minus; AUC_opp-adj is a size-bias gap;&lt;br/&gt;SIGNS only &amp;mdash; &amp;uarr; in CV(T), &amp;darr; in base rate (no closed form);&lt;br/&gt;CV(T) is a pre-bid-file &lt;i&gt;diagnostic&lt;/i&gt;, not a fix"]:::model
+      D6["&lt;b&gt;Over-crediting bias as an estimable object&lt;/b&gt; (LEAD; Prop., App. C; full grid in Online Supplement):&lt;br/&gt;&amp;Delta; = AUC_raw &amp;minus; AUC_opp-adj is a size-bias gap;&lt;br/&gt;SIGNS only &amp;mdash; &amp;uarr; in CV(T), &amp;darr; in base rate (no closed form);&lt;br/&gt;magnitude from a synthetic surface anchored at one point per platform (not an estimated curve);&lt;br/&gt;CV(T) is a pre-bid-file &lt;i&gt;leading-order sufficient statistic&lt;/i&gt; / diagnostic, not a fix"]:::model
     end
     V1 --&gt; D1
     D1 --&gt; D2
@@ -6783,7 +6783,7 @@ Each node is a claim or object; each arrow is "supports / leads to."</p>
       A1["Award ranks &lt;b&gt;where to look&lt;/b&gt;;&lt;br/&gt;bid evaluates &lt;b&gt;what is found&lt;/b&gt;"]:::arch
       A2["Bid benchmark: bid RF 0.717 / award 0.760 /&lt;br/&gt;combined PR 0.188 random-CV but 0.103 case-grouped&lt;br/&gt;&amp;mdash; conditional complementarity, case-fragile"]:::arch
       A3["Cost-recall frontier: at K1=2000,&lt;br/&gt;firm pool &amp;minus;88% but bid-row footprint &amp;minus;33%;&lt;br/&gt;K1=1000 beats K1=2000 &amp;mdash; no optimal cutoff"]:::arch
-      A4["&lt;b&gt;Enforcer optimal-stopping rule&lt;/b&gt; (Prop., App. B):&lt;br/&gt;descend ranking until V&amp;middot;&amp;rho;(K)=c&amp;middot;&amp;phi;(K) &amp;hArr; &amp;rho;/&amp;phi;=c/V;&lt;br/&gt;sweep c/V &amp;rarr; locus of optima.&lt;br/&gt;&lt;i&gt;&amp;lsquo;No optimal cutoff&amp;rsquo; is a RESULT; the frontier is its image&lt;/i&gt;"]:::model
+      A4["&lt;b&gt;Enforcer stopping rule&lt;/b&gt; (modest; Prop., App. B):&lt;br/&gt;standard cost&amp;ndash;benefit (MB=MC) tangency &amp;mdash; descend ranking until V&amp;middot;&amp;rho;(K)=c&amp;middot;&amp;phi;(K) &amp;hArr; &amp;rho;/&amp;phi;=c/V;&lt;br/&gt;sweep c/V &amp;rarr; locus of budget-dependent optima.&lt;br/&gt;&lt;i&gt;No fixed cutoff &amp;mdash; the optimum moves with the budget; the frontier is its image&lt;/i&gt;"]:::model
       A1 --&gt; A2 --&gt; A3
       A4 -. image .-&gt; A3
     end
@@ -6829,13 +6829,17 @@ cartel-specific prediction. The ranking by <em>observed</em> contact (0.905) is
 mechanical label encoding, not a winning model. The brown nodes are the
 <strong>limits</strong> the same decomposition exposes (below-chance out-of-time ordering,
 single-case dependence, the direct-defendant scope boundary). The two teal
-nodes are the v24 reframe's <strong>positive modeled objects</strong>: the <strong>enforcer
-optimal-stopping rule</strong> (whose image is the cost-recall frontier — "no
-optimal cutoff" is a <em>result</em>, the frontier is the locus of budget-dependent
-optima) and the <strong>over-crediting bias</strong> <span class="arithmatex">\(\Delta\)</span> (a size-bias
-characterization of the deflation, stated as <em>signs only</em> — increasing in
-<span class="arithmatex">\(\mathrm{CV}(T)\)</span>, decreasing in the base rate, no closed form, with
-<span class="arithmatex">\(\mathrm{CV}(T)\)</span> a pre-bid-file diagnostic). The contributions are these two
+nodes are the reframe's <strong>positive modeled objects</strong>, <strong>led (v25) by the
+over-crediting bias</strong> <span class="arithmatex">\(\Delta\)</span> (a size-bias characterization of the
+deflation, stated as <em>signs only</em> — increasing in <span class="arithmatex">\(\mathrm{CV}(T)\)</span>,
+decreasing in the base rate, no closed form, magnitude read from a
+<strong>synthetic surface anchored at one empirical point per platform</strong> rather
+than an estimated curve, with <span class="arithmatex">\(\mathrm{CV}(T)\)</span> a pre-bid-file
+<strong>leading-order sufficient statistic</strong> / diagnostic). The second object is
+the <strong>enforcer stopping rule</strong>, stated <strong>modestly</strong> as a standard
+cost–benefit (MB = MC) tangency, whose image is the cost-recall frontier —
+the absence of a fixed cutoff follows from the optimum being
+budget-dependent. The contributions are these two
 modeled objects plus a <strong>disciplined audit protocol</strong> — not a deployable
 cartel detector.</p>
 </div>

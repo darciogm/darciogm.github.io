@@ -135,7 +135,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#an-044-the-over-crediting-bias-as-an-estimable-object-size-bias-cv-of-t-sufficient-statistic" class="md-skip">
+        <a href="#an-044-the-over-crediting-bias-as-a-characterized-object-the-papers-lead-contribution-size-bias-cv-of-t-leading-order-sufficient-statistic" class="md-skip">
           Skip to content
         </a>
       
@@ -6730,17 +6730,19 @@
 
 
 <div class="admonition warning">
-<p class="admonition-title">Provisional / methodological — signs analytic, magnitude simulated; no closed-form</p>
+<p class="admonition-title">Provisional / methodological — signs analytic; magnitude a synthetic surface (one anchor per platform), not a fitted curve; no closed-form</p>
 <p>This note characterizes <em>why</em> the raw award-screen AUC inflates and gives a portable
-sufficient statistic for the size of the inflation. The two comparative-static <strong>signs</strong>
+<strong>leading-order</strong> sufficient statistic for the size of the inflation. It is the paper's
+<strong>lead contribution</strong> in v25, promoted into the main body (Proposition in §4, proof in
+appendix, full grids in the new Online Supplement). The two comparative-static <strong>signs</strong>
 are analytic (proved in the rare-target regime, <code>prop:inflation</code>); the <strong>magnitude</strong> is
-demonstrated by a transparent synthetic simulation over a parameter grid — <strong>no
-closed-form inflation formula is claimed</strong>. The simulation uses only the published
-participation-volume distribution shape and base rates; no confidential microdata enters
-any output. Where this page conflicts with the <a href="../../paper.pdf">paper</a> or the
-<a href="../../changelog/">changelog</a>, <strong>the paper wins</strong>.</p>
+read from a <strong>synthetic surface anchored at one empirical point per platform — not an
+estimated/fitted curve</strong> — and <strong>no closed-form inflation formula is claimed</strong>. The surface
+uses only the published participation-volume distribution shape and base rates; no
+confidential microdata enters any output. Where this page conflicts with the
+<a href="../../paper.pdf">paper</a> or the <a href="../../changelog/">changelog</a>, <strong>the paper wins</strong>.</p>
 </div>
-<h1 id="an-044-the-over-crediting-bias-as-an-estimable-object-size-bias-cv-of-t-sufficient-statistic">AN-044: The over-crediting bias as an estimable object (size-bias, CV-of-<span class="arithmatex">\(T\)</span> sufficient statistic)<a class="headerlink" href="#an-044-the-over-crediting-bias-as-an-estimable-object-size-bias-cv-of-t-sufficient-statistic" title="Permanent link">¶</a></h1>
+<h1 id="an-044-the-over-crediting-bias-as-a-characterized-object-the-papers-lead-contribution-size-bias-cv-of-t-leading-order-sufficient-statistic">AN-044: The over-crediting bias as a characterized object — the paper's lead contribution (size-bias, CV-of-<span class="arithmatex">\(T\)</span> leading-order sufficient statistic)<a class="headerlink" href="#an-044-the-over-crediting-bias-as-a-characterized-object-the-papers-lead-contribution-size-bias-cv-of-t-leading-order-sufficient-statistic" title="Permanent link">¶</a></h1>
 <div class="admonition abstract">
 <p class="admonition-title">Intuition (plain-language)</p>
 <p>The headline number — a raw screen that "ranks cobidders at 0.76" — looks like
@@ -6767,9 +6769,11 @@ out the raw score.</p>
 <a href="../an-027-universe-anchored-stratum-scope/">AN-027</a>,
 <a href="../an-043-federal-opportunity-adjusted-validation/">AN-043</a>) establish <em>empirically</em> that
 the raw award-screen AUC is mostly mechanical opportunity, not discrimination. This note asks
-the next question: can the over-crediting be <strong>characterized</strong> as an estimable object — a bias
-with a known mechanism, known comparative statics, and a sufficient statistic a practitioner
-can compute <em>before</em> committing forensic resources?</p>
+the next question: can the over-crediting be <strong>characterized</strong> as a body-level object — a bias
+with a known mechanism, known comparative statics, and a <strong>leading-order</strong> sufficient statistic
+a practitioner can compute <em>before</em> committing forensic resources? In v25 the answer is the
+paper's <strong>lead contribution</strong>, promoted into the main body (Proposition in §4, proof in
+appendix, full grids in the new Online Supplement).</p>
 <h2 id="design">Design<a class="headerlink" href="#design" title="Permanent link">¶</a></h2>
 <ul>
 <li><strong>Mechanism.</strong> The award score is monotone in participation volume <span class="arithmatex">\(T\)</span> (it is
@@ -6788,11 +6792,14 @@ can compute <em>before</em> committing forensic resources?</p>
   (b) As the <strong>base rate rises</strong>, the size-biasing saturates (<span class="arithmatex">\(1-(1-\pi)^T\)</span> flattens) and
   <span class="arithmatex">\(\text{AUC}_{\text{raw}}\)</span> <strong>declines toward</strong> the within-stratum (genuine-signal) value —
   so a <strong>lower</strong> base rate means <strong>more</strong> inflation.</li>
-<li><strong>Synthetic simulation (magnitude).</strong> Draw <span class="arithmatex">\(T_i\)</span> from a family indexed by <span class="arithmatex">\(\text{CV}(T)\)</span>;
+<li><strong>Synthetic surface (magnitude — one empirical anchor per platform, not a fitted curve).</strong>
+  Draw <span class="arithmatex">\(T_i\)</span> from a family indexed by <span class="arithmatex">\(\text{CV}(T)\)</span>;
   generate <span class="arithmatex">\(y_i \sim \text{Bernoulli}(\min(\pi T_i, 1))\)</span> with <span class="arithmatex">\(\pi\)</span> swept to vary the base
   rate; with no injected within-stratum signal (<span class="arithmatex">\(\theta = 0\)</span>) the opportunity-adjusted AUC
   sits at <span class="arithmatex">\(\approx 0.5\)</span>, so <span class="arithmatex">\(\Delta = \text{AUC}_{\text{raw}} - \text{AUC}_{\text{within}}\)</span> is
-  the pure size-bias inflation. The injection device reuses the existing permutation-power
+  the pure size-bias inflation. The grid is a <strong>synthetic surface, not an estimated/fitted
+  curve</strong>; each real platform contributes <strong>one empirical anchor point</strong> overlaid on it. The
+  injection device reuses the existing permutation-power
   machinery. <strong>The two real platforms are overlaid</strong> using only the candidate pool's
   <span class="arithmatex">\(\text{CV}(T)\)</span> and base rate — two scalars each, no microdata.</li>
 </ul>
@@ -6882,26 +6889,31 @@ opportunity-adjusted AUC stays pinned near <span class="arithmatex">\(0.5\)</spa
 </tr>
 </tbody>
 </table>
-<p>The simulation reproduces BEC's locked raw AUC (sim <strong>0.768</strong> vs locked <strong>0.761</strong>) at BEC's
-coordinates, and both platforms sit on the predicted surface. The figure overlays both real
-points (<code>outputs/figures/fig_inflation_surface.pdf</code>).</p>
+<p>The synthetic surface reproduces BEC's locked raw AUC (sim <strong>0.768</strong> vs locked <strong>0.761</strong>) at
+BEC's anchor coordinate, and both platforms sit on the predicted surface. The surface is
+<strong>synthetic — anchored at one empirical point per platform, not a fitted/estimated curve</strong>. The
+figure overlays both real anchor points (<code>outputs/figures/fig_inflation_surface.pdf</code>).</p>
 <div class="admonition abstract">
 <p class="admonition-title">Why federal's exposure-only edges out raw — the lower-base-rate prediction</p>
 <p>Federal's roughly <strong>10× lower base rate</strong> makes the size-biasing <strong>more complete</strong>, so the
 inflation is, if anything, <em>more</em> of the raw number federally than on BEC. That is exactly
 why the federal <strong>exposure-only</strong> ranking (0.754), which never sees the score, <strong>edges out
 the raw score itself</strong> (0.744) — whereas on BEC the exposure axis only <em>approaches</em> the raw
-score. BEC and federal are therefore <strong>two coordinates on one inflation surface</strong> at
+score. BEC and federal are therefore <strong>two coordinates on one synthetic inflation surface</strong>
+(anchored at one empirical point per platform, not a fitted curve) at
 different <span class="arithmatex">\((\text{CV}(T), \text{base rate})\)</span> values, <strong>not "the same null twice."</strong> This is
 the generalizing content the characterization supplies.</p>
 </div>
 <h2 id="interpretation">Interpretation<a class="headerlink" href="#interpretation" title="Permanent link">¶</a></h2>
-<p><strong>The over-crediting is a characterized object, not an accident of this dataset.</strong> The raw
+<p><strong>The over-crediting is a characterized object — and the paper's lead contribution.</strong> The raw
 award-screen AUC inflates because score and contact-defined label are both monotone in
-participation volume, making the positive class the size-biased volume distribution. The two
-comparative-static signs are analytic in the rare-target regime; the magnitude is demonstrated
-by a transparent synthetic simulation, <strong>not</strong> asserted as a closed-form formula.</p>
-<p><strong>The sufficient statistic is portable — and is a diagnostic, not a fix.</strong> A practitioner can
+participation volume, making the positive class the size-biased volume distribution. In v25 this
+is promoted into the main body (Proposition in §4, proof in appendix, full grids in the new
+Online Supplement) as the paper's lead contribution. The two
+comparative-static signs are analytic in the rare-target regime; the magnitude is rendered as a
+<strong>synthetic surface anchored at one empirical point per platform — not a fitted/estimated curve</strong>,
+and <strong>not</strong> asserted as a closed-form formula.</p>
+<p><strong>The leading-order sufficient statistic is portable — and is a diagnostic, not a fix.</strong> A practitioner can
 compute the candidate pool's <span class="arithmatex">\(\text{CV}(T)\)</span> from award data alone, <em>before opening any bid
 file</em>, to bound how much of an uncorrected raw AUC is mechanical. This converts the paper's
 central caveat ("adjust for procurement opportunity or you over-credit the screen") into a
@@ -6920,13 +6932,14 @@ platforms. It does <strong>not</strong> promote the screen to a portable detecti
 <em>detection</em> umbrella stays provisional, and the federal CADE anchors <strong>partially overlap</strong> the
 BEC portfolio, so this tests portability of the inflation law, not an independent cartel test.
 Confidence is <strong>🟡 yellow / provisional</strong>: the object is clean and the signs are proved, but the
-magnitude rests on a simulation and the federal anchors partially overlap.</p>
+magnitude rests on a synthetic surface (one empirical anchor per platform, not a fitted curve)
+and the federal anchors partially overlap.</p>
 <h2 id="bearing-on-hypotheses">Bearing on hypotheses<a class="headerlink" href="#bearing-on-hypotheses" title="Permanent link">¶</a></h2>
 <ul>
 <li><strong>H:exposure-discipline (H3).</strong> Primary bearing — characterizes the over-crediting mechanism
-  that H3 asserts (Confirmed across two platforms), turning the empirical null into an estimable
-  object with a sufficient statistic. Provisional/methodological support; does not change the
-  H3 status.</li>
+  that H3 asserts (Confirmed across two platforms), turning the empirical null into a body-level
+  characterized object with a <strong>leading-order</strong> sufficient statistic. Provisional/methodological
+  support; does <strong>not</strong> change the H3 status (stays Confirmed).</li>
 <li><strong>H:cobidder-concentration (H1).</strong> Explains <em>why</em> the raw concentration is generic
   co-participation arithmetic: the positive class is the size-biased volume distribution, so the
   raw AUC exists before any conduct.</li>
@@ -6934,9 +6947,9 @@ magnitude rests on a simulation and the federal anchors partially overlap.</p>
 <h2 id="follow-ups">Follow-ups<a class="headerlink" href="#follow-ups" title="Permanent link">¶</a></h2>
 <ul>
 <li>A genuinely independent cartel anchor (non-overlapping cases, or another jurisdiction) would
-  add a third coordinate on the inflation surface and test the law out of sample.</li>
-<li>Reporting the <span class="arithmatex">\(\text{CV}(T)\)</span> sufficient statistic alongside any future award-screen
-  validation as a standard pre-registration diagnostic.</li>
+  add a third empirical anchor on the synthetic inflation surface and test the law out of sample.</li>
+<li>Reporting the <span class="arithmatex">\(\text{CV}(T)\)</span> leading-order sufficient statistic alongside any future
+  award-screen validation as a standard pre-registration diagnostic.</li>
 </ul>
 
 
