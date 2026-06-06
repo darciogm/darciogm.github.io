@@ -6,7 +6,91 @@ paper: frequent-losers
 
 ---
 
-## v22.2 — June 4, 2026 (Current — hostile-review armor + narrative repair)
+## v23 — The Audit on a Second Platform (ComprasNet) — June 6, 2026 (Current)
+
+**Headline:** the award-layer evidence-triage protocol is now demonstrated on **two
+independent procurement platforms**. Beyond São Paulo's BEC (2009–2019), we re-run the full
+audit battery on the **federal ComprasNet** platform (2013–2019, pure Pregão) against the same
+family of CADE cartel anchors, integrated into the manuscript as a new Section 5, *The Audit
+on a Second Platform*, with the full federal battery in Appendix G. The federal leg
+**replicates the deflation anatomy**: under opportunity adjustment the within-stratum residual
+ordering (score net of defendant-contact exposure) falls to chance (within-stratum AUC 0.462),
+the matched-stratum permutation does not reject (nested increment +0.005, p = 0.191), and the
+negative controls return the surviving ordering to the realm of generic opportunity/volume
+geometry. The construct **ports and deflates; it does not break.** The strict-temporal carrier
+replicates too: the prospective ranking collapses outside the incumbent pool on both platforms
+(strict full-universe ROC 0.489 federal / 0.474 BEC), while the incumbent-pool continuous score
+deflates in the same direction and magnitude class (0.666 federal vs 0.684 BEC).
+
+**What this adds — and what it does NOT.** This is a *second-platform demonstration of the
+audit protocol*, not a promotion to **Confirmed**. The federal CADE anchors **partially
+overlap** the BEC portfolio (same cartels, different establishments and tender footprints), so
+the two legs are correlated, not fully independent. Federal panel: **51.0M** participation
+rows, **92,600** firms, **35,943** always-losers, FL cut re-estimated at **32** (≥; *not*
+transported from BEC's 14), **6,491** federal frequent losers. Main target: **3,850** broad-rule
+cobidders → **195** broad-AL cobidders (mirrors BEC's 651), of which **94** are FL and **101**
+non-FL, anchored on **7 numbered** CADE cases and **25** platform-active direct-defendant
+establishments.
+
+**The deflation battery (federal, read from the named CSVs):**
+
+- **Opportunity adjustment.** Raw award-layer ROC 0.744; exposure-only model 0.754 (≥ raw);
+  within-stratum residual ordering 0.462 (≈ chance); nested increment +0.005 (DeLong p = 0.191);
+  matched-stratum permutation does not reject. Genuine **label-blind** opportunity structure
+  (cell rate from non-cobidder rows only) ranks the label at **0.611** — the raw concentration
+  is mostly mechanical co-participation exposure.
+- **Negative controls.** Placebo anchors reproduce the order (AUC 0.728, p = 0.258 ns); non-CADE
+  high-volume-winner anchors exceed it (AUC 0.746, p = 0.582 ns). The surviving ordering is
+  generic opportunity/volume geometry, not cartel-specific.
+- **Power.** The matched-strata permutation is correctly sized — rejection probability **0.35**
+  at true within-AUC 0.55 and **0.90** at 0.60 — so the non-rejection genuinely bounds any
+  residual at the federal sample size.
+- **Label-frozen timing.** With pool, score, and label ingredients frozen on 2013–2016, the
+  frozen score ranks *new* 2017–2019 defendant contact at **0.595** among 24,888 incumbents
+  (N = 98) — generic contact forecasting, not a cartel-specific signal.
+
+**Honest caveats (front-paged, not hidden):**
+
+- **Partially overlapping legal anchors.** The 7 federal cases are the *same cartels* as the
+  BEC portfolio, establishment-anchored at the federal level. This is a robustness leg under
+  partially correlated ground truth, not a clean out-of-sample replication on an unrelated
+  cartel set.
+- **Shorter window (2013–2019).** Four training years federally vs eight on BEC. The strict
+  full-universe prospective collapse is robust (ROC 0.489), and the frozen-pool prospective row
+  (0.595, N = 98) is reported as such.
+- **Pure Pregão.** Convite is extinct federally, so the federal leg cannot reproduce the BEC
+  modality stratification. No federal bid microdata exists, so no bid-layer/Imhof forensic
+  benchmark is constructible from the public federal data.
+- **Case concentration is worse than on BEC.** The federal positive base is more
+  cartel-concentrated: top case 35.4% of positives, **top-two 64.4%**, and the realized top-500
+  detections are **87.5% one case**. The clustered-randomization *ordering* test is robust
+  (leaving out the largest case keeps the ordering distinguishable from random, RI p < 0.001),
+  but the operational precision/recall-at-k ranking is one-to-two-cartel-dominated and the
+  case-coverage-breadth test is non-significant (p = 0.487). The federal leg is therefore a
+  **single-system, concentrated-anchor stress test** of the protocol, not a multi-case
+  operational generalization. Both the breadth disclosure and the per-case leave-one-case-out
+  table appear in Appendix G.
+- **Direct defendants null reproduces by design.** Direct-defendant FL-binary AUC is ≈ chance
+  (0.465–0.503), reproducing the loser-side scope boundary.
+
+**New site material (this version):**
+
+- **[AN-043](analyses/an-043-federal-opportunity-adjusted-validation.md) — Federal
+  opportunity-adjusted validation (ComprasNet).** The two-platform audit anatomy with the
+  federal numbers.
+- **Scorecard:** new **cross-platform portability** row, verdict *"deflation replicates — audit
+  protocol ports (two platforms)"* — explicitly NOT a promotion to Confirmed (partially
+  overlapping anchors).
+- Landing page: two-platform extension announced, with the partially-overlapping-anchors caveat
+  stated in the text.
+
+*Manuscript home of these numbers:* §5 *The Audit on a Second Platform* and Appendix G (the
+federal audit battery); the federal column is bound via the `\valFedAud*` macro namespace.
+Paper 45 pp + appendix 40 pp; builds 0 errors / 0 undefined.
+
+---
+
+## v22.2 — June 4, 2026 (hostile-review armor + narrative repair)
 
 **Five-referee hostile pre-submission review executed, and its Action Plan applied.**
 Integrity verdicts were clean (≈190 numbers traced, 0 fatal; 0 fabricated references); the

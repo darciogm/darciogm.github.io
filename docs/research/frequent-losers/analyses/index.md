@@ -77,7 +77,8 @@ not a failure.
 | Threat the analysis confronts | AN pages |
 |---|---|
 | **Construct** — how the rank is built; is the FL14 cutoff arbitrary? | [AN-001](an-001-zero-win-rank.md), [AN-002](an-002-iqr-threshold.md), [AN-003](an-003-cade-bec-linkage.md), [AN-023](an-023-theory-operationalization-audit.md), [AN-025](an-025-cutoff-sweep-robustness.md) |
-| **Opportunity** — is it just exposure / participation volume? | [AN-004](an-004-cobidder-baseline.md), [AN-005](an-005-sham-fl-permutation.md), [AN-027](an-027-universe-anchored-stratum-scope.md), [AN-028](an-028-exposure-stratum-balance.md), [AN-041](an-041-volume-matched-cobidder-audit.md) |
+| **Opportunity** — is it just exposure / participation volume? | [AN-004](an-004-cobidder-baseline.md), [AN-005](an-005-sham-fl-permutation.md), [AN-027](an-027-universe-anchored-stratum-scope.md), [AN-028](an-028-exposure-stratum-balance.md), [AN-041](an-041-volume-matched-cobidder-audit.md), [AN-043](an-043-federal-opportunity-adjusted-validation.md) |
+| **Cross-platform** — does the audit port to a second procurement system? | [AN-043](an-043-federal-opportunity-adjusted-validation.md) |
 | **Timing** — would it flag firms before cases closed? | [AN-006](an-006-strict-prospective-holdout.md), [AN-013](an-013-precision-at-k-audit.md), [AN-015](an-015-gate-d1.md), [AN-029](an-029-three-classifier-timing-battery.md), [AN-030](an-030-market-persistence.md) |
 | **Single-case concentration** — does one case carry it? | [AN-013](an-013-precision-at-k-audit.md), [AN-034](an-034-sequential-gatekeeping-envelope.md), [AN-036](an-036-cv-precision-stability.md) |
 | **Scope** — what the screen cannot and should not cover | [AN-007](an-007-auc-direct-cade.md), [AN-016](an-016-gate-d2.md), [AN-018](an-018-gate-d4.md), [AN-027](an-027-universe-anchored-stratum-scope.md) |
@@ -120,7 +121,7 @@ record only). Set only when `status: done`.
 
 ## Generated index
 
-All 42 AN pages, auto-generated from the YAML frontmatter of each `docs/analyses/an-NNN-*.md` via `scripts/gen_analysis_index.py` + `scripts/render_indexes.py`. The machine-readable form lives at [`docs/reference/analysis-index.yaml`](../reference/analysis-index.yaml).
+All 43 AN pages, auto-generated from the YAML frontmatter of each `docs/analyses/an-NNN-*.md` via `scripts/gen_analysis_index.py` + `scripts/render_indexes.py`. The machine-readable form lives at [`docs/reference/analysis-index.yaml`](../reference/analysis-index.yaml).
 
 | AN | Type | Status | Conf. | Hypothesis | Question |
 |---|---|---|:-:|---|---|
@@ -166,6 +167,7 @@ All 42 AN pages, auto-generated from the YAML frontmatter of each `docs/analyses
 | [AN-040](an-040-within-cell-mechanism-test.md) | descriptive | done | 🟢 | [price-scope-sign-reversal](../hypotheses/price-scope-sign-reversal.md) | Within overlap cells, does FL presence depress the observed winner bid relative to the reference price? Does… |
 | [AN-041](an-041-volume-matched-cobidder-audit.md) | descriptive | done | 🟢 | [cobidder-profile-distinct](../hypotheses/cobidder-profile-distinct.md) | Does the within-FL distinctness of cobidders (AN-028 participation dimensions, AN-031 bid-level gap-to-winner… |
 | [AN-042](an-042-volume-matched-timing-audit.md) | descriptive | done | 🟡 | [cobidder-profile-distinct](../hypotheses/cobidder-profile-distinct.md) | Are cobidders distinct from non-cobidder FLs on bid TIMING (revision intensity, inter-bid interval, last-bid… |
+| [AN-043](an-043-federal-opportunity-adjusted-validation.md) | validation | provisional | 🟡 | [exposure-discipline](../hypotheses/exposure-discipline.md) | Does the award-layer evidence-triage protocol replicate on a SECOND, independent procurement platform (feder… |
 
 **Status legend.** `done` = analysis run and interpretation written; `pending` = scaffolded only; `stale` = superseded.
 

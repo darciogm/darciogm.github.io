@@ -478,3 +478,14 @@
   file: docs/analyses/an-042-volume-matched-timing-audit.md
   script: scripts/75_volume_matched_timing_audit.R
   target: output/volume_matched_timing/timing_standardized_diffs.csv + timing_balance.csv
+
+- id: an-043
+  hypothesis: exposure-discipline
+  status: provisional
+  type: validation
+  question: Does the award-layer evidence-triage protocol replicate on a SECOND, independent procurement platform? On federal ComprasNet (2013-2019, pure Pregao) against the same family of CADE cartel anchors, does the opportunity-adjusted deflation anatomy reproduce - exposure-only discrimination >= raw, within-stratum residual collapsing to chance - and does the strict-temporal prospective collapse port?
+  confidence: yellow
+  tags: ["H:exposure-discipline", "H:cobidder-concentration", "H:timing-discipline", comprasnet, federal, cross-platform, opportunity-adjustment, deflation, replication, provisional]
+  file: docs/analyses/an-043-federal-opportunity-adjusted-validation.md
+  script: scripts/comprasnet/02_opportunity_adjusted_validation.R + 03_timing_case_holdout_validation.R + 04_case_holdout_dominance.R (--source=comprasnet)
+  target: outputs/comprasnet/tables/table_C_opportunity_adjusted_validation.csv + table_E_negative_controls.csv + outputs/comprasnet/diagnostics/audit_armor/*

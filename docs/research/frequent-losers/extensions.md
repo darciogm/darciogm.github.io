@@ -46,13 +46,20 @@ contact reaches 0.905, but that is mechanical label encoding), raw award
 score ROC **0.761**, within-stratum AUC **0.471 (≈ chance)**, and only a
 fragile nested increment of **+0.010** (DeLong *p* = 0.013) that is **not
 robust across designs**. The open
-question is whether on a different procurement system, with a different
-adjudication history, a within-stratum increment **does** survive. If the
-opportunity-only term again carries essentially all the raw discrimination
-and nothing robust survives stratification, the deflationary result
-generalizes; if a genuine within-stratum signal appears elsewhere, the
-BEC null is jurisdiction-specific. The ComprasNet federal panel is the
-natural first replication target (see
+question was whether on a different procurement system, with a different
+adjudication history, a within-stratum increment **does** survive.
+**The v23 R&R answers it on a first second platform.** Re-running the same
+audit on the **federal ComprasNet** panel (2013–2019, pure Pregão; §5 and
+Appendix G of the paper, and [AN-043](analyses/an-043-federal-opportunity-adjusted-validation.md))
+returns the same verdict: the opportunity-only term again carries essentially
+all the raw discrimination (exposure-only 0.754 ≥ raw 0.744), the within-stratum
+residual collapses to chance (0.462), the matched permutation does not reject,
+and the negative controls reproduce the order. The deflationary result therefore
+**ports** — what transfers is the audit protocol, not a deployable score. This
+remains **provisional**, not a promotion to Confirmed, because the federal CADE
+anchors **partially overlap** the São Paulo portfolio (same cartels,
+establishment-anchored). A genuinely independent cartel anchor — non-overlapping
+cases, or another jurisdiction — remains the bar for Confirmed (see
 [`COMPRASNET_PATH_TO_CONFIRMED.md`](https://github.com/darciogm/bitter-pills/blob/main/paper3-frequent-losers/COMPRASNET_PATH_TO_CONFIRMED.md)).
 
 ---

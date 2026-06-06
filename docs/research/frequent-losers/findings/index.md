@@ -49,9 +49,14 @@ not the size of the effect:
   for follow-up rather than relied on.
 
 For *Cheap Signals, Costly Proof*, the natural 🟢 promotion criterion is
-replication on a non-BEC-SP procurement panel (e.g. ComprasNet federal,
-or another state's e-procurement system). Until that exists, findings
-here rest on the project's own BEC 2009–2019 runs and start at 🟡.
+replication on a non-BEC-SP procurement panel under a *genuinely
+independent* cartel anchor. The v23 R&R takes a first step: the audit is
+re-run on the **federal ComprasNet** panel
+([AN-043](../analyses/an-043-federal-opportunity-adjusted-validation.md)) and
+the deflation **replicates** — but the federal CADE anchors partially overlap
+the São Paulo cases, so that leg is **provisional**, not 🟢. Until a
+non-overlapping anchor exists, findings here rest on the project's own BEC
+2009–2019 runs (corroborated provisionally on ComprasNet) and start at 🟡.
 
 ---
 

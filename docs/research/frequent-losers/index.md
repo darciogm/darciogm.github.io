@@ -17,7 +17,7 @@ hide:
 [Online appendix](online_appendix.pdf){ .md-button }
 </p>
 
-<p class="version-tag"><em>JLEO submission version &mdash; June 2026 (canonical target + hostile-review armor, 2026-06-04).</em></p>
+<p class="version-tag"><em>JLEO R&amp;R version &mdash; two-platform extension (BEC + ComprasNet), June 2026.</em></p>
 
 </div>
 
@@ -29,24 +29,23 @@ hide:
 ## Abstract
 
 Cartel enforcement must allocate costly proof-producing effort
-before proof exists. Using São Paulo's BEC procurement platform
-and CADE adjudications, we ask how far routine award records can
-rank where bid-level forensics should begin. We study a minimal
-award-layer construct—persistent zero-win participation,
-implemented as a frequent-loser flag—validated against a
+before proof exists. Using São Paulo's BEC platform and CADE
+adjudications, we ask how far award records can rank where
+bid-level forensics should begin. We study a minimal award-layer
+construct—persistent zero-win participation—validated against a
 reproducible, adjudication-anchored cobidder label that never uses
-the screen. Validating an administrative screen against
-adjudicated cases without adjusting for procurement opportunity
-systematically over-credits it: decomposed by opportunity, timing,
-and case concentration, the cheap signal's apparent reach mostly
-reflects mechanical co-participation exposure and case
-concentration, the residual ordering net of opportunity is
-marginal at best, and prospective ranking fails outside incumbent
-pools. The contribution is the organizational result—the
-award-to-bid recovery decision is a sequential cost-recall problem
-whose frontier, not any cutoff, is the design object—and a
-disciplined audit protocol. Liability remains in the richer
-evidentiary record.
+the screen. Decomposed by opportunity, timing, and case
+concentration, the cheap signal's apparent reach mostly reflects
+mechanical co-participation exposure and case concentration; the
+residual ordering net of opportunity is marginal. Re-running the
+same audit on a second federal platform with partially overlapping
+legal anchors returns the same verdict, so what transfers is the
+audit protocol, not a deployable score. The contribution is the
+organizational result—the award-to-bid recovery decision is a
+sequential cost-recall problem whose frontier, not any cutoff, is
+the design object—and a disciplined audit protocol demonstrated
+across two platforms. Liability remains in the richer evidentiary
+record.
 
 **JEL Classification:**
 <span class="badge">D44</span>
@@ -81,6 +80,20 @@ evidentiary record.
 
 !!! info "What transfers: the organizational result + the audit protocol"
     Contribution 1 is organizational: the award-to-bid recovery decision is a **sequential cost-recall problem whose frontier — not any cutoff — is the design object** (firm-count savings of 88% shrink to 33% in bid rows; denominators matter). Contribution 2 is the disciplined audit protocol — label construction, opportunity adjustment with leakage tiers, powered permutation, label-frozen timing, case-composition audit, bid-layer comparison — built around one portable principle: *validating an administrative screen against adjudicated cases without adjusting for procurement opportunity systematically over-credits it.* Liability remains in the richer evidentiary record.
+
+!!! abstract "Now demonstrated on two platforms"
+    The award-layer triage protocol is re-run on a second, independent procurement
+    platform — federal **ComprasNet** (2013–2019, pure Pregão) — against the same family of
+    CADE cartel anchors, integrated into the manuscript as §5 (*The Audit on a Second Platform*)
+    and Appendix G. The federal leg **replicates the deflation anatomy**: the raw screen ranks
+    cobidders (ROC 0.744), but once opportunity-set exposure is netted out the within-stratum
+    residual collapses to chance (0.462), the matched permutation does not reject, and the
+    negative controls reproduce the order — exactly as on BEC. The construct **ports and
+    deflates; it does not break.** This is a *provisional* robustness leg, not a promotion to
+    "Confirmed": the federal CADE anchors **partially overlap** the São Paulo portfolio (same
+    cartels, establishment-anchored), and the federal positive base is more case-concentrated
+    (top-two cases ≈ 64% of positives). See
+    [AN-043](analyses/an-043-federal-opportunity-adjusted-validation.md).
 
 ---
 
