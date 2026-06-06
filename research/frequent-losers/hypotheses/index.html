@@ -6729,7 +6729,7 @@
                   
 
 
-<!-- REVISED: canonical-target reframe 2026-06-04 --><h1 id="hypotheses">Hypotheses<a class="headerlink" href="#hypotheses" title="Permanent link">¶</a></h1>
+<!-- REVISED: canonical-target reframe 2026-06-04 --><!-- REVISED: hostile-review armor 2026-06-04 --><h1 id="hypotheses">Hypotheses<a class="headerlink" href="#hypotheses" title="Permanent link">¶</a></h1>
 <p>Testable implications for <em>Cheap Signals, Costly Proof: The Reach and Limits
 of Award-Layer Screening in Cartel Enforcement</em> (Genicolo-Martins &amp; de
 Azevedo, JLEO). Each implication lives in its own file and is referenced
@@ -6846,7 +6846,7 @@ replication on a non-BEC procurement panel.</p>
 <tr>
 <td><a href="cobidder-concentration/">H1</a></td>
 <td>Ranking concentrates cobidders above mechanical opportunity.</td>
-<td>Raw concentration is mostly opportunity (exposure-only ROC ≈ 0.90 unconditional, 0.713 exposed); the <strong>within-stratum</strong> signal is 0.471 (≈chance) and the nested increment is only <strong>+0.010</strong> (DeLong p = 0.013), failing matched permutation (p = 0.127 ns) and FL-enrichment (p = 0.067 ns). No robust residual net of opportunity.</td>
+<td>Raw concentration is mostly mechanical exposure: genuine label-blind opportunity ranks the label at only <strong>0.553</strong> (ranking by <em>observed</em> contact reaches 0.90, but that is mechanical label encoding, not a model); the <strong>within-stratum</strong> signal is 0.471 (≈chance) and the nested increment is only <strong>+0.010</strong> (DeLong p = 0.013), failing matched permutation (p = 0.127 ns) and FL-enrichment (p = 0.067 ns). No robust residual net of opportunity.</td>
 <td><a href="../analyses/an-004-cobidder-baseline/">AN-004</a>, <a href="../analyses/an-005-sham-fl-permutation/">AN-005</a>, <a href="../analyses/an-006-strict-prospective-holdout/">AN-006</a>, <a href="../analyses/an-011-horse-race-continuous/">AN-011</a>, <a href="../analyses/an-014-leakage-audit-d3/">AN-014</a>, <a href="../analyses/an-017-gate-d3/">AN-017</a>, <a href="../analyses/an-025-cutoff-sweep-robustness/">AN-025</a>, <a href="../analyses/an-026-subsample-robustness/">AN-026</a></td>
 <td><strong>Not confirmed (opportunity explains it)</strong></td>
 </tr>
@@ -6860,7 +6860,7 @@ replication on a non-BEC procurement panel.</p>
 <tr>
 <td><a href="exposure-discipline/">H3</a></td>
 <td>Genuine signal survives once opportunity is netted out.</td>
-<td>Most raw concentration is opportunity exposure (exposure-only ROC ≈ 0.90); within-stratum AUC is at chance (0.471), nested increment +0.010 (DeLong p = 0.013) but matched permutation p = 0.127 (ns) and FL-enrichment p = 0.067 (ns); negative controls corroborate the opportunity account (real ≈ placebo p = 0.46). <strong>No robust residual</strong> survives the discipline.</td>
+<td>Most raw concentration is mechanical exposure (label-blind opportunity ≈ 0.553; ranking by observed contact 0.90 is mechanical label encoding); within-stratum AUC is at chance (0.471), nested increment +0.010 (DeLong p = 0.013) but matched permutation p = 0.127 (ns) and FL-enrichment p = 0.067 (ns); negative controls corroborate the opportunity account (real ≈ placebo p = 0.46); armor battery confirms (positive control 0.953; permutation power 0.97 @ within-AUC 0.55). <strong>No robust residual</strong> survives the discipline.</td>
 <td><a href="../analyses/an-005-sham-fl-permutation/">AN-005</a>, <a href="../analyses/an-014-leakage-audit-d3/">AN-014</a>, <a href="../analyses/an-027-universe-anchored-stratum-scope/">AN-027</a>, <a href="../analyses/an-028-exposure-stratum-balance/">AN-028</a></td>
 <td><strong>Not confirmed (opportunity explains it)</strong></td>
 </tr>
@@ -6899,8 +6899,25 @@ replication on a non-BEC procurement panel.</p>
 <td><a href="../analyses/an-019-rdd-cap-price/">AN-019</a>, <a href="../analyses/an-020-did-decreto-2018/">AN-020</a>, <a href="../analyses/an-016-gate-d2/">AN-016</a>, <a href="../analyses/an-022-falsification-pregao/">AN-022</a>, <a href="../analyses/an-037-sign-reversal-decomposition/">AN-037</a>, <a href="../analyses/an-038-negative-cell-segment-audit/">AN-038</a>, <a href="../analyses/an-039-selection-mechanism-test/">AN-039</a>, <a href="../analyses/an-040-within-cell-mechanism-test/">AN-040</a></td>
 <td><strong>Partial (strongly supported)</strong></td>
 </tr>
+<tr>
+<td><a href="exposure-discipline/">X-plat</a></td>
+<td>The audit protocol (and its deflation anatomy) replicates on a second, independent platform.</td>
+<td>Federal ComprasNet (2013–2019, 51.0M rows, 35,943 always-losers, FL cut 32, 6,491 FL, 195 broad-AL cobidders): raw ROC 0.744; strict full-universe ROC 0.489 (BEC 0.474) — prospective collapse ports; strict incumbent-pool continuous 0.666 (BEC 0.684); exposure-only 0.754 ≥ raw, within-stratum residual 0.462 (≈chance), nested increment +0.005 (DeLong p = 0.191), matched permutation does not reject, label-blind opportunity 0.611; negative controls reproduce the order (placebo p = 0.258 ns; HV-winner p = 0.582 ns); permutation power 0.90 @ within-AUC 0.60; label-frozen prospective 0.595; direct-defendant FL-binary ≈ chance. Caveats: anchors <strong>partially overlap</strong> BEC; pure Pregão; case-concentrated (top-two 64.4%, TP@500 87.5% one case).</td>
+<td><a href="../analyses/an-043-federal-opportunity-adjusted-validation/">AN-043</a></td>
+<td><strong>deflation replicates — audit protocol ports (two platforms)</strong></td>
+</tr>
 </tbody>
 </table>
+<blockquote>
+<p><strong>Cross-platform portability (provisional).</strong> The federal ComprasNet leg
+(<a href="../analyses/an-043-federal-opportunity-adjusted-validation/">AN-043</a>) demonstrates the
+audit protocol — including the opportunity-adjusted deflation — on a second platform with
+different firms, buyers, auction rules, and FL cutoff. It is reported as
+<strong>deflation replicates — audit protocol ports (two platforms)</strong>, not as a promotion to
+<strong>Confirmed</strong>, because the 7 federal CADE anchors are the <em>same cartels</em> as the BEC portfolio
+(establishment-anchored), so the two legs are partially correlated rather than independent. A
+genuinely independent cartel anchor remains the bar for Confirmed.</p>
+</blockquote>
 <h2 id="generated-index">Generated index<a class="headerlink" href="#generated-index" title="Permanent link">¶</a></h2>
 <p>All 8 hypothesis pages, auto-generated from the YAML frontmatter of each <code>docs/hypotheses/&lt;slug&gt;.md</code> via <code>scripts/render_indexes.py</code>. Maintained in lockstep with the scorecard above.</p>
 <table>

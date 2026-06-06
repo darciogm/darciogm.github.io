@@ -6731,6 +6731,7 @@
 
 <h1 id="paper-dag">Paper DAG<a class="headerlink" href="#paper-dag" title="Permanent link">¶</a></h1>
 <!-- REVISED: canonical-target reframe 2026-06-04 -->
+<!-- REVISED: hostile-review armor 2026-06-04 -->
 
 <p>The directed acyclic graph of the paper's argument: how the institutional
 premise flows through the award-layer construct, the <strong>decomposition</strong> that
@@ -6761,16 +6762,18 @@ Each node is a claim or object; each arrow is "supports / leads to."</p>
     %% ---------- Decomposition: the method ----------
     subgraph DEC["Decomposition — the contribution"]
       direction TB
-      D1["Hold procurement &lt;b&gt;opportunity&lt;/b&gt; fixed&lt;br/&gt;raw ROC 0.761 (exposure-only 0.905) &amp;rarr; within-stratum 0.471 (&amp;approx;chance)&lt;br/&gt;&lt;b&gt;fragile increment +0.010&lt;/b&gt; (p=0.013, not robust)"]:::method
+      D1["Hold procurement &lt;b&gt;opportunity&lt;/b&gt; fixed&lt;br/&gt;raw ROC 0.761; label-blind opportunity 0.553 &amp;rarr; within-stratum 0.471 (&amp;approx;chance)&lt;br/&gt;&lt;b&gt;fragile increment +0.010&lt;/b&gt; (p=0.013, not robust)"]:::method
       D2["&lt;b&gt;Timing&lt;/b&gt;: orders firms retrospectively&lt;br/&gt;among incumbents; full-universe ROC &amp;approx; 0.474 (below chance);&lt;br/&gt;sequential strict-timing infeasible"]:::limit
       D3["&lt;b&gt;Single-case&lt;/b&gt;: leave-largest-case-out&lt;br/&gt;PR-AUC 0.143 &amp;rarr; 0.090 (&amp;minus;37%);&lt;br/&gt;one case &amp;approx; 32% of positives"]:::limit
       D4["&lt;b&gt;Scope&lt;/b&gt;: binary AUC &amp;approx; 0.49 vs direct defendants&lt;br/&gt;&amp;mdash; by design (continuous score 0.66&amp;ndash;0.70)"]:::limit
+      D5["&lt;b&gt;Armor battery&lt;/b&gt; (anchor-agnostic):&lt;br/&gt;label-blind opportunity 0.553; positive control 0.953;&lt;br/&gt;perm power 0.97 @ 0.55; label-frozen timing 0.713"]:::method
     end
     V1 --&gt; D1
     D1 --&gt; D2
     D1 --&gt; D3
     V1 --&gt; D4
     V2 --&gt; D4
+    D1 --&gt; D5
 
     %% ---------- Architecture ----------
     subgraph ARC["Division of labor between layers"]
@@ -6793,6 +6796,7 @@ Each node is a claim or object; each arrow is "supports / leads to."</p>
     D1 --&gt; Z1
     D2 --&gt; Z1
     D3 --&gt; Z1
+    D5 --&gt; Z1
     A3 --&gt; Z1
     PR1 --&gt; Z1
     Z1 --&gt; Z2
@@ -6807,16 +6811,22 @@ Each node is a claim or object; each arrow is "supports / leads to."</p>
     classDef concl fill:#143b4a,stroke:#1f6f8b,color:#eafaf8;</code></pre>
 <div class="admonition note">
 <p class="admonition-title">How to read it</p>
-<p>The green node is the paper's methodological core — the <strong>opportunity
-decomposition</strong> that strips mechanical exposure arithmetic (unconditional
-0.905) from the raw award-layer score (0.761) and finds that almost nothing
-survives: the within-stratum AUC is ≈ chance (0.471) and the only positive is
-a fragile +0.010 increment that is not robust across designs. The brown nodes
-are the <strong>limits</strong> the same decomposition exposes (below-chance out-of-time
-ordering, single-case dependence, the direct-defendant scope boundary). The
-contribution is not a deployable cartel detector — it is the <strong>framework</strong>
-that draws this boundary and shows where cheap administrative records can, and
-cannot, order forensic priority.</p>
+<p>The green nodes are the paper's methodological core — the <strong>opportunity
+decomposition</strong> that strips mechanical co-participation exposure from the raw
+award-layer score (0.761) and finds that almost nothing survives: genuine
+label-blind opportunity ranks the label at only 0.553, the within-stratum AUC
+is ≈ chance (0.471), and the only positive is a fragile +0.010 increment that
+is not robust across designs. The <strong>armor battery</strong> (anchor-agnostic) decides
+the deflationary verdict: a planted positive control recovers 0.953
+(falsifiability), the permutation test has power 0.97 at within-AUC 0.55, and
+label-frozen timing (0.713) shows generic contact forecasting, not
+cartel-specific prediction. The ranking by <em>observed</em> contact (0.905) is
+mechanical label encoding, not a winning model. The brown nodes are the
+<strong>limits</strong> the same decomposition exposes (below-chance out-of-time ordering,
+single-case dependence, the direct-defendant scope boundary). The contributions
+are an <strong>organizational result</strong> (the cost-recall frontier is the design
+object) and a <strong>disciplined audit protocol</strong> — not a deployable cartel
+detector.</p>
 </div>
 
 

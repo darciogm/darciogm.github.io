@@ -6731,6 +6731,7 @@
 
 <h1 id="the-fl-binary-flag-is-null-on-direct-cade-defendants-by-design">The FL binary flag is null on direct CADE defendants — by design<a class="headerlink" href="#the-fl-binary-flag-is-null-on-direct-cade-defendants-by-design" title="Permanent link">¶</a></h1>
 <!-- REVISED: canonical-target reframe 2026-06-04 -->
+<!-- REVISED: hostile-review armor 2026-06-04 -->
 
 <div class="admonition abstract">
 <p class="admonition-title">Intuition (plain-language)</p>
@@ -6750,9 +6751,9 @@ binary flag, not participation volume. The paper <strong>front-pages</strong> th
 binary null as the honest limit of an award-layer flag.</p>
 <p>Diagnostic D4 (<a href="../../analyses/an-018-gate-d4/">AN-018</a>) confirms the
 null mechanistically: only <strong>7 of 47 direct defendants (14.9%)</strong> are
-always-losers, and their median win rate is <strong>0.261</strong> (vs 0.086 for
-cobidders, Mann–Whitney p &lt; 0.05). Direct defendants are structurally
-<strong>winner-heavy</strong>.</p>
+always-losers, and their median win rate is <strong>0.261</strong> — whereas
+cobidders, being always-losers, have win rate <strong>≡ 0 by construction</strong>.
+Direct defendants are structurally <strong>winner-heavy</strong>.</p>
 <p>The null survives every evaluation regime: 0.506 in the leakage audit
 (<a href="../../analyses/an-014-leakage-audit-d3/">AN-014</a>) raw item-level,
 0.511 under temporal holdout — all within sampling distance of 0.5.</p>
@@ -6782,7 +6783,9 @@ load-bearing for the framing of the paper and survives every audit in
   <a href="../../results/">docs/results.md</a>.</li>
 <li><em>Macros</em>: <code>\valAUCdirectCADE</code> (0.491), <code>\valAUCdirectCADECI</code>,
   <code>\valDirectCADE</code> (47), <code>\valDirectShareAL</code> (14.9%),
-  <code>\valDirectMedWR</code> (0.261), <code>\valOthersMedWR</code> (0.086).</li>
+  <code>\valDirectMedWR</code> (0.261). (The old <code>\valOthersMedWR</code> = 0.086 is <strong>dead</strong>
+  — never cite: cobidders are always-losers, so their win rate is ≡ 0 by
+  construction.)</li>
 <li><em>Validation</em>: backing scripts <code>scripts/33_auc_direct_cade.R</code>,
   <code>scripts/39_gate_d4_cade_winner_heavy.R</code>,
   <code>scripts/40_leakage_audit_d3.R</code>.</li>

@@ -6731,6 +6731,7 @@
 
 <h1 id="replication">Replication<a class="headerlink" href="#replication" title="Permanent link">¶</a></h1>
 <!-- REVISED: canonical-target reframe 2026-06-04 -->
+<!-- REVISED: hostile-review armor 2026-06-04 -->
 
 <p>This page describes how to reproduce every table and figure in the paper,
 and the data-access and confidentiality position that governs what can be
@@ -7143,6 +7144,16 @@ Rscript<span class="w"> </span>scripts/00_master.R
 <td>FL firm characterization (size, age, CNAE)</td>
 <td><code>tab_fl_characteristics.tex</code></td>
 </tr>
+<tr>
+<td><code>12_audit_armor.R</code></td>
+<td>Anchor-agnostic armor battery: exposure tiers (observed / plug-in / firm-LOO / label-blind), within-stratum granularity sweep + positive control, powered permutation, label-frozen timing, regenerated defendant roles</td>
+<td><code>outputs/diagnostics/audit_armor/</code></td>
+</tr>
+<tr>
+<td><code>12b_audit_armor_fixup.R</code></td>
+<td>Fixups / regeneration for the armor pack (<code>\valArmor*</code> macros)</td>
+<td><code>outputs/diagnostics/audit_armor/</code></td>
+</tr>
 </tbody>
 </table>
 <div class="admonition note">
@@ -7151,14 +7162,21 @@ Rscript<span class="w"> </span>scripts/00_master.R
 <code>00_build_canonical_validation_targets.R</code> (651 positives; FL flag never
 used), and the contact-intensity sensitivity (≥ 2 shared tender-items,
 368 positives) by <code>02b_opportunity_sensitivity_contact2.R</code>. The
-opportunity decomposition (raw vs exposure-only vs within-stratum AUC
-and the nested-increment DeLong test), the permutation and negative-
-control audits, the leakage / contamination and timing audits, the
-leave-largest-case-out single-case-concentration audit, the
-bid-distribution benchmark, and the cost–recall frontier (K1 grid,
-firm-vs-bid-row denominators) are produced by additional numbered
-scripts (e.g. <code>31_imhof_full_pipeline.R</code>, <code>40_leakage_audit_d3.R</code>, the
+opportunity decomposition (raw vs label-blind opportunity vs
+within-stratum AUC and the nested-increment DeLong test), the
+permutation and negative-control audits, the leakage / contamination
+and timing audits, the leave-largest-case-out
+single-case-concentration audit, the bid-distribution benchmark, and
+the cost–recall frontier (K1 grid, firm-vs-bid-row denominators) are
+produced by additional numbered scripts (e.g.
+<code>31_imhof_full_pipeline.R</code>, <code>40_leakage_audit_d3.R</code>, the
 decomposition/timing scripts, and the architecture/frontier scripts).
+The anchor-agnostic <strong>armor battery</strong> — exposure tiers (observed contact
+0.905 / plug-in 0.985 / firm-LOO 0.855 / label-blind 0.553), the
+within-stratum granularity sweep with planted positive control (0.953),
+the powered permutation, and the label-frozen timing benchmark — is
+produced by <code>12_audit_armor.R</code> and <code>12b_audit_armor_fixup.R</code>, writing to
+<code>outputs/diagnostics/audit_armor/</code> (macros <code>\valArmor*</code>).
 Each <code>\val*</code> macro in <code>values.tex</code> carries an explicit <code>% src:</code> line
 naming the producing script and output CSV — the <strong>output → script
 map</strong> that travels with the shareable package.</p>

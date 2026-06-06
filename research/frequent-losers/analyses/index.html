@@ -6731,6 +6731,7 @@
 
 <h1 id="analyses-cheap-signals-costly-proof">Analyses — Cheap Signals, Costly Proof<a class="headerlink" href="#analyses-cheap-signals-costly-proof" title="Permanent link">¶</a></h1>
 <!-- REVISED: canonical-target reframe 2026-06-04 -->
+<!-- REVISED: hostile-review armor 2026-06-04 -->
 
 <div class="admonition warning">
 <p class="admonition-title">AN pages predating 2026-06-04 are superseded by the canonical re-estimation</p>
@@ -6765,11 +6766,14 @@ cannot prove conduct. The analyses below decompose what looks like a
 strong screen into three pieces and trace where each one reaches and
 where it stops:</p>
 <ol>
-<li><strong>Opportunity arithmetic.</strong> Most of the raw discriminating power is
-   <em>exposure</em>: firms that bid in more tenders mechanically overlap more
-   adjudicated cartel environments. Against the canonical 651-cobidder
-   label the raw award score reaches only ROC <strong>0.761</strong> / PR-AUC <strong>0.143</strong>,
-   and the unconditional exposure-only model alone reaches <strong>0.905</strong>.
+<li><strong>Mechanical co-participation exposure.</strong> Most of the raw
+   discriminating power is <em>exposure</em>: firms that bid in more tenders
+   mechanically overlap more adjudicated cartel environments. Against the
+   canonical 651-cobidder label the raw award score reaches only ROC
+   <strong>0.761</strong> / PR-AUC <strong>0.143</strong>, and genuine label-blind opportunity
+   ranks the label at only <strong>0.553</strong> (ranking by <em>observed</em> contact
+   reaches 0.905, but that is mechanical label encoding — a cobidder <em>is</em>
+   a firm with positive contact — not a competing model).
    Stripping exposure out — comparing firms <em>within</em> the same opportunity
    stratum — leaves a within-stratum AUC of <strong>0.471 (≈ chance)</strong>; the only
    positive is a fragile nested increment of <strong>+0.010</strong> (DeLong
@@ -6805,7 +6809,11 @@ not a failure.</p>
 </tr>
 <tr>
 <td><strong>Opportunity</strong> — is it just exposure / participation volume?</td>
-<td><a href="an-004-cobidder-baseline/">AN-004</a>, <a href="an-005-sham-fl-permutation/">AN-005</a>, <a href="an-027-universe-anchored-stratum-scope/">AN-027</a>, <a href="an-028-exposure-stratum-balance/">AN-028</a>, <a href="an-041-volume-matched-cobidder-audit/">AN-041</a></td>
+<td><a href="an-004-cobidder-baseline/">AN-004</a>, <a href="an-005-sham-fl-permutation/">AN-005</a>, <a href="an-027-universe-anchored-stratum-scope/">AN-027</a>, <a href="an-028-exposure-stratum-balance/">AN-028</a>, <a href="an-041-volume-matched-cobidder-audit/">AN-041</a>, <a href="an-043-federal-opportunity-adjusted-validation/">AN-043</a></td>
+</tr>
+<tr>
+<td><strong>Cross-platform</strong> — does the audit port to a second procurement system?</td>
+<td><a href="an-043-federal-opportunity-adjusted-validation/">AN-043</a></td>
 </tr>
 <tr>
 <td><strong>Timing</strong> — would it flag firms before cases closed?</td>
@@ -6861,7 +6869,7 @@ damages or overcharge.</p>
 record only). Set only when <code>status: done</code>.</p>
 <hr>
 <h2 id="generated-index">Generated index<a class="headerlink" href="#generated-index" title="Permanent link">¶</a></h2>
-<p>All 42 AN pages, auto-generated from the YAML frontmatter of each <code>docs/analyses/an-NNN-*.md</code> via <code>scripts/gen_analysis_index.py</code> + <code>scripts/render_indexes.py</code>. The machine-readable form lives at <a href="../reference/analysis-index.yaml"><code>docs/reference/analysis-index.yaml</code></a>.</p>
+<p>All 43 AN pages, auto-generated from the YAML frontmatter of each <code>docs/analyses/an-NNN-*.md</code> via <code>scripts/gen_analysis_index.py</code> + <code>scripts/render_indexes.py</code>. The machine-readable form lives at <a href="../reference/analysis-index.yaml"><code>docs/reference/analysis-index.yaml</code></a>.</p>
 <table>
 <thead>
 <tr>
@@ -7209,6 +7217,14 @@ record only). Set only when <code>status: done</code>.</p>
 <td style="text-align: center;">🟡</td>
 <td><a href="../hypotheses/cobidder-profile-distinct/">cobidder-profile-distinct</a></td>
 <td>Are cobidders distinct from non-cobidder FLs on bid TIMING (revision intensity, inter-bid interval, last-bid…</td>
+</tr>
+<tr>
+<td><a href="an-043-federal-opportunity-adjusted-validation/">AN-043</a></td>
+<td>validation</td>
+<td>provisional</td>
+<td style="text-align: center;">🟡</td>
+<td><a href="../hypotheses/exposure-discipline/">exposure-discipline</a></td>
+<td>Does the award-layer evidence-triage protocol replicate on a SECOND, independent procurement platform (feder…</td>
 </tr>
 </tbody>
 </table>

@@ -6731,10 +6731,11 @@
 
 <h1 id="advanced-methods">Advanced Methods<a class="headerlink" href="#advanced-methods" title="Permanent link">¶</a></h1>
 <!-- REVISED: canonical-target reframe 2026-06-04 -->
+<!-- REVISED: hostile-review armor 2026-06-04 -->
 
 <div class="admonition abstract">
 <p class="admonition-title">Intuition (plain-language)</p>
-<p>The conceptual move on this page is to be precise about <em>what is being identified</em>. The screen does not estimate guilt or damages; it is meant to produce a defensible <em>ordering of forensic priority</em> — "investigate whom first," not "who is liable." The methodological core is a decomposition: an apparent loser-side signal is split into opportunity arithmetic (firms that bid more co-appear with everyone), single-case concentration (one adjudicated case can dominate the labels), and any genuine increment that survives both. Under the reproducible non-circular label the finding is <strong>deflationary</strong>: almost all raw concentration is opportunity, and the residual ordering is marginal at best and not robust across designs. The two things the data cannot settle — quirks of the source and which cartels prosecutors pursued — are exactly what cross-jurisdiction replication is meant to test.</p>
+<p>The conceptual move on this page is to be precise about <em>what is being identified</em>. The screen does not estimate guilt or damages; it is meant to produce a defensible <em>ordering of forensic priority</em> — "investigate whom first," not "who is liable." The methodological core is a decomposition: an apparent loser-side signal is split into mechanical co-participation exposure (firms that bid more co-appear with everyone), single-case concentration (one adjudicated case can dominate the labels), and any genuine increment that survives both. Under the reproducible non-circular label the finding is <strong>deflationary</strong>: almost all raw concentration is exposure, and the residual ordering is marginal and not robust across designs. The two things the data cannot fully settle — quirks of the source and which cartels prosecutors pursued — are exactly what cross-platform replication is meant to test; the v23 R&amp;R takes a first step by re-running the audit on federal ComprasNet, where the deflation replicates under partially overlapping anchors (<a href="../analyses/an-043-federal-opportunity-adjusted-validation/">AN-043</a>).</p>
 </div>
 <p>This page collects the methodological machinery that supports the
 empirical claims in the manuscript but is too heavy for the
@@ -6773,15 +6774,18 @@ the continuous ordering, never an ontologically special threshold.</p>
 <h2 id="the-opportunity-decomposition">The opportunity decomposition<a class="headerlink" href="#the-opportunity-decomposition" title="Permanent link">¶</a></h2>
 <p>The methodological core of the paper is a three-way decomposition of the
 apparent loser-side signal.</p>
-<p><strong>Step 1 — opportunity arithmetic.</strong> Firms that bid more often have more
-chances to co-appear with <em>any</em> given firm, including a CADE defendant.
-To isolate this, each firm's <strong>expected-contact</strong> quantity <em>E</em>ᵢ is
-constructed from participation volume and the defendants' exposure
-footprint, and firms are grouped into opportunity strata. The
-opportunity-only model — discrimination available from exposure alone —
-reaches AUC <strong>0.905</strong> unconditionally (0.713 within the exposed pool).
-This is the arithmetic baseline that any honest signal must beat, and the
-raw award-layer score (ROC <strong>0.761</strong>, PR <strong>0.143</strong>) barely exceeds it.</p>
+<p><strong>Step 1 — mechanical co-participation exposure.</strong> Firms that bid more
+often have more chances to co-appear with <em>any</em> given firm, including a
+CADE defendant. To isolate this, each firm's <strong>expected-contact</strong>
+quantity <em>E</em>ᵢ is constructed from participation volume and the
+defendants' exposure footprint, and firms are grouped into opportunity
+strata. Ranking by <strong>observed</strong> contact reaches AUC <strong>0.905</strong> — but this
+is <strong>mechanical label encoding</strong> (a cobidder <em>is</em>, by construction, a
+firm with positive contact), reported only to expose inflation, not a
+competing model. Stepping toward genuinely label-blind opportunity
+collapses the number to <strong>0.553</strong> (see the armor pack below). The raw
+award-layer score (ROC <strong>0.761</strong>, PR <strong>0.143</strong>) is itself mostly
+exposure.</p>
 <p><strong>Step 2 — within-stratum discrimination.</strong> Evaluating the ordering
 <em>within</em> opportunity strata removes the mechanical advantage of high
 participation. The within-stratum AUC collapses to <strong>0.471 — essentially
@@ -6791,16 +6795,16 @@ exposure baseline (DeLong <em>p</em> = 0.013
 robust across designs</strong>: the matched-stratum label permutation is not
 significant (<em>p</em> = 0.127), the within-matched-strata FL-enrichment is not
 significant (<em>p</em> = 0.067), and the matched change in cobidder probability
-for FL14 is <strong>negative</strong> (−0.017). Most raw discrimination is opportunity
-arithmetic, and <strong>no robust residual ordering survives</strong>.</p>
+for FL14 is <strong>negative</strong> (−0.017). Most raw discrimination is mechanical
+co-participation exposure, and <strong>no robust residual ordering survives</strong>.</p>
 <p><strong>Step 3 — single-case concentration.</strong> The positive labels are not
 evenly spread across CADE cases. A <strong>leave-largest-case-out</strong> audit
 removes the single most influential adjudicated case and re-evaluates:
 precision–recall AUC falls from <strong>0.143 to 0.090 (−37%)</strong>, because one
 case accounts for ≈ <strong>32%</strong> of the positive labels and 45.4% of true
 positives at <em>k</em> = 500. The estimated ranking is therefore
-<strong>case-sensitive</strong> — not a portable cartel score; the transferable object
-is the decomposition framework, not the ranking.</p>
+<strong>case-sensitive</strong> — not a portable cartel score; the durable object is
+the audit protocol and its portable principle, not the ranking.</p>
 <table>
 <thead>
 <tr>
@@ -6816,9 +6820,14 @@ is the decomposition framework, not the ranking.</p>
 <td>0.761 / 0.143</td>
 </tr>
 <tr>
-<td>Opportunity-only (exposure arithmetic)</td>
-<td>AUC (unconditional)</td>
+<td>Observed-contact ranking (mechanical label encoding)</td>
+<td>AUC</td>
 <td>0.905</td>
+</tr>
+<tr>
+<td>Genuine label-blind opportunity</td>
+<td>AUC</td>
+<td>0.553</td>
 </tr>
 <tr>
 <td>Within-stratum (opportunity removed)</td>
@@ -6939,6 +6948,64 @@ platform-wide prospective deployment</strong> (see
 Each audit rules out a candidate explanation for the observed
 concentration — and where it cannot (timing, single-case concentration),
 that is stated as a limit.</p>
+<h2 id="audit-of-the-audit-armor-pack">Audit-of-the-audit armor pack<a class="headerlink" href="#audit-of-the-audit-armor-pack" title="Permanent link">¶</a></h2>
+<p>The deflationary verdict is decided by an <strong>anchor-agnostic battery</strong>,
+not by any claim that "exposure beats the score." All four results are
+regenerated under <code>outputs/diagnostics/audit_armor/</code> (scripts
+<code>12_audit_armor.R</code> + <code>12b_audit_armor_fixup.R</code>).</p>
+<table>
+<thead>
+<tr>
+<th>Armor result</th>
+<th>Value</th>
+<th>Use</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Exposure tiers: <span class="arithmatex">\(O_i\)</span> / <span class="arithmatex">\(E_{\text{plug}}\)</span> / <span class="arithmatex">\(E_{\text{firm-LOO}}\)</span> / <strong>label-blind</strong></td>
+<td>0.905 / 0.985 / 0.855 / <strong>0.553</strong></td>
+<td>exposure benchmark is an <em>upper bound</em> on opportunity's role; 0.905/0.985 are mechanical label encoding</td>
+</tr>
+<tr>
+<td>Positive control <span class="arithmatex">\(O_i\)</span> within MEDIUM strata</td>
+<td><strong>0.953</strong></td>
+<td>falsifiability — the design <em>detects</em> residual signal when one is planted</td>
+</tr>
+<tr>
+<td>Within-stratum sweep (E-LOO): COARSE / MEDIUM / STRICT</td>
+<td>0.508 / 0.493 / 0.600</td>
+<td>stable across granularities (<span class="arithmatex">\(N\)</span> 15,246 / 2,213 / 615)</td>
+</tr>
+<tr>
+<td>Permutation power (α = .05) at within-AUC 0.52 / 0.55 / 0.60</td>
+<td>0.28 / <strong>0.97</strong> / 1.00 (size 0.05)</td>
+<td>non-rejection bounds the residual below ≈ 0.55</td>
+</tr>
+<tr>
+<td>Label-frozen timing: pool / prospective / retrospective</td>
+<td>13,051 / <strong>0.713</strong> (231 pos) / 0.718 (582 pos)</td>
+<td>clean timing benchmark — volume forecasts <em>generic</em> contact, not cartels</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition note">
+<p class="admonition-title">What the armor pack settles</p>
+<p>The retired claim ("an exposure-only model reaches 0.905 and
+out-predicts the raw score / exposure is the better model") was itself
+partly mechanical: a cobidder <em>is</em> a firm with positive observed
+contact. Computed label-blind, opportunity ranks the label at only
+<strong>0.553</strong>. The within-stratum test is <strong>not</strong> dead by construction — a
+planted positive control (<span class="arithmatex">\(O_i\)</span>) recovers AUC <strong>0.953</strong> — and the
+permutation test has <strong>power 0.97 at a within-AUC of 0.55</strong>, so the
+observed non-detections genuinely bound any residual below ≈ 0.55. The
+label-frozen timing benchmark (prospective 0.713 ≈ retrospective 0.718)
+is <strong>generic co-participation forecasting, not cartel-specific
+prediction</strong>, consistent with the negative controls (placebo
+<em>p</em> = 0.46; non-CADE high-volume-winner anchors 0.78 &gt; real, <em>p</em> = 0.91).
+Defendant roles regenerated alongside: 14.9% always-losers, median win
+rate 0.261; cobidders have win rate ≡ 0 by construction.</p>
+</div>
 <h2 id="costrecall-frontier-construction">Cost–recall frontier construction<a class="headerlink" href="#costrecall-frontier-construction" title="Permanent link">¶</a></h2>
 <p>The operational architecture sequences a cheap award-layer triage before
 a costly bid-layer forensic stage and is evaluated as a <strong>frontier</strong>, not

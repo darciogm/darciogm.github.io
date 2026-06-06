@@ -6731,16 +6731,17 @@
 
 <h1 id="main-results">Main Results<a class="headerlink" href="#main-results" title="Permanent link">¶</a></h1>
 <!-- REVISED: canonical-target reframe 2026-06-04 -->
+<!-- REVISED: hostile-review armor 2026-06-04 -->
 
 <div class="admonition abstract">
 <p class="admonition-title">Intuition (plain-language)</p>
-<p>Read these results as answers to one practical question: can a signal a regulator <em>already has for free</em> — which firms keep losing — order where expensive cartel forensics should look first? Mostly not, once you are honest about why. The raw concentration of adjudication-anchored cobidders among persistent losers is <strong>opportunity arithmetic</strong>: firms that participate more have more chances to appear adjacent to anything, including a cartel. Once procurement opportunity is held fixed, <strong>almost nothing survives</strong> — the within-stratum ordering is at chance, the one positive increment is marginal and not robust across designs, and matched permutations are not significant. That deflationary decomposition is the honest object and the contribution. The award layer cannot prove conduct, and it cannot reach the win-heavy defendants at the center of the cases. The price results come last and on purpose: they describe <em>where</em> the signal is active (scope), not <em>how much</em> any cartel overcharged.</p>
+<p>Read these results as answers to one practical question: can a signal a regulator <em>already has for free</em> — which firms keep losing — order where expensive cartel forensics should look first? Mostly not, once you are honest about why. The raw concentration of adjudication-anchored cobidders among persistent losers is <strong>mechanical, anchor-agnostic co-participation exposure</strong>: firms that participate more have more chances to appear adjacent to anything, including a cartel. Once procurement opportunity is held fixed, <strong>almost nothing survives</strong> — the within-stratum ordering is at chance, the one positive increment is marginal and not robust across designs, and matched permutations are not significant. That deflationary decomposition is the honest object and the contribution. The award layer cannot prove conduct, and it cannot reach the win-heavy defendants at the center of the cases. The price results come last and on purpose: they describe <em>where</em> the signal is active (scope), not <em>how much</em> any cartel overcharged.</p>
 </div>
 <p>This page presents the empirical findings in the order the paper now privileges: the opportunity decomposition first (the honest discrimination object), then the scope boundary, the timing and single-case limits, the division of labor with the bid layer, the cost-recall frontier, and finally the pricing imprint (scope only).</p>
 <p>The validation label is the <strong>broad adjudication-anchored cobidder target</strong>: a unique always-loser firm that shares at least one BEC tender-item with a BEC-active direct CADE defendant. Direct defendants are excluded; the frequent-loser flag is <strong>not</strong> used to construct the label. There are <strong>651 positives</strong> (341 frequent-loser, 310 non-frequent-loser — the composition shows the label is not flag-conditioned).</p>
 <hr>
 <h2 id="1-the-opportunity-decomposition-headline">1. The Opportunity Decomposition (Headline)<a class="headerlink" href="#1-the-opportunity-decomposition-headline" title="Permanent link">¶</a></h2>
-<p>The central methodological move is to separate <strong>genuine signal</strong> from <strong>opportunity arithmetic</strong>. A firm that participates in many tenders has many chances to co-bid with anyone — a cartel included — purely by exposure. The decomposition asks how much discrimination survives once procurement opportunity is held fixed.</p>
+<p>The central methodological move is to separate <strong>genuine signal</strong> from <strong>mechanical, anchor-agnostic co-participation exposure</strong>. A firm that participates in many tenders has many chances to co-bid with anyone — a cartel included — purely by exposure. The decomposition asks how much discrimination survives once procurement opportunity is held fixed.</p>
 <h3 id="pooled-vs-within-stratum-auc">Pooled vs. within-stratum AUC<a class="headerlink" href="#pooled-vs-within-stratum-auc" title="Permanent link">¶</a></h3>
 <table>
 <thead>
@@ -6757,14 +6758,6 @@
 <tr>
 <td>Raw FL14 binary ROC / PR-AUC</td>
 <td>0.688 / 0.097</td>
-</tr>
-<tr>
-<td>Exposure-only (unconditional, all always-losers) ROC</td>
-<td><strong>0.905</strong></td>
-</tr>
-<tr>
-<td>Exposure-only logit (exposed firms only) ROC / PR-AUC</td>
-<td>0.713 / 0.300</td>
 </tr>
 <tr>
 <td>Nested exposure + score ROC</td>
@@ -6784,15 +6777,52 @@
 </tr>
 </tbody>
 </table>
+<h4 id="exposure-tiers-what-ranking-by-contact-actually-buys">Exposure tiers — what "ranking by contact" actually buys<a class="headerlink" href="#exposure-tiers-what-ranking-by-contact-actually-buys" title="Permanent link">¶</a></h4>
+<p>The headline "an exposure-only model reaches 0.905 and out-predicts the score" is <strong>retired</strong>. The 0.905 is ranking firms by <strong>observed</strong> contact <span class="arithmatex">\(O_i\)</span> — and a cobidder <em>is</em>, by construction, a firm with <span class="arithmatex">\(O_i &gt; 0\)</span>. So this is <strong>mechanical label encoding</strong>, reported only to expose the inflation, not a competing model. Stepping from observed-contact toward genuinely label-blind opportunity collapses the number:</p>
+<table>
+<thead>
+<tr>
+<th>Exposure tier</th>
+<th>ROC</th>
+<th>What it ranks by</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Observed contact <span class="arithmatex">\(O_i\)</span></td>
+<td><strong>0.905</strong></td>
+<td>mechanical: a cobidder <em>is</em> a firm with <span class="arithmatex">\(O_i&gt;0\)</span></td>
+</tr>
+<tr>
+<td>Plug-in expected contact <span class="arithmatex">\(E_{\text{plug}}\)</span></td>
+<td><strong>0.985</strong></td>
+<td>mechanical: plug-in still sees the label</td>
+</tr>
+<tr>
+<td>Firm-leave-one-out expected contact <span class="arithmatex">\(E_{\text{firm-LOO}}\)</span></td>
+<td><strong>0.855</strong></td>
+<td>upper bound on opportunity's role</td>
+</tr>
+<tr>
+<td><strong>Genuine label-blind opportunity</strong></td>
+<td><strong>0.553</strong></td>
+<td>the honest opportunity benchmark</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition warning">
+<p class="admonition-title">Exposure benchmark is an upper bound, not a winning model</p>
+<p>Genuine <strong>label-blind opportunity ranks the label at only 0.553</strong>. The earlier framing — "exposure is the better model that out-predicts the raw score" — was itself partly mechanical and has been removed. The deflationary verdict does <strong>not</strong> rest on "exposure beats the score"; it rests on the <strong>anchor-agnostic armor battery</strong> (negative controls, powered permutation, label-frozen timing) summarized on the <a href="../robustness/">robustness</a> page.</p>
+</div>
 <div class="admonition warning">
 <p class="admonition-title">There is no robust residual signal net of opportunity</p>
 <p>Most of the raw concentration is <strong>opportunity</strong>, not signal. When firms are compared <em>within</em> strata of equal procurement exposure, the within-AUC falls to <strong>0.471 — essentially chance</strong>. The only positive that survives is a nested increment of <strong>+0.010</strong> (DeLong <span class="arithmatex">\(p = 0.013\)</span>), and that increment is <strong>not robust across designs</strong>: the matched-stratum label permutation is not significant (<span class="arithmatex">\(p = 0.127\)</span>), the within-matched-strata FL-enrichment is not significant (<span class="arithmatex">\(p = 0.067\)</span>), and the matched change in cobidder probability for FL14 vs non-FL is <strong>negative</strong> (<span class="arithmatex">\(-0.017\)</span>). A CEM-matched comparison gives AUC 0.626. The honest statement is that the residual ordering is <strong>marginal at best and not robust across designs</strong> — there is no reliable residual signal once opportunity is held fixed.</p>
 </div>
 <div class="admonition info">
 <p class="admonition-title">The old exposure-inflated headline is retired</p>
-<p>Earlier framings reported a firm-level discrimination headline near 0.92–0.95. Those figures are now understood as <strong>exposure-inflated pooled</strong> numbers: they bundled any genuine ordering together with the opportunity arithmetic. Under the reproducible, non-circular label the raw score reaches only ROC 0.761 / PR-AUC 0.143, and almost all of that is exposure (unconditional exposure-only ROC already 0.905). The disciplined object is the within-stratum AUC (<span class="arithmatex">\(\approx\)</span> chance) and the fragile +0.010 nested increment.</p>
+<p>Earlier framings reported a firm-level discrimination headline near 0.92–0.95. Those figures are now understood as <strong>exposure-inflated pooled</strong> numbers: they bundled any genuine ordering together with mechanical co-participation exposure. Under the reproducible, non-circular label the raw score reaches only ROC 0.761 / PR-AUC 0.143, and almost all of that is mechanical exposure (ranking by observed contact already encodes the label — see the exposure tiers above). The disciplined object is the within-stratum AUC (<span class="arithmatex">\(\approx\)</span> chance) and the fragile +0.010 nested increment.</p>
 </div>
-<p>The decomposition is the contribution: a transferable <strong>framework</strong> that separates genuine signal from opportunity arithmetic, case concentration, and retrospective information — and shows that, under a non-circular label, cheap award-layer records mostly do <strong>not</strong> carry a residual cartel-ordering signal.</p>
+<p>The first contribution is <strong>organizational</strong>: the award-to-bid recovery problem cast as sequential cost-recall — where the <strong>frontier</strong>, not any cutoff, is the design object. The second is a <strong>disciplined audit protocol</strong> that separates genuine signal from mechanical exposure, case concentration, and retrospective information — together with a portable principle: <em>validating an administrative screen against adjudicated cases without adjusting for procurement opportunity systematically over-credits it.</em> Under a non-circular label, cheap award-layer records mostly do <strong>not</strong> carry a residual cartel-ordering signal.</p>
 <hr>
 <h2 id="2-the-scope-boundary-direct-cade-auc-049-by-design">2. The Scope Boundary: Direct-CADE AUC ≈ 0.49 (By Design)<a class="headerlink" href="#2-the-scope-boundary-direct-cade-auc-049-by-design" title="Permanent link">¶</a></h2>
 <p>The binary loser-side flag recovers loser-side participation, not winner-side identity. Direct CADE defendants are by construction the <strong>winner side</strong> of the same arrangements — they are who <em>takes</em> the contract under a rotation scheme. A loser-side binary flag is built to miss them.</p>
@@ -6899,7 +6929,7 @@
 </table>
 <div class="admonition warning">
 <p class="admonition-title">One case ≈ 32% of the positives</p>
-<p>A single case (rail/metro) accounts for <strong>32.0%</strong> of the positives (208/651) and <strong>45.4%</strong> of true positives at <span class="arithmatex">\(k=500\)</span>. Leaving it out drops PR-AUC by <strong>37%</strong> (0.143 → 0.090); ROC is stable (≈ 0.76). Case-balanced precision@500 falls to 0.043 versus pooled 0.216. The aggregate operational metrics are not a property of many independent cartels; they lean on one large, well-documented case. The <strong>estimated BEC ranking is case-sensitive</strong> — it is not a portable cartel score. The transferable object is the decomposition framework, not the ranking. (Item-group HHI 0.100, buyer HHI 0.009; clustered randomization inference at item-group × year is significant for ROC/PR/precision but not for coverage, <span class="arithmatex">\(p = 0.103\)</span>.)</p>
+<p>A single case (rail/metro) accounts for <strong>32.0%</strong> of the positives (208/651) and <strong>45.4%</strong> of true positives at <span class="arithmatex">\(k=500\)</span>. Leaving it out drops PR-AUC by <strong>37%</strong> (0.143 → 0.090); ROC is stable (≈ 0.76). Case-balanced precision@500 falls to 0.043 versus pooled 0.216. The aggregate operational metrics are not a property of many independent cartels; they lean on one large, well-documented case. The <strong>estimated BEC ranking is case-sensitive</strong> — it is not a portable cartel score. The durable object is the <strong>audit protocol</strong> and its portable principle, not the ranking. (Item-group HHI 0.100, buyer HHI 0.009; clustered randomization inference at item-group × year is significant for ROC/PR/precision but not for coverage, <span class="arithmatex">\(p = 0.103\)</span>.)</p>
 </div>
 <hr>
 <h2 id="4-division-of-labor-with-the-bid-layer">4. Division of Labor with the Bid Layer<a class="headerlink" href="#4-division-of-labor-with-the-bid-layer" title="Permanent link">¶</a></h2>
@@ -7128,14 +7158,14 @@
 <h2 id="summary-reach-and-limits">Summary: Reach and Limits<a class="headerlink" href="#summary-reach-and-limits" title="Permanent link">¶</a></h2>
 <p>The paper maps both the reach and the limits of award-layer screening, in declining order of confidence:</p>
 <ol>
-<li><strong>The decomposition is the contribution (method).</strong> Raw award-layer ROC <strong>0.761</strong> / PR-AUC <strong>0.143</strong>; within-stratum AUC <strong>0.471</strong> (≈ chance); the only positive is a fragile nested increment <strong>+0.010</strong> (DeLong <span class="arithmatex">\(p = 0.013\)</span>) that is <strong>not robust across designs</strong> (matched permutation <span class="arithmatex">\(p = 0.127\)</span>, FL-enrichment <span class="arithmatex">\(p = 0.067\)</span>, matched <span class="arithmatex">\(dP\)</span> negative). Most raw concentration is opportunity; <strong>no robust residual signal survives</strong>.</li>
+<li><strong>The organizational result and the audit protocol are the contributions.</strong> Raw award-layer ROC <strong>0.761</strong> / PR-AUC <strong>0.143</strong>; within-stratum AUC <strong>0.471</strong> (≈ chance); the only positive is a fragile nested increment <strong>+0.010</strong> (DeLong <span class="arithmatex">\(p = 0.013\)</span>) that is <strong>not robust across designs</strong> (matched permutation <span class="arithmatex">\(p = 0.127\)</span>, FL-enrichment <span class="arithmatex">\(p = 0.067\)</span>, matched <span class="arithmatex">\(dP\)</span> negative). Most raw concentration is mechanical exposure; <strong>no robust residual signal survives</strong>.</li>
 <li><strong>The scope boundary is real and by design.</strong> Direct-CADE <strong>binary</strong> AUC <strong>0.49</strong> — the binary flag is blind to win-heavy defendants; the <strong>continuous</strong> score ranks them at 0.66–0.70.</li>
 <li><strong>Timing and single-case limits bind.</strong> Below-chance out-of-time on the full universe (ROC ≈ 0.474, precision@500 = 0); one case ≈ 32% of positives (leave-largest-out PR-AUC −37%); the estimated ranking is case-sensitive, not portable.</li>
 <li><strong>The award and bid layers are comparable.</strong> Award 0.760/0.143 vs bid RF 0.717/0.116; combined beats award on PR under random CV (0.188) but falls below it under case-grouped folds (0.103). Conditional, case-fragile complementarity.</li>
 <li><strong>The cost-recall frontier is the object, not a cutoff.</strong> At <span class="arithmatex">\(K_1 = 2000\)</span>: firm reduction 88.1% but bid-row reduction only 32.7%; <span class="arithmatex">\(K_1 = 1000\)</span> beats <span class="arithmatex">\(K_1 = 2000\)</span>; no optimal <span class="arithmatex">\(K\)</span>.</li>
 <li><strong>The price imprint is scope, not damages.</strong> +0.064 broad → −0.097 overlap-cell ATT; only Q4 positive; mechanism not identified.</li>
 </ol>
-<p>The contribution is a <strong>transferable decomposition framework</strong> — label construction, opportunity adjustment, timing discipline, case-composition audit, bid-layer comparison, and cost-recall accounting — and a <strong>reach-and-limits map</strong> showing that cheap award-layer records, under a non-circular label, do <strong>not</strong> carry a robust cartel-ordering signal net of opportunity. They support <strong>incumbent-firm triage with retrospective validation</strong>, not platform-wide prospective deployment, and they do not prove conduct.</p>
+<p>The contributions are (1) an <strong>organizational result</strong> — award-to-bid recovery as a sequential cost-recall problem in which the frontier, not any cutoff, is the design object; (2) a <strong>disciplined audit protocol</strong> — label construction, opportunity adjustment, timing discipline, case-composition audit, bid-layer comparison, and cost-recall accounting — carrying the portable principle that <em>validating an administrative screen against adjudicated cases without adjusting for procurement opportunity systematically over-credits it</em>; and (3) a <strong>reach-and-limits map</strong> showing that cheap award-layer records, under a non-circular label, do <strong>not</strong> carry a robust cartel-ordering signal net of opportunity. They support <strong>incumbent-firm triage with retrospective validation</strong>, not platform-wide prospective deployment, and they do not prove conduct.</p>
 
 
 
