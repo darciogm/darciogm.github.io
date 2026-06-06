@@ -29,6 +29,9 @@ The first-order concern is **mechanical, anchor-agnostic co-participation exposu
 !!! note "Ranking by exposure is mechanical label encoding, not a winning model"
     Earlier drafts reported an "exposure-only model" reaching 0.905 that "out-predicts the raw score". That framing is **retired**. Ranking firms by **observed** contact reaches 0.905 only because a cobidder *is*, by construction, a firm with positive contact — this is **mechanical label encoding**, reported only to expose the inflation. The honest, **genuinely label-blind opportunity benchmark is 0.553**. The deflationary verdict does not rest on "exposure beats the score"; it rests on the **anchor-agnostic armor battery** below (Section 14).
 
+!!! note "The deflation is a *predicted*, portable result — CV-of-T as the diagnostic"
+    The over-crediting characterization (Appendix C) shows the deflation is not an accident of one platform but a **predicted** consequence of a volume-loaded score validated against a contact-defined label: the raw-AUC inflation $\Delta = \mathrm{AUC}_{\text{raw}} - \mathrm{AUC}_{\text{opp-adj}}$ is a **size-bias gap** that is increasing in the participation-volume dispersion $\mathrm{CV}(T)$ and decreasing in the adjudicated base rate (*signs only — no closed-form magnitude*). $\mathrm{CV}(T)$, computable from award data **before any bid file is opened**, is therefore a portable **diagnostic** (not a fix): high dispersion warns that a contact-anchored validation will over-credit the score, and the correct response is the within-stratum / label-blind comparison, not the raw area. The two platforms are two points on one inflation curve (BEC $\mathrm{CV}=2.79$, base rate 3.9%; federal $\mathrm{CV}=3.79$, base rate ≈ 0.5%).
+
 ---
 
 ## 2. Opportunity-Cell Permutation Null

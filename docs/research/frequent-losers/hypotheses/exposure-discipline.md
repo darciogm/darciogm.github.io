@@ -12,6 +12,7 @@ last_updated: 2026-06-06
 <!-- REVISED: canonical-target reframe 2026-06-04 -->
 <!-- REVISED: hostile-review armor 2026-06-04 -->
 <!-- PROMOTED: exposure-discipline → Confirmed; bar rewritten with claim-type distinction 2026-06-06 -->
+<!-- REFINED: over-crediting is now a CHARACTERIZED object (size-bias, CV-of-T sufficient statistic) — Tier B Object 2, 2026-06-06; status UNCHANGED (Confirmed) -->
 
 # H:exposure-discipline — No robust residual ordering survives once opportunity exposure is netted out
 
@@ -79,6 +80,40 @@ concentration would arise mechanically from where firms bid, independent of
 how they bid. The discipline isolates the signal from the volume
 \citep{conley2016detecting,kawai2022detecting}.
 
+### The over-crediting is now a characterized object, not just an empirical null
+
+The deflation is no longer reported only as "the residual vanishes when we
+net out opportunity." The over-crediting has a **mechanism with a sufficient
+statistic** (Tier B, `prop:inflation`; see
+[AN-044](../analyses/an-044-over-crediting-inflation-characterization.md)):
+
+- **Size-bias mechanism.** The award score is monotone in participation
+  volume $T$ (it is $\log(1+T)$) and the contact-defined cobidder label is
+  *also* mechanically increasing in $T$ ($\Pr(\text{cobidder}\mid T)\approx
+  \pi T$ in the rare-target regime). Both load on volume, so the positive
+  class is the **size-biased** $T$ distribution and the raw ROC-AUC is just
+  $\Pr(T_i > T_j)$ with $T_i$ size-biased relative to a random negative
+  $T_j$ — an ordering that exists *before any conduct enters*. That is why
+  raw validation over-credits the screen: it credits volume geometry to the
+  score.
+- **Two signs (proved in the rare-target regime).** The bias **grows** with
+  the dispersion of participation volume and **shrinks** as the adjudicated
+  base rate rises.
+- **Sufficient statistic.** The **coefficient of variation of $T$** in the
+  candidate pool bounds how inflated an uncorrected award-screen AUC is
+  likely to be — computable from award data alone, *before any bid file is
+  opened*. It is a **diagnostic** for the size of the bias, **not a
+  correction that rescues the screen**: the genuine within-stratum floor is
+  at chance either way.
+
+This characterization is *why* the BEC and federal numbers are two points on
+one inflation surface rather than the same null twice: federal's roughly
+10× lower base rate makes the size-biasing more complete, which is exactly
+why the federal exposure-only ranking edges out the raw score. No
+closed-form inflation magnitude is claimed; the signs are analytic and the
+magnitude is demonstrated by a transparent synthetic simulation
+([AN-044](../analyses/an-044-over-crediting-inflation-characterization.md)).
+
 ## Prediction
 
 The hypothesis predicts that, after opportunity is netted out, a **limited but
@@ -136,6 +171,7 @@ participation distortions.
 | [AN-027](../analyses/an-027-universe-anchored-stratum-scope.md) (universe-anchored scope matrix) | Direct | done | Binary FL flag silent on winner-heavy defendants (0.49); participation volume ranks them moderately (0.66–0.70) — asymmetry on the binary flag, not a generic detector |
 | [AN-028](../analyses/an-028-exposure-stratum-balance.md) (within-FL standardized diffs) | Supports | done | Cobidders descriptively distinct from non-cobidder FLs at d 0.19–1.00 across dimensions |
 | [AN-006](../analyses/an-006-strict-prospective-holdout.md) (exposure + timing) | Against | done | Strict ranking fails at the full universe (ROC 0.474); incumbent-pool residue only (ROC 0.684) |
+| [AN-044](../analyses/an-044-over-crediting-inflation-characterization.md) (over-crediting characterization) | Supports | provisional | Characterizes the over-crediting as a volume size-bias: inflation grows with CV of $T$, shrinks with base rate; CV of $T$ is a portable sufficient statistic; synthetic sim reproduces BEC raw AUC and lands BEC + federal as two points on the inflation surface |
 
 ## Open tests
 

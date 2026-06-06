@@ -44,7 +44,13 @@ manuscript at submission.
    a resource-allocation problem under costly observability rather than a
    stand-alone classification problem. Award-to-bid recovery is a
    sequential cost-recall problem in which the **frontier, not any
-   cutoff, is the design object**. Enforcement must spend costly
+   cutoff, is the design object**. The paper now states this as an
+   **enforcer optimal-stopping rule** (Appendix B): the agency descends
+   the cheap award ranking until marginal recovery per unit forensic cost
+   falls to the cost–value ratio $c/V$ ($V\rho(K^*)=c\phi(K^*)$), and
+   sweeping $c/V$ traces the cost–recall frontier as the *locus of
+   budget-dependent optima*. The **absence of a single optimal cutoff is
+   therefore a result, not a confession**. Enforcement must spend costly
    proof-producing effort *before* legal proof exists; cheap award-layer
    records (who participates, wins, keeps losing) can order forensic
    priority, not prove conduct.
@@ -63,7 +69,16 @@ manuscript at submission.
    increment of +0.010 (DeLong $p = 0.013$) that is not robust across
    designs. An anchor-agnostic armor battery confirms the verdict (a
    planted positive control recovers AUC 0.953; permutation power 0.97 at
-   within-AUC 0.55). The protocol carries a portable principle:
+   within-AUC 0.55). The protocol now carries this principle as an
+   **estimable object**: the **over-crediting bias**
+   $\Delta = \mathrm{AUC}_{\text{raw}} - \mathrm{AUC}_{\text{opp-adj}}$
+   is characterized (Appendix C) as a *size-bias gap* between the raw and
+   opportunity-adjusted areas, with **signs only — increasing in the
+   participation-volume dispersion $\mathrm{CV}(T)$, decreasing in the
+   adjudicated base rate; no closed-form magnitude**. The two platforms
+   are **two points on one inflation curve** (a synthetic simulation maps
+   the surface), and $\mathrm{CV}(T)$ — computable from award data before
+   any bid file is opened — is the portable **diagnostic** (not a fix):
    *validating an administrative screen against adjudicated cases without
    adjusting for procurement opportunity systematically over-credits it.*
 3. *A map of reach and limits* — where cheap administrative records
@@ -110,6 +125,19 @@ identified; no overcharge is claimed.
 
 **Current submission gating constraints:**
 
+- *Two positive modeled objects — ADDED (v24 reframe, DONE).* Responding
+  to a hostile pre-submission panel that read the paper as "the screen
+  fails," the framework now states two **positive** results rather than
+  only a deflationary audit. (1) An **enforcer optimal-stopping rule**
+  (Appendix B) makes the cost–recall frontier the image of a solved
+  decision problem, so "no optimal cutoff" reads as a *result*. (2) The
+  **over-crediting bias** $\Delta$ (Appendix C) is recast as an
+  **estimable object** — a size-bias characterization, *signs only*
+  (↑ in $\mathrm{CV}(T)$, ↓ in the base rate, no closed form), with the
+  two platforms as two points on one inflation curve and $\mathrm{CV}(T)$
+  as a pre-bid-file diagnostic. The *deflation is what the framework
+  catches*, now stated affirmatively. No open technical work remains on
+  either object; both are proved in the appendix.
 - *Cross-platform replication — EXECUTED (2026-06-06).* The full audit
   battery was re-run on the **federal ComprasNet** platform (2013–2019,
   pure Pregão) against the same family of CADE anchors, integrated as

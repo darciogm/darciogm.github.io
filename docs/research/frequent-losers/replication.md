@@ -298,6 +298,7 @@ The master script runs the core pipeline sequentially as subprocesses:
 | `10_fl_characteristics.R` | FL firm characterization (size, age, CNAE) | `tab_fl_characteristics.tex` |
 | `12_audit_armor.R` | Anchor-agnostic armor battery: exposure tiers (observed / plug-in / firm-LOO / label-blind), within-stratum granularity sweep + positive control, powered permutation, label-frozen timing, regenerated defendant roles | `outputs/diagnostics/audit_armor/` |
 | `12b_audit_armor_fixup.R` | Fixups / regeneration for the armor pack (`\valArmor*` macros) | `outputs/diagnostics/audit_armor/` |
+| `analysis/14_overcrediting_inflation_sim.R` | **Over-crediting bias as an estimable object** — synthetic simulation of the raw-AUC inflation $\Delta = \mathrm{AUC}_{\text{raw}} - \mathrm{AUC}_{\text{opp-adj}}$ over a grid in $\mathrm{CV}(T)$ × adjudicated base rate; overlays the two real platforms at their measured (CV, base-rate) coordinates. **No confidential microdata enters**: the only empirical inputs are two published scalars per platform | `outputs/diagnostics/inflation_surface.csv`, `output/figures/fig_inflation_surface.pdf` |
 
 !!! note "Canonical-label, decomposition, audit, and frontier scripts"
     The canonical validation label is built by
@@ -322,6 +323,25 @@ The master script runs the core pipeline sequentially as subprocesses:
     Each `\val*` macro in `values.tex` carries an explicit `% src:` line
     naming the producing script and output CSV — the **output → script
     map** that travels with the shareable package.
+
+!!! info "Two propositions are theory, not data"
+    The v24 reframe adds two **positive objects** to the appendix
+    framework, and both are **analytic — they consume no microdata and
+    have no producing data script**. (1) The **enforcer optimal-stopping
+    rule** (Proposition, Appendix B): the agency descends the award
+    ranking until marginal recovery per unit forensic cost falls to the
+    cost–value ratio $c/V$; sweeping $c/V$ traces the cost–recall frontier,
+    so the *absence of a single optimal cutoff is a result*, not a
+    confession. (2) The **over-crediting bias** $\Delta$ (Proposition,
+    Appendix C): a size-bias characterization of why a contact-anchored
+    validation over-credits a volume-loaded score — stated as **signs
+    only** (increasing in $\mathrm{CV}(T)$, decreasing in the adjudicated
+    base rate), **no closed-form magnitude**, with $\mathrm{CV}(T)$ as a
+    pre-bid-file **diagnostic** (not a fix). The magnitude is illustrated
+    by the *synthetic* simulation in `analysis/14_overcrediting_inflation_sim.R`
+    above; the two platforms are two points on that one curve. No data
+    script is needed to reproduce either proposition — they are
+    mathematical statements proved in the appendix.
 
 !!! tip "Seeds"
     Every script that draws random numbers (bootstrap permutations,

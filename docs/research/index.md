@@ -27,12 +27,12 @@ with [Paulo Furquim de Azevedo](https://www.insper.edu.br/pesquisa-e-conheciment
 
 ---
 
-### [Cheap Signals, Costly Proof: Award-Layer Evidence Triage in Cartel Enforcement](frequent-losers/index.md)
+### [Cheap Signals, Costly Proof: The Reach and Limits of Award-Layer Screening in Cartel Enforcement](frequent-losers/index.md)
 
-with [Paulo Furquim de Azevedo](https://www.insper.edu.br/pesquisa-e-conhecimento/docentes-pesquisadores/paulo-furquim-de-azevedo/) (updated May, 2026 — JLEO submission-clean version) | [PDF](frequent-losers/paper.pdf) | [Online appendix](frequent-losers/online_appendix.pdf)
+with [Paulo Furquim de Azevedo](https://www.insper.edu.br/pesquisa-e-conhecimento/docentes-pesquisadores/paulo-furquim-de-azevedo/) (updated June 2026 — JLEO R&R version, two-platform extension: BEC + ComprasNet; main ~53 pp + online appendix ~46 pp) | [PDF](frequent-losers/paper.pdf) | [Online appendix](frequent-losers/online_appendix.pdf)
 
 ??? abstract "Abstract"
-    Cartel enforcement begins before legal proof exists. Agencies often observe contract-award records long before they recover the bid-level evidence needed to prove coordination. This paper asks whether that cheap award layer can allocate costly forensic attention. Using São Paulo's BEC procurement platform (2009--2019) and CADE adjudications, we construct a *frequent-loser* screen from award records alone: among zero-win firms, persistent participation ranks loser-side cartel-adjacency risk. The screen targets forensic priority, not cartel membership. We validate the ranking against adjudication-anchored cobidder labels, discipline it with exposure, timing, leakage, and direct-defendant scope checks, and compare it with bid-distribution forensics on the same target. Used sequentially, the award-layer ranking reduces the bid-microdata pool for the forensic stage by 83% while recovering 131 of 193 adjudicated cobidders.
+    Enforcement agencies must allocate proof-producing effort before proof exists, because the records close to evidence are costly to open. We formalize the award-to-bid decision as an optimal-stopping problem whose solution is not a cutoff but a budget-dependent cost--recall frontier: the agency descends a cheap ranking until the marginal case recovered per forensic dollar meets its cost--value ratio. We apply this to a minimal award-layer screen---persistent zero-win participation---validated against a non-circular, adjudication-anchored label. The audit shows the raw screen's reach is mostly an over-crediting bias we characterize: a size-bias whose magnitude is governed by participation-volume dispersion, summarized by a sufficient statistic computable before any bid file is opened. Stress-tested on a second platform with partially overlapping anchors, both objects hold. Liability stays in the richer record.
 
 ??? note "Media coverage"
     - [National Dissertation Award - CAPES](https://www.insper.edu.br/noticias/premio-capes-de-teses-2021-darcio-genicolo-martins/)

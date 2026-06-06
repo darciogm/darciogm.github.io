@@ -43,6 +43,7 @@ flowchart TD
       D3["<b>Single-case</b>: leave-largest-case-out<br/>PR-AUC 0.143 &rarr; 0.090 (&minus;37%);<br/>one case &approx; 32% of positives"]:::limit
       D4["<b>Scope</b>: binary AUC &approx; 0.49 vs direct defendants<br/>&mdash; by design (continuous score 0.66&ndash;0.70)"]:::limit
       D5["<b>Armor battery</b> (anchor-agnostic):<br/>label-blind opportunity 0.553; positive control 0.953;<br/>perm power 0.97 @ 0.55; label-frozen timing 0.713"]:::method
+      D6["<b>Over-crediting bias as an estimable object</b> (Prop., App. C):<br/>&Delta; = AUC_raw &minus; AUC_opp-adj is a size-bias gap;<br/>SIGNS only &mdash; &uarr; in CV(T), &darr; in base rate (no closed form);<br/>CV(T) is a pre-bid-file <i>diagnostic</i>, not a fix"]:::model
     end
     V1 --> D1
     D1 --> D2
@@ -50,6 +51,7 @@ flowchart TD
     V1 --> D4
     V2 --> D4
     D1 --> D5
+    D1 --> D6
 
     %% ---------- Architecture ----------
     subgraph ARC["Division of labor between layers"]
@@ -57,7 +59,9 @@ flowchart TD
       A1["Award ranks <b>where to look</b>;<br/>bid evaluates <b>what is found</b>"]:::arch
       A2["Bid benchmark: bid RF 0.717 / award 0.760 /<br/>combined PR 0.188 random-CV but 0.103 case-grouped<br/>&mdash; conditional complementarity, case-fragile"]:::arch
       A3["Cost-recall frontier: at K1=2000,<br/>firm pool &minus;88% but bid-row footprint &minus;33%;<br/>K1=1000 beats K1=2000 &mdash; no optimal cutoff"]:::arch
+      A4["<b>Enforcer optimal-stopping rule</b> (Prop., App. B):<br/>descend ranking until V&middot;&rho;(K)=c&middot;&phi;(K) &hArr; &rho;/&phi;=c/V;<br/>sweep c/V &rarr; locus of optima.<br/><i>&lsquo;No optimal cutoff&rsquo; is a RESULT; the frontier is its image</i>"]:::model
       A1 --> A2 --> A3
+      A4 -. image .-> A3
     end
     D1 --> A1
     C3 --> A3
@@ -85,6 +89,7 @@ flowchart TD
     classDef arch fill:#2d3f5c,stroke:#4a679a,color:#eaf2fb;
     classDef scope fill:#4a3a5c,stroke:#6f4a9a,color:#f2eafb;
     classDef concl fill:#143b4a,stroke:#1f6f8b,color:#eafaf8;
+    classDef model fill:#13313a,stroke:#2a7d8b,color:#e6fbfa;
 ```
 
 !!! note "How to read it"
@@ -100,10 +105,16 @@ flowchart TD
     cartel-specific prediction. The ranking by *observed* contact (0.905) is
     mechanical label encoding, not a winning model. The brown nodes are the
     **limits** the same decomposition exposes (below-chance out-of-time ordering,
-    single-case dependence, the direct-defendant scope boundary). The contributions
-    are an **organizational result** (the cost-recall frontier is the design
-    object) and a **disciplined audit protocol** — not a deployable cartel
-    detector.
+    single-case dependence, the direct-defendant scope boundary). The two teal
+    nodes are the v24 reframe's **positive modeled objects**: the **enforcer
+    optimal-stopping rule** (whose image is the cost-recall frontier — "no
+    optimal cutoff" is a *result*, the frontier is the locus of budget-dependent
+    optima) and the **over-crediting bias** $\Delta$ (a size-bias
+    characterization of the deflation, stated as *signs only* — increasing in
+    $\mathrm{CV}(T)$, decreasing in the base rate, no closed form, with
+    $\mathrm{CV}(T)$ a pre-bid-file diagnostic). The contributions are these two
+    modeled objects plus a **disciplined audit protocol** — not a deployable
+    cartel detector.
 
 !!! abstract "Second platform: the same DAG re-run on federal ComprasNet (§5)"
     The entire decomposition branch above (raw award score → label-blind
