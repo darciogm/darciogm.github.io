@@ -6,7 +6,80 @@ paper: frequent-losers
 
 ---
 
-## v24 — Positive-contribution reframe (enforcer stopping rule + over-crediting bias) — June 6, 2026 (Current)
+## v25 — Major revision: over-crediting promoted to the lead contribution — June 6, 2026 (Current)
+
+**Headline:** a major revision for storytelling, compression, and humanization. The
+**over-crediting bias** — that validating a volume-loaded screen against a contact-defined
+cartel label inflates it by an *estimable* size-bias — is **promoted to the lead contribution
+and moved into the main body (§4)** as a Proposition. The enforcer's cost–recall / stopping
+rule is restated **modestly**, as an ordinary textbook cost–benefit tangency, not a grand
+result. The package is compressed into **three documents** with a new Online Supplement. A
+hostile pre-submission panel ran **three rounds** and ended **2 accept / 3 minor, zero
+rejects** — both prior rejects were converted.
+
+**Concrete changes in this version:**
+
+- **Over-crediting bias is now the lead analytical object, in the main body (§4).** The
+  Proposition *Signs of the over-crediting bias* moves from the appendix into the body. Because
+  a contact-defined label and a participation-based score both load on the same volume, the
+  positive class is the size-biased volume distribution, so the raw area is a **size-bias gap
+  that is increasing in the dispersion (coefficient of variation) of participation counts and
+  decreasing in the adjudicated base rate** (signs analytic). The practitioner deliverable is a
+  **leading-order sufficient statistic — the CV of participation counts (CV(*T*)) — computable
+  from award data before any bid file opens** — that bounds how much of a raw screening number
+  is mechanical.
+- **Synthetic-surface honesty.** The over-crediting *magnitude* is a **synthetic size-bias
+  surface anchored at one empirical point per platform — NOT a fitted or estimated curve.** Only
+  the signs and the leading-order statistic (CV of *T*) are claimed; the phrase "inflation
+  curve" is retired wherever it could read as a fitted object. The two platforms (BEC +
+  ComprasNet) are two anchor points that fall where the characterization predicts, not points on
+  an estimated curve.
+- **Stopping rule restated modestly.** The award-to-bid decision is presented as a standard
+  cost–benefit (marginal-benefit = marginal-cost) **tangency**, with the **cost–recall frontier**
+  as its empirical image. "There is no fixed cutoff to defend" is stated as a **consequence**
+  (the optimum is budget-dependent), not a headline result. No overselling.
+- **Abstract reordered (~150 words)** to lead with the over-crediting object, then the
+  organizational cost–recall frontier, then reach-and-limits; quoted verbatim on the landing and
+  paper pages.
+- **§4 compressed**; the full permutation/rolling-origin grids, threshold sweeps, negative-control
+  grids, bid-feature dictionary, full price-regression grid, complete ComprasNet construction
+  detail, and the **long proofs of both propositions** are lifted into the new Online Supplement.
+- **New three-document package:** paper **≈ 48 pp** + online appendix **≈ 30 pp** + new
+  **Online Supplement ≈ 23 pp**.
+- **Sánchez Graells** (2019, screening/transparency objection to publishing a procurement
+  red-flag) cited in the price-scope section.
+- **Site:** landing key-result and Key-Findings reordered to lead with the over-crediting object
+  (stopping rule second and modest, protocol third); `paper.md` structure, formal-results, and
+  contribution list updated to place the over-crediting Proposition in §4 and the modest stopping
+  rule in online Appendix B, with the Online Supplement named.
+
+**Hostile-panel trajectory:** three rounds (review → Action Plan + armor → verification),
+ending **2 accept / 3 minor, zero rejects**; both prior rejects converted.
+
+**Honest caveats preserved (front-paged, not hidden):**
+
+- **No closed-form inflation magnitude.** Only signs (in CV of *T* and base rate) plus the
+  leading-order CV-of-*T* sufficient statistic are claimed; the magnitude surface is synthetic,
+  anchored at one empirical point per platform.
+- **Partially overlapping legal anchors** wherever the federal evidence appears — the federal
+  CADE cases are the *same cartels* as the BEC portfolio, establishment-anchored; a robustness
+  leg under partially correlated ground truth, not independent out-of-sample proof.
+- **Power-bounded federal null** — the over-crediting characterization replicates at full power,
+  but the within-stratum deflation holds only subject to a stated federal power bound.
+- **Not a cartel detector.** The estimated ranking is not a portable cartel score (that is the
+  object the evidence denies); cobidders are adjudication-anchored **exposure**, not cartel
+  members (651 broad always-loser cobidders on BEC); AUC ≈ 0.49 against direct CADE defendants is
+  the loser-side scope boundary by design; no platform-wide prospective deployment; no
+  damages/overcharge claim; liability remains in the richer evidentiary record.
+
+*Manuscript home:* the over-crediting Proposition is in **§4** (full grids + proof in the Online
+Supplement); the cost–recall / stopping-rule result is in online **Appendix B** (long proof in
+the Online Supplement). Paper ≈ 48 pp + online appendix ≈ 30 pp + Online Supplement ≈ 23 pp;
+builds 0 errors / 0 undefined.
+
+---
+
+## v24 — Positive-contribution reframe (enforcer stopping rule + over-crediting bias) — June 6, 2026 (superseded by v25)
 
 **Headline:** the paper is no longer cast as *an audit that finds a screen mostly fails*. It now
 leads with **two positive analytical objects the screening literature has not written down**,

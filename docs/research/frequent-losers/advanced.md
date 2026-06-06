@@ -98,23 +98,26 @@ the audit protocol and its portable principle, not the ranking.
 | Leave-largest-case-out | PR-AUC | 0.143 → 0.090 (−37%) |
 | Largest single case share of positives | — | ≈ 32% |
 
-!!! note "Over-crediting bias as an estimable object (the analytic shape of the deflation)"
+!!! note "Over-crediting bias as an estimable object (the lead contribution; the analytic shape of the deflation)"
     The gap between Step-1 raw discrimination and the within-stratum floor
     is not an accident; it is the **over-crediting bias**
     $\Delta = \mathrm{AUC}_{\text{raw}} - \mathrm{AUC}_{\text{opp-adj}}$,
-    characterized formally (Appendix C). Because the award score is
+    characterized formally (Appendix C; full grid in the Online Supplement)
+    and now the paper's **lead contribution**. Because the award score is
     monotone in participation volume $T$ and the contact-defined label is
     mechanically increasing in $T$, the positive class is the *size-biased*
     distribution of $T$ and the raw area is a size-bias stochastic gap. The
     characterization gives **signs only**: $\Delta$ is increasing in the
     volume dispersion $\mathrm{CV}(T)$ and decreasing in the adjudicated
-    base rate, with **no closed-form magnitude** (the magnitude is read off
-    a *synthetic* simulation; only $\mathrm{CV}(T)$ and the base rate are
-    taken from data). $\mathrm{CV}(T)$ — computable from award data before
-    any bid file is opened — is the portable **diagnostic** (not a fix):
+    base rate, with **no closed-form magnitude** — the magnitude is read off
+    a **synthetic surface anchored at one empirical point per platform**
+    (*not* an estimated curve); only $\mathrm{CV}(T)$ and the base rate are
+    taken from data. $\mathrm{CV}(T)$ — computable from award data before
+    any bid file is opened — is the portable **leading-order sufficient
+    statistic** / diagnostic (not a fix):
     high dispersion warns that a contact-anchored validation will
     over-credit a volume-loaded score. The two platforms are two points on
-    one inflation curve (BEC $\mathrm{CV}=2.79$, base rate 3.9%; federal
+    that one synthetic surface (BEC $\mathrm{CV}=2.79$, base rate 3.9%; federal
     $\mathrm{CV}=3.79$, base rate ≈ 0.5%), and the federal point sits in a
     higher-$\Delta$ region exactly as the signs predict.
 
@@ -241,13 +244,15 @@ a single optimal cutoff.
     optimal across enforcers. The earlier single-number "reduction"
     summary is retired.
 
-!!! note "The frontier is the image of a solved decision problem"
-    The appendix framework now states the enforcer's **optimal-stopping
-    rule**: descend the cheap award ranking until marginal recovery per
+!!! note "The frontier is the image of a standard cost–benefit optimum"
+    The appendix framework states the enforcer's **stopping rule**
+    modestly, as a textbook cost–benefit (MB = MC) tangency: descend the
+    cheap award ranking until marginal recovery per
     unit forensic cost equals the cost–value ratio ($V\rho(K^*)=c\phi(K^*)$),
     and sweeping $c/V$ traces this frontier as the *locus of
-    budget-dependent optima*. So "no optimal cutoff" is a **result**, not a
-    confession — the right object to report is the whole menu of optima,
+    budget-dependent optima*. So the absence of a single fixed cutoff
+    simply follows from the optimum being budget-dependent — the right
+    object to report is the whole menu of optima,
     not one point. Because forensic cost is counted in bid rows while
     survivors are the highest-participation firms, the marginal cost rises
     steeply early, which is why the firm-denominator and bid-row-denominator

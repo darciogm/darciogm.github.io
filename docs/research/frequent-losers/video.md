@@ -29,13 +29,16 @@ A narrated visual walkthrough of the paper's key ideas and findings.
     single-platform framing; the two-platform extension — the federal
     ComprasNet audit reported in §5, where the deflation replicates under
     partially overlapping legal anchors — postdates it and is **not**
-    reflected here. The animation also **predates the v24 reframe**: the
-    two positive modeled objects — the **enforcer optimal-stopping rule**
-    (the cost–recall frontier as a solved decision problem; "no optimal
-    cutoff" is a result) and the **over-crediting bias** characterization
-    (a size-bias object, signs only, with $\mathrm{CV}(T)$ as the
-    diagnostic) — postdate it as well. See the [Changelog](changelog.md)
-    (v23 and v24 entries).
+    reflected here. The animation also **predates the v24–v25 reframe**: the
+    two positive modeled objects — **led (v25) by the over-crediting bias**
+    characterization (a size-bias object, signs only, with $\mathrm{CV}(T)$
+    as a **leading-order sufficient statistic** / diagnostic and the
+    magnitude read from a synthetic surface anchored at one empirical point
+    per platform, not an estimated curve), plus the **enforcer stopping
+    rule** stated modestly as a standard cost–benefit (MB = MC) tangency —
+    postdate it as well, as does the new three-document package (paper +
+    online appendix + online supplement). See the [Changelog](changelog.md)
+    (v23, v24, and v25 entries).
 
 <div style="position:relative; width:100%; padding-bottom:56.25%; border-radius:12px; overflow:hidden; box-shadow: 0 4px 24px rgba(0,0,0,0.15); margin-bottom:2em;">
   <iframe

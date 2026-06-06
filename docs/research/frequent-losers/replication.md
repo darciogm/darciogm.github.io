@@ -71,6 +71,21 @@ master script.
     generated artifacts; the submission-clean manuscript source is in
     `work/v22-editor/submission_clean/`.
 
+!!! note "The submission is now a three-document package"
+    The manuscript ships as **three documents**, each compiled separately
+    from the same `values.tex` macro file and cross-referenced via `xr`:
+
+    | Document | Source | Length | Holds |
+    |----------|--------|--------|-------|
+    | **Paper** | `paper_submission_clean.tex` | ~48 pp | Body: the over-crediting characterization (lead contribution), the modest enforcer stopping rule, the BEC audit, the federal portability leg |
+    | **Online Appendix** | `online_appendix_submission_clean.tex` | ~30 pp | Data/labels, theory + survival, opportunity & timing audits, profile/score diagnostics, bid benchmark + cost–recall, price scope, federal audit battery |
+    | **Online Supplement** | `online_supplement_submission.tex` | ~23 pp | **Full robustness grids, permutation draws, threshold sweeps, the complete bid-feature dictionary, fold audits, the full price grid, the full federal-construction detail, and the long proofs** — the heavy material migrated out of the body and appendix |
+
+    The Online Supplement is **new** in this version: it absorbs the
+    full grids and proofs so the paper and appendix stay tight. Compile
+    the appendix and supplement before the paper so the `xr`
+    cross-references resolve.
+
 ---
 
 ## Software Requirements
@@ -298,7 +313,7 @@ The master script runs the core pipeline sequentially as subprocesses:
 | `10_fl_characteristics.R` | FL firm characterization (size, age, CNAE) | `tab_fl_characteristics.tex` |
 | `12_audit_armor.R` | Anchor-agnostic armor battery: exposure tiers (observed / plug-in / firm-LOO / label-blind), within-stratum granularity sweep + positive control, powered permutation, label-frozen timing, regenerated defendant roles | `outputs/diagnostics/audit_armor/` |
 | `12b_audit_armor_fixup.R` | Fixups / regeneration for the armor pack (`\valArmor*` macros) | `outputs/diagnostics/audit_armor/` |
-| `analysis/14_overcrediting_inflation_sim.R` | **Over-crediting bias as an estimable object** — synthetic simulation of the raw-AUC inflation $\Delta = \mathrm{AUC}_{\text{raw}} - \mathrm{AUC}_{\text{opp-adj}}$ over a grid in $\mathrm{CV}(T)$ × adjudicated base rate; overlays the two real platforms at their measured (CV, base-rate) coordinates. **No confidential microdata enters**: the only empirical inputs are two published scalars per platform | `outputs/diagnostics/inflation_surface.csv`, `output/figures/fig_inflation_surface.pdf` |
+| `analysis/14_overcrediting_inflation_sim.R` | **Over-crediting bias as an estimable object — the lead contribution.** Builds the **synthetic surface** of the raw-AUC inflation $\Delta = \mathrm{AUC}_{\text{raw}} - \mathrm{AUC}_{\text{opp-adj}}$ over a grid in $\mathrm{CV}(T)$ × adjudicated base rate. The surface is **synthetic and anchored at one empirical point per platform** — it is *not* an estimated curve fit to data. **No confidential microdata enters**: the only empirical inputs are two published scalars per platform | `outputs/diagnostics/inflation_surface.csv`, `output/figures/fig_inflation_surface.pdf` |
 
 !!! note "Canonical-label, decomposition, audit, and frontier scripts"
     The canonical validation label is built by
@@ -325,23 +340,27 @@ The master script runs the core pipeline sequentially as subprocesses:
     map** that travels with the shareable package.
 
 !!! info "Two propositions are theory, not data"
-    The v24 reframe adds two **positive objects** to the appendix
+    The reframe adds two **positive objects** to the appendix
     framework, and both are **analytic — they consume no microdata and
-    have no producing data script**. (1) The **enforcer optimal-stopping
-    rule** (Proposition, Appendix B): the agency descends the award
-    ranking until marginal recovery per unit forensic cost falls to the
-    cost–value ratio $c/V$; sweeping $c/V$ traces the cost–recall frontier,
-    so the *absence of a single optimal cutoff is a result*, not a
-    confession. (2) The **over-crediting bias** $\Delta$ (Proposition,
-    Appendix C): a size-bias characterization of why a contact-anchored
+    have no producing data script**. (1) The **over-crediting bias**
+    $\Delta$ (Proposition, online Supplement), now the paper's **lead
+    contribution**: a size-bias characterization of why a contact-anchored
     validation over-credits a volume-loaded score — stated as **signs
     only** (increasing in $\mathrm{CV}(T)$, decreasing in the adjudicated
     base rate), **no closed-form magnitude**, with $\mathrm{CV}(T)$ as a
-    pre-bid-file **diagnostic** (not a fix). The magnitude is illustrated
-    by the *synthetic* simulation in `analysis/14_overcrediting_inflation_sim.R`
-    above; the two platforms are two points on that one curve. No data
+    pre-bid-file **leading-order sufficient statistic** / diagnostic (not a
+    fix). The magnitude is read off the **synthetic surface** in
+    `analysis/14_overcrediting_inflation_sim.R` above — a surface anchored
+    at one empirical point per platform, **not an estimated curve**; the
+    two platforms are two points on that one synthetic surface. (2) The
+    **enforcer stopping rule** (Proposition, Appendix B), stated
+    **modestly** as a standard cost–benefit (MB = MC) tangency: the agency
+    descends the award ranking until marginal recovery per unit forensic
+    cost falls to the cost–value ratio $c/V$; sweeping $c/V$ traces the
+    cost–recall frontier, so the absence of a single fixed cutoff follows
+    from the budget-dependent optimum. No data
     script is needed to reproduce either proposition — they are
-    mathematical statements proved in the appendix.
+    mathematical statements proved in the appendix and supplement.
 
 !!! tip "Seeds"
     Every script that draws random numbers (bootstrap permutations,
@@ -354,15 +373,21 @@ The master script runs the core pipeline sequentially as subprocesses:
 
 ```bash
 cd paper3-frequent-losers/work/v22-editor/submission_clean
-pdflatex -interaction=nonstopmode paper_submission_clean.tex
-bibtex paper_submission_clean
-pdflatex paper_submission_clean.tex
-pdflatex paper_submission_clean.tex
+# Compile appendix + supplement first so the paper's xr cross-refs resolve.
+for doc in online_appendix_submission_clean online_supplement_submission paper_submission_clean; do
+  pdflatex -interaction=nonstopmode "$doc.tex"
+  bibtex "$doc"
+  pdflatex "$doc.tex"
+  pdflatex "$doc.tex"
+done
 ```
 
 !!! note "Bibliography"
     The manuscript uses **natbib + bibtex** with the `chicago` style (NOT
-    biblatex/biber). Use `bibtex` for the bibliography pass.
+    biblatex/biber). Use `bibtex` for the bibliography pass. The
+    three documents (paper, appendix, supplement) share one `values.tex`
+    and resolve cross-references through `xr` / `\externaldocument`, so
+    compile the appendix and supplement before the paper.
 
 ---
 

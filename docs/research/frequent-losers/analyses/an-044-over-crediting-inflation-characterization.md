@@ -3,12 +3,12 @@ paper: frequent-losers
 id: an-044
 hypothesis: exposure-discipline
 type: methodological
-question: Why does the raw award-screen AUC inflate, and can the inflation be characterized as an estimable object with a portable sufficient statistic? The score and the contact-defined cobidder label both load on participation volume T, so the positive class is the size-biased T distribution. The inflation Δ = AUC_raw − AUC_opportunity-adjusted should then grow with the dispersion of participation volume (CV of T) and shrink with the adjudicated base rate, with CV of T a sufficient statistic computable before any bid file is opened.
+question: Why does the raw award-screen AUC inflate, and can the inflation be characterized as a body-level object with a portable leading-order sufficient statistic? The score and the contact-defined cobidder label both load on participation volume T, so the positive class is the size-biased T distribution. The inflation Δ = AUC_raw − AUC_opportunity-adjusted should then grow with the dispersion of participation volume (CV of T) and shrink with the adjudicated base rate, with CV of T a leading-order sufficient statistic (scale-family approximation) computable before any bid file is opened. This characterization is the paper's LEAD contribution in v25, promoted into the main body (Proposition in §4, proof in appendix, full grids in the new Online Supplement).
 status: provisional
 status_date: 2026-06-06
 confidence: yellow
-claim-altitude: methodological characterization (signs analytic; magnitude by transparent synthetic simulation)
-headline: "PROVISIONAL / METHODOLOGICAL — the over-crediting bias is a characterized, estimable object, not just an empirical null. Because the award score is monotone in participation volume T (log(1+T)) and the contact-defined cobidder label is also mechanically increasing in T (Pr(cobidder|T) ≈ πT in the rare-target regime), both load on volume: the positive class is the SIZE-BIASED T distribution and the raw ROC-AUC is just Pr(T_i > T_j) with T_i size-biased relative to a random negative T_j — an ordering that exists before any conduct enters. Two comparative-static SIGNS are proved in the rare-target regime (prop:inflation): the inflation Δ GROWS with participation-volume dispersion (Δ → 0.5 with no dispersion — nothing to rank) and SHRINKS as the adjudicated base rate rises (a rarer target is more strongly size-biased). The coefficient of variation of T in the candidate pool is a SUFFICIENT STATISTIC for how inflated an uncorrected award-screen AUC is likely to be — computable from award data alone, before a single bid file is opened — a DIAGNOSTIC for the size of the bias, NOT a correction that rescues the screen. A transparent synthetic simulation (script 14) over a CV × base-rate grid reproduces BEC's raw AUC (sim 0.768 at BEC's coordinates vs locked 0.761) and lands BOTH real platforms on the predicted surface: BEC (CV(T) ≈ 2.79, base rate ≈ 3.9%, raw 0.761, within 0.471, Δ ≈ 0.29) and federal ComprasNet (CV(T) ≈ 3.79, base rate ≈ 0.5%, raw 0.744, within 0.462, Δ ≈ 0.28). Federal's roughly 10× lower base rate makes the size-biasing MORE complete, which is exactly why the federal exposure-only ranking (0.754) edges out the raw score (0.744) — the lower-base-rate direction the characterization predicts. BEC and federal are therefore two coordinates on one inflation surface, not the same null twice. NO closed-form magnitude is claimed; signs are analytic, magnitude is simulation; the simulation uses only the published T distribution shape and base rates — no confidential microdata."
+claim-altitude: methodological characterization, the paper's lead contribution (signs analytic; magnitude a synthetic surface anchored at one empirical point per platform, NOT a fitted/estimated curve)
+headline: "PROVISIONAL / METHODOLOGICAL — the over-crediting bias is the paper's LEAD contribution (v25), promoted into the main body (Proposition in §4, proof in appendix, full grids in the new Online Supplement): a characterized object, not just an empirical null. Because the award score is monotone in participation volume T (log(1+T)) and the contact-defined cobidder label is also mechanically increasing in T (Pr(cobidder|T) ≈ πT in the rare-target regime), both load on volume: the positive class is the SIZE-BIASED T distribution and the raw ROC-AUC is just Pr(T_i > T_j) with T_i size-biased relative to a random negative T_j — an ordering that exists before any conduct enters. Two comparative-static SIGNS are proved in the rare-target regime (prop:inflation): the inflation Δ GROWS with participation-volume dispersion (Δ → 0 as CV → 0 — nothing to rank) and SHRINKS as the adjudicated base rate rises (a rarer target is more strongly size-biased). The coefficient of variation of T in the candidate pool is a LEADING-ORDER SUFFICIENT STATISTIC (within the scale-family approximation) for how inflated an uncorrected award-screen AUC is likely to be — computable from award data alone, before a single bid file is opened — a DIAGNOSTIC for the size of the bias, NOT a correction that rescues the screen. The magnitude is a SYNTHETIC SURFACE ANCHORED AT ONE EMPIRICAL POINT PER PLATFORM — NOT an estimated/fitted curve: a synthetic grid over CV × base-rate reproduces BEC's raw AUC at its anchor (sim 0.768 vs locked 0.761) and places BOTH real platforms where the characterization predicts: BEC (CV(T) ≈ 2.79, base rate ≈ 3.9%, raw 0.761, within 0.471, Δ ≈ 0.29) and federal ComprasNet (CV(T) ≈ 3.79, base rate ≈ 0.5%, raw 0.744, within 0.462, Δ ≈ 0.28). Federal's roughly 10× lower base rate makes the size-biasing MORE complete, which is exactly why the federal exposure-only ranking (0.754) edges out the raw score (0.744) — the lower-base-rate direction the characterization predicts. BEC and federal are therefore two coordinates on one synthetic inflation surface, not the same null twice. NO closed-form magnitude is claimed; signs are analytic, magnitude is a synthetic surface (one empirical anchor per platform, not a fitted curve); it uses only the published T distribution shape and base rates — no confidential microdata."
 created: 2026-06-06
 script: work/v22-editor/scripts/analysis/14_overcrediting_inflation_sim.R
 target: work/v22-editor/outputs/diagnostics/inflation_surface.csv + inflation_real_points.csv + outputs/figures/fig_inflation_surface.pdf
@@ -16,20 +16,22 @@ tags: ["H:exposure-discipline", "H:cobidder-concentration", over-crediting, size
 design:
   sample: "SYNTHETIC simulation grid. Participation volume T drawn from a family indexed by CV(T) (bracketing BEC ≈ 2.79 and federal ≈ 3.79); labels y_i ~ Bernoulli(min(πT_i, 1)) with π gridded to sweep the adjudicated base rate over 0.005–0.5 (bracketing federal ≈ 0.5% and BEC ≈ 3.9% on the always-loser pool). Two REAL overlay points use only two scalars per platform — the CV of always-loser tenders_count and the adjudicated base rate — read from the on-disk FREQ_PARTICIP_rebuilt parquets. No firm identifier, no per-firm row, nothing confidential is written."
   specification: "Score = log(1+T) (monotone in T). Raw ROC-AUC computed on the pooled draw; opportunity-adjusted (within-T-stratum) AUC removes the volume channel and, with no genuine within-stratum signal injected (θ = 0), sits at ≈ 0.5. Δ = AUC_raw − AUC_within is the over-crediting inflation. The grid demonstrates the two comparative-static signs (Δ↑ in CV, Δ↓ in base rate); the BEC + federal real points are overlaid on the surface. The genuine within-stratum signal injection reuses the EXISTING permutation-power machinery (θ = 0 for the pure-null curve)."
-  notes: "METHODOLOGICAL / PROVISIONAL. The Proposition states SIGNS only; the magnitude function g(CV, base rate) is NOT closed-form and is demonstrated by simulation, not asserted as a formula. The sufficient statistic (CV of T) is a DIAGNOSTIC for the size of the inflation, not a fix that rescues the screen — the genuine within-stratum floor is ≈ chance on both platforms either way. The within-stratum ≈ chance floor is power-bounded federally (≤ 0.55 unadjudicated at N+ = 195); the inflation characterization is the part that holds at full power (the first-stage size-bias / label-blind E), the residual floor is power-bounded — these are kept separate. The two CADE anchor families partially overlap, so this tests portability of the inflation law, not an independent cartel test."
+  notes: "METHODOLOGICAL / PROVISIONAL. The Proposition states SIGNS only; the magnitude function g(CV, base rate) is NOT closed-form and is rendered as a SYNTHETIC SURFACE anchored at one empirical point per platform — NOT a fitted/estimated curve. The leading-order sufficient statistic (CV of T, within the scale-family approximation) is a DIAGNOSTIC for the size of the inflation, not a fix that rescues the screen — the genuine within-stratum floor is ≈ chance on both platforms either way. The within-stratum ≈ chance floor is power-bounded federally (≤ 0.55 unadjudicated at N+ = 195); the inflation characterization is the part that holds at full power (the first-stage size-bias / label-blind E), the residual floor is power-bounded — these are kept separate. The two CADE anchor families partially overlap, so this tests portability of the inflation law, not an independent cartel test."
 ---
 
-!!! warning "Provisional / methodological — signs analytic, magnitude simulated; no closed-form"
+!!! warning "Provisional / methodological — signs analytic; magnitude a synthetic surface (one anchor per platform), not a fitted curve; no closed-form"
     This note characterizes *why* the raw award-screen AUC inflates and gives a portable
-    sufficient statistic for the size of the inflation. The two comparative-static **signs**
+    **leading-order** sufficient statistic for the size of the inflation. It is the paper's
+    **lead contribution** in v25, promoted into the main body (Proposition in §4, proof in
+    appendix, full grids in the new Online Supplement). The two comparative-static **signs**
     are analytic (proved in the rare-target regime, `prop:inflation`); the **magnitude** is
-    demonstrated by a transparent synthetic simulation over a parameter grid — **no
-    closed-form inflation formula is claimed**. The simulation uses only the published
-    participation-volume distribution shape and base rates; no confidential microdata enters
-    any output. Where this page conflicts with the [paper](../paper.pdf) or the
-    [changelog](../changelog.md), **the paper wins**.
+    read from a **synthetic surface anchored at one empirical point per platform — not an
+    estimated/fitted curve** — and **no closed-form inflation formula is claimed**. The surface
+    uses only the published participation-volume distribution shape and base rates; no
+    confidential microdata enters any output. Where this page conflicts with the
+    [paper](../paper.pdf) or the [changelog](../changelog.md), **the paper wins**.
 
-# AN-044: The over-crediting bias as an estimable object (size-bias, CV-of-$T$ sufficient statistic)
+# AN-044: The over-crediting bias as a characterized object — the paper's lead contribution (size-bias, CV-of-$T$ leading-order sufficient statistic)
 
 !!! abstract "Intuition (plain-language)"
     The headline number — a raw screen that "ranks cobidders at 0.76" — looks like
@@ -57,9 +59,11 @@ The validation audits ([AN-004](an-004-cobidder-baseline.md),
 [AN-027](an-027-universe-anchored-stratum-scope.md),
 [AN-043](an-043-federal-opportunity-adjusted-validation.md)) establish *empirically* that
 the raw award-screen AUC is mostly mechanical opportunity, not discrimination. This note asks
-the next question: can the over-crediting be **characterized** as an estimable object — a bias
-with a known mechanism, known comparative statics, and a sufficient statistic a practitioner
-can compute *before* committing forensic resources?
+the next question: can the over-crediting be **characterized** as a body-level object — a bias
+with a known mechanism, known comparative statics, and a **leading-order** sufficient statistic
+a practitioner can compute *before* committing forensic resources? In v25 the answer is the
+paper's **lead contribution**, promoted into the main body (Proposition in §4, proof in
+appendix, full grids in the new Online Supplement).
 
 ## Design
 
@@ -79,11 +83,14 @@ can compute *before* committing forensic resources?
   (b) As the **base rate rises**, the size-biasing saturates ($1-(1-\pi)^T$ flattens) and
   $\text{AUC}_{\text{raw}}$ **declines toward** the within-stratum (genuine-signal) value —
   so a **lower** base rate means **more** inflation.
-- **Synthetic simulation (magnitude).** Draw $T_i$ from a family indexed by $\text{CV}(T)$;
+- **Synthetic surface (magnitude — one empirical anchor per platform, not a fitted curve).**
+  Draw $T_i$ from a family indexed by $\text{CV}(T)$;
   generate $y_i \sim \text{Bernoulli}(\min(\pi T_i, 1))$ with $\pi$ swept to vary the base
   rate; with no injected within-stratum signal ($\theta = 0$) the opportunity-adjusted AUC
   sits at $\approx 0.5$, so $\Delta = \text{AUC}_{\text{raw}} - \text{AUC}_{\text{within}}$ is
-  the pure size-bias inflation. The injection device reuses the existing permutation-power
+  the pure size-bias inflation. The grid is a **synthetic surface, not an estimated/fitted
+  curve**; each real platform contributes **one empirical anchor point** overlaid on it. The
+  injection device reuses the existing permutation-power
   machinery. **The two real platforms are overlaid** using only the candidate pool's
   $\text{CV}(T)$ and base rate — two scalars each, no microdata.
 
@@ -113,28 +120,33 @@ opportunity-adjusted AUC stays pinned near $0.5$ throughout.
 | Simulated raw AUC at the platform's $(\text{CV}, \text{base rate})$ | 0.768 | 0.808 | reproduces / brackets the locked raw |
 | Exposure-only AUC (locked) | 0.713 | 0.754 | **federal exposure-only ≥ raw** |
 
-The simulation reproduces BEC's locked raw AUC (sim **0.768** vs locked **0.761**) at BEC's
-coordinates, and both platforms sit on the predicted surface. The figure overlays both real
-points (`outputs/figures/fig_inflation_surface.pdf`).
+The synthetic surface reproduces BEC's locked raw AUC (sim **0.768** vs locked **0.761**) at
+BEC's anchor coordinate, and both platforms sit on the predicted surface. The surface is
+**synthetic — anchored at one empirical point per platform, not a fitted/estimated curve**. The
+figure overlays both real anchor points (`outputs/figures/fig_inflation_surface.pdf`).
 
 !!! abstract "Why federal's exposure-only edges out raw — the lower-base-rate prediction"
     Federal's roughly **10× lower base rate** makes the size-biasing **more complete**, so the
     inflation is, if anything, *more* of the raw number federally than on BEC. That is exactly
     why the federal **exposure-only** ranking (0.754), which never sees the score, **edges out
     the raw score itself** (0.744) — whereas on BEC the exposure axis only *approaches* the raw
-    score. BEC and federal are therefore **two coordinates on one inflation surface** at
+    score. BEC and federal are therefore **two coordinates on one synthetic inflation surface**
+    (anchored at one empirical point per platform, not a fitted curve) at
     different $(\text{CV}(T), \text{base rate})$ values, **not "the same null twice."** This is
     the generalizing content the characterization supplies.
 
 ## Interpretation
 
-**The over-crediting is a characterized object, not an accident of this dataset.** The raw
+**The over-crediting is a characterized object — and the paper's lead contribution.** The raw
 award-screen AUC inflates because score and contact-defined label are both monotone in
-participation volume, making the positive class the size-biased volume distribution. The two
-comparative-static signs are analytic in the rare-target regime; the magnitude is demonstrated
-by a transparent synthetic simulation, **not** asserted as a closed-form formula.
+participation volume, making the positive class the size-biased volume distribution. In v25 this
+is promoted into the main body (Proposition in §4, proof in appendix, full grids in the new
+Online Supplement) as the paper's lead contribution. The two
+comparative-static signs are analytic in the rare-target regime; the magnitude is rendered as a
+**synthetic surface anchored at one empirical point per platform — not a fitted/estimated curve**,
+and **not** asserted as a closed-form formula.
 
-**The sufficient statistic is portable — and is a diagnostic, not a fix.** A practitioner can
+**The leading-order sufficient statistic is portable — and is a diagnostic, not a fix.** A practitioner can
 compute the candidate pool's $\text{CV}(T)$ from award data alone, *before opening any bid
 file*, to bound how much of an uncorrected raw AUC is mechanical. This converts the paper's
 central caveat ("adjust for procurement opportunity or you over-credit the screen") into a
@@ -155,14 +167,15 @@ platforms. It does **not** promote the screen to a portable detection tool: the 
 *detection* umbrella stays provisional, and the federal CADE anchors **partially overlap** the
 BEC portfolio, so this tests portability of the inflation law, not an independent cartel test.
 Confidence is **🟡 yellow / provisional**: the object is clean and the signs are proved, but the
-magnitude rests on a simulation and the federal anchors partially overlap.
+magnitude rests on a synthetic surface (one empirical anchor per platform, not a fitted curve)
+and the federal anchors partially overlap.
 
 ## Bearing on hypotheses
 
 - **H:exposure-discipline (H3).** Primary bearing — characterizes the over-crediting mechanism
-  that H3 asserts (Confirmed across two platforms), turning the empirical null into an estimable
-  object with a sufficient statistic. Provisional/methodological support; does not change the
-  H3 status.
+  that H3 asserts (Confirmed across two platforms), turning the empirical null into a body-level
+  characterized object with a **leading-order** sufficient statistic. Provisional/methodological
+  support; does **not** change the H3 status (stays Confirmed).
 - **H:cobidder-concentration (H1).** Explains *why* the raw concentration is generic
   co-participation arithmetic: the positive class is the size-biased volume distribution, so the
   raw AUC exists before any conduct.
@@ -170,6 +183,6 @@ magnitude rests on a simulation and the federal anchors partially overlap.
 ## Follow-ups
 
 - A genuinely independent cartel anchor (non-overlapping cases, or another jurisdiction) would
-  add a third coordinate on the inflation surface and test the law out of sample.
-- Reporting the $\text{CV}(T)$ sufficient statistic alongside any future award-screen
-  validation as a standard pre-registration diagnostic.
+  add a third empirical anchor on the synthetic inflation surface and test the law out of sample.
+- Reporting the $\text{CV}(T)$ leading-order sufficient statistic alongside any future
+  award-screen validation as a standard pre-registration diagnostic.

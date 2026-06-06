@@ -39,13 +39,16 @@ the positive labels), and any *genuine increment* that survives both
 adjustments. The protocol carries a portable principle: *validating an
 administrative screen against adjudicated cases without adjusting for
 procurement opportunity systematically over-credits it.* The current
-paper now states this principle as an **estimable object** rather than
-leaving it as future work: the **over-crediting bias**
+paper now states this principle as an **estimable object** — its **lead
+contribution** — rather than leaving it as future work: the
+**over-crediting bias**
 $\Delta = \mathrm{AUC}_{\text{raw}} - \mathrm{AUC}_{\text{opp-adj}}$ is
-characterized (Appendix C) as a size-bias gap, *signs only* (↑ in
-$\mathrm{CV}(T)$, ↓ in the adjudicated base rate, no closed form), with
-$\mathrm{CV}(T)$ as a pre-bid-file diagnostic and the two platforms as
-two points on one inflation curve.
+characterized (Appendix C; full grid in the Online Supplement) as a
+size-bias gap, *signs only* (↑ in $\mathrm{CV}(T)$, ↓ in the adjudicated
+base rate, no closed form), with $\mathrm{CV}(T)$ as a pre-bid-file
+**leading-order sufficient statistic** / diagnostic and the two platforms
+as two points on one **synthetic surface anchored at one empirical point
+per platform** (not an estimated curve).
 
 On BEC-SP the decomposition is deflationary: genuine label-blind
 opportunity ranks the label at only AUC **0.553** (ranking by observed
@@ -154,14 +157,15 @@ choose depends on the relative cost of the two layers and on the recall
 target, both of which are policy parameters rather than estimable
 constants.
 
-!!! note "Now modeled: the enforcer optimal-stopping rule"
+!!! note "Modeled modestly: the enforcer stopping rule"
     This is no longer left as an open "future work to model the decision."
-    The paper now states the enforcer's **optimal-stopping rule**
-    (Appendix B): the agency descends the cheap award ranking until
-    marginal recovery per unit forensic cost falls to the cost–value ratio
-    $c/V$, and **sweeping $c/V$ traces this very frontier as the locus of
-    budget-dependent optima**. So "no single optimal cutoff" is a *result*
-    of a solved decision problem, not a gap. The remaining open extension
+    The paper states the enforcer's **stopping rule** (Appendix B) as a
+    **standard cost–benefit (MB = MC) tangency** — not a grand result: the
+    agency descends the cheap award ranking until marginal recovery per
+    unit forensic cost falls to the cost–value ratio $c/V$, and sweeping
+    $c/V$ traces this very frontier as the locus of budget-dependent
+    optima. So the absence of a single fixed cutoff simply follows from the
+    optimum being budget-dependent. The remaining open extension
     is narrower: characterizing the frontier under explicit, externally
     calibrated cost denominators for a specific agency.
 
