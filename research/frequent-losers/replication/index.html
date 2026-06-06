@@ -7297,6 +7297,11 @@ Rscript<span class="w"> </span>scripts/00_master.R
 <td>Fixups / regeneration for the armor pack (<code>\valArmor*</code> macros)</td>
 <td><code>outputs/diagnostics/audit_armor/</code></td>
 </tr>
+<tr>
+<td><code>analysis/14_overcrediting_inflation_sim.R</code></td>
+<td><strong>Over-crediting bias as an estimable object</strong> — synthetic simulation of the raw-AUC inflation <span class="arithmatex">\(\Delta = \mathrm{AUC}_{\text{raw}} - \mathrm{AUC}_{\text{opp-adj}}\)</span> over a grid in <span class="arithmatex">\(\mathrm{CV}(T)\)</span> × adjudicated base rate; overlays the two real platforms at their measured (CV, base-rate) coordinates. <strong>No confidential microdata enters</strong>: the only empirical inputs are two published scalars per platform</td>
+<td><code>outputs/diagnostics/inflation_surface.csv</code>, <code>output/figures/fig_inflation_surface.pdf</code></td>
+</tr>
 </tbody>
 </table>
 <div class="admonition note">
@@ -7323,6 +7328,26 @@ produced by <code>12_audit_armor.R</code> and <code>12b_audit_armor_fixup.R</cod
 Each <code>\val*</code> macro in <code>values.tex</code> carries an explicit <code>% src:</code> line
 naming the producing script and output CSV — the <strong>output → script
 map</strong> that travels with the shareable package.</p>
+</div>
+<div class="admonition info">
+<p class="admonition-title">Two propositions are theory, not data</p>
+<p>The v24 reframe adds two <strong>positive objects</strong> to the appendix
+framework, and both are <strong>analytic — they consume no microdata and
+have no producing data script</strong>. (1) The <strong>enforcer optimal-stopping
+rule</strong> (Proposition, Appendix B): the agency descends the award
+ranking until marginal recovery per unit forensic cost falls to the
+cost–value ratio <span class="arithmatex">\(c/V\)</span>; sweeping <span class="arithmatex">\(c/V\)</span> traces the cost–recall frontier,
+so the <em>absence of a single optimal cutoff is a result</em>, not a
+confession. (2) The <strong>over-crediting bias</strong> <span class="arithmatex">\(\Delta\)</span> (Proposition,
+Appendix C): a size-bias characterization of why a contact-anchored
+validation over-credits a volume-loaded score — stated as <strong>signs
+only</strong> (increasing in <span class="arithmatex">\(\mathrm{CV}(T)\)</span>, decreasing in the adjudicated
+base rate), <strong>no closed-form magnitude</strong>, with <span class="arithmatex">\(\mathrm{CV}(T)\)</span> as a
+pre-bid-file <strong>diagnostic</strong> (not a fix). The magnitude is illustrated
+by the <em>synthetic</em> simulation in <code>analysis/14_overcrediting_inflation_sim.R</code>
+above; the two platforms are two points on that one curve. No data
+script is needed to reproduce either proposition — they are
+mathematical statements proved in the appendix.</p>
 </div>
 <div class="admonition tip">
 <p class="admonition-title">Seeds</p>

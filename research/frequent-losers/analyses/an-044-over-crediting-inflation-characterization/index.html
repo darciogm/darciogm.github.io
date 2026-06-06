@@ -9,7 +9,7 @@
         <meta name="author" content="Darcio Genicolo-Martins">
       
       
-        <link rel="canonical" href="https://darciogm.github.io/research/frequent-losers/hypotheses/exposure-discipline/">
+        <link rel="canonical" href="https://darciogm.github.io/research/frequent-losers/analyses/an-044-over-crediting-inflation-characterization/">
       
       
       
@@ -19,7 +19,7 @@
     
     
       
-        <title>A limited genuine signal survives once opportunity exposure is netted out - Darcio Genicolo-Martins</title>
+        <title>An 044 over crediting inflation characterization - Darcio Genicolo-Martins</title>
       
     
     
@@ -135,7 +135,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#hexposure-discipline-no-robust-residual-ordering-survives-once-opportunity-exposure-is-netted-out" class="md-skip">
+        <a href="#an-044-the-over-crediting-bias-as-an-estimable-object-size-bias-cv-of-t-sufficient-statistic" class="md-skip">
           Skip to content
         </a>
       
@@ -169,7 +169,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              A limited genuine signal survives once opportunity exposure is netted out
+              An 044 over crediting inflation characterization
             
           </span>
         </div>
@@ -6729,284 +6729,215 @@
                   
 
 
-<!-- REVISED: canonical-target reframe 2026-06-04 --><!-- REVISED: hostile-review armor 2026-06-04 --><!-- PROMOTED: exposure-discipline → Confirmed; bar rewritten with claim-type distinction 2026-06-06 --><!-- REFINED: over-crediting is now a CHARACTERIZED object (size-bias, CV-of-T sufficient statistic) — Tier B Object 2, 2026-06-06; status UNCHANGED (Confirmed) --><h1 id="hexposure-discipline-no-robust-residual-ordering-survives-once-opportunity-exposure-is-netted-out">H:exposure-discipline — No robust residual ordering survives once opportunity exposure is netted out<a class="headerlink" href="#hexposure-discipline-no-robust-residual-ordering-survives-once-opportunity-exposure-is-netted-out" title="Permanent link">¶</a></h1>
-<p>A raw co-bidding association mostly reflects <em>opportunity exposure</em> — firms
-active in the same products, buyers, years, and modalities as CADE defendants
-mechanically have more chances of appearing near those legal anchors. The
-honest test is whether <strong>anything robust survives</strong> once opportunity is
-disciplined away. Under the reproducible non-circular label the answer is no:
-the within-stratum ordering is at chance, the marginal nested increment fails
-the permutation designs, and negative controls corroborate the opportunity
-account.</p>
+<div class="admonition warning">
+<p class="admonition-title">Provisional / methodological — signs analytic, magnitude simulated; no closed-form</p>
+<p>This note characterizes <em>why</em> the raw award-screen AUC inflates and gives a portable
+sufficient statistic for the size of the inflation. The two comparative-static <strong>signs</strong>
+are analytic (proved in the rare-target regime, <code>prop:inflation</code>); the <strong>magnitude</strong> is
+demonstrated by a transparent synthetic simulation over a parameter grid — <strong>no
+closed-form inflation formula is claimed</strong>. The simulation uses only the published
+participation-volume distribution shape and base rates; no confidential microdata enters
+any output. Where this page conflicts with the <a href="../../paper.pdf">paper</a> or the
+<a href="../../changelog/">changelog</a>, <strong>the paper wins</strong>.</p>
+</div>
+<h1 id="an-044-the-over-crediting-bias-as-an-estimable-object-size-bias-cv-of-t-sufficient-statistic">AN-044: The over-crediting bias as an estimable object (size-bias, CV-of-<span class="arithmatex">\(T\)</span> sufficient statistic)<a class="headerlink" href="#an-044-the-over-crediting-bias-as-an-estimable-object-size-bias-cv-of-t-sufficient-statistic" title="Permanent link">¶</a></h1>
 <div class="admonition abstract">
 <p class="admonition-title">Intuition (plain-language)</p>
-<p>The eye-catching raw concentration is largely an opportunity artifact. Ranking firms by <em>observed</em> contact reaches ROC ≈ 0.90, but that is mechanical label encoding (a cobidder <em>is</em> a firm with positive contact); the honest, genuinely label-blind opportunity benchmark is only ≈ 0.553. The real question is what is left after you net opportunity out. Under the non-circular label the answer is: nothing robust. Inside a fixed opportunity stratum the score discriminates at ROC 0.471 — at chance — and the marginal nested increment (+0.010, p = 0.013) does not survive matched permutation (p = 0.127) or FL-enrichment (p = 0.067). An anchor-agnostic armor battery confirms this is not an artifact: a planted positive control recovers within-stratum AUC 0.953, and the permutation test has power 0.97 at within-AUC 0.55 (bounding any residual below ≈ 0.55). The deflationary verdict rests on this battery — not on "exposure beats the score". That honest split is the contribution.</p>
+<p>The headline number — a raw screen that "ranks cobidders at 0.76" — looks like
+discrimination until you ask a plain question: <em>would a firm that simply bids in more
+tenders land near a cartel more often, regardless of how it bids?</em> It would, mechanically.
+The screen ranks firms by how often they lose, which tracks how often they participate; and
+a "cobidder" is, by construction, a firm that shared at least one tender-item with a
+defendant — which is also more likely the more it participates. So the score and the label
+are <strong>both</strong> functions of participation volume. The positive class is just the high-volume
+firms, reshuffled — the raw AUC is the probability that a (volume-weighted) positive firm
+participated more than a random negative one. That ordering exists <em>before any conduct
+enters</em>. The useful part is that this bias is <strong>predictable and measurable</strong>: it grows when
+firms differ a lot in how much they bid (high dispersion) and shrinks when the target is
+less rare. You can compute one number from the candidate pool alone — the coefficient of
+variation of participation volume — and read off, <em>before opening any expensive bid file</em>,
+how much of any raw AUC is just volume geometry. It is a <strong>diagnostic, not a fix</strong>: it tells
+you how inflated the screen is, not how to rescue it. And it explains why BEC and federal
+ComprasNet are <strong>two points on one curve</strong>, not the same null twice: federal's much rarer
+target makes the bias more complete, which is exactly why its exposure-only ranking edges
+out the raw score.</p>
 </div>
-<blockquote>
-<p>🟢 <strong>Evidence strength: Confirmed — two platforms, anchor-robust by placebo construction.</strong>
-The claim that is <em>Confirmed</em> is the <strong>over-crediting mechanism</strong>: raw
-validation of an award-layer screen against adjudicated cases over-credits
-the screen because it measures <em>opportunity exposure</em>, not loss-intensity
-discrimination. Once opportunity is netted out no robust residual ordering
-survives, and that deflationary verdict is now anchor-robust by placebo
-construction on two institutionally distinct platforms (BEC and federal
-ComprasNet). The promotion does <strong>not</strong> elevate the screen to a portable
-detection tool — see <a href="#what-this-confirmation-does-and-does-not-cover">the remaining-scope note</a> below.</p>
-<p>The exposure decomposition on the BEC × CADE data under the non-circular
-651-cobidder label:
-(i) <strong>Most concentration is opportunity</strong> (<a href="../../analyses/an-004-cobidder-baseline/">AN-004</a>,
-<a href="../../analyses/an-027-universe-anchored-stratum-scope/">AN-027</a>):
-ranking by <em>observed</em> contact reaches ROC ≈ 0.90 (mechanical label
-encoding) and genuine label-blind opportunity ≈ 0.553, so the raw
-concentration is exposure-inflated rather than discriminating power.
-(ii) <strong>No robust residual survives</strong> (<a href="../../analyses/an-004-cobidder-baseline/">AN-004</a>):
-the within-stratum AUC is 0.471 (≈chance); the nested increment over the
-exposure-only benchmark is <strong>+0.010</strong> (DeLong p = 0.013), marginal at best.
-(iii) <strong>Permutation designs are non-significant</strong> (<a href="../../analyses/an-005-sham-fl-permutation/">AN-005</a>):
-matched-stratum label permutation p = 0.127 (ns), FL-enrichment within
-matched strata p = 0.067 (ns); negative controls corroborate the
-opportunity account (real ≈ placebo, p = 0.46).
-(iv) <strong>Leakage audit</strong> (<a href="../../analyses/an-014-leakage-audit-d3/">AN-014</a>):
-in-sample item-level numbers attenuate sharply under out-of-fold and
-temporal holdout; nothing robust remains on the disciplined numbers.
-(v) <strong>Universe-anchored scope</strong> (<a href="../../analyses/an-027-universe-anchored-stratum-scope/">AN-027</a>):
-the binary FL flag is silent on winner-heavy direct defendants (0.49),
-while participation volume ranks them moderately (0.66–0.70) — the
-asymmetry is on the loser-side binary flag, not a generic detector.
-Net of opportunity there is no robust residual ordering — and the
-<strong>over-crediting mechanism that produces this verdict is Confirmed</strong>: the
-deflation reproduces on a second, institutionally distinct platform
-(federal ComprasNet,
-<a href="../../analyses/an-043-federal-opportunity-adjusted-validation/">AN-043</a>)
-and is <strong>anchor-robust by placebo construction</strong> (B = 500 placebo anchor
-sets reproduce the raw AUC on both platforms; federal placebo p = 0.258,
-HV-winner p = 0.582). The same audit returns the same verdict, deflating
-the cheap screen there as it does on BEC. Federal evidence rests on
-partially overlapping legal anchors; what is Confirmed is the
-over-crediting mechanism, not the screen as a portable detection tool.</p>
-</blockquote>
-<h2 id="theory">Theory<a class="headerlink" href="#theory" title="Permanent link">¶</a></h2>
-<p>Exposure-disciplined comparisons are the cartel-screening equivalent of
-opportunity-controlled placebos: they ask whether the observed
-concentration would arise mechanically from where firms bid, independent of
-how they bid. The discipline isolates the signal from the volume
-\citep{conley2016detecting,kawai2022detecting}.</p>
-<h3 id="the-over-crediting-is-now-a-characterized-object-not-just-an-empirical-null">The over-crediting is now a characterized object, not just an empirical null<a class="headerlink" href="#the-over-crediting-is-now-a-characterized-object-not-just-an-empirical-null" title="Permanent link">¶</a></h3>
-<p>The deflation is no longer reported only as "the residual vanishes when we
-net out opportunity." The over-crediting has a <strong>mechanism with a sufficient
-statistic</strong> (Tier B, <code>prop:inflation</code>; see
-<a href="../../analyses/an-044-over-crediting-inflation-characterization/">AN-044</a>):</p>
+<h2 id="question">Question<a class="headerlink" href="#question" title="Permanent link">¶</a></h2>
+<p>The validation audits (<a href="../an-004-cobidder-baseline/">AN-004</a>,
+<a href="../an-027-universe-anchored-stratum-scope/">AN-027</a>,
+<a href="../an-043-federal-opportunity-adjusted-validation/">AN-043</a>) establish <em>empirically</em> that
+the raw award-screen AUC is mostly mechanical opportunity, not discrimination. This note asks
+the next question: can the over-crediting be <strong>characterized</strong> as an estimable object — a bias
+with a known mechanism, known comparative statics, and a sufficient statistic a practitioner
+can compute <em>before</em> committing forensic resources?</p>
+<h2 id="design">Design<a class="headerlink" href="#design" title="Permanent link">¶</a></h2>
 <ul>
-<li><strong>Size-bias mechanism.</strong> The award score is monotone in participation
-  volume <span class="arithmatex">\(T\)</span> (it is <span class="arithmatex">\(\log(1+T)\)</span>) and the contact-defined cobidder label is
-  <em>also</em> mechanically increasing in <span class="arithmatex">\(T\)</span> (<span class="arithmatex">\(\Pr(\text{cobidder}\mid T)\approx
-  \pi T\)</span> in the rare-target regime). Both load on volume, so the positive
-  class is the <strong>size-biased</strong> <span class="arithmatex">\(T\)</span> distribution and the raw ROC-AUC is just
-  <span class="arithmatex">\(\Pr(T_i &gt; T_j)\)</span> with <span class="arithmatex">\(T_i\)</span> size-biased relative to a random negative
-  <span class="arithmatex">\(T_j\)</span> — an ordering that exists <em>before any conduct enters</em>. That is why
-  raw validation over-credits the screen: it credits volume geometry to the
-  score.</li>
-<li><strong>Two signs (proved in the rare-target regime).</strong> The bias <strong>grows</strong> with
-  the dispersion of participation volume and <strong>shrinks</strong> as the adjudicated
-  base rate rises.</li>
-<li><strong>Sufficient statistic.</strong> The <strong>coefficient of variation of <span class="arithmatex">\(T\)</span></strong> in the
-  candidate pool bounds how inflated an uncorrected award-screen AUC is
-  likely to be — computable from award data alone, <em>before any bid file is
-  opened</em>. It is a <strong>diagnostic</strong> for the size of the bias, <strong>not a
-  correction that rescues the screen</strong>: the genuine within-stratum floor is
-  at chance either way.</li>
+<li><strong>Mechanism.</strong> The award score is monotone in participation volume <span class="arithmatex">\(T\)</span> (it is
+  <span class="arithmatex">\(\log(1+T)\)</span>). The contact-defined cobidder label is mechanically increasing in <span class="arithmatex">\(T\)</span>:
+  <span class="arithmatex">\(\Pr(\text{cobidder}_i = 1 \mid T_i) = 1 - (1-\pi)^{T_i} \approx \pi T_i\)</span> in the
+  rare-target regime, where <span class="arithmatex">\(\pi\)</span> is the per-tender-item defendant-contact rate. So <strong>both
+  score and label load on <span class="arithmatex">\(T\)</span></strong>: the positive class is the <strong>size-biased</strong> <span class="arithmatex">\(T\)</span> distribution
+  and the negative class is approximately <span class="arithmatex">\(F_T\)</span>, giving
+  <span class="arithmatex">\(\text{AUC}_{\text{raw}} = \Pr(T_i &gt; T_j)\)</span> with <span class="arithmatex">\(T_i\)</span> size-biased relative to a random
+  negative <span class="arithmatex">\(T_j\)</span> — a classic size-bias gap.</li>
+<li><strong>Two signs (proved in the rare-target regime, <code>prop:inflation</code>).</strong>
+  (a) The size-bias gap is <strong>increasing in the dispersion</strong> of <span class="arithmatex">\(F_T\)</span>; for participation
+  counts (Gamma / Poisson-mixed), <span class="arithmatex">\(\text{AUC}_{\text{raw}}\)</span> increases in the <strong>coefficient of
+  variation <span class="arithmatex">\(\text{CV}(T)\)</span></strong>, and in the degenerate (no-dispersion) limit
+  <span class="arithmatex">\(\text{AUC}_{\text{raw}} \to 0.5\)</span> — there is nothing to rank.
+  (b) As the <strong>base rate rises</strong>, the size-biasing saturates (<span class="arithmatex">\(1-(1-\pi)^T\)</span> flattens) and
+  <span class="arithmatex">\(\text{AUC}_{\text{raw}}\)</span> <strong>declines toward</strong> the within-stratum (genuine-signal) value —
+  so a <strong>lower</strong> base rate means <strong>more</strong> inflation.</li>
+<li><strong>Synthetic simulation (magnitude).</strong> Draw <span class="arithmatex">\(T_i\)</span> from a family indexed by <span class="arithmatex">\(\text{CV}(T)\)</span>;
+  generate <span class="arithmatex">\(y_i \sim \text{Bernoulli}(\min(\pi T_i, 1))\)</span> with <span class="arithmatex">\(\pi\)</span> swept to vary the base
+  rate; with no injected within-stratum signal (<span class="arithmatex">\(\theta = 0\)</span>) the opportunity-adjusted AUC
+  sits at <span class="arithmatex">\(\approx 0.5\)</span>, so <span class="arithmatex">\(\Delta = \text{AUC}_{\text{raw}} - \text{AUC}_{\text{within}}\)</span> is
+  the pure size-bias inflation. The injection device reuses the existing permutation-power
+  machinery. <strong>The two real platforms are overlaid</strong> using only the candidate pool's
+  <span class="arithmatex">\(\text{CV}(T)\)</span> and base rate — two scalars each, no microdata.</li>
 </ul>
-<p>This characterization is <em>why</em> the BEC and federal numbers are two points on
-one inflation surface rather than the same null twice: federal's roughly
-10× lower base rate makes the size-biasing more complete, which is exactly
-why the federal exposure-only ranking edges out the raw score. No
-closed-form inflation magnitude is claimed; the signs are analytic and the
-magnitude is demonstrated by a transparent synthetic simulation
-(<a href="../../analyses/an-044-over-crediting-inflation-characterization/">AN-044</a>).</p>
-<h2 id="prediction">Prediction<a class="headerlink" href="#prediction" title="Permanent link">¶</a></h2>
-<p>The hypothesis predicts that, after opportunity is netted out, a <strong>limited but
-non-zero</strong> within-stratum increment survives. Under the non-circular label the
-data reject this:</p>
-<ul>
-<li>the exposure-only benchmark accounts for most of the raw concentration
-  (ROC ≈ 0.90); and</li>
-<li>the score does <strong>not</strong> discriminate within a fixed opportunity stratum
-  (ROC ≈ 0.471, at chance); the nested increment (+0.010, p = 0.013) collapses
-  toward the benchmark and fails the permutation designs.</li>
-</ul>
-<h2 id="competing-prediction">Competing prediction<a class="headerlink" href="#competing-prediction" title="Permanent link">¶</a></h2>
-<p><strong>Pure opportunity.</strong> If the within-stratum increment is at chance — i.e.,
-concentration falls all the way to the exposure-only benchmark — the result
-reduces to opportunity-set overlap with no robust loser-side residual. Under
-the non-circular label <strong>this competing prediction prevails</strong>: the within-stratum
-ordering is at chance and the permutations are non-significant.</p>
-<h2 id="case-evidence">Case evidence<a class="headerlink" href="#case-evidence" title="Permanent link">¶</a></h2>
-<p>The exposure construction uses the same product × buyer × year × modality
-strata that procurement-cartel cases typically operate in (see
-<a href="../../paper/">manuscript</a>, §2.3).</p>
-<h2 id="empirical-test">Empirical test<a class="headerlink" href="#empirical-test" title="Permanent link">¶</a></h2>
-<ul>
-<li><em>Exposure benchmark</em>: an exposure-only model of who could plausibly bid
-  near a CADE anchor given where they participate (ROC ≈ 0.90) — the share
-  of raw concentration that is mechanical opportunity.</li>
-<li><em>Within-stratum increment</em>: discrimination of the score inside a fixed
-  opportunity stratum, net of the benchmark (ROC ≈ 0.471, +0.010, ns across
-  permutation designs).</li>
-<li><em>Sham FL</em>: random reassignment of the FL label among always-losers,
-  preserving the marginal distribution; tests whether opportunity alone
-  reproduces the increment.</li>
-<li><em>Outcome</em>: the genuine within-stratum increment and its DeLong p-value.</li>
-</ul>
-<h2 id="data-requirements-and-limitations">Data requirements and limitations<a class="headerlink" href="#data-requirements-and-limitations" title="Permanent link">¶</a></h2>
-<p>Requires the BEC LANCES panel and the (product × buyer × year × modality)
-exposure key. Limitation: the exposure stratum is defined by observed
-participation, which itself can be affected by cartel behavior; the audit
-disciplines exposure but does not separately identify cartel-driven
-participation distortions.</p>
-<h2 id="evidence">Evidence<a class="headerlink" href="#evidence" title="Permanent link">¶</a></h2>
+<h2 id="results">Results<a class="headerlink" href="#results" title="Permanent link">¶</a></h2>
+<h3 id="the-inflation-law-signs-holds-across-the-grid">The inflation law (signs) holds across the grid<a class="headerlink" href="#the-inflation-law-signs-holds-across-the-grid" title="Permanent link">¶</a></h3>
 <table>
 <thead>
 <tr>
-<th>Analysis</th>
-<th>Bearing</th>
-<th>Status</th>
-<th>Key takeaway</th>
+<th>Comparative static</th>
+<th>Predicted sign</th>
+<th>Simulation</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td><a href="../../analyses/an-004-cobidder-baseline/">AN-004</a> (exposure decomposition)</td>
-<td>Against</td>
-<td>done</td>
-<td>Exposure-only ROC ≈ 0.90 (raw is opportunity-inflated); within-stratum 0.471 (≈chance), nested increment +0.010 (DeLong p = 0.013)</td>
+<td><span class="arithmatex">\(\partial \Delta / \partial\, \text{CV}(T)\)</span></td>
+<td><span class="arithmatex">\(&gt; 0\)</span> (more dispersion ⇒ bigger size-bias gap)</td>
+<td>confirmed across the grid</td>
 </tr>
 <tr>
-<td><a href="../../analyses/an-005-sham-fl-permutation/">AN-005</a> (permutation + neg. controls)</td>
-<td>Against</td>
-<td>done</td>
-<td>Matched permutation p = 0.127 (ns), FL-enrichment p = 0.067 (ns); real ≈ placebo (p = 0.46) — opportunity alone reproduces the concentration</td>
+<td><span class="arithmatex">\(\partial \Delta / \partial\, \text{base rate}\)</span></td>
+<td><span class="arithmatex">\(&lt; 0\)</span> (rarer target ⇒ more inflation)</td>
+<td>confirmed across the grid</td>
 </tr>
 <tr>
-<td><a href="../../analyses/an-014-leakage-audit-d3/">AN-014</a> (leakage audit D3)</td>
-<td>Supports</td>
-<td>done</td>
-<td>In-sample item-level numbers attenuate sharply under OOF / temporal holdout; nothing robust remains</td>
-</tr>
-<tr>
-<td><a href="../../analyses/an-027-universe-anchored-stratum-scope/">AN-027</a> (universe-anchored scope matrix)</td>
-<td>Direct</td>
-<td>done</td>
-<td>Binary FL flag silent on winner-heavy defendants (0.49); participation volume ranks them moderately (0.66–0.70) — asymmetry on the binary flag, not a generic detector</td>
-</tr>
-<tr>
-<td><a href="../../analyses/an-028-exposure-stratum-balance/">AN-028</a> (within-FL standardized diffs)</td>
-<td>Supports</td>
-<td>done</td>
-<td>Cobidders descriptively distinct from non-cobidder FLs at d 0.19–1.00 across dimensions</td>
-</tr>
-<tr>
-<td><a href="../../analyses/an-006-strict-prospective-holdout/">AN-006</a> (exposure + timing)</td>
-<td>Against</td>
-<td>done</td>
-<td>Strict ranking fails at the full universe (ROC 0.474); incumbent-pool residue only (ROC 0.684)</td>
-</tr>
-<tr>
-<td><a href="../../analyses/an-044-over-crediting-inflation-characterization/">AN-044</a> (over-crediting characterization)</td>
-<td>Supports</td>
-<td>provisional</td>
-<td>Characterizes the over-crediting as a volume size-bias: inflation grows with CV of <span class="arithmatex">\(T\)</span>, shrinks with base rate; CV of <span class="arithmatex">\(T\)</span> is a portable sufficient statistic; synthetic sim reproduces BEC raw AUC and lands BEC + federal as two points on the inflation surface</td>
+<td>Degenerate <span class="arithmatex">\(T\)</span> (no dispersion)</td>
+<td><span class="arithmatex">\(\text{AUC}_{\text{raw}} \to 0.5\)</span></td>
+<td>confirmed (Δ → ≈ 0.02 at CV = 0.5)</td>
 </tr>
 </tbody>
 </table>
-<h2 id="open-tests">Open tests<a class="headerlink" href="#open-tests" title="Permanent link">¶</a></h2>
+<p>At the BEC base rate (<span class="arithmatex">\(\approx 3.9\%\)</span>), the simulated raw AUC rises monotonically with
+<span class="arithmatex">\(\text{CV}(T)\)</span> — from <span class="arithmatex">\(\approx 0.52\)</span> at CV = 0.5 to <span class="arithmatex">\(\approx 0.84\)</span> at CV = 5 — while the
+opportunity-adjusted AUC stays pinned near <span class="arithmatex">\(0.5\)</span> throughout.</p>
+<h3 id="both-real-platforms-land-on-the-predicted-surface">Both real platforms land on the predicted surface<a class="headerlink" href="#both-real-platforms-land-on-the-predicted-surface" title="Permanent link">¶</a></h3>
+<table>
+<thead>
+<tr>
+<th>Quantity</th>
+<th style="text-align: right;">BEC–SP</th>
+<th style="text-align: right;">Federal ComprasNet</th>
+<th>Predicted relation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><span class="arithmatex">\(\text{CV}(T)\)</span> (always-loser pool)</td>
+<td style="text-align: right;">2.79</td>
+<td style="text-align: right;">3.79</td>
+<td>federal more dispersed</td>
+</tr>
+<tr>
+<td>Adjudicated base rate (AL-pool)</td>
+<td style="text-align: right;">≈ 3.9%</td>
+<td style="text-align: right;">≈ 0.5%</td>
+<td>federal ≈ 10× rarer</td>
+</tr>
+<tr>
+<td>Raw award AUC (locked)</td>
+<td style="text-align: right;">0.761</td>
+<td style="text-align: right;">0.744</td>
+<td>comparable</td>
+</tr>
+<tr>
+<td>Within-stratum AUC (genuine floor, locked)</td>
+<td style="text-align: right;">0.471</td>
+<td style="text-align: right;">0.462</td>
+<td>both ≈ chance</td>
+</tr>
+<tr>
+<td>Inflation <span class="arithmatex">\(\Delta\)</span> (raw − within, locked)</td>
+<td style="text-align: right;">≈ 0.29</td>
+<td style="text-align: right;">≈ 0.28</td>
+<td>comparable</td>
+</tr>
+<tr>
+<td>Simulated raw AUC at the platform's <span class="arithmatex">\((\text{CV}, \text{base rate})\)</span></td>
+<td style="text-align: right;">0.768</td>
+<td style="text-align: right;">0.808</td>
+<td>reproduces / brackets the locked raw</td>
+</tr>
+<tr>
+<td>Exposure-only AUC (locked)</td>
+<td style="text-align: right;">0.713</td>
+<td style="text-align: right;">0.754</td>
+<td><strong>federal exposure-only ≥ raw</strong></td>
+</tr>
+</tbody>
+</table>
+<p>The simulation reproduces BEC's locked raw AUC (sim <strong>0.768</strong> vs locked <strong>0.761</strong>) at BEC's
+coordinates, and both platforms sit on the predicted surface. The figure overlays both real
+points (<code>outputs/figures/fig_inflation_surface.pdf</code>).</p>
+<div class="admonition abstract">
+<p class="admonition-title">Why federal's exposure-only edges out raw — the lower-base-rate prediction</p>
+<p>Federal's roughly <strong>10× lower base rate</strong> makes the size-biasing <strong>more complete</strong>, so the
+inflation is, if anything, <em>more</em> of the raw number federally than on BEC. That is exactly
+why the federal <strong>exposure-only</strong> ranking (0.754), which never sees the score, <strong>edges out
+the raw score itself</strong> (0.744) — whereas on BEC the exposure axis only <em>approaches</em> the raw
+score. BEC and federal are therefore <strong>two coordinates on one inflation surface</strong> at
+different <span class="arithmatex">\((\text{CV}(T), \text{base rate})\)</span> values, <strong>not "the same null twice."</strong> This is
+the generalizing content the characterization supplies.</p>
+</div>
+<h2 id="interpretation">Interpretation<a class="headerlink" href="#interpretation" title="Permanent link">¶</a></h2>
+<p><strong>The over-crediting is a characterized object, not an accident of this dataset.</strong> The raw
+award-screen AUC inflates because score and contact-defined label are both monotone in
+participation volume, making the positive class the size-biased volume distribution. The two
+comparative-static signs are analytic in the rare-target regime; the magnitude is demonstrated
+by a transparent synthetic simulation, <strong>not</strong> asserted as a closed-form formula.</p>
+<p><strong>The sufficient statistic is portable — and is a diagnostic, not a fix.</strong> A practitioner can
+compute the candidate pool's <span class="arithmatex">\(\text{CV}(T)\)</span> from award data alone, <em>before opening any bid
+file</em>, to bound how much of an uncorrected raw AUC is mechanical. This converts the paper's
+central caveat ("adjust for procurement opportunity or you over-credit the screen") into a
+<strong>portable diagnostic</strong>. It does <strong>not</strong> rescue the screen: the genuine within-stratum floor is
+<span class="arithmatex">\(\approx\)</span> chance on both platforms either way, and the correction <em>reveals</em> that floor rather
+than lifting it.</p>
+<p><strong>What is full-power vs power-bounded.</strong> The size-bias / label-blind first-stage deflation is
+the part that replicates at full power across both platforms; the residual within-stratum floor
+(<span class="arithmatex">\(\approx\)</span> chance) is power-bounded federally (≤ 0.55 unadjudicated at <span class="arithmatex">\(N^+ = 195\)</span>). The two are
+kept separate: the inflation characterization is the robust part, the residual-floor null is the
+power-bounded part.</p>
+<p><strong>Scope of the claim.</strong> This characterizes the <strong>over-crediting mechanism</strong> — a statement about
+how a raw validation number is produced — which is the <a href="../../hypotheses/exposure-discipline/">exposure-discipline (H3)
+hypothesis</a> that is now <strong>Confirmed</strong> across two
+platforms. It does <strong>not</strong> promote the screen to a portable detection tool: the cross-platform
+<em>detection</em> umbrella stays provisional, and the federal CADE anchors <strong>partially overlap</strong> the
+BEC portfolio, so this tests portability of the inflation law, not an independent cartel test.
+Confidence is <strong>🟡 yellow / provisional</strong>: the object is clean and the signs are proved, but the
+magnitude rests on a simulation and the federal anchors partially overlap.</p>
+<h2 id="bearing-on-hypotheses">Bearing on hypotheses<a class="headerlink" href="#bearing-on-hypotheses" title="Permanent link">¶</a></h2>
 <ul>
-<li>Sensitivity to exposure-stratum definition (coarser vs finer cells).</li>
-<li>Decomposition of attenuation by modality.</li>
-<li>Volume-matched cobidder vs non-cobidder-FL test — <strong>done</strong>
-  (<a href="../../analyses/an-041-volume-matched-cobidder-audit/">AN-041</a>): matching
-  on <code>tenders_count</code> (SMD 0.49 → 0.00), the within-stratum concentration is
-  not a volume artifact (HHI d +0.47, repeat-spread −0.56 hold or
-  strengthen; bid-dispersion sub-signal collapses to n.s.).</li>
+<li><strong>H:exposure-discipline (H3).</strong> Primary bearing — characterizes the over-crediting mechanism
+  that H3 asserts (Confirmed across two platforms), turning the empirical null into an estimable
+  object with a sufficient statistic. Provisional/methodological support; does not change the
+  H3 status.</li>
+<li><strong>H:cobidder-concentration (H1).</strong> Explains <em>why</em> the raw concentration is generic
+  co-participation arithmetic: the positive class is the size-biased volume distribution, so the
+  raw AUC exists before any conduct.</li>
 </ul>
-<h2 id="the-bar-for-confirmed-and-why-this-claim-clears-it">The bar for Confirmed — and why this claim clears it<a class="headerlink" href="#the-bar-for-confirmed-and-why-this-claim-clears-it" title="Permanent link">¶</a></h2>
-<p>The project's standing bar for a 🟢 Confirmed promotion is that <em>a
-genuinely independent cartel anchor</em> validate the result. <strong>That bar was
-written for detection-validity claims</strong> — claims of the form "this screen
-discriminates cartelists from non-cartelists" — and it remains exactly
-correct for those. A screen's <em>detection</em> value can always be inflated by
-the particular cartels that happen to anchor the validation, so a portable
-detection claim must show the same discrimination against cartels the screen
-never saw. None of this project's detection claims clear that bar on BEC
-alone, and the X-plat detection umbrella stays provisional accordingly.</p>
-<p><strong>This hypothesis makes a different kind of claim, and the independent-anchor
-requirement does not bind it.</strong> The claim here is not "the screen detects
-cartels"; it is the <em>over-crediting mechanism</em> — that <strong>raw validation of an
-award-layer screen against adjudicated cases over-credits the screen because
-it measures opportunity exposure rather than loss-intensity discrimination.</strong>
-This is a statement about <em>how a raw validation number is generated</em>, and it
-is established by construction rather than by trusting which cartels anchor
-the test. Three legs carry it:</p>
-<ol>
-<li>
-<p><strong>Two independent exposure geometries.</strong> The deflation reproduces on two
-   platforms with distinct participation universes (BEC ≈ 41K firms vs
-   federal ComprasNet ≈ 92.6K firms), distinct buyers (PBU vs UASG), and
-   distinct modality mixes. The CADE labels share legal provenance, but the
-   <em>opportunity structure</em> that produces the deflation is platform-specific:
-   the within-stratum residual sits near chance on both (BEC 0.471 /
-   federal 0.462), with exposure-only discrimination ≥ raw on both
-   (BEC 0.713 ≥ 0.744 raw on the relevant cut; federal 0.754 ≥ 0.744 raw).
-   What ports is the discipline, not a deployable ranking.</p>
-</li>
-<li>
-<p><strong>Placebo-anchor controls — the decisive leg.</strong> B = 500 placebo anchor
-   sets reproduce the <em>raw</em> AUC on both platforms (federal placebo
-   p = 0.258, HV-winner p = 0.582; the BEC twins — real ≈ placebo, empirical
-   p = 0.46 — are in <a href="../../analyses/an-005-sham-fl-permutation/">AN-005</a> and
-   the ledger). Because the placebos are <strong>label-independent by
-   construction</strong>, the deflation cannot depend on <em>which</em> cartels anchor the
-   validation. The partial overlap between the BEC and federal CADE anchors
-   is therefore irrelevant to <em>this</em> claim: a mechanism reproduced by random
-   placebo anchors is not anchor-specific in the first place. This is what
-   "anchor-robust by placebo construction" means, and it is precisely the
-   property the detection bar demands of an independent anchor — supplied
-   here by construction instead.</p>
-</li>
-<li>
-<p><strong>The O_i positive control.</strong> A planted within-stratum signal is
-   recovered at AUC ≥ 0.99 on both platforms, so the design <em>detects</em>
-   within-stratum signal when one is present. The chance-level residual is a
-   genuine null, not a design that cannot see anything — which is exactly
-   what licenses reading the deflation as a finding rather than an artifact.</p>
-</li>
-</ol>
-<p>Together these establish the over-crediting mechanism without ever asking
-the reader to trust the anchors: legs 1 and 3 fix the geometry and the
-power, and leg 2 removes label dependence by construction. The same audit
-returns the same verdict, deflating the cheap screen there as it does on
-BEC. Federal evidence rests on <strong>partially overlapping legal anchors</strong>;
-that caveat is real for any <em>detection</em> reading but does not touch the
-mechanism claim, which is what is promoted.</p>
-<h3 id="what-this-confirmation-does-and-does-not-cover">What this confirmation does and does not cover<a class="headerlink" href="#what-this-confirmation-does-and-does-not-cover" title="Permanent link">¶</a></h3>
-<p>The promotion covers the <strong>over-crediting mechanism only</strong> — that raw
-award-layer validation over-credits the screen by measuring opportunity
-exposure, a verdict now demonstrated across two platforms and robust to the
-anchor set by placebo construction. It does <strong>not</strong> promote screen
-portability as a <em>detection tool</em>: the cross-platform detection umbrella
-(<a href="../#scorecard">X-plat row in the scorecard</a>) stays <strong>provisional</strong>,
-because a portable detection claim still requires a genuinely independent
-cartel anchor and the federal anchors only partially overlap the BEC
-portfolio. The two readings are deliberately separate: the <em>discipline</em>
-ports and is Confirmed; the <em>deployable ranking</em> does not and is not.</p>
-<p>Two artifact families remain outside any within-data audit and are not
-claimed away by this promotion: data-generating-process artifacts (BEC
-missingness, 8-digit CNPJ-root collision, CADE adjudication completeness
-bias — structural properties of the data lake) and selection on CADE
-adjudication (the cobidder set is defined relative to the cartels CADE chose
-to adjudicate in 2009–2019). Neither bears on the over-crediting mechanism,
-which is about <em>how a raw validation number is produced</em>, not about which
-firms are truly cartelists. This page is consistent with the project-wide
-convention documented in <a href="../../findings/">findings/index.md</a>.</p>
+<h2 id="follow-ups">Follow-ups<a class="headerlink" href="#follow-ups" title="Permanent link">¶</a></h2>
+<ul>
+<li>A genuinely independent cartel anchor (non-overlapping cases, or another jurisdiction) would
+  add a third coordinate on the inflation surface and test the law out of sample.</li>
+<li>Reporting the <span class="arithmatex">\(\text{CV}(T)\)</span> sufficient statistic alongside any future award-screen
+  validation as a standard pre-registration diagnostic.</li>
+</ul>
 
 
 

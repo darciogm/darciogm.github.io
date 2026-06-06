@@ -6763,7 +6763,14 @@ more have more chances to co-appear with anyone, including defendants), a
 the positive labels), and any <em>genuine increment</em> that survives both
 adjustments. The protocol carries a portable principle: <em>validating an
 administrative screen against adjudicated cases without adjusting for
-procurement opportunity systematically over-credits it.</em></p>
+procurement opportunity systematically over-credits it.</em> The current
+paper now states this principle as an <strong>estimable object</strong> rather than
+leaving it as future work: the <strong>over-crediting bias</strong>
+<span class="arithmatex">\(\Delta = \mathrm{AUC}_{\text{raw}} - \mathrm{AUC}_{\text{opp-adj}}\)</span> is
+characterized (Appendix C) as a size-bias gap, <em>signs only</em> (↑ in
+<span class="arithmatex">\(\mathrm{CV}(T)\)</span>, ↓ in the adjudicated base rate, no closed form), with
+<span class="arithmatex">\(\mathrm{CV}(T)\)</span> as a pre-bid-file diagnostic and the two platforms as
+two points on one inflation curve.</p>
 <p>On BEC-SP the decomposition is deflationary: genuine label-blind
 opportunity ranks the label at only AUC <strong>0.553</strong> (ranking by observed
 contact reaches 0.905, but that is mechanical label encoding), raw award
@@ -6858,6 +6865,18 @@ forensic cost — is far smaller (~33%). Which point an enforcer should
 choose depends on the relative cost of the two layers and on the recall
 target, both of which are policy parameters rather than estimable
 constants.</p>
+<div class="admonition note">
+<p class="admonition-title">Now modeled: the enforcer optimal-stopping rule</p>
+<p>This is no longer left as an open "future work to model the decision."
+The paper now states the enforcer's <strong>optimal-stopping rule</strong>
+(Appendix B): the agency descends the cheap award ranking until
+marginal recovery per unit forensic cost falls to the cost–value ratio
+<span class="arithmatex">\(c/V\)</span>, and <strong>sweeping <span class="arithmatex">\(c/V\)</span> traces this very frontier as the locus of
+budget-dependent optima</strong>. So "no single optimal cutoff" is a <em>result</em>
+of a solved decision problem, not a gap. The remaining open extension
+is narrower: characterizing the frontier under explicit, externally
+calibrated cost denominators for a specific agency.</p>
+</div>
 <div class="admonition warning">
 <p class="admonition-title">No 'universal' headline</p>
 <p>Earlier drafts summarized this as a single universal "footprint

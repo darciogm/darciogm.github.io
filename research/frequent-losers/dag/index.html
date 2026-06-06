@@ -6767,6 +6767,7 @@ Each node is a claim or object; each arrow is "supports / leads to."</p>
       D3["&lt;b&gt;Single-case&lt;/b&gt;: leave-largest-case-out&lt;br/&gt;PR-AUC 0.143 &amp;rarr; 0.090 (&amp;minus;37%);&lt;br/&gt;one case &amp;approx; 32% of positives"]:::limit
       D4["&lt;b&gt;Scope&lt;/b&gt;: binary AUC &amp;approx; 0.49 vs direct defendants&lt;br/&gt;&amp;mdash; by design (continuous score 0.66&amp;ndash;0.70)"]:::limit
       D5["&lt;b&gt;Armor battery&lt;/b&gt; (anchor-agnostic):&lt;br/&gt;label-blind opportunity 0.553; positive control 0.953;&lt;br/&gt;perm power 0.97 @ 0.55; label-frozen timing 0.713"]:::method
+      D6["&lt;b&gt;Over-crediting bias as an estimable object&lt;/b&gt; (Prop., App. C):&lt;br/&gt;&amp;Delta; = AUC_raw &amp;minus; AUC_opp-adj is a size-bias gap;&lt;br/&gt;SIGNS only &amp;mdash; &amp;uarr; in CV(T), &amp;darr; in base rate (no closed form);&lt;br/&gt;CV(T) is a pre-bid-file &lt;i&gt;diagnostic&lt;/i&gt;, not a fix"]:::model
     end
     V1 --&gt; D1
     D1 --&gt; D2
@@ -6774,6 +6775,7 @@ Each node is a claim or object; each arrow is "supports / leads to."</p>
     V1 --&gt; D4
     V2 --&gt; D4
     D1 --&gt; D5
+    D1 --&gt; D6
 
     %% ---------- Architecture ----------
     subgraph ARC["Division of labor between layers"]
@@ -6781,7 +6783,9 @@ Each node is a claim or object; each arrow is "supports / leads to."</p>
       A1["Award ranks &lt;b&gt;where to look&lt;/b&gt;;&lt;br/&gt;bid evaluates &lt;b&gt;what is found&lt;/b&gt;"]:::arch
       A2["Bid benchmark: bid RF 0.717 / award 0.760 /&lt;br/&gt;combined PR 0.188 random-CV but 0.103 case-grouped&lt;br/&gt;&amp;mdash; conditional complementarity, case-fragile"]:::arch
       A3["Cost-recall frontier: at K1=2000,&lt;br/&gt;firm pool &amp;minus;88% but bid-row footprint &amp;minus;33%;&lt;br/&gt;K1=1000 beats K1=2000 &amp;mdash; no optimal cutoff"]:::arch
+      A4["&lt;b&gt;Enforcer optimal-stopping rule&lt;/b&gt; (Prop., App. B):&lt;br/&gt;descend ranking until V&amp;middot;&amp;rho;(K)=c&amp;middot;&amp;phi;(K) &amp;hArr; &amp;rho;/&amp;phi;=c/V;&lt;br/&gt;sweep c/V &amp;rarr; locus of optima.&lt;br/&gt;&lt;i&gt;&amp;lsquo;No optimal cutoff&amp;rsquo; is a RESULT; the frontier is its image&lt;/i&gt;"]:::model
       A1 --&gt; A2 --&gt; A3
+      A4 -. image .-&gt; A3
     end
     D1 --&gt; A1
     C3 --&gt; A3
@@ -6808,7 +6812,8 @@ Each node is a claim or object; each arrow is "supports / leads to."</p>
     classDef limit fill:#5a3a2a,stroke:#9a5b3b,color:#fbeee6;
     classDef arch fill:#2d3f5c,stroke:#4a679a,color:#eaf2fb;
     classDef scope fill:#4a3a5c,stroke:#6f4a9a,color:#f2eafb;
-    classDef concl fill:#143b4a,stroke:#1f6f8b,color:#eafaf8;</code></pre>
+    classDef concl fill:#143b4a,stroke:#1f6f8b,color:#eafaf8;
+    classDef model fill:#13313a,stroke:#2a7d8b,color:#e6fbfa;</code></pre>
 <div class="admonition note">
 <p class="admonition-title">How to read it</p>
 <p>The green nodes are the paper's methodological core — the <strong>opportunity
@@ -6823,10 +6828,16 @@ label-frozen timing (0.713) shows generic contact forecasting, not
 cartel-specific prediction. The ranking by <em>observed</em> contact (0.905) is
 mechanical label encoding, not a winning model. The brown nodes are the
 <strong>limits</strong> the same decomposition exposes (below-chance out-of-time ordering,
-single-case dependence, the direct-defendant scope boundary). The contributions
-are an <strong>organizational result</strong> (the cost-recall frontier is the design
-object) and a <strong>disciplined audit protocol</strong> — not a deployable cartel
-detector.</p>
+single-case dependence, the direct-defendant scope boundary). The two teal
+nodes are the v24 reframe's <strong>positive modeled objects</strong>: the <strong>enforcer
+optimal-stopping rule</strong> (whose image is the cost-recall frontier — "no
+optimal cutoff" is a <em>result</em>, the frontier is the locus of budget-dependent
+optima) and the <strong>over-crediting bias</strong> <span class="arithmatex">\(\Delta\)</span> (a size-bias
+characterization of the deflation, stated as <em>signs only</em> — increasing in
+<span class="arithmatex">\(\mathrm{CV}(T)\)</span>, decreasing in the base rate, no closed form, with
+<span class="arithmatex">\(\mathrm{CV}(T)\)</span> a pre-bid-file diagnostic). The contributions are these two
+modeled objects plus a <strong>disciplined audit protocol</strong> — not a deployable
+cartel detector.</p>
 </div>
 <div class="admonition abstract">
 <p class="admonition-title">Second platform: the same DAG re-run on federal ComprasNet (§5)</p>

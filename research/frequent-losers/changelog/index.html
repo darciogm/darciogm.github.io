@@ -6731,7 +6731,68 @@
 
 <h1 id="changelog">Changelog<a class="headerlink" href="#changelog" title="Permanent link">¶</a></h1>
 <hr>
-<h2 id="v23-the-audit-on-a-second-platform-comprasnet-june-6-2026-current">v23 — The Audit on a Second Platform (ComprasNet) — June 6, 2026 (Current)<a class="headerlink" href="#v23-the-audit-on-a-second-platform-comprasnet-june-6-2026-current" title="Permanent link">¶</a></h2>
+<h2 id="v24-positive-contribution-reframe-enforcer-stopping-rule-over-crediting-bias-june-6-2026-current">v24 — Positive-contribution reframe (enforcer stopping rule + over-crediting bias) — June 6, 2026 (Current)<a class="headerlink" href="#v24-positive-contribution-reframe-enforcer-stopping-rule-over-crediting-bias-june-6-2026-current" title="Permanent link">¶</a></h2>
+<p><strong>Headline:</strong> the paper is no longer cast as <em>an audit that finds a screen mostly fails</em>. It now
+leads with <strong>two positive analytical objects the screening literature has not written down</strong>,
+plus the reproducible non-circular audit protocol that produces both. This reframe responds to a
+hostile pre-submission panel that read the prior framing as tilted toward its own deflationary
+conclusion; the answer was to surface the two objects that were already implicit in the
+computation and state them as <strong>formal propositions</strong>, not caveats.</p>
+<p><strong>Object 1 — the enforcer's evidence-acquisition problem, solved (online Appendix B).</strong> The
+award-to-bid recovery decision is formalized as an <strong>optimal-stopping problem</strong>: an agency with
+per-record forensic cost <span class="arithmatex">\(c\)</span> and per-case recovery payoff <span class="arithmatex">\(V\)</span> descends a cheap award ranking to
+the unique tangency where the marginal adjudicable case recovered per forensic dollar meets the
+cost–value ratio, <span class="arithmatex">\(\rho(K^*)/\phi(K^*) = c/V\)</span> (new <em>Proposition: optimal stopping depth</em>). The
+<strong>cost–recall frontier</strong> reported in the body is the <strong>empirical image of this solved stopping
+rule</strong>, not a descriptive scatter. Consequently <strong>"there is no optimal cutoff" is now a result,
+not a confession</strong> — the optimum is budget-dependent, so the design object is the locus of
+budget-dependent optima (the frontier), and each operating point (including <span class="arithmatex">\(K_1 = 2{,}000\)</span>) is
+the tangency for an agency at one implied <span class="arithmatex">\(c/V\)</span>.</p>
+<p><strong>Object 2 — the over-crediting bias as an estimable object (online Appendix C).</strong> Raw award-screen
+AUC inflates because a contact-defined label and a participation-based score both load on
+participation volume (size-bias). New <em>Proposition: signs of the over-crediting bias</em> proves the
+raw-minus-opportunity-adjusted gap <span class="arithmatex">\(\Delta\)</span> is <strong>increasing in the dispersion (coefficient of
+variation) of participation counts</strong> and <strong>decreasing in the adjudicated base rate</strong> (signs
+analytic; magnitude by simulation, <strong>no closed form</strong>). The practitioner deliverable is a
+<strong>sufficient statistic — the CV of participation counts — computable before any bid file is
+opened</strong>, that bounds how much of a raw screening number is mechanical. The two platforms (BEC +
+ComprasNet) are reframed as <strong>two points on this one inflation curve, not "the same null twice"</strong>:
+the federal system's rarer target is exactly why its opportunity-only model edges past the raw
+score there, as the characterization predicts.</p>
+<p><strong>The deflation, reframed.</strong> Raw concentration (ROC 0.761; mostly opportunity, residual ≈ chance)
+is now presented as <strong>what the framework correctly catches</strong>, not as "the screen fails." The
+within-opportunity null is the framework correctly pricing the over-crediting that Object 2
+predicts.</p>
+<p><strong>Other changes in this version:</strong></p>
+<ul>
+<li><strong>Abstract reframed</strong> to the canonical v24 abstract (~125 words): opens on the enforcer's
+  optimal-stopping problem and the budget-dependent cost–recall frontier, then the over-crediting
+  size-bias and its CV-of-<span class="arithmatex">\(T\)</span> sufficient statistic.</li>
+<li><strong>Citations added:</strong> Seibel &amp; Škoda, <em>Collusion by Exclusion in Public Procurement</em> (AEJ:Micro,
+  forthcoming) and Kawai–Nakabayashi–Ortner–Chassang (KNOC) 2023 bid-rotation/RD detection.</li>
+<li><strong>Page counts updated</strong> to ≈ 53 pp main + ≈ 46 pp online appendix.</li>
+<li><strong>Site:</strong> landing key-result and Key-Findings rewritten to lead with the two objects + protocol;
+  <code>paper.md</code> manuscript-structure and formal-results sections updated to name Appendix B (stopping
+  rule) and Appendix C (over-crediting bias) as the analytical core.</li>
+</ul>
+<p><strong>Honest caveats preserved (front-paged, not hidden):</strong></p>
+<ul>
+<li><strong>Partially overlapping legal anchors</strong> wherever the federal evidence appears — the 7 federal
+  CADE cases are the <em>same cartels</em> as the BEC portfolio, establishment-anchored; the federal leg
+  is a robustness leg under partially correlated ground truth, not independent out-of-sample proof.</li>
+<li><strong>Power-bounded federal null</strong> — the matched-strata permutation is correctly sized but the
+  federal sample bounds the residual only to a coarser tolerance than BEC.</li>
+<li><strong>Not a cartel detector.</strong> The estimated ranking is not a portable cartel score (that is the
+  object the evidence denies); cobidders are adjudication-anchored <strong>exposure</strong>, not cartel
+  members; AUC ≈ 0.49 against direct CADE defendants is the loser-side scope boundary by design;
+  no platform-wide prospective deployment; liability remains in the richer evidentiary record.</li>
+</ul>
+<p><em>Manuscript home:</em> the two propositions are in online <strong>Appendix B</strong> (Theory, Exit, Survival —
+optimal stopping depth) and <strong>Appendix C</strong> (Opportunity &amp; Timing — signs of the over-crediting
+bias); the federal column remains bound via the <code>\valFedAud*</code> macro namespace. Paper ≈ 53 pp +
+appendix ≈ 46 pp; builds 0 errors / 0 undefined.</p>
+<hr>
+<h2 id="v23-the-audit-on-a-second-platform-comprasnet-june-6-2026">v23 — The Audit on a Second Platform (ComprasNet) — June 6, 2026<a class="headerlink" href="#v23-the-audit-on-a-second-platform-comprasnet-june-6-2026" title="Permanent link">¶</a></h2>
 <p><strong>Headline:</strong> the award-layer evidence-triage protocol is now demonstrated on <strong>two
 institutionally distinct procurement platforms</strong>. Beyond São Paulo's BEC (2009–2019), we re-run the full
 audit battery on the <strong>federal ComprasNet</strong> platform (2013–2019, pure Pregão) against the same
@@ -6911,7 +6972,7 @@ concentration, and (3) a <strong>map of reach and limits</strong>.</p>
   verification.</li>
 </ul>
 <hr>
-<h2 id="v20-submission-clean-may-23-2026-current-jleo">v20 submission-clean — May 23, 2026 (Current — JLEO)<a class="headerlink" href="#v20-submission-clean-may-23-2026-current-jleo" title="Permanent link">¶</a></h2>
+<h2 id="v20-submission-clean-may-23-2026-superseded-jleo">v20 submission-clean — May 23, 2026 (superseded — JLEO)<a class="headerlink" href="#v20-submission-clean-may-23-2026-superseded-jleo" title="Permanent link">¶</a></h2>
 <p><strong>Title:</strong> <em>Cheap Signals, Costly Proof: Award-Layer Evidence Triage in
 Cartel Enforcement.</em> Canonical source: <code>work/v20-editor/submission_clean/</code>
 (full integral copy of the v18-editor build, last recompiled 2026-05-25).

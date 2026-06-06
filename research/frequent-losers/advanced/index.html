@@ -6856,6 +6856,27 @@ the audit protocol and its portable principle, not the ranking.</p>
 </tr>
 </tbody>
 </table>
+<div class="admonition note">
+<p class="admonition-title">Over-crediting bias as an estimable object (the analytic shape of the deflation)</p>
+<p>The gap between Step-1 raw discrimination and the within-stratum floor
+is not an accident; it is the <strong>over-crediting bias</strong>
+<span class="arithmatex">\(\Delta = \mathrm{AUC}_{\text{raw}} - \mathrm{AUC}_{\text{opp-adj}}\)</span>,
+characterized formally (Appendix C). Because the award score is
+monotone in participation volume <span class="arithmatex">\(T\)</span> and the contact-defined label is
+mechanically increasing in <span class="arithmatex">\(T\)</span>, the positive class is the <em>size-biased</em>
+distribution of <span class="arithmatex">\(T\)</span> and the raw area is a size-bias stochastic gap. The
+characterization gives <strong>signs only</strong>: <span class="arithmatex">\(\Delta\)</span> is increasing in the
+volume dispersion <span class="arithmatex">\(\mathrm{CV}(T)\)</span> and decreasing in the adjudicated
+base rate, with <strong>no closed-form magnitude</strong> (the magnitude is read off
+a <em>synthetic</em> simulation; only <span class="arithmatex">\(\mathrm{CV}(T)\)</span> and the base rate are
+taken from data). <span class="arithmatex">\(\mathrm{CV}(T)\)</span> — computable from award data before
+any bid file is opened — is the portable <strong>diagnostic</strong> (not a fix):
+high dispersion warns that a contact-anchored validation will
+over-credit a volume-loaded score. The two platforms are two points on
+one inflation curve (BEC <span class="arithmatex">\(\mathrm{CV}=2.79\)</span>, base rate 3.9%; federal
+<span class="arithmatex">\(\mathrm{CV}=3.79\)</span>, base rate ≈ 0.5%), and the federal point sits in a
+higher-<span class="arithmatex">\(\Delta\)</span> region exactly as the signs predict.</p>
+</div>
 <h2 id="cobidder-labels-and-adjudication-anchors">Cobidder labels and adjudication anchors<a class="headerlink" href="#cobidder-labels-and-adjudication-anchors" title="Permanent link">¶</a></h2>
 <p>The validation target is <strong>adjudication-anchored exposure</strong>: always-
 loser firms that share at least one BEC tender-item with a BEC-active
@@ -7044,6 +7065,19 @@ a single optimal cutoff.</p>
 footprint only ~33%; K1 = 1,000 beats K1 = 2,000; no operating point is
 optimal across enforcers. The earlier single-number "reduction"
 summary is retired.</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">The frontier is the image of a solved decision problem</p>
+<p>The appendix framework now states the enforcer's <strong>optimal-stopping
+rule</strong>: descend the cheap award ranking until marginal recovery per
+unit forensic cost equals the cost–value ratio (<span class="arithmatex">\(V\rho(K^*)=c\phi(K^*)\)</span>),
+and sweeping <span class="arithmatex">\(c/V\)</span> traces this frontier as the <em>locus of
+budget-dependent optima</em>. So "no optimal cutoff" is a <strong>result</strong>, not a
+confession — the right object to report is the whole menu of optima,
+not one point. Because forensic cost is counted in bid rows while
+survivors are the highest-participation firms, the marginal cost rises
+steeply early, which is why the firm-denominator and bid-row-denominator
+frontiers diverge.</p>
 </div>
 <h2 id="exit-margin-survival-model">Exit-margin / survival model<a class="headerlink" href="#exit-margin-survival-model" title="Permanent link">¶</a></h2>
 <p>Appendix B models how long firms persist on the loser side. Cobidders
