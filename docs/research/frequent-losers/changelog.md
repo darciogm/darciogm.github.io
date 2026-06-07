@@ -6,7 +6,27 @@ paper: frequent-losers
 
 ---
 
-## v25.2 — Author-final abstract; Box 1 removed — June 6, 2026 (Current)
+## v25.3 — Editorial craft pass — June 7, 2026 (Current)
+
+**Headline:** an editorial craft pass with **no change to identification, data, or
+numerical results**. The abstract now states the deflation magnitude explicitly,
+the introduction is concretized and tightened, the cost-recall table is de-bloated,
+and the conclusion is tightened.
+
+- **Abstract now states the deflation magnitude** — an **award-layer AUC of 0.76
+  falls to chance once opportunity is held fixed** — replacing the more abstract
+  "raw screening metrics overstate evidentiary value" phrasing. Quoted verbatim on
+  the landing and paper pages.
+- **Introduction concretized and tightened.**
+- **Cost-recall table de-bloated to a single $k = 500$ panel**; the $k = 1000$ panel
+  and the full operating-point grid moved to the **Online Supplement**.
+- **Conclusion tightened.**
+- **Manuscript 45 pp** (was 46); online appendix 28 pp; JLEO double-spaced 61 pp.
+- **econ-write craft score ≈ 91/100.**
+
+---
+
+## v25.2 — Author-final abstract; Box 1 removed — June 6, 2026 (superseded by v25.3)
 
 **Headline:** the author's final abstract (148 words) replaces the v25 text, and Box 1 is
 removed from the body. No numerical change.

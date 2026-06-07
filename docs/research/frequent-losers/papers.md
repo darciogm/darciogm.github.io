@@ -35,7 +35,7 @@ manuscript at submission.
 **Authors:** Darcio Genicolo-Martins & Paulo Furquim de Azevedo (Insper)
 
 **Version:** v25 (June 2026, JLEO submission — three-document package:
-paper ~46 pp + online appendix ~28 pp + online supplement ~23 pp)
+paper ~45 pp + online appendix ~28 pp + online supplement ~23 pp)
 [manuscript PDF](paper.pdf) ·
 [online appendix](online_appendix.pdf)
 

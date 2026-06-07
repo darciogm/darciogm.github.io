@@ -26,7 +26,7 @@ the permutation designs, and negative controls corroborate the opportunity
 account.
 
 !!! abstract "Intuition (plain-language)"
-    The eye-catching raw concentration is largely an opportunity artifact. Ranking firms by *observed* contact reaches ROC ≈ 0.90, but that is mechanical label encoding (a cobidder *is* a firm with positive contact); the honest, genuinely label-blind opportunity benchmark is only ≈ 0.553. The real question is what is left after you net opportunity out. Under the non-circular label the answer is: nothing robust. Inside a fixed opportunity stratum the score discriminates at ROC 0.471 — at chance — and the marginal nested increment (+0.010, p = 0.013) does not survive matched permutation (p = 0.127) or FL-enrichment (p = 0.067). An anchor-agnostic armor battery confirms this is not an artifact: a planted positive control recovers within-stratum AUC 0.953, and the permutation test has power 0.97 at within-AUC 0.55 (bounding any residual below ≈ 0.55). The deflationary verdict rests on this battery — not on "exposure beats the score". That honest split is the contribution.
+    The eye-catching raw concentration is largely an opportunity artifact. The raw award-layer score reaches ROC ≈ 0.76 (0.761) against adjudicated cobidders, but most of that is mechanical: a model of pure opportunity exposure already ranks firms at ROC 0.713, and the honest, genuinely label-blind opportunity benchmark is 0.553. The real question is what is left after you net opportunity out. Under the non-circular label the answer is: nothing robust. Inside a fixed opportunity stratum the score discriminates at ROC 0.471 — at chance — and the marginal nested increment (+0.010, p = 0.013) does not survive matched permutation (p = 0.127) or FL-enrichment (p = 0.067). An anchor-agnostic armor battery confirms this is not an artifact: a planted positive control recovers within-stratum AUC 0.953, and the permutation test has power 0.97 at within-AUC 0.55 (bounding any residual below ≈ 0.55). The deflationary verdict rests on this battery — not on "exposure beats the score". That honest split is the contribution.
 
 
 > 🟢 **Evidence strength: Confirmed — two platforms, anchor-robust by placebo construction.**
@@ -43,9 +43,10 @@ account.
 > 651-cobidder label:
 > (i) **Most concentration is opportunity** ([AN-004](../analyses/an-004-cobidder-baseline.md),
 > [AN-027](../analyses/an-027-universe-anchored-stratum-scope.md)):
-> ranking by *observed* contact reaches ROC ≈ 0.90 (mechanical label
-> encoding) and genuine label-blind opportunity ≈ 0.553, so the raw
-> concentration is exposure-inflated rather than discriminating power.
+> the raw award-layer score reaches ROC 0.761, but a pure opportunity-exposure
+> ranking already reaches 0.713 and the genuine label-blind opportunity
+> benchmark is 0.553, so the raw concentration is exposure-inflated rather
+> than discriminating power.
 > (ii) **No robust residual survives** ([AN-004](../analyses/an-004-cobidder-baseline.md)):
 > the within-stratum AUC is 0.471 (≈chance); the nested increment over the
 > exposure-only benchmark is **+0.010** (DeLong p = 0.013), marginal at best.
@@ -125,7 +126,7 @@ non-zero** within-stratum increment survives. Under the non-circular label the
 data reject this:
 
 - the exposure-only benchmark accounts for most of the raw concentration
-  (ROC ≈ 0.90); and
+  (raw ROC 0.761, exposure-only 0.713); and
 - the score does **not** discriminate within a fixed opportunity stratum
   (ROC ≈ 0.471, at chance); the nested increment (+0.010, p = 0.013) collapses
   toward the benchmark and fails the permutation designs.
@@ -147,8 +148,9 @@ strata that procurement-cartel cases typically operate in (see
 ## Empirical test
 
 - *Exposure benchmark*: an exposure-only model of who could plausibly bid
-  near a CADE anchor given where they participate (ROC ≈ 0.90) — the share
-  of raw concentration that is mechanical opportunity.
+  near a CADE anchor given where they participate (ROC 0.713 on the exposed
+  subsample; raw award score 0.761) — the share of raw concentration that is
+  mechanical opportunity.
 - *Within-stratum increment*: discrimination of the score inside a fixed
   opportunity stratum, net of the benchmark (ROC ≈ 0.471, +0.010, ns across
   permutation designs).
@@ -169,7 +171,7 @@ participation distortions.
 
 | Analysis | Bearing | Status | Key takeaway |
 |---|---|---|---|
-| [AN-004](../analyses/an-004-cobidder-baseline.md) (exposure decomposition) | Against | done | Exposure-only ROC ≈ 0.90 (raw is opportunity-inflated); within-stratum 0.471 (≈chance), nested increment +0.010 (DeLong p = 0.013) |
+| [AN-004](../analyses/an-004-cobidder-baseline.md) (exposure decomposition) | Against | done | Raw award score ROC 0.761, exposure-only 0.713 (raw is opportunity-inflated); within-stratum 0.471 (≈chance), nested increment +0.010 (DeLong p = 0.013) |
 | [AN-005](../analyses/an-005-sham-fl-permutation.md) (permutation + neg. controls) | Against | done | Matched permutation p = 0.127 (ns), FL-enrichment p = 0.067 (ns); real ≈ placebo (p = 0.46) — opportunity alone reproduces the concentration |
 | [AN-014](../analyses/an-014-leakage-audit-d3.md) (leakage audit D3) | Supports | done | In-sample item-level numbers attenuate sharply under OOF / temporal holdout; nothing robust remains |
 | [AN-027](../analyses/an-027-universe-anchored-stratum-scope.md) (universe-anchored scope matrix) | Direct | done | Binary FL flag silent on winner-heavy defendants (0.49); participation volume ranks them moderately (0.66–0.70) — asymmetry on the binary flag, not a generic detector |
