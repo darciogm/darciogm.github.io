@@ -12,7 +12,7 @@ paper: frequent-losers
 
 This page summarizes the contribution, institutional setting, formal framework, and empirical strategy of the paper.
 
-**Title:** *Cheap Signals, Costly Proof: The Reach and Limits of Award-Layer Screening in Cartel Enforcement.* The revised submission is a **three-document package**: a &approx; 48-page main text, a &approx; 28-page online appendix, and a new &approx; 23-page **Online Supplement** that holds the full grids and long proofs. The lead analytical object — a characterization of the **over-crediting bias** of raw award screens — is now stated as a Proposition in the **main body (§4)**; a companion **cost–recall / optimal-stopping** result is stated modestly in **online Appendix B** as an ordinary cost–benefit tangency.
+**Title:** *Cheap Signals, Costly Proof: The Reach and Limits of Award-Layer Screening in Cartel Enforcement.* The revised submission is a **three-document package**: a &approx; 46-page main text, a &approx; 28-page online appendix, and a new &approx; 23-page **Online Supplement** that holds the full grids and long proofs. The lead analytical object — a characterization of the **over-crediting bias** of raw award screens — is now stated as a Proposition in the **main body (§4)**; a companion **cost–recall / optimal-stopping** result is stated modestly in **online Appendix B** as an ordinary cost–benefit tangency.
 
 ---
 

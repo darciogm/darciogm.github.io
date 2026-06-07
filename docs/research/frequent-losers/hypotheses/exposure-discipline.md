@@ -214,9 +214,11 @@ the test. Three legs carry it:
    distinct modality mixes. The CADE labels share legal provenance, but the
    *opportunity structure* that produces the deflation is platform-specific:
    the within-stratum residual sits near chance on both (BEC 0.471 /
-   federal 0.462), with exposure-only discrimination ≥ raw on both
-   (BEC 0.713 ≥ 0.744 raw on the relevant cut; federal 0.754 ≥ 0.744 raw).
-   What ports is the discipline, not a deployable ranking.
+   federal 0.462), and the raw concentration is opportunity-inflated on both
+   (BEC raw 0.761 with exposure-only 0.713; federal raw 0.744 with
+   exposure-only 0.754 — federal's roughly 10× lower base rate makes the
+   size-biasing so complete that exposure-only there *edges out* the raw
+   score). What ports is the discipline, not a deployable ranking.
 
 2. **Placebo-anchor controls — the decisive leg.** B = 500 placebo anchor
    sets reproduce the *raw* AUC on both platforms (federal placebo

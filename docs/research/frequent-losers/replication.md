@@ -77,7 +77,7 @@ master script.
 
     | Document | Source | Length | Holds |
     |----------|--------|--------|-------|
-    | **Paper** | `paper_submission_clean.tex` | ~48 pp | Body: the over-crediting characterization (lead contribution), the modest enforcer stopping rule, the BEC audit, the federal portability leg |
+    | **Paper** | `paper_submission_clean.tex` | ~46 pp | Body: the over-crediting characterization (lead contribution), the modest enforcer stopping rule, the BEC audit, the federal portability leg |
     | **Online Appendix** | `online_appendix_submission_clean.tex` | ~28 pp | Data/labels, theory + survival, opportunity & timing audits, profile/score diagnostics, bid benchmark + cost–recall, price scope, federal audit battery |
     | **Online Supplement** | `online_supplement_submission.tex` | ~23 pp | **Full robustness grids, permutation draws, threshold sweeps, the complete bid-feature dictionary, fold audits, the full price grid, the full federal-construction detail, and the long proofs** — the heavy material migrated out of the body and appendix |
 
