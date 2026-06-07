@@ -6,7 +6,22 @@ paper: frequent-losers
 
 ---
 
-## v25.1 — Final editorial polish — June 6, 2026 (Current)
+## v25.2 — Author-final abstract; Box 1 removed — June 6, 2026 (Current)
+
+**Headline:** the author's final abstract (148 words) replaces the v25 text, and Box 1 is
+removed from the body. No numerical change.
+
+- **New abstract** opens with the allocation problem ("Cartel enforcement must allocate costly
+  proof-producing effort before legal proof exists") and closes on the transfer result ("the
+  audit logic travels; the score does not"). Every claim verified against the manuscript
+  (12% of firms / 67% of bid rows at the §6 operating point; transfer phrasing is verbatim
+  from the comparative section).
+- **Box 1 ("From Cheap Suspicion to Bid-Layer Follow-Up") removed from the body**; its
+  audit-component content remains covered by §4 and the conclusion. Paper ≈ 46 pp.
+
+---
+
+## v25.1 — Final editorial polish — June 6, 2026 (superseded by v25.2)
 
 **Headline:** a light final editorial pass on top of v25 with **no substantive or numerical
 change** — the over-crediting lead contribution, the cost–recall organizational object, the
