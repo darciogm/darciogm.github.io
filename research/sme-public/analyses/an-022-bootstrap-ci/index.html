@@ -6761,6 +6761,54 @@ threshold; does the 95% confidence interval clear it too?</p>
   share entry, by class × regime.</li>
 </ul>
 <h2 id="results">Results<a class="headerlink" href="#results" title="Permanent link">¶</a></h2>
+<h3 id="component-level-cis-canonical-all-bidders-baseline">Component-level CIs (canonical all-bidders baseline)<a class="headerlink" href="#component-level-cis-canonical-all-bidders-baseline" title="Permanent link">¶</a></h3>
+<p>The decomposition components now carry 95% cluster-bootstrap intervals
+(B = 500, auctions resampled with replacement within period × class
+strata, primitives refit on each replicate). These replicates are
+bit-identical to the canonical bootstrap (same seed stream as
+<code>51_bootstrap_ci.R</code>, validated against <code>bootstrap_ci.parquet</code>); they
+extend it to report each component. They are reported alongside the
+point estimates in <a href="../an-010-bne-decomposition/">AN-010</a> and Table 3 of
+the paper (<code>values_bootstrap_decomp.tex</code>).</p>
+<table>
+<thead>
+<tr>
+<th>Component</th>
+<th style="text-align: right;">Non-pharma [95% CI]</th>
+<th style="text-align: right;">Pharma [95% CI]</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong><span class="arithmatex">\(S_2-S_1\)</span></strong> exclusion (lost-discipline)</td>
+<td style="text-align: right;">+0.371 <strong>[0.293, 0.464]</strong></td>
+<td style="text-align: right;">+0.565 <strong>[0.392, 0.740]</strong></td>
+</tr>
+<tr>
+<td><strong><span class="arithmatex">\(S_3-S_2\)</span></strong> protected-pool offset</td>
+<td style="text-align: right;">−0.144 <strong>[−0.239, −0.046]</strong></td>
+<td style="text-align: right;">−0.256 <strong>[−0.435, −0.071]</strong></td>
+</tr>
+<tr>
+<td><strong><span class="arithmatex">\(S_3-S_1\)</span></strong> net effect</td>
+<td style="text-align: right;">+0.227 <strong>[0.180, 0.291]</strong></td>
+<td style="text-align: right;">+0.309 <strong>[0.245, 0.370]</strong></td>
+</tr>
+<tr>
+<td><strong>Absolute exclusion share</strong></td>
+<td style="text-align: right;">72.0% <strong>[64.5, 86.8]</strong></td>
+<td style="text-align: right;">68.8% <strong>[61.6, 85.2]</strong></td>
+</tr>
+</tbody>
+</table>
+<p><strong>The absolute exclusion share is the headline dominance statistic</strong> and
+its whole interval sits above the 50% threshold in both classes. Across
+replicates the offset is negative in <strong>99.8%</strong>, the net effect positive
+in <strong>100%</strong>, and the exclusion share above one-half in <strong>100%</strong>, in both
+classes. (The exclusion-to-net <em>ratio</em> — 164% NP / 183% PH — exceeds
+100% only because the two components offset, and is reported as a
+secondary note, not the headline statistic.)</p>
+<h3 id="per-regime-cis-winner-censoring-robustness">Per-regime CIs (winner-censoring robustness)<a class="headerlink" href="#per-regime-cis-winner-censoring-robustness" title="Permanent link">¶</a></h3>
 <p><strong>Bootstrap CIs</strong> (cluster at auction; B = 500 replicates;
 <code>tab_v3_bootstrap_ci.tex</code>):</p>
 <p><strong>Non-pharma:</strong></p>

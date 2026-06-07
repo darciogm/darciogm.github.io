@@ -6767,7 +6767,7 @@ buyer reference price <span class="arithmatex">\(p^{\mathrm{ref}}\)</span>.</p>
 <thead>
 <tr>
 <th>Object</th>
-<th style="text-align: right;">Value</th>
+<th style="text-align: right;">Value [95% CI]</th>
 <th>Macro</th>
 </tr>
 </thead>
@@ -6789,43 +6789,47 @@ buyer reference price <span class="arithmatex">\(p^{\mathrm{ref}}\)</span>.</p>
 </tr>
 <tr>
 <td><strong><span class="arithmatex">\(S_2 - S_1\)</span></strong> (lost-discipline)</td>
-<td style="text-align: right;"><strong>+0.371</strong></td>
+<td style="text-align: right;"><strong>+0.371</strong> [0.293, 0.464]</td>
 <td><code>\bneEffectIntensNp</code></td>
 </tr>
 <tr>
 <td><strong><span class="arithmatex">\(S_3 - S_2\)</span></strong> (protected-pool offset)</td>
-<td style="text-align: right;"><strong>−0.144</strong></td>
+<td style="text-align: right;"><strong>−0.144</strong> [−0.239, −0.046]</td>
 <td><code>\bneEffectEntryNp</code></td>
 </tr>
 <tr>
 <td><strong><span class="arithmatex">\(S_3 - S_1\)</span></strong> (net effect)</td>
-<td style="text-align: right;"><strong>+0.227</strong></td>
+<td style="text-align: right;"><strong>+0.227</strong> [0.180, 0.291]</td>
 <td><code>\bneEffectTotalNp</code></td>
 </tr>
 <tr>
 <td><strong>Absolute exclusion share</strong></td>
-<td style="text-align: right;"><strong>72.0%</strong></td>
+<td style="text-align: right;"><strong>72.0%</strong> [64.5, 86.8]</td>
 <td><code>\bneShareIntensNp</code></td>
-</tr>
-<tr>
-<td>Exclusion-to-net ratio</td>
-<td style="text-align: right;">164%</td>
-<td><code>\bneIntensRelNetNp</code></td>
 </tr>
 </tbody>
 </table>
+<p>Brackets are 95% cluster-bootstrap intervals (auctions resampled with
+replacement, B = 500, primitives refit on each replicate — see
+<a href="../an-022-bootstrap-ci/">AN-022</a>). The <strong>absolute exclusion share</strong> is the
+headline dominance statistic. The exclusion-to-net <em>ratio</em> <span class="arithmatex">\((S_2-S_1)/(S_3-S_1)\)</span>
+= <strong>164%</strong> (<code>\bneIntensRelNetNp</code>) is reported as a secondary note: it exceeds
+100% only because the two components offset, so it is not a clean share.</p>
 <p>In <strong>pharma</strong> (boundary case — see <a href="../an-016-pharma-boundary/">AN-016</a>):
-<span class="arithmatex">\(S_1\)</span> = 0.654, <span class="arithmatex">\(S_2\)</span> = 1.219, <span class="arithmatex">\(S_3\)</span> = 0.963; exclusion magnitude +0.565,
-offset −0.256, net +0.309. Absolute exclusion share <strong>68.8%</strong>;
-exclusion-to-net ratio 183%. Same qualitative pattern at higher
-magnitudes; the welfare <em>ranking</em> is more model-sensitive than in
-non-pharma.</p>
+<span class="arithmatex">\(S_1\)</span> = 0.654, <span class="arithmatex">\(S_2\)</span> = 1.219, <span class="arithmatex">\(S_3\)</span> = 0.963; exclusion magnitude +0.565
+[0.392, 0.740], offset −0.256 [−0.435, −0.071], net +0.309 [0.245, 0.370].
+Absolute exclusion share <strong>68.8%</strong> [61.6, 85.2]; the exclusion-to-net ratio
+of 183% is again secondary. Same qualitative pattern at higher magnitudes;
+the welfare <em>ranking</em> is more model-sensitive than in non-pharma. Across
+replicates the offset is negative in 99.8% and the net positive in 100%, in
+both classes.</p>
 <p><strong>Bidder counts (per auction).</strong> Non-pharma: SME participation
 <strong>0.94 → 1.87</strong> post-cutoff (roughly doubles); non-SME participation
 <strong>2.68 → 1.50</strong> (falls but does not vanish — many auctions are above
 the R$80K SME-eligibility ceiling and remain open). Pharma: SME
 <strong>0.55 → 1.22</strong>; non-SME <strong>2.61 → 1.66</strong>.</p>
-<p><em>See Figure 4 (Counterfactual price decomposition) in <code>paper.pdf</code> §4.</em></p>
+<p><em>See Figure 1 (Counterfactual price decomposition bar chart) in <code>paper.pdf</code> §3.
+The participation event study is now Online Appendix Figure OA-1.</em></p>
 <p>Output: <code>v7-jpube-tight/scripts/46_decomp_compare.R</code> produces the
 decomposition table cells; macros live in <code>v8-jpube/output/values.tex</code>.</p>
 <h2 id="interpretation">Interpretation<a class="headerlink" href="#interpretation" title="Permanent link">¶</a></h2>

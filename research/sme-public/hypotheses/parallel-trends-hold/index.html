@@ -19,7 +19,7 @@
     
     
       
-        <title>Pre-treatment placebos null, HonestDiD survives M̄ violations, Lee bounds tight - Darcio Genicolo-Martins</title>
+        <title>Reduced-form DiD validates timing and sign, but clean parallel trends are NOT claimed — identification is structural - Darcio Genicolo-Martins</title>
       
     
     
@@ -135,7 +135,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#hparallel-trends-hold-pre-treatment-placebos-null-honestdid-survives-m-violations-lee-bounds-tight" class="md-skip">
+        <a href="#hparallel-trends-hold-reduced-form-did-validates-timing-and-sign-clean-parallel-trends-are-not-claimed-and-identification-is-carried-by-the-structural-decomposition" class="md-skip">
           Skip to content
         </a>
       
@@ -169,7 +169,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Pre-treatment placebos null, HonestDiD survives M̄ violations, Lee bounds tight
+              Reduced-form DiD validates timing and sign, but clean parallel trends are NOT claimed — identification is structural
             
           </span>
         </div>
@@ -6729,69 +6729,93 @@
                   
 
 
-<h1 id="hparallel-trends-hold-pre-treatment-placebos-null-honestdid-survives-m-violations-lee-bounds-tight">H:parallel-trends-hold — Pre-treatment placebos null, HonestDiD survives M̄ violations, Lee bounds tight<a class="headerlink" href="#hparallel-trends-hold-pre-treatment-placebos-null-honestdid-survives-m-violations-lee-bounds-tight" title="Permanent link">¶</a></h1>
-<p>The DiDiR design identifies the open-vs-SME-only effect by comparing the
-<em>switched</em> group 65 to the <em>always-treated</em> control groups. Identification
-requires that, absent the policy reversal, group 65 prices would have
-moved in parallel with the control groups. Three complementary checks
-test this: pre-treatment placebos (which apply the DiDiR to a fake pre-
-treatment date and should yield null), HonestDiD (which constructs
-robust CIs under controlled M̄ violations and should keep the effect
-significant), and Lee bounds (which tighten the price coefficient
-against differential completion).</p>
+<h1 id="hparallel-trends-hold-reduced-form-did-validates-timing-and-sign-clean-parallel-trends-are-not-claimed-and-identification-is-carried-by-the-structural-decomposition">H:parallel-trends-hold — Reduced-form DiD validates timing and sign; clean parallel trends are NOT claimed, and identification is carried by the structural decomposition<a class="headerlink" href="#hparallel-trends-hold-reduced-form-did-validates-timing-and-sign-clean-parallel-trends-are-not-claimed-and-identification-is-carried-by-the-structural-decomposition" title="Permanent link">¶</a></h1>
+<p>The DiDiR design compares the <em>switched</em> group 65 to the
+<em>always-treated</em> control groups. A strict reduced-form-only reading
+would require that, absent the policy reversal, group 65 prices and
+participation would have moved in parallel with the controls. <strong>The paper
+does not claim that.</strong> The joint pre-trend test <em>rejects</em> flatness for
+both participation margins, and Group 65 is not balanced enough against
+the pooled controls to support a reduced-form-only design. The reduced
+form is therefore demoted to a <strong>timing, sign, and approximate-scale
+check</strong>; the identification work is carried by the structural
+price-formation decomposition. The participation event study is reported
+as <strong>Online Appendix Figure OA-1</strong>.</p>
 <div class="admonition abstract">
 <p class="admonition-title">Intuition (plain-language)</p>
-<p>The design assumes that, absent the policy reversal, Group 65 prices would have tracked the control groups. You cannot observe that counterfactual, but you can stress it: fake-date placebos should find nothing, the effect should survive controlled violations of parallel trends, and selection on which auctions complete should not move the estimate. All three checks hold, so the comparison is credible.</p>
+<p>The design would <em>like</em> Group 65 prices to have tracked the control groups before the reform, but they did not cleanly: the joint pre-trend test rejects flatness on both participation margins (partly because the platform-enablement months in late 2017 fall inside the pre-window), and pre-period covariates are imbalanced. So the paper does not lean on clean parallel trends. Instead, the reduced-form DiD is used only to pin down <em>timing, sign, and rough scale</em> — non-SME participation drops sharply right at the cutoff and prices move in the predicted direction — while the actual magnitude and welfare claims come from the structural decomposition. A reassuring consistency check: the structural net effect (0.227 of the reference price) scaled by the 43% realized SME-only adherence lands near 10%, the same order of magnitude as the 10–11% reduced-form DiD.</p>
 </div>
 <blockquote>
-<p><strong>Evidence strength: Partial (strongly supported).</strong> Six convergent
-identification checks now back the design. <strong>Sun-Abraham (item-level)
-ATT 0.108 reproduces DDR 0.113</strong> within 0.005 on log prices, with
-similar tight convergence on firms and distance
-(<a href="../../analyses/an-018-cs2021-staggered/">AN-018</a>).
-<strong>Callaway-Sant'Anna at group×month gives 0.237* — same direction,
-wider SE due to aggregation level</strong>. <strong>Goodman-Bacon decomposition
-reports 100% weight on the clean Treated-vs-Untreated 2×2</strong> —
-the heterogeneous-timing-bias concern does not apply to this
-single-cohort design (<a href="../../analyses/an-020-goodman-bacon/">AN-020</a>).
-<strong>Synthetic control with Ridge augmentation matches group 65's
-pre-treatment trajectory exactly</strong> (L2 imbalance 0.0000); post-period
-ATT 0.171 in the same direction; placebo <span class="arithmatex">\(p = 0.103\)</span> borderline
-(<a href="../../analyses/an-021-synth-control/">AN-021</a>). Plus <strong>placebo
-nulls</strong> on prices (<a href="../../analyses/an-004-placebo-tests/">AN-004</a>),
-<strong>tight Lee bounds</strong> (<a href="../../analyses/an-005-lee-bounds/">AN-005</a>),
-and <strong>HonestDiD survives M̄</strong> (<a href="../../analyses/an-006-honestdid/">AN-006</a>).
-Three of four estimators (DDR, SA, GB) earn green or near-green;
-synth's placebo <span class="arithmatex">\(p = 0.103\)</span> is the one open piece of the gauntlet.</p>
+<p><strong>Evidence strength: Partial — timing and sign supported; clean parallel
+trends NOT claimed.</strong> The reduced form validates the <em>direction and
+timing</em> of the effect, not a clean-trend causal magnitude.
+<strong>The joint pre-trend test rejects flatness for both participation
+margins</strong> (SME <span class="arithmatex">\(F = 19.08\)</span>, non-SME <span class="arithmatex">\(F = 38.97\)</span>, both <span class="arithmatex">\(p = 0.000\)</span>),
+partly reflecting the BEC platform-enablement months in late 2017 that
+fall inside the pre-window; the OA-1 event study is read for <strong>timing
+and direction</strong>, not as a clean-trend estimate
+(<a href="../../analyses/an-023-phased-adoption/">AN-023</a>). Group 65 is also
+imbalanced on pre-period covariates, which is why the reduced form is
+not asked to carry the structural magnitude or the welfare ranking.
+What the reduced form <em>does</em> establish converges across estimators:
+<strong>Sun-Abraham (item-level) ATT 0.108 reproduces DDR 0.113</strong> within
+0.005 on log prices (<a href="../../analyses/an-018-cs2021-staggered/">AN-018</a>);
+<strong>Callaway-Sant'Anna at group×month gives 0.237 — same direction,
+wider SE; BJS imputation attenuates but keeps the sign</strong>; modern-DiD
+attenuation is itself expected under heterogeneous timing. The
+<strong>Goodman-Bacon decomposition reports 100% weight on the clean
+Treated-vs-Untreated 2×2</strong> (<a href="../../analyses/an-020-goodman-bacon/">AN-020</a>),
+and <strong>placebo cutoffs are smaller in magnitude than the real cutoff</strong>
+(<a href="../../analyses/an-004-placebo-tests/">AN-004</a>). <strong>Lee bounds</strong>
+(<a href="../../analyses/an-005-lee-bounds/">AN-005</a>) and <strong>HonestDiD</strong>
+(<a href="../../analyses/an-006-honestdid/">AN-006</a>) further discipline the
+reduced-form coefficient. The bottom line: the DiD corroborates the
+sign and timing of the predicted price footprint, but identification
+of the mechanism and its magnitude is structural, not reduced-form.</p>
 </blockquote>
 <h2 id="theory">Theory<a class="headerlink" href="#theory" title="Permanent link">¶</a></h2>
-<p>DiDiR identification of the pre-switch-period effect requires parallel
-trends in the absence of the policy reversal. The standard battery
-(Roth, Sant'Anna, Bilinski and Poe 2023):
+<p>A reduced-form-only reading of the DiDiR coefficient would require
+parallel trends in the absence of the policy reversal. The paper does
+<em>not</em> rely on that. The pre-trend battery is run to characterize the
+reduced form, not to certify a clean-trend causal estimate:
+- <em>Joint pre-trend test</em>: the event-study pre-period coefficients should
+  be jointly flat if parallel trends held. <strong>They are not</strong> — the test
+  rejects flatness on both participation margins, so the reduced form is
+  used only for timing/sign/scale.
 - <em>Pre-treatment placebos</em>: applying the DiDiR specification to a fake
-  pre-treatment date should yield null if parallel trends hold.
-- <em>HonestDiD</em>: Rambachan and Roth (2023) construct robust CIs allowing
-  the post-treatment trend to deviate by at most M̄ in some sense from
-  the pre-treatment path.
-- <em>Lee bounds</em>: Lee (2009) bounds correct the price coefficient against
-  differential completion (the price equation conditions on completed
-  items).</p>
+  pre-treatment date should yield coefficients smaller in magnitude than
+  the real cutoff.
+- <em>HonestDiD</em>: Rambachan and Roth (2023) robust CIs under bounded
+  post-treatment trend deviation M̄.
+- <em>Lee bounds</em>: Lee (2009) bounds correct the conditional price
+  coefficient against differential completion.</p>
+<p>Because clean parallel trends are not assumed, identification of the
+mechanism and its magnitude is delegated to the structural
+price-formation decomposition (see
+<a href="../exclusion-dominates/">H:exclusion-dominates</a>). A structural↔DiD
+consistency check ties them together: the structural net effect of 0.227
+of the reference price, scaled by the 43% realized SME-only adherence,
+is ≈ 10% — the same order of magnitude as the 10–11% reduced-form DiD.</p>
 <h2 id="prediction">Prediction<a class="headerlink" href="#prediction" title="Permanent link">¶</a></h2>
-<p>(i) Pre-treatment placebos on the <em>price</em> outcome should be small in
-magnitude and statistically insignificant. (ii) HonestDiD CIs should
-exclude zero for M̄ up to at least the empirical pre-trend magnitude.
-(iii) Lee bounds on the price coefficient should be tight (lower-upper
-gap small) and both endpoints significant.</p>
+<p>(i) The joint pre-trend test will <em>reject</em> flatness — the reduced form is
+not a clean-trend design and is therefore restricted to timing/sign/scale.
+(ii) The non-SME participation event study (Online Appendix Fig. OA-1)
+will show a sharp drop <em>at</em> the cutoff, supporting the timing/direction
+reading. (iii) Placebo cutoffs will be smaller in magnitude than the real
+cutoff; modern-DiD estimators (SA, CS, BJS) will preserve the sign while
+attenuating the magnitude. (iv) Lee bounds and HonestDiD will keep the
+reduced-form price coefficient disciplined.</p>
 <h2 id="competing-prediction">Competing prediction<a class="headerlink" href="#competing-prediction" title="Permanent link">¶</a></h2>
-<p><strong>Differential pre-trends.</strong> If group 65 prices were already on a
-differential downward path before March 2018, the DiDiR coefficient
-captures the trend extrapolation rather than the policy effect. The
-placebo test directly addresses this: a significant pre-treatment
-coefficient would reveal the differential trend. The price-margin
-placebo is null; firm-count and bid-count placebos are significant
-but reflect the <em>control groups'</em> gradual SME restriction rollout, not
-a group-65-specific shock — see
-<a href="../entry-thickens-pool/">H:entry-thickens-pool</a>.</p>
+<p><strong>A clean-trend causal magnitude.</strong> A reviewer might expect the page to
+claim that flat pre-trends license reading the DiDiR coefficient as the
+causal magnitude. The paper deliberately does <strong>not</strong> make that claim:
+the joint pre-trend test rejects flatness (partly because the late-2017
+platform-enablement months fall inside the pre-window), and pre-period
+covariates are imbalanced. The reduced form is therefore demoted to a
+timing/sign/scale check, and the magnitude comes from the structure. The
+firm-count and bid-count pre-trends also partly reflect the <em>control
+groups'</em> gradual SME-restriction rollout, not a group-65-specific shock —
+see <a href="../entry-thickens-pool/">H:entry-thickens-pool</a>.</p>
 <h2 id="setting-evidence">Setting evidence<a class="headerlink" href="#setting-evidence" title="Permanent link">¶</a></h2>
 <p>The pre-treatment period is long enough to test trend stability. The
 placebo design uses Sep 2017, Mar 2017, and Jun 2017 as fake treatment
@@ -6799,6 +6823,11 @@ dates, splitting the pre-period into nominal "pre" and "post" halves
 while applying the same DiDiR specification.</p>
 <h2 id="empirical-test">Empirical test<a class="headerlink" href="#empirical-test" title="Permanent link">¶</a></h2>
 <ul>
+<li><em>Joint pre-trend test (participation event study, Online Appendix
+  Fig. OA-1)</em>: an F-test on the pre-period event-study coefficients. It
+  <strong>rejects</strong> flatness on both margins (SME F=19.08, non-SME F=38.97,
+  both p=0.000), so the reduced form is read for timing and direction
+  only.</li>
 <li><em>Pre-treatment placebos</em>: DiDiR with fake treatment dates Sep 2017,
   Mar 2017, and Jun 2017; price coefficient should be small relative to
   the real cutoff.</li>
@@ -6829,39 +6858,39 @@ not to group 65 itself.</p>
 </thead>
 <tbody>
 <tr>
+<td><a href="../../analyses/an-023-phased-adoption/">AN-023</a></td>
+<td>Qualifies</td>
+<td>Joint pre-trend test <strong>rejects</strong> flatness on both participation margins (SME F=19.08, non-SME F=38.97, both p=0.000), partly reflecting late-2017 platform-enablement months in the pre-window. OA-1 event study read for timing/direction, not clean trends. Dropping the 8-month enablement window moves β from −0.109 to −0.087 (−22%); both remain p&lt;0.01 — timing/sign robust, not a clean-trend magnitude.</td>
+</tr>
+<tr>
 <td><a href="../../analyses/an-004-placebo-tests/">AN-004</a></td>
 <td>Supports</td>
-<td>Pre-reform price placebos small and negative: β = −0.013 / −0.030 / −0.034 at Sep / Mar / Jun 2017, all far below the real-cutoff −0.108 to −0.142 range — not driving the main result.</td>
+<td>Placebo cutoffs (Sep / Mar / Jun 2017) smaller in magnitude than the real cutoff — consistent with a timing/sign reading of the reduced form.</td>
 </tr>
 <tr>
 <td><a href="../../analyses/an-005-lee-bounds/">AN-005</a></td>
 <td>Supports</td>
-<td>Bounds −0.131 to −0.123, both highly significant; differential completion has negligible impact.</td>
+<td>Bounds −0.131 to −0.123, both significant; differential completion has negligible impact on the conditional coefficient.</td>
 </tr>
 <tr>
 <td><a href="../../analyses/an-006-honestdid/">AN-006</a></td>
 <td>Supports</td>
-<td>Price effect remains significant under substantial M̄ violations.</td>
+<td>Reduced-form price coefficient remains disciplined under M̄ violations.</td>
 </tr>
 <tr>
 <td><a href="../../analyses/an-018-cs2021-staggered/">AN-018</a></td>
 <td>Supports</td>
-<td>Sun-Abraham item-level ATT 0.108 vs DDR 0.113 (Δ&lt;0.005 on log prices); CS2021 group-month 0.237* same direction; convergence across three estimators on direction, on magnitude for SA.</td>
+<td>Sun-Abraham item-level ATT 0.108 vs DDR 0.113 (Δ&lt;0.005 on log prices); CS2021 group-month 0.237 same direction; BJS attenuates but keeps sign — sign/timing convergence, not a magnitude claim.</td>
 </tr>
 <tr>
 <td><a href="../../analyses/an-020-goodman-bacon/">AN-020</a></td>
-<td>Supports (green)</td>
-<td>Weight = 1.000 on clean Treated-vs-Untreated 2×2; zero forbidden comparisons. Heterogeneous-timing-bias mathematically absent in this single-cohort design.</td>
+<td>Supports</td>
+<td>Weight = 1.000 on clean Treated-vs-Untreated 2×2; zero forbidden comparisons. Heterogeneous-timing bias mathematically absent in this single-cohort design.</td>
 </tr>
 <tr>
 <td><a href="../../analyses/an-021-synth-control/">AN-021</a></td>
 <td>Mixed</td>
-<td>Pre-treatment gap 0.0000 (parallel trends enforced); post ATT 0.171 directionally consistent; placebo p=0.103 borderline (not significant at 5%).</td>
-</tr>
-<tr>
-<td><a href="../../analyses/an-023-phased-adoption/">AN-023</a></td>
-<td>Supports</td>
-<td>Dropping the 8-month BEC enablement window reduces β from −0.109 to −0.087 (−22%) but both remain p&lt;0.01. Headline not driven by rollout dynamics.</td>
+<td>Ridge-augmented synthetic control matches pre-period by construction; post ATT 0.171 directionally consistent; placebo p=0.103 borderline. Directional corroboration only — does not certify clean trends.</td>
 </tr>
 </tbody>
 </table>
