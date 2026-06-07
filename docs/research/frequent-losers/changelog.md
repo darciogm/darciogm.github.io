@@ -6,7 +6,20 @@ paper: frequent-losers
 
 ---
 
-## v25.3 — Editorial craft pass — June 7, 2026 (Current)
+## v25.4 — Length pass — June 7, 2026 (Current)
+
+**Headline:** a length/compression pass with **no change to identification, data, or
+numerical results**. Two sections whose payoff was repetition were tightened: the
+second-platform (federal ComprasNet) section, which re-ran the full audit battery,
+had its stage-by-stage re-narration cut (detail kept in the appendix); and the
+cobidder-profile section folded its descriptive-texture recitation into a single
+clause pointing to the appendix. Every claim, number, macro, and citation is
+preserved; the comparative table and the "audit travels, the score does not"
+result stay in the body. Main text **45 → 44 pp** (double-spaced 61 → 59 pp).
+
+---
+
+## v25.3 — Editorial craft pass — June 7, 2026 (superseded by v25.4)
 
 **Headline:** an editorial craft pass with **no change to identification, data, or
 numerical results**. The abstract now states the deflation magnitude explicitly,
