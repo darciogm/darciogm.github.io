@@ -32,10 +32,14 @@ non-pharmaceutical procurement.
 > invariance ($F_c^{\mathrm{SME,Post}} = F_c^{\mathrm{SME,Pre}}$)
 > reinforces dominance: share rises to **85% (NP) / 79% (PH)** when
 > SME composition is held fixed. **AN-022 cluster bootstrap (B=500)
-> reports 95% CI [64.5, 86.8] (NP) and [61.6, 85.2] (PH) on the
-> absolute exclusion share — the lower endpoint exceeds 50%
-> in every cell × winner-censoring regime**, so the dominance ordering
-> survives bootstrap inference. Pharma inherits additional model
+> reports 95% CIs on every non-pharma component: exclusion
+> $S_2-S_1 = +0.371$ [0.293, 0.464], protected-pool offset
+> $S_3-S_2 = -0.144$ [−0.239, −0.046], net $S_3-S_1 = +0.227$
+> [0.180, 0.291], and the absolute exclusion share 72.0% [64.5, 86.8]
+> ([61.6, 85.2] PH). Across replicates the offset is negative in 99.8%,
+> the net positive in 100%, and the share above one-half in 100%** —
+> so the dominance ordering survives bootstrap inference rather than
+> resting on a single point estimate. Pharma inherits additional model
 > sensitivity ([AN-016](../analyses/an-016-pharma-boundary.md)),
 > hence the boundary-case treatment.
 
@@ -110,7 +114,7 @@ participation with changes in the active SME pool composition
 | [AN-017](../analyses/an-017-strict-invariance.md) | Pending | Strict-invariance specification holding the SME pool fixed in composition — should preserve the dominance ordering if compositional churn is not the main driver. |
 | [AN-016](../analyses/an-016-pharma-boundary.md) | Mixed | Pharma magnitudes larger but more model-sensitive; not load-bearing for the headline. |
 | [AN-014](../analyses/an-014-uh-correction.md) | Supports | UH-correction ICCs 0.36–0.59; Gaussian-copula ρ_c=0.3 share drift <5pp, total drift <10%. Decomposition not mechanically produced by scale shocks. |
-| [AN-022](../analyses/an-022-bootstrap-ci.md) | Supports | 95% CI on absolute exclusion share [64.5, 86.8] NP / [61.6, 85.2] PH — lower endpoint exceeds 50% dominance threshold in every cell × regime. Δ_total CI excludes zero. |
+| [AN-022](../analyses/an-022-bootstrap-ci.md) | Supports | 95% CIs on NP components: exclusion +0.371 [0.293, 0.464], offset −0.144 [−0.239, −0.046], net +0.227 [0.180, 0.291], abs. share 72.0% [64.5, 86.8] ([61.6, 85.2] PH). Offset<0 in 99.8% of replicates, net>0 in 100%, share>50% in 100% — lower endpoint exceeds the 50% dominance threshold in every cell × regime. |
 
 ## Open tests
 

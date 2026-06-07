@@ -116,17 +116,23 @@ remaining $S_1 \to S_3$ gap is the realized price cost of the set-aside.
 | Class | $S_1$ | $S_2$ | $S_3$ | $S_2{-}S_1$ (excl.) | $S_3{-}S_2$ (offset) | $S_3{-}S_1$ (net) | Abs. excl. share |
 |---|:---:|:---:|:---:|:---:|:---:|:---:|:---:|
 | **Non-pharma** | 0.774 | 1.144 | 1.000 | +0.371 | −0.144 | **+0.227** | **72.0%** |
+| *95% bootstrap CI* | | | | [0.293, 0.464] | [−0.239, −0.046] | [0.180, 0.291] | [64.5, 86.8] |
 | Pharma *(boundary)* | 0.654 | 1.219 | 0.963 | +0.565 | −0.256 | +0.309 | 68.8% |
 
 *Table&nbsp;3 in the manuscript. Prices are simulated $E[c_{(2)}]$ normalized by
 the buyer reference price. "Abs. excl. share" is
-$|S_2-S_1| / (|S_2-S_1| + |S_3-S_2|)$.*
+$|S_2-S_1| / (|S_2-S_1| + |S_3-S_2|)$. Brackets report 95% cluster-bootstrap
+intervals (B=500, auctions resampled within period&times;class strata,
+primitives refit on each replicate). Across replicates the offset is negative
+in 99.8% of draws, the net effect positive in 100%, and the exclusion share
+above one-half in 100%.*
 
 **The protected pool responds, but exclusion dominates.** In non-pharmaceutical
 supplies, removing non-SMEs while holding the SME pool fixed raises simulated
-prices by **0.371** of the reference price; the observed post-policy SME pool
-offsets that shock by only **0.144**, leaving a net **+0.227**. The exclusion
-component is **72%** of the sum of absolute component magnitudes — the dominant
+prices by **0.371** [0.293, 0.464] of the reference price; the observed
+post-policy SME pool offsets that shock by only **0.144** [−0.239, −0.046],
+leaving a net **+0.227** [0.180, 0.291]. The exclusion component is **72%**
+[64.5, 86.8] of the sum of absolute component magnitudes — the dominant
 force is the loss of the non-SME price-forming pool, not a failure of protected
 firms to respond.
 

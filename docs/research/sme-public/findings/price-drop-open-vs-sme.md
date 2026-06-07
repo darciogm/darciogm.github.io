@@ -46,9 +46,11 @@ the pre-treatment placebo on prices is null
 ![Event study log prices](../assets/figures/fig_01_logprices_es.png)
 
 *Event study (figure A.1 / fig\_01\_logprices\_es): semester-by-semester
-group-65 vs control gap in log prices. The gap narrows sharply after the
-March 2018 cutoff and stabilizes — consistent with parallel trends in
-the pre-period.*
+group-65 vs control gap in log prices. The gap moves sharply at the
+March 2018 cutoff and stabilizes — read for timing and direction. The
+joint pre-trend test rejects flatness, so the paper does not claim clean
+pre-period parallel trends; identification of the magnitude is
+structural.*
 
 **Caveat.** The reduced-form coefficient is a *policy comparison* under
 DiDiR identification, not a structural counterfactual. It does not

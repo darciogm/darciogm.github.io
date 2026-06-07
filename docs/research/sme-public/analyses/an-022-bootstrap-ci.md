@@ -9,8 +9,8 @@ status_date: 2026-05-21
 confidence: yellow
 headline: "Cluster-bootstrap CI (B=500, auction-level resampling) on the absolute exclusion share gives [64.5%, 86.8%] in non-pharma and [61.6%, 85.2%] in pharma under the all-bidders baseline. The lower endpoint exceeds 50% in every cell × regime — the exclusion-dominant ordering survives bootstrap inference at the 95% level. Δ_total CI fully excludes zero across all three winner-censoring regimes (losers / all / Turnbull)."
 created: 2026-05-21
-script: v7-jpube-tight/scripts/51_bootstrap_ci.R
-target: v7-jpube-tight/output/tables/tab_v3_bootstrap_ci.tex
+script: v7-jpube-tight/scripts/51_bootstrap_ci.R + v8-jpube/scripts/60_bootstrap_decomp_ci.R
+target: v7-jpube-tight/output/tables/tab_v3_bootstrap_ci.tex + v8-jpube/output/values_bootstrap_decomp.tex
 tags: ["H:exclusion-dominates", "H:protected-pool-responds", bootstrap, confidence-interval, cluster-bootstrap, dominance-threshold]
 design:
   sample: "BEC Pregão drop-outs, structural cells (non-pharma standardized; pharma)"
@@ -52,6 +52,34 @@ threshold; does the 95% confidence interval clear it too?
   share entry, by class × regime.
 
 ## Results
+
+### Component-level CIs (canonical all-bidders baseline)
+
+The decomposition components now carry 95% cluster-bootstrap intervals
+(B = 500, auctions resampled with replacement within period × class
+strata, primitives refit on each replicate). These replicates are
+bit-identical to the canonical bootstrap (same seed stream as
+`51_bootstrap_ci.R`, validated against `bootstrap_ci.parquet`); they
+extend it to report each component. They are reported alongside the
+point estimates in [AN-010](an-010-bne-decomposition.md) and Table 3 of
+the paper (`values_bootstrap_decomp.tex`).
+
+| Component | Non-pharma [95% CI] | Pharma [95% CI] |
+|---|---:|---:|
+| **$S_2-S_1$** exclusion (lost-discipline) | +0.371 **[0.293, 0.464]** | +0.565 **[0.392, 0.740]** |
+| **$S_3-S_2$** protected-pool offset | −0.144 **[−0.239, −0.046]** | −0.256 **[−0.435, −0.071]** |
+| **$S_3-S_1$** net effect | +0.227 **[0.180, 0.291]** | +0.309 **[0.245, 0.370]** |
+| **Absolute exclusion share** | 72.0% **[64.5, 86.8]** | 68.8% **[61.6, 85.2]** |
+
+**The absolute exclusion share is the headline dominance statistic** and
+its whole interval sits above the 50% threshold in both classes. Across
+replicates the offset is negative in **99.8%**, the net effect positive
+in **100%**, and the exclusion share above one-half in **100%**, in both
+classes. (The exclusion-to-net *ratio* — 164% NP / 183% PH — exceeds
+100% only because the two components offset, and is reported as a
+secondary note, not the headline statistic.)
+
+### Per-regime CIs (winner-censoring robustness)
 
 **Bootstrap CIs** (cluster at auction; B = 500 replicates;
 `tab_v3_bootstrap_ci.tex`):

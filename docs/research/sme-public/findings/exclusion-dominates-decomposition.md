@@ -22,6 +22,18 @@ procurement
 ratio likewise exceeds 1 — the protected-pool offset works in the right
 direction but cannot recreate the lost competitive discipline.
 
+**Bootstrap inference now backs the dominance claim.** A cluster bootstrap
+(B = 500, auctions resampled within period × class strata, recovered
+primitives refit on each replicate) puts 95% intervals on each
+non-pharmaceutical component: exclusion $S_2 - S_1 = +0.371$
+**[0.293, 0.464]**, protected-pool offset $S_3 - S_2 = -0.144$
+**[−0.239, −0.046]**, net $S_3 - S_1 = +0.227$ **[0.180, 0.291]**, and
+the absolute exclusion share 72.0% **[64.5, 86.8]**. Across replicates the
+offset is negative in **99.8%**, the net effect positive in **100%**, and
+the exclusion share above one-half in **100%** — so exclusion-dominance is
+not an artifact of a single point estimate
+([AN-022](../analyses/an-022-bootstrap-ci.md)).
+
 The decomposition rests on three counterfactual price-formation objects
 recovered from BEC Pregão drop-outs under the maintained IPV-clock
 interpretation: $S_1$ (open pre-policy auction), $S_2$ (SME-only with

@@ -57,23 +57,31 @@ buyer reference price $p^{\mathrm{ref}}$.
 
 In standardized **non-pharma**:
 
-| Object | Value | Macro |
+| Object | Value [95% CI] | Macro |
 |---|---:|---|
 | $S_1$ (open pre-policy) | 0.774 | `\bneMeanSoneNp` |
 | $S_2$ (SME-only, pre-pool fixed) | 1.144 | `\bneMeanStwoNp` |
 | $S_3$ (SME-only, post-pool) | 1.000 | `\bneMeanSthreeNp` |
-| **$S_2 - S_1$** (lost-discipline) | **+0.371** | `\bneEffectIntensNp` |
-| **$S_3 - S_2$** (protected-pool offset) | **−0.144** | `\bneEffectEntryNp` |
-| **$S_3 - S_1$** (net effect) | **+0.227** | `\bneEffectTotalNp` |
-| **Absolute exclusion share** | **72.0%** | `\bneShareIntensNp` |
-| Exclusion-to-net ratio | 164% | `\bneIntensRelNetNp` |
+| **$S_2 - S_1$** (lost-discipline) | **+0.371** [0.293, 0.464] | `\bneEffectIntensNp` |
+| **$S_3 - S_2$** (protected-pool offset) | **−0.144** [−0.239, −0.046] | `\bneEffectEntryNp` |
+| **$S_3 - S_1$** (net effect) | **+0.227** [0.180, 0.291] | `\bneEffectTotalNp` |
+| **Absolute exclusion share** | **72.0%** [64.5, 86.8] | `\bneShareIntensNp` |
+
+Brackets are 95% cluster-bootstrap intervals (auctions resampled with
+replacement, B = 500, primitives refit on each replicate — see
+[AN-022](an-022-bootstrap-ci.md)). The **absolute exclusion share** is the
+headline dominance statistic. The exclusion-to-net *ratio* $(S_2-S_1)/(S_3-S_1)$
+= **164%** (`\bneIntensRelNetNp`) is reported as a secondary note: it exceeds
+100% only because the two components offset, so it is not a clean share.
 
 In **pharma** (boundary case — see [AN-016](an-016-pharma-boundary.md)):
-$S_1$ = 0.654, $S_2$ = 1.219, $S_3$ = 0.963; exclusion magnitude +0.565,
-offset −0.256, net +0.309. Absolute exclusion share **68.8%**;
-exclusion-to-net ratio 183%. Same qualitative pattern at higher
-magnitudes; the welfare *ranking* is more model-sensitive than in
-non-pharma.
+$S_1$ = 0.654, $S_2$ = 1.219, $S_3$ = 0.963; exclusion magnitude +0.565
+[0.392, 0.740], offset −0.256 [−0.435, −0.071], net +0.309 [0.245, 0.370].
+Absolute exclusion share **68.8%** [61.6, 85.2]; the exclusion-to-net ratio
+of 183% is again secondary. Same qualitative pattern at higher magnitudes;
+the welfare *ranking* is more model-sensitive than in non-pharma. Across
+replicates the offset is negative in 99.8% and the net positive in 100%, in
+both classes.
 
 **Bidder counts (per auction).** Non-pharma: SME participation
 **0.94 → 1.87** post-cutoff (roughly doubles); non-SME participation
@@ -81,7 +89,8 @@ non-pharma.
 the R$80K SME-eligibility ceiling and remain open). Pharma: SME
 **0.55 → 1.22**; non-SME **2.61 → 1.66**.
 
-*See Figure 4 (Counterfactual price decomposition) in `paper.pdf` §4.*
+*See Figure 1 (Counterfactual price decomposition bar chart) in `paper.pdf` §3.
+The participation event study is now Online Appendix Figure OA-1.*
 
 Output: `v7-jpube-tight/scripts/46_decomp_compare.R` produces the
 decomposition table cells; macros live in `v8-jpube/output/values.tex`.

@@ -4,6 +4,16 @@ paper: sme-public
 
 # Changelog
 
+## v8 — June 2026 (econ-write audit pass)
+
+- **Bootstrap 95% CIs on the central decomposition** (Table 3): the lost-discipline, protected-pool offset, and net components now carry cluster-bootstrap intervals. Non-pharma: exclusion **+0.371 [0.293, 0.464]**, pool offset **−0.144 [−0.239, −0.046]**, net **+0.227 [0.180, 0.291]**, absolute exclusion share **72% [64.5, 86.8]**. The offset is negative in 99.8% of replicates, the net effect is positive in 100%, and the exclusion share exceeds 50% in 100% — the exclusion-dominant ordering survives inference.
+- **Figure 1 is now the decomposition bar chart**. The first-stage participation event study moves to **Online Appendix Figure OA-1 (OA-B)**: its pre-trend is statistically rejected, and a structural paper should not lead with an imperfect DiD figure.
+- **Abstract reworded to 176 words** (from 196), tightening the price-formation framing.
+- **Structural↔DiD reconciliation** added: the full-exclusion net effect (0.227) × 43% adherence ≈ 10%, matching the reduced-form DiD price effect of 10–11%.
+- **Headline stated up front**: the 28.9% static welfare loss at λ=0.30 now appears in the introduction, with a one-line roadmap of the paper.
+- **Light de-repetition pass** across sections.
+- **Table 1 gains cross-auction SDs**; the "Excl./net" ratio (164%) column is demoted to a table note (the absolute exclusion share of 72% is the headline dominance statistic). A concrete **future-research paragraph** was added to the conclusion (ComprasNet cross-jurisdiction replication + firm-panel dynamic gains).
+
 ## v8 — May 2026 (JPubE submission)
 
 - **Title** is **The Price of Exclusion: SME Set-Asides in Public Procurement**. The framing moves from "sheltered bidding" (a within-auction conduct claim) to **price formation under exclusion** (the order statistic that prices the contract changes when non-SMEs are removed).

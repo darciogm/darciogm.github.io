@@ -53,6 +53,14 @@ point estimate — BJS imputation **−0.056** and Callaway–Sant'Anna **−0.0
 the divergence predicted by the heterogeneity-robust DiD literature
 (de Chaisemartin–D'Haultfœuille, Goodman-Bacon, Sun–Abraham).
 
+The structural and reduced-form magnitudes are of the same order once take-up is
+netted out. The full-exclusion structural effect (**+0.227** of the reference
+price) scaled by the **43%** realized SME-only adherence implies an average
+realized price movement of **≈10%**, in line with the **10–11%** reduced-form
+DiD. This is a consistency check, not an identity: the DiD is in log points and
+averages over additional product-time variation, while the structural object is
+a per-auction reference-price-normalized level.
+
 ---
 
 ## 2. Willingness-to-supply recovery and auction primitives
