@@ -6951,6 +6951,14 @@ pharma) but leaves the exclusion shares large (<strong>69.4%</strong> non-pharma
 pharma; Online Appendix OA-D.2). Strict invariance — forcing the post-policy SME
 distribution to equal the pre-policy one — <em>raises</em> the exclusion share to
 <strong>85% (non-pharma) / 79% (pharma)</strong>.</p>
+<p>The ordering also survives reading drop-outs as <strong>exits-at-cost rather than
+exact costs</strong> (Lever A). Treating each drop-out as an upper bound on the
+bidder's cost (Haile–Tamer 2003), a markup common to both bidder types cancels
+in the type-differential, so the only threat is a <em>type-differential</em> exit
+markup. The exclusion-dominant decomposition holds for a differential markup up
+to <strong>0.29 of the exit price (non-pharma)</strong> and across the <strong>whole [0, 0.30]
+grid (pharma)</strong>; it reverses only if SMEs leave ~30% more surplus unbid than
+non-SMEs at every auction.</p>
 <hr>
 <h2 id="4-static-welfare-and-the-price-preference-benchmark">4. Static welfare and the price-preference benchmark<a class="headerlink" href="#4-static-welfare-and-the-price-preference-benchmark" title="Permanent link">¶</a></h2>
 <p>The simulated second-order statistic <span class="arithmatex">\(c_{(2)}\)</span> determines the government's
@@ -7006,16 +7014,34 @@ government pays the actual winning bid.</p>
   SME win-rate by 4.3 pp. Welfare costs stay negligible up to a <strong>15%</strong> (NP) /
   <strong>25%</strong> (PH) preference, and even a 30% preference costs only 4.99% / 1.92% of
   <span class="arithmatex">\(p_{S_1}\)</span>.</li>
-<li><strong>How much must the planner value SME surplus?</strong> To prefer full exclusion to
+<li>
+<p><strong>How much must the planner value SME surplus?</strong> To prefer full exclusion to
   the 10% preference, the planner would need to value an extra real of SME
   surplus at more than <strong>2.42×</strong> a real of general surplus (non-pharma; 2.61×
   pharma). Dynamic market-access and capacity gains are additional benefit-side
-  terms not identified by this static exercise.</li>
+  terms not identified by this static exercise.</p>
+</li>
+<li>
+<p><strong>The ranking survives an entry response (Lever C).</strong> The welfare ranking
+  (<span class="arithmatex">\(V_3\)</span> preference <span class="arithmatex">\(\succ\)</span> <span class="arithmatex">\(V_0\)</span> full set-aside) is reported as a <strong>bound, not a
+  free-entry model</strong> — entry costs are not identified. The ranking holds until
+  the preference discourages <strong>~90% of non-SME entry (non-pharma)</strong> / complete
+  removal of non-SME entry (pharma). Only an implausibly large entry-deterrence
+  response would overturn it.</p>
+</li>
 </ul>
 <p>The comparison is therefore a <strong>frontier, not a ranking</strong>: set-asides buy more
 redistribution by removing rival bidders; preferences buy less redistribution
 while preserving the price-forming pool. Exclusion is warranted only when the
 planner is willing to pay for the missing competitive discipline.</p>
+<div class="admonition note">
+<p class="admonition-title">What the bootstrap intervals do and do not cover</p>
+<p>The 95% cluster-bootstrap CIs on the decomposition and welfare loss
+propagate <strong>cost-primitive and Monte Carlo sampling uncertainty with the
+entry count held fixed</strong>; entry-count uncertainty is not bootstrapped. The
+entry-response sensitivity is carried separately by the Lever C bound above,
+not by the CIs.</p>
+</div>
 <hr>
 <h2 id="5-pharmaceuticals-as-a-boundary-case">5. Pharmaceuticals as a boundary case<a class="headerlink" href="#5-pharmaceuticals-as-a-boundary-case" title="Permanent link">¶</a></h2>
 <p>Pharmaceutical procurement shows the same qualitative pattern at larger

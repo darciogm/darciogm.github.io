@@ -6834,7 +6834,10 @@ a per-auction reference-price-normalized level.</p>
 <h2 id="2-willingness-to-supply-recovery-and-auction-primitives">2. Willingness-to-supply recovery and auction primitives<a class="headerlink" href="#2-willingness-to-supply-recovery-and-auction-primitives" title="Permanent link">¶</a></h2>
 <p>The concern is that the decomposition could be an artifact of how exits are
 converted into model-based costs — winner censoring, common auction-level
-shocks, format-specific recovery, or bidder dependence.</p>
+shocks, format-specific recovery, bidder dependence, or the exit-at-cost reading
+itself. These define five independent margins on the load-bearing IPV-clock
+interpretation; the conclusion survives each (see the
+<a href="../hypotheses/ipv-clock-admissible/">IPV-clock hypothesis page</a>).</p>
 <ul>
 <li><strong>Winner censoring.</strong> Net price effects are similar across losers-only /
   all-bidders / Turnbull NPMLE inputs: <strong>0.275 / 0.259 / 0.246</strong> (non-pharma) and
@@ -6852,6 +6855,21 @@ shocks, format-specific recovery, or bidder dependence.</p>
 <li><strong>Filters and windows.</strong> Tightening/loosening the <span class="arithmatex">\(c_\epsilon \le 3\)</span> filter and
   using 6-, 12-, or 18-month windows leaves exclusion the larger component in
   both classes.</li>
+<li><strong>Exit-at-cost itself.</strong> The sharpest version of the recovery concern is the
+  exit-at-cost interpretation: drop-outs may sit <em>above</em> cost if firms quit the
+  clock while still profitable. Following Haile–Tamer (2003), exits are treated
+  as <strong>bounds</strong> on cost. A markup <em>common</em> to all bidders cancels in the
+  decomposition differences (they compare order statistics across pools), so the
+  binding threat is a <strong>type-differential</strong> markup <span class="arithmatex">\(c = \text{exit}\times(1-m_k)\)</span>.
+  In the worst case (SME costs pushed below their exits, non-SMEs held at face
+  value, entry held fixed), the exclusion-dominant ordering — net effect positive
+  <em>and</em> absolute exclusion share above one half — survives a differential markup
+  up to <strong>0.29</strong> of the exit price in non-pharma and <strong>across the entire [0, 0.30]
+  grid</strong> in pharma. A reversal would require SMEs to leave ~30% more of their
+  surplus unbid than non-SMEs at <em>every</em> auction — implausible, and in the
+  direction that already biases against the finding. The Pregão clock is
+  near-continuous, so the mechanical Haile–Tamer increment bound is tight; this
+  margin bounds the residual <em>behavioral</em> slack.</li>
 </ul>
 <hr>
 <h2 id="3-protected-pool-composition">3. Protected-pool composition<a class="headerlink" href="#3-protected-pool-composition" title="Permanent link">¶</a></h2>

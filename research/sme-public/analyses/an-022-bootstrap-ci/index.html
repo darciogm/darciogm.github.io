@@ -6801,6 +6801,18 @@ the paper (<code>values_bootstrap_decomp.tex</code>).</p>
 </tr>
 </tbody>
 </table>
+<div class="admonition note">
+<p class="admonition-title">Entry-fixed scope of the bootstrap CIs</p>
+<p>These 95% CIs reflect cost-primitive sampling (cluster bootstrap at
+the auction level) plus Monte Carlo integration, but they <strong>hold
+observed entry rates fixed</strong> — entry-count uncertainty is <em>not</em>
+bootstrapped. The intervals quantify sampling variability in the
+recovered cost primitives and the BNE simulation, conditional on the
+observed bidder counts. (The separate entry-response <em>bound</em> in
+<a href="../an-012-preference-benchmark/">AN-012</a> addresses how far entry
+could move before the welfare ranking would flip; it is a bound, not
+a bootstrap of entry counts.)</p>
+</div>
 <p><strong>The absolute exclusion share is the headline dominance statistic</strong> and
 its whole interval sits above the 50% threshold in both classes. Across
 replicates the offset is negative in <strong>99.8%</strong>, the net effect positive

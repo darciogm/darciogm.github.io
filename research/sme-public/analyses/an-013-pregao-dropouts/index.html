@@ -6806,6 +6806,19 @@ sizes are reported in <code>paper_v8.tex</code> §3.</p>
 <strong>74.0% in non-pharma</strong> and <strong>82.0% in pharma</strong> — close to or above
 the baseline 72.0% / 68.8%. The result is therefore not driven by
 treating the winner's final bid as an exact cost observation.</p>
+<p><strong>Exit-at-cost departure bound</strong> (paper §6.2, Online Appendix OA-C).
+The sibling threat to winner censoring is whether a <em>losing</em> firm's
+drop-out itself equals its cost: firms may quit the clock while still
+profitable, so the exit sits above cost. Following Haile–Tamer (2003),
+exits are treated as <strong>bounds</strong> on cost, not costs. Because the
+decomposition compares order statistics across pools, a markup <em>common</em>
+to all bidders cancels in the differences; only a <strong>type-differential</strong>
+markup <span class="arithmatex">\(c = \text{exit}\times(1-m_k)\)</span> can bind. In the worst case (SME
+costs pushed below their exits, non-SMEs at face value, entry held
+fixed), the exclusion-dominant ordering survives a differential markup
+up to <strong>0.29</strong> of the exit price in non-pharma and <strong>across the entire
+[0, 0.30] grid</strong> in pharma. The full bound is on the
+<a href="../../hypotheses/ipv-clock-admissible/">IPV-clock hypothesis page</a>.</p>
 <h2 id="interpretation">Interpretation<a class="headerlink" href="#interpretation" title="Permanent link">¶</a></h2>
 <p><strong>The drop-out extraction is the foundation of the structural sample.</strong>
 It produces empirical per-cell distributions used by all downstream
@@ -6828,10 +6841,11 @@ maintained IPV-clock restriction
 (<a href="../../hypotheses/ipv-clock-admissible/">H:ipv-clock-admissible</a>).
 That restriction is disciplined by the UH correction
 (<a href="../an-014-uh-correction/">AN-014</a>), the cross-modality check (§6.2),
-the Gaussian-copula relaxation (§6.2), and the collusion screens
-(<a href="../an-015-collusion-screens/">AN-015</a>) — collectively yellow rather
-than green because none of these <em>prove</em> IPV; they show the
-decomposition is not mechanically produced by the most obvious
+the Gaussian-copula relaxation (§6.2), the collusion screens
+(<a href="../an-015-collusion-screens/">AN-015</a>), and a direct exit-at-cost
+departure bound (§6.2, above) — collectively yellow rather than green
+because none of these <em>prove</em> IPV; they show the conclusion survives
+bounded departures and is not mechanically produced by the most obvious
 deviations from IPV.</p>
 <h2 id="follow-ups">Follow-ups<a class="headerlink" href="#follow-ups" title="Permanent link">¶</a></h2>
 <ul>

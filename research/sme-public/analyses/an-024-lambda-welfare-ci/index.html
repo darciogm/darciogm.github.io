@@ -6873,6 +6873,16 @@ B = 500 cluster-bootstrap at auction):</p>
 — 28.9% NP / 44.8% PH at λ=0.30. The bootstrap-<em>mean</em> point in the CI
 table, 27.76% NP, differs by ~1 pp of Monte Carlo noise from the B=500
 cluster bootstrap; the canonical point sits well inside the CI.)</p>
+<div class="admonition note">
+<p class="admonition-title">Entry-fixed scope of the bootstrap CIs</p>
+<p>Like the decomposition CIs in
+<a href="../an-022-bootstrap-ci/">AN-022</a>, these welfare-loss intervals
+reflect cost-primitive sampling plus Monte Carlo integration but
+<strong>hold observed entry rates fixed</strong> — entry-count uncertainty is not
+bootstrapped. The separate entry-response <em>bound</em>
+(<a href="../an-012-preference-benchmark/">AN-012</a>) addresses how far entry
+could move before the welfare ranking flips.</p>
+</div>
 <p>Output: <code>output/tables/tab_welfare_ranking_lambda.tex</code>,
 <code>tab_v3_welfare_ci.tex</code>.</p>
 <h2 id="interpretation">Interpretation<a class="headerlink" href="#interpretation" title="Permanent link">¶</a></h2>
@@ -6887,6 +6897,14 @@ the ranking flip in pharma is <em>not</em> a λ artifact — it is the
 <em>composition treatment</em> (equilibrium-selection vs strict-primitive-
 invariance) that determines it. The choice of λ does not flip rankings
 in either class under either specification.</p>
+<p>The ranking is also robust to a <em>second</em> lever beyond λ: endogenous
+entry. The entry-response bound in
+<a href="../an-012-preference-benchmark/">AN-012</a> (paper §6.4, Online Appendix
+OA-E) shows the <span class="arithmatex">\(V_3 \succ V_0\)</span> ranking survives until the preference
+drives out ~90% of non-SME entrants in non-pharma (and complete non-SME
+removal in pharma), with SME-entry response only widening <span class="arithmatex">\(V_3\)</span>'s
+margin. Neither the λ grid nor the (bounded) entry margin flips the
+non-pharma ranking.</p>
 <p><strong>The headline loss magnitude scales with λ in the expected direction.</strong>
 Non-pharma: 24% → 33% across [0.15, 0.45], roughly linear in λ (MCPF
 distortion = λ · Δ_gov, plus DWL_alloc which does not scale with λ).
