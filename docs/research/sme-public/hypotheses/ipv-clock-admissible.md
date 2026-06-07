@@ -4,9 +4,9 @@ id: h7
 slug: ipv-clock-admissible
 title: "Pregão drop-out prices admit the IPV-clock interpretation as willingness-to-supply observations"
 cluster: B
-paper_section: "§3, §6.2, §6.4"
+paper_section: "§3, §6.2, §6.4, OA-C"
 status: partial
-last_updated: 2026-05-21
+last_updated: 2026-06-07
 ---
 
 # H:ipv-clock-admissible — Pregão drop-out prices admit the IPV-clock interpretation as willingness-to-supply observations
@@ -23,23 +23,41 @@ exercise rather than a structural counterfactual.
 !!! abstract "Intuition (plain-language)"
     The entire structural exercise rests on one reading: in a descending-clock reverse auction, the price at which a losing firm drops out is the lowest price it would accept — its cost. If that reading holds, drop-outs reveal each firm's willingness to supply and the decomposition is a genuine cost-based counterfactual. If firms instead drop out for strategic reasons (collusion, sniping, budget limits), the numbers become a price-formation re-weighting exercise rather than structural primitives. This is the load-bearing assumption of the paper.
 
-> **Evidence strength: Partial (toward Supports).** The diagnostic
-> battery has landed. **Censoring** (Turnbull NPMLE,
+> **Evidence strength: Partial (toward Supports).** The IPV-clock
+> interpretation is now disciplined on **five independent margins**,
+> each addressing a different deviation from the IPV benchmark.
+> **(i) Censoring** (Turnbull NPMLE,
 > [AN-013](../analyses/an-013-pregao-dropouts.md)): exclusion share
 > 74% (non-pharma) and 82% (pharma) under the most-agnostic winner
-> treatment — same direction as baseline. **Auction-level scale
+> treatment — same direction as baseline. **(ii) Auction-level scale
 > shocks** ([AN-014](../analyses/an-014-uh-correction.md)):
 > Krasnokutskaya correction with ICCs 0.36–0.59 leaves the
 > decomposition intact; a Gaussian-copula relaxation with within-auction
 > cost correlation up to ρ_c=0.3 drifts the exclusion share by <5 pp
-> and the total effect by <10%. **Bidder coordination**
+> and the total effect by <10%. **(iii) Cross-modality discipline**
+> ([AN-019](../analyses/an-019-cross-modality-gpv.md)): Convite GPV vs
+> Pregão drop-out recoveries line up in the key pharma non-SME cell.
+> **(iv) Bidder coordination**
 > ([AN-015](../analyses/an-015-collusion-screens.md)): Conley-Decarolis
 > close-pair shares and Bajari-Ye T1 ratios both stable or falling
 > post-cutoff — no differential-coordination shock.
-> Cross-modality discipline (Convite GPV vs Pregão drop-out) lines up
-> in the key pharma non-SME cell. The diagnostics do not *prove* IPV;
-> they show the decomposition is not mechanically produced by the
-> most obvious deviations from IPV. Yellow remains appropriate.
+> **(v) Exit-at-cost itself** (paper §6.2, Online Appendix OA-C): the
+> sharpest version of the threat is bounded directly. Following
+> Haile–Tamer (2003), exits are treated as bounds on cost rather than
+> costs; a markup *common* to all bidders cancels in the decomposition
+> differences, so only a **type-differential** markup can overturn the
+> ordering. In the worst case (SME costs pushed below exits, non-SMEs at
+> face value, entry held fixed) the exclusion-dominant ordering survives
+> a differential markup up to **0.29 of the exit price in
+> non-pharmaceuticals** and the **entire [0, 0.30] grid in
+> pharmaceuticals** — a reversal would require SMEs to leave ~30% more
+> surplus unbid than non-SMEs at *every* auction, in the direction that
+> already biases against the finding. The diagnostics do not *prove* IPV;
+> they show the conclusion survives bounded departures from it, and is
+> not mechanically produced by the most obvious deviations. Yellow
+> remains appropriate — the convergence of five margins is the strongest
+> within-project discipline, but cross-jurisdictional replication is the
+> only path beyond it.
 
 ## Theory
 
@@ -64,8 +82,12 @@ cross-modality check against a GPV recovery from Convite first-price
 bids; (ii) the auction-level Krasnokutskaya-style heterogeneity
 correction with reasonable ICC magnitudes; (iii) classical bid-rigging
 screens (Bajari-Ye, Schurter, pair classification) that show no shift
-in bidder coordination across the policy break. Convergence across all
-three would upgrade this hypothesis from "Not yet tested" to "Supports".
+in bidder coordination across the policy break; and (iv) a direct
+relaxation of exit-at-cost itself — treating exits as Haile–Tamer
+bounds and bounding how large a *type-differential* exit markup the
+exclusion-dominant ordering can absorb. Convergence across these
+margins would upgrade this hypothesis from "Not yet tested" to
+"Supports".
 
 ## Competing prediction
 
@@ -114,8 +136,33 @@ in hand; the ANs are scaffolded but not yet authored.
 | [AN-014](../analyses/an-014-uh-correction.md) | Supports | UH correction with ICCs 0.36 (NP-SME) to 0.59 (PH non-SME). Gaussian-copula ρ_c ≤ 0.3: exclusion share drift <5 pp; total drift <10%. |
 | [AN-015](../analyses/an-015-collusion-screens.md) | Supports | Conley close-pair shares stable in NP (16.9→16.8) / fall in PH (27.6→24.4); Bajari-Ye T1 ratios fall in both classes (NP 2.63→1.83; PH 1.29→1.11). Differential-coordination story rejected. |
 | [AN-019](../analyses/an-019-cross-modality-gpv.md) | Supports (partial) | Cross-modality GPV from Convite first-price aligns with Pregão drop-outs in the load-bearing pharma non-SME pre cell (c₀.₅₀ = 0.712 vs 0.704); other 7 cells show a persistent ~0.2 wedge consistent with first-price bid shading. UH-corrected version broadens alignment (§6.2). |
+| Exit-at-cost relaxation (§6.2, OA-C) | Supports | Exits treated as Haile–Tamer bounds, not costs. A common markup cancels in the decomposition differences; only a type-differential markup binds. Worst case (SME costs below exits, non-SMEs at face value, entry fixed): exclusion-dominant ordering survives a differential markup up to **0.29** of the exit price (non-pharma) and the **entire [0, 0.30] grid** (pharma). Reversal requires SMEs to under-bid ~30% more surplus than non-SMEs at every auction. |
 
 ## Open tests
+
+### Exit-at-cost departure bound (Lever A)
+
+**Done** (paper §6.2, Online Appendix OA-C, Table OA-2;
+`scripts/64_ipv_slack_bounds.R`). The sharpest version of the threat —
+that drop-outs sit strictly *above* cost because firms quit the clock
+while still profitable — is bounded directly rather than assumed away.
+Following Haile–Tamer (2003), exits bound costs. Two channels:
+the *mechanical* Haile–Tamer increment bound is tight because BEC's
+electronic Pregão runs a near-continuous price clock; the *behavioral*
+channel (quitting while profitable) is what is bounded here. Because the
+decomposition compares order statistics across pools, a markup *common*
+to all bidders cancels in $S_2-S_1$ and $S_3-S_2$, so the binding
+departure is a **type-differential** markup
+$c = \text{exit}\times(1-m_k)$. Sweeping the worst case for the
+conclusion ($m_{\neg\mathrm{SME}}=0$, raising $m_{\mathrm{SME}}$, entry
+held at observed rates), the exclusion-dominant ordering (net effect
+positive *and* absolute exclusion share above one half) survives a
+differential markup up to **0.29** of the exit price in non-pharma and
+**through the entire [0, 0.30] grid** in pharma. The conclusion reverses
+only if SMEs systematically leave nearly thirty percent more of their
+surplus unbid than non-SMEs at every auction — a behavioral asymmetry
+larger than the data suggest, and in the direction already biasing
+against finding exclusion to dominate.
 
 ### Cross-modality convergence test
 

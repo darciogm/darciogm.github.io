@@ -35,6 +35,14 @@ shifts the static frontier.
 > set-aside ordering. Pharma ranking is $V_3 \succ V_0$ under main spec
 > across all λ but reverses to $V_0 \succ V_3$ under strict invariance
 > (the boundary-case treatment).
+> [AN-012](../analyses/an-012-preference-benchmark.md) further bounds
+> the ranking against endogenous entry: even though entry costs are not
+> identified, the $V_3 \succ V_0$ ordering survives until the preference
+> drives out **~90% of non-SME entrants** in non-pharma (participation
+> falling from 2.68 to about a quarter of a bidder per auction) and
+> survives **complete removal** of non-SME entry in pharma. Letting SME
+> entry respond only widens $V_3$'s margin. The low-cost reading no
+> longer hinges on the fixed-entry assumption.
 
 ## Theory
 
@@ -62,8 +70,15 @@ margin. The benchmark is a *decomposition device*, not a policy forecast.
 **Non-SMEs exit when preferred against.** If the preference makes
 non-SMEs systematically lose, they may stop participating altogether
 — in which case the preference behaves like a soft set-aside and the
-static-cost result collapses. The static analysis holds entry fixed by
-construction; an entry-elastic analysis would change the prediction.
+static-cost result could collapse. The static analysis holds entry
+fixed by construction; an entry-elastic analysis would change the
+prediction. The entry-response *bound* in
+[AN-012](../analyses/an-012-preference-benchmark.md) addresses exactly
+this competing prediction without identifying entry costs: it shows the
+$V_3 \succ V_0$ ranking survives ~90% non-SME discouragement in
+non-pharma and complete non-SME exit in pharma before it could flip, so
+the competing prediction would have to be extreme to overturn the
+result.
 
 ## Setting evidence
 
@@ -89,10 +104,15 @@ not a policy forecast. See paper §5 for the scope statement.
 The preference benchmark inherits all maintained restrictions of the
 structural decomposition ([H:ipv-clock-admissible](ipv-clock-admissible.md)).
 It additionally holds entry fixed at the pre-policy level by
-construction — an entry-elastic version would require a separate entry
-model. The reading is explicitly *static* and *non-equilibrium*: it
-asks the price-formation cost of preserving the non-SME bidder pool
-under a non-exclusionary preference.
+construction — a fully endogenous free-entry counterfactual would
+require a separate entry model and entry costs are not identified by
+the legal shock. The reading is explicitly *static* and
+*non-equilibrium*: it asks the price-formation cost of preserving the
+non-SME bidder pool under a non-exclusionary preference. The
+entry-response *bound* in
+[AN-012](../analyses/an-012-preference-benchmark.md) partly relaxes
+this limitation by bounding (rather than modeling) how far non-SME
+participation could fall before the welfare ranking flips.
 
 ## Evidence
 
@@ -100,6 +120,7 @@ under a non-exclusionary preference.
 |----------|---------|--------------|
 | [AN-012](../analyses/an-012-preference-benchmark.md) | Supports | $\Delta p$ = −0.004 NP / +0.002 PH at 10% preference; SME win-rate gain +4.3 pp NP / +1.4 pp PH. |
 | [AN-024](../analyses/an-024-lambda-welfare-ci.md) | Supports | Welfare ranking $V_3 \succ V_0$ stable across λ ∈ [0.15, 0.45] in NP under both main and strict-inv specs. Ranking not λ-driven; determined by composition treatment in PH. |
+| [AN-012](../analyses/an-012-preference-benchmark.md) | Supports | Entry-response bound: $V_3 \succ V_0$ survives ~90% non-SME discouragement in NP (2.68 → ~0.25 bidders/auction) and complete non-SME removal in PH; SME-entry response only widens $V_3$'s margin. Bound, not a free-entry counterfactual. |
 
 ## Open tests
 
@@ -122,7 +143,10 @@ instruments (subsidies, training, micro-finance).
 
 ### Entry-elastic preference benchmark
 
-The static reading holds entry fixed. A version with elastic entry —
-where the preference shifts firms' decision to participate — would
-test whether the near-zero price cost survives endogenous entry. Out
-of scope for this paper but a clean follow-up.
+The static reading holds entry fixed. The entry-response *bound* (§6.4,
+Online Appendix OA-E; [AN-012](../analyses/an-012-preference-benchmark.md))
+already shows the $V_3 \succ V_0$ ranking survives ~90% non-SME
+discouragement in non-pharma and complete non-SME removal in pharma,
+with SME-entry response only widening $V_3$'s margin. What remains out
+of scope is a fully endogenous free-entry counterfactual that
+*identifies* entry costs — the legal shock does not reveal them.

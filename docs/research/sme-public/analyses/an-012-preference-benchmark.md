@@ -63,6 +63,36 @@ preference trades redistribution for preserved competitive discipline.
 Output: macros in `v8-jpube/output/values.tex`; paper table
 `tab_welfare_policy_v8` columns 5–6 in §5.
 
+## Entry-response bound on the welfare ranking
+
+The static comparison holds entry fixed. The legal shock does not
+identify entry costs, so instead of a free-entry counterfactual the
+paper *bounds* the welfare ranking $V_3 \succ V_0$ (10% preference vs
+full set-aside). The worst case for $V_3$ runs through non-SMEs: the
+preference handicaps them, so they may enter less and weaken the very
+discipline that makes $V_3$ cheap. Non-SME participation under $V_3$ is
+scaled to $\phi$ times its open-auction rate ($\phi \in [0,1]$, with
+$\phi = 1$ the no-response case used in the main text), while SME entry
+is held conservatively at its pre-policy rate (a real preference would
+raise it, which only helps $V_3$).
+
+From §6.4 of the paper and Online Appendix OA-E (Table OA-3,
+`v8-jpube/output/values_entry_bound.tex`):
+
+- **Non-pharma**: the $V_3 \succ V_0$ ranking survives until the
+  preference drives out **~90% of non-SME entrants** ($\phi \approx
+  0.10$) — participation collapsing from **2.68** to about **a quarter
+  of a bidder per auction**.
+- **Pharma**: the ranking survives even the **complete removal of
+  non-SME entry** (the full set-aside is so costly there).
+- Letting SME entry *respond* (which a real preference would induce)
+  only **widens** $V_3$'s margin in both classes.
+
+This is a *bound*, not a free-entry counterfactual — entry costs are
+not identified. But it shows the near-zero static cost result is not an
+artifact of the fixed-entry assumption: the preference's advantage
+survives extreme non-SME discouragement before the ranking could flip.
+
 ## Interpretation
 
 The 10% preference preserves the price-forming pool: non-SMEs continue
@@ -80,9 +110,13 @@ legal preference regime.
 
 Confidence: **yellow.** The simulation holds entry fixed at the
 pre-policy level by construction — an entry-elastic version would
-require a separate entry model. The 10% margin is the cleanest design
-benchmark; the diminishing-returns curve and the preference level at
-which non-SMEs start dropping out is in the optimal-preference search.
+require a separate entry model. The entry-response bound above shows
+the $V_3 \succ V_0$ ranking is robust to extreme non-SME discouragement
+(~90% in non-pharma; complete removal in pharma) even without
+identifying entry costs, but it remains a bound, not a free-entry
+counterfactual. The 10% margin is the cleanest design benchmark; the
+diminishing-returns curve and the preference level at which non-SMEs
+start dropping out is in the optimal-preference search.
 
 ## Follow-ups
 
@@ -97,5 +131,8 @@ which non-SMEs start dropping out is in the optimal-preference search.
   evaluating the preference against alternative SME-support
   instruments.
 - Entry-elastic preference benchmark: a version where preference shifts
-  firms' decision to participate. The static-cost result may not
-  survive endogenous entry; out of scope for this paper.
+  firms' decision to participate. The entry-response *bound* (§6.4,
+  Online Appendix OA-E) already shows the $V_3 \succ V_0$ ranking
+  survives ~90% non-SME discouragement in non-pharma (complete removal
+  in pharma); a full free-entry counterfactual that *identifies* entry
+  costs remains out of scope for this paper.

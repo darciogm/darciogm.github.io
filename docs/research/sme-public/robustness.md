@@ -67,7 +67,10 @@ a per-auction reference-price-normalized level.
 
 The concern is that the decomposition could be an artifact of how exits are
 converted into model-based costs — winner censoring, common auction-level
-shocks, format-specific recovery, or bidder dependence.
+shocks, format-specific recovery, bidder dependence, or the exit-at-cost reading
+itself. These define five independent margins on the load-bearing IPV-clock
+interpretation; the conclusion survives each (see the
+[IPV-clock hypothesis page](hypotheses/ipv-clock-admissible.md)).
 
 - **Winner censoring.** Net price effects are similar across losers-only /
   all-bidders / Turnbull NPMLE inputs: **0.275 / 0.259 / 0.246** (non-pharma) and
@@ -85,6 +88,21 @@ shocks, format-specific recovery, or bidder dependence.
 - **Filters and windows.** Tightening/loosening the $c_\epsilon \le 3$ filter and
   using 6-, 12-, or 18-month windows leaves exclusion the larger component in
   both classes.
+- **Exit-at-cost itself.** The sharpest version of the recovery concern is the
+  exit-at-cost interpretation: drop-outs may sit *above* cost if firms quit the
+  clock while still profitable. Following Haile–Tamer (2003), exits are treated
+  as **bounds** on cost. A markup *common* to all bidders cancels in the
+  decomposition differences (they compare order statistics across pools), so the
+  binding threat is a **type-differential** markup $c = \text{exit}\times(1-m_k)$.
+  In the worst case (SME costs pushed below their exits, non-SMEs held at face
+  value, entry held fixed), the exclusion-dominant ordering — net effect positive
+  *and* absolute exclusion share above one half — survives a differential markup
+  up to **0.29** of the exit price in non-pharma and **across the entire [0, 0.30]
+  grid** in pharma. A reversal would require SMEs to leave ~30% more of their
+  surplus unbid than non-SMEs at *every* auction — implausible, and in the
+  direction that already biases against the finding. The Pregão clock is
+  near-continuous, so the mechanical Haile–Tamer increment bound is tight; this
+  margin bounds the residual *behavioral* slack.
 
 ---
 

@@ -4,7 +4,7 @@ id: h12
 slug: no-collusion-confound
 title: "The price drop is not produced by a post-policy shift in bidder coordination"
 cluster: D
-paper_section: "§6.4"
+paper_section: "§6 (summary); OA-D (detail)"
 status: partial
 last_updated: 2026-05-21
 ---

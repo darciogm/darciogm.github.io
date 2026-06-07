@@ -83,6 +83,15 @@ B = 500 cluster-bootstrap at auction):
 table, 27.76% NP, differs by ~1 pp of Monte Carlo noise from the B=500
 cluster bootstrap; the canonical point sits well inside the CI.)
 
+!!! note "Entry-fixed scope of the bootstrap CIs"
+    Like the decomposition CIs in
+    [AN-022](an-022-bootstrap-ci.md), these welfare-loss intervals
+    reflect cost-primitive sampling plus Monte Carlo integration but
+    **hold observed entry rates fixed** — entry-count uncertainty is not
+    bootstrapped. The separate entry-response *bound*
+    ([AN-012](an-012-preference-benchmark.md)) addresses how far entry
+    could move before the welfare ranking flips.
+
 Output: `output/tables/tab_welfare_ranking_lambda.tex`,
 `tab_v3_welfare_ci.tex`.
 
@@ -99,6 +108,15 @@ the ranking flip in pharma is *not* a λ artifact — it is the
 *composition treatment* (equilibrium-selection vs strict-primitive-
 invariance) that determines it. The choice of λ does not flip rankings
 in either class under either specification.
+
+The ranking is also robust to a *second* lever beyond λ: endogenous
+entry. The entry-response bound in
+[AN-012](an-012-preference-benchmark.md) (paper §6.4, Online Appendix
+OA-E) shows the $V_3 \succ V_0$ ranking survives until the preference
+drives out ~90% of non-SME entrants in non-pharma (and complete non-SME
+removal in pharma), with SME-entry response only widening $V_3$'s
+margin. Neither the λ grid nor the (bounded) entry margin flips the
+non-pharma ranking.
 
 **The headline loss magnitude scales with λ in the expected direction.**
 Non-pharma: 24% → 33% across [0.15, 0.45], roughly linear in λ (MCPF

@@ -144,6 +144,15 @@ pharma; Online Appendix OA-D.2). Strict invariance — forcing the post-policy S
 distribution to equal the pre-policy one — *raises* the exclusion share to
 **85% (non-pharma) / 79% (pharma)**.
 
+The ordering also survives reading drop-outs as **exits-at-cost rather than
+exact costs** (Lever A). Treating each drop-out as an upper bound on the
+bidder's cost (Haile–Tamer 2003), a markup common to both bidder types cancels
+in the type-differential, so the only threat is a *type-differential* exit
+markup. The exclusion-dominant decomposition holds for a differential markup up
+to **0.29 of the exit price (non-pharma)** and across the **whole [0, 0.30]
+grid (pharma)**; it reverses only if SMEs leave ~30% more surplus unbid than
+non-SMEs at every auction.
+
 ---
 
 ## 4. Static welfare and the price-preference benchmark
@@ -180,10 +189,24 @@ $\lambda = 0.30$. Lower bootstrap endpoints remain economically large: 20.5%
   pharma). Dynamic market-access and capacity gains are additional benefit-side
   terms not identified by this static exercise.
 
+- **The ranking survives an entry response (Lever C).** The welfare ranking
+  ($V_3$ preference $\succ$ $V_0$ full set-aside) is reported as a **bound, not a
+  free-entry model** — entry costs are not identified. The ranking holds until
+  the preference discourages **~90% of non-SME entry (non-pharma)** / complete
+  removal of non-SME entry (pharma). Only an implausibly large entry-deterrence
+  response would overturn it.
+
 The comparison is therefore a **frontier, not a ranking**: set-asides buy more
 redistribution by removing rival bidders; preferences buy less redistribution
 while preserving the price-forming pool. Exclusion is warranted only when the
 planner is willing to pay for the missing competitive discipline.
+
+!!! note "What the bootstrap intervals do and do not cover"
+    The 95% cluster-bootstrap CIs on the decomposition and welfare loss
+    propagate **cost-primitive and Monte Carlo sampling uncertainty with the
+    entry count held fixed**; entry-count uncertainty is not bootstrapped. The
+    entry-response sensitivity is carried separately by the Lever C bound above,
+    not by the CIs.
 
 ---
 

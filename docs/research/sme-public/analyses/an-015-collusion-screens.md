@@ -91,8 +91,10 @@ Both ratios *fall* post-cutoff. The non-pharma fall is large
 (31% reduction). The pharma ratio is close to 1 in both periods
 (consistent with a sparser, less-connected bidder pool to begin with).
 
-Output: `v7-jpube-tight/output/collusion_screens.parquet`; documented in
-`paper_v8.tex` §6.4 (Coordination).
+Output: `v7-jpube-tight/output/collusion_screens.parquet`. The coordination
+threat is summarized in the body's compressed robustness section ("Conduct,
+reference prices, and threshold gaming"), with the full screen detail in
+**Online Appendix OA-D**.
 
 ## Interpretation
 

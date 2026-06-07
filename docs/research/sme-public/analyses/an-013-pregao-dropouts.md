@@ -74,6 +74,20 @@ The Turnbull within-auction (exclusion) share remains large:
 the baseline 72.0% / 68.8%. The result is therefore not driven by
 treating the winner's final bid as an exact cost observation.
 
+**Exit-at-cost departure bound** (paper §6.2, Online Appendix OA-C).
+The sibling threat to winner censoring is whether a *losing* firm's
+drop-out itself equals its cost: firms may quit the clock while still
+profitable, so the exit sits above cost. Following Haile–Tamer (2003),
+exits are treated as **bounds** on cost, not costs. Because the
+decomposition compares order statistics across pools, a markup *common*
+to all bidders cancels in the differences; only a **type-differential**
+markup $c = \text{exit}\times(1-m_k)$ can bind. In the worst case (SME
+costs pushed below their exits, non-SMEs at face value, entry held
+fixed), the exclusion-dominant ordering survives a differential markup
+up to **0.29** of the exit price in non-pharma and **across the entire
+[0, 0.30] grid** in pharma. The full bound is on the
+[IPV-clock hypothesis page](../hypotheses/ipv-clock-admissible.md).
+
 ## Interpretation
 
 **The drop-out extraction is the foundation of the structural sample.**
@@ -99,10 +113,11 @@ maintained IPV-clock restriction
 ([H:ipv-clock-admissible](../hypotheses/ipv-clock-admissible.md)).
 That restriction is disciplined by the UH correction
 ([AN-014](an-014-uh-correction.md)), the cross-modality check (§6.2),
-the Gaussian-copula relaxation (§6.2), and the collusion screens
-([AN-015](an-015-collusion-screens.md)) — collectively yellow rather
-than green because none of these *prove* IPV; they show the
-decomposition is not mechanically produced by the most obvious
+the Gaussian-copula relaxation (§6.2), the collusion screens
+([AN-015](an-015-collusion-screens.md)), and a direct exit-at-cost
+departure bound (§6.2, above) — collectively yellow rather than green
+because none of these *prove* IPV; they show the conclusion survives
+bounded departures and is not mechanically produced by the most obvious
 deviations from IPV.
 
 ## Follow-ups

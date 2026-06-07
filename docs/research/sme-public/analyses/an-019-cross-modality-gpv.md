@@ -121,6 +121,15 @@ macro-tabulated set of numbers. Promotion to green would require an
 out-of-jurisdiction replication, not just a within-project second
 modality.
 
+This cross-modality check is the *second-source* margin of the
+five-margin IPV-clock battery. It is complemented by a direct *bound* on
+the load-bearing exit-at-cost assumption itself: treating drop-outs as
+Haile–Tamer bounds rather than costs, the exclusion-dominant ordering
+survives a type-differential exit markup up to 0.29 of the exit price in
+non-pharma and the entire [0, 0.30] grid in pharma (paper §6.2, Online
+Appendix OA-C; see [AN-013](an-013-pregao-dropouts.md) and the
+[IPV-clock hypothesis page](../hypotheses/ipv-clock-admissible.md)).
+
 ## Follow-ups
 
 - **UH-corrected table**: emit

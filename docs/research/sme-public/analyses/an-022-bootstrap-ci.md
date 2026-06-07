@@ -71,6 +71,17 @@ the paper (`values_bootstrap_decomp.tex`).
 | **$S_3-S_1$** net effect | +0.227 **[0.180, 0.291]** | +0.309 **[0.245, 0.370]** |
 | **Absolute exclusion share** | 72.0% **[64.5, 86.8]** | 68.8% **[61.6, 85.2]** |
 
+!!! note "Entry-fixed scope of the bootstrap CIs"
+    These 95% CIs reflect cost-primitive sampling (cluster bootstrap at
+    the auction level) plus Monte Carlo integration, but they **hold
+    observed entry rates fixed** — entry-count uncertainty is *not*
+    bootstrapped. The intervals quantify sampling variability in the
+    recovered cost primitives and the BNE simulation, conditional on the
+    observed bidder counts. (The separate entry-response *bound* in
+    [AN-012](an-012-preference-benchmark.md) addresses how far entry
+    could move before the welfare ranking would flip; it is a bound, not
+    a bootstrap of entry counts.)
+
 **The absolute exclusion share is the headline dominance statistic** and
 its whole interval sits above the 50% threshold in both classes. Across
 replicates the offset is negative in **99.8%**, the net effect positive

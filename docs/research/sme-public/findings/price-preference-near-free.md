@@ -33,14 +33,28 @@ and support that preserves the price-forming bidder pool**. The 10%
 preference is a *static design benchmark* of the second branch, not a
 forecast of a legal preference regime.
 
-**Caveat.** The preference benchmark holds entry fixed at the
-pre-policy level by construction. If non-SMEs would systematically exit
-when preferred against (because they cannot expect to win), the
-preference behaves like a soft set-aside and the static-cost result
-collapses. The simulation does not test entry elasticity; an
-entry-elastic version would be a separate exercise. The 10% margin is
-the cleanest benchmark; the diminishing-returns curve and the
-preference level at which non-SMEs start dropping out is in the
+**Entry-response bound.** The preference benchmark holds entry fixed at
+the pre-policy level by construction. Because the legal shock does not
+identify entry costs, the paper does not solve a free-entry
+counterfactual — it *bounds* the welfare ranking instead. Scaling
+non-SME participation under the preference down from its open-auction
+rate (the worst case, since the preference handicaps non-SMEs), and
+holding SME entry conservatively at its pre-policy rate, the
+preference-beats-set-aside ranking ($V_3 \succ V_0$) survives until the
+preference drives out **~90% of non-SME entrants in non-pharma**
+(participation collapsing from 2.68 to about a quarter of a bidder per
+auction) and survives **complete removal of non-SME entry in
+pharmaceuticals** (the full set-aside is so costly there). Letting SME
+entry respond — which a real preference would induce — only *widens*
+the preference's margin in both classes. This is a bound, not a
+free-entry counterfactual; entry costs are not identified
+([AN-012](../analyses/an-012-preference-benchmark.md); paper §6.4 and
+Online Appendix OA-E, Table OA-3). So the near-zero static cost result
+does not hinge on the fixed-entry assumption: non-SMEs would have to be
+driven out almost entirely before the ranking could flip.
+
+The 10% margin is the cleanest benchmark; the diminishing-returns curve
+and the preference level at which non-SMEs start dropping out is in the
 optimal-preference search (`v7-jpube-tight/scripts/61_optimal_preference.R`,
 not yet a standalone AN).
 

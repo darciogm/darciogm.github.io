@@ -93,7 +93,14 @@ substantial deviation from the IPV-clock independence assumption —
 moves the exclusion share by less than 5 pp and the total effect by
 less than 10%. This is not a test that IPV-clock holds; it is a test
 that *moderate* deviations from IPV-clock are not the reason the
-decomposition reads as it does.
+decomposition reads as it does. It bounds one specific deviation —
+within-auction cost *dependence*. A complementary margin bounds a
+*different* deviation: a type-differential exit *markup* (firms quitting
+the clock above cost). Treating exits as Haile–Tamer bounds, the
+exclusion-dominant ordering survives a differential markup up to 0.29 of
+the exit price (non-pharma) and the entire [0, 0.30] grid (pharma) — see
+[AN-013](an-013-pregao-dropouts.md) and the
+[IPV-clock hypothesis page](../hypotheses/ipv-clock-admissible.md).
 
 **What the correction does *not* purge.** Two channels remain in the
 cleaned distribution: (i) bidder-type selection (SMEs vs non-SMEs

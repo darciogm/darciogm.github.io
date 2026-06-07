@@ -4,6 +4,13 @@ paper: sme-public
 
 # Changelog
 
+## v8 — June 2026 (robustness bounds + §6 compression)
+
+- **Exit-at-cost markup bound (Lever A)** added. Reading drop-outs as exits bounds bidder costs from above (Haile–Tamer 2003); a markup common to both types cancels in the type-differential, so the only threat to the decomposition is a *type-differential* exit markup. The exclusion-dominant ordering survives a differential exit markup up to **0.29 of the exit price** in non-pharmaceuticals, and across the **entire [0, 0.30] grid** in pharmaceuticals. It reverses only if SMEs leave roughly **30% more surplus unbid than non-SMEs at every auction** — an implausibly large, systematically signed wedge.
+- **Entry-response bound (Lever C)** added. The welfare ranking (the 10% preference $V_3 \succ$ full set-aside $V_0$) is a *bound*, not a free-entry model — entry costs are not identified. The ranking survives until the preference discourages **~90% of non-SME entry** in non-pharmaceuticals, and complete removal of non-SME entry in pharmaceuticals.
+- **Bootstrap CIs disclosed as entry-fixed.** The cluster-bootstrap intervals on the decomposition propagate cost-primitive and Monte Carlo sampling uncertainty but **hold the entry count fixed** — entry-count uncertainty is not bootstrapped, and the bounds above (not the CIs) carry the entry-response sensitivity.
+- **§6 robustness restructured.** The three secondary buyer/conduct threats — coordination, reference-price evolution, and threshold manipulation — were compressed from three body subsections into a single one ("Conduct, reference prices, and threshold gaming"), with detail moved to the appendix (coordination → **OA-D**, reference-price evolution → **OA-D.4**, threshold gaming → **OA-B**). The findings are unchanged: no post-policy coordination intensification, a small reference-price effect, and no threshold bunching. The threat-assessment table still maps every threat.
+
 ## v8 — June 2026 (econ-write audit pass)
 
 - **Bootstrap 95% CIs on the central decomposition** (Table 3): the lost-discipline, protected-pool offset, and net components now carry cluster-bootstrap intervals. Non-pharma: exclusion **+0.371 [0.293, 0.464]**, pool offset **−0.144 [−0.239, −0.046]**, net **+0.227 [0.180, 0.291]**, absolute exclusion share **72% [64.5, 86.8]**. The offset is negative in 99.8% of replicates, the net effect is positive in 100%, and the exclusion share exceeds 50% in 100% — the exclusion-dominant ordering survives inference.
