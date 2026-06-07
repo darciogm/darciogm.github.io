@@ -12,7 +12,7 @@ paper: frequent-losers
 
 This page summarizes the contribution, institutional setting, formal framework, and empirical strategy of the paper.
 
-**Title:** *Cheap Signals, Costly Proof: The Reach and Limits of Award-Layer Screening in Cartel Enforcement.* The revised submission is a **three-document package**: a &approx; 48-page main text, a &approx; 30-page online appendix, and a new &approx; 23-page **Online Supplement** that holds the full grids and long proofs. The lead analytical object — a characterization of the **over-crediting bias** of raw award screens — is now stated as a Proposition in the **main body (§4)**; a companion **cost–recall / optimal-stopping** result is stated modestly in **online Appendix B** as an ordinary cost–benefit tangency.
+**Title:** *Cheap Signals, Costly Proof: The Reach and Limits of Award-Layer Screening in Cartel Enforcement.* The revised submission is a **three-document package**: a &approx; 48-page main text, a &approx; 28-page online appendix, and a new &approx; 23-page **Online Supplement** that holds the full grids and long proofs. The lead analytical object — a characterization of the **over-crediting bias** of raw award screens — is now stated as a Proposition in the **main body (§4)**; a companion **cost–recall / optimal-stopping** result is stated modestly in **online Appendix B** as an ordinary cost–benefit tangency.
 
 ---
 
@@ -40,7 +40,7 @@ The main text now runs in nine sections, with the second-platform audit inserted
 
 **The lead analytical object is in the main body.** Section 4 states the **over-crediting-bias characterization** as a Proposition (*Signs of the over-crediting bias*): because a contact-defined label and a participation-based score both load on the same volume, the positive class is the size-biased volume distribution, so the raw area is a **size-bias gap that is increasing in the dispersion (coefficient of variation) of participation counts and decreasing in the adjudicated base rate**. The signs are analytic; the practitioner deliverable is a **leading-order sufficient statistic — the CV of participation counts — computable from award data before any bid file opens**. The *magnitude* is a **synthetic size-bias surface anchored at one empirical point per platform, not a fitted/estimated curve**: only the signs and the leading-order statistic are claimed.
 
-**Online appendix (&approx; 30pp)** carries the companion organizational result and the audit machinery:
+**Online appendix (&approx; 28pp)** carries the companion organizational result and the audit machinery:
 
 - **Appendix B — Theory, Exit, Survival** states the **cost–recall / optimal-stopping** result, stated **modestly as an ordinary cost–benefit tangency**: an agency with per-record forensic cost $c$ and per-case recovery payoff $V$ descends the cheap ranking to the marginal-benefit-equals-marginal-cost point. The cost–recall frontier reported in the body is the empirical image of this textbook optimum, and the budget-dependence of the optimum is *why* there is no fixed cutoff to defend — a consequence, not a grand result.
 - **Appendix C — Opportunity & Timing** holds the full opportunity-decomposition, timing, and single-case audits that support the §4 Proposition empirically.

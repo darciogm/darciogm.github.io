@@ -6,7 +6,21 @@ paper: frequent-losers
 
 ---
 
-## v25 — Major revision: over-crediting promoted to the lead contribution — June 6, 2026 (Current)
+## v25.1 — Final editorial polish — June 6, 2026 (Current)
+
+**Headline:** a light final editorial pass on top of v25 with **no substantive or numerical
+change** — the over-crediting lead contribution, the cost–recall organizational object, the
+abstract, and every claim are unchanged from v25.
+
+- **Submitted appendix compressed to 28 pp** (from 30), with the residual duplication moved into
+  the Online Supplement; paper ≈ 48 pp and Online Supplement ≈ 23 pp are unchanged.
+- **Box 1 retitled** "From Cheap Suspicion to Bid-Layer Follow-Up."
+- **Three hostile-panel rounds converged** — ending **2 accept / 3 minor**; pre-submission status
+  **READY_AFTER_MINOR**.
+
+---
+
+## v25 — Major revision: over-crediting promoted to the lead contribution — June 6, 2026 (superseded by v25.1)
 
 **Headline:** a major revision for storytelling, compression, and humanization. The
 **over-crediting bias** — that validating a volume-loaded screen against a contact-defined
