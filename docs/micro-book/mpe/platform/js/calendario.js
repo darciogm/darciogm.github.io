@@ -4,11 +4,12 @@
  * Calendario MPE Micro I 2026/32:
  * - 9 aulas de conteudo (quartas 19:30-22:30)
  * - 5 monitorias (sabados) com Alberto
- * - 1 avaliacao final (24/06)
+ * - 1 avaliacao final (25/06)
  *
- * REGRA DE ACESSO (vigente desde 2026-05-08): livre acesso a todos os
- * bundles e pre-monitorias prontas, ate 2026-07-02 18:00 BRT (deadline
- * unico de submissao). Gabaritos liberam em 2026-07-03 00:00 BRT.
+ * REGRA DE ACESSO (vigente desde 2026-05-08; deadline antecipado em
+ * 2026-06-25): livre acesso a todos os bundles e pre-monitorias prontas,
+ * ate 2026-06-28 23:59 BRT (deadline unico de submissao). Gabaritos
+ * liberam em 2026-06-29 00:00 BRT.
  * Bundles ainda nao produzidos sao gateados via flags do portal.html
  * (available:false / fileReady:false), nao mais via calendario.
  *
@@ -27,8 +28,14 @@
 
   // Regra unificada de acesso livre
   var ACESSO_LIVRE_INICIO = dt('2026-04-15T00:00:00'); // ja aberto desde antes do inicio do curso
-  var ACESSO_LIVRE_FIM = dt('2026-07-02T18:00:00');    // deadline unico
-  var GABARITO_LIBERADO = dt('2026-07-03T00:00:00');   // dia seguinte ao fechamento
+  var ACESSO_LIVRE_FIM = dt('2026-06-28T23:59:00');    // deadline unico (antecipado de 02/07 em 2026-06-25)
+  var GABARITO_LIBERADO = dt('2026-06-29T00:00:00');   // dia seguinte ao fechamento
+
+  // Concessao 2026-06-25: as 3 primeiras aulas tem janela canonica (C_prazo)
+  // colapsada numa data unica = novo deadline. Aulas 4-9 mantem a regra
+  // padrao (presencial_at / next_presencial_at). Espelha o backend
+  // (win_pre/win_pos da iaad_calendar, migration 2026-06-25_iaad_deadline_collapse.sql).
+  var JANELA_COLAPSADA_1_3 = dt('2026-06-28T23:59:00');
 
   // Data das 9 aulas + avaliacao final. Quartas 19:30. (Mantido para display.)
   var AULAS_DATAS = [
@@ -43,7 +50,7 @@
     dt('2026-06-17T19:30:00')  // Aula 9
   ];
 
-  var AVALIACAO_FINAL = dt('2026-06-24T19:00:00');
+  var AVALIACAO_FINAL = dt('2026-06-25T19:30:00'); // AF movida de 24/06 (jogo do Brasil na Copa)
 
   var MONITORIAS_DATAS = [
     dt('2026-05-16T10:00:00'), // M1
@@ -89,7 +96,7 @@
   // ver supabase/migrations/2026-05-09_iaad30.sql):
   //   material/pre/refl_nebulosa/refl_aula -> presencial_at (D_X qua 19:30)
   //   pos/exerc                            -> next_presencial_at (D_{X+1};
-  //                                            Aula 9 -> AF qua 24/06 19:00)
+  //                                            Aula 9 -> AF qui 25/06 19:30)
   // Usado por: cramming detection, foco-da-semana, label "atrasado",
   // inbox de gabaritos. NUNCA use para gating de submissao -- isso e papel
   // de getPrazo/isClosed (acesso livre ate ACESSO_LIVRE_FIM).
@@ -112,7 +119,15 @@
     var idx = aula_n - 1;
     var presencial = AULAS_DATAS[idx];
     var next = (aula_n < AULAS_DATAS.length) ? AULAS_DATAS[idx + 1] : AVALIACAO_FINAL;
-    var fecha = (componente === 'pos' || componente === 'exerc') ? next : presencial;
+    // Aulas 1-3: janela colapsada (concessao 2026-06-25). Aulas 4-9: padrao.
+    // presencial_at/next_presencial_at seguem reais (display/ritmo); so o
+    // 'fecha' (que define C_prazo) e que colapsa.
+    var fecha;
+    if (aula_n <= 3) {
+      fecha = JANELA_COLAPSADA_1_3;
+    } else {
+      fecha = (componente === 'pos' || componente === 'exerc') ? next : presencial;
+    }
     return {
       abre: ACESSO_LIVRE_INICIO,
       fecha: fecha,

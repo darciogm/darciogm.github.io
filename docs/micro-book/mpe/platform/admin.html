@@ -3645,7 +3645,7 @@ function _buildEmailBody(item) {
   }
   if (item.category === 'inactive') {
     return 'Olá, ' + firstName + ',\n\n'
-      + 'Vou direto ao ponto porque vi que você ainda não acessou a plataforma da disciplina, e ela responde por 30% da nota (engajamento em pré-aulas, quizzes e exercícios avaliativos). Os outros 70% são a avaliação final de 24/06. Quero garantir que você não está sem acesso por problema técnico.\n\n'
+      + 'Vou direto ao ponto porque vi que você ainda não acessou a plataforma da disciplina, e ela responde por 30% da nota (engajamento em pré-aulas, quizzes e exercícios avaliativos). Os outros 70% são a avaliação final de 25/06. Quero garantir que você não está sem acesso por problema técnico.\n\n'
       + 'Checklist rápido pra destravar:\n'
       + '- Endereço: https://darciogm.github.io/mpe-platform/\n'
       + '- Login: seu e-mail institucional completo (ex.: joao.silva@al.insper.edu.br).\n'
@@ -5295,7 +5295,7 @@ function computeCircadian() {
       var comp = m[2] || 'material';
       // Cramming = 48h pre-janela canonica (D_X para material/pre; D_{X+1}
       // para pos/exerc). Nao usar getPrazo aqui -- aquele e o deadline da
-      // plataforma (02/07 unico) e nao faz sentido para cramming semanal.
+      // plataforma (28/06 unico) e nao faz sentido para cramming semanal.
       var janela = null;
       try { janela = window.MPE_CALENDARIO.getJanelaCanonica(aulaN, comp); } catch(err) { janela = null; }
       if (!janela || !janela.fecha) return;
@@ -5657,7 +5657,7 @@ function computeSRL() {
 // 🐢 LATE BIRD — atrasado cronico. Cumpriu o item mas FORA da janela
 // canonica (espelha public.iaad_calendar). Ortogonal a 🌙 (cramming):
 // crammer concentra na vespera; late bird submete depois do prazo ideal
-// (mas dentro da plataforma aberta, ate 02/07).
+// (mas dentro da plataforma aberta, ate 28/06).
 // Threshold: chronic = >=3 aulas com pelo menos 1 item atrasado (paridade
 // com 🌙).
 function computeLateBird() {
@@ -6999,7 +6999,7 @@ function _inboxGenStaleInterventionItems() {
 
 // Categoria: gabaritos a liberar nas proximas 48h (operacional)
 // Usa janela canonica (qui 00:00 BRT do dia seguinte ao fechamento de pos/exerc)
-// em vez do gabarito unico 03/07. p.gabarito ja e ms (number), nao Date.
+// em vez do gabarito unico 29/06. p.gabarito ja e ms (number), nao Date.
 function _inboxGenGabaritoItems() {
   if (!window.MPE_CALENDARIO || !window.MPE_CALENDARIO.getJanelaCanonica) return [];
   var now = Date.now();
@@ -8134,7 +8134,7 @@ function buildStoryOfWeek(raw, lastVisitAtMs) {
       };
     } else if (window.MPE_CALENDARIO && window.MPE_CALENDARIO.getJanelaCanonica) {
       // Aula com cobertura <60% recem-fechada (janela canonica do quiz pos =
-      // D_{X+1} 19:30, nao deadline plataforma 02/07).
+      // D_{X+1} 19:30, nao deadline plataforma 28/06).
       var nowMs = Date.now();
       var lowCov = null;
       for (var n = 1; n <= 9; n++) {

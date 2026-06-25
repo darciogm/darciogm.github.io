@@ -243,11 +243,13 @@
       if (!a.available) continue;
       if (a.isFinalAssessment) continue;  // T2.4: AF nao serve como foco semanal
       if (!cal || !cal.getJanelaCanonica || a.n > 9) return a;
-      // Aula foco = primeira cuja janela canonica do pos (D_{X+1} 19:30)
-      // ainda nao passou. Plataforma fica aberta ate 02/07 mas o ritmo
-      // ideal segue as aulas presenciais.
+      // Aula foco = primeira cuja proxima presencial (D_{X+1} 19:30) ainda
+      // nao passou. Usa next_presencial_at (data real), NAO .fecha — porque
+      // .fecha das Aulas 1-3 foi colapsado no deadline (concessao 2026-06-25)
+      // e regrediria o foco para a Aula 1. O ritmo ideal segue as presenciais.
       var pos = cal.getJanelaCanonica(a.n, 'pos');
-      if (!pos || Date.now() < pos.fecha) return a;
+      var ritmoFecha = pos ? (pos.next_presencial_at || pos.fecha) : null;
+      if (ritmoFecha == null || Date.now() < ritmoFecha) return a;
     }
     // Todas as janelas canonicas ja fecharam: retorna a ultima available (nao-AF)
     for (var j = aulas.length - 1; j >= 0; j--) {
@@ -492,9 +494,9 @@
         if (st.state !== 'open') return;
 
         // Foco semanal: prazo/urgencia vem da janela canonica (D_X / D_{X+1}),
-        // nao do acesso livre (02/07). Aulas 1-2 sao graca: prazo=null para
+        // nao do acesso livre (28/06). Aulas 1-3 sao graca: prazo=null para
         // saírem do destaque e nunca virarem urgencia critica/alta.
-        var isGraca = (a.n === 1 || a.n === 2);
+        var isGraca = (a.n <= 3);
         var janela = (!isGraca && cal && cal.getJanelaCanonica)
                      ? cal.getJanelaCanonica(a.n, c.key) : null;
         var prazo = janela ? janela.fecha : null;
@@ -525,9 +527,9 @@
     // Ordenacao p/ foco semanal:
     //   1. Janela canonica AINDA aberta -> crescente por prazo (mais perto primeiro).
     //   2. Janela canonica passada (nao-graca) -> decrescente (mais recente primeiro).
-    //   3. Graca (aulas 1-2) -> no fim, sem ordem forte.
+    //   3. Graca (aulas 1-3) -> no fim, sem ordem forte.
     // Resultado: aluno ve "Aula da semana" no topo; pendencias atrasadas
-    // em seguida (mais recentes antes); aulas 1-2 ao fim para nao distrair.
+    // em seguida (mais recentes antes); aulas 1-3 ao fim para nao distrair.
     out.sort(function(a, b) {
       if (a.isGraca !== b.isGraca) return a.isGraca ? 1 : -1;
       if (a.isGraca && b.isGraca) return a.aulaN - b.aulaN;
@@ -628,16 +630,17 @@
     var cal = window.MPE_CALENDARIO;
     var COMPS = ['pre','material','pos','exerc'];
     // Sob acesso livre, stepStatus retorna 'open' para tudo nao-done ate
-    // ACESSO_LIVRE_FIM (02/07). Para o indicador pedagogico de ritmo,
+    // ACESSO_LIVRE_FIM (28/06). Para o indicador pedagogico de ritmo,
     // consultamos a janela canonica D_X / D_{X+1} separadamente.
-    // Excecao: Aulas 1 e 2 nunca contam como atrasado nem como cobranca
-    // canonica -- graca explicita do Darcio (2026-05-19): qualquer
-    // submissao vale como "em-dia"; nao fazer nao vira late.
+    // Excecao: Aulas 1 a 3 nunca contam como atrasado nem como cobranca
+    // canonica -- graca explicita do Darcio (2026-05-19; estendida a Aula 3
+    // em 2026-06-25 junto do colapso de C_prazo): qualquer submissao vale
+    // como "em-dia"; nao fazer nao vira late.
     var doneGraca = 0, openGraca = 0;
     var doneNormal = 0, openNormal = 0, lateNormal = 0;
     aulas.forEach(function(a) {
       if (!a.available) return;
-      var isGraca = (a.n === 1 || a.n === 2);
+      var isGraca = (a.n <= 3);
       COMPS.forEach(function(c) {
         var st = PortalOndax.stepStatus(a, c, myData);
         if (st.state === 'locked') return; // legado
@@ -660,7 +663,7 @@
     var lateCount = lateNormal;
     var totalCount = doneCount + openCount + lateCount;
     // Denominador justo: so itens canonicamente cobrados (passados) das
-    // aulas 3-9. Itens futuros nao puxam ratio para baixo; aulas 1-2
+    // aulas 4-9. Itens futuros nao puxam ratio para baixo; aulas 1-3
     // (graca) tambem nao entram (nem positivamente nem negativamente).
     var dueNormal = doneNormal + lateNormal;
 
@@ -668,25 +671,25 @@
     if (lateNormal >= 1) {
       state = 'atrasado';
       label = 'Recuperando o passo';
-      hint = lateNormal + ' atividade(s) das Aulas 3+ passaram da janela canônica sem submissão. Submissão segue aberta — foque nas pendências da semana.';
+      hint = lateNormal + ' atividade(s) das Aulas 4+ passaram da janela canônica sem submissão. Submissão segue aberta — foque nas pendências da semana.';
     } else if (totalCount === 0) {
       state = 'novo';
       label = 'Começando agora';
       hint = 'Bem-vindo. Comece pelo Material ou Quiz pré-aula para registrar sua linha de base.';
     } else if (dueNormal === 0) {
-      // Nada das aulas 3+ cobrado canonicamente ainda (semestre no comeco,
+      // Nada das aulas 4+ cobrado canonicamente ainda (semestre no comeco,
       // ou aluno antecipou tudo). Se fez algo, em-dia; senao, novo.
       if (doneCount > 0) {
         state = 'em-dia'; label = 'Em dia';
         hint = 'Você está em dia (ou adiantado) no calendário canônico. Mantém o ritmo.';
       } else {
         state = 'novo'; label = 'Começando agora';
-        hint = 'Comece pelo Material ou Quiz pré-aula. Aulas 1-2 são grátis no ritmo: faça quando puder.';
+        hint = 'Comece pelo Material ou Quiz pré-aula. Aulas 1-3 são grátis no ritmo: faça quando puder.';
       }
     } else if (doneNormal / dueNormal >= 0.5) {
       state = 'em-dia';
       label = 'Em dia';
-      hint = 'Você concluiu mais da metade do que foi cobrado canonicamente nas Aulas 3+. Mantém o ritmo.';
+      hint = 'Você concluiu mais da metade do que foi cobrado canonicamente nas Aulas 4+. Mantém o ritmo.';
     } else {
       state = 'pegando-ritmo';
       label = 'Pegando o ritmo';
@@ -713,7 +716,7 @@
     //   'recuperar' - aluno tem item canonicamente atrasado (lateNormal>=1
     //                  OU pendings[0] tem dias<0 nao-graca);
     //   'adiantado' - aluno fez tudo da janela canonica corrente;
-    //                  pendings[0] eh aula futura (>7d) ou so graca aulas 1-2;
+    //                  pendings[0] eh aula futura (>7d) ou so graca aulas 1-3;
     //   'urgente'   - default; pendings[0] tem janela canonica proxima (<=7d).
     var hasLate = !!(rhythm && rhythm.lateNormal && rhythm.lateNormal > 0);
     var mode;
@@ -724,7 +727,7 @@
     else mode = 'urgente';
 
     var quando;
-    if (p.isGraca) quando = 'sem prazo canônico (aula 1-2)';
+    if (p.isGraca) quando = 'sem prazo canônico (aula 1-3)';
     else if (dias == null) quando = 'quando puder';
     else if (dias < 0) quando = 'para recuperar (janela canônica fechou há ' + Math.abs(dias) + 'd)';
     else if (dias === 0) quando = 'hoje mesmo';
