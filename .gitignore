@@ -20,6 +20,9 @@ docs/micro-book/mpe/*.out
 docs/micro-book/mpe/*.bak
 docs/micro-book/mpe/*\ (1).pdf
 
+# MPE course — AVALIAÇÃO FINAL real (NUNCA commitar/publicar — repo é público)
+docs/micro-book/mpe/AF-2026/
+
 # MPE course — dados pessoais LGPD (NUNCA commitar)
 docs/micro-book/mpe/lista_alunos_csv.csv
 docs/micro-book/mpe/lista_alunos_csv.csv:Zone.Identifier

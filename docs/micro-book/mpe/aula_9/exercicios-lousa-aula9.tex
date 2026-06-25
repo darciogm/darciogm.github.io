@@ -1,0 +1,874 @@
+% =====================================================================
+%  Aula 9 — Sinalização e Matching (MPE 2026/32, Insper)
+%  TRÊS EXERCÍCIOS RESOLVIDOS PARA LOUSA (aula presencial de revisão)
+%  Calibre: piso Nicholson & Snyder 12e §18.6 (signaling); teto J-R 3e §7.2.
+%
+%  Compilar com: pdflatex exercicios-lousa-aula9.tex   (ou lualatex)
+%
+% ---------------------------------------------------------------------
+%  DECISÃO: TRÊS exercícios (fechada pelo professor em 2026-06-17).
+%  --------------------------------------------------------------
+%  Um exercício por PILAR da Aula 9 (a última de conteúdo do curso):
+%   Ex 1 = Spence (1973), Ex 2 = Cho-Kreps (1987), Ex 3 = Gale-Shapley
+%   (1962). NÃO há 4º exercício — a aula tem exatamente três pilares e o
+%   tempo de lousa (160 min) não comporta um quarto com qualidade.
+%
+% ---------------------------------------------------------------------
+%  DOIS PDFs A PARTIR DESTA FONTE ÚNICA (padrão \ifsolucao do projeto):
+%  -------------------------------------------------------------------
+%   - Versão LOUSA (com gabarito): compile ESTE arquivo direto.
+%       pdflatex exercicios-lousa-aula9.tex
+%   - Versão CADERNO DO ALUNO (só enunciados): compile o wrapper.
+%       pdflatex caderno-aluno-aula9.tex
+%  Sem duplicar conteúdo: o wrapper define \modoaluno e dá \input aqui.
+%
+% ---------------------------------------------------------------------
+%  ORÇAMENTO DE TEMPO DE LOUSA (professor escrevendo + explicando)
+%  ----------------------------------------------------------------
+%   Ex 1 — Spence (single-crossing + separador + ineficiência) ...  ~45 min
+%   Ex 2 — Cho-Kreps (matar pooling -> Riley equilibrium) ........  ~50 min
+%   Ex 3 — Gale-Shapley (DA 3x3 + estabilidade + propriedades) ...  ~50 min
+%   ------------------------------------------------------------------
+%   CONTEÚDO PURO ......................................... ~145 min
+%   BUFFER (perguntas, idas ao quadro, respiro) ...........  ~15 min
+%   ------------------------------------------------------------------
+%   TOTAL ALVO ............................................  160 min  (2h40)
+%
+%  Calibragem honesta: 145 de conteúdo + 15 de buffer é APERTADO. É a
+%  última aula e há ânsia de fechar tudo; resista. Variável de ajuste em
+%  tempo real: se Ex 1 derrapar, cortar a parte (e) do Ex 3 (M-ótimo vs.
+%  W-péssimo demonstrado VIA mu_M != mu_W) — é a única peça destacável sem
+%  ferir o arco; vira o "ouro" da pré-monitoria 5 com o Alberto. NÃO corte
+%  a execução iteração-a-iteração do DA (item central) nem a verificação
+%  de bilateralidade do par bloqueante (erro nº1 da turma).
+%
+% ---------------------------------------------------------------------
+%  TENSÃO DE CALIBRE — leitura obrigatória antes de usar em sala
+%  ------------------------------------------------------------
+%  O professor pediu "nível Nicholson". Encarando a realidade sem fingir:
+%   - Spence (Ex 1) ESTÁ em N&S 12e §18.6 -> fica exatamente no piso. OK.
+%   - Cho-Kreps (Ex 2) NÃO está em N&S (vive em J-R 3e §7.2 / MWG Cap.13).
+%   - Matching/Gale-Shapley (Ex 3) NÃO está em N&S de jeito nenhum.
+%  COMO REBAIXEI A MECÂNICA PARA O CALIBRE PEDIDO (sem mentir sobre o
+%  tópico): mantive em Ex 2 e Ex 3 apenas COMPUTAÇÃO CONCRETA — números
+%  que fecham, execução passo a passo de algoritmo, verificação de
+%  desigualdades de incentivo. ZERO prova de existência, ZERO teorema
+%  formal (lattice, Gibbard-Satterthwaite), ZERO jogo de tipos contínuos.
+%  O que um aluno N&S-calibrado PRECISA saber é executar o critério
+%  intuitivo num exemplo e rodar o DA à mão; é só isso que cobro. O
+%  TÓPICO está acima do N&S; a MECÂNICA exigida, não. Está dito.
+%
+% ---------------------------------------------------------------------
+%  MAPA CONCEITO -> EXERCÍCIO (o que cada um RESUME da Aula 9)
+%  ----------------------------------------------------------
+%   Ex 1  : Spence (1973); custo c(e,theta)=e/theta; single-crossing
+%           (TMS = 1/theta, decrescente em theta); separador via IC-L e
+%           IC-H; intervalo e in [theta_L(dH-dL), theta_H(dH-dL)];
+%           ineficiência social do separador vs. first-best.
+%   Ex 2  : Cho-Kreps (1987); pooling sob crenças pessimistas é PBE;
+%           critério intuitivo acha e' onde só o tipo alto desviaria;
+%           pooling cai; sobra Riley equilibrium = separador menos custoso
+%           e_min = theta_L(theta_H - theta_L). Execução numérica concreta.
+%   Ex 3  : Gale-Shapley (1962); Deferred Acceptance num 3x3; estabilidade
+%           via par bloqueante (bilateralidade!); termina, estável,
+%           M-ótimo / W-péssimo, strategy-proof só do lado proponente;
+%           resultado negativo de Roth (1982).
+%
+%  O QUE FICOU DE FORA DE PROPÓSITO (não cabe em 160 min com qualidade):
+%   - Prova formal de que o critério intuitivo seleciona o Riley eq.
+%     (iteração D1/divinity) -> só menção + intuição no Ex 2.
+%   - Prova do Lattice Theorem (Roth-Sotomayor) e da terminação de DA
+%     -> Ex 3 EXECUTA e enuncia; não prova.
+%   - Roth-Peranson (1999) casais, kidney exchange (top trading cycles),
+%     tipos contínuos (Mailath 1987) -> Box/menção, não exercício.
+%   - Matching COM transferências (Shapley-Shubik 1972, Becker 1973)
+%     -> fora de escopo; matching aqui é puramente ordinal.
+% =====================================================================
+
+\documentclass[11pt,a4paper]{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[brazilian]{babel}
+\usepackage{amsmath,amssymb}
+\usepackage{mathtools}
+\usepackage[margin=2.4cm]{geometry}
+\usepackage{enumitem}
+\usepackage{xcolor}
+\usepackage[most]{tcolorbox}
+\usepackage{booktabs}
+
+% --- Cor institucional Insper ---
+\definecolor{insper}{HTML}{C8102E}
+\definecolor{mundo}{HTML}{1B3A5C}
+\definecolor{amarelo}{HTML}{C79A00}  % calibre intermediário (N&S)  [🟡]
+\definecolor{verm}{HTML}{C8102E}     % calibre avançado (Jehle-Reny) [🔴]
+\definecolor{verde}{HTML}{2E7D32}    % calibre consolidação          [🟢]
+
+% --- Marcadores de calibre (substituem os emojis 🟢🟡🔴 sob pdflatex) ---
+\newcommand{\calY}{\textbf{\textcolor{amarelo}{[N]}}} % intermediário N&S
+\newcommand{\calR}{\textbf{\textcolor{verm}{[J-R]}}}  % avançado Jehle-Reny
+\newcommand{\calG}{\textbf{\textcolor{verde}{[C]}}}   % consolidação
+
+% --- Notação canônica do projeto (PT-BR) ---
+\newcommand{\TMS}{\text{TMS}}
+% preferência denotada \succeq (já é o padrão amssymb; não MRS, não \succsim)
+\DeclareMathOperator{\Esp}{\mathbb{E}}
+
+% --- Decimais com vírgula: use \dc{0}{25} -> 0{,}25 ---
+\newcommand{\dc}[2]{#1{,}#2}
+
+% --- Caixa pedagógica (gabarito 5 passos) ---
+\newtcolorbox{gabarito}{
+  colback=insper!4, colframe=insper, boxrule=1pt, arc=3pt,
+  left=6pt, right=6pt, top=6pt, bottom=6pt,
+  breakable, before skip=8pt, after skip=8pt}
+
+\newcommand{\passo}[1]{\smallskip\noindent\textbf{\textcolor{insper}{#1}}\quad}
+
+% --- Caixa de ANDAIME DE LEITURA (explicação para não-economista) ---
+% IMPORTANTE: esta caixa é material de ESTUDO EM CASA da versão-solução.
+% NÃO consome orçamento de lousa: o professor escreve a álgebra (160 min
+% preservados); o aluno usa a prosa azul para destravar cada passo sozinho.
+% Cor azul-mundo (#1B3A5C) de propósito, para o leitor distinguir
+% "andaime" (azul) de "comentário do professor" (vermelho gabarito).
+\newtcolorbox{empalavras}[1][Em palavras (para quem não é economista)]{
+  colback=mundo!5, colframe=mundo, boxrule=0.7pt, arc=2pt,
+  left=6pt, right=6pt, top=5pt, bottom=5pt,
+  fonttitle=\bfseries\small\sffamily, coltitle=white,
+  title={#1}, breakable, before skip=6pt, after skip=6pt}
+
+% --- Modo SOLUÇÃO (default) vs. CADERNO DO ALUNO ---
+% Compilar este arquivo direto => \ifsolucao verdadeiro (com gabarito).
+% Wrapper caderno-aluno-aula9.tex define \modoaluno => só enunciados.
+\newif\ifsolucao
+\ifdefined\modoaluno\solucaofalse\else\solucaotrue\fi
+
+% Espaço de resolução para o caderno do aluno
+\newcommand{\espacoaluno}[1]{%
+  \par\smallskip\noindent\textit{\textcolor{gray}{Espaço para resolução.}}%
+  \par\vspace{#1}\noindent\textcolor{insper!30}{\hrulefill}\par\medskip}
+
+\title{\textbf{\textcolor{insper}{Microeconomia I — MPE 2026/32}}\\[4pt]
+\large Aula 9 — Sinalização e Matching\\[2pt]
+\normalsize \ifsolucao Três exercícios resolvidos para a lousa (revisão presencial)%
+\else Caderno do aluno — três exercícios (enunciados para resolver)\fi}
+\author{Insper — Mestrado Profissional em Economia}
+\date{Calibre: Nicholson \& Snyder 12e §18.6 (piso) · Jehle-Reny 3e §7.2 (teto)}
+
+\begin{document}
+\maketitle
+
+\noindent\textbf{Convenções.} Documento em português do Brasil. Decimais com vírgula
+($\dc{0}{25}$). Preferência denotada $\succeq$; taxa marginal de substituição $\TMS$.
+Modelo de Spence canônico: tipo $\theta\in\{\theta_L,\theta_H\}$, custo de sinal
+$c(e,\theta)=e/\theta$, utilidade $U=w-c(e,\theta)$ (os parâmetros foram escolhidos para
+\emph{todas} as contas fecharem em inteiros na lousa). Os três exercícios são
+\textbf{complementares} aos avaliativos da plataforma (não os duplicam): os números foram
+recalibrados de propósito. \textbf{Calibre:} \calG{} consolidação, \calY{} intermediário
+(Nicholson \& Snyder), \calR{} avançado (Jehle-Reny / qualifier). Estes marcadores
+substituem os emojis verde/amarelo/vermelho do projeto, para compilar em pdflatex.
+
+\ifsolucao
+\smallskip
+\noindent\textbf{\textcolor{mundo}{Tensão de calibre — leitura honesta.}} O professor pediu
+``nível Nicholson''. Spence (Exercício~1) está em N\&S 12e §18.6, então fica exatamente no
+piso. Mas \emph{Cho-Kreps} (Exercício~2) e \emph{matching} (Exercício~3) \textbf{não estão no
+Nicholson} — vivem em Jehle-Reny e MWG. Como conciliei? Mantive a \textbf{mecânica} desses dois
+no nível N\&S: só computação concreta (números que fecham, execução passo a passo do algoritmo,
+checagem de desigualdades de incentivo), \emph{sem nenhuma} prova de existência ou teorema
+formal. O \emph{tópico} está acima do N\&S; o que se \emph{exige} do aluno, não. Está dito.
+
+\smallskip
+\noindent\textbf{\textcolor{mundo}{Como ler este material.}} A turma do MPE é heterogênea:
+há advogados, engenheiros e gente de negócios que nunca viu microeconomia avançada. Por isso a
+versão-solução traz, ao lado da álgebra, \textbf{caixas azuis ``Em palavras''}. Elas são
+\emph{andaime de leitura para estudo em casa}: explicam cada passo em português comum, definem
+o jargão na primeira aparição e traduzem cada resultado para a intuição. Na lousa, o professor
+escreve apenas a álgebra (a caixa azul \emph{não} consome tempo de quadro); você usa a prosa
+azul depois, sozinho, para destravar o que ficou opaco. As \textbf{caixas vermelhas}
+(``Comentário pedagógico'') são a leitura do professor em 5 passos — registro técnico.
+\fi
+
+\medskip
+\begin{center}
+\begin{tabular}{@{}clcl@{}}
+\toprule
+\# & Tema (conceito-âncora da Aula 9) & Calibre & Lousa \\
+\midrule
+1 & Spence: single-crossing, separador via IC-L/IC-H, ineficiência & \calY & $\sim$45 min \\
+2 & Cho-Kreps: critério intuitivo mata pooling $\to$ Riley eq. & \calY/\calR & $\sim$50 min \\
+3 & Gale-Shapley: Deferred Acceptance $3\times3$, estabilidade & \calY & $\sim$50 min \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\hrulefill
+
+% =====================================================================
+\section*{\textcolor{insper}{Exercício 1 — Spence: educação que só serve para mostrar}}
+\noindent\textbf{Calibre \calY{} (N\&S §18.6).} \quad \emph{Lousa: $\sim$45 min.}
+\par\smallskip
+\noindent\textbf{Conceito que resume:} sinalização de Spence (1973); custo do sinal
+dependente do tipo $c(e,\theta)=e/\theta$; \emph{single-crossing} ($\TMS=1/\theta$,
+decrescente em $\theta$); construção do equilíbrio separador via IC-L e IC-H; o
+\emph{contínuo} de separadores; ineficiência social do sinal versus o first-best com
+informação simétrica.
+
+\subsection*{Enunciado}
+Trabalhadores têm produtividade $\theta\in\{\theta_L,\theta_H\}$ com $\theta_L=3$ e
+$\theta_H=7$. O trabalhador \textbf{conhece o próprio tipo}; a firma observa apenas a
+educação $e\ge 0$. Educar-se custa $c(e,\theta)=e/\theta$ (custa \emph{menos} para o tipo
+mais produtivo). A utilidade é $U=w-c(e,\theta)$, onde $w$ é o salário. O mercado de trabalho
+é competitivo: a firma paga $w(e)=\Esp[\theta\mid e]$ (salário igual à produtividade esperada
+condicional ao sinal observado). A fração de tipos altos é $\pi_H=\dc{0}{5}$.
+
+\smallskip
+\noindent\textbf{(a)} Calcule a $\TMS$ de cada tipo no plano $(e,w)$ e verifique
+single-crossing. \textbf{(b)} Construa o intervalo de níveis de educação $\underline e$ que
+sustentam um equilíbrio \emph{separador} (tipo $L$ escolhe $e=0$, tipo $H$ escolhe
+$\underline e$). \textbf{(c)} Tome $\underline e=14$ como o nível separador praticado e
+compute a perda de bem-estar agregada em relação ao first-best (informação simétrica).
+
+\ifsolucao
+
+\begin{empalavras}[O enunciado em palavras de todo dia]
+Pense num \textbf{mercado de trabalho}. Cada pessoa tem uma \textbf{produtividade}
+verdadeira, $\theta$ (``teta''): quanto ela de fato rende para a empresa. Há dois tipos: os
+\emph{mais produtivos} ($\theta_H=7$) e os \emph{menos produtivos} ($\theta_L=3$). O problema:
+a empresa \textbf{não enxerga} a produtividade na entrevista — só o candidato sabe quanto vale.
+
+\smallskip\noindent
+O que a empresa \emph{vê} é a \textbf{educação} $e$ (anos de estudo, diplomas, certificações).
+A sacada de Spence: estudar \textbf{custa}, e custa \emph{menos} para quem é mais produtivo —
+$c(e,\theta)=e/\theta$, então o tipo $H$ (denominador maior) paga menos por cada ano de estudo.
+Pode ser capacidade, disciplina, custo psíquico; o canal não importa, importa que estudar dói
+menos no produtivo. A utilidade $U=w-c(e,\theta)$ é ``salário menos o sofrimento de estudar''.
+
+\smallskip\noindent
+``Mercado competitivo, $w(e)=\Esp[\theta\mid e]$'' é a mesma \textbf{livre entrada} das aulas
+anteriores: a concorrência entre empresas empurra o salário até igualar a produtividade que a
+empresa \emph{espera} de quem mostra educação $e$. Se todo mundo com diploma $e$ é, em média,
+produtividade $7$, o salário pago a esse diploma será $7$. A pergunta de Spence: será que dá
+para a educação \emph{revelar} o tipo, mesmo a educação não \emph{aumentando} produtividade
+nenhuma? (No modelo puro, ela não aumenta — é só um carimbo caro.)
+\end{empalavras}
+
+\subsection*{Resolução passo a passo}
+\begin{enumerate}[leftmargin=2em,itemsep=4pt]
+
+\item \textbf{(a) Single-crossing (a chave de tudo).} A $\TMS$ no plano $(e,w)$ é o salário
+extra que o trabalhador exige por uma unidade a mais de educação, mantendo $U$ constante:
+\[
+\TMS(\theta) \;=\; \left|\frac{\partial U/\partial e}{\partial U/\partial w}\right|
+\;=\; \frac{1/\theta}{1} \;=\; \frac{1}{\theta}. \tag{1.1}
+\]
+Logo $\TMS(\theta_L)=\tfrac13$ e $\TMS(\theta_H)=\tfrac17$. Como
+$\partial\TMS/\partial\theta=-1/\theta^2<0$, a $\TMS$ é \textbf{estritamente decrescente em
+$\theta$}: isso é single-crossing. No quadro $(e,w)$, a curva de indiferença do tipo $L$ é
+\emph{mais íngreme} ($\tfrac13>\tfrac17$) e cruza a do tipo $H$ \textbf{uma única vez}.
+
+\begin{empalavras}[O que single-crossing quer dizer, sem economês]
+$\TMS=1/\theta$ é ``quanto de salário a mais a pessoa cobra para topar mais um ano de estudo''.
+O tipo $L$ cobra $\tfrac13$ por unidade de $e$; o tipo $H$ cobra só $\tfrac17$. Faz sentido:
+para o produtivo estudar dói menos, então ele \emph{aceita} estudar por um aumento menor.
+
+\smallskip\noindent
+``Single-crossing'' (``cruzamento único'') diz que, desenhadas no gráfico
+educação~$\times$~salário, as curvas de ``mesma satisfação'' dos dois tipos se cruzam
+\textbf{exatamente uma vez}. É \emph{isso} que permite separar: como o $L$ exige muito salário
+por cada ano extra de estudo e o $H$ exige pouco, existe um nível de educação que \emph{vale a
+pena} para o $H$ (que paga barato por ele) mas \emph{não vale} para o $L$ (que pagaria caro).
+Esse desencontro de ``gostos'' é o motor da separação. Sem single-crossing os tipos quereriam a
+mesma coisa e não daria para distingui-los.
+\end{empalavras}
+
+\item \textbf{(b) Conjectura de equilíbrio separador.} Tipo $L$ escolhe $e^*_L=0$ e recebe
+$w=\theta_L$; tipo $H$ escolhe $e^*_H=\underline e$ e recebe $w=\theta_H$. A firma usa a
+crença ``$e\ge\underline e\Rightarrow$ tipo alto''. Para isso ser equilíbrio, \emph{nenhum}
+tipo pode querer imitar o outro:
+\[
+\text{(IC-L)}\quad
+\underbrace{\theta_L-\frac{0}{\theta_L}}_{\text{ser honesto}}
+\;\ge\;
+\underbrace{\theta_H-\frac{\underline e}{\theta_L}}_{\text{imitar o alto}}
+\;\;\Longleftrightarrow\;\;
+\underline e \;\ge\; \theta_L(\theta_H-\theta_L). \tag{1.2}
+\]
+\[
+\text{(IC-H)}\quad
+\underbrace{\theta_H-\frac{\underline e}{\theta_H}}_{\text{ser honesto}}
+\;\ge\;
+\underbrace{\theta_L-\frac{0}{\theta_H}}_{\text{fingir-se de baixo}}
+\;\;\Longleftrightarrow\;\;
+\underline e \;\le\; \theta_H(\theta_H-\theta_L). \tag{1.3}
+\]
+Substituindo $\theta_L=3,\theta_H=7$ (logo $\theta_H-\theta_L=4$):
+\[
+\boxed{\;\underline e \in \big[\,\theta_L(\theta_H-\theta_L),\,\theta_H(\theta_H-\theta_L)\,\big]
+= [\,3\cdot4,\;7\cdot4\,] = [\,12,\;28\,].\;} \tag{1.4}
+\]
+\textbf{Existe um contínuo de equilíbrios separadores} (qualquer $\underline e\in[12,28]$). O
+intervalo é não-vazio porque $\theta_H>\theta_L$ — se os tipos fossem iguais, ele degeneraria
+e \emph{nada} haveria a sinalizar.
+
+\begin{empalavras}[De onde saem IC-L e IC-H, e por que o intervalo existe]
+Para a separação ``parar de pé'', dois tipos de mentira precisam não compensar:
+\begin{itemize}[leftmargin=1.3em,itemsep=1pt,topsep=2pt]
+\item \textbf{IC-L (o fraco não finge ser forte):} se o tipo $L$ for honesto, ganha
+$\theta_L=3$ sem estudar. Se imitar o $H$, recebe $\theta_H=7$ mas paga $\underline e/\theta_L$
+de estudo (caro, porque ele é o tipo lento). Para não valer a pena imitar, precisamos
+$\underline e\ge 12$. Em palavras: \emph{a educação tem de ser cara o bastante para o fraco
+desistir de copiá-la}.
+\item \textbf{IC-H (o forte não desiste de estudar):} se o $H$ estuda $\underline e$, recebe
+$7$ pagando $\underline e/\theta_H$ (barato, porque é rápido). Se largar a escola, é tratado
+como tipo baixo e ganha só $3$. Para o $H$ topar pagar pela educação, ela não pode ser
+\emph{cara demais}: $\underline e\le 28$.
+\end{itemize}
+Juntando as duas: $\underline e$ tem de ficar entre $12$ e $28$. Há uma \emph{faixa inteira} de
+níveis de educação que funcionam — é o ``contínuo de equilíbrios separadores'', e é exatamente
+o incômodo que o Exercício~2 vai resolver (qual deles a sociedade ``seleciona''?).
+\end{empalavras}
+
+\item \textbf{(c) Ineficiência social — tome $\underline e=14$.} No first-best (a firma
+\emph{vê} o tipo), ninguém precisa sinalizar: cada um recebe sua produtividade com $e=0$, e a
+educação-carimbo não existe. No separador praticado, o tipo $H$ gasta
+\[
+\frac{\underline e}{\theta_H}=\frac{14}{7}=2 \tag{1.5}
+\]
+em educação que \textbf{não muda sua produtividade}. O tipo $L$ está indiferente (ganha
+$\theta_L=3$ nos dois mundos). Como só o tipo $H$ desperdiça, e ele é fração $\pi_H=\dc{0}{5}$:
+\[
+\boxed{\;\text{perda de bem-estar agregada} = \pi_H\cdot\frac{\underline e}{\theta_H}
+= \dc{0}{5}\cdot 2 = 1.\;} \tag{1.6}
+\]
+\textbf{O canal de sinalização é puro desperdício social} — mas é o melhor implementável sob
+essa estrutura de informação.
+
+\begin{empalavras}[Por que ``desperdício'' e o que significa a perda $=1$]
+No \emph{first-best} (mundo de sonho em que a firma enxerga o tipo) ninguém estuda para se
+mostrar: o produtivo já é reconhecido como produtivo. No mundo real, o tipo $H$ é \emph{forçado}
+a queimar $14/7=2$ unidades de bem-estar em diploma só para \textbf{provar} que é bom — esse
+estudo não o deixa mais produtivo (no modelo puro). É energia jogada fora: ninguém captura
+esse $2$, ele evapora. Como metade dos trabalhadores ($\pi_H=\dc{0}{5}$) é do tipo $H$, a perda
+\emph{média} na economia é $\dc{0}{5}\times 2=1$. O tipo $L$ não perde nada (continua com $3$).
+
+\smallskip\noindent
+A moral incômoda: a educação aqui pode estar funcionando mais como \textbf{carimbo caro} do que
+como acúmulo de capacidade. Quanto disso é real no mundo? O GED americano
+(Tyler-Murnane-Willett 2000) sugere que $\sim$20--30\% do prêmio salarial do ensino médio é
+sinalização pura — o resto é capital humano de verdade. Spence não diz ``educação é inútil''; diz
+``parte do valor dela é mostrar tipo, não criar tipo''.
+\end{empalavras}
+
+\end{enumerate}
+
+\subsection*{Comentário pedagógico (5 passos)}
+\begin{gabarito}
+\passo{1. Ponto-chave.} Single-crossing ($\TMS=1/\theta$ decrescente) é a hipótese que torna
+a separação possível: faz a educação ``valer a pena'' para o produtivo e não para o
+improdutivo. Com ela, \emph{duas} restrições de incentivo (IC-L e IC-H) podem valer ao mesmo
+tempo, e o nível separador $\underline e$ vive num intervalo não-vazio. A educação separadora é
+\textbf{Pareto-pior} que o first-best — desperdício social puro.
+
+\passo{2. Derivação.} A álgebra é mínima: $\TMS=(1/\theta)/1=1/\theta$; IC-L dá
+$\underline e\ge\theta_L(\theta_H-\theta_L)=12$; IC-H dá
+$\underline e\le\theta_H(\theta_H-\theta_L)=28$. A perda usa só $\underline e/\theta_H=2$ vezes
+$\pi_H=\dc{0}{5}$. Os parâmetros $\theta_L=3,\theta_H=7,\underline e=14$ foram calibrados para
+$14/7=2$ inteiro e perda $=1$ redonda.
+
+\passo{3. Armadilha.} (i) Trocar IC-L por IC-H (qual tipo tem o quê de ``ser honesto''
+versus ``imitar''?) — escreva os quatro termos no quadro \emph{nomeando} cada um. (ii) Avaliar
+o desperdício no salário ($\theta_H$) em vez de no custo de educação ($\underline e/\theta_H$):
+o salário é só uma transferência, não desperdício. (iii) Achar que single-crossing é
+\emph{teorema} — é \emph{hipótese}; sem ela, separação não emerge.
+
+\passo{4. Extensão.} O intervalo $[12,28]$ tem um problema: \emph{qual} equilíbrio? O
+\textbf{Exercício~2} (Cho-Kreps) resolve, selecionando o separador menos custoso
+$\underline e_{\min}=\theta_L(\theta_H-\theta_L)=12$ (Riley equilibrium). Spence dividiu o
+Nobel de 2001 com Akerlof (\textbf{Aula 8}) e Stiglitz — sinalização é a resposta
+\emph{descentralizada} ao unraveling de Akerlof: o agente informado age para se separar do limão.
+
+\passo{5. Peer-review (auto-crítica honesta).} Os números diferem dos avaliativos de propósito
+— lá usei $(\theta_L,\theta_H)=(1,4)$, $(2,6)$ e $(1,3)$; aqui $(3,7)$, com
+$\theta_H-\theta_L=4$ para os produtos saírem redondos. Diferem também do exemplo de aula
+($\theta_L=2,\theta_H=5$). Escolha deliberada: tomei $\underline e=14$ (não o $\underline
+e_{\min}=12$ do Riley) para a perda ser $1$ exato e \emph{também} para deixar visível que o
+intervalo tem ``gordura'' — o aluno vê que $14$ é só \emph{um} ponto de $[12,28]$, o que motiva
+a pergunta de seleção do Exercício~2. Risco residual: um aluno pode confundir o $\underline
+e=14$ ``praticado'' com o $\underline e_{\min}=12$ ``selecionado por Cho-Kreps''; o item~(c) e o
+passo~4 deixam o contraste explícito.
+\end{gabarito}
+\else
+\espacoaluno{80mm}
+\fi
+
+\hrulefill
+
+% =====================================================================
+\section*{\textcolor{insper}{Exercício 2 — Cho-Kreps: matando o pooling com crenças razoáveis}}
+\noindent\textbf{Calibre \calY{} no setup, \calR{} no critério intuitivo.} \quad \emph{Lousa: $\sim$50 min.}
+\par\smallskip
+\noindent\textbf{Conceito que resume:} multiplicidade de PBE em jogos de sinalização; um
+\emph{pooling} sob crenças pessimistas é PBE; o \emph{critério intuitivo} de Cho-Kreps (1987)
+acha um sinal fora-do-equilíbrio que \textbf{só o tipo alto} desviaria; isso mata o pooling e
+seleciona o \textbf{Riley equilibrium} (separador menos custoso)
+$\underline e_{\min}=\theta_L(\theta_H-\theta_L)$.
+
+\subsection*{Enunciado}
+Mesmo modelo de Spence do Exercício~1: $\theta_L=3,\theta_H=7$, custo $c(e,\theta)=e/\theta$,
+$U=w-e/\theta$. As frações dos tipos são $\pi_L=\pi_H=\dc{0}{5}$. Considere um candidato a
+equilíbrio \textbf{pooling}: ambos os tipos escolhem $e^p=0$ e recebem o salário médio
+$\bar w=\pi_L\theta_L+\pi_H\theta_H$. As crenças fora-do-equilíbrio são \emph{pessimistas}:
+$\mu(\theta_L\mid e\ne 0)=1$, logo $w(e)=\theta_L$ para qualquer $e\ne 0$.
+
+\smallskip
+\noindent\textbf{(a)} Calcule $\bar w$ e verifique que esse pooling é um PBE sob as crenças
+pessimistas. \textbf{(b)} Aplique o critério intuitivo: ache o intervalo de sinais $e'$ tais
+que \emph{só} o tipo alto desviaria para $e'$ (mesmo no melhor caso $w(e')=\theta_H$), e tome
+um $e'$ concreto nesse intervalo. \textbf{(c)} Mostre que o pooling cai e identifique o
+equilíbrio que sobrevive.
+
+\ifsolucao
+
+\begin{empalavras}[O enunciado em palavras de todo dia]
+O Exercício~1 deixou um incômodo: havia uma \emph{faixa inteira} de equilíbrios separadores
+($[12,28]$). Pior: existe também um equilíbrio \textbf{pooling}, em que \emph{ninguém} estuda
+($e^p=0$) e \emph{todos} recebem o mesmo salário médio $\bar w$. Como pode o pooling ser
+equilíbrio se o produtivo gostaria de se destacar? Por causa de uma \textbf{ameaça pessimista}:
+a firma ``promete'' que, se vir qualquer educação fora do combinado, vai \emph{presumir o pior}
+(tipo baixo) e pagar só $\theta_L$. Com essa ameaça no ar, nem o produtivo se arrisca a estudar
+— estudaria de graça para ser tratado como burro. Então o pooling se sustenta.
+
+\smallskip\noindent
+Cho-Kreps acharam essa ameaça \emph{implausível}. O \textbf{critério intuitivo} pergunta: ``se
+alguém aparecesse com um diploma $e'$ que está fora do combinado, quem seria o \emph{único} tipo
+capaz de querer isso?'' Se um certo $e'$ \emph{nunca} compensaria para o tipo baixo (nem no
+cenário mais otimista para ele), mas \emph{compensaria} para o alto, então é ``intuitivo'' a
+firma concluir: ``só um produtivo faria isso'' — e pagar $\theta_H$. Mas aí o produtivo
+\emph{realmente} desvia, e o pooling desmorona. O exercício faz essa caçada com números.
+\end{empalavras}
+
+\subsection*{Resolução passo a passo}
+\begin{enumerate}[leftmargin=2em,itemsep=4pt]
+
+\item \textbf{(a) O salário-pool e por que o pooling é PBE.} O salário médio é
+\[
+\bar w = \pi_L\theta_L+\pi_H\theta_H = \dc{0}{5}\cdot 3 + \dc{0}{5}\cdot 7 = 5. \tag{2.1}
+\]
+Sob a crença pessimista, qualquer desvio $e\ne 0$ paga $w(e)=\theta_L=3$. Ninguém desvia:
+\begin{itemize}[leftmargin=1.4em,itemsep=1pt,topsep=2pt]
+\item Tipo $L$ no pool: $U=\bar w-0=5$. Se desvia para $e>0$: $U=3-e/3<3<5$. \textbf{Não desvia.}
+\item Tipo $H$ no pool: $U=\bar w-0=5$. Se desvia para $e>0$: $U=3-e/7<3<5$. \textbf{Não desvia.}
+\end{itemize}
+Como nenhum tipo quer desviar e as crenças no caminho de equilíbrio são corretas (prior), o
+\textbf{pooling em $e^p=0$ é um PBE}.
+
+\begin{empalavras}[O que é PBE e por que a ameaça pessimista o sustenta]
+``PBE'' (\emph{Perfect Bayesian Equilibrium}, equilíbrio bayesiano perfeito) é o conceito de
+solução para jogos com informação privada: cada jogador joga otimamente \emph{dadas suas
+crenças}, e as crenças são atualizadas por Bayes \emph{onde dá}. O problema é o ``onde dá'':
+para sinais que \emph{ninguém} usa em equilíbrio (os ``fora-do-equilíbrio''), Bayes não diz
+nada — a firma pode crer \emph{qualquer coisa}. PBE permite crenças arbitrárias aí.
+
+\smallskip\noindent
+A firma então escolhe a crença mais ``assustadora'': ``quem desviar, presumo que é o tipo
+ruim''. Com essa ameaça, desviar paga só $3$, enquanto ficar no pool paga $5$ — ninguém topa.
+A conta acima confirma: tanto $L$ quanto $H$ ficam melhores no pool ($5$) do que desviando
+($<3$). Tecnicamente o pooling ``passa'' no teste do PBE. A crítica de Cho-Kreps é que a ameaça,
+embora \emph{logicamente} admissível, é \emph{boba}: ela trata como ``provável tipo ruim'' um
+desvio que, como veremos, só um tipo \emph{bom} teria interesse em fazer.
+\end{empalavras}
+
+\item \textbf{(b) O critério intuitivo — caçar o desvio que delata o tipo.} Considere um
+desvio $e'>0$ e o \emph{melhor caso} para quem desvia: a firma paga $w(e')=\theta_H=7$. Pergunte
+para cada tipo se valeria a pena (comparado a ficar no pool, $\bar w=5$):
+\[
+\text{Tipo }L\text{ desvia (estritamente)} \iff \theta_H-\frac{e'}{\theta_L}>\bar w
+\iff e' < \theta_L(\theta_H-\bar w) = 3\cdot 2 = 6. \tag{2.2}
+\]
+\[
+\text{Tipo }H\text{ desvia} \iff \theta_H-\frac{e'}{\theta_H}>\bar w
+\iff e' < \theta_H(\theta_H-\bar w) = 7\cdot 2 = 14. \tag{2.3}
+\]
+A ``zona de delação'' é o conjunto de $e'$ em que o tipo $L$ \textbf{não} desvia (nem no
+melhor caso) \emph{e} o tipo $H$ desvia. Por (2.2), o $L$ não desvia estritamente quando
+$e'\ge 6$ — e \emph{em} $e'=6$ ele fica \textbf{indiferente} (surplus $=0$, logo não desvia);
+por (2.3), o $H$ desvia quando $e'<14$. Como $\theta_H>\theta_L$, temos $6<14$, logo
+\[
+\boxed{\;e'\in\big[\theta_L(\theta_H-\bar w),\,\theta_H(\theta_H-\bar w)\big)=[\,6,\,14\,)\;} \tag{2.4}
+\]
+contém sinais que \textbf{o tipo $L$ não desviaria nem no melhor caso, mas o tipo $H$ sim}.
+O extremo esquerdo é \textbf{fechado} ($e'=6$ já delata: o $L$ está indiferente e o $H$ ganha
+$\theta_H-6/\theta_H-\bar w=2-6/7=\tfrac{8}{7}>0$); o direito é \textbf{aberto} (em $e'=14$ o
+$H$ fica indiferente, ganho $=0$, não estritamente positivo).
+Tome o sinal concreto $\boxed{e'=9}$. Verificação (com $w=\theta_H=7$):
+\[
+\text{Tipo }L: \;\; 7-\frac{9}{3}-5 = 7-3-5 = -1 < 0 \;\Rightarrow\; \textbf{não desvia};
+\]
+\[
+\text{Tipo }H: \;\; 7-\frac{9}{7}-5 = 2-\frac{9}{7} = \frac{5}{7}\approx\dc{0}{71} > 0
+\;\Rightarrow\; \textbf{desvia}.
+\]
+
+\begin{empalavras}[Por que ``mesmo no melhor caso'' e como ler o $[6,14)$]
+O truque do critério intuitivo é olhar o \emph{melhor cenário possível} para quem ousaria
+desviar: a firma pagar o salário máximo $\theta_H=7$. Se nem nesse paraíso o tipo $L$ topa
+desviar, então \emph{não há crença nenhuma} que faça o $L$ querer $e'$ — ele está
+\textbf{descartado} dali. A condição (2.2) diz: o $L$ só desviaria se $e'$ fosse barato o
+bastante ($e'<6$); logo \emph{a partir de} $e'=6$ (inclusive: ali ele fica indiferente, não
+ganha nada) o $L$ já não desvia. A (2.3) diz: o $H$ desviaria desde que $e'<14$. De $6$
+(inclusive) até $14$ (exclusive) mora a ``zona de delação'': educação cara demais para o $L$
+querer, mas ainda valiosa para o $H$.
+
+\smallskip\noindent
+Pegamos $e'=9$ (qualquer número entre $6$ e $14$ serve; $9$ deixa a conta do $L$ redonda em
+$-1$). O $L$ perderia $1$ unidade se desviasse, então \emph{não} desvia. O $H$ ganharia $5/7$,
+então \emph{quer} desviar. O sinal $e'=9$ ``delata'' o tipo: quem o exibe só pode ser o
+produtivo. É a brecha que derruba o pooling no próximo passo.
+\end{empalavras}
+
+\item \textbf{(c) Pooling cai $\to$ sobra o Riley equilibrium.} Para o sinal $e'=9$ do
+intervalo $[6,14)$, o critério intuitivo exige crença razoável: como só o tipo $H$ poderia
+querer $e'$, a firma deve crer $\mu(\theta_H\mid e')=1$ e pagar $w(e')=\theta_H=7$. Mas então
+o tipo $H$ \textbf{de fato desvia} (ganha $\tfrac57>0$ acima do pool), e o pooling
+\textbf{deixa de ser equilíbrio}. O mesmo argumento, aplicado iterativamente, elimina
+\emph{qualquer} pooling e \emph{qualquer} separador com $\underline e>\underline e_{\min}$.
+Sobra um único equilíbrio:
+\[
+\boxed{\;\text{Riley equilibrium} = \text{separador menos custoso} = \underline e_{\min}
+= \theta_L(\theta_H-\theta_L) = 3\cdot 4 = 12.\;} \tag{2.5}
+\]
+É exatamente o piso do intervalo $[12,28]$ do Exercício~1 — Cho-Kreps escolhe a ponta de baixo.
+
+\begin{empalavras}[O desfecho em uma frase, e por que ``menos custoso''?]
+Encontrada a brecha ($e'=9$), o resto é dominó. A crença ``só o produtivo faria isso'' obriga a
+firma a pagar $7$ por esse diploma; aí o produtivo \emph{realmente} corre para fazê-lo, e o
+acordo ``todos sem estudo'' rui — o pooling morre. O mesmo raciocínio, repetido, mata todos os
+poolings e todos os separadores ``gordos''. \textbf{Por que sobra justo o mais barato ($12$)?}
+Porque qualquer separador com $\underline e>12$ tem o mesmo problema: existe um diploma um pouco
+menor que ainda separa os tipos e deixa o produtivo \emph{melhor} (gasta menos estudando) — o
+produtivo migra para baixo até bater no piso $12$, onde já não dá para encolher sem o tipo $L$
+começar a querer imitar (a IC-L do Exercício~1 aperta exatamente em $12$). Esse separador
+mínimo, $\underline e_{\min}=\theta_L(\theta_H-\theta_L)=12$, é o \textbf{Riley equilibrium}: a
+sinalização mais enxuta que ainda revela o tipo. Cho-Kreps formaliza ``a economia não desperdiça
+mais diploma do que o estritamente necessário para separar''.
+\end{empalavras}
+
+\end{enumerate}
+
+\subsection*{Comentário pedagógico (5 passos)}
+\begin{gabarito}
+\passo{1. Ponto-chave.} PBE é \emph{permissivo demais}: admite crenças pessimistas arbitrárias
+fora-do-equilíbrio, e isso deixa o pooling de pé. O critério intuitivo de Cho-Kreps restringe
+crenças ao ``razoável'': se um desvio só compensa para um tipo, creia nesse tipo. Aplicado ao
+Spence, mata todo pooling e seleciona o separador menos custoso (Riley).
+
+\passo{2. Derivação.} Três contas curtas: (i) $\bar w=\dc{0}{5}\cdot3+\dc{0}{5}\cdot7=5$;
+(ii) intervalo de delação $[\theta_L(\theta_H-\bar w),\theta_H(\theta_H-\bar w))=[6,14)$;
+(iii) Riley $=\theta_L(\theta_H-\theta_L)=12$. O sinal-teste $e'=9$ dá perda $-1$ para o $L$
+(redondo) e ganho $\tfrac57>0$ para o $H$ — sinais corretos, intervalo não-vazio garantido por
+$\theta_H>\theta_L$.
+
+\passo{3. Armadilha.} (i) Comparar o desvio com $\theta_L$ em vez de $\bar w$ — o ponto de
+referência é o salário \emph{do pool}, não a produtividade baixa. (ii) Esquecer o ``melhor
+caso'' ($w=\theta_H$) e testar com salário pessimista — aí ninguém desvia e o critério não morde.
+(iii) Achar que Cho-Kreps usa o custo \emph{do tipo errado}: o $L$ paga $e'/\theta_L$ (caro), o
+$H$ paga $e'/\theta_H$ (barato) — inverter mata a separação. (iv) Concluir que sobra um
+\emph{pooling} ``limpo'' — não: sobra o \emph{separador} de Riley.
+
+\passo{4. Extensão.} Cho-Kreps é o refinamento ``de manual'' para sinalização; D1
+(Banks-Sobel) e divinity são mais fortes, mas no Spence canônico todos chegam ao mesmo Riley
+equilibrium (Riley 2001, \emph{J. Economic Literature} 39(2): 432--478,
+DOI \texttt{10.1257/jel.39.2.432}). A aplicação empírica é o GED americano
+(Tyler-Murnane-Willett 2000, \emph{QJE} 115(2): 431--468, DOI
+\texttt{10.1162/003355300554827}). Conecta com o \textbf{Exercício~3}: lá a coordenação
+acontece \emph{sem preços nem sinais} — matching puro.
+
+\passo{5. Peer-review (auto-crítica honesta).} Os parâmetros diferem dos avaliativos de
+propósito: lá o Cho-Kreps usou $(\theta_L,\theta_H)=(2,6)$ com $\bar w=4$ e $e'\in[4,12)$; aqui
+$(3,7)$ com $\bar w=5$ e $e'\in[6,14)$, $e'=9$. Diferem também do exemplo de aula
+($\theta_L=2,\theta_H=5$, $\bar w=\dc{3}{5}$). O calibre é \calR{} no \emph{conceito} (PBE,
+crenças fora-do-equilíbrio, refinamento) mas \calY{} na \emph{mecânica} — e é exatamente esse
+o rebaixamento prometido no cabeçalho: Cho-Kreps não está no N\&S, mas a \emph{conta} que cobro
+(achar o intervalo $[6,14)$ e testar $e'=9$) é aritmética de N\&S. \textbf{Os dois extremos
+são assimétricos e isso importa.} \emph{Esquerdo, fechado:} em $e'=6$ o tipo $L$ fica
+\emph{indiferente} (surplus $=0$, logo não desvia estritamente) enquanto o $H$ ganha
+$\theta_H-6/\theta_H-\bar w=\tfrac{8}{7}>0$ — ou seja, $e'=6$ \emph{já é} sinal de delação
+válido, e o extremo inferior entra no intervalo (idêntico à estrutura ``$e'\ge 4$'' do
+avaliativo, que escreve $[4,12)$). \emph{Direito, aberto:} em $e'=14$ é a vez do $H$ ficar
+indiferente (ganho $=0$, não estritamente positivo), então $14$ fica de fora. Risco residual:
+o aluno pode escrever o intervalo aberto-aberto $(6,14)$ por inércia; deixei a desigualdade
+estrita ``desvia (estritamente)'' explícita em (2.2)/(2.3) e o comentário dos dois extremos
+após (2.4) para travar essa simetria espúria.
+\end{gabarito}
+\else
+\espacoaluno{85mm}
+\fi
+
+\hrulefill
+
+% =====================================================================
+\section*{\textcolor{insper}{Exercício 3 — Gale-Shapley: casando sem preços}}
+\noindent\textbf{Calibre \calY{} (mecânica), com cauda \calR{} no M-ótimo vs. W-péssimo.} \quad \emph{Lousa: $\sim$50 min.}
+\par\smallskip
+\noindent\textbf{Conceito que resume:} matching bilateral sem preços; \emph{estabilidade} via
+par bloqueante (com \textbf{bilateralidade}); o algoritmo \emph{Deferred Acceptance} de
+Gale-Shapley (1962); execução iteração-a-iteração; propriedades (termina, estável, $M$-ótimo,
+$W$-péssimo, strategy-proof só do lado proponente); o resultado negativo de Roth (1982).
+
+\subsection*{Enunciado}
+Há três agentes de cada lado: $M=\{m_1,m_2,m_3\}$ e $W=\{w_1,w_2,w_3\}$ (pense em
+\emph{candidatos} $\times$ \emph{vagas}, ou médicos $\times$ hospitais — não há preços, só
+preferências ordinais estritas). As preferências são:
+\begin{center}\small
+\begin{tabular}{@{}clcl@{}}
+\toprule
+Agente & Ordem ($\succ$) & Agente & Ordem ($\succ$) \\
+\midrule
+$m_1$ & $w_1 \succ w_2 \succ w_3$ & $w_1$ & $m_2 \succ m_3 \succ m_1$ \\
+$m_2$ & $w_2 \succ w_1 \succ w_3$ & $w_2$ & $m_3 \succ m_1 \succ m_2$ \\
+$m_3$ & $w_1 \succ w_3 \succ w_2$ & $w_3$ & $m_1 \succ m_2 \succ m_3$ \\
+\bottomrule
+\end{tabular}
+\end{center}
+\noindent\textbf{(a)} Defina \emph{matching estável} via par bloqueante. \textbf{(b)} Execute o
+DA com os homens propondo, iteração a iteração, e dê o matching $\mu_M$. \textbf{(c)} Verifique
+que $\mu_M$ é estável testando os pares candidatos a bloqueio. \textbf{(d)} Execute o DA com as
+mulheres propondo e obtenha $\mu_W$. \textbf{(e)} Use $\mu_M\ne\mu_W$ para ilustrar
+$M$-ótimo / $W$-péssimo, e enuncie as propriedades + o resultado de Roth (1982).
+
+\ifsolucao
+
+\begin{empalavras}[O enunciado em palavras de todo dia]
+Mudança total de cenário: aqui \textbf{não há dinheiro, salário ou preço}. Pense no
+\textbf{SISU} (candidatos $\times$ vagas de universidade) ou na \textbf{residência médica}
+(médicos $\times$ hospitais). Cada lado só tem uma \emph{lista de preferências}: o candidato
+$m_1$ prefere a vaga $w_1$, depois $w_2$, depois $w_3$; e cada vaga também tem sua ordem de
+candidatos. O problema: \emph{quem fica com quem}, de um jeito que ``pare de pé''.
+
+\smallskip\noindent
+``Parar de pé'' tem nome técnico: \textbf{estabilidade}. Um emparelhamento é instável se existe
+um \emph{par bloqueante} — um candidato e uma vaga que \emph{ambos} preferem ficar juntos a
+ficar com quem o sistema lhes deu. Repare no \textbf{ambos}: estabilidade exige desejo
+\emph{mútuo}. Se só o candidato quer a vaga, mas a vaga não o quer, não há bloqueio. Esse
+``mútuo'' é o erro nº1 da turma, então grife.
+
+\smallskip\noindent
+O \textbf{algoritmo Deferred Acceptance} (``aceitação adiada'') de Gale-Shapley resolve isso:
+os candidatos vão \emph{propondo} em ordem de preferência; as vagas \emph{seguram} a melhor
+proposta recebida até então (sem confirmar — daí ``adiada''), podendo trocar se chega alguém
+melhor. Vamos rodar o algoritmo à mão.
+\end{empalavras}
+
+\subsection*{Resolução passo a passo}
+\begin{enumerate}[leftmargin=2em,itemsep=4pt]
+
+\item \textbf{(a) Estabilidade — a definição.} Um matching $\mu$ (cada $m$ com uma $w$, e
+vice-versa) é \textbf{estável} se não existe par $(m,w)$ \emph{não} casado entre si tal que
+\[
+w \succ_m \mu(m) \quad\textbf{e}\quad m \succ_w \mu(w). \tag{3.1}
+\]
+Tal par é \textbf{bloqueante}: $m$ prefere $w$ à sua parceira atual \textbf{e} $w$ prefere $m$
+ao seu parceiro atual — os dois fugiriam juntos. Sem nenhum par assim, ninguém tem como
+melhorar por conta própria: o matching é estável.
+
+\item \textbf{(b) DA com os homens propondo.} Regra: cada $m$ propõe à melhor $w$ que ainda
+não o rejeitou; cada $w$ \emph{segura} o melhor pretendente recebido até agora e rejeita o
+resto. Repete até ninguém ser rejeitado.
+
+\smallskip
+\noindent\textbf{Iteração 1.} Cada $m$ propõe ao seu top: $m_1\to w_1$, $m_2\to w_2$,
+$m_3\to w_1$.
+\begin{itemize}[leftmargin=1.5em,itemsep=1pt,topsep=2pt]
+\item $w_1$ recebe $\{m_1,m_3\}$. Como $m_3\succ_{w_1} m_1$, \textbf{segura $m_3$, rejeita $m_1$}.
+\item $w_2$ recebe $\{m_2\}$, segura $m_2$. \quad $w_3$: ninguém.
+\end{itemize}
+Estado: $w_1{:}\,m_3,\;w_2{:}\,m_2,\;w_3{:}\,\varnothing$. Rejeitado: $m_1$.
+
+\smallskip
+\noindent\textbf{Iteração 2.} $m_1$ (rejeitado) propõe ao próximo da lista, $w_2$.
+\begin{itemize}[leftmargin=1.5em,itemsep=1pt,topsep=2pt]
+\item $w_2$ compara $\{m_2\text{ (atual)},\,m_1\text{ (novo)}\}$. Como $m_1\succ_{w_2} m_2$,
+\textbf{troca: segura $m_1$, rejeita $m_2$}.
+\end{itemize}
+Estado: $w_1{:}\,m_3,\;w_2{:}\,m_1,\;w_3{:}\,\varnothing$. Rejeitado: $m_2$.
+
+\smallskip
+\noindent\textbf{Iteração 3.} $m_2$ (rejeitado) propõe ao próximo, $w_1$.
+\begin{itemize}[leftmargin=1.5em,itemsep=1pt,topsep=2pt]
+\item $w_1$ compara $\{m_3\text{ (atual)},\,m_2\text{ (novo)}\}$. Como $m_2\succ_{w_1} m_3$,
+\textbf{troca: segura $m_2$, rejeita $m_3$}.
+\end{itemize}
+Estado: $w_1{:}\,m_2,\;w_2{:}\,m_1,\;w_3{:}\,\varnothing$. Rejeitado: $m_3$.
+
+\smallskip
+\noindent\textbf{Iteração 4.} $m_3$ (rejeitado) propõe ao próximo, $w_3$.
+\begin{itemize}[leftmargin=1.5em,itemsep=1pt,topsep=2pt]
+\item $w_3$ estava vazia: \textbf{aceita $m_3$}. Ninguém mais é rejeitado.
+\end{itemize}
+\textbf{Termina.} Resultado:
+\[
+\boxed{\;\mu_M:\quad m_1\!\leftrightarrow\! w_2,\;\; m_2\!\leftrightarrow\! w_1,\;\;
+m_3\!\leftrightarrow\! w_3.\;} \tag{3.2}
+\]
+Foram $6$ propostas e $3$ rejeições — uma \textbf{cadeia} de deslocamentos em torno de $w_1$
+($m_3$ tira $w_1$ de $m_1$; $m_1$ vai tirar $w_2$ de $m_2$; $m_2$ volta e retoma $w_1$,
+expulsando $m_3$; $m_3$, sem opção boa, acha $w_3$ vazia).
+
+\begin{empalavras}[Como ler a ``cadeia'' de rejeições sem se perder]
+A graça do DA é o efeito-dominó, e aqui ele gira em torno de $w_1$. Veja a história: $m_1$ e
+$m_3$ disputam $w_1$ na largada; como $w_1$ prefere $m_3$, \emph{ela fica com $m_3$ e despeja
+$m_1$} (iteração 1). $m_1$, despejado, vai para $w_2$ e \emph{rouba} dela o $m_2$, porque $w_2$
+prefere $m_1$ (iteração 2). $m_2$, despejado, volta a $w_1$ — e como $w_1$ prefere $m_2$ a
+$m_3$, \emph{retoma $w_1$ e agora é $m_3$ quem cai} (iteração 3)! $m_3$, sem opção boa, desce
+até $w_3$, que estava sozinha (iteração 4). É um ``empurra-empurra'' que sempre \emph{converge},
+porque cada homem só pode descer na sua lista um número finito de vezes (no máximo $3$ aqui).
+A dica de execução: mantenha sempre uma tabelinha ``quem cada $w$ está segurando agora'' e
+atualize linha a linha. Quem tenta fazer de cabeça erra.
+\end{empalavras}
+
+\item \textbf{(c) Verificação de estabilidade de $\mu_M$.} Em $\mu_M$ os pares são
+$(m_1,w_2),(m_2,w_1),(m_3,w_3)$. Testamos os candidatos a bloqueio — os pares em que o
+\emph{homem} prefere outra $w$ à sua atual (se o homem já está no top, nem testar):
+\begin{itemize}[leftmargin=1.5em,itemsep=2pt,topsep=2pt]
+\item $(m_1,w_1)$: $m_1$ prefere $w_1\succ w_2$ (sim, $w_1$ é o top dele!). Mas $w_1$ tem $m_2$
+e $m_2\succ_{w_1} m_1$ (prefere o atual). \textbf{Não bloqueia} — falta a vontade da $w_1$.
+\item $(m_2,w_2)$: $m_2$ prefere $w_2\succ w_1$ (sim, $w_2$ é o top dele!). Mas $w_2$ tem $m_1$
+e $m_1\succ_{w_2} m_2$. \textbf{Não bloqueia.}
+\item $(m_3,w_1)$: $m_3$ prefere $w_1\succ w_3$ (sim, $w_1$ é o top dele!). Mas $w_1$ tem $m_2$
+e $m_2\succ_{w_1} m_3$. \textbf{Não bloqueia.}
+\end{itemize}
+Nenhum par bloqueia (os demais o homem já está em algo que prefere ou a mulher recusa).
+\textbf{$\mu_M$ é estável.} $\checkmark$
+
+\begin{empalavras}[Por que basta testar esses três pares]
+Não precisamos testar todos os $9$ pares possíveis. Um par $(m,w)$ só pode bloquear se o
+\emph{homem} quiser trocar — ou seja, se ele prefere $w$ à parceira que tem. Quem já está com
+sua melhor opção disponível não tem motivo de fuga. Olhando $\mu_M$, cada homem tem a sua
+\emph{segunda} escolha e cobiça exatamente o seu \textbf{top}: $m_1$ tem $w_2$ mas quer $w_1$;
+$m_2$ tem $w_1$ mas quer $w_2$; $m_3$ tem $w_3$ mas quer $w_1$. São esses os três pares que
+testamos para estabilidade. Para cada um, perguntamos se a mulher cobiçada \emph{também} quer
+o pretendente. Em \emph{todos}, ela recusa — porque está segurando alguém que prefere ($w_1$
+segura $m_2$; $w_2$ segura $m_1$). É a \textbf{bilateralidade} salvando o dia: o desejo
+unilateral do homem não basta. Por isso o matching é estável.
+\end{empalavras}
+
+\item \textbf{(d) DA com as mulheres propondo.} Agora elas propõem. Tops: $w_1\to m_2$,
+$w_2\to m_3$, $w_3\to m_1$ — três homens \emph{distintos}, sem colisão. Cada homem aceita
+(estava livre). \textbf{Termina na iteração 1}, $0$ rejeições:
+\[
+\boxed{\;\mu_W:\quad w_1\!\leftrightarrow\! m_2,\;\; w_2\!\leftrightarrow\! m_3,\;\;
+w_3\!\leftrightarrow\! m_1.\;} \tag{3.3}
+\]
+Ou seja $m_1\!\leftrightarrow\! w_3,\;m_2\!\leftrightarrow\! w_1,\;m_3\!\leftrightarrow\! w_2$.
+\textbf{Note: $\mu_M\ne\mu_W$} — só $m_2\!\leftrightarrow\! w_1$ coincide.
+
+\item \textbf{(e) $M$-ótimo, $W$-péssimo, e o que isso ensina.} Compare os dois resultados:
+\begin{center}\small
+\begin{tabular}{@{}cccc@{}}
+\toprule
+Homem & em $\mu_M$ (propõe) & em $\mu_W$ (recebe) & quem o homem prefere? \\
+\midrule
+$m_1$ & $w_2$ (2\textsuperscript{a}) & $w_3$ (3\textsuperscript{a}) & $\mu_M$ (melhor) \\
+$m_2$ & $w_1$ (2\textsuperscript{a}) & $w_1$ (2\textsuperscript{a}) & empata \\
+$m_3$ & $w_3$ (2\textsuperscript{a}) & $w_2$ (3\textsuperscript{a}) & $\mu_M$ (melhor) \\
+\bottomrule
+\end{tabular}
+\end{center}
+\emph{Todo} homem fraca-mente prefere $\mu_M$: o lado que \textbf{propõe} sai (fraca-mente)
+melhor — isso é $M$\textbf{-ótimo}. Simetricamente, em $\mu_M$ \emph{toda} mulher recebe seu
+\emph{pior} parceiro entre os matchings estáveis ($W$\textbf{-péssimo}): em $\mu_M$, $w_2$ tem
+$m_1$ mas prefere $m_3$ (que ela consegue em $\mu_W$); $w_3$ tem $m_3$ mas prefere $m_1$. As
+propriedades formais (Gale-Shapley + Roth):
+\begin{enumerate}[label=(\roman*),leftmargin=2.2em,itemsep=1pt,topsep=2pt]
+\item DA \textbf{termina} (cada $m$ propõe no máximo $|W|$ vezes).
+\item O output é \textbf{estável} (sempre).
+\item É \textbf{$M$-ótimo}: cada $m$ recebe seu melhor parceiro \emph{entre todos os estáveis}.
+\item É \textbf{$W$-péssimo}: cada $w$ recebe seu pior parceiro estável.
+\item \textbf{Strategy-proof apenas para o lado proponente} ($M$): declarar a verdade é
+estratégia dominante para cada $m$, mas \emph{não} para cada $w$ (Roth 1982).
+\item \textbf{Roth (1982), resultado negativo:} \emph{não existe} mecanismo estável que seja
+strategy-proof para \emph{ambos} os lados.
+\end{enumerate}
+
+\begin{empalavras}[``Quem propõe leva vantagem'' e a lição de desenho de mecanismo]
+A descoberta desconfortável: o \emph{lado que propõe ganha}. Os homens propuseram e cada um
+saiu com a melhor mulher que conseguiria em \emph{qualquer} arranjo estável; as mulheres,
+recebendo, ficaram com o \emph{pior} estável. Trocar quem propõe (item d) inverte a vantagem.
+Não é coincidência — é teorema (Gale-Shapley).
+
+\smallskip\noindent
+``Strategy-proof'' quer dizer ``mentir não ajuda''. Para o proponente, vale: se um homem propõe
+fora de ordem (pula seu top), só pode acabar pior. Para o receptor, \textbf{não} vale: às vezes
+uma mulher consegue, rejeitando estrategicamente alguém aceitável, desencadear uma cadeia que
+lhe traz alguém melhor depois. \textbf{Roth (1982)} provou que esse defeito é \emph{estrutural}:
+\emph{nenhum} mecanismo consegue ser, ao mesmo tempo, estável e à prova de mentira para os dois
+lados — é primo do teorema de impossibilidade de Gibbard-Satterthwaite. \textbf{Implicação
+prática:} ao desenhar o sistema, escolha \emph{qual} lado terá o incentivo de dizer a verdade.
+A residência médica nos EUA (NRMP) e o SISU no Brasil colocaram os \emph{candidatos} como
+proponentes — o lado que se quer proteger da manipulação.
+\end{empalavras}
+
+\end{enumerate}
+
+\subsection*{Comentário pedagógico (5 passos)}
+\begin{gabarito}
+\passo{1. Ponto-chave.} Matching é coordenação \emph{sem preços}: só preferências ordinais.
+O DA sempre produz um matching \textbf{estável} (sem par bloqueante \emph{mútuo}), favorável ao
+\textbf{lado que propõe} ($M$-ótimo, $W$-péssimo). Estabilidade exige bilateralidade — o desejo
+unilateral do proponente nunca basta para bloquear.
+
+\passo{2. Derivação.} O DA-$M$ roda em $4$ iterações ($6$ propostas, $3$ rejeições) com uma
+cadeia limpa girando em torno de $w_1$: $m_3$ tira $w_1$ de $m_1$; $m_1$ tira $w_2$ de $m_2$;
+$m_2$ volta e retoma $w_1$, expulsando $m_3$; $m_3$ cai em $w_3$ vazia.
+$\mu_M=\{(m_1,w_2),(m_2,w_1),(m_3,w_3)\}$. O DA-$W$ termina em $1$ iteração (tops distintos),
+$\mu_W=\{(m_1,w_3),(m_2,w_1),(m_3,w_2)\}$. Há \emph{exatamente dois} matchings estáveis
+($\{(m_1,w_2),(m_2,w_1),(m_3,w_3)\}$ e $\{(m_1,w_3),(m_2,w_1),(m_3,w_2)\}$); $\mu_M\ne\mu_W$
+exibe a folga $M$-ótimo/$W$-péssimo. O par comum aos dois estáveis é $(m_2,w_1)$.
+
+\passo{3. Armadilha.} (i) Testar bloqueio só do lado do homem (esquecer a \textbf{bilateralidade}
+da condição (3.1)) — \emph{o} erro da aula. (ii) Inventar ``ordem de chegada'' (``quem chegou
+primeiro fica''): o DA não tem isso; a $w$ sempre fica com o \emph{melhor} recebido, venha quando
+vier. (iii) Permitir que uma $w$ segure dois pretendentes simultâneos — é \emph{um} pendente por
+vez. (iv) Confundir nº de iterações ($4$) com nº de rejeições ($3$). (v) Confundir cadeia rica de
+rejeições com ``muitos equilíbrios'' — são coisas distintas.
+
+\passo{4. Extensão.} A folga $\mu_M\ne\mu_W$ é exatamente o que o teste de \emph{unicidade}
+explora: o conjunto de matchings estáveis forma um reticulado com $\mu_M$ no topo e $\mu_W$ na
+base (Roth-Sotomayor 1990, \emph{Two-Sided Matching}, Cambridge UP — livro, sem DOI canônico);
+$\mu_M=\mu_W\iff$ matching único. \textbf{Aplicações:} NRMP (residência médica, EUA, redesenhada
+por Roth-Peranson 1999, \emph{AER} 89(4): 748--780, DOI \texttt{10.1257/aer.89.4.748}); SISU no
+Brasil. Roth dividiu o Nobel de 2012 com Shapley por \emph{market design}. Fecha o curso: depois
+de catalogar falhas (Aulas 6--8), a Aula 9 dá \emph{mecanismos} que coordenam sem preço.
+
+\passo{5. Peer-review (auto-crítica honesta).} \textbf{Tamanho $3\times3$ por quê?} Justifico:
+o exemplo de aula é um $4\times4$ (6 iterações) — denso demais para repetir na lousa de revisão;
+os avaliativos usam um $3\times3$ \emph{diferente} (lá $\mu_M=\mu_W$, matching único). Escolhi um
+$3\times3$ \emph{novo} que cabe no quadro \emph{e} entrega $\mu_M\ne\mu_W$ — assim demonstro
+$M$-ótimo/$W$-péssimo de verdade, fechando o ``risco residual'' que os avaliativos
+explicitamente deixaram em aberto (lá o caso de múltiplos estáveis não era testado).
+\textbf{Não basta as \emph{preferências} de entrada diferirem: conferi o \emph{emparelhamento
+final}.} O $\mu_M=\{(m_1,w_2),(m_2,w_1),(m_3,w_3)\}$ desta lousa é \emph{distinto} do $\mu_M$ do
+exercício de matching dos avaliativos ($\{(m_1,w_2),(m_2,w_3),(m_3,w_1)\}$) — verifiquei par a
+par via script que (a) executa DA-$M$ e DA-$W$, (b) enumera as $3!=6$ permutações e conta
+\emph{exatamente dois} matchings estáveis, e (c) confirma $\mu_M\ne\mu_W$ e M-ótimo/W-péssimo.
+Calibre:
+\calY{} na \emph{mecânica} (executar DA é receita de N\&S), com cauda \calR{} na leitura
+$M$-ótimo/$W$-péssimo e em Roth (1982) — e \emph{aqui está} o rebaixamento prometido: matching
+\emph{não} está no N\&S, mas o que cobro é executar um algoritmo à mão e ler uma tabela, não
+provar o Lattice Theorem nem a terminação. Risco residual: a parte (e) é a peça destacável se o
+tempo apertar (vira ouro da pré-monitoria 5 com o Alberto); cortá-la não fere a execução central
+do DA, mas perde o ``aha'' de que quem propõe leva vantagem. Citações com DOI conferidas contra a
+lista validada da aula; não inventei página nem volume.
+\end{gabarito}
+\else
+\espacoaluno{90mm}
+\fi
+
+\hrulefill
+\begin{center}\small\textit{%
+\ifsolucao Fim dos três exercícios de lousa — Aula 9. Fim do curso. Bom trabalho a todos.%
+\else Fim do caderno do aluno — Aula 9. Bom trabalho, e boa Avaliação Final.\fi}\end{center}
+
+\end{document}

@@ -108,7 +108,7 @@ Desde 2026-05-08 a plataforma opera em **acesso livre** até 02/07/2026 18:00 BR
 | Quiz pré-aula | qua Aula X 19:30 BRT |
 | Reflexão "nebulosa" | qua Aula X 19:30 BRT |
 | Reflexão "aula" | qua Aula X 19:30 BRT |
-| Quiz pós-aula | qua Aula X+1 19:30 BRT (`next_presencial_at`; Aula 9 → AF qua 24/06 19:00) |
+| Quiz pós-aula | qua Aula X+1 19:30 BRT (`next_presencial_at`; Aula 9 → AF qui 25/06 19:30) |
 | Exercícios avaliativos | idem |
 
 **APIs JS** (`platform/js/calendario.js`):
@@ -116,7 +116,7 @@ Desde 2026-05-08 a plataforma opera em **acesso livre** até 02/07/2026 18:00 BR
 - `MPE_CALENDARIO.getJanelaCanonica(n, comp)` → `{abre, fecha, gabarito, presencial_at, next_presencial_at}` com `fecha = presencial_at` para material/pre/refl_*, `next_presencial_at` para pos/exerc, e `gabarito = qui 00:00 BRT` (próxima meia-noite após `fecha`). **Use para semântica pedagógica**: cramming, atraso, foco-da-semana, pendings, inbox de gabarito.
 - `MPE_CALENDARIO.isCanonicaFechada(n, comp)` → boolean conveniente.
 
-**Backend SSOT** (`supabase/migrations/2026-05-09_iaad30.sql`): tabela `public.iaad_calendar` + view `iaad_aula_completion` com colunas `*_in_window`. O JS espelha essa tabela; sincronia é manual mas verificável (ver Aula 9: presencial_at=17/06 19:30, next_presencial_at=24/06 **19:00** — bate AF).
+**Backend SSOT** (`supabase/migrations/2026-05-09_iaad30.sql`): tabela `public.iaad_calendar` + view `iaad_aula_completion` com colunas `*_in_window`. O JS espelha essa tabela; sincronia é manual mas verificável (ver Aula 9: presencial_at=17/06 19:30, next_presencial_at=25/06 **19:30** — bate AF; movida de 24/06 pela migration `2026-06-04_af_2026-06-25.sql`).
 
 **Anti-padrão (já corrigido em 2026-05-15):** consumir `getPrazo().fecha` para qualquer pergunta que não seja "o aluno PODE submeter". Resulta em métrica degenerada (única janela coletiva no fim do curso).
 
@@ -131,7 +131,7 @@ Desde 2026-05-08 a plataforma opera em **acesso livre** até 02/07/2026 18:00 BR
 
 - **50 alunos.** PII (nome, email, matrícula) em `supabase/scripts/import-turma.js` e `lista_alunos_csv.csv` (gitignored).
 - **9 aulas de conteúdo + 1 avaliação final** (70% da nota; 30% = engajamento na plataforma).
-- **Quartas-feiras 19:30–22:30**, presencial Insper, 22/04 a 17/06. Avaliação Final: qua 24/06 · 19:00 · 3h · consulta A4 permitida.
+- **Quartas-feiras 19:30–22:30**, presencial Insper, 22/04 a 17/06. Avaliação Final: **qui 25/06 · 19:30–22:30** (movida de 24/06: jogo do Brasil na Copa) · consulta ao caderno fornecido pelo professor.
 - **Monitoria com Alberto Nishikawa** — 5 encontros aos sábados (16/05, 23/05, 30/05, 13/06, 20/06), precedidos por pré-monitorias formativas (não contam nota) na plataforma.
 - Ementa: Preferências → UMP/EMP/Dualidade → Slutsky/Elasticidades → EG trocas/produção → Arrow-Debreu (I e II) → Externalidades/Bens públicos → Seleção adversa/Risco moral → Sinalização/Matching.
 
@@ -351,7 +351,7 @@ Os calendários das Aulas 1 e 2 são **unificados em uma só janela** (união):
 | 6 | qua 27/05 · 19:30 | qui 21/05 madrugada | qui 28/05 madrugada | qua 03/06 · 18:00 | qui 04/06 · 00:00 |
 | 7 | qua 03/06 · 19:30 | qui 28/05 madrugada | qui 04/06 madrugada | qua 10/06 · 18:00 | qui 11/06 · 00:00 |
 | 8 | qua 10/06 · 19:30 | qui 04/06 madrugada | qui 11/06 madrugada | qua 17/06 · 18:00 | qui 18/06 · 00:00 |
-| 9 | qua 17/06 · 19:30 | qui 11/06 madrugada | qui 18/06 madrugada | qua 24/06 · 18:00 | qui 25/06 · 00:00 |
+| 9 | qua 17/06 · 19:30 | qui 11/06 madrugada | qui 18/06 madrugada | qui 25/06 · 18:00 | sex 26/06 · 00:00 |
 
 ⚠️ **Exceção Aula 1 ∪ Aula 2**: tudo das duas aulas fecha junto em 06/05.
 
@@ -371,7 +371,7 @@ Os calendários das Aulas 1 e 2 são **unificados em uma só janela** (união):
 - **Sem quiz avaliativo nem exercícios para nota** — é formativa.
 - Objetivo: dar ao Alberto janela para revisar respostas antes do sábado.
 
-**Avaliação Final:** qua 24/06 · 19:00 · 3h · presencial · consulta A4 permitida · 70% da nota.
+**Avaliação Final:** qui 25/06 · 19:30–22:30 (movida de 24/06: jogo do Brasil na Copa) · presencial · consulta ao caderno fornecido pelo professor + calculadora não programável · 70% da nota.
 
 **Para mudar prazos** (semestres seguintes ou ajustes): editar `platform/js/calendario.js` em um único lugar — portal, gates de submissão e gate de gabarito leem automaticamente.
 

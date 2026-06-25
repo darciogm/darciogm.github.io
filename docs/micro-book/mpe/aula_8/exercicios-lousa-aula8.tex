@@ -1,0 +1,930 @@
+% =====================================================================
+%  Aula 8 — Seleção Adversa e Risco Moral (MPE 2026/32, Insper)
+%  TRÊS EXERCÍCIOS RESOLVIDOS PARA LOUSA (aula presencial de revisão)
+%  Calibre: piso Nicholson & Snyder 12e Cap. 18; teto Jehle-Reny 3e.
+%
+%  Compilar com: pdflatex exercicios-lousa-aula8.tex   (ou lualatex)
+%
+% ---------------------------------------------------------------------
+%  DECISÃO: TRÊS exercícios (fechada pelo professor em 2026-06-10).
+%  --------------------------------------------------------------
+%  Os três pilares da Aula 8: Akerlof (hidden type) / Holmström (hidden
+%  action) / Rothschild-Stiglitz (separador). O 4º (pooling regulado
+%  ANS/ACA) foi descartado — reusava o avaliativo 6 da plataforma e
+%  estourava o buffer de tempo. Não há mais esqueleto neste arquivo.
+%
+% ---------------------------------------------------------------------
+%  DOIS PDFs A PARTIR DESTA FONTE ÚNICA (padrão \ifsolucao do projeto):
+%  -------------------------------------------------------------------
+%   - Versão LOUSA (com gabarito): compile ESTE arquivo direto.
+%       pdflatex exercicios-lousa-aula8.tex
+%   - Versão CADERNO DO ALUNO (só enunciados): compile o wrapper.
+%       pdflatex caderno-aluno-aula8.tex
+%  Sem duplicar conteúdo: o wrapper define \modoaluno e dá \input aqui.
+%
+% ---------------------------------------------------------------------
+%  ORÇAMENTO DE TEMPO DE LOUSA (professor escrevendo + explicando)
+%  ----------------------------------------------------------------
+%   Ex 1 — Akerlof (unraveling parcial vs. colapso) .......  ~40 min
+%   Ex 2 — Holmström (first-best vs. second-best) .........  ~55 min
+%   Ex 3 — Rothschild-Stiglitz (separador) ................  ~45 min
+%   ------------------------------------------------------------------
+%   CONTEÚDO PURO ......................................... ~140 min
+%   BUFFER (perguntas, idas ao quadro, respiro) ...........  ~20 min
+%   ------------------------------------------------------------------
+%   TOTAL ALVO ............................................  160 min  (2h40)
+%
+%  Calibragem honesta: 140 de conteúdo + 20 de buffer é APERTADO mas
+%  cabe. Variável de ajuste em tempo real: se Ex 1 derrapar, cortar a
+%  parte (c) do Ex 2 (equivalência sob neutralidade) — é a única peça
+%  conceitualmente destacável sem ferir o arco. Se sobrar tempo, abrir
+%  a discussão ANS/ACA do comentário do Ex 3 ou puxar o 4º exercício.
+%
+% ---------------------------------------------------------------------
+%  MAPA CONCEITO -> EXERCÍCIO (o que cada um RESUME da Aula 8)
+%  ----------------------------------------------------------
+%   Ex 1  : hidden type; Akerlof (1970) unraveling; média condicional;
+%           colapso (multiplicativo) vs. mercado parcial (aditivo);
+%           perda de bem-estar por seleção adversa.
+%   Ex 2  : hidden action; principal-agente Holmström (1979);
+%           first-best (salário fixo, P absorve risco) vs. second-best
+%           (IR+IC binding, w_H>w_L); prêmio de risco moral;
+%           equivalência sob neutralidade do agente (contrato franchise).
+%   Ex 3  : hidden type em seguro; Rothschild-Stiglitz (1976) separador;
+%           single-crossing; H cobertura completa / L distorcido;
+%           IC do H binding; (menção) inexistência sob lambda baixo.
+%
+%  O QUE FICOU DE FORA DE PROPÓSITO (não cabe em 160 min com qualidade):
+%   - Derivação FORMAL da inexistência R-S (precisa de teoria de jogos
+%     contínua) -> só menção + intuição "pooling não é Nash" no Ex 3.
+%   - Mirrlees (1971) e Grossman-Hart (1983) -> são panorâmicos no
+%     Bloco 4 da aula; não rendem exercício de lousa enxuto.
+%   - Sinalização (Spence) e matching -> são da AULA 9; não antecipar.
+% =====================================================================
+
+\documentclass[11pt,a4paper]{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[brazilian]{babel}
+\usepackage{amsmath,amssymb}
+\usepackage{mathtools}
+\usepackage[margin=2.4cm]{geometry}
+\usepackage{enumitem}
+\usepackage{xcolor}
+\usepackage[most]{tcolorbox}
+\usepackage{booktabs}
+
+% --- Cor institucional Insper ---
+\definecolor{insper}{HTML}{C8102E}
+\definecolor{mundo}{HTML}{1B3A5C}
+\definecolor{amarelo}{HTML}{C79A00}  % calibre intermediário (N&S)  [🟡]
+\definecolor{verm}{HTML}{C8102E}     % calibre avançado (Jehle-Reny) [🔴]
+\definecolor{verde}{HTML}{2E7D32}    % calibre consolidação          [🟢]
+
+% --- Marcadores de calibre (substituem os emojis 🟢🟡🔴 sob pdflatex) ---
+\newcommand{\calY}{\textbf{\textcolor{amarelo}{[N]}}} % intermediário N&S
+\newcommand{\calR}{\textbf{\textcolor{verm}{[J-R]}}}  % avançado Jehle-Reny
+\newcommand{\calG}{\textbf{\textcolor{verde}{[C]}}}   % consolidação
+
+% --- Notação canônica do projeto (PT-BR) ---
+\newcommand{\TMS}{\text{TMS}}
+% preferência denotada \succeq (já é o padrão amssymb; não MRS, não \succsim)
+\DeclareMathOperator{\Esp}{\mathbb{E}}
+
+% --- Decimais com vírgula: use \dc{0}{25} -> 0{,}25 ---
+\newcommand{\dc}[2]{#1{,}#2}
+
+% --- Caixa pedagógica (gabarito 5 passos) ---
+\newtcolorbox{gabarito}{
+  colback=insper!4, colframe=insper, boxrule=1pt, arc=3pt,
+  left=6pt, right=6pt, top=6pt, bottom=6pt,
+  breakable, before skip=8pt, after skip=8pt}
+
+\newcommand{\passo}[1]{\smallskip\noindent\textbf{\textcolor{insper}{#1}}\quad}
+
+% --- Caixa de ANDAIME DE LEITURA (explicação para não-economista) ---
+% IMPORTANTE: esta caixa é material de ESTUDO EM CASA da versão-solução.
+% NÃO consome orçamento de lousa: o professor escreve a álgebra (160 min
+% preservados); o aluno usa a prosa azul para destravar cada passo sozinho.
+% Cor azul-mundo (#1B3A5C) de propósito, para o leitor distinguir
+% "andaime" (azul) de "comentário do professor" (vermelho gabarito).
+\newtcolorbox{empalavras}[1][Em palavras (para quem não é economista)]{
+  colback=mundo!5, colframe=mundo, boxrule=0.7pt, arc=2pt,
+  left=6pt, right=6pt, top=5pt, bottom=5pt,
+  fonttitle=\bfseries\small\sffamily, coltitle=white,
+  title={#1}, breakable, before skip=6pt, after skip=6pt}
+
+% --- Modo SOLUÇÃO (default) vs. CADERNO DO ALUNO ---
+% Compilar este arquivo direto => \ifsolucao verdadeiro (com gabarito).
+% Wrapper caderno-aluno-aula8.tex define \modoaluno => só enunciados.
+\newif\ifsolucao
+\ifdefined\modoaluno\solucaofalse\else\solucaotrue\fi
+
+% Espaço de resolução para o caderno do aluno
+\newcommand{\espacoaluno}[1]{%
+  \par\smallskip\noindent\textit{\textcolor{gray}{Espaço para resolução.}}%
+  \par\vspace{#1}\noindent\textcolor{insper!30}{\hrulefill}\par\medskip}
+
+\title{\textbf{\textcolor{insper}{Microeconomia I — MPE 2026/32}}\\[4pt]
+\large Aula 8 — Seleção Adversa e Risco Moral\\[2pt]
+\normalsize \ifsolucao Três exercícios resolvidos para a lousa (revisão presencial)%
+\else Caderno do aluno — três exercícios (enunciados para resolver)\fi}
+\author{Insper — Mestrado Profissional em Economia}
+\date{Calibre: Nicholson \& Snyder 12e Cap.~18 (piso) · Jehle-Reny 3e (teto)}
+
+\begin{document}
+\maketitle
+
+\noindent\textbf{Convenções.} Documento em português do Brasil. Decimais com vírgula
+($\dc{0}{25}$). Preferência denotada $\succeq$; taxa marginal de substituição $\TMS$.
+Bernoulli do agente avesso $u(w)=\sqrt{w}$ (a raiz quadrada foi escolhida para que
+\emph{todas} as contas fechem em inteiros na lousa). Os três exercícios são
+\textbf{complementares} aos avaliativos da plataforma (não os duplicam): os números
+foram recalibrados de propósito. \textbf{Calibre:} \calG{} consolidação,
+\calY{} intermediário (Nicholson \& Snyder), \calR{} avançado (Jehle-Reny / qualifier).
+Estes marcadores substituem os emojis verde/amarelo/vermelho do projeto, para compilar em pdflatex.
+
+\ifsolucao
+\smallskip
+\noindent\textbf{\textcolor{mundo}{Como ler este material.}} A turma do MPE é heterogênea:
+há advogados, engenheiros e gente de negócios que nunca viu microeconomia avançada. Por
+isso a versão-solução traz, ao lado da álgebra, \textbf{caixas azuis ``Em palavras''}.
+Elas são \emph{andaime de leitura para estudo em casa}: explicam cada passo em português
+comum, definem o jargão na primeira aparição e traduzem cada resultado para a intuição.
+Na lousa, o professor escreve apenas a álgebra (a caixa azul \emph{não} consome tempo de
+quadro); você usa a prosa azul depois, sozinho, para destravar o que ficou opaco. As
+\textbf{caixas vermelhas} (``Comentário pedagógico'') são a leitura do professor em 5 passos
+— mantêm o registro técnico.
+\fi
+
+\medskip
+\begin{center}
+\begin{tabular}{@{}clcl@{}}
+\toprule
+\# & Tema (conceito-âncora da Aula 8) & Calibre & Lousa \\
+\midrule
+1 & Akerlof: \emph{hidden type}, unraveling, média condicional & \calY & $\sim$40 min \\
+2 & Holmström: \emph{hidden action}, first/second-best, risco moral & \calR & $\sim$55 min \\
+3 & Rothschild-Stiglitz: seguro, separador, single-crossing & \calY/\calR & $\sim$45 min \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\hrulefill
+
+% =====================================================================
+\section*{\textcolor{insper}{Exercício 1 — Akerlof: quando o mercado encolhe e quando colapsa}}
+\noindent\textbf{Calibre \calY{} (N\&S §18.7).} \quad \emph{Lousa: $\sim$40 min.}
+\par\smallskip
+\noindent\textbf{Conceito que resume:} \emph{hidden type} (seleção adversa); preço de
+equilíbrio competitivo igual à valoração esperada condicional ao conjunto de
+vendedores ativos; o ``unraveling'' de Akerlof (1970); a fronteira entre
+\emph{mercado parcial} e \emph{colapso total}.
+
+\subsection*{Enunciado}
+Há um continuum de carros usados. A qualidade $\theta$ é \textbf{informação privada do
+vendedor} e se distribui $\theta \sim U[0,1]$. O dono de um carro de qualidade $\theta$
+tem valor de reserva $\theta$ (não vende por menos). O comprador é competitivo, paga um
+preço único $p$ e, por concorrência, esse preço iguala a \emph{valoração esperada} do
+carro que ele consegue comprar (lucro esperado nulo).
+
+\smallskip
+\noindent\textbf{Parte A (aditiva).} O comprador valoriza cada carro em $\theta + k$, com
+$k = \dc{0}{3}$ (um ``prêmio de uso'' fixo: revenda, prazer de dirigir etc.).
+
+\smallskip
+\noindent\textbf{Parte B (multiplicativa).} Agora o comprador valoriza $\beta\theta$ com
+$\beta = \dc{1}{5}$. Compare o destino do mercado.
+
+\ifsolucao
+
+\begin{empalavras}[O enunciado em palavras de todo dia]
+Imagine um site de carros usados. Cada carro tem uma \textbf{qualidade} verdadeira,
+que chamamos de $\theta$ (a letra grega ``teta''). Só o \emph{dono} sabe o $\theta$ do
+carro dele — o comprador não consegue olhar e descobrir; é \textbf{informação privada do
+vendedor}. Dizer que $\theta \sim U[0,1]$ (``uniforme entre 0 e 1'') é só dizer: as
+qualidades vão de 0 (sucata) a 1 (impecável), e qualquer valor no meio é igualmente
+provável — como um número sorteado ao acaso entre 0 e 1.
+
+\smallskip\noindent
+O \textbf{valor de reserva} é o preço mínimo pelo qual o dono topa vender. Aqui o dono de
+um carro de qualidade $\theta$ tem valor de reserva igual a $\theta$: quanto melhor o
+carro, mais ele exige para se desfazer dele. Então, a um preço de mercado $p$, \emph{só}
+os donos cujo carro vale $\theta \le p$ aceitam vender — os outros guardam o carro.
+
+\smallskip\noindent
+``Comprador competitivo'' + ``lucro esperado nulo'' é a \textbf{condição de livre entrada}:
+como há muitos compradores (revendedores, particulares) disputando os carros, a concorrência
+empurra o lucro a zero. Na prática isso significa: o preço pago acaba sendo \emph{exatamente}
+quanto o comprador espera que o carro valha, em média, dado quem topa vender por aquele preço.
+Nem mais (senão o comprador tem prejuízo esperado), nem menos (senão um rival oferece um
+pouco mais e leva o negócio).
+\end{empalavras}
+
+\subsection*{Resolução passo a passo}
+\begin{enumerate}[leftmargin=2em,itemsep=4pt]
+
+\item \textbf{Benchmark simétrico (ferve em 1 linha).} Se o comprador observasse
+$\theta$, haveria comércio sempre que a valoração supera a reserva. Na Parte A,
+$\theta + k > \theta$ para todo $\theta$ (pois $k>0$): \textbf{todos} os carros
+transacionam, ganho social $k$ por carro. Esse é o first-best.
+
+\item \textbf{Quem está ativo a um preço $p$ (Parte A).} O vendedor só aceita se
+$p \ge \theta$. Logo o conjunto ativo é $\{\theta : \theta \le p\}$ — exatamente os
+\emph{piores} carros. Sob $U[0,1]$, condicionando em $\theta \le p$, a distribuição é
+$U[0,p]$ e a qualidade média condicional é
+\[
+\Esp[\theta \mid \theta \le p] \;=\; \frac{p}{2}. \tag{1.1}
+\]
+\textbf{Aqui mora o veneno:} ao subir o preço, entram carros melhores, mas a média sobe
+só pela metade da velocidade do preço.
+
+\begin{empalavras}[Por que a média condicional é $p/2$?]
+``Média condicional'' significa: a média da qualidade \emph{entre os carros que de fato
+estão à venda} (não entre todos os carros do mundo). A condição é ``$\theta \le p$''.
+
+\smallskip\noindent
+Se a um preço $p$ só aparecem os carros com qualidade entre $0$ e $p$, e dentro desse
+intervalo todas as qualidades são igualmente prováveis (continua uniforme, agora um
+$U[0,p]$), então a média é simplesmente o \emph{ponto do meio} do intervalo: $\dfrac{0+p}{2}
+= \dfrac{p}{2}$. Exemplo concreto: se $p = \dc{0}{6}$, os carros à venda têm qualidade
+entre $0$ e $\dc{0}{6}$, e em média valem $\dc{0}{3}$.
+
+\smallskip\noindent
+O ``veneno'' citado ao lado: se eu, comprador, subo minha oferta de $\dc{0}{6}$ para
+$\dc{0}{8}$, atraio carros um pouco melhores — mas a média deles sobe só de $\dc{0}{3}$
+para $\dc{0}{4}$. O preço subiu $\dc{0}{2}$; a qualidade média subiu só $\dc{0}{1}$.
+A média ``corre atrás'' do preço, mas com metade da velocidade. Esse descompasso é o
+motor de tudo o que vem a seguir.
+\end{empalavras}
+
+\item \textbf{Equilíbrio (Parte A).} O comprador competitivo paga sua valoração esperada
+condicional ao conjunto ativo:
+\[
+p \;=\; \Esp[\theta \mid \theta \le p] + k \;=\; \frac{p}{2} + k
+\;\;\Longrightarrow\;\; \frac{p}{2} = k
+\;\;\Longrightarrow\;\; \boxed{\,p^\ast = 2k = \dc{0}{6}\,}. \tag{1.2}
+\]
+Só transacionam os carros com $\theta \le \dc{0}{6}$ — \textbf{60\% do estoque}. Os 40\%
+melhores ($\theta > \dc{0}{6}$) \emph{somem do mercado}. Qualidade média negociada:
+$\dc{0}{3}$.
+
+\begin{empalavras}[O que é ``ponto fixo'' e o que $p^\ast = \dc{0}{6}$ quer dizer]
+Repare na estrutura circular: o preço depende de quem vende, mas quem vende depende do
+preço. Para o mercado ``parar'' (entrar em equilíbrio), precisamos de um preço que seja
+\emph{consistente consigo mesmo}: se o preço é $p$, então a média dos carros que aparecem é
+$p/2$, então o comprador (que paga essa média mais o prêmio $k$) oferece $p/2 + k$ — e
+esse valor tem de ser igual ao próprio $p$ de onde partimos. Um valor que ``volta nele
+mesmo'' assim se chama \textbf{ponto fixo}. Resolver $p/2 + k = p$ acha esse ponto.
+
+\smallskip\noindent
+\textbf{Tradução do resultado:} $p^\ast = \dc{0}{6}$ não é só um número. Ele diz que
+\emph{40\% dos melhores carros desaparecem do mercado} — e desaparecem \textbf{justamente
+por serem bons}: seus donos exigem mais do que $\dc{0}{6}$, ninguém oferece tanto (porque o
+comprador, em média, só encontra carros medianos), e o negócio não acontece. A assimetria
+de informação \emph{expulsa a qualidade}. É a isto que Akerlof deu o nome de
+\emph{unraveling} (algo como ``desfiamento'': o topo do mercado se desfaz).
+\end{empalavras}
+
+\item \textbf{Perda de bem-estar (Parte A).} Cada carro não-negociado destrói um ganho de
+comércio igual a $k$. A massa não-negociada é $1 - p^\ast = \dc{0}{4}$, logo
+\[
+\text{perda} = k\,(1 - 2k) = \dc{0}{3}\cdot \dc{0}{4} = \dc{0}{12}. \tag{1.3}
+\]
+\textbf{Unraveling parcial:} o mercado não morre, mas encolhe — e some justamente o topo
+da qualidade.
+
+\begin{empalavras}[A ``perda de bem-estar'' em uma frase]
+``Ganho de comércio'' é o valor que uma troca cria: o comprador valoriza o carro em
+$\theta + k$, o dono só exige $\theta$, então cada negócio fechado gera $k = \dc{0}{3}$ de
+valor novo para a sociedade (o prazer/uso extra que o comprador tira e o dono não tinha).
+Quando um carro \emph{não} é negociado por causa da assimetria, esse $k$ simplesmente
+\textbf{deixa de existir} — ninguém o captura. Como $\dc{0}{4}$ do estoque (os bons) ficam
+parados, a conta da riqueza perdida é $\dc{0}{3} \times \dc{0}{4} = \dc{0}{12}$. É dinheiro
+que evaporou só porque comprador e vendedor não conseguem confiar na qualidade.
+\end{empalavras}
+
+\item \textbf{Parte B (multiplicativa) — o colapso.} Agora a valoração é $\beta\theta$.
+Conjunto ativo idêntico ($\theta \le p$), média condicional $p/2$. Equilíbrio:
+\[
+p = \beta\,\Esp[\theta\mid\theta\le p] = \beta\,\frac{p}{2}
+\;\;\Longrightarrow\;\; p\Big(1 - \frac{\beta}{2}\Big) = 0. \tag{1.4}
+\]
+Como $\beta = \dc{1}{5} < 2$, o fator $1 - \beta/2 = \dc{0}{25} \ne 0$, então a
+\textbf{única} solução é $p^\ast = 0$: \textbf{colapso total}. Nenhum carro é negociado.
+A condição-limite é $\beta = 2$ (continuum degenerado); $\beta > 2$ resgata o mercado.
+
+\begin{empalavras}[Por que ``vezes'' colapsa e ``mais'' não]
+A diferença entre a Parte A e a Parte B é só \emph{como} o comprador valoriza o carro, e ela
+muda tudo. Na Parte A (\textbf{aditiva}), o comprador paga ``qualidade $+\,k$'': há um bônus
+$k = \dc{0}{3}$ \emph{fixo} que sobrevive mesmo que o carro seja ruim. Esse colchão fixo
+mantém algum mercado vivo.
+
+\smallskip\noindent
+Na Parte B (\textbf{multiplicativa}), o comprador paga ``$\beta$ vezes a qualidade''. Se a
+qualidade média cai, a valoração cai \emph{junto, proporcionalmente} — não há colchão. Faça
+a conta no detalhe: para o mercado existir, o preço $p$ teria de igualar $\beta \cdot
+(p/2)$. Isso só pode acontecer se $\beta/2 = 1$, ou seja $\beta = 2$. Como aqui $\beta =
+\dc{1}{5}$ é \emph{menor} que $2$, cada vez que tento um preço positivo o comprador valoriza
+o lote em \emph{menos} do que esse preço, então recua, o preço cai, somem mais carros bons,
+a média piora, e a espiral só para em $p = 0$: \textbf{o mercado morre por inteiro}.
+
+\smallskip\noindent
+A lição: a seleção adversa nem sempre destrói o mercado (Parte A) — às vezes só corta o
+topo. Quando ela destrói (Parte B) depende de a valoração do comprador ter ou não uma
+parcela que não encolhe junto com a qualidade. ``$\beta > 1$'' (comprador valoriza mais que
+o dono) \emph{não} basta; é preciso $\beta > 2$ por causa da divisão por dois da média.
+\end{empalavras}
+
+\end{enumerate}
+
+\subsection*{Comentário pedagógico (5 passos)}
+\begin{gabarito}
+\passo{1. Ponto-chave.} O preço de equilíbrio resolve o ponto fixo
+$p = \text{valoração}(\Esp[\theta\mid\theta\le p])$. A forma da valoração decide o
+destino: \textbf{aditiva} ($\theta+k$) preserva um ganho fixo $k$ por carro $\Rightarrow$
+mercado parcial; \textbf{multiplicativa} ($\beta\theta$) faz o ganho encolher junto com a
+qualidade $\Rightarrow$ colapso quando $\beta<2$.
+
+\passo{2. Derivação.} Tudo depende de $\Esp[\theta\mid\theta\le p]=p/2$ (média de um
+uniforme truncado). Substituir e resolver o ponto fixo: $p/2+k=p$ dá $p^\ast=2k$;
+$\beta p/2 = p$ dá $p(1-\beta/2)=0$. Uma conta de meia linha em cada caso — exatamente o
+que se quer na lousa.
+
+\passo{3. Armadilha.} (i) Achar que ``$\beta>1$ basta para o mercado funcionar'' — não:
+na forma multiplicativa o que importa é $\beta$ \emph{vs.}~$2$, porque a média condicional
+divide por dois. (ii) Confundir reserva do vendedor com preço de equilíbrio. (iii) Esquecer
+que o conjunto ativo é \emph{truncado para baixo} ($\theta\le p$), o que é a essência da
+seleção \emph{adversa}: quem fica é o pior.
+
+\passo{4. Extensão.} O remédio é \emph{revelar tipo}. Reputação e garantia (Klein-Leffler
+1981) atenuam o unraveling; \textbf{na Aula 9}, Spence (1973) introduz a sinalização — o
+agente \emph{informado} (o bom vendedor) age para se separar do limão. Akerlof, Spence e
+Stiglitz dividiram o Nobel de 2001 justamente por isso.
+
+\passo{5. Peer-review (auto-crítica honesta).} A Parte A é a inovação pedagógica útil:
+o aluno costuma sair da aula achando que ``Akerlof $=$ colapso''. A forma aditiva mostra
+que \emph{nem sempre} colapsa — às vezes só encolhe pelo topo, o que é empiricamente o
+caso típico (carros usados não desapareceram). Risco residual: um aluno apressado pode
+aplicar a fórmula multiplicativa ($p^\ast=0$) na Parte A por hábito; o item~3 da resolução
+deixa o contraste explícito. Não usei a forma multiplicativa com $\beta=\dc{1}{3}$ de
+propósito — esse número já aparece nos avaliativos; aqui está $\beta=\dc{1}{5}$.
+\end{gabarito}
+\else
+\espacoaluno{75mm}
+\fi
+
+\hrulefill
+
+% =====================================================================
+\section*{\textcolor{insper}{Exercício 2 — Holmström: o preço de não enxergar o esforço}}
+\noindent\textbf{Calibre \calR{} (parte (a) é \calY{} de aquecimento).} \quad \emph{Lousa: $\sim$55 min.}
+\par\smallskip
+\noindent\textbf{Conceito que resume:} \emph{hidden action} (risco moral); principal-agente
+de Holmström (1979); first-best (salário fixo, principal neutro absorve o risco) \emph{vs.}
+second-best (IR + IC binding, $w_H > w_L$); \textbf{prêmio de risco moral}; e a
+equivalência first-best $=$ second-best quando o agente é neutro ao risco.
+
+\subsection*{Enunciado}
+O Principal (P, \textbf{neutro} ao risco) contrata um Agente (A, \textbf{avesso},
+Bernoulli $u(w)=\sqrt{w}$). O esforço $a \in \{a_L, a_H\}$ é privado do agente, com custos
+$c(a_L)=0$ e $c(a_H)=2$. O produto observável é $y \in \{0,\,80\}$. A probabilidade de
+$y=80$ é $\pi_H = \dc{0}{8}$ sob esforço alto e $\pi_L = \dc{0}{4}$ sob esforço baixo. A
+utilidade de reserva do agente é $\bar U = 3$. O contrato é um salário $w(y)$ condicionado
+ao produto. \textbf{O Principal deseja induzir $a_H$} (verifique que é eficiente fazê-lo).
+
+\ifsolucao
+
+\begin{empalavras}[O enunciado em palavras de todo dia]
+Pense num \textbf{patrão} (o ``Principal'', P) que contrata um \textbf{funcionário} (o
+``Agente'', A) para uma tarefa. O funcionário pode se esforçar muito ($a_H$, esforço alto)
+ou pouco ($a_L$, esforço baixo). Esforçar-se \emph{custa} para ele: $c(a_H) = 2$ unidades de
+incômodo (cansaço, abrir mão do tempo livre), enquanto não se esforçar custa $0$. O problema:
+o patrão \textbf{não vê} se o funcionário se esforçou — é \emph{ação oculta} (``hidden
+action''). Ele só vê o \emph{resultado} $y$: ou o projeto dá certo ($y = 80$) ou dá errado
+($y = 0$).
+
+\smallskip\noindent
+Esforço não garante sucesso, só aumenta a \emph{chance}: com esforço alto, o projeto dá
+certo com probabilidade $\pi_H = \dc{0}{8}$; com esforço baixo, só $\pi_L = \dc{0}{4}$.
+
+\smallskip\noindent
+\textbf{``Neutro'' vs.\ ``avesso'' ao risco.} O patrão é \emph{neutro ao risco}: só liga
+para o valor médio do dinheiro, tanto faz se vem garantido ou no susto. O funcionário é
+\emph{avesso ao risco}: ele prefere um salário garantido a uma aposta de mesmo valor
+médio — como quase todos nós, que preferimos um salário fixo a ganhar ``às vezes muito, às
+vezes nada''. Modelamos isso pela \textbf{função de utilidade de Bernoulli} $u(w) = \sqrt{w}$
+(``utilidade sobre a riqueza''): a raiz quadrada cresce \emph{cada vez mais devagar}, então
+cada real a mais traz menos satisfação que o anterior — é exatamente o que significa ter
+medo de risco (ver a próxima caixa). $\bar U = 3$ é a \textbf{utilidade de reserva}: o
+quanto de satisfação o funcionário consegue em outro emprego; se o contrato não der pelo
+menos isso, ele vai embora.
+\end{empalavras}
+
+\subsection*{Resolução passo a passo}
+\begin{enumerate}[leftmargin=2em,itemsep=4pt]
+
+\item \textbf{(a) First-best: ação observável.} Se P enxerga $a$, ele exige $a_H$ por
+contrato e paga um \textbf{salário fixo} $w^\ast$ (independente de $y$) que satura a
+participação. A restrição IR binding é
+\[
+\sqrt{w^\ast} - c(a_H) = \bar U
+\;\;\Longrightarrow\;\; \sqrt{w^\ast} = \bar U + c(a_H) = 3 + 2 = 5
+\;\;\Longrightarrow\;\; \boxed{\,w^\ast = 25\,}. \tag{2.1}
+\]
+Salário fixo: \textbf{o principal neutro carrega todo o risco}, e o agente avesso vive sem
+risco. É Pareto-eficiente.
+
+\begin{empalavras}[Por que a raiz quadrada modela ``medo de risco'', e o que é IR]
+``First-best'' (``melhor caso'') é o mundo de sonho em que o patrão \emph{vê} o esforço.
+Nesse mundo ele não precisa de truque: escreve no contrato ``faça esforço alto'' e paga um
+\textbf{salário fixo} $w^\ast$, igual dê certo ou errado. Como o funcionário odeia risco e o
+patrão não liga, o arranjo ótimo é o patrão \emph{absorver toda a incerteza} e dar ao
+funcionário um pagamento garantido. É a divisão de risco perfeita.
+
+\smallskip\noindent
+\textbf{Por que $\sqrt{w}$ é ``avesso ao risco''?} Compare duas situações de mesmo valor
+médio. (i) Receber $25$ garantidos: satisfação $\sqrt{25} = 5$. (ii) Apostar: metade das
+vezes $0$, metade das vezes $50$ (média também $25$): satisfação esperada $\tfrac12\sqrt{0}
++ \tfrac12\sqrt{50} \approx \tfrac12(0) + \tfrac12(7{,}07) \approx 3{,}5$. O valor médio é o
+mesmo ($25$), mas a aposta dá \emph{menos} satisfação ($3{,}5 < 5$). É a curvatura da raiz
+(``cada real extra satisfaz menos'') que faz a pessoa fugir do risco. Guarde isto: é a razão
+de o salário fixo ser tão valioso para o funcionário.
+
+\smallskip\noindent
+\textbf{A restrição IR (``participação'').} ``IR'' vem de \emph{individual rationality}:
+o funcionário só aceita o emprego se ele render \emph{pelo menos} a satisfação que teria
+fora ($\bar U = 3$). A equação $\sqrt{w^\ast} - c(a_H) = \bar U$ diz: a satisfação do
+salário, \emph{descontado} o incômodo do esforço, tem de empatar com o emprego de fora.
+Dizemos que a IR está \textbf{binding} (``apertada'', ``ativa'') quando vale com igualdade
+($=$, não $>$): o patrão não paga \emph{nenhum} centavo a mais do que o necessário para o
+funcionário não ir embora — afinal, ele quer gastar o mínimo. Daí $\sqrt{w^\ast} = 3 + 2 =
+5$, logo $w^\ast = 25$.
+\end{empalavras}
+
+\item \textbf{Checagem de que $a_H$ é eficiente.} Lucro esperado do P sob first-best:
+$\Esp[y\mid a_H] - w^\ast = \dc{0}{8}\cdot 80 - 25 = 64 - 25 = 39$. Sob $a_L$, o salário
+fixo seria $\sqrt{w} = \bar U = 3 \Rightarrow w = 9$, e o lucro
+$\dc{0}{4}\cdot 80 - 9 = 32 - 9 = 23$. Como $39 > 23$, induzir $a_H$ é eficiente.
+\textbf{Guarde o número $39$.}
+
+\item \textbf{(b) Por que salário fixo quebra sob ação oculta.} Se P não vê $a$ e paga
+fixo, o agente recebe $\sqrt{w}$ faça o que fizer; como $c(a_H) > c(a_L)=0$, ele
+\textbf{desvia} para $a_L$ (mesmo salário, menos custo). A IC para $a_H$ é violada. Para
+induzir esforço, o salário \emph{tem} de depender de $y$.
+
+\item \textbf{(c) Second-best: o programa.} P minimiza o salário esperado sujeito a
+participar (IR) e a não desviar (IC):
+\[
+\min_{w_H,\,w_L}\;\; \pi_H w_H + (1-\pi_H) w_L
+\]
+\[
+\text{(IR)}\quad \pi_H\sqrt{w_H} + (1-\pi_H)\sqrt{w_L} - c(a_H) \ge \bar U,
+\]
+\[
+\text{(IC)}\quad (\pi_H - \pi_L)\big[\sqrt{w_H} - \sqrt{w_L}\big] \ge c(a_H) - c(a_L).
+\]
+Com agente avesso e $a_H$ desejado, \textbf{ambas} as restrições são binding (resultado
+padrão; o gabarito justifica). Substituindo os números:
+
+\begin{empalavras}[O que são IR e IC, e por que as duas ficam ``apertadas'']
+Agora estamos no \textbf{second-best} (``segundo melhor''): o mundo real, em que o patrão
+\emph{não} vê o esforço. Salário fixo não funciona mais — se o pagamento é o mesmo dê no que
+der, o funcionário escolhe não se esforçar (mesmo dinheiro, menos cansaço). Para induzir
+esforço, o patrão precisa \textbf{premiar o bom resultado}: pagar mais quando $y = 80$
+($w_H$) do que quando $y = 0$ ($w_L$). É o \emph{bônus por desempenho}.
+
+\smallskip\noindent
+O patrão monta um problema de minimização: ``qual o menor salário esperado que eu consigo
+pagar, respeitando duas condições?'' As duas condições são:
+\begin{itemize}[leftmargin=1.3em,itemsep=1pt,topsep=2pt]
+\item \textbf{IR (participação):} o funcionário tem de aceitar o emprego — sua satisfação
+esperada, menos o custo do esforço, $\ge \bar U$. Sem isso, ele vai embora.
+\item \textbf{IC (incentivo, de \emph{incentive compatibility}):} dado o contrato, o
+funcionário tem de \emph{preferir por conta própria} se esforçar a vacilar. A IC compara a
+satisfação esperada esforçando-se com a de não se esforçar; o esforço só ``compensa'' se o
+prêmio extra por desempenho cobrir o custo do esforço.
+\end{itemize}
+
+\smallskip\noindent
+\textbf{Por que as duas ficam binding (com igualdade)?} Intuição de patrão sovina: ele
+nunca dá nada de graça. (i) Se a IR sobrasse (funcionário satisfeito \emph{além} do
+necessário), o patrão cortaria salário até encostar em $\bar U$ — logo IR vira igualdade.
+(ii) Se a IC sobrasse (funcionário esforçando-se com folga de incentivo), o patrão
+\emph{encolheria o bônus} ($w_H - w_L$), o que reduz o risco imposto ao funcionário avesso e
+\emph{barateia} a folha — até a IC encostar na igualdade. Como mexer em cada uma sempre
+reduz custo até o limite, no ótimo \textbf{ambas valem com $=$}. É por isso que trocamos os
+$\ge$ por $=$ nas contas a seguir.
+\end{empalavras}
+
+\[
+\text{(IR)}\quad \dc{0}{8}\sqrt{w_H} + \dc{0}{2}\sqrt{w_L} = 3 + 2 = 5, \tag{2.2}
+\]
+\[
+\text{(IC)}\quad (\dc{0}{8} - \dc{0}{4})\big[\sqrt{w_H} - \sqrt{w_L}\big] = 2
+\;\Longrightarrow\; \dc{0}{4}\big[\sqrt{w_H}-\sqrt{w_L}\big] = 2
+\;\Longrightarrow\; \sqrt{w_H} - \sqrt{w_L} = 5. \tag{2.3}
+\]
+
+\item \textbf{(c) Resolver o sistema $2\times2$ em $(\sqrt{w_H},\sqrt{w_L})$.} De (2.3),
+$\sqrt{w_H} = 5 + \sqrt{w_L}$. Substituindo em (2.2):
+\[
+\dc{0}{8}\,(5 + \sqrt{w_L}) + \dc{0}{2}\,\sqrt{w_L} = 5
+\;\Longrightarrow\; 4 + \sqrt{w_L} = 5
+\;\Longrightarrow\; \sqrt{w_L} = 1.
+\]
+Logo $\sqrt{w_L}=1 \Rightarrow w_L = 1$, e $\sqrt{w_H} = 6 \Rightarrow w_H = 36$.
+\[
+\boxed{\,w_L = 1, \qquad w_H = 36\,}. \tag{2.4}
+\]
+
+\item \textbf{(d) Prêmio de risco moral.} O custo esperado da folha sob second-best:
+\[
+\Esp[w] = \pi_H w_H + (1-\pi_H) w_L = \dc{0}{8}\cdot 36 + \dc{0}{2}\cdot 1
+= \dc{28}{8} + \dc{0}{2} = 29.
+\]
+Compare com o first-best ($w^\ast = 25$):
+\[
+\boxed{\;\text{prêmio de risco moral} = \Esp[w]_{\text{SB}} - w^\ast_{\text{FB}}
+= 29 - 25 = 4.\;} \tag{2.5}
+\]
+São 4 unidades a mais de folha — a ``sombra'' de não enxergar o esforço. O lucro do P cai
+de $39$ (first-best) para $64 - 29 = 35$ (second-best); a queda de $4$ é exatamente o
+prêmio.
+
+\begin{empalavras}[O que significa ``prêmio de risco moral'' = 4]
+Compare os dois mundos. No \emph{first-best} o patrão pagava $25$ garantidos. No mundo real
+ele precisa pagar, \emph{em média}, $29$ — porque agora dá um bônus arriscado ($w_H = 36$ se
+dá certo, só $w_L = 1$ se dá errado), e o funcionário avesso \emph{cobra mais na média} para
+topar carregar esse risco. A diferença, $29 - 25 = 4$, é o \textbf{prêmio de risco moral}:
+o sobrepreço que o patrão paga só porque não consegue enxergar o esforço e teve de comprar
+incentivo com risco.
+
+\smallskip\noindent
+Note a simetria: o lucro do patrão também cai exatamente $4$ (de $39$ para $35$). Faz
+sentido — o valor que o projeto gera ($64$ em média) não mudou; o que mudou foi que $4$
+unidades a mais saíram do bolso do patrão na forma de folha. \textbf{Atenção a uma confusão
+clássica:} o funcionário \emph{não} fica $4$ mais rico. A satisfação dele continua em
+$\bar U = 3$, igual ao first-best — a IR aperta nos dois mundos. Os $4$ extras de salário
+esperado são \emph{inteiramente devorados} pelo desprazer de carregar o bônus arriscado:
+não são presente a ninguém. Por isso esse $4$ é um \emph{custo da assimetria de informação}
+— riqueza que \textbf{evapora} (peso morto): quem perde os $4$ é o patrão, e quem ganha
+é\ldots\ ninguém.
+Em CEO, é o desconto que acionistas pagam ao dar \emph{stock options} arriscadas em vez de
+salário fixo.
+\end{empalavras}
+
+\item \textbf{(e) Equivalência sob neutralidade do agente.} Se o agente também fosse
+neutro ($u(w)=w$), o P poderia \textbf{vender o resultado} ao agente: cobra uma taxa fixa
+$F$ e deixa o agente como \emph{residual claimant} de $y$. O agente neutro escolhe $a_H$
+por interesse próprio (maximiza $\Esp[y\mid a]-c(a)$), sem custo de risco. Resultado:
+\[
+\text{second-best} = \text{first-best}, \qquad \text{prêmio} = 0.
+\]
+O prêmio de risco moral \textbf{nasce especificamente da aversão a risco do agente} — é o
+preço de ``quebrar o seguro'' do agente para criar incentivo.
+
+\begin{empalavras}[``Vender o resultado'' e o que é \emph{residual claimant}]
+Aqui o exercício pergunta: e se o funcionário \emph{também} não tivesse medo de risco
+(fosse neutro, $u(w) = w$)? Então o patrão pode usar um truque elegante, o contrato de
+\emph{franquia} (``franchise''): em vez de assalariar, ele \textbf{vende a operação} ao
+funcionário por uma taxa fixa $F$ e deixa que o funcionário fique com \emph{tudo} o que
+sobrar do resultado. Quem fica com o que sobra chama-se \textbf{\emph{residual claimant}}
+(``reclamante residual'', o dono do lucro líquido). O exemplo de manual é o
+\textbf{arrendamento de terra por renda fixa}: o arrendatário paga um \emph{aluguel fixo}
+(o nosso $F$) e fica com \emph{toda} a colheita — e, sem medo de risco, planta o ponto
+eficiente por conta própria. O contraste fecha a ideia: a \emph{meiação} (dividir a colheita
+com o dono da terra) só aparece quando o arrendatário \emph{teme} risco, trocando incentivo
+por seguro — exatamente como nos itens anteriores. (Franquias reais, tipo McDonald's, cobram
+um \emph{percentual} sobre as vendas justamente por isso: o franqueado de carne e osso
+\emph{não} é neutro ao risco, então o contrato puro de taxa fixa não é o que se observa.)
+
+\smallskip\noindent
+Como agora o próprio bolso do funcionário absorve o resultado, ele \emph{se esforça por
+interesse próprio}, sem que ninguém precise vigiá-lo — a IC se resolve sozinha. E como ele
+não tem medo de risco, carregar a incerteza não lhe custa nada. Resultado: nenhum prêmio,
+second-best $=$ first-best. \textbf{Moral da história:} o prêmio de risco moral dos itens
+anteriores não nasce da assimetria \emph{em si}, e sim da combinação assimetria $+$ um
+agente que \emph{teme risco}. Tire o medo de risco e o problema some.
+\end{empalavras}
+
+\end{enumerate}
+
+\subsection*{Comentário pedagógico (5 passos)}
+\begin{gabarito}
+\passo{1. Ponto-chave.} Risco moral força o \emph{trade-off seguro vs.~incentivo}. O
+first-best dá seguro pleno ($w$ fixo). Para induzir esforço sem observá-lo, o P precisa
+\emph{premiar o produto alto} ($w_H>w_L$), e isso reintroduz risco no agente avesso, que
+exige compensação na média. A diferença $\Esp[w]_{\text{SB}} - w_{\text{FB}}$ é o prêmio
+de risco moral.
+
+\passo{2. Derivação.} O sistema $2\times2$ em $(\sqrt{w_H},\sqrt{w_L})$ é o coração: IC
+binding fixa a \emph{diferença} ($\sqrt{w_H}-\sqrt{w_L}=5$); IR binding fixa a
+\emph{média ponderada} ($\dc{0}{8}\sqrt{w_H}+\dc{0}{2}\sqrt{w_L}=5$). Substituir uma na
+outra resolve em duas linhas: $\sqrt{w_L}=1$, $\sqrt{w_H}=6$. Os parâmetros foram
+calibrados para fechar em inteiros ($w_L=1$, $w_H=36$, $\Esp[w]=29$, prêmio $=4$).
+
+\passo{3. Armadilha.} (i) Esquecer o coeficiente $(\pi_H-\pi_L)=\dc{0}{4}$ na IC e escrever
+$\sqrt{w_H}-\sqrt{w_L}=2$ em vez de $5$ — erro fatal e comum. (ii) Esquecer de somar
+$c(a_H)$ ao $\bar U$ na IR. (iii) Linearizar a Bernoulli (tratar $w$ no lugar de $\sqrt{w}$).
+(iv) Resolver $\sqrt{w_L}=\sqrt{w_H}-5$ e aceitar raiz negativa. Os quatro erros mudam a
+resposta — vale escrevê-los no quadro como ``não faça isto''.
+
+\passo{4. Extensão.} A \emph{fórmula informativa} de Holmström (1979): o salário ótimo
+depende de $y$ apenas via o quanto $y$ \emph{informa} sobre $a$ (razão de
+verossimilhança). Aplicações: stock options para CEO (acionistas diversificados $=$ P
+neutro; CEO $=$ A avesso); \emph{Bolsa Família} condicionada (frequência escolar
+$\ge 85\%$ é o ``$y$ verificável'' que implementa a IC). \textbf{Aula 9} vira o problema do
+avesso: lá é o agente \emph{informado} que age (sinalização).
+
+\passo{5. Peer-review (auto-crítica honesta).} Os números são distintos dos avaliativos
+(lá: $w_H=121$, $w_L=1$, prêmio $=21$); aqui o prêmio é só $4$ — \emph{menor de propósito},
+para que a aritmética flua e o aluno enxergue o mecanismo sem se afogar em contas. Escolha
+deliberada: aqui $a_H$ é eficiente \emph{também} no first-best (lucro $39>23$), o que torna
+o second-best uma resposta a um problema ``de verdade'' (P quer mesmo o esforço alto) — nos
+avaliativos o $a_L$ era first-best, o que confunde alguns alunos. Risco residual: a parte
+(e) (neutralidade) é a peça destacável se o tempo apertar; ela é conceitual, não algébrica,
+então cortá-la não fere a derivação central — mas perde o ``aha'' de que o problema é a
+aversão, não a assimetria \emph{per se}.
+\end{gabarito}
+\else
+\espacoaluno{85mm}
+\fi
+
+\hrulefill
+
+% =====================================================================
+\section*{\textcolor{insper}{Exercício 3 — Rothschild-Stiglitz: o bom risco paga a conta}}
+\noindent\textbf{Calibre \calY{} com cauda \calR{} no fechamento algébrico.} \quad \emph{Lousa: $\sim$45 min.}
+\par\smallskip
+\noindent\textbf{Conceito que resume:} \emph{hidden type} em seguro; equilíbrio separador
+de Rothschild-Stiglitz (1976); \textbf{single-crossing}; o tipo alto risco ($H$) fica com
+cobertura completa, o tipo baixo risco ($L$) é \emph{distorcido para baixo} até que a IC do
+$H$ fique binding; menção à inexistência sob $\lambda$ baixo.
+
+\subsection*{Enunciado}
+Mercado de seguro competitivo. Riqueza inicial $W = 17$; sinistro de tamanho $L = 16$
+(quase tudo: sem seguro, o azarado fica com $W-L=1$). Há dois tipos: alto risco $H$ com
+$\pi^H = \dc{0}{5}$ e baixo risco $L$ com $\pi^L = \dc{0}{25}$. O agente conhece o próprio
+tipo; a seguradora não. Bernoulli $u(W)=\sqrt{W}$ (avesso). Um contrato é um par
+$(p,c)$: \emph{prêmio} $p$ (paga sempre) e \emph{cobertura} $c\in[0,L]$ (recebe se há
+sinistro). Por concorrência (livre entrada), cada contrato aceito dá lucro esperado nulo:
+$p = \pi^\theta c$ no tipo que o compra.
+\emph{(Números calibrados para fechamento exibível: $W=17,\,L=16$ é uma escolha
+pedagógica deliberada — ver passo 5.)}
+
+\ifsolucao
+
+\begin{empalavras}[O enunciado em palavras de todo dia]
+Pense em \textbf{seguro de carro} (ou plano de saúde). Você tem uma riqueza inicial $W =
+17$. Existe o risco de um \textbf{sinistro} (bater o carro, adoecer) que custa $L = 16$ —
+quase tudo: sem seguro, se der azar, você fica com só $W - L = 1$.
+
+\smallskip\noindent
+Há dois tipos de cliente. O \textbf{alto risco} ($H$) bate o carro com probabilidade
+$\pi^H = \dc{0}{5}$ (meio a meio); o \textbf{baixo risco} ($L$) só com $\pi^L = \dc{0}{25}$
+(motorista cuidadoso). \emph{Cada cliente sabe que tipo é}, mas a \textbf{seguradora não}
+consegue distinguir — é informação privada (de novo, \emph{hidden type}). Cuidado com a
+notação: a letra $L$ aparece em dois papéis — \emph{tamanho do sinistro} ($L = 16$) e
+\emph{tipo baixo risco}. O contexto sempre deixa claro qual.
+
+\smallskip\noindent
+Um \textbf{contrato} é um par $(p, c)$: você paga um \textbf{prêmio} $p$ \emph{sempre} (deu
+sinistro ou não — é a mensalidade do seguro) e recebe uma \textbf{cobertura} $c$ \emph{se}
+houver sinistro. ``Lucro esperado nulo'' / \textbf{livre entrada} é a mesma ideia do
+Exercício~1: concorrência entre seguradoras empurra o lucro a zero, então o prêmio cobre
+exatamente o custo esperado, $p = \pi^\theta c$ (probabilidade de pagar $\times$ quanto paga).
+O cliente é \emph{avesso ao risco} ($u(W) = \sqrt{W}$, mesma raiz quadrada do Exercício~2),
+então quer suavizar: prefere consumo parecido nos dois cenários (com ou sem sinistro).
+\end{empalavras}
+
+\subsection*{Resolução passo a passo}
+\begin{enumerate}[leftmargin=2em,itemsep=4pt]
+
+\item \textbf{First-best simétrico.} Se a seguradora observasse o tipo, ofereceria a cada
+um cobertura completa ($c=L$) ao prêmio justo $p^\theta = \pi^\theta L$. Razão: o agente
+avesso quer suavizar consumo entre os estados, e a seguradora neutra absorve o risco a
+custo zero esperado. Aqui:
+\[
+p^H = \pi^H L = \dc{0}{5}\cdot 16 = 8, \qquad
+p^L = \pi^L L = \dc{0}{25}\cdot 16 = 4. \tag{3.1}
+\]
+Cada tipo fica com consumo \emph{certo}: $H$ tem $W-p^H = 9$; $L$ tem $W-p^L = 13$.
+
+\begin{empalavras}[Por que ``cobertura completa'' e como sai o consumo certo]
+Cobertura completa significa $c = L$: se der sinistro, o seguro repõe \emph{tudo} o que você
+perdeu. Aí seu consumo fica \textbf{igual} nos dois cenários — você paga o prêmio $p$
+sempre, e o sinistro é totalmente compensado. Por isso o consumo vira ``certo'' (sem
+sobressalto): $W - p$ aconteça o que acontecer. Para o $H$, $17 - 8 = 9$; para o $L$, $17 -
+4 = 13$. Como o cliente \emph{teme risco}, esse seguro pleno é o ideal para ele, e a
+seguradora neutra topa porque, na média, sai no zero a zero. Esse é o \emph{first-best}: o
+mundo em que a seguradora enxerga o tipo e cobra de cada um o prêmio justo.
+\end{empalavras}
+
+\item \textbf{Single-crossing (a chave geométrica).} Sob aversão e $\pi^H>\pi^L$, as
+curvas de indiferença dos dois tipos no plano (prêmio $\times$ cobertura) se cruzam
+\emph{exatamente uma vez}: na margem, o tipo $H$ (mais provável de sinistrar) está disposto
+a pagar \emph{mais} por uma unidade extra de cobertura. É isso que permite \emph{separar}
+os tipos com um cardápio de contratos.
+
+\begin{empalavras}[``Single-crossing'' e ``separar tipos'' sem economês]
+A seguradora não sabe quem é quem, então monta um \textbf{cardápio} de contratos e deixa
+cada cliente \emph{escolher} — torcendo para que cada tipo escolha o contrato ``feito para
+ele''. Isso se chama \textbf{separar} os tipos (cada um se revela pela escolha). Mas só
+funciona se os dois tipos tiverem \emph{gostos diferentes o bastante} para não quererem o
+mesmo contrato.
+
+\smallskip\noindent
+\textbf{Single-crossing} (``cruzamento único'') é a propriedade que garante isso. Pense em
+quanto cada tipo valoriza ``um pedacinho a mais de cobertura''. O alto risco ($H$) bate o
+carro com mais frequência, então uma cobertura extra é mais útil para ele — ele paga
+\emph{mais caro} por ela do que o baixo risco. Tecnicamente: as curvas de indiferença (linhas
+de ``mesma satisfação'') dos dois tipos, desenhadas no plano prêmio~$\times$~cobertura, se
+cruzam \textbf{exatamente uma vez}. Esse cruzamento único é o que permite desenhar um
+contrato que o $L$ aceita mas o $H$ recusa — a base de toda a separação. Sem single-crossing,
+os gostos se embaralhariam e não daria para separar.
+\end{empalavras}
+
+\item \textbf{O separador R-S — estrutura.} O único candidato a equilíbrio competitivo é:
+\begin{itemize}[leftmargin=1.4em,itemsep=2pt]
+\item \textbf{Tipo $H$:} cobertura completa ao prêmio justo, $(p^H_\ast, c^H_\ast) = (8,16)$.
+Sem distorção: o $H$ já não tem incentivo a imitar o $L$ (o $L$ tem cobertura menor).
+\item \textbf{Tipo $L$:} cobertura \emph{parcial} $c^L_\ast < L$, sobre sua reta de prêmio
+justo $p^L_\ast = \pi^L c^L_\ast = \dc{0}{25}\,c^L_\ast$, escolhida no ponto em que a
+\textbf{IC do $H$ fica binding} — o $H$ é exatamente indiferente entre seu contrato e o do $L$.
+\end{itemize}
+
+\item \textbf{Montar a IC do $H$ binding.} O $H$ no seu contrato tem consumo certo
+$W-p^H = 9$, logo utilidade $\sqrt{9}=3$. Se imitasse o contrato do $L$, enfrentaria risco:
+\[
+\underbrace{\sqrt{W - p^H}}_{\text{contrato do }H}
+\;=\;
+(1-\pi^H)\sqrt{\,W - p^L_\ast\,} + \pi^H \sqrt{\,W - p^L_\ast - L + c^L_\ast\,}.
+\tag{3.2}
+\]
+Com $\pi^H=\dc{0}{5}$ e $p^L_\ast = \dc{0}{25}\,c^L_\ast$, e abreviando
+\[
+A \equiv W - p^L_\ast = 17 - \dc{0}{25}c^L_\ast, \qquad
+B \equiv W - p^L_\ast - L + c^L_\ast = 1 + \dc{0}{75}c^L_\ast,
+\]
+a equação (3.2) vira (lado esquerdo $=3$):
+\[
+3 = \tfrac12\big(\sqrt{A} + \sqrt{B}\big)
+\;\;\Longrightarrow\;\; \sqrt{A} + \sqrt{B} = 6. \tag{3.3}
+\]
+
+\begin{empalavras}[O que a equação (3.2) está dizendo de verdade]
+Tradução da equação central: estamos \textbf{prendendo} o contrato do $L$ no maior tamanho
+que ainda \emph{não tente} o $H$ a imitá-lo. O lado esquerdo, $\sqrt{W - p^H} = \sqrt{9} =
+3$, é a satisfação do $H$ \emph{no contrato dele} (cobertura completa, consumo certo $9$).
+O lado direito é a satisfação que o $H$ teria \emph{se mentisse} e pegasse o contrato barato
+do $L$: aí ele ficaria \emph{exposto ao risco} — com probabilidade $1 - \pi^H$ não há
+sinistro (consumo $A$) e com $\pi^H$ há sinistro (consumo $B$), daí a média ponderada das
+duas raízes. Igualar os dois lados é dizer ``o $H$ é \emph{exatamente indiferente} entre ser
+honesto e mentir''. Esse é o ponto em que a \textbf{IC do $H$ fica binding}: encolhemos a
+cobertura do $L$ até bem ali, nem um milímetro a mais (senão o $H$ mentiria e a separação
+quebra), nem a menos (senão estaríamos punindo o $L$ sem necessidade). $A$ e $B$ são só
+apelidos para o consumo do $L$ nos estados ``sem sinistro'' e ``com sinistro''.
+\end{empalavras}
+
+\item \textbf{Fechamento algébrico (giz-limpo).} Note que
+$A - B = (17 - \dc{0}{25}c^L_\ast) - (1 + \dc{0}{75}c^L_\ast) = 16 - c^L_\ast = L - c^L_\ast$.
+Como $A-B = (\sqrt{A}-\sqrt{B})(\sqrt{A}+\sqrt{B})$ e $\sqrt{A}+\sqrt{B}=6$:
+\[
+\sqrt{A} - \sqrt{B} = \frac{A-B}{6} = \frac{16 - c^L_\ast}{6}. \tag{3.4}
+\]
+Somando (3.3) e (3.4): $2\sqrt{A} = 6 + \dfrac{16-c^L_\ast}{6}$. Em vez de elevar ao
+quadrado o tempo todo, use o atalho: de (3.3) e (3.4), $\sqrt{A}\sqrt{B} =
+\frac{1}{4}\big[(\sqrt{A}+\sqrt{B})^2 - (\sqrt{A}-\sqrt{B})^2\big]$, mas o caminho mais
+curto é substituir um par-teste. \textbf{Tente $c^L_\ast = 4$:}
+\[
+A = 17 - \dc{0}{25}\cdot 4 = 16, \quad B = 1 + \dc{0}{75}\cdot 4 = 4,
+\quad \sqrt{A}+\sqrt{B} = 4 + 2 = 6 \;\checkmark
+\]
+Bate (3.3) exatamente. Logo
+\[
+\boxed{\,c^L_\ast = 4, \qquad p^L_\ast = \dc{0}{25}\cdot 4 = 1\,}. \tag{3.5}
+\]
+\emph{(Quem preferir o caminho fechado: (3.3) e (3.4) dão a quadrática
+$(c^L_\ast)^2 - 4W\,c^L_\ast + L^2 = 0$, isto é $(c^L_\ast)^2 - 68\,c^L_\ast + 256 = 0$,
+discriminante $68^2 - 4\cdot256 = 4624 - 1024 = 3600 = 60^2$, raízes
+$c^L_\ast = (68\pm 60)/2 \in \{4,\,64\}$; só $4$ satisfaz $c\le L=16$.)}
+
+\begin{empalavras}[O truque do $\sqrt{A}-\sqrt{B}$ e por que dá para ``chutar'' $c = 4$]
+A equação (3.3) tem \emph{duas} raízes quadradas somadas — incômodo de resolver na marra.
+O atalho usa uma identidade da escola: $(\sqrt{A}-\sqrt{B})(\sqrt{A}+\sqrt{B}) = A - B$
+(é só $a^2 - b^2 = (a-b)(a+b)$ com $a = \sqrt{A}$, $b = \sqrt{B}$). Já sabemos que a soma é
+$6$ (de 3.3) e que a diferença $A - B = 16 - c$ (conta direta). Então a \emph{diferença} das
+raízes é $\dfrac{A-B}{6}$. Com soma e diferença das raízes em mãos, descobrir cada raiz é
+trivial. Esse malabarismo evita elevar ao quadrado duas vezes (que geraria termos cruzados
+feios).
+
+\smallskip\noindent
+\textbf{E o ``chute'' $c = 4$?} Não é mágica nem sorte: os números $W = 17$, $L = 16$ foram
+escolhidos pelo professor \emph{de propósito} para que a resposta caísse num inteiro redondo
+e a verificação fosse instantânea. Substituir $c = 4$ dá $A = 16$ e $B = 4$, com $\sqrt{16}
++ \sqrt{4} = 4 + 2 = 6$ — bate na hora. Para o aluno cético que não confia em chute, o
+parágrafo acima mostra o caminho ``oficial'': montar a equação do segundo grau $c^2 - 68c +
+256 = 0$ e resolvê-la pela fórmula de Bhaskara. As duas rotas chegam ao mesmo $c = 4$ (a
+outra raiz, $64$, é descartada porque a cobertura não pode passar do tamanho do sinistro,
+$c \le L = 16$).
+\end{empalavras}
+
+\item \textbf{Leitura do resultado.} O tipo $L$ recebe $c^L_\ast = 4$ de $16$ possíveis:
+\textbf{só 25\% de cobertura}. Ele carrega risco residual (consumo $16$ no estado bom,
+$4$ no ruim, $\sqrt{16}\ne\sqrt{4}$). \textbf{O bom risco paga o preço da assimetria} —
+aceita seguro pior do que mereceria para que o alto risco não o imite. Distorção de
+second-best.
+
+\item \textbf{Inexistência (só a intuição, sem formalizar).} Se a proporção $\lambda$ de
+tipos $H$ é \emph{baixa}, a seguradora poderia oferecer um \emph{pooling} com cobertura
+quase completa a prêmio médio (próximo de $\pi^L$), que Pareto-domina o separador. Mas
+pooling \textbf{não é Nash}: uma rival desvia com um contrato de cobertura parcial mais
+barato que atrai só os $L$, e o pool desaba. Nem separador nem pooling sobrevivem —
+\textbf{R-S podem não ter equilíbrio competitivo}. (Não formalizamos: exige jogo contínuo.)
+
+\begin{empalavras}[O resultado em uma frase, e por que o mercado pode não fechar]
+\textbf{O paradoxo central:} quem ``paga a conta'' da assimetria é o \emph{bom} motorista
+($L$), não o ruim. O motorista cuidadoso é obrigado a aceitar um seguro \emph{pior do que
+mereceria} — só $4$ de $16$ de cobertura, $25\%$ — porque, se a seguradora lhe oferecesse a
+cobertura cheia e barata que ele de fato merece, o motorista \emph{ruim} ($H$) correria para
+comprá-la também (mentindo sobre seu tipo). Para evitar essa imitação, a seguradora ``capa''
+o seguro do bom motorista. O alto risco, esse, sai ileso: cobertura completa, prêmio justo.
+A intuição moralista (``o arriscado deveria levar menos seguro'') está \emph{invertida} —
+é o oposto que acontece.
+
+\smallskip\noindent
+\textbf{Por que o mercado pode nem fechar (inexistência).} Primeiro, um alívio: o cardápio
+separador que achamos ($c^L_\ast = 4$ para o bom motorista) \emph{é} a resposta —
+\emph{desde que exista equilíbrio}. O problema mora num caso específico. Chame de $\lambda$ a
+fração de motoristas ruins. Se $\lambda$ é \emph{pequena} (quase todo mundo é bom), dá para
+oferecer um \emph{pooling} — contrato único para todos, cobertura quase cheia a um preço
+médio que, com poucos ruins, sai baixo — e \emph{os dois tipos} ficam melhores do que no
+cardápio separador. Isso já \textbf{derruba o separador}: ninguém topa ficar com $25\%$ de
+cobertura havendo um pooling superior para ambos. Só que o pooling \textbf{também não se
+sustenta}: basta uma seguradora rival lançar um contrato de cobertura parcial e barato que,
+por single-crossing, \emph{só} interessa aos bons motoristas; eles migram, e o pooling fica
+só com os ruins — e quebra (o preço médio não cobre o custo dos ruins). Moral desconfortável:
+com poucos ruins, o separador morre para o pooling e o pooling morre para o
+\emph{cream-skimming} — \textbf{nada sobrevive}, e o modelo \emph{pode simplesmente não ter
+equilíbrio competitivo}.
+
+\smallskip\noindent
+\textbf{E a regulação?} Cuidado para não embaralhar duas falhas. A que mais diretamente
+justifica \textbf{ANS e ACA} é a \emph{espiral de seleção adversa} — o \emph{unraveling} do
+Exercício~1, em que os bons fogem, o pool encarece e pode colapsar. Mandato de adesão $+$
+preço comunitário forçam por lei o pooling que o mercado livre não estabiliza sozinho. A
+ligação entre os dois: R-S explica \emph{por que} um pooling não emerge espontaneamente; a
+espiral explica \emph{por que} o pooling imposto por lei pode ser socialmente desejável.
+\end{empalavras}
+
+\end{enumerate}
+
+\subsection*{Comentário pedagógico (5 passos)}
+\begin{gabarito}
+\passo{1. Ponto-chave.} No separador R-S, quem se distorce é o \textbf{bom risco} ($L$),
+não o ruim. Razão: o $H$ é o tipo \emph{com incentivo a mentir} (quer o seguro barato do
+$L$); para impedir isso, encolhe-se a cobertura do $L$ até a IC do $H$ ficar binding. O $H$
+sai ileso (cobertura completa, prêmio justo).
+
+\passo{2. Derivação.} Toda a álgebra reduz a $\sqrt{A}+\sqrt{B}=6$ com $A-B=L-c^L_\ast$.
+A identidade $(\sqrt{A}-\sqrt{B})(\sqrt{A}+\sqrt{B})=A-B$ evita elevar ao quadrado às cegas.
+Na lousa, o atalho honesto é testar $c^L_\ast=4$ (a calibração foi feita para isso); o
+caminho fechado fica registrado como quadrática $(c^L)^2-68c^L+256=0$, discriminante
+$3600=60^2$.
+
+\passo{3. Armadilha.} (i) Inverter os tipos (``o alto risco deve ficar com menos
+seguro''), por intuição moralista — é o oposto. (ii) Tentar achar $c^L_\ast$ impondo
+lucro zero ou IR do $L$ — o que define $c^L_\ast$ é a IC do \emph{outro} tipo. (iii)
+Aproximar numericamente e perder o fechamento inteiro. (iv) Achar que pooling sempre
+sobrevive — se sobrevivesse, R-S não seria interessante.
+
+\passo{4. Extensão.} A inexistência abre a porta para \textbf{regulação}: ANS no Brasil
+(Lei 9.656/1998 — rol mínimo, faixas etárias, portabilidade) e ACA nos EUA (2010 —
+proibição de \emph{underwriting} + mandato individual + subsídio cruzado) forçam um pooling
+que o mercado puro não sustenta, ao custo de o $L$ subsidiar o $H$. Hackmann-Kolstad-Kowalski
+(2015, \emph{AER} 105(3): 1030--1066) documentam unraveling parcial em estados que
+removeram o mandato — teste empírico de R-S. \textbf{Aula 9} (Spence) traz a via
+\emph{descentralizada}: o agente informado sinaliza.
+
+\passo{5. Peer-review (auto-crítica honesta).} Calibração $W=17,\,L=16$ é incomum mas
+\emph{deliberada}: ela torna $\sqrt{9}=3$, $\sqrt{16}=4$, $\sqrt{4}=2$ — \emph{todas}
+inteiras, ideal para giz. O custo é uma economia onde o sinistro quase zera a riqueza
+($W-L=1$); isso não é bug, é \emph{feature} — reforça por que o agente quer tanto seguro.
+Os números diferem dos avaliativos (lá $W=100,\,L=56,\,c^L_\ast=8$). A distorção aqui é
+$c^L_\ast/L = 4/16 = 25\%$, menos severa que os $14\%$ dos avaliativos e portanto mais
+fácil de discutir. Risco residual: o ``teste $c^L_\ast=4$'' parece coelho-da-cartola; por
+isso registrei a quadrática fechada como rede de segurança para o aluno cético. Não
+derivei a inexistência formalmente — é proposital, está fora do calibre de lousa de 45 min.
+\end{gabarito}
+\else
+\espacoaluno{85mm}
+\fi
+
+\hrulefill
+\begin{center}\small\textit{%
+\ifsolucao Fim dos três exercícios de lousa — Aula 8.%
+\else Fim do caderno do aluno — Aula 8. Bom trabalho.\fi}\end{center}
+
+\end{document}

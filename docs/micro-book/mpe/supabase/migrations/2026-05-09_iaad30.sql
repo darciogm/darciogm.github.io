@@ -21,7 +21,7 @@
 CREATE TABLE IF NOT EXISTS public.iaad_calendar (
   aula_n              integer     PRIMARY KEY CHECK (aula_n BETWEEN 1 AND 9),
   presencial_at       timestamptz NOT NULL,   -- D_X — quarta da aula às 19:30 BRT
-  next_presencial_at  timestamptz NOT NULL,   -- D_{X+1} — próxima aula 19:30 (Aula 9 → AF qua 24/06 19:00)
+  next_presencial_at  timestamptz NOT NULL,   -- D_{X+1} — próxima aula 19:30 (Aula 9 → AF qui 25/06 19:30)
   curso_deadline      timestamptz NOT NULL    -- prazo geral (02/07/2026 18:00 BRT — regra de acesso livre)
 );
 
@@ -35,7 +35,7 @@ INSERT INTO public.iaad_calendar (aula_n, presencial_at, next_presencial_at, cur
   (6, '2026-05-27 19:30:00-03', '2026-06-03 19:30:00-03', '2026-07-02 18:00:00-03'),
   (7, '2026-06-03 19:30:00-03', '2026-06-10 19:30:00-03', '2026-07-02 18:00:00-03'),
   (8, '2026-06-10 19:30:00-03', '2026-06-17 19:30:00-03', '2026-07-02 18:00:00-03'),
-  (9, '2026-06-17 19:30:00-03', '2026-06-24 19:00:00-03', '2026-07-02 18:00:00-03')
+  (9, '2026-06-17 19:30:00-03', '2026-06-25 19:30:00-03', '2026-07-02 18:00:00-03')
 ON CONFLICT (aula_n) DO NOTHING;
 
 
