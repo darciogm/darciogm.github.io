@@ -3,7 +3,7 @@
 -- C_prazo, P, IAAD) para a visualização no admin dashboard.
 -- ============================================================================
 -- SSOT: reusa EXATAMENTE a mesma lógica de get_iaad / get_iaad_class_quartiles
--- (pesos 0,40/0,30/0,30/0,50/0,085/0,085 ÷ 15 × 10; IAAD = 0,60·C_geral +
+-- (pesos 0,40/0,30/0,30/0,50/0,0833/0,0833 ÷ 15 × 10; IAAD = 0,60·C_geral +
 -- 0,20·C_prazo + 0,20·P). NÃO reimplementa a fórmula em JS — o front só renderiza.
 -- Lê das views iaad_aula_completion (já com win_pre/win_pos) e
 -- iaad_performance_raw, então herda automaticamente o colapso das Aulas 1–3
@@ -47,8 +47,8 @@ BEGIN
            SUM(CASE WHEN quiz_pre_done       THEN 0.30  ELSE 0 END) +
            SUM(CASE WHEN quiz_pos_done       THEN 0.30  ELSE 0 END) +
            SUM(CASE WHEN exerc_done          THEN 0.50  ELSE 0 END) +
-           SUM(CASE WHEN refl_nebulosa_done  THEN 0.085 ELSE 0 END) +
-           SUM(CASE WHEN refl_aula_done      THEN 0.085 ELSE 0 END))
+           SUM(CASE WHEN refl_nebulosa_done  THEN 0.083333 ELSE 0 END) +
+           SUM(CASE WHEN refl_aula_done      THEN 0.083333 ELSE 0 END))
           / 15.0 * 10.0
         ) FROM public.iaad_aula_completion ac WHERE ac.user_id = pa.id
       ), 0)::numeric AS c_geral,
@@ -58,8 +58,8 @@ BEGIN
            SUM(CASE WHEN quiz_pre_in_window       THEN 0.30  ELSE 0 END) +
            SUM(CASE WHEN quiz_pos_in_window       THEN 0.30  ELSE 0 END) +
            SUM(CASE WHEN exerc_in_window          THEN 0.50  ELSE 0 END) +
-           SUM(CASE WHEN refl_nebulosa_in_window  THEN 0.085 ELSE 0 END) +
-           SUM(CASE WHEN refl_aula_in_window      THEN 0.085 ELSE 0 END))
+           SUM(CASE WHEN refl_nebulosa_in_window  THEN 0.083333 ELSE 0 END) +
+           SUM(CASE WHEN refl_aula_in_window      THEN 0.083333 ELSE 0 END))
           / 15.0 * 10.0
         ) FROM public.iaad_aula_completion ac WHERE ac.user_id = pa.id
       ), 0)::numeric AS c_prazo,
