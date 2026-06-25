@@ -351,6 +351,14 @@
       return res.error ? { ok:false, error:res.error } : { ok:true, data:res.data };
     },
 
+    // IAAD-30 por aluno (admin-only). RPC get_iaad_all_students calcula no
+    // backend (mesma logica/SSOT de get_iaad). Retorna {ok, data:[{user_id,
+    // nome, matricula, c_geral, c_prazo, p_score, iaad}]}.
+    getIaadAllStudents: async function() {
+      var res = await client.rpc('get_iaad_all_students');
+      return res.error ? { ok:false, error:res.error } : { ok:true, data:(res.data || []) };
+    },
+
     // Busca TUDO em paralelo (11 tabelas). Retorna {ok, data:{...}, error}.
     // Usado pelo dashboard admin para montar uma visao completa da turma.
     // As duas ultimas (admin_interventions, nudge_dispositions) sao opcionais:

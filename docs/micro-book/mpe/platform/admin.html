@@ -702,6 +702,7 @@ window.MathJax = {
     <div class="tab" data-tab="multiples">Visão por Aula</div>
     <div class="tab" data-tab="heatmap">Mapa de Completude</div>
     <div class="tab" data-tab="alunos">Por Aluno</div>
+    <div class="tab" data-tab="iaad">IAAD-30</div>
     <div class="tab" data-tab="quizzes">Quizzes</div>
     <div class="tab" data-tab="psicometria">Psicometria</div>
     <div class="tab" data-tab="knower">Conhecimento</div>
@@ -813,6 +814,45 @@ window.MathJax = {
       </table>
     </div>
     <div id="alunos-result-count" style="margin-top:0.6rem;font-size:0.72rem;color:var(--text-muted)"></div>
+  </div>
+
+  <!-- TAB: IAAD-30 (nota de engajamento por aluno) -->
+  <div class="admin-card tab-content" id="tab-iaad" style="display:none">
+    <h3>IAAD-30 por aluno</h3>
+    <p style="font-size:0.78rem;color:var(--text-muted);margin-top:-0.4rem;line-height:1.5">
+      Nota de engajamento (30% da final). Calculada no <strong>backend</strong> (RPC <code>get_iaad_all_students</code>, mesma lógica do portal do aluno — SSOT).
+      IAAD = 0,60·C<sub>geral</sub> + 0,20·C<sub>prazo</sub> + 0,20·P · escala 0–10 · pontos da nota = IAAD × 3.
+    </p>
+    <div class="tab-alunos-toolbar">
+      <label for="sort-iaad">Ordenar</label>
+      <select id="sort-iaad" onchange="renderIaadTable()">
+        <option value="nome-asc" selected>Nome (A–Z)</option>
+        <option value="nome-desc">Nome (Z–A)</option>
+        <option value="matricula">Matrícula</option>
+        <option value="iaad-desc">IAAD (maior primeiro)</option>
+        <option value="iaad-asc">IAAD (menor primeiro)</option>
+        <option value="cgeral-desc">C_geral (maior)</option>
+        <option value="cgeral-asc">C_geral (menor)</option>
+        <option value="cprazo-desc">C_prazo (maior)</option>
+        <option value="cprazo-asc">C_prazo (menor)</option>
+        <option value="p-desc">P (maior)</option>
+        <option value="p-asc">P (menor)</option>
+      </select>
+      <div class="toolbar-spacer"></div>
+      <button class="btn-export btn-csv" onclick="exportIaadCSV()">📤 Exportar CSV</button>
+    </div>
+    <input type="text" class="search-input" id="search-iaad" placeholder="Filtrar por nome ou matrícula" oninput="renderIaadTable()">
+    <div style="overflow-x:auto">
+      <table id="iaad-table">
+        <thead><tr>
+          <th>Nome</th><th>Matrícula</th>
+          <th style="text-align:right">C_geral</th><th style="text-align:right">C_prazo</th>
+          <th style="text-align:right">P</th><th style="text-align:right">IAAD</th>
+        </tr></thead>
+        <tbody></tbody>
+      </table>
+    </div>
+    <div id="iaad-result-count" style="margin-top:0.6rem;font-size:0.72rem;color:var(--text-muted)"></div>
   </div>
 
   <!-- MODAL: PERFIL INDIVIDUAL DO ALUNO -->
@@ -1433,8 +1473,99 @@ function showTab(name) {
   document.querySelectorAll('.tab').forEach(function(el) { el.classList.remove('active'); });
   document.getElementById('tab-' + name).style.display = '';
   document.querySelector('.tab[data-tab="' + name + '"]').classList.add('active');
+  if (name === 'iaad') ensureIaadRendered();  // lazy-load: RPC dedicada, fora do adminFetchAll
 }
 document.querySelectorAll('.tab').forEach(function(t){ t.addEventListener('click', function(){ showTab(t.dataset.tab); }); });
+
+// ============ TAB IAAD-30 (nota de engajamento por aluno) ============
+// Dados vêm da RPC admin-only get_iaad_all_students (backend = SSOT da nota).
+// Carregado sob demanda na 1ª abertura da aba para não pesar o load inicial.
+var _iaadLoaded = false;
+function _iaadEsc(s){ return String(s==null?'':s).replace(/[&<>"]/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c];}); }
+function _iaadNum(v){ return (v==null) ? '—' : Number(v).toFixed(2).replace('.', ','); }
+
+function ensureIaadRendered() {
+  if (_iaadLoaded) return;
+  _iaadLoaded = true;
+  var tbody = document.querySelector('#iaad-table tbody');
+  if (tbody) tbody.innerHTML = '<tr><td colspan="6" style="text-align:center;color:var(--text-muted)">Carregando IAAD…</td></tr>';
+  MpeDB.getIaadAllStudents().then(function(res){
+    if (!res.ok) {
+      _iaadLoaded = false;  // permite retry ao reabrir a aba
+      if (tbody) tbody.innerHTML = '<tr><td colspan="6" style="color:var(--danger)">Erro ao carregar IAAD: '
+        + _iaadEsc(res.error && res.error.message ? res.error.message : 'desconhecido')
+        + '. A migration <code>get_iaad_all_students</code> foi aplicada no SQL Editor?</td></tr>';
+      return;
+    }
+    window._iaadRows = res.data || [];
+    renderIaadTable();
+  });
+}
+
+function _iaadSort(rows, key) {
+  var r = rows.slice();
+  var byNum = function(f, desc){ return function(a,b){ return desc ? (b[f]-a[f]) : (a[f]-b[f]); }; };
+  switch(key) {
+    case 'nome-desc':   r.sort(function(a,b){return (b.nome||'').localeCompare(a.nome||'');}); break;
+    case 'matricula':   r.sort(function(a,b){return (a.matricula||'').localeCompare(b.matricula||'');}); break;
+    case 'iaad-desc':   r.sort(byNum('iaad', true));     break;
+    case 'iaad-asc':    r.sort(byNum('iaad', false));    break;
+    case 'cgeral-desc': r.sort(byNum('c_geral', true));  break;
+    case 'cgeral-asc':  r.sort(byNum('c_geral', false)); break;
+    case 'cprazo-desc': r.sort(byNum('c_prazo', true));  break;
+    case 'cprazo-asc':  r.sort(byNum('c_prazo', false)); break;
+    case 'p-desc':      r.sort(byNum('p_score', true));  break;
+    case 'p-asc':       r.sort(byNum('p_score', false)); break;
+    default:            r.sort(function(a,b){return (a.nome||'').localeCompare(b.nome||'');});
+  }
+  return r;
+}
+
+function _iaadFiltered() {
+  var rows = window._iaadRows || [];
+  var q = ((document.getElementById('search-iaad')||{}).value || '').trim().toLowerCase();
+  var key = (document.getElementById('sort-iaad')||{}).value || 'nome-asc';
+  var filtered = rows.filter(function(r){
+    if (!q) return true;
+    return (r.nome||'').toLowerCase().indexOf(q) >= 0 || (r.matricula||'').toLowerCase().indexOf(q) >= 0;
+  });
+  return { rows: _iaadSort(filtered, key), filtered: !!q };
+}
+
+function renderIaadTable() {
+  var tbody = document.querySelector('#iaad-table tbody');
+  if (!tbody) return;
+  var res = _iaadFiltered();
+  if (!res.rows.length) {
+    tbody.innerHTML = '<tr><td colspan="6" style="text-align:center;color:var(--text-muted)">Nenhum aluno.</td></tr>';
+  } else {
+    tbody.innerHTML = res.rows.map(function(r){
+      return '<tr><td>' + _iaadEsc(r.nome) + '</td><td>' + _iaadEsc(r.matricula) + '</td>'
+        + '<td style="text-align:right">' + _iaadNum(r.c_geral) + '</td>'
+        + '<td style="text-align:right">' + _iaadNum(r.c_prazo) + '</td>'
+        + '<td style="text-align:right">' + _iaadNum(r.p_score) + '</td>'
+        + '<td style="text-align:right;font-weight:700">' + _iaadNum(r.iaad) + '</td></tr>';
+    }).join('');
+  }
+  var cnt = document.getElementById('iaad-result-count');
+  if (cnt) cnt.textContent = res.rows.length + ' aluno(s)' + (res.filtered ? ' (filtrado)' : '');
+}
+
+function exportIaadCSV() {
+  if (!window._iaadRows) return alert('Dados ainda não carregados. Abra a aba IAAD-30 primeiro.');
+  var rows = _iaadFiltered().rows;
+  var header = ['Nome','Matrícula','C_geral','C_prazo','P','IAAD'];
+  var lines = [header.map(csvq).join(',')];
+  rows.forEach(function(r){
+    lines.push([r.nome, r.matricula, r.c_geral, r.c_prazo, r.p_score, r.iaad].map(csvq).join(','));
+  });
+  var csv = '﻿' + lines.join('\n');  // BOM UTF-8 para Excel
+  var blob = new Blob([csv], { type: 'text/csv;charset=utf-8' });
+  var a = document.createElement('a');
+  a.href = URL.createObjectURL(blob);
+  a.download = 'iaad-30-' + new Date().toISOString().substring(0,10) + '.csv';
+  document.body.appendChild(a); a.click(); document.body.removeChild(a);
+}
 
 // ============ COMPUTED METRICS ============
 
